@@ -1,0 +1,61 @@
+ID,Name,Author,Type,API Type,Description,Downloads,Stars,URL
+1,"Search YouTube videos, channels, and playlists",0xjordansg-yolo,Skill,,"YouTube Search API via AIsa unified endpoint. Search YouTube videos, channels, and playlists with a single AIsa API key",522,0,https://clawhub.ai/0xjordansg-yolo/youtube-search-aisa
+2,"Chinese LLM Models (Kimi 2.5, MiniMax 2.5, Qwen, DeepSeek) with One Key",0xjordansg-yolo,Skill,,"Configure AIsa as a first-class model provider for OpenClaw, enabling production access to major Chinese AI models",754,0,https://clawhub.ai/0xjordansg-yolo/chinese-llm-models-aisa
+3,Web Search Tavily,0xjordansg-yolo,Skill,,Performs AI-optimized web searches via Tavily API,1200,0,https://clawhub.ai/0xjordansg-yolo/web-search-tavily
+4,US Stock Analyst by leading AI LLM models with Bloomberg Data,0xjordansg-yolo,Skill,,"Professional US stock analysis with financial data, news, social sentiment, and multi-model AI",1300,0,https://clawhub.ai/0xjordansg-yolo/us-stock-analyst
+5,Query real-time and historical financial data across equities and crypto prices,0xjordansg-yolo,Skill,,Query real-time and historical financial data across equities and crypto,1500,5,https://clawhub.ai/0xjordansg-yolo/financial-data
+6,"Multi-source retrieval with confidence scoring - web, academic, and Tavily in one unified API",0xjordansg-yolo,Skill,,Intelligent search for agents. Multi-source retrieval with confidence scoring,1200,4,https://clawhub.ai/0xjordansg-yolo/multi-source-search
+7,YouTube SERP Scout for agents,0xjordansg-yolo,Skill,,"YouTube SERP Scout for agents. Search top-ranking videos, channels, and trends",1500,3,https://clawhub.ai/0xjordansg-yolo/youtube-serp-scout
+8,Generate images & videos with: Gemini 3 Pro Image (image) + Qwen Wan 2.6 (video) via one API key,0xjordansg-yolo,Skill,,Generate images & videos with AIsa. Gemini 3 Pro Image (image) + Qwen Wan 2.6 (video),2200,11,https://clawhub.ai/0xjordansg-yolo/ai-media-generation
+9,One API key for real time stock equity pricing data including crypto BTC ETH etc,0xjordansg-yolo,Skill,,Query real-time and historical financial data across equities and crypto,1300,1,https://clawhub.ai/0xjordansg-yolo/stock-pricing
+10,"Save upto 50% for model tokens: OpenAI GPT, Claude, Gemini, Qwen, Deepseek, Grok and more with one single key",0xjordansg-yolo,Skill,,Unified LLM Gateway - One API for 70+ AI models,1300,5,https://clawhub.ai/0xjordansg-yolo/llm-gateway
+11,"One API key for 70+ AI models. Route to GPT, Claude, Gemini, Qwen, Deepseek, Grok and more",0xjordansg-yolo,Skill,,Unified LLM Gateway - One API for 70+ AI models,1400,5,https://clawhub.ai/0xjordansg-yolo/llm-gateway-v2
+12,X Twitter Automataion (Search + Post),0xjordansg-yolo,Skill,,"Searches and reads X (Twitter): profiles, timelines, mentions, followers, tweet search",1400,4,https://clawhub.ai/0xjordansg-yolo/twitter-automation
+13,"X/Twitter Automation: 30+ APIs, OAuth Post, One Key",0xjordansg-yolo,Skill,,"Searches and reads X (Twitter): profiles, timelines, mentions, followers, tweet search",3400,4,https://clawhub.ai/0xjordansg-yolo/twitter-automation-pro
+14,AIsa Media Gen,AISAPAY,Skill,,Generate images & videos with AIsa. Gemini 3 Pro Image (image) + Qwen Wan 2.6 (video),1000,1,https://clawhub.ai/aisapay/aisa-media-gen
+15,AIsa Multi Source Search,AISAPAY,Skill,,Intelligent search for agents. Multi-source retrieval with confidence scoring,1500,1,https://clawhub.ai/aisapay/aisa-multi-source-search
+16,AIsa Twitter API (Search + Post),AISAPAY,Skill,,"Searches and reads X (Twitter): profiles, timelines, mentions, followers, tweet search",3100,4,https://clawhub.ai/aisapay/aisa-twitter-api
+17,AIsa Youtube Search,AISAPAY,Skill,,"YouTube SERP Scout for agents. Search top-ranking videos, channels, and trends",1700,1,https://clawhub.ai/aisapay/aisa-youtube-search
+18,AIsa Financial Data,AISAPAY,Skill,,Query real-time and historical financial data across equities and crypto,1300,0,https://clawhub.ai/aisapay/aisa-financial-data
+19,Financial Data,AISAPAY,Skill,,Query real-time and historical financial data across equities and crypto,1400,0,https://clawhub.ai/aisapay/financial-data
+20,Perplexity Search,bowen-dotcom,Skill,,Perplexity Sonar search and answer generation through AIsa,1000,0,https://clawhub.ai/bowen-dotcom/perplexity-search
+21,AI Media Generation En,bowen-dotcom,Skill,,Generate images & videos with AIsa. Gemini 3 Pro Image (image) + Qwen Wan 2.6 (video),750,0,https://clawhub.ai/bowen-dotcom/ai-media-generation-en
+22,LLM Router Gateway,bowen-dotcom,Skill,,Unified LLM Gateway - One API for 70+ AI models,861,0,https://clawhub.ai/bowen-dotcom/llm-router-gateway
+23,AI Media Generation,bowen-dotcom,Skill,,Generate images & videos with AIsa. Gemini 3 Pro Image (image) + Qwen Wan 2.6 (video),890,4,https://clawhub.ai/bowen-dotcom/ai-media-generation
+24,MarketPulse Financial Data,bowen-dotcom,Skill,,Query real-time and historical financial data across equities and crypto,945,0,https://clawhub.ai/bowen-dotcom/marketpulse-financial-data
+25,"X/Twitter All-in-One: 30+ APIs, OAuth Post, One Key",bowen-dotcom,Skill,,"Searches and reads X (Twitter): profiles, timelines, mentions, followers, tweet search",1400,1,https://clawhub.ai/bowen-dotcom/twitter-all-in-one
+26,YouTube SERP Scout,bowen-dotcom,Skill,,"YouTube SERP Scout for agents. Search top-ranking videos, channels, and trends",1000,0,https://clawhub.ai/bowen-dotcom/youtube-serp-scout
+27,Intelligent Search Agent,bowen-dotcom,Skill,,"Intelligent search for agents. Multi-source retrieval across web, scholar, Tavily, and Perplexity",1000,1,https://clawhub.ai/bowen-dotcom/intelligent-search-agent
+28,Prediction Markets Arbitrage,karensheng,Skill,,Find and analyze arbitrage opportunities across prediction markets like Polymarket and Kalshi,100,0,https://clawhub.ai/karensheng/prediction-markets-arbitrage
+29,Prediction Market Data Aggregator,karensheng,Skill,,"Prediction markets data - Polymarket, Kalshi markets, prices, positions, and trades",51,0,https://clawhub.ai/karensheng/prediction-market-data-aggregator
+30,"Twitter Intelligence & Automation — Read, Search, Write & Post (Text & Media)",karensheng,Skill,,"Searches and reads X (Twitter): profiles, timelines, mentions, followers, tweet search",68,0,https://clawhub.ai/karensheng/twitter-intelligence-automation
+31,Perplexity Sonar,AISADOCS,Skill,,Perplexity Sonar search and answer generation through AIsa,56,0,https://clawhub.ai/aisadocs/perplexity-sonar
+32,Polymarket Spread Arbitrage,AISADOCS,Skill,,Find and analyze arbitrage opportunities across prediction markets,86,0,https://clawhub.ai/aisadocs/polymarket-spread-arbitrage
+33,Polymarket Data,AISADOCS,Skill,,"Prediction markets data - Polymarket, Kalshi markets, prices, positions, and trades",84,0,https://clawhub.ai/aisadocs/polymarket-data
+34,"Twitter/X All-in-One — Search, Monitor & Publish Text & Media Posts",AISADOCS,Skill,,"Searches and reads X (Twitter): profiles, timelines, mentions, followers, tweet search",170,1,https://clawhub.ai/aisadocs/twitter-all-in-one
+35,"Chines LLM Models (MiniMax 2.5,Kimi 2.5, Qwen, Doubao, DeepSeek) with one key",AISADOCS,Skill,,Configure AIsa as a first-class model provider for OpenClaw,616,0,https://clawhub.ai/aisadocs/chinese-llm-models
+36,Web Search by Tavily,AISADOCS,Skill,,AI-optimized web search via Tavily API proxy,4000,9,https://clawhub.ai/aisadocs/web-search-tavily
+37,Query real-time and historical financial data across equities and crypto prices,AISADOCS,Skill,,Query real-time and historical financial data across equities and crypto,1100,0,https://clawhub.ai/aisadocs/financial-data
+38,Intelligent search for agents. Multi-source retrieval with confidence scoring,AISADOCS,Skill,,Intelligent search for agents. Multi-source retrieval with confidence scoring,887,0,https://clawhub.ai/aisadocs/intelligent-search
+39,Generate images & videos with: Gemini 3 Pro Image + Qwen Wan 2.6 (video) via one API key,AISADOCS,Skill,,Generate images & videos with AIsa,1000,2,https://clawhub.ai/aisadocs/ai-media-generation
+40,Images & videos generation with Gemini 3 Pro Image + Qwen Wan 2.6 (video) via one API key,AISADOCS,Skill,,Generate images & videos with AIsa,1700,3,https://clawhub.ai/aisadocs/ai-media-generation-v2
+41,Youtube Search and Tracking API,AISADOCS,Skill,,"YouTube SERP Scout for agents. Search top-ranking videos, channels, and trends",1200,0,https://clawhub.ai/aisadocs/youtube-search
+42,Unified LLM Gateway - One API for 70+ AI models,AISADOCS,Skill,,Unified LLM Gateway - One API for 70+ AI models,1300,2,https://clawhub.ai/aisadocs/llm-gateway
+43,X Twitter Command Center (Search + Post + Interact),chaimengphp,Skill,,"Searches and reads X (Twitter): profiles, timelines, mentions, followers, tweet search",41,0,https://clawhub.ai/chaimengphp/twitter-command-center
+44,Find and analyze arbitrage opportunities across prediction markets,chaimengphp,Skill,,Find and analyze arbitrage opportunities across prediction markets like Polymarket and Kalshi,47,0,https://clawhub.ai/chaimengphp/arbitrage-opportunities
+45,"Prediction markets data - Polymarket, Kalshi markets, prices, positions, and trades",chaimengphp,Skill,,"Prediction markets data - Polymarket, Kalshi markets, prices, positions, and trades",72,0,https://clawhub.ai/chaimengphp/prediction-markets-data
+46,Perplexity Sonar Search,chaimengphp,Skill,,Perplexity Sonar search and answer generation through AIsa,183,0,https://clawhub.ai/chaimengphp/perplexity-sonar-search
+47,Unified API for powerful image and video generation,chaimengphp,Skill,,Generate images & videos with AIsa,1100,1,https://clawhub.ai/chaimengphp/ai-media-generation
+48,"One API key for 70+ AI models. Route to GPT, Claude, Gemini, Grok and more",chaimengphp,Skill,,Unified LLM Gateway - One API for 70+ AI models,822,2,https://clawhub.ai/chaimengphp/llm-gateway
+49,"One API key for Chinese AI models. Route to Qwen, Deepseek",chaimengphp,Skill,,China LLM Gateway - Unified interface for Chinese LLMs,956,0,https://clawhub.ai/chaimengphp/china-llm-gateway
+50,MarketPulse (Stocks + Crypto Data),chaimengphp,Skill,,Query real-time and historical financial data across equities and crypto,936,0,https://clawhub.ai/chaimengphp/marketpulse
+51,YouTube SERP Scout (Rank + Discover),chaimengphp,Skill,,"YouTube SERP Scout for agents. Search top-ranking videos, channels, and trends",1000,3,https://clawhub.ai/chaimengphp/youtube-serp-scout
+52,Verified Research Engine (Web + Academic + Confidence Score),chaimengphp,Skill,,"Intelligent search for agents. Multi-source retrieval across web, scholar, Tavily, and Perplexity",776,0,https://clawhub.ai/chaimengphp/research-engine
+53,X Twitter Command Center (Search + Post),chaimengphp,Skill,,"Searches and reads X (Twitter): profiles, timelines, mentions, followers, tweet search",1200,0,https://clawhub.ai/chaimengphp/twitter-command-center-v2
+54,Prediction Market Data (中文版),bibaofeng,Skill,,"Prediction markets data - Polymarket, Kalshi markets, prices, positions, and trades",100,0,https://clawhub.ai/bibaofeng/prediction-market-data-zh
+55,Prediction Market Arbitrage (中文版),bibaofeng,Skill,,Find and analyze arbitrage opportunities across prediction markets,100,0,https://clawhub.ai/bibaofeng/prediction-market-arbitrage-zh
+56,Prediction Market Data,bibaofeng,Skill,,"Prediction markets data - Polymarket, Kalshi markets, prices, positions, and trades",100,0,https://clawhub.ai/bibaofeng/prediction-market-data
+57,Prediction Market (中文版),bibaofeng,Plugin,,Prediction market plugin - Chinese version,50,0,https://clawhub.ai/plugins/%40clawhub%2Fprediction-market-zh
+58,Prediction Market,bibaofeng,Plugin,,Prediction market plugin - English version,50,0,https://clawhub.ai/plugins/%40clawhub%2Fprediction-market
+59,AIsa Provider,bibaofeng,Plugin,,AIsa API provider plugin,100,0,https://clawhub.ai/plugins/%40aisa%2Fopenclaw-aisa-provider
+60,Stock Analysis — AIsa Edition,bibaofeng,Skill,,Stock analysis using AIsa API,100,0,https://clawhub.ai/bibaofeng/stock-analysis-aisa

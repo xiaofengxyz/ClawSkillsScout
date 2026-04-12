@@ -1,0 +1,73 @@
+Author,SkillName,FullURL,AIType
+0xjordansg-yolo,"Search YouTube videos, channels, and playlists",https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-youtube,AISAAPI
+0xjordansg-yolo,"Chinese LLM Models (Kimi 2.5, MiniMax 2.5, Qwen, DeepSeek) with One Key",https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-chinese-llm-models,AISAAPI
+0xjordansg-yolo,Web Search Tavily,https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/ai-native-websearch-via-tavily-api-returns-concise-relevant-results-for-openclaw,AISAAPI
+0xjordansg-yolo,"US Stock Analyst by leading AI LLM models with Bloomberg Data, Twitter Sentiment and Wall Street Equity Research Reports",https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-us-stock-analyst,AISAAPI
+0xjordansg-yolo,Query real-time and historical financial data across equities and crypto prices,https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-finance-stock-equity-crypto-market-price-data-yahoo-finance-coinhacko,AISAAPI
+0xjordansg-yolo,"Multi-source retrieval with confidence scoring - web, academic, and Tavily in one unified API",https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-search-website-academic-tavily-serp-exa,AISAAPI
+0xjordansg-yolo,"YouTube SERP Scout for agents. Search top-ranking videos, channels, and trends for content research and competitor tracking",https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-youtube-search-serp-video-channels-trends-content-tracking,AISAAPI
+0xjordansg-yolo,Generate images & videos with: Gemini 3 Pro Image (image) + Qwen Wan 2.6 (video) via one API key,https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-image-video-models-wan2-6-gemini-3-pro-image-nano-banana,AISAAPI
+0xjordansg-yolo,One API key for real time stock equity pricing data including crypto BTC ETH etc.,https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-financial-stock-crypto-market-price-data,AISAAPI
+0xjordansg-yolo,"Save upto 50% for model tokens:  OpenAI GPT, Claude, Gemini, Qwen, Deepseek, Grok and more with one single key",https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-affordable-llm-model-tokens,AISAAPI
+0xjordansg-yolo,"One API key for 70+ AI models. Route to GPT, Claude, Gemini, Qwen, Deepseek, Grok and more",https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-llm-gateway,AISAAPI
+0xjordansg-yolo,X Twitter Automataion (Search + Post),https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-twitter-search-post,AISAAPI
+0xjordansg-yolo,"X/Twitter Automation: 30+ APIs, OAuth Post, One Key",https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-twitter,AISAAPI
+0xjordansg-yolo,Brave Search,https://clawhub.ai/kn70pywhg0fyz996kpa8xj89s57yhv26/brave-search,
+0xjordansg-yolo,Skill Creator,https://clawhub.ai/kn7ajm25k9s5t1ajwxp2yfjx818015pb/skill-creator,
+0xjordansg-yolo,Tavily 搜索,https://clawhub.ai/kn78hhhbxwjs4nrcyn8my5fcw981wmys/openclaw-tavily-search,
+0xjordansg-yolo,Baidu Search,https://clawhub.ai/kn7akgt520t01vgs2tzx7yk6m180kt26/baidu-search,
+0xjordansg-yolo,Multi Search Engine,https://clawhub.ai/kn79j8kk7fb9w10jh83803j7f180a44m/multi-search-engine,
+0xjordansg-yolo,AIsa Twitter API (Search + Post),https://clawhub.ai/kn72abv2yp91hce9za0j31yycd80jxzv/aisa-twitter-api,AISAAPI
+0xjordansg-yolo,Model Usage,https://clawhub.ai/kn70pywhg0fyz996kpa8xj89s57yhv26/model-usage,
+0xjordansg-yolo,Sag,https://clawhub.ai/kn70pywhg0fyz996kpa8xj89s57yhv26/sag,
+0xjordansg-yolo,Stock Market Pro,https://clawhub.ai/kn7444rny7jy2b0jtr6vxbfj2d805vrw/stock-market-pro,
+0xjordansg-yolo,AgentLedger,https://clawhub.ai/kn74d4an2jcx38h8ekvn7cseyn808hxh/agentledger,
+0xjordansg-yolo,API Gateway,https://clawhub.ai/kn75240wq8bnv2qm2xgry748jd80b9r0/api-gateway,
+AISADOCS,Perplexity Sonar,https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/perplexity-sonar-search,AISAAPI
+AISADOCS,Polymarket Spread Arbitrage,https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/polymarket-arb,AISAAPI
+AISADOCS,Polymarket Data,https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/pred-polymarket,AISAAPI
+AISADOCS,"Twitter/X All-in-One — Search, Monitor & Publish Text & Media Posts",https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-twitter-post-engage,AISAAPI
+AISADOCS,"Chines LLM Models (MiniMax 2.5,Kimi 2.5, Qwen, Doubao, DeepSeek) with one key",https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-leading-chinese-llm,AISAAPI
+AISADOCS,Web Search by Tavily,https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-web-search-tavily,AISAAPI
+AISADOCS,"Query real-time and historical financial data across equities and crypto prices, market moves, metrics, and trends for analysis, alerts, and reporting",https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-finance-equity-crypto-price-market-data-news,AISAAPI
+AISADOCS,"Intelligent search for agents. Multi-source retrieval with confidence scoring - web, academic, and Tavily in one unified API",https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-search-web-academic-tavily,AISAAPI
+AISADOCS,Generate images & videos with: Gemini 3 Pro Image + Qwen Wan 2.6 (video) via one API key,https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-llm-image-video-qwen-wan26-gemini-3-pro-image,AISAAPI
+AISADOCS,Images & videos generation with Gemini 3 Pro Image + Qwen Wan 2.6 (video) via one API key,https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-llm-image-video,AISAAPI
+AISADOCS,Youtube Search and Tracking API,https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-youtube-search-tracking,AISAAPI
+AISADOCS,"Unified LLM Gateway - One API for 70+ AI models. Route to GPT, Claude, Gemini, Qwen, Deepseek, Grok and more",https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-llm-router,AISAAPI
+AISADOCS,"Save upto 50% for model tokens:  OpenAI GPT, Claude, Gemini, Qwen, Deepseek, Grok and more with one single key",https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-affordable-llm-model-tokens,AISAAPI
+AISADOCS,Generate images & videos with: Gemini 3 Pro Image (image) + Qwen Wan 2.6 (video) via one API key,https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-image-video-models-wan2-6-gemini-3-pro-image-nano-banana,AISAAPI
+AISADOCS,"Multi-source retrieval with confidence scoring - web, academic, and Tavily in one unified API",https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-search-website-academic-tavily-serp-exa,AISAAPI
+AISADOCS,"One API key for 70+ AI models. Route to GPT, Claude, Gemini, Qwen, Deepseek, Grok and more",https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-llm-gateway,AISAAPI
+AISAPAY,AIsa Media Gen,https://clawhub.ai/kn72abv2yp91hce9za0j31yycd80jxzv/aisa-media-gen,AISAAPI
+AISAPAY,AIsa Multi Source Search,https://clawhub.ai/kn72abv2yp91hce9za0j31yycd80jxzv/aisa-multi-source-search,AISAAPI
+AISAPAY,AIsa Twitter API (Search + Post),https://clawhub.ai/kn72abv2yp91hce9za0j31yycd80jxzv/aisa-twitter-api,AISAAPI
+AISAPAY,AIsa Youtube Search,https://clawhub.ai/kn72abv2yp91hce9za0j31yycd80jxzv/aisa-youtube-search,AISAAPI
+AISAPAY,AIsa Financial Data,https://clawhub.ai/kn72abv2yp91hce9za0j31yycd80jxzv/aisa-financial-data,AISAAPI
+AISAPAY,Financial Data,https://clawhub.ai/kn72abv2yp91hce9za0j31yycd80jxzv/financial-data,
+bibaofeng,预测市场数据,https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/prediction-market-data-zh,AISAAPI
+bibaofeng,预测市场套利,https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/prediction-market-arbitrage-zh,AISAAPI
+bibaofeng,Prediction Market Data,https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/prediction-market-data,AISAAPI
+bibaofeng,Prediction Market Arbitrage Api,https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/prediction-market-arbitrage-api,AISAAPI
+bowen-dotcom,Perplexity Search,https://clawhub.ai/kn74pdks0k3ghs09pk2axym55h80xn01/aisa-perplexity-search-skill,AISAAPI
+bowen-dotcom,AI Media Generation En,https://clawhub.ai/kn74pdks0k3ghs09pk2axym55h80xn01/aisa-media-gen-en-skill,AISAAPI
+bowen-dotcom,LLM Router Gateway,https://clawhub.ai/kn74pdks0k3ghs09pk2axym55h80xn01/aisa-llm-router-skill,AISAAPI
+bowen-dotcom,AI Media Generation,https://clawhub.ai/kn74pdks0k3ghs09pk2axym55h80xn01/aisa-media-gen-skill,AISAAPI
+bowen-dotcom,MarketPulse Financial Data,https://clawhub.ai/kn74pdks0k3ghs09pk2axym55h80xn01/aisa-market-skill,AISAAPI
+bowen-dotcom,"X/Twitter All-in-One: 30+ APIs, OAuth Post, One Key",https://clawhub.ai/kn74pdks0k3ghs09pk2axym55h80xn01/aisa-twitter-skill,AISAAPI
+bowen-dotcom,YouTube SERP Scout,https://clawhub.ai/kn74pdks0k3ghs09pk2axym55h80xn01/aisa-youtube-skill,AISAAPI
+bowen-dotcom,Intelligent Search Agent,https://clawhub.ai/kn74pdks0k3ghs09pk2axym55h80xn01/aisa-search-skill,AISAAPI
+chaimengphp,X Twitter Command Center (Search + Post + Interact),https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-twitter,AISAAPI
+chaimengphp,Find and analyze arbitrage opportunities across prediction markets like Polymarket and Kalshi,https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-prediction-market-arbitrage,AISAAPI
+chaimengphp,"Prediction markets data - Polymarket, Kalshi markets, prices, positions, and trades",https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-prediction-market,AISAAPI
+chaimengphp,Perplexity Sonar Search,https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/aisaclaw-perplexity-search,AISAAPI
+chaimengphp,Unified API for powerful image and video generation,https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-media-gen,AISAAPI
+chaimengphp,"One API key for 70+ AI models. Route to GPT, Claude, Gemini, Grok and more",https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-llm-gateway-route,AISAAPI
+chaimengphp,"One API key for Chinese AI models. Route to Qwen, Deepseek",https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-cn-llm,AISAAPI
+chaimengphp,MarketPulse (Stocks + Crypto Data),https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-market-pulse,AISAAPI
+chaimengphp,YouTube SERP Scout (Rank + Discover),https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-youtube-search,AISAAPI
+chaimengphp,Verified Research Engine (Web + Academic + Confidence Score),https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-search,AISAAPI
+chaimengphp,X Twitter Command Center (Search + Post),https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-twitter-search,AISAAPI
+karensheng,Prediction Markets Arbitrage,https://clawhub.ai/kn7091kqhak4t7mrx06be2c63n80hkmk/prediction-market-arb,AISAAPI
+karensheng,Prediction Market Data Aggregator,https://clawhub.ai/kn7091kqhak4t7mrx06be2c63n80hkmk/prediction-agg,AISAAPI
+karensheng,"Twitter Intelligence & Automation — Read, Search, Write & Post (Text & Media)",https://clawhub.ai/kn7091kqhak4t7mrx06be2c63n80hkmk/x-intelligence-automation,AISAAPI
