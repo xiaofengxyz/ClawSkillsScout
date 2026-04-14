@@ -8,6 +8,7 @@ export interface CatalogItem {
   description: string;
   version: string;
   clawhubUrl: string;
+  downloadUrl: string | null;
   downloads: number | null;
   stars: number | null;
   suspicious: boolean;
@@ -37,4 +38,24 @@ export interface CatalogData {
   notes: string[];
   stats: CatalogStats;
   items: CatalogItem[];
+}
+
+export interface OptimizedPackage {
+  owner: string;
+  slug: string;
+  name: string;
+  clawhubUrl: string | null;
+  suspiciousReason: string;
+  packageDir: string;
+  downloadPath: string;
+  verificationStatus: string;
+  retainedChecks: Array<{ file: string; exists: boolean }>;
+  removedChecks: Array<{ file: string; removed: boolean; existedInOriginal: boolean }>;
+  manualTestRequired: string[];
+  checklistPath: string;
+}
+
+export interface OptimizedPackageIndex {
+  generatedAt: string;
+  items: OptimizedPackage[];
 }

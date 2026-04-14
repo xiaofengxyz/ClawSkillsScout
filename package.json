@@ -9,6 +9,12 @@
     "build": "npm run scrape && vite build",
     "preview": "vite preview",
     "scrape": "node --import tsx scripts/scrape-clawhub.ts",
+    "build:source-optimized": "node scripts/build-source-optimized-packages.mjs",
+    "package:source-optimized": "node scripts/package-source-optimized.mjs",
+    "verify:source-optimized": "node scripts/verify-source-optimized.mjs",
+    "live-test:source-optimized": "node scripts/live-test-source-optimized.mjs",
+    "publish:optimized-downloads": "node scripts/publish-optimized-downloads.mjs",
+    "download:suspicious-zips": "node scripts/download-suspicious-zips.mjs",
     "typecheck": "tsc --noEmit",
     "deploy:server": "bash deploy/deploy-server.sh"
   },

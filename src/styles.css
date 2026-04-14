@@ -304,6 +304,68 @@ select:focus {
   background: rgba(87, 123, 150, 0.1);
 }
 
+.item-release {
+  display: grid;
+  gap: 8px;
+  padding: 12px;
+  border-radius: 16px;
+  background: rgba(90, 153, 118, 0.1);
+}
+
+.item-release-title {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--mint);
+}
+
+.item-release-copy,
+.item-release-notes {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.item-release-notes {
+  display: grid;
+  gap: 6px;
+}
+
+.item-release-notes div {
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.56);
+}
+
+.item-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.item-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.item-action-primary {
+  background: var(--ink);
+  color: #fffaf1;
+}
+
+.item-action-secondary {
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.74);
+}
+
 @media (max-width: 980px) {
   .hero,
   .controls,

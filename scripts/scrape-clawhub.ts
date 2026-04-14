@@ -14,6 +14,7 @@ interface CatalogItem {
   description: string;
   version: string;
   clawhubUrl: string;
+  downloadUrl: string | null;
   downloads: number | null;
   stars: number | null;
   suspicious: boolean;
@@ -132,6 +133,27 @@ function extractReadme(html: string): string {
   const readmeMatch = html.match(/readme:"((?:[^"\\]|\\.)*)",readmeError/s);
   if (!readmeMatch) return '';
   return decodeJsString(readmeMatch[1]);
+}
+
+function extractDownloadUrl(html: string): string | null {
+  const $ = cheerio.load(html);
+  const anchor = $('a')
+    .filter((_, element) => cleanText($(element).text()).toLowerCase() === 'download zip')
+    .first();
+  const href = anchor.attr('href');
+  if (href) return href;
+
+  const regexes = [
+    /href="(https:\/\/[^"]+\/api\/v1\/download\?slug=[^"]+)"/i,
+    /"(https:\/\/[^"]+\/api\/v1\/download\?slug=[^"]+)"/i,
+  ];
+
+  for (const regex of regexes) {
+    const match = html.match(regex);
+    if (match?.[1]) return match[1];
+  }
+
+  return null;
 }
 
 function extractSuspiciousReason(html: string): string {
@@ -397,6 +419,7 @@ function parseDetailPage(html: string, url: string, source: DiscoverySource): Ca
     extractTextGroup(/version:"([^"]+)"/, html) ||
     extractTextGroup(/latestVersion:"([^"]+)"/, html) ||
     'unknown';
+  const downloadUrl = extractDownloadUrl(html);
 
   const downloads =
     extractNumber(/stats:\$R\[\d+\]={comments:\d+,downloads:(\d+)/, html) ??
@@ -425,6 +448,7 @@ function parseDetailPage(html: string, url: string, source: DiscoverySource): Ca
     description,
     version,
     clawhubUrl: url,
+    downloadUrl,
     downloads,
     stars,
     suspicious,
@@ -687,6 +711,7 @@ async function main() {
       'Plugin discovery uses public catalog pages, manual known-plugin seeds, and heuristic plugin slug guesses derived from AISA skills.',
       'Global discovery currently scans the first 3 pages of ClawHub skills and plugins.',
       'Suspicious status is inferred from rendered security scan output.',
+      'Original skill download links are extracted from "Download zip" buttons when the detail page exposes them.',
     ],
     stats: buildStats(items),
     items,

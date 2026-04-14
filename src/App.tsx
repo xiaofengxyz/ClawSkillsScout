@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState, type ReactNode } from 'react';
 import { format } from 'date-fns';
 import { AlertTriangle, Download, Layers, Package2, Search, ShieldAlert, Star } from 'lucide-react';
 import clsx from 'clsx';
-import type { CatalogData, CatalogItem } from './types';
+import type { CatalogData, CatalogItem, OptimizedPackage, OptimizedPackageIndex } from './types';
 
 type FilterType = 'all' | 'skill' | 'plugin';
 type FilterFlag = 'all' | 'aisa' | 'suspicious';
@@ -29,9 +29,11 @@ function StatCard({
   );
 }
 
-function ItemCard({ item }: { item: CatalogItem }) {
+function ItemCard({ item, optimizedPackage }: { item: CatalogItem; optimizedPackage?: OptimizedPackage }) {
+  const staticChecksPassed = optimizedPackage?.verificationStatus === 'static_checks_passed';
+
   return (
-    <a className="item-card" href={item.clawhubUrl} target="_blank" rel="noreferrer">
+    <article className="item-card">
       <div className="item-topline">
         <span className={clsx('pill', item.type === 'plugin' ? 'pill-plugin' : 'pill-skill')}>
           {item.type}
@@ -61,13 +63,56 @@ function ItemCard({ item }: { item: CatalogItem }) {
           ))}
         </div>
       ) : null}
+      {optimizedPackage ? (
+        <div className="item-release">
+          <div className="item-release-title">Optimized release</div>
+          <div className="item-release-copy">
+            Runtime-preserving release bundle built from the original ClawHub zip, with suspicious-risk trimming kept to non-runtime packaging and docs.
+          </div>
+          <div className="item-release-notes">
+            <div>Automated checks: {staticChecksPassed ? 'passed' : optimizedPackage.verificationStatus}</div>
+            <div>Live checks pending: {optimizedPackage.manualTestRequired.join(', ') || 'none'}</div>
+            <div>Scope: help/CLI parsing, file retention/removal, Python compile, package structure</div>
+          </div>
+        </div>
+      ) : null}
       {item.readmeSnippet ? <pre>{item.readmeSnippet}</pre> : null}
-    </a>
+      <div className="item-actions">
+        <a className="item-action item-action-secondary" href={item.clawhubUrl} target="_blank" rel="noreferrer">
+          View ClawHub
+        </a>
+        {item.downloadUrl ? (
+          <a className="item-action item-action-primary" href={item.downloadUrl} target="_blank" rel="noreferrer">
+            Original zip
+          </a>
+        ) : null}
+        {optimizedPackage ? (
+          <a
+            className="item-action item-action-primary"
+            href={`${import.meta.env.BASE_URL}${optimizedPackage.downloadPath}`}
+            download
+          >
+            Optimized release
+          </a>
+        ) : null}
+        {optimizedPackage ? (
+          <a
+            className="item-action item-action-secondary"
+            href={`${import.meta.env.BASE_URL}${optimizedPackage.checklistPath}`}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Checklist
+          </a>
+        ) : null}
+      </div>
+    </article>
   );
 }
 
 export default function App() {
   const [data, setData] = useState<CatalogData | null>(null);
+  const [optimized, setOptimized] = useState<OptimizedPackageIndex | null>(null);
   const [query, setQuery] = useState('');
   const [typeFilter, setTypeFilter] = useState<FilterType>('all');
   const [flagFilter, setFlagFilter] = useState<FilterFlag>('aisa');
@@ -80,7 +125,19 @@ export default function App() {
       .catch((error) => {
         console.error('Failed to load catalog data', error);
       });
+
+    fetch(`${import.meta.env.BASE_URL}data/optimized-packages.json`)
+      .then((response) => response.json())
+      .then((json: OptimizedPackageIndex) => setOptimized(json))
+      .catch((error) => {
+        console.error('Failed to load optimized package index', error);
+      });
   }, []);
+
+  const optimizedByUrl = useMemo(() => {
+    const entries = optimized?.items ?? [];
+    return new Map(entries.filter((item) => item.clawhubUrl).map((item) => [item.clawhubUrl as string, item]));
+  }, [optimized]);
 
   const ownersWithAisa = useMemo(() => {
     if (!data) return [];
@@ -181,11 +238,14 @@ export default function App() {
           </div>
         ))}
         <div className="note">Display rule: only AISA-using accounts are listed; non-AISA items stay in the dataset.</div>
+        <div className="note">
+          Optimized releases passed automated static verification. Live API, OAuth, post, and engagement checks still require valid credentials and manual authorization.
+        </div>
       </section>
 
       <section className="grid">
         {filteredItems.map((item) => (
-          <ItemCard key={item.id} item={item} />
+          <ItemCard key={item.id} item={item} optimizedPackage={optimizedByUrl.get(item.clawhubUrl)} />
         ))}
       </section>
     </main>

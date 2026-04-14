@@ -2,3 +2,14 @@ node_modules
 dist
 logs
 .DS_Store
+
+# Generated validation and packaging artifacts
+artifacts/
+
+# Generated public download/index outputs for optimized packages
+public/downloads/optimized/
+public/data/optimized-packages.json
+
+# Python cache files inside package worktrees
+__pycache__/
+*.pyc
