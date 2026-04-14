@@ -210,6 +210,8 @@ function parseOwnerProfilePage(html: string, owner: string) {
 function parseDetailPage(html: string, url: string, source: DiscoverySource): CatalogItem {
   const type = inferTypeFromUrl(url);
   const owner =
+    extractTextGroup(/owner:\$R\[\d+\]={handle:"([^"]+)"/, html) ||
+    extractTextGroup(/owner:\{handle:"([^"]+)"/, html) ||
     extractTextGroup(/owner:"([^"]+)"/, html) ||
     extractTextGroup(/ownerHandle:"([^"]+)"/, html) ||
     (type === 'plugin'
@@ -290,6 +292,16 @@ async function readSeedItems(): Promise<SeedItem[]> {
     } catch {
       // Seed file is optional.
     }
+  }
+
+  try {
+    const manualSeedsPath = path.join(process.cwd(), 'config', 'manual-seeds.json');
+    const manualSeeds = JSON.parse(await fs.readFile(manualSeedsPath, 'utf8')) as SeedItem[];
+    for (const seed of manualSeeds) {
+      items.set(seed.url, seed);
+    }
+  } catch {
+    // Manual seeds are optional.
   }
 
   return [...items.values()];
