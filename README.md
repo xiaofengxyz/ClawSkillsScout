@@ -36,8 +36,11 @@ npm run build
 - GitHub Pages is configured by `.github/workflows/deploy.yml`
 - Server-side rebuild helper lives in `deploy/deploy-server.sh`
 - Daily refresh is triggered by the scheduled GitHub Action
+- Cron template for server deployment lives in `deploy/clawskillsscout.cron`
+- Full deployment instructions live in `docs/DEPLOYMENT.md`
 
 ## Notes
 
 - AISA detection is heuristic and currently checks rendered page content and extracted README text.
+- Known-account skill discovery now prioritizes real hash links extracted from `/u/{account}` pages, matching the logic used in `extract_all_skills_correct.py`.
 - Global traversal currently scans the first few public catalog pages. This can be extended after we verify pagination behavior and possible hidden APIs.

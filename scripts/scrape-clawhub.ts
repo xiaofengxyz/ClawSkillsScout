@@ -4,6 +4,7 @@ import * as cheerio from 'cheerio';
 import pLimit from 'p-limit';
 
 type ItemType = 'skill' | 'plugin';
+type DiscoverySource = 'account' | 'catalog';
 
 interface CatalogItem {
   id: string;
@@ -17,7 +18,7 @@ interface CatalogItem {
   suspicious: boolean;
   suspiciousLabel: string | null;
   usesAisaApi: boolean;
-  source: 'account' | 'catalog';
+  source: DiscoverySource;
   tags: string[];
   lastCheckedAt: string;
   readmeSnippet: string;
@@ -41,7 +42,7 @@ interface CatalogData {
 
 interface SeedItem {
   url: string;
-  source: 'account' | 'catalog';
+  source: DiscoverySource;
   type?: ItemType;
   owner?: string;
   name?: string;
@@ -52,7 +53,9 @@ interface SeedItem {
 const BASE_URL = 'https://clawhub.ai';
 const USER_AGENT = 'Mozilla/5.0 (compatible; ClawSkillsScout/1.0; +https://github.com/xiaofengxyz/ClawSkillsScout)';
 const CONCURRENCY = 6;
-const ACCOUNT_PAGES = ['', '/skills', '/plugins'];
+const OWNER_DISCOVERY_PATH = '';
+const HASH_SKILL_PATH = /^\/[a-z0-9]{32,}\/[a-z0-9-]+$/i;
+const PLUGIN_PATH = /^\/plugins\/[^/]+$/i;
 
 function toAbsoluteUrl(href: string): string {
   return href.startsWith('http') ? href : `${BASE_URL}${href}`;
@@ -170,7 +173,41 @@ function parseListPage(html: string, typeHint?: ItemType) {
   return items;
 }
 
-function parseDetailPage(html: string, url: string, source: 'account' | 'catalog'): CatalogItem {
+function parseOwnerProfilePage(html: string, owner: string) {
+  const $ = cheerio.load(html);
+  const items: Array<{ href: string; owner: string; type: ItemType; name: string }> = [];
+
+  $('a[href]').each((_, element) => {
+    const rawHref = ($(element).attr('href') ?? '').trim();
+    if (!rawHref) return;
+
+    const name = cleanText($(element).find('h3').first().text());
+    if (!name) return;
+
+    if (HASH_SKILL_PATH.test(rawHref)) {
+      items.push({
+        href: rawHref,
+        owner,
+        type: 'skill',
+        name,
+      });
+      return;
+    }
+
+    if (PLUGIN_PATH.test(rawHref)) {
+      items.push({
+        href: rawHref,
+        owner,
+        type: 'plugin',
+        name,
+      });
+    }
+  });
+
+  return items;
+}
+
+function parseDetailPage(html: string, url: string, source: DiscoverySource): CatalogItem {
   const type = inferTypeFromUrl(url);
   const owner =
     extractTextGroup(/owner:"([^"]+)"/, html) ||
@@ -260,16 +297,16 @@ async function readSeedItems(): Promise<SeedItem[]> {
 
 async function scrapeOwner(owner: string) {
   const discovered = new Map<string, { href: string; type: ItemType; owner: string }>();
-  for (const pagePath of ACCOUNT_PAGES) {
-    try {
-      const html = await fetchHtml(`${BASE_URL}/u/${owner}${pagePath}`);
-      for (const item of parseListPage(html)) {
-        discovered.set(item.href, { href: item.href, type: item.type, owner: item.owner || owner });
-      }
-    } catch (error) {
-      console.warn(`Skipping owner page ${owner}${pagePath}:`, error);
+
+  try {
+    const html = await fetchHtml(`${BASE_URL}/u/${owner}${OWNER_DISCOVERY_PATH}`);
+    for (const item of parseOwnerProfilePage(html, owner)) {
+      discovered.set(item.href, { href: item.href, type: item.type, owner: item.owner || owner });
     }
+  } catch (error) {
+    console.warn(`Skipping owner profile ${owner}:`, error);
   }
+
   return [...discovered.values()].map((item) => ({
     url: toAbsoluteUrl(item.href),
     source: 'account' as const,
@@ -312,7 +349,7 @@ async function main() {
   const catalogSkills = await scrapeCatalog('skill');
   const catalogPlugins = await scrapeCatalog('plugin');
 
-  const queue = new Map<string, { url: string; source: 'account' | 'catalog' }>();
+  const queue = new Map<string, { url: string; source: DiscoverySource }>();
   for (const item of [...seedItems, ...accountItems, ...catalogSkills, ...catalogPlugins]) {
     queue.set(item.url, item);
   }
@@ -355,12 +392,12 @@ async function main() {
     generatedAt: new Date().toISOString(),
     scannedAccounts: accounts,
     sources: [
-      `${BASE_URL}/u/{account}/skills`,
-      `${BASE_URL}/u/{account}/plugins`,
+      `${BASE_URL}/u/{account}`,
       `${BASE_URL}/skills`,
       `${BASE_URL}/plugins`,
     ],
     notes: [
+      'Known-account skill discovery reads hash links from /u/{account} profile pages, then follows those detail URLs.',
       'AISA detection is inferred from README and rendered page content.',
       'Global discovery currently scans the first 3 pages of ClawHub skills and plugins.',
       'Suspicious status is inferred from rendered security scan output.',

@@ -1,0 +1,5 @@
+SHELL=/bin/bash
+PATH=/usr/local/bin:/usr/bin:/bin
+
+# Refresh Claw Skills Scout every day at 10:20 Asia/Shanghai server-local time.
+20 10 * * * cd /opt/ClawSkillsScout && /bin/bash deploy/deploy-server.sh >> logs/cron.log 2>&1
