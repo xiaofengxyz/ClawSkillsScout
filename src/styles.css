@@ -281,6 +281,29 @@ select:focus {
   white-space: pre-wrap;
 }
 
+.item-warning {
+  padding: 12px;
+  border-radius: 14px;
+  background: rgba(186, 91, 69, 0.1);
+  color: #7b3b2f;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.item-advice {
+  display: grid;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.item-advice div {
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(87, 123, 150, 0.1);
+}
+
 @media (max-width: 980px) {
   .hero,
   .controls,

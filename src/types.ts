@@ -9,8 +9,11 @@ export interface CatalogItem {
   version: string;
   clawhubUrl: string;
   downloads: number | null;
+  stars: number | null;
   suspicious: boolean;
   suspiciousLabel: string | null;
+  suspiciousReason: string;
+  optimizationAdvice: string[];
   usesAisaApi: boolean;
   source: 'account' | 'catalog';
   tags: string[];

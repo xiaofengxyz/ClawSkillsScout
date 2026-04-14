@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState, type ReactNode } from 'react';
 import { format } from 'date-fns';
-import { AlertTriangle, Download, Layers, Package2, Search, ShieldAlert } from 'lucide-react';
+import { AlertTriangle, Download, Layers, Package2, Search, ShieldAlert, Star } from 'lucide-react';
 import clsx from 'clsx';
 import type { CatalogData, CatalogItem } from './types';
 
@@ -48,7 +48,19 @@ function ItemCard({ item }: { item: CatalogItem }) {
           <Download size={14} />
           {item.downloads ?? 'n/a'}
         </span>
+        <span>
+          <Star size={14} />
+          {item.stars ?? 'n/a'}
+        </span>
       </div>
+      {item.suspiciousReason ? <div className="item-warning">{item.suspiciousReason}</div> : null}
+      {item.optimizationAdvice.length > 0 ? (
+        <div className="item-advice">
+          {item.optimizationAdvice.slice(0, 2).map((advice) => (
+            <div key={advice}>{advice}</div>
+          ))}
+        </div>
+      ) : null}
       {item.readmeSnippet ? <pre>{item.readmeSnippet}</pre> : null}
     </a>
   );

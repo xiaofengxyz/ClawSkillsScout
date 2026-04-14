@@ -15,8 +15,11 @@ interface CatalogItem {
   version: string;
   clawhubUrl: string;
   downloads: number | null;
+  stars: number | null;
   suspicious: boolean;
   suspiciousLabel: string | null;
+  suspiciousReason: string;
+  optimizationAdvice: string[];
   usesAisaApi: boolean;
   source: DiscoverySource;
   tags: string[];
@@ -131,6 +134,49 @@ function extractReadme(html: string): string {
   return decodeJsString(readmeMatch[1]);
 }
 
+function extractSuspiciousReason(html: string): string {
+  const patterns = [
+    /status:"(?:suspicious|malicious)".{0,800}?summary:"((?:[^"\\]|\\.)*)"/is,
+    /scan-status-suspicious[\s\S]{0,800}?analysis-summary-text">([^<]+)</is,
+    /What to consider before installing<\/div>([^<]+)/is,
+  ];
+
+  for (const pattern of patterns) {
+    const match = html.match(pattern);
+    if (match?.[1]) {
+      return cleanText(decodeJsString(match[1]));
+    }
+  }
+
+  return '';
+}
+
+function buildOptimizationAdvice(readme: string, suspiciousReason: string, usesAisaApi: boolean): string[] {
+  const advice = new Set<string>();
+  const combined = `${readme}\n${suspiciousReason}`.toLowerCase();
+
+  if (!/use when:|触发条件：/i.test(readme)) {
+    advice.add('Use clawhub-skill-optimizer: add a frontmatter description with explicit "Use when:" trigger wording.');
+  }
+  if (!/##\s+when to use|##\s+什么时候使用/i.test(readme)) {
+    advice.add('Use clawhub-skill-optimizer: add a "When to use" section with 3-5 concrete invocation scenarios.');
+  }
+  if (/provenance|homepage|source-linked|metadata mismatch|version differences|owner identity|canonical homepage/i.test(combined)) {
+    advice.add('Align metadata, homepage, source repo, and published version so ClawHub scanner sees consistent provenance.');
+  }
+  if (usesAisaApi) {
+    advice.add('Keep the package AISA-only: declare only AISA env vars, document the exact API scope, and remove legacy credential paths.');
+  }
+  if (/third-party api|queries and their parameters will be sent|all network traffic is directed/i.test(combined)) {
+    advice.add('State network destinations and data flow clearly in SKILL.md so the scanner can match behavior to description.');
+  }
+  if (/suspicious|risk|caution|provenance red flags/i.test(combined)) {
+    advice.add('Minimize the release bundle to runtime files, SKILL.md, and essential metadata; remove packaging/debug helpers.');
+  }
+
+  return [...advice];
+}
+
 function extractFrontmatterName(readme: string): string {
   const match = readme.match(/(?:^---\s*[\s\S]*?\n)?name:\s*["']?([A-Za-z0-9._-]+)["']?/im);
   return cleanText(match?.[1]);
@@ -241,6 +287,9 @@ function parseDetailPage(html: string, url: string, source: DiscoverySource): Ca
   const downloads =
     extractNumber(/stats:\$R\[\d+\]={comments:\d+,downloads:(\d+)/, html) ??
     extractNumber(/"downloads":\s*(\d+)/, html);
+  const stars =
+    extractNumber(/stats:\$R\[\d+\]={comments:\d+,downloads:\d+,installsAllTime:\d+,installsCurrent:\d+,stars:(\d+)/, html) ??
+    extractNumber(/stars:(\d+)/, html);
 
   const suspiciousLabel =
     extractTextGroup(/status:"(suspicious|malicious|safe|warning)"/i, html) ||
@@ -248,6 +297,8 @@ function parseDetailPage(html: string, url: string, source: DiscoverySource): Ca
     null;
   const suspicious = suspiciousLabel === 'suspicious' || suspiciousLabel === 'malicious';
   const readme = extractReadme(html);
+  const suspiciousReason = extractSuspiciousReason(html);
+  const optimizationAdvice = buildOptimizationAdvice(readme, suspiciousReason, /AISA_API_KEY|aisa api key|api\.aisa\.one|marketplace\.aisa\.one/i.test(`${html}\n${readme}`));
   const usesAisaApi = /AISA_API_KEY|aisa api key|api\.aisa\.one|marketplace\.aisa\.one/i.test(`${html}\n${readme}`);
   const tags = [...new Set([...(usesAisaApi ? ['aisa'] : []), ...(suspicious ? ['suspicious'] : []), type])];
   const readmeSnippet = cleanText(readme).slice(0, 320);
@@ -261,8 +312,11 @@ function parseDetailPage(html: string, url: string, source: DiscoverySource): Ca
     version,
     clawhubUrl: url,
     downloads,
+    stars,
     suspicious,
     suspiciousLabel,
+    suspiciousReason,
+    optimizationAdvice,
     usesAisaApi,
     source,
     tags,
