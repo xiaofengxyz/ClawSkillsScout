@@ -48,6 +48,7 @@ interface SeedItem {
   name?: string;
   description?: string;
   downloads?: number | null;
+  heuristic?: boolean;
 }
 
 const BASE_URL = 'https://clawhub.ai';
@@ -128,6 +129,11 @@ function extractReadme(html: string): string {
   const readmeMatch = html.match(/readme:"((?:[^"\\]|\\.)*)",readmeError/s);
   if (!readmeMatch) return '';
   return decodeJsString(readmeMatch[1]);
+}
+
+function extractFrontmatterName(readme: string): string {
+  const match = readme.match(/(?:^---\s*[\s\S]*?\n)?name:\s*["']?([A-Za-z0-9._-]+)["']?/im);
+  return cleanText(match?.[1]);
 }
 
 function inferTypeFromUrl(url: string): ItemType {
@@ -356,6 +362,54 @@ function filterToAisaOwnerUniverse(items: CatalogItem[]) {
   return items.filter((item) => aisaOwners.has(item.owner));
 }
 
+function extractSlugFromUrl(url: string): string {
+  const parts = url.split('/').filter(Boolean);
+  return parts[parts.length - 1] ?? '';
+}
+
+function slugVariants(slug: string, readmeName: string): string[] {
+  const variants = new Set<string>();
+  const normalized = [slug, readmeName]
+    .map((value) => value.trim().toLowerCase())
+    .filter(Boolean);
+
+  for (const base of normalized) {
+    variants.add(base);
+    variants.add(base.replace(/^openclaw-aisa-/, ''));
+    variants.add(base.replace(/^openclaw-/, ''));
+    variants.add(base.replace(/^aisa-/, ''));
+    variants.add(base.replace(/-api$/, ''));
+    variants.add(base.replace(/-data$/, ''));
+  }
+
+  return [...variants].filter((value) => /^[a-z0-9-]+$/.test(value));
+}
+
+function buildHeuristicPluginSeeds(items: CatalogItem[]): SeedItem[] {
+  const heuristics = new Map<string, SeedItem>();
+
+  for (const item of items) {
+    if (item.type !== 'skill' || !item.usesAisaApi) continue;
+
+    const slug = extractSlugFromUrl(item.clawhubUrl);
+    const readmeName = extractFrontmatterName(item.readmeSnippet);
+
+    for (const variant of slugVariants(slug, readmeName)) {
+      const url = `${BASE_URL}/plugins/%40clawhub%2F${variant}`;
+      heuristics.set(url, {
+        url,
+        source: 'catalog',
+        type: 'plugin',
+        owner: item.owner,
+        name: variant,
+        heuristic: true,
+      });
+    }
+  }
+
+  return [...heuristics.values()];
+}
+
 async function main() {
   const accountsPath = path.join(process.cwd(), 'config', 'accounts.json');
   const outputPath = path.join(process.cwd(), 'public', 'data', 'catalog.json');
@@ -405,7 +459,42 @@ async function main() {
       return (right.downloads ?? -1) - (left.downloads ?? -1);
     });
 
-  const items = filterToAisaOwnerUniverse(allItems);
+  const heuristicSeeds = buildHeuristicPluginSeeds(allItems);
+  const parsedUrls = new Set(allItems.map((item) => item.clawhubUrl));
+  const heuristicResults = (
+    await Promise.all(
+      heuristicSeeds
+        .filter((seed) => !parsedUrls.has(seed.url))
+        .map((seed) =>
+          limit(async () => {
+            try {
+              const html = await fetchHtml(seed.url);
+              const parsed = parseDetailPage(html, seed.url, seed.source);
+              if (!parsed.usesAisaApi) return null;
+              const pluginItem: CatalogItem = {
+                ...parsed,
+                type: 'plugin',
+                owner: parsed.owner || seed.owner || 'unknown',
+                name: parsed.name !== 'Unknown' ? parsed.name : seed.name || parsed.name,
+              };
+              return pluginItem;
+            } catch {
+              return null;
+            }
+          }),
+        ),
+    )
+  );
+
+  const heuristicItems = heuristicResults.filter((value): value is CatalogItem => value !== null);
+
+  const mergedItems = [...allItems, ...heuristicItems].sort((left, right) => {
+    const score = Number(right.usesAisaApi) - Number(left.usesAisaApi);
+    if (score !== 0) return score;
+    return (right.downloads ?? -1) - (left.downloads ?? -1);
+  });
+
+  const items = filterToAisaOwnerUniverse(mergedItems);
   const aisaOwners = [...new Set(items.filter((item) => item.usesAisaApi).map((item) => item.owner))].sort((a, b) =>
     a.localeCompare(b),
   );
@@ -423,6 +512,7 @@ async function main() {
       'The exported dataset is pruned to owners that publish at least one AISA-using skill or plugin.',
       'Within AISA-owner accounts, non-AISA items are retained in the dataset for context.',
       'AISA detection is inferred from README and rendered page content.',
+      'Plugin discovery uses public catalog pages, manual known-plugin seeds, and heuristic plugin slug guesses derived from AISA skills.',
       'Global discovery currently scans the first 3 pages of ClawHub skills and plugins.',
       'Suspicious status is inferred from rendered security scan output.',
     ],

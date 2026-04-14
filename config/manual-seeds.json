@@ -5,5 +5,33 @@
     "type": "plugin",
     "owner": "bibaofeng",
     "name": "Prediction Market Arbitrage"
+  },
+  {
+    "url": "https://clawhub.ai/plugins/%40clawhub%2Faisa-twitter-api",
+    "source": "catalog",
+    "type": "plugin",
+    "owner": "bibaofeng",
+    "name": "Aisa Twitter Api"
+  },
+  {
+    "url": "https://clawhub.ai/plugins/%40clawhub%2Fprediction-market",
+    "source": "catalog",
+    "type": "plugin",
+    "owner": "bibaofeng",
+    "name": "Prediction Market"
+  },
+  {
+    "url": "https://clawhub.ai/plugins/%40clawhub%2Fprediction-market-zh",
+    "source": "catalog",
+    "type": "plugin",
+    "owner": "bibaofeng",
+    "name": "Prediction Market Zh"
+  },
+  {
+    "url": "https://clawhub.ai/plugins/%40clawhub%2Fprediction-market-arbitrage-zh",
+    "source": "catalog",
+    "type": "plugin",
+    "owner": "bibaofeng",
+    "name": "Prediction Market Arbitrage Zh"
   }
 ]
