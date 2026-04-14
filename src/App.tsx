@@ -58,7 +58,7 @@ export default function App() {
   const [data, setData] = useState<CatalogData | null>(null);
   const [query, setQuery] = useState('');
   const [typeFilter, setTypeFilter] = useState<FilterType>('all');
-  const [flagFilter, setFlagFilter] = useState<FilterFlag>('all');
+  const [flagFilter, setFlagFilter] = useState<FilterFlag>('aisa');
   const [ownerFilter, setOwnerFilter] = useState('all');
 
   useEffect(() => {
@@ -70,15 +70,23 @@ export default function App() {
       });
   }, []);
 
-  const owners = useMemo(() => {
+  const ownersWithAisa = useMemo(() => {
     if (!data) return [];
-    return [...new Set(data.items.map((item) => item.owner))].sort((a, b) => a.localeCompare(b));
+    return [...new Set(data.items.filter((item) => item.usesAisaApi).map((item) => item.owner))].sort((a, b) =>
+      a.localeCompare(b),
+    );
   }, [data]);
+
+  const visibleBaseItems = useMemo(() => {
+    if (!data) return [];
+    const aisaOwners = new Set(ownersWithAisa);
+    return data.items.filter((item) => aisaOwners.has(item.owner));
+  }, [data, ownersWithAisa]);
 
   const filteredItems = useMemo(() => {
     if (!data) return [];
     const normalizedQuery = query.trim().toLowerCase();
-    return data.items.filter((item) => {
+    return visibleBaseItems.filter((item) => {
       if (typeFilter !== 'all' && item.type !== typeFilter) return false;
       if (flagFilter === 'aisa' && !item.usesAisaApi) return false;
       if (flagFilter === 'suspicious' && !item.suspicious) return false;
@@ -87,7 +95,18 @@ export default function App() {
       const haystack = `${item.name} ${item.description} ${item.owner} ${item.tags.join(' ')}`.toLowerCase();
       return haystack.includes(normalizedQuery);
     });
-  }, [data, flagFilter, ownerFilter, query, typeFilter]);
+  }, [data, flagFilter, ownerFilter, query, typeFilter, visibleBaseItems]);
+
+  const visibleStats = useMemo(() => {
+    const ownerSet = new Set(filteredItems.map((item) => item.owner));
+    return {
+      total: filteredItems.length,
+      plugins: filteredItems.filter((item) => item.type === 'plugin').length,
+      aisa: filteredItems.filter((item) => item.usesAisaApi).length,
+      suspicious: filteredItems.filter((item) => item.suspicious).length,
+      owners: ownerSet.size,
+    };
+  }, [filteredItems]);
 
   if (!data) {
     return <main className="shell loading">Loading latest ClawHub snapshot...</main>;
@@ -100,20 +119,21 @@ export default function App() {
           <span className="eyebrow">ClawHub intelligence</span>
           <h1>Claw Skills Scout</h1>
           <p>
-            A daily-updated tracker for ClawHub skills and plugins, focused on AISA API usage,
-            suspicious scan results, and publisher discovery.
+            A daily-updated tracker for ClawHub skills and plugins, focused on accounts that
+            actually publish AISA API integrations. Non-AISA items are retained in data but hidden
+            by default.
           </p>
           <div className="hero-meta">
             <span>Updated {format(new Date(data.generatedAt), 'yyyy-MM-dd HH:mm')}</span>
-            <span>{data.scannedAccounts.length} tracked accounts</span>
+            <span>{ownersWithAisa.length} AISA accounts</span>
             <span>{filteredItems.length} visible items</span>
           </div>
         </div>
         <div className="hero-panel">
-          <StatCard icon={<Layers size={20} />} label="Tracked items" value={data.stats.total} tone="sand" />
-          <StatCard icon={<Package2 size={20} />} label="Plugins" value={data.stats.plugins} tone="sky" />
-          <StatCard icon={<ShieldAlert size={20} />} label="AISA API" value={data.stats.aisa} tone="mint" />
-          <StatCard icon={<AlertTriangle size={20} />} label="Suspicious" value={data.stats.suspicious} tone="ember" />
+          <StatCard icon={<Layers size={20} />} label="Visible items" value={visibleStats.total} tone="sand" />
+          <StatCard icon={<Package2 size={20} />} label="Visible plugins" value={visibleStats.plugins} tone="sky" />
+          <StatCard icon={<ShieldAlert size={20} />} label="AISA API" value={visibleStats.aisa} tone="mint" />
+          <StatCard icon={<AlertTriangle size={20} />} label="Suspicious" value={visibleStats.suspicious} tone="ember" />
         </div>
       </section>
 
@@ -128,13 +148,13 @@ export default function App() {
           <option value="plugin">Plugins</option>
         </select>
         <select value={flagFilter} onChange={(event) => setFlagFilter(event.target.value as FilterFlag)}>
-          <option value="all">All flags</option>
           <option value="aisa">AISA API only</option>
+          <option value="all">All items from AISA owners</option>
           <option value="suspicious">Suspicious only</option>
         </select>
         <select value={ownerFilter} onChange={(event) => setOwnerFilter(event.target.value)}>
-          <option value="all">All owners</option>
-          {owners.map((owner) => (
+          <option value="all">All AISA owners</option>
+          {ownersWithAisa.map((owner) => (
             <option key={owner} value={owner}>
               @{owner}
             </option>
@@ -148,6 +168,7 @@ export default function App() {
             {note}
           </div>
         ))}
+        <div className="note">Display rule: only AISA-using accounts are listed; non-AISA items stay in the dataset.</div>
       </section>
 
       <section className="grid">
