@@ -182,6 +182,115 @@ function extractFrontmatterName(readme: string): string {
   return cleanText(match?.[1]);
 }
 
+function slugifyName(value: string): string {
+  return value
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .replace(/--+/g, '-')
+    .slice(0, 64);
+}
+
+function splitFrontmatter(readme: string): { frontmatter: string; body: string } {
+  const match = readme.match(/^---\n([\s\S]*?)\n---\n?([\s\S]*)$/);
+  if (!match) {
+    return { frontmatter: '', body: readme.trim() };
+  }
+  return { frontmatter: match[1].trim(), body: match[2].trim() };
+}
+
+function getFrontmatterValue(frontmatter: string, key: string): string {
+  const match = frontmatter.match(new RegExp(`^${key}:\\s*(.+)$`, 'im'));
+  return cleanText(match?.[1]?.replace(/^["']|["']$/g, ''));
+}
+
+function inferUseWhen(item: CatalogItem): string {
+  const lower = `${item.name} ${item.description}`.toLowerCase();
+  if (/twitter|x\//.test(lower)) return 'user asks to search, monitor, or publish on X/Twitter';
+  if (/youtube/.test(lower)) return 'user asks to search YouTube videos, channels, or trends';
+  if (/prediction market|polymarket|kalshi|arbitrage/.test(lower)) return 'user asks about prediction market data or arbitrage opportunities';
+  if (/image|video|media gen/.test(lower)) return 'user asks to generate images or videos';
+  if (/search|tavily|research/.test(lower)) return 'user asks for web search or multi-source retrieval';
+  if (/finance|stock|market/.test(lower)) return 'user asks for market data, prices, or financial analysis';
+  return 'the skill is the most specific match for the requested task';
+}
+
+function inferCapabilities(item: CatalogItem): string {
+  const lower = `${item.name} ${item.description}`.toLowerCase();
+  if (/twitter|x\//.test(lower)) return 'search, posting, and relay-based automation';
+  if (/youtube/.test(lower)) return 'video search, channel lookup, and trend discovery';
+  if (/prediction market|polymarket|kalshi|arbitrage/.test(lower)) return 'market queries, pricing, and arbitrage analysis';
+  if (/image|video|media gen/.test(lower)) return 'image generation, video generation, and media workflows';
+  if (/search|tavily|research/.test(lower)) return 'search, retrieval, and ranked result summaries';
+  if (/finance|stock|market/.test(lower)) return 'market data, prices, and analytical lookups';
+  return 'the documented core workflow';
+}
+
+function buildOptimizedDescription(item: CatalogItem): string {
+  const base = cleanText(item.description || item.name);
+  const useWhen = inferUseWhen(item);
+  const supports = inferCapabilities(item);
+  return `${base}. Use when: ${useWhen}. Supports ${supports}.`;
+}
+
+function ensureSection(body: string, heading: string, lines: string[]): string {
+  const pattern = new RegExp(`^##\\s+${heading.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}$`, 'im');
+  if (pattern.test(body)) return body;
+  const section = `## ${heading}\n${lines.map((line) => `- ${line}`).join('\n')}\n`;
+  return `${section}\n${body}`.trim();
+}
+
+function buildOptimizedSkillReadme(item: CatalogItem, readme: string): string {
+  const { frontmatter, body } = splitFrontmatter(readme);
+  const originalName = extractFrontmatterName(readme) || slugifyName(item.name);
+  const optimizedDescription = buildOptimizedDescription(item);
+  const metadataBlock = getFrontmatterValue(frontmatter, 'metadata');
+  const license = getFrontmatterValue(frontmatter, 'license');
+  const lines = ['---', `name: ${slugifyName(originalName) || slugifyName(item.name)}`, `description: >-`, `  ${optimizedDescription}`];
+  if (license) lines.push(`license: ${license}`);
+  if (metadataBlock) lines.push(`metadata: ${metadataBlock}`);
+  lines.push('---', '');
+
+  let nextBody = body.trim();
+  nextBody = ensureSection(nextBody, 'When to use', [
+    inferUseWhen(item),
+    'user needs a result that clearly matches the skill name and description',
+    'the request depends on the documented AISA-backed workflow',
+  ]);
+  nextBody = ensureSection(nextBody, 'When NOT to use', [
+    'the task can be solved without the external AISA relay or API dependency',
+    'the request needs credentials or side effects not documented in metadata',
+  ]);
+  nextBody = ensureSection(nextBody, 'Quick Reference', [
+    'Confirm required env vars are declared in metadata and SKILL.md consistently',
+    'Keep bundle contents minimal: runtime files, SKILL.md, and essential metadata only',
+    'State external network destinations and data flow explicitly',
+  ]);
+
+  return `${lines.join('\n')}${nextBody}\n`;
+}
+
+async function writeOptimizedSkillPackage(item: CatalogItem, readme: string, generatedAt: string) {
+  if (item.type !== 'skill' || !item.suspicious || !readme.trim()) return;
+
+  const slug = extractSlugFromUrl(item.clawhubUrl);
+  const dir = path.join(process.cwd(), 'artifacts', 'optimized-skills', item.owner, slug);
+  await fs.mkdir(dir, { recursive: true });
+
+  const optimizedReadme = buildOptimizedSkillReadme(item, readme);
+  const manifest = {
+    owner: item.owner,
+    name: item.name,
+    sourceUrl: item.clawhubUrl,
+    generatedAt,
+    suspiciousReason: item.suspiciousReason,
+    optimizationAdvice: item.optimizationAdvice,
+  };
+
+  await fs.writeFile(path.join(dir, 'SKILL.md'), optimizedReadme, 'utf8');
+  await fs.writeFile(path.join(dir, 'manifest.json'), `${JSON.stringify(manifest, null, 2)}\n`, 'utf8');
+}
+
 function inferTypeFromUrl(url: string): ItemType {
   return url.includes('/plugins/') ? 'plugin' : 'skill';
 }
@@ -262,10 +371,15 @@ function parseOwnerProfilePage(html: string, owner: string) {
 function parseDetailPage(html: string, url: string, source: DiscoverySource): CatalogItem {
   const type = inferTypeFromUrl(url);
   const owner =
-    extractTextGroup(/owner:\$R\[\d+\]={handle:"([^"]+)"/, html) ||
-    extractTextGroup(/owner:\{handle:"([^"]+)"/, html) ||
-    extractTextGroup(/owner:"([^"]+)"/, html) ||
-    extractTextGroup(/ownerHandle:"([^"]+)"/, html) ||
+    (type === 'plugin'
+      ? extractTextGroup(/owner:\$R\[\d+\]={handle:"([^"]+)"/, html) ||
+        extractTextGroup(/owner:\{handle:"([^"]+)"/, html) ||
+        extractTextGroup(/owner:"([^"]+)"/, html) ||
+        extractTextGroup(/ownerHandle:"([^"]+)"/, html)
+      : extractTextGroup(/owner:"([^"]+)"/, html) ||
+        extractTextGroup(/ownerHandle:"([^"]+)"/, html) ||
+        extractTextGroup(/owner:\$R\[\d+\]={handle:"([^"]+)"/, html) ||
+        extractTextGroup(/owner:\{handle:"([^"]+)"/, html)) ||
     (type === 'plugin'
       ? decodeURIComponent(url.split('/plugins/')[1] ?? '').split('/')[0].replace(/^@/, '')
       : url.replace(BASE_URL, '').split('/')[1] ?? 'unknown');
@@ -467,8 +581,12 @@ function buildHeuristicPluginSeeds(items: CatalogItem[]): SeedItem[] {
 async function main() {
   const accountsPath = path.join(process.cwd(), 'config', 'accounts.json');
   const outputPath = path.join(process.cwd(), 'public', 'data', 'catalog.json');
+  const artifactsRoot = path.join(process.cwd(), 'artifacts', 'optimized-skills');
+  const generatedAt = new Date().toISOString();
   const accounts = JSON.parse(await fs.readFile(accountsPath, 'utf8')) as string[];
   const seedItems = await readSeedItems();
+
+  await fs.rm(artifactsRoot, { recursive: true, force: true });
 
   const accountItems = (await Promise.all(accounts.map((owner) => scrapeOwner(owner)))).flat();
   const catalogSkills = await scrapeCatalog('skill');
@@ -554,7 +672,7 @@ async function main() {
   );
 
   const data: CatalogData = {
-    generatedAt: new Date().toISOString(),
+    generatedAt,
     scannedAccounts: accounts,
     sources: [
       `${BASE_URL}/u/{account}`,
@@ -576,6 +694,30 @@ async function main() {
 
   await fs.mkdir(path.dirname(outputPath), { recursive: true });
   await fs.writeFile(outputPath, `${JSON.stringify(data, null, 2)}\n`, 'utf8');
+
+  const suspiciousSkills = items.filter((item) => item.type === 'skill' && item.suspicious);
+  await fs.rm(artifactsRoot, { recursive: true, force: true });
+  for (const item of suspiciousSkills) {
+    try {
+      const html = await fetchHtml(item.clawhubUrl);
+      await writeOptimizedSkillPackage(item, extractReadme(html), generatedAt);
+    } catch (error) {
+      console.warn(`Failed to build optimized package for ${item.clawhubUrl}`, error);
+    }
+  }
+
+  const suspiciousIndex = items
+    .filter((item) => item.type === 'skill' && item.suspicious)
+    .map((item) => ({
+      owner: item.owner,
+      name: item.name,
+      sourceUrl: item.clawhubUrl,
+      packageDir: path.join('artifacts', 'optimized-skills', item.owner, extractSlugFromUrl(item.clawhubUrl)),
+      suspiciousReason: item.suspiciousReason,
+      optimizationAdvice: item.optimizationAdvice,
+    }));
+  await fs.mkdir(artifactsRoot, { recursive: true });
+  await fs.writeFile(path.join(artifactsRoot, 'index.json'), `${JSON.stringify(suspiciousIndex, null, 2)}\n`, 'utf8');
   console.log(`Wrote ${items.length} items across ${aisaOwners.length} AISA-owner accounts to ${outputPath}`);
 }
 

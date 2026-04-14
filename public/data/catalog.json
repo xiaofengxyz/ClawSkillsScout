@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-14T04:54:59.303Z",
+  "generatedAt": "2026-04-14T05:52:44.382Z",
   "scannedAccounts": [
     "0xjordansg-yolo",
     "AISADOCS",
@@ -7,7 +7,8 @@
     "bibaofeng",
     "bowen-dotcom",
     "chaimengphp",
-    "karensheng"
+    "karensheng",
+    "ningclaw"
   ],
   "sources": [
     "https://clawhub.ai/u/{account}",
@@ -29,13 +30,13 @@
     "plugins": 5,
     "suspicious": 9,
     "aisa": 62,
-    "owners": 5
+    "owners": 7
   },
   "items": [
     {
-      "id": "skill:0xjordansg-yolo:https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-web-search-tavily",
+      "id": "skill:aisadocs:https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-web-search-tavily",
       "type": "skill",
-      "owner": "0xjordansg-yolo",
+      "owner": "aisadocs",
       "name": "Web Search by Tavily",
       "description": "AI-optimized web search via Tavily API proxy, providing concise and relevant results with options for deep or news-focused queries.",
       "version": "1.0.0",
@@ -57,7 +58,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T04:54:16.915Z",
+      "lastCheckedAt": "2026-04-14T05:53:20.097Z",
       "readmeSnippet": "--- name: aisa-tavily description: AI-optimized web search via AIsa's Tavily API proxy. Returns concise, relevant results for AI agents through AIsa's unified API gateway. homepage: https://aisa.one metadata: {\"clawdbot\":{\"emoji\":\"🔍\",\"requires\":{\"bins\":[\"node\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KEY\"}} ---"
     },
     {
@@ -86,7 +87,7 @@
         "suspicious",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T04:54:14.282Z",
+      "lastCheckedAt": "2026-04-14T05:53:16.932Z",
       "readmeSnippet": "--- name: Twitter Command Center (Search + Post) description: \"Searches and reads X (Twitter): profiles, timelines, mentions, followers, tweet search, trends, lists, communities, and Spaces. Publishes posts after the user completes OAuth in the browser. Use when the user asks about Twitter/X data, social listening, or "
     },
     {
@@ -116,7 +117,7 @@
         "suspicious",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T04:54:15.327Z",
+      "lastCheckedAt": "2026-04-14T05:53:17.707Z",
       "readmeSnippet": "--- name: Twitter Command Center (Search + Post) description: \"Searches and reads X (Twitter): profiles, timelines, mentions, followers, tweet search, trends, lists, communities, and Spaces. Publishes posts after the user completes OAuth in the browser. Use when the user asks about Twitter/X data, social listening, or "
     },
     {
@@ -144,7 +145,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T04:54:12.684Z",
+      "lastCheckedAt": "2026-04-14T05:53:15.003Z",
       "readmeSnippet": "--- name: openclaw-media-gen description: \"Generate images & videos with AIsa. Gemini 3 Pro Image (image) + Qwen Wan 2.6 (video) via one API key.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"🎬\",\"requires\":{\"bins\":[\"python3\",\"curl\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KEY\"}} --- # OpenClaw "
     },
     {
@@ -172,13 +173,13 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T04:54:20.407Z",
+      "lastCheckedAt": "2026-04-14T05:53:22.573Z",
       "readmeSnippet": "--- name: openclaw-youtube description: \"YouTube SERP Scout for agents. Search top-ranking videos, channels, and trends for content research and competitor tracking.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"📺\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KE"
     },
     {
-      "id": "skill:0xjordansg-yolo:https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-llm-image-video",
+      "id": "skill:aisadocs:https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-llm-image-video",
       "type": "skill",
-      "owner": "0xjordansg-yolo",
+      "owner": "aisadocs",
       "name": "Images & videos generation with Gemini 3 Pro Image + Qwen Wan 2.6 (video) via one API key",
       "description": "Generate images &amp; videos with AIsa. Gemini 3 Pro Image (image) + Qwen Wan 2.6 (video) via one API key.",
       "version": "1.0.0",
@@ -200,7 +201,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T04:54:18.918Z",
+      "lastCheckedAt": "2026-04-14T05:53:21.127Z",
       "readmeSnippet": "--- name: openclaw-media-gen description: \"Generate images & videos with AIsa. Gemini 3 Pro Image (image) + Qwen Wan 2.6 (video) via one API key.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"🎬\",\"requires\":{\"bins\":[\"python3\",\"curl\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KEY\"}} --- # OpenClaw "
     },
     {
@@ -228,7 +229,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T04:54:19.980Z",
+      "lastCheckedAt": "2026-04-14T05:53:21.813Z",
       "readmeSnippet": "--- name: openclaw-media-gen description: \"Generate images & videos with AIsa. Gemini 3 Pro Image (image) + Qwen Wan 2.6 (video) via one API key.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"🎬\",\"requires\":{\"bins\":[\"python3\",\"curl\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KEY\"}} --- # OpenClaw "
     },
     {
@@ -257,13 +258,13 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T04:54:20.289Z",
+      "lastCheckedAt": "2026-04-14T05:53:22.658Z",
       "readmeSnippet": "--- name: openclaw-search description: \"Intelligent search for agents. Multi-source retrieval with confidence scoring - web, academic, and Tavily in one unified API.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"🔍\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KE"
     },
     {
-      "id": "skill:aisapay:https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-finance-stock-equity-crypto-market-price-data-yahoo-finance-coinhacko",
+      "id": "skill:0xjordansg-yolo:https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-finance-stock-equity-crypto-market-price-data-yahoo-finance-coinhacko",
       "type": "skill",
-      "owner": "aisapay",
+      "owner": "0xjordansg-yolo",
       "name": "Query real-time and historical financial data across equities and crypto prices",
       "description": "Query real-time and historical financial data across equities and crypto—prices, market moves, metrics, and trends for analysis, alerts, and reporting.",
       "version": "1.0.0",
@@ -285,13 +286,13 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T04:54:11.042Z",
+      "lastCheckedAt": "2026-04-14T05:53:13.559Z",
       "readmeSnippet": "--- name: MarketPulse description: \"Query real-time and historical financial data across equities and crypto—prices, market moves, metrics, and trends for analysis, alerts, and reporting.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"📊\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"pr"
     },
     {
-      "id": "skill:aisapay:https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-youtube-search-serp-video-channels-trends-content-tracking",
+      "id": "skill:0xjordansg-yolo:https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-youtube-search-serp-video-channels-trends-content-tracking",
       "type": "skill",
-      "owner": "aisapay",
+      "owner": "0xjordansg-yolo",
       "name": "YouTube SERP Scout for agents. Search top-ranking videos, channels, and trends for content research and competitor tracking",
       "description": "YouTube SERP Scout for agents. Search top-ranking videos, channels, and trends for content research and competitor tracking.",
       "version": "1.0.0",
@@ -314,13 +315,13 @@
         "suspicious",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T04:54:12.342Z",
+      "lastCheckedAt": "2026-04-14T05:53:15.041Z",
       "readmeSnippet": "--- name: openclaw-youtube description: \"YouTube SERP Scout for agents. Search top-ranking videos, channels, and trends for content research and competitor tracking.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"📺\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KE"
     },
     {
-      "id": "skill:aisadocs:https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-llm-gateway",
+      "id": "skill:0xjordansg-yolo:https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-llm-gateway",
       "type": "skill",
-      "owner": "aisadocs",
+      "owner": "0xjordansg-yolo",
       "name": "One API key for 70+ AI models. Route to GPT, Claude, Gemini, Qwen, Deepseek, Grok and more",
       "description": "Unified LLM Gateway - One API for 70+ AI models. Route to GPT, Claude, Gemini, Qwen, Deepseek, Grok and more with a single API key.",
       "version": "1.0.0",
@@ -342,7 +343,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T04:54:12.795Z",
+      "lastCheckedAt": "2026-04-14T05:53:15.307Z",
       "readmeSnippet": "--- name: llm-router description: \"Unified LLM Gateway - One API for 70+ AI models. Route to GPT, Claude, Gemini, Qwen, Deepseek, Grok and more with a single API key.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"🧠\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_K"
     },
     {
@@ -370,13 +371,13 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T04:54:12.785Z",
+      "lastCheckedAt": "2026-04-14T05:53:15.160Z",
       "readmeSnippet": "--- name: Twitter Command Center (Search + Post) description: \"Searches and reads X (Twitter): profiles, timelines, mentions, followers, tweet search, trends, lists, communities, and Spaces. Publishes posts after the user completes OAuth in the browser. Use when the user asks about Twitter/X data, social listening, or "
     },
     {
-      "id": "skill:0xjordansg-yolo:https://clawhub.ai/kn74pdks0k3ghs09pk2axym55h80xn01/aisa-twitter-skill",
+      "id": "skill:bowen-dotcom:https://clawhub.ai/kn74pdks0k3ghs09pk2axym55h80xn01/aisa-twitter-skill",
       "type": "skill",
-      "owner": "0xjordansg-yolo",
+      "owner": "bowen-dotcom",
       "name": "X/Twitter All-in-One: 30+ APIs, OAuth Post, One Key",
       "description": "Searches and reads X (Twitter): profiles, timelines, mentions, followers, tweet search, trends, lists, communities, and Spaces. Publishes posts after the use...",
       "version": "1.0.6",
@@ -398,7 +399,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T04:54:23.684Z",
+      "lastCheckedAt": "2026-04-14T05:53:25.324Z",
       "readmeSnippet": "--- name: Twitter Command Center (Search + Post) description: \"Searches and reads X (Twitter): profiles, timelines, mentions, followers, tweet search, trends, lists, communities, and Spaces. Publishes posts after the user completes OAuth in the browser. Use when the user asks about Twitter/X data, social listening, or "
     },
     {
@@ -426,13 +427,13 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T04:54:20.622Z",
+      "lastCheckedAt": "2026-04-14T05:53:22.909Z",
       "readmeSnippet": "--- name: MarketPulse description: \"Query real-time and historical financial data across equities and crypto—prices, market moves, metrics, and trends for analysis, alerts, and reporting.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"📊\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"pr"
     },
     {
-      "id": "skill:aisadocs:https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-affordable-llm-model-tokens",
+      "id": "skill:0xjordansg-yolo:https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-affordable-llm-model-tokens",
       "type": "skill",
-      "owner": "aisadocs",
+      "owner": "0xjordansg-yolo",
       "name": "Save upto 50% for model tokens: OpenAI GPT, Claude, Gemini, Qwen, Deepseek, Grok and more with one single key",
       "description": "Unified LLM Gateway - One API for 70+ AI models. Route to GPT, Claude, Gemini, Qwen, Deepseek, Grok and more with a single API key.",
       "version": "1.0.1",
@@ -454,7 +455,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T04:54:12.774Z",
+      "lastCheckedAt": "2026-04-14T05:53:15.025Z",
       "readmeSnippet": "--- name: llm-router description: \"Unified LLM Gateway - One API for 70+ AI models. Route to GPT, Claude, Gemini, Qwen, Deepseek, Grok and more with a single API key.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"🧠\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_K"
     },
     {
@@ -482,7 +483,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T04:54:10.968Z",
+      "lastCheckedAt": "2026-04-14T05:53:13.565Z",
       "readmeSnippet": "--- name: us-stock-analyst description: \"Professional US stock analysis with financial data, news, social sentiment, and multi-model AI. Comprehensive reports at $0.02-0.10 per analysis.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"📈\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"pri"
     },
     {
@@ -510,7 +511,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T04:54:20.597Z",
+      "lastCheckedAt": "2026-04-14T05:53:22.938Z",
       "readmeSnippet": "--- name: AIsaFinancialData description: \"Query real-time and historical financial data across equities and crypto—prices, market moves, metrics, and trends for analysis, alerts, and reporting.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"📊\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\""
     },
     {
@@ -538,13 +539,13 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T04:54:18.980Z",
+      "lastCheckedAt": "2026-04-14T05:53:21.764Z",
       "readmeSnippet": "--- name: llm-router description: \"Unified LLM Gateway - One API for 70+ AI models. Route to GPT, Claude, Gemini, Qwen, Deepseek, Grok and more with a single API key.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"🧠\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_K"
     },
     {
-      "id": "skill:aisapay:https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-financial-stock-crypto-market-price-data",
+      "id": "skill:0xjordansg-yolo:https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-financial-stock-crypto-market-price-data",
       "type": "skill",
-      "owner": "aisapay",
+      "owner": "0xjordansg-yolo",
       "name": "One API key for real time stock equity pricing data including crypto BTC ETH etc.",
       "description": "Query real-time and historical financial data across equities and crypto—prices, market moves, metrics, and trends for analysis, alerts, and reporting.",
       "version": "1.0.0",
@@ -566,13 +567,13 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T04:54:12.768Z",
+      "lastCheckedAt": "2026-04-14T05:53:15.136Z",
       "readmeSnippet": "--- name: MarketPulse description: \"Query real-time and historical financial data across equities and crypto—prices, market moves, metrics, and trends for analysis, alerts, and reporting.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"📊\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"pr"
     },
     {
-      "id": "skill:aisapay:https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-youtube-search-tracking",
+      "id": "skill:aisadocs:https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-youtube-search-tracking",
       "type": "skill",
-      "owner": "aisapay",
+      "owner": "aisadocs",
       "name": "Youtube Search and Tracking API",
       "description": "YouTube SERP Scout for agents. Search top-ranking videos, channels, and trends for content research and competitor tracking.",
       "version": "1.0.0",
@@ -594,7 +595,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T04:54:18.728Z",
+      "lastCheckedAt": "2026-04-14T05:53:21.254Z",
       "readmeSnippet": "--- name: openclaw-youtube description: \"YouTube SERP Scout for agents. Search top-ranking videos, channels, and trends for content research and competitor tracking.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"📺\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KE"
     },
     {
@@ -623,7 +624,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T04:54:11.041Z",
+      "lastCheckedAt": "2026-04-14T05:53:13.542Z",
       "readmeSnippet": "--- name: openclaw-search description: \"Intelligent search for agents. Multi-source retrieval with confidence scoring - web, academic, and Tavily in one unified API.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"🔍\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KE"
     },
     {
@@ -651,13 +652,13 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T04:54:10.819Z",
+      "lastCheckedAt": "2026-04-14T05:53:13.334Z",
       "readmeSnippet": "--- name: aisa-tavily description: AI-optimized web search via AIsa's Tavily API proxy. Returns concise, relevant results for AI agents through AIsa's unified API gateway. homepage: https://aisa.one metadata: {\"clawdbot\":{\"emoji\":\"🔍\",\"requires\":{\"bins\":[\"node\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KEY\"}} ---"
     },
     {
-      "id": "skill:0xjordansg-yolo:https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-twitter-search",
+      "id": "skill:chaimengphp:https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-twitter-search",
       "type": "skill",
-      "owner": "0xjordansg-yolo",
+      "owner": "chaimengphp",
       "name": "X Twitter Command Center (Search + Post)",
       "description": "Searches and reads X (Twitter): profiles, timelines, mentions, followers, tweet search, trends, lists, communities, and Spaces. Publishes posts after the use...",
       "version": "1.0.5",
@@ -679,7 +680,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T04:54:27.076Z",
+      "lastCheckedAt": "2026-04-14T05:53:29.293Z",
       "readmeSnippet": "--- name: Twitter Command Center (Search + Post) description: \"Searches and reads X (Twitter): profiles, timelines, mentions, followers, tweet search, trends, lists, communities, and Spaces. Publishes posts after the user completes OAuth in the browser. Use when the user asks about Twitter/X data, social listening, or "
     },
     {
@@ -707,13 +708,13 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T04:54:25.350Z",
+      "lastCheckedAt": "2026-04-14T05:53:27.538Z",
       "readmeSnippet": "--- name: openclaw-media-gen description: \"Generate images & videos with AIsa. Gemini 3 Pro Image (image) + Qwen Wan 2.6 (video) via one API key.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"🎬\",\"requires\":{\"bins\":[\"python3\",\"curl\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KEY\"}} --- # OpenClaw "
     },
     {
-      "id": "skill:aisapay:https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-finance-equity-crypto-price-market-data-news",
+      "id": "skill:aisadocs:https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-finance-equity-crypto-price-market-data-news",
       "type": "skill",
-      "owner": "aisapay",
+      "owner": "aisadocs",
       "name": "Query real-time and historical financial data across equities and crypto prices, market moves, metrics, and trends for analysis, alerts, and reporting",
       "description": "Query real-time and historical financial data across equities and crypto—prices, market moves, metrics, and trends for analysis, alerts, and reporting.",
       "version": "1.0.0",
@@ -735,13 +736,13 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T04:54:18.293Z",
+      "lastCheckedAt": "2026-04-14T05:53:20.245Z",
       "readmeSnippet": "--- name: MarketPulse description: \"Query real-time and historical financial data across equities and crypto—prices, market moves, metrics, and trends for analysis, alerts, and reporting.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"📊\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"pr"
     },
     {
-      "id": "skill:0xjordansg-yolo:https://clawhub.ai/kn74pdks0k3ghs09pk2axym55h80xn01/aisa-search-skill",
+      "id": "skill:bowen-dotcom:https://clawhub.ai/kn74pdks0k3ghs09pk2axym55h80xn01/aisa-search-skill",
       "type": "skill",
-      "owner": "0xjordansg-yolo",
+      "owner": "bowen-dotcom",
       "name": "Intelligent Search Agent",
       "description": "Intelligent search for agents. Multi-source retrieval across web, scholar, Tavily, and Perplexity Sonar models.",
       "version": "1.0.2",
@@ -764,7 +765,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T04:54:24.127Z",
+      "lastCheckedAt": "2026-04-14T05:53:25.988Z",
       "readmeSnippet": "--- name: openclaw-search description: \"Intelligent search for agents. Multi-source retrieval across web, scholar, Tavily, and Perplexity Sonar models.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"🔎\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KEY\"}} --- # Ope"
     },
     {
@@ -792,13 +793,13 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T04:54:18.592Z",
+      "lastCheckedAt": "2026-04-14T05:53:20.875Z",
       "readmeSnippet": "--- name: openclaw-media-gen description: \"Generate images & videos with AIsa. Gemini 3 Pro Image (image) + Qwen Wan 2.6 (video) via one API key.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"🎬\",\"requires\":{\"bins\":[\"python3\",\"curl\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KEY\"}} --- # OpenClaw "
     },
     {
-      "id": "skill:aisapay:https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-youtube-search",
+      "id": "skill:chaimengphp:https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-youtube-search",
       "type": "skill",
-      "owner": "aisapay",
+      "owner": "chaimengphp",
       "name": "YouTube SERP Scout (Rank + Discover)",
       "description": "YouTube SERP Scout for agents. Search top-ranking videos, channels, and trends for content research and competitor tracking.",
       "version": "1.0.1",
@@ -820,7 +821,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T04:54:27.148Z",
+      "lastCheckedAt": "2026-04-14T05:53:28.648Z",
       "readmeSnippet": "--- name: openclaw-youtube description: \"YouTube SERP Scout for agents. Search top-ranking videos, channels, and trends for content research and competitor tracking.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"📺\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KE"
     },
     {
@@ -848,13 +849,13 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T04:54:25.836Z",
+      "lastCheckedAt": "2026-04-14T05:53:28.146Z",
       "readmeSnippet": "--- name: cn-llm description: \"China LLM Gateway - Unified interface for Chinese LLMs including Qwen, DeepSeek, GLM, Baichuan. OpenAI compatible, one API Key for all models.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"🐉\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AIS"
     },
     {
-      "id": "skill:aisapay:https://clawhub.ai/kn74pdks0k3ghs09pk2axym55h80xn01/aisa-market-skill",
+      "id": "skill:bowen-dotcom:https://clawhub.ai/kn74pdks0k3ghs09pk2axym55h80xn01/aisa-market-skill",
       "type": "skill",
-      "owner": "aisapay",
+      "owner": "bowen-dotcom",
       "name": "MarketPulse Financial Data",
       "description": "Query real-time and historical financial data across equities and crypto—prices, market moves, metrics, and trends for analysis, alerts, and reporting.",
       "version": "1.0.2",
@@ -876,13 +877,13 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T04:54:23.686Z",
+      "lastCheckedAt": "2026-04-14T05:53:25.731Z",
       "readmeSnippet": "--- name: MarketPulse description: \"Query real-time and historical financial data across equities and crypto—prices, market moves, metrics, and trends for analysis, alerts, and reporting.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"📊\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"pr"
     },
     {
-      "id": "skill:aisapay:https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-market-pulse",
+      "id": "skill:chaimengphp:https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-market-pulse",
       "type": "skill",
-      "owner": "aisapay",
+      "owner": "chaimengphp",
       "name": "MarketPulse (Stocks + Crypto Data)",
       "description": "Query real-time and historical financial data across equities and crypto—prices, market moves, metrics, and trends for analysis, alerts, and reporting.",
       "version": "1.0.1",
@@ -904,13 +905,13 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T04:54:26.451Z",
+      "lastCheckedAt": "2026-04-14T05:53:28.269Z",
       "readmeSnippet": "--- name: MarketPulse description: \"Query real-time and historical financial data across equities and crypto—prices, market moves, metrics, and trends for analysis, alerts, and reporting.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"📊\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"pr"
     },
     {
-      "id": "skill:aisapay:https://clawhub.ai/kn74pdks0k3ghs09pk2axym55h80xn01/aisa-youtube-skill",
+      "id": "skill:bowen-dotcom:https://clawhub.ai/kn74pdks0k3ghs09pk2axym55h80xn01/aisa-youtube-skill",
       "type": "skill",
-      "owner": "aisapay",
+      "owner": "bowen-dotcom",
       "name": "YouTube SERP Scout",
       "description": "YouTube SERP Scout for agents. Search top-ranking videos, channels, and trends for content research and competitor tracking.",
       "version": "1.0.1",
@@ -932,13 +933,13 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T04:54:23.935Z",
+      "lastCheckedAt": "2026-04-14T05:53:25.934Z",
       "readmeSnippet": "--- name: openclaw-youtube description: \"YouTube SERP Scout for agents. Search top-ranking videos, channels, and trends for content research and competitor tracking.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"📺\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KE"
     },
     {
-      "id": "skill:0xjordansg-yolo:https://clawhub.ai/kn74pdks0k3ghs09pk2axym55h80xn01/aisa-media-gen-skill",
+      "id": "skill:bowen-dotcom:https://clawhub.ai/kn74pdks0k3ghs09pk2axym55h80xn01/aisa-media-gen-skill",
       "type": "skill",
-      "owner": "0xjordansg-yolo",
+      "owner": "bowen-dotcom",
       "name": "AI Media Generation",
       "description": "Generate images &amp; videos with AIsa. Gemini 3 Pro Image (image) + Qwen Wan 2.6 (video) via one API key.",
       "version": "1.0.1",
@@ -960,13 +961,13 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T04:54:23.249Z",
+      "lastCheckedAt": "2026-04-14T05:53:25.068Z",
       "readmeSnippet": "--- name: openclaw-media-gen description: \"Generate images & videos with AIsa. Gemini 3 Pro Image (image) + Qwen Wan 2.6 (video) via one API key.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"🎬\",\"requires\":{\"bins\":[\"python3\",\"curl\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KEY\"}} --- # OpenClaw "
     },
     {
-      "id": "skill:0xjordansg-yolo:https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-search-web-academic-tavily",
+      "id": "skill:aisadocs:https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-search-web-academic-tavily",
       "type": "skill",
-      "owner": "0xjordansg-yolo",
+      "owner": "aisadocs",
       "name": "Intelligent search for agents. Multi-source retrieval with confidence scoring - web, academic, and Tavily in one unified API",
       "description": "Intelligent search for agents. Multi-source retrieval with confidence scoring - web, academic, and Tavily in one unified API.",
       "version": "1.0.0",
@@ -989,13 +990,13 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T04:54:18.901Z",
+      "lastCheckedAt": "2026-04-14T05:53:20.951Z",
       "readmeSnippet": "--- name: openclaw-search description: \"Intelligent search for agents. Multi-source retrieval with confidence scoring - web, academic, and Tavily in one unified API.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"🔍\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KE"
     },
     {
-      "id": "skill:aisadocs:https://clawhub.ai/kn74pdks0k3ghs09pk2axym55h80xn01/aisa-llm-router-skill",
+      "id": "skill:bowen-dotcom:https://clawhub.ai/kn74pdks0k3ghs09pk2axym55h80xn01/aisa-llm-router-skill",
       "type": "skill",
-      "owner": "aisadocs",
+      "owner": "bowen-dotcom",
       "name": "LLM Router Gateway",
       "description": "Unified LLM Gateway - One API for 70+ AI models. Route to GPT, Claude, Gemini, Qwen, Deepseek, Grok and more with a single API key.",
       "version": "1.0.0",
@@ -1017,7 +1018,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T04:54:22.429Z",
+      "lastCheckedAt": "2026-04-14T05:53:24.875Z",
       "readmeSnippet": "--- name: llm-router description: \"Unified LLM Gateway - One API for 70+ AI models. Route to GPT, Claude, Gemini, Qwen, Deepseek, Grok and more with a single API key.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"🧠\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_K"
     },
     {
@@ -1045,13 +1046,13 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T04:54:25.789Z",
+      "lastCheckedAt": "2026-04-14T05:53:27.674Z",
       "readmeSnippet": "--- name: llm-router description: \"Unified LLM Gateway - One API for 70+ AI models. Route to GPT, Claude, Gemini, Grok and more with a single API key.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"🧠\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KEY\"}} --- # Open"
     },
     {
-      "id": "skill:0xjordansg-yolo:https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-search",
+      "id": "skill:chaimengphp:https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-search",
       "type": "skill",
-      "owner": "0xjordansg-yolo",
+      "owner": "chaimengphp",
       "name": "Verified Research Engine (Web + Academic + Confidence Score)",
       "description": "Intelligent search for agents. Multi-source retrieval across web, scholar, Tavily, and Perplexity Sonar models.",
       "version": "1.0.1",
@@ -1074,13 +1075,13 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T04:54:26.921Z",
+      "lastCheckedAt": "2026-04-14T05:53:28.733Z",
       "readmeSnippet": "--- name: openclaw-search description: \"Intelligent search for agents. Multi-source retrieval across web, scholar, Tavily, and Perplexity Sonar models.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"🔎\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KEY\"}} --- # Ope"
     },
     {
-      "id": "skill:chaimengphp:https://clawhub.ai/kn74pdks0k3ghs09pk2axym55h80xn01/aisa-media-gen-en-skill",
+      "id": "skill:bowen-dotcom:https://clawhub.ai/kn74pdks0k3ghs09pk2axym55h80xn01/aisa-media-gen-en-skill",
       "type": "skill",
-      "owner": "chaimengphp",
+      "owner": "bowen-dotcom",
       "name": "AI Media Generation En",
       "description": "Generate images &amp; videos with AIsa. Gemini 3 Pro Image (image) + Qwen Wan 2.6 (video) via one API key.",
       "version": "1.0.0",
@@ -1102,7 +1103,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T04:54:22.443Z",
+      "lastCheckedAt": "2026-04-14T05:53:24.405Z",
       "readmeSnippet": "--- name: openclaw-media-gen description: \"Generate images & videos with AIsa. Gemini 3 Pro Image (image) + Qwen Wan 2.6 (video) via one API key.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"🎬\",\"requires\":{\"bins\":[\"python3\",\"curl\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KEY\"}} --- # OpenClaw "
     },
     {
@@ -1130,13 +1131,13 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T04:54:11.121Z",
+      "lastCheckedAt": "2026-04-14T05:53:13.346Z",
       "readmeSnippet": "--- name: aisa-provider description: Configure AIsa as a first-class model provider for OpenClaw, enabling production access to major Chinese AI models (Qwen, DeepSeek, Kimi K2.5, Doubao) through official partnerships with Alibaba Cloud, BytePlus, and Moonshot. Use this skill when the user wants to set up Chinese AI mo"
     },
     {
-      "id": "skill:0xjordansg-yolo:https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-leading-chinese-llm",
+      "id": "skill:aisadocs:https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-leading-chinese-llm",
       "type": "skill",
-      "owner": "0xjordansg-yolo",
+      "owner": "aisadocs",
       "name": "Chines LLM Models (MiniMax 2.5,Kimi 2.5, Qwen, Doubao, DeepSeek) with one key",
       "description": "Configure AIsa as a first-class model provider for OpenClaw, enabling production access to major Chinese AI models (Qwen, DeepSeek, Kimi K2.5, Doubao) throug...",
       "version": "1.0.0",
@@ -1158,7 +1159,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T04:54:17.301Z",
+      "lastCheckedAt": "2026-04-14T05:53:19.600Z",
       "readmeSnippet": "--- name: aisa-provider description: Configure AIsa as a first-class model provider for OpenClaw, enabling production access to major Chinese AI models (Qwen, DeepSeek, Kimi K2.5, Doubao) through official partnerships with Alibaba Cloud, BytePlus, and Moonshot. Use this skill when the user wants to set up Chinese AI mo"
     },
     {
@@ -1189,7 +1190,7 @@
         "suspicious",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T04:54:11.094Z",
+      "lastCheckedAt": "2026-04-14T05:53:13.504Z",
       "readmeSnippet": "--- name: youtube-search description: | YouTube Search API via AIsa unified endpoint. Search YouTube videos, channels, and playlists with a single AIsa API key — no Google API key or OAuth required. Use this skill when users want to search YouTube content. For other AIsa capabilities (LLM, financial data, Twitter, web "
     },
     {
@@ -1217,7 +1218,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T04:54:25.273Z",
+      "lastCheckedAt": "2026-04-14T05:53:27.146Z",
       "readmeSnippet": "--- name: perplexity-search description: \"Perplexity Sonar search and answer generation through AIsa. Use when the task is specifically to call Perplexity Sonar, Sonar Pro, Sonar Reasoning Pro, or Sonar Deep Research for citation-backed web answers, analytical reasoning, or long-form research reports.\" homepage: https:"
     },
     {
@@ -1246,13 +1247,13 @@
         "suspicious",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T04:54:17.157Z",
+      "lastCheckedAt": "2026-04-14T05:53:19.488Z",
       "readmeSnippet": "--- name: Twitter Command Center (Search + Post + Interact) description: \"Searches and reads X (Twitter): profiles, timelines, mentions, followers, tweet search, trends, lists, communities, and Spaces. Publishes posts, likes/unlikes tweets, and follows/unfollows users after the user completes OAuth in the browser. Use "
     },
     {
-      "id": "skill:chaimengphp:https://clawhub.ai/kn74pdks0k3ghs09pk2axym55h80xn01/aisa-perplexity-search-skill",
+      "id": "skill:bowen-dotcom:https://clawhub.ai/kn74pdks0k3ghs09pk2axym55h80xn01/aisa-perplexity-search-skill",
       "type": "skill",
-      "owner": "chaimengphp",
+      "owner": "bowen-dotcom",
       "name": "Perplexity Search",
       "description": "Perplexity Sonar search and answer generation through AIsa. Use when the task is specifically to call Perplexity Sonar, Sonar Pro, Sonar Reasoning Pro, or So...",
       "version": "1.0.0",
@@ -1274,7 +1275,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T04:54:22.300Z",
+      "lastCheckedAt": "2026-04-14T05:53:24.098Z",
       "readmeSnippet": "--- name: perplexity-search description: \"Perplexity Sonar search and answer generation through AIsa. Use when the task is specifically to call Perplexity Sonar, Sonar Pro, Sonar Reasoning Pro, or Sonar Deep Research for citation-backed web answers, analytical reasoning, or long-form research reports.\" homepage: https:"
     },
     {
@@ -1302,7 +1303,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T04:54:16.869Z",
+      "lastCheckedAt": "2026-04-14T05:53:19.403Z",
       "readmeSnippet": "--- name: Prediction Market Data description: \"Prediction markets data - Polymarket, Kalshi markets, prices, positions, and trades\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"📈\",\"requires\":{\"bins\":[\"curl\",\"python\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KEY\"}} --- # Cross-Platform Prediction"
     },
     {
@@ -1331,7 +1332,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T04:54:17.146Z",
+      "lastCheckedAt": "2026-04-14T05:53:19.317Z",
       "readmeSnippet": "--- name: Prediction Market Arbitrage description: \"Find and analyze arbitrage opportunities across prediction markets like Polymarket and Kalshi.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"⚖️\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KEY\"}} --- # Cross-Pl"
     },
     {
@@ -1359,7 +1360,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T04:54:25.380Z",
+      "lastCheckedAt": "2026-04-14T05:53:26.975Z",
       "readmeSnippet": "--- name: Prediction Market Data description: \"Prediction markets data - Polymarket, Kalshi markets, prices, positions, and trades\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"📈\",\"requires\":{\"bins\":[\"curl\",\"python\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KEY\"}} --- # Cross-Platform Prediction"
     },
     {
@@ -1386,13 +1387,13 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T04:54:20.700Z",
+      "lastCheckedAt": "2026-04-14T05:53:23.237Z",
       "readmeSnippet": "--- name: prediction-market-data-zh description: \"通过 AIsa API 查询跨平台预测市场数据。支持 Polymarket 和 Kalshi 的市场行情、价格、订单簿、K线、持仓和交易记录。适用场景：查询预测市场赔率、选举博彩、事件概率、市场情绪、Polymarket 价格、Kalshi 价格、体育博彩赔率、钱包盈亏、跨平台市场对比。\" license: MIT metadata: openclaw: emoji: \"📈\" requires: bins: [python3] env: [AISA_API_KEY] primaryEnv: AISA_API_KEY --- # 预测"
     },
     {
-      "id": "skill:aisadocs:https://clawhub.ai/kn7091kqhak4t7mrx06be2c63n80hkmk/x-intelligence-automation",
+      "id": "skill:karensheng:https://clawhub.ai/kn7091kqhak4t7mrx06be2c63n80hkmk/x-intelligence-automation",
       "type": "skill",
-      "owner": "aisadocs",
+      "owner": "karensheng",
       "name": "Twitter Intelligence & Automation — Read, Search, Write & Post (Text & Media)",
       "description": "Searches and reads X (Twitter): profiles, timelines, mentions, followers, tweet search, trends, lists, communities, and Spaces. Publishes posts, likes/unlike...",
       "version": "1.0.2",
@@ -1415,13 +1416,13 @@
         "suspicious",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T04:54:28.262Z",
+      "lastCheckedAt": "2026-04-14T05:53:29.406Z",
       "readmeSnippet": "--- name: Twitter Command Center (Search + Post + Interact) description: \"Searches and reads X (Twitter): profiles, timelines, mentions, followers, tweet search, trends, lists, communities, and Spaces. Publishes posts, likes/unlikes tweets, and follows/unfollows users after the user completes OAuth in the browser. Use "
     },
     {
-      "id": "skill:chaimengphp:https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/perplexity-sonar-search",
+      "id": "skill:aisadocs:https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/perplexity-sonar-search",
       "type": "skill",
-      "owner": "chaimengphp",
+      "owner": "aisadocs",
       "name": "Perplexity Sonar",
       "description": "Perplexity Sonar search and answer generation through AIsa. Use when the task is specifically to call Perplexity Sonar, Sonar Pro, Sonar Reasoning Pro, or So...",
       "version": "1.0.0",
@@ -1443,7 +1444,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T04:54:16.613Z",
+      "lastCheckedAt": "2026-04-14T05:53:18.730Z",
       "readmeSnippet": "--- name: perplexity-search description: \"Perplexity Sonar search and answer generation through AIsa. Use when the task is specifically to call Perplexity Sonar, Sonar Pro, Sonar Reasoning Pro, or Sonar Deep Research for citation-backed web answers, analytical reasoning, or long-form research reports.\" homepage: https:"
     },
     {
@@ -1470,7 +1471,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T04:54:21.584Z",
+      "lastCheckedAt": "2026-04-14T05:53:23.435Z",
       "readmeSnippet": "--- name: prediction-market-arbitrage-zh description: \"通过 AIsa API 发现 Polymarket 和 Kalshi 预测市场的套利机会。扫描体育市场跨平台价差、比较实时赔率、验证订单簿流动性。适用场景：预测市场套利、跨平台价差、体育博彩套利、赔率对比、无风险利润、市场低效。\" license: MIT metadata: openclaw: emoji: \"⚖️\" requires: bins: [python3] env: [AISA_API_KEY] primaryEnv: AISA_API_KEY --- # 预测市场套利 通过 [AIsa API](https:"
     },
     {
@@ -1498,7 +1499,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T04:54:22.021Z",
+      "lastCheckedAt": "2026-04-14T05:53:24.267Z",
       "readmeSnippet": "--- name: prediction-market-arbitrage-api description: \"Find arbitrage opportunities across Polymarket and Kalshi prediction markets via AIsa API. Scan sports markets for cross-platform price discrepancies, compare real-time odds, verify orderbook liquidity. Use when user asks about: prediction market arbitrage, cross-"
     },
     {
@@ -1525,13 +1526,13 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T04:54:22.002Z",
+      "lastCheckedAt": "2026-04-14T05:53:24.195Z",
       "readmeSnippet": "--- name: prediction-market-data description: \"Cross-platform prediction market data via AIsa API. Query Polymarket and Kalshi markets, prices, orderbooks, candlesticks, positions, and trades. Use when user asks about: prediction market odds, election betting, event probabilities, market sentiment, Polymarket prices, K"
     },
     {
-      "id": "skill:aisadocs:https://clawhub.ai/kn7091kqhak4t7mrx06be2c63n80hkmk/prediction-agg",
+      "id": "skill:karensheng:https://clawhub.ai/kn7091kqhak4t7mrx06be2c63n80hkmk/prediction-agg",
       "type": "skill",
-      "owner": "aisadocs",
+      "owner": "karensheng",
       "name": "Prediction Market Data Aggregator",
       "description": "Prediction markets data - Polymarket, Kalshi markets, prices, positions, and trades",
       "version": "1.0.0",
@@ -1553,7 +1554,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T04:54:27.486Z",
+      "lastCheckedAt": "2026-04-14T05:53:29.613Z",
       "readmeSnippet": "--- name: Prediction Market Data description: \"Prediction markets data - Polymarket, Kalshi markets, prices, positions, and trades\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"📈\",\"requires\":{\"bins\":[\"curl\",\"python\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KEY\"}} --- # Cross-Platform Prediction"
     },
     {
@@ -1582,13 +1583,13 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T04:54:24.880Z",
+      "lastCheckedAt": "2026-04-14T05:53:26.678Z",
       "readmeSnippet": "--- name: Prediction Market Arbitrage description: \"Find and analyze arbitrage opportunities across prediction markets like Polymarket and Kalshi.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"⚖️\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KEY\"}} --- # Cross-Pl"
     },
     {
-      "id": "skill:aisadocs:https://clawhub.ai/kn7091kqhak4t7mrx06be2c63n80hkmk/prediction-market-arb",
+      "id": "skill:karensheng:https://clawhub.ai/kn7091kqhak4t7mrx06be2c63n80hkmk/prediction-market-arb",
       "type": "skill",
-      "owner": "aisadocs",
+      "owner": "karensheng",
       "name": "Prediction Markets Arbitrage",
       "description": "Find and analyze arbitrage opportunities across prediction markets like Polymarket and Kalshi.",
       "version": "1.0.0",
@@ -1611,7 +1612,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T04:54:27.492Z",
+      "lastCheckedAt": "2026-04-14T05:53:29.517Z",
       "readmeSnippet": "--- name: Prediction Market Arbitrage description: \"Find and analyze arbitrage opportunities across prediction markets like Polymarket and Kalshi.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"⚖️\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KEY\"}} --- # Cross-Pl"
     },
     {
@@ -1640,7 +1641,7 @@
         "suspicious",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T04:54:24.045Z",
+      "lastCheckedAt": "2026-04-14T05:53:26.487Z",
       "readmeSnippet": "--- name: Twitter Command Center (Search + Post + Interact) description: \"Searches and reads X (Twitter): profiles, timelines, mentions, followers, tweet search, trends, lists, communities, and Spaces. Publishes posts, likes/unlikes tweets, and follows/unfollows users after the user completes OAuth in the browser. Use "
     },
     {
@@ -1668,7 +1669,7 @@
         "suspicious",
         "plugin"
       ],
-      "lastCheckedAt": "2026-04-14T04:54:28.342Z",
+      "lastCheckedAt": "2026-04-14T05:53:29.937Z",
       "readmeSnippet": ""
     },
     {
@@ -1697,7 +1698,7 @@
         "suspicious",
         "plugin"
       ],
-      "lastCheckedAt": "2026-04-14T04:54:28.324Z",
+      "lastCheckedAt": "2026-04-14T05:53:30.004Z",
       "readmeSnippet": ""
     },
     {
@@ -1724,7 +1725,7 @@
         "aisa",
         "plugin"
       ],
-      "lastCheckedAt": "2026-04-14T04:54:28.481Z",
+      "lastCheckedAt": "2026-04-14T05:53:30.474Z",
       "readmeSnippet": ""
     },
     {
@@ -1751,7 +1752,7 @@
         "aisa",
         "plugin"
       ],
-      "lastCheckedAt": "2026-04-14T04:54:28.826Z",
+      "lastCheckedAt": "2026-04-14T05:53:30.716Z",
       "readmeSnippet": ""
     },
     {
@@ -1778,7 +1779,7 @@
         "aisa",
         "plugin"
       ],
-      "lastCheckedAt": "2026-04-14T04:54:28.745Z",
+      "lastCheckedAt": "2026-04-14T05:53:30.717Z",
       "readmeSnippet": ""
     }
   ]
