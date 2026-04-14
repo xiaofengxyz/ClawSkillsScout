@@ -339,6 +339,11 @@ function buildStats(items: CatalogItem[]) {
   };
 }
 
+function filterToAisaOwnerUniverse(items: CatalogItem[]) {
+  const aisaOwners = new Set(items.filter((item) => item.usesAisaApi).map((item) => item.owner));
+  return items.filter((item) => aisaOwners.has(item.owner));
+}
+
 async function main() {
   const accountsPath = path.join(process.cwd(), 'config', 'accounts.json');
   const outputPath = path.join(process.cwd(), 'public', 'data', 'catalog.json');
@@ -357,7 +362,7 @@ async function main() {
   const seedsByUrl = new Map(seedItems.map((item) => [item.url, item]));
 
   const limit = pLimit(CONCURRENCY);
-  const items = (
+  const allItems = (
     await Promise.all(
       [...queue.values()].map((item) =>
         limit(async () => {
@@ -388,6 +393,11 @@ async function main() {
       return (right.downloads ?? -1) - (left.downloads ?? -1);
     });
 
+  const items = filterToAisaOwnerUniverse(allItems);
+  const aisaOwners = [...new Set(items.filter((item) => item.usesAisaApi).map((item) => item.owner))].sort((a, b) =>
+    a.localeCompare(b),
+  );
+
   const data: CatalogData = {
     generatedAt: new Date().toISOString(),
     scannedAccounts: accounts,
@@ -398,6 +408,8 @@ async function main() {
     ],
     notes: [
       'Known-account skill discovery reads hash links from /u/{account} profile pages, then follows those detail URLs.',
+      'The exported dataset is pruned to owners that publish at least one AISA-using skill or plugin.',
+      'Within AISA-owner accounts, non-AISA items are retained in the dataset for context.',
       'AISA detection is inferred from README and rendered page content.',
       'Global discovery currently scans the first 3 pages of ClawHub skills and plugins.',
       'Suspicious status is inferred from rendered security scan output.',
@@ -408,7 +420,7 @@ async function main() {
 
   await fs.mkdir(path.dirname(outputPath), { recursive: true });
   await fs.writeFile(outputPath, `${JSON.stringify(data, null, 2)}\n`, 'utf8');
-  console.log(`Wrote ${items.length} items to ${outputPath}`);
+  console.log(`Wrote ${items.length} items across ${aisaOwners.length} AISA-owner accounts to ${outputPath}`);
 }
 
 main().catch((error) => {

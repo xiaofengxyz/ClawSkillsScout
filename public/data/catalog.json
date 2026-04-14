@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-14T02:03:18.824Z",
+  "generatedAt": "2026-04-14T03:13:22.174Z",
   "scannedAccounts": [
     "0xjordansg-yolo",
     "AISADOCS",
@@ -10,23 +10,25 @@
     "karensheng"
   ],
   "sources": [
-    "https://clawhub.ai/u/{account}/skills",
-    "https://clawhub.ai/u/{account}/plugins",
+    "https://clawhub.ai/u/{account}",
     "https://clawhub.ai/skills",
     "https://clawhub.ai/plugins"
   ],
   "notes": [
+    "Known-account skill discovery reads hash links from /u/{account} profile pages, then follows those detail URLs.",
+    "The exported dataset is pruned to owners that publish at least one AISA-using skill or plugin.",
+    "Within AISA-owner accounts, non-AISA items are retained in the dataset for context.",
     "AISA detection is inferred from README and rendered page content.",
     "Global discovery currently scans the first 3 pages of ClawHub skills and plugins.",
     "Suspicious status is inferred from rendered security scan output."
   ],
   "stats": {
-    "total": 117,
-    "skills": 67,
-    "plugins": 50,
-    "suspicious": 44,
+    "total": 57,
+    "skills": 57,
+    "plugins": 0,
+    "suspicious": 7,
     "aisa": 57,
-    "owners": 61
+    "owners": 7
   },
   "items": [
     {
@@ -46,7 +48,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T02:02:21.978Z",
+      "lastCheckedAt": "2026-04-14T03:12:54.785Z",
       "readmeSnippet": "--- name: aisa-tavily description: AI-optimized web search via AIsa's Tavily API proxy. Returns concise, relevant results for AI agents through AIsa's unified API gateway. homepage: https://aisa.one metadata: {\"clawdbot\":{\"emoji\":\"🔍\",\"requires\":{\"bins\":[\"node\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KEY\"}} ---"
     },
     {
@@ -67,7 +69,7 @@
         "suspicious",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T02:02:14.668Z",
+      "lastCheckedAt": "2026-04-14T03:12:50.079Z",
       "readmeSnippet": "--- name: Twitter Command Center (Search + Post) description: \"Searches and reads X (Twitter): profiles, timelines, mentions, followers, tweet search, trends, lists, communities, and Spaces. Publishes posts after the user completes OAuth in the browser. Use when the user asks about Twitter/X data, social listening, or "
     },
     {
@@ -88,7 +90,7 @@
         "suspicious",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T02:02:17.213Z",
+      "lastCheckedAt": "2026-04-14T03:12:51.979Z",
       "readmeSnippet": "--- name: Twitter Command Center (Search + Post) description: \"Searches and reads X (Twitter): profiles, timelines, mentions, followers, tweet search, trends, lists, communities, and Spaces. Publishes posts after the user completes OAuth in the browser. Use when the user asks about Twitter/X data, social listening, or "
     },
     {
@@ -108,7 +110,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T02:02:13.364Z",
+      "lastCheckedAt": "2026-04-14T03:12:48.716Z",
       "readmeSnippet": "--- name: openclaw-media-gen description: \"Generate images & videos with AIsa. Gemini 3 Pro Image (image) + Qwen Wan 2.6 (video) via one API key.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"🎬\",\"requires\":{\"bins\":[\"python3\",\"curl\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KEY\"}} --- # OpenClaw "
     },
     {
@@ -128,7 +130,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T02:02:25.318Z",
+      "lastCheckedAt": "2026-04-14T03:12:57.287Z",
       "readmeSnippet": "--- name: openclaw-youtube description: \"YouTube SERP Scout for agents. Search top-ranking videos, channels, and trends for content research and competitor tracking.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"📺\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KE"
     },
     {
@@ -148,7 +150,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T02:02:24.014Z",
+      "lastCheckedAt": "2026-04-14T03:12:55.681Z",
       "readmeSnippet": "--- name: openclaw-media-gen description: \"Generate images & videos with AIsa. Gemini 3 Pro Image (image) + Qwen Wan 2.6 (video) via one API key.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"🎬\",\"requires\":{\"bins\":[\"python3\",\"curl\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KEY\"}} --- # OpenClaw "
     },
     {
@@ -168,7 +170,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T02:02:24.515Z",
+      "lastCheckedAt": "2026-04-14T03:12:56.993Z",
       "readmeSnippet": "--- name: openclaw-media-gen description: \"Generate images & videos with AIsa. Gemini 3 Pro Image (image) + Qwen Wan 2.6 (video) via one API key.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"🎬\",\"requires\":{\"bins\":[\"python3\",\"curl\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KEY\"}} --- # OpenClaw "
     },
     {
@@ -188,7 +190,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T02:02:24.715Z",
+      "lastCheckedAt": "2026-04-14T03:12:57.110Z",
       "readmeSnippet": "--- name: openclaw-search description: \"Intelligent search for agents. Multi-source retrieval with confidence scoring - web, academic, and Tavily in one unified API.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"🔍\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KE"
     },
     {
@@ -208,7 +210,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T02:02:27.928Z",
+      "lastCheckedAt": "2026-04-14T03:12:47.410Z",
       "readmeSnippet": "--- name: MarketPulse description: \"Query real-time and historical financial data across equities and crypto—prices, market moves, metrics, and trends for analysis, alerts, and reporting.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"📊\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"pr"
     },
     {
@@ -229,7 +231,7 @@
         "suspicious",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T02:02:13.350Z",
+      "lastCheckedAt": "2026-04-14T03:12:49.084Z",
       "readmeSnippet": "--- name: openclaw-youtube description: \"YouTube SERP Scout for agents. Search top-ranking videos, channels, and trends for content research and competitor tracking.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"📺\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KE"
     },
     {
@@ -249,7 +251,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T02:02:14.336Z",
+      "lastCheckedAt": "2026-04-14T03:12:49.216Z",
       "readmeSnippet": "--- name: llm-router description: \"Unified LLM Gateway - One API for 70+ AI models. Route to GPT, Claude, Gemini, Qwen, Deepseek, Grok and more with a single API key.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"🧠\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_K"
     },
     {
@@ -269,7 +271,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T02:02:14.516Z",
+      "lastCheckedAt": "2026-04-14T03:12:50.429Z",
       "readmeSnippet": "--- name: Twitter Command Center (Search + Post) description: \"Searches and reads X (Twitter): profiles, timelines, mentions, followers, tweet search, trends, lists, communities, and Spaces. Publishes posts after the user completes OAuth in the browser. Use when the user asks about Twitter/X data, social listening, or "
     },
     {
@@ -289,7 +291,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T02:02:51.571Z",
+      "lastCheckedAt": "2026-04-14T03:13:00.716Z",
       "readmeSnippet": "--- name: Twitter Command Center (Search + Post) description: \"Searches and reads X (Twitter): profiles, timelines, mentions, followers, tweet search, trends, lists, communities, and Spaces. Publishes posts after the user completes OAuth in the browser. Use when the user asks about Twitter/X data, social listening, or "
     },
     {
@@ -309,7 +311,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T02:02:29.790Z",
+      "lastCheckedAt": "2026-04-14T03:12:58.114Z",
       "readmeSnippet": "--- name: MarketPulse description: \"Query real-time and historical financial data across equities and crypto—prices, market moves, metrics, and trends for analysis, alerts, and reporting.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"📊\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"pr"
     },
     {
@@ -329,7 +331,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T02:02:14.505Z",
+      "lastCheckedAt": "2026-04-14T03:12:49.062Z",
       "readmeSnippet": "--- name: llm-router description: \"Unified LLM Gateway - One API for 70+ AI models. Route to GPT, Claude, Gemini, Qwen, Deepseek, Grok and more with a single API key.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"🧠\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_K"
     },
     {
@@ -349,7 +351,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T02:02:12.105Z",
+      "lastCheckedAt": "2026-04-14T03:12:47.506Z",
       "readmeSnippet": "--- name: us-stock-analyst description: \"Professional US stock analysis with financial data, news, social sentiment, and multi-model AI. Comprehensive reports at $0.02-0.10 per analysis.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"📈\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"pri"
     },
     {
@@ -369,7 +371,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T02:02:25.879Z",
+      "lastCheckedAt": "2026-04-14T03:12:57.836Z",
       "readmeSnippet": "--- name: AIsaFinancialData description: \"Query real-time and historical financial data across equities and crypto—prices, market moves, metrics, and trends for analysis, alerts, and reporting.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"📊\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\""
     },
     {
@@ -389,7 +391,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T02:02:24.376Z",
+      "lastCheckedAt": "2026-04-14T03:12:56.403Z",
       "readmeSnippet": "--- name: llm-router description: \"Unified LLM Gateway - One API for 70+ AI models. Route to GPT, Claude, Gemini, Qwen, Deepseek, Grok and more with a single API key.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"🧠\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_K"
     },
     {
@@ -409,7 +411,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T02:02:13.442Z",
+      "lastCheckedAt": "2026-04-14T03:12:48.931Z",
       "readmeSnippet": "--- name: MarketPulse description: \"Query real-time and historical financial data across equities and crypto—prices, market moves, metrics, and trends for analysis, alerts, and reporting.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"📊\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"pr"
     },
     {
@@ -429,7 +431,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T02:02:24.221Z",
+      "lastCheckedAt": "2026-04-14T03:12:56.345Z",
       "readmeSnippet": "--- name: openclaw-youtube description: \"YouTube SERP Scout for agents. Search top-ranking videos, channels, and trends for content research and competitor tracking.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"📺\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KE"
     },
     {
@@ -449,7 +451,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T02:02:12.269Z",
+      "lastCheckedAt": "2026-04-14T03:12:51.996Z",
       "readmeSnippet": "--- name: openclaw-search description: \"Intelligent search for agents. Multi-source retrieval with confidence scoring - web, academic, and Tavily in one unified API.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"🔍\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KE"
     },
     {
@@ -469,7 +471,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T02:02:23.471Z",
+      "lastCheckedAt": "2026-04-14T03:12:47.234Z",
       "readmeSnippet": "--- name: aisa-tavily description: AI-optimized web search via AIsa's Tavily API proxy. Returns concise, relevant results for AI agents through AIsa's unified API gateway. homepage: https://aisa.one metadata: {\"clawdbot\":{\"emoji\":\"🔍\",\"requires\":{\"bins\":[\"node\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KEY\"}} ---"
     },
     {
@@ -489,7 +491,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T02:02:33.477Z",
+      "lastCheckedAt": "2026-04-14T03:13:05.254Z",
       "readmeSnippet": "--- name: Twitter Command Center (Search + Post) description: \"Searches and reads X (Twitter): profiles, timelines, mentions, followers, tweet search, trends, lists, communities, and Spaces. Publishes posts after the user completes OAuth in the browser. Use when the user asks about Twitter/X data, social listening, or "
     },
     {
@@ -509,7 +511,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T02:02:31.332Z",
+      "lastCheckedAt": "2026-04-14T03:13:03.610Z",
       "readmeSnippet": "--- name: openclaw-media-gen description: \"Generate images & videos with AIsa. Gemini 3 Pro Image (image) + Qwen Wan 2.6 (video) via one API key.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"🎬\",\"requires\":{\"bins\":[\"python3\",\"curl\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KEY\"}} --- # OpenClaw "
     },
     {
@@ -529,7 +531,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T02:02:22.325Z",
+      "lastCheckedAt": "2026-04-14T03:12:55.301Z",
       "readmeSnippet": "--- name: MarketPulse description: \"Query real-time and historical financial data across equities and crypto—prices, market moves, metrics, and trends for analysis, alerts, and reporting.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"📊\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"pr"
     },
     {
@@ -549,7 +551,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T02:02:29.319Z",
+      "lastCheckedAt": "2026-04-14T03:13:01.222Z",
       "readmeSnippet": "--- name: openclaw-search description: \"Intelligent search for agents. Multi-source retrieval across web, scholar, Tavily, and Perplexity Sonar models.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"🔎\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KEY\"}} --- # Ope"
     },
     {
@@ -569,7 +571,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T02:02:23.237Z",
+      "lastCheckedAt": "2026-04-14T03:12:55.604Z",
       "readmeSnippet": "--- name: openclaw-media-gen description: \"Generate images & videos with AIsa. Gemini 3 Pro Image (image) + Qwen Wan 2.6 (video) via one API key.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"🎬\",\"requires\":{\"bins\":[\"python3\",\"curl\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KEY\"}} --- # OpenClaw "
     },
     {
@@ -589,7 +591,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T02:03:18.823Z",
+      "lastCheckedAt": "2026-04-14T03:13:04.605Z",
       "readmeSnippet": "--- name: openclaw-youtube description: \"YouTube SERP Scout for agents. Search top-ranking videos, channels, and trends for content research and competitor tracking.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"📺\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KE"
     },
     {
@@ -609,7 +611,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T02:02:31.428Z",
+      "lastCheckedAt": "2026-04-14T03:13:03.611Z",
       "readmeSnippet": "--- name: cn-llm description: \"China LLM Gateway - Unified interface for Chinese LLMs including Qwen, DeepSeek, GLM, Baichuan. OpenAI compatible, one API Key for all models.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"🐉\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AIS"
     },
     {
@@ -629,7 +631,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T02:02:28.539Z",
+      "lastCheckedAt": "2026-04-14T03:13:00.377Z",
       "readmeSnippet": "--- name: MarketPulse description: \"Query real-time and historical financial data across equities and crypto—prices, market moves, metrics, and trends for analysis, alerts, and reporting.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"📊\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"pr"
     },
     {
@@ -649,7 +651,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T02:02:32.847Z",
+      "lastCheckedAt": "2026-04-14T03:13:08.871Z",
       "readmeSnippet": "--- name: MarketPulse description: \"Query real-time and historical financial data across equities and crypto—prices, market moves, metrics, and trends for analysis, alerts, and reporting.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"📊\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"pr"
     },
     {
@@ -669,7 +671,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T02:02:29.300Z",
+      "lastCheckedAt": "2026-04-14T03:13:01.062Z",
       "readmeSnippet": "--- name: openclaw-youtube description: \"YouTube SERP Scout for agents. Search top-ranking videos, channels, and trends for content research and competitor tracking.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"📺\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KE"
     },
     {
@@ -689,7 +691,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T02:02:28.031Z",
+      "lastCheckedAt": "2026-04-14T03:13:00.366Z",
       "readmeSnippet": "--- name: openclaw-media-gen description: \"Generate images & videos with AIsa. Gemini 3 Pro Image (image) + Qwen Wan 2.6 (video) via one API key.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"🎬\",\"requires\":{\"bins\":[\"python3\",\"curl\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KEY\"}} --- # OpenClaw "
     },
     {
@@ -709,7 +711,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T02:02:23.009Z",
+      "lastCheckedAt": "2026-04-14T03:12:55.496Z",
       "readmeSnippet": "--- name: openclaw-search description: \"Intelligent search for agents. Multi-source retrieval with confidence scoring - web, academic, and Tavily in one unified API.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"🔍\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KE"
     },
     {
@@ -729,7 +731,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T02:02:27.927Z",
+      "lastCheckedAt": "2026-04-14T03:12:59.724Z",
       "readmeSnippet": "--- name: llm-router description: \"Unified LLM Gateway - One API for 70+ AI models. Route to GPT, Claude, Gemini, Qwen, Deepseek, Grok and more with a single API key.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"🧠\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_K"
     },
     {
@@ -749,7 +751,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T02:02:31.361Z",
+      "lastCheckedAt": "2026-04-14T03:13:03.612Z",
       "readmeSnippet": "--- name: llm-router description: \"Unified LLM Gateway - One API for 70+ AI models. Route to GPT, Claude, Gemini, Grok and more with a single API key.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"🧠\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KEY\"}} --- # Open"
     },
     {
@@ -769,7 +771,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T02:02:33.450Z",
+      "lastCheckedAt": "2026-04-14T03:13:05.098Z",
       "readmeSnippet": "--- name: openclaw-search description: \"Intelligent search for agents. Multi-source retrieval across web, scholar, Tavily, and Perplexity Sonar models.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"🔎\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KEY\"}} --- # Ope"
     },
     {
@@ -789,7 +791,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T02:02:27.152Z",
+      "lastCheckedAt": "2026-04-14T03:12:59.516Z",
       "readmeSnippet": "--- name: openclaw-media-gen description: \"Generate images & videos with AIsa. Gemini 3 Pro Image (image) + Qwen Wan 2.6 (video) via one API key.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"🎬\",\"requires\":{\"bins\":[\"python3\",\"curl\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KEY\"}} --- # OpenClaw "
     },
     {
@@ -809,7 +811,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T02:02:13.188Z",
+      "lastCheckedAt": "2026-04-14T03:12:47.239Z",
       "readmeSnippet": "--- name: aisa-provider description: Configure AIsa as a first-class model provider for OpenClaw, enabling production access to major Chinese AI models (Qwen, DeepSeek, Kimi K2.5, Doubao) through official partnerships with Alibaba Cloud, BytePlus, and Moonshot. Use this skill when the user wants to set up Chinese AI mo"
     },
     {
@@ -829,7 +831,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T02:02:22.780Z",
+      "lastCheckedAt": "2026-04-14T03:12:54.674Z",
       "readmeSnippet": "--- name: aisa-provider description: Configure AIsa as a first-class model provider for OpenClaw, enabling production access to major Chinese AI models (Qwen, DeepSeek, Kimi K2.5, Doubao) through official partnerships with Alibaba Cloud, BytePlus, and Moonshot. Use this skill when the user wants to set up Chinese AI mo"
     },
     {
@@ -850,7 +852,7 @@
         "suspicious",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T02:02:12.104Z",
+      "lastCheckedAt": "2026-04-14T03:12:47.198Z",
       "readmeSnippet": "--- name: youtube-search description: | YouTube Search API via AIsa unified endpoint. Search YouTube videos, channels, and playlists with a single AIsa API key — no Google API key or OAuth required. Use this skill when users want to search YouTube content. For other AIsa capabilities (LLM, financial data, Twitter, web "
     },
     {
@@ -870,7 +872,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T02:02:30.337Z",
+      "lastCheckedAt": "2026-04-14T03:13:03.575Z",
       "readmeSnippet": "--- name: perplexity-search description: \"Perplexity Sonar search and answer generation through AIsa. Use when the task is specifically to call Perplexity Sonar, Sonar Pro, Sonar Reasoning Pro, or Sonar Deep Research for citation-backed web answers, analytical reasoning, or long-form research reports.\" homepage: https:"
     },
     {
@@ -891,7 +893,7 @@
         "suspicious",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T02:02:21.814Z",
+      "lastCheckedAt": "2026-04-14T03:12:54.033Z",
       "readmeSnippet": "--- name: Twitter Command Center (Search + Post + Interact) description: \"Searches and reads X (Twitter): profiles, timelines, mentions, followers, tweet search, trends, lists, communities, and Spaces. Publishes posts, likes/unlikes tweets, and follows/unfollows users after the user completes OAuth in the browser. Use "
     },
     {
@@ -911,7 +913,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T02:02:27.253Z",
+      "lastCheckedAt": "2026-04-14T03:12:59.529Z",
       "readmeSnippet": "--- name: perplexity-search description: \"Perplexity Sonar search and answer generation through AIsa. Use when the task is specifically to call Perplexity Sonar, Sonar Pro, Sonar Reasoning Pro, or Sonar Deep Research for citation-backed web answers, analytical reasoning, or long-form research reports.\" homepage: https:"
     },
     {
@@ -931,7 +933,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T02:02:21.137Z",
+      "lastCheckedAt": "2026-04-14T03:12:53.973Z",
       "readmeSnippet": "--- name: Prediction Market Data description: \"Prediction markets data - Polymarket, Kalshi markets, prices, positions, and trades\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"📈\",\"requires\":{\"bins\":[\"curl\",\"python\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KEY\"}} --- # Cross-Platform Prediction"
     },
     {
@@ -951,7 +953,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T02:02:20.956Z",
+      "lastCheckedAt": "2026-04-14T03:12:53.795Z",
       "readmeSnippet": "--- name: Prediction Market Arbitrage description: \"Find and analyze arbitrage opportunities across prediction markets like Polymarket and Kalshi.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"⚖️\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KEY\"}} --- # Cross-Pl"
     },
     {
@@ -971,7 +973,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T02:02:30.793Z",
+      "lastCheckedAt": "2026-04-14T03:13:02.948Z",
       "readmeSnippet": "--- name: Prediction Market Data description: \"Prediction markets data - Polymarket, Kalshi markets, prices, positions, and trades\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"📈\",\"requires\":{\"bins\":[\"curl\",\"python\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KEY\"}} --- # Cross-Platform Prediction"
     },
     {
@@ -991,7 +993,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T02:02:25.651Z",
+      "lastCheckedAt": "2026-04-14T03:12:57.886Z",
       "readmeSnippet": "--- name: prediction-market-data-zh description: \"通过 AIsa API 查询跨平台预测市场数据。支持 Polymarket 和 Kalshi 的市场行情、价格、订单簿、K线、持仓和交易记录。适用场景：查询预测市场赔率、选举博彩、事件概率、市场情绪、Polymarket 价格、Kalshi 价格、体育博彩赔率、钱包盈亏、跨平台市场对比。\" license: MIT metadata: openclaw: emoji: \"📈\" requires: bins: [python3] env: [AISA_API_KEY] primaryEnv: AISA_API_KEY --- # 预测"
     },
     {
@@ -1012,7 +1014,7 @@
         "suspicious",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T02:02:34.582Z",
+      "lastCheckedAt": "2026-04-14T03:13:06.354Z",
       "readmeSnippet": "--- name: Twitter Command Center (Search + Post + Interact) description: \"Searches and reads X (Twitter): profiles, timelines, mentions, followers, tweet search, trends, lists, communities, and Spaces. Publishes posts, likes/unlikes tweets, and follows/unfollows users after the user completes OAuth in the browser. Use "
     },
     {
@@ -1032,7 +1034,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T02:02:20.546Z",
+      "lastCheckedAt": "2026-04-14T03:12:53.556Z",
       "readmeSnippet": "--- name: perplexity-search description: \"Perplexity Sonar search and answer generation through AIsa. Use when the task is specifically to call Perplexity Sonar, Sonar Pro, Sonar Reasoning Pro, or Sonar Deep Research for citation-backed web answers, analytical reasoning, or long-form research reports.\" homepage: https:"
     },
     {
@@ -1052,7 +1054,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T02:02:25.871Z",
+      "lastCheckedAt": "2026-04-14T03:12:58.741Z",
       "readmeSnippet": "--- name: prediction-market-arbitrage-zh description: \"通过 AIsa API 发现 Polymarket 和 Kalshi 预测市场的套利机会。扫描体育市场跨平台价差、比较实时赔率、验证订单簿流动性。适用场景：预测市场套利、跨平台价差、体育博彩套利、赔率对比、无风险利润、市场低效。\" license: MIT metadata: openclaw: emoji: \"⚖️\" requires: bins: [python3] env: [AISA_API_KEY] primaryEnv: AISA_API_KEY --- # 预测市场套利 通过 [AIsa API](https:"
     },
     {
@@ -1072,7 +1074,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T02:02:26.801Z",
+      "lastCheckedAt": "2026-04-14T03:12:58.942Z",
       "readmeSnippet": "--- name: prediction-market-arbitrage-api description: \"Find arbitrage opportunities across Polymarket and Kalshi prediction markets via AIsa API. Scan sports markets for cross-platform price discrepancies, compare real-time odds, verify orderbook liquidity. Use when user asks about: prediction market arbitrage, cross-"
     },
     {
@@ -1092,7 +1094,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T02:02:26.639Z",
+      "lastCheckedAt": "2026-04-14T03:12:58.721Z",
       "readmeSnippet": "--- name: prediction-market-data description: \"Cross-platform prediction market data via AIsa API. Query Polymarket and Kalshi markets, prices, orderbooks, candlesticks, positions, and trades. Use when user asks about: prediction market odds, election betting, event probabilities, market sentiment, Polymarket prices, K"
     },
     {
@@ -1112,7 +1114,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T02:02:34.007Z",
+      "lastCheckedAt": "2026-04-14T03:13:05.310Z",
       "readmeSnippet": "--- name: Prediction Market Data description: \"Prediction markets data - Polymarket, Kalshi markets, prices, positions, and trades\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"📈\",\"requires\":{\"bins\":[\"curl\",\"python\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KEY\"}} --- # Cross-Platform Prediction"
     },
     {
@@ -1132,7 +1134,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T02:02:29.781Z",
+      "lastCheckedAt": "2026-04-14T03:13:02.948Z",
       "readmeSnippet": "--- name: Prediction Market Arbitrage description: \"Find and analyze arbitrage opportunities across prediction markets like Polymarket and Kalshi.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"⚖️\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KEY\"}} --- # Cross-Pl"
     },
     {
@@ -1152,7 +1154,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T02:02:33.961Z",
+      "lastCheckedAt": "2026-04-14T03:13:05.306Z",
       "readmeSnippet": "--- name: Prediction Market Arbitrage description: \"Find and analyze arbitrage opportunities across prediction markets like Polymarket and Kalshi.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"⚖️\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KEY\"}} --- # Cross-Pl"
     },
     {
@@ -1173,1185 +1175,8 @@
         "suspicious",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T02:02:29.289Z",
+      "lastCheckedAt": "2026-04-14T03:13:01.387Z",
       "readmeSnippet": "--- name: Twitter Command Center (Search + Post + Interact) description: \"Searches and reads X (Twitter): profiles, timelines, mentions, followers, tweet search, trends, lists, communities, and Spaces. Publishes posts, likes/unlikes tweets, and follows/unfollows users after the user completes OAuth in the browser. Use "
-    },
-    {
-      "id": "skill:gpyangyoujun:https://clawhub.ai/kn79j8kk7fb9w10jh83803j7f180a44m/multi-search-engine",
-      "type": "skill",
-      "owner": "gpyangyoujun",
-      "name": "Multi Search Engine",
-      "description": "Multi search engine integration with 16 engines (7 CN + 9 Global). Supports advanced search operators, time filters, site search, privacy engines, and Wolfra...",
-      "version": "2.1.3",
-      "clawhubUrl": "https://clawhub.ai/kn79j8kk7fb9w10jh83803j7f180a44m/multi-search-engine",
-      "downloads": 115962,
-      "suspicious": false,
-      "suspiciousLabel": null,
-      "usesAisaApi": false,
-      "source": "account",
-      "tags": [
-        "skill"
-      ],
-      "lastCheckedAt": "2026-04-14T02:02:16.697Z",
-      "readmeSnippet": "--- name: \"multi-search-engine\" description: \"Multi search engine integration with 16 engines (7 CN + 9 Global). Supports advanced search operators, time filters, site search, privacy engines, and WolframAlpha knowledge queries. No API keys required.\" --- # Multi Search Engine Integration of 16 search engines for web c"
-    },
-    {
-      "id": "skill:jacky1n7:https://clawhub.ai/kn78hhhbxwjs4nrcyn8my5fcw981wmys/openclaw-tavily-search",
-      "type": "skill",
-      "owner": "jacky1n7",
-      "name": "Tavily 搜索",
-      "description": "Web search via Tavily API (alternative to Brave). Use when the user asks to search the web / look up sources / find links and Brave web_search is unavailable...",
-      "version": "0.1.0",
-      "clawhubUrl": "https://clawhub.ai/kn78hhhbxwjs4nrcyn8my5fcw981wmys/openclaw-tavily-search",
-      "downloads": 80072,
-      "suspicious": true,
-      "suspiciousLabel": "suspicious",
-      "usesAisaApi": false,
-      "source": "account",
-      "tags": [
-        "suspicious",
-        "skill"
-      ],
-      "lastCheckedAt": "2026-04-14T02:02:19.815Z",
-      "readmeSnippet": "--- name: tavily-search description: \"Web search via Tavily API (alternative to Brave). Use when the user asks to search the web / look up sources / find links and Brave web_search is unavailable or undesired. Returns a small set of relevant results (title, url, snippet) and can optionally include short answer summarie"
-    },
-    {
-      "id": "skill:ide-rea:https://clawhub.ai/kn7akgt520t01vgs2tzx7yk6m180kt26/baidu-search",
-      "type": "skill",
-      "owner": "ide-rea",
-      "name": "Baidu Search",
-      "description": "Search the web using Baidu AI Search Engine (BDSE). Use for live information, documentation, or research topics.",
-      "version": "1.1.3",
-      "clawhubUrl": "https://clawhub.ai/kn7akgt520t01vgs2tzx7yk6m180kt26/baidu-search",
-      "downloads": 77696,
-      "suspicious": false,
-      "suspiciousLabel": null,
-      "usesAisaApi": false,
-      "source": "account",
-      "tags": [
-        "skill"
-      ],
-      "lastCheckedAt": "2026-04-14T02:02:19.976Z",
-      "readmeSnippet": "--- name: baidu-search description: Search the web using Baidu AI Search Engine (BDSE). Use for live information, documentation, or research topics. metadata: { \"openclaw\": { \"emoji\": \"🔍︎\", \"requires\": { \"bins\": [\"python3\"], \"env\":[\"BAIDU_API_KEY\"]},\"primaryEnv\":\"BAIDU_API_KEY\" } } --- # Baidu Search Search the web vi"
-    },
-    {
-      "id": "skill:chindden:https://clawhub.ai/kn7ajm25k9s5t1ajwxp2yfjx818015pb/skill-creator",
-      "type": "skill",
-      "owner": "chindden",
-      "name": "Skill Creator",
-      "description": "Guide for creating effective skills. This skill should be used when users want to create a new skill (or update an existing skill) that extends Claude&#x27;s capabilities with specialized knowledge, workf…",
-      "version": "0.1.0",
-      "clawhubUrl": "https://clawhub.ai/kn7ajm25k9s5t1ajwxp2yfjx818015pb/skill-creator",
-      "downloads": 69623,
-      "suspicious": true,
-      "suspiciousLabel": "suspicious",
-      "usesAisaApi": false,
-      "source": "account",
-      "tags": [
-        "suspicious",
-        "skill"
-      ],
-      "lastCheckedAt": "2026-04-14T02:02:15.582Z",
-      "readmeSnippet": "--- name: skill-creator description: Guide for creating effective skills. This skill should be used when users want to create a new skill (or update an existing skill) that extends Claude's capabilities with specialized knowledge, workflows, or tool integrations. license: Complete terms in LICENSE.txt --- # Skill Creat"
-    },
-    {
-      "id": "skill:byungkyu:https://clawhub.ai/kn75240wq8bnv2qm2xgry748jd80b9r0/api-gateway",
-      "type": "skill",
-      "owner": "byungkyu",
-      "name": "API Gateway",
-      "description": "Connect to 100+ APIs (Google Workspace, Microsoft 365, GitHub, Notion, Slack, Airtable, HubSpot, etc.) with managed OAuth. Use this skill when users want to...",
-      "version": "1.0.80",
-      "clawhubUrl": "https://clawhub.ai/kn75240wq8bnv2qm2xgry748jd80b9r0/api-gateway",
-      "downloads": 67314,
-      "suspicious": false,
-      "suspiciousLabel": null,
-      "usesAisaApi": false,
-      "source": "account",
-      "tags": [
-        "skill"
-      ],
-      "lastCheckedAt": "2026-04-14T02:02:20.941Z",
-      "readmeSnippet": "--- name: api-gateway description: | Connect to 100+ APIs (Google Workspace, Microsoft 365, GitHub, Notion, Slack, Airtable, HubSpot, etc.) with managed OAuth. Use this skill when users want to interact with external services. Security: The MATON_API_KEY authenticates with Maton.ai but grants NO access to third-party s"
-    },
-    {
-      "id": "skill:steipete:https://clawhub.ai/kn70pywhg0fyz996kpa8xj89s57yhv26/brave-search",
-      "type": "skill",
-      "owner": "steipete",
-      "name": "Brave Search",
-      "description": "Web search and content extraction via Brave Search API. Use for searching documentation, facts, or any web content. Lightweight, no browser required.",
-      "version": "1.0.1",
-      "clawhubUrl": "https://clawhub.ai/kn70pywhg0fyz996kpa8xj89s57yhv26/brave-search",
-      "downloads": 50099,
-      "suspicious": true,
-      "suspiciousLabel": "suspicious",
-      "usesAisaApi": false,
-      "source": "account",
-      "tags": [
-        "suspicious",
-        "skill"
-      ],
-      "lastCheckedAt": "2026-04-14T02:02:15.504Z",
-      "readmeSnippet": "--- name: brave-search description: Web search and content extraction via Brave Search API. Use for searching documentation, facts, or any web content. Lightweight, no browser required. --- # Brave Search Headless web search and content extraction using Brave Search. No browser required. ## Setup Run once before first "
-    },
-    {
-      "id": "skill:steipete:https://clawhub.ai/kn70pywhg0fyz996kpa8xj89s57yhv26/model-usage",
-      "type": "skill",
-      "owner": "steipete",
-      "name": "Model Usage",
-      "description": "Use CodexBar CLI local cost usage to summarize per-model usage for Codex or Claude, including the current (most recent) model or a full model breakdown. Trigger when asked for model-level usage/cost…",
-      "version": "1.0.0",
-      "clawhubUrl": "https://clawhub.ai/kn70pywhg0fyz996kpa8xj89s57yhv26/model-usage",
-      "downloads": 31723,
-      "suspicious": false,
-      "suspiciousLabel": null,
-      "usesAisaApi": false,
-      "source": "account",
-      "tags": [
-        "skill"
-      ],
-      "lastCheckedAt": "2026-04-14T02:02:18.362Z",
-      "readmeSnippet": "--- name: model-usage description: Use CodexBar CLI local cost usage to summarize per-model usage for Codex or Claude, including the current (most recent) model or a full model breakdown. Trigger when asked for model-level usage/cost data from codexbar, or when you need a scriptable per-model summary from codexbar cost"
-    },
-    {
-      "id": "skill:kys42:https://clawhub.ai/kn7444rny7jy2b0jtr6vxbfj2d805vrw/stock-market-pro",
-      "type": "skill",
-      "owner": "kys42",
-      "name": "Stock Market Pro",
-      "description": "Yahoo Finance (yfinance) powered stock analysis skill: quotes, fundamentals, ASCII trends, high-resolution charts (RSI/MACD/BB/VWAP/ATR), plus optional web a...",
-      "version": "1.2.12",
-      "clawhubUrl": "https://clawhub.ai/kn7444rny7jy2b0jtr6vxbfj2d805vrw/stock-market-pro",
-      "downloads": 24504,
-      "suspicious": false,
-      "suspiciousLabel": null,
-      "usesAisaApi": false,
-      "source": "account",
-      "tags": [
-        "skill"
-      ],
-      "lastCheckedAt": "2026-04-14T02:02:19.242Z",
-      "readmeSnippet": "--- name: stock-market-pro description: >- Yahoo Finance (yfinance) powered stock analysis skill: quotes, fundamentals, ASCII trends, high-resolution charts (RSI/MACD/BB/VWAP/ATR), plus optional web add-ons (news + browser-first options/flow). --- # Stock Market Pro **Stock Market Pro** is a fast, local-first market re"
-    },
-    {
-      "id": "skill:steipete:https://clawhub.ai/kn70pywhg0fyz996kpa8xj89s57yhv26/sag",
-      "type": "skill",
-      "owner": "steipete",
-      "name": "Sag",
-      "description": "ElevenLabs text-to-speech with mac-style say UX.",
-      "version": "1.0.0",
-      "clawhubUrl": "https://clawhub.ai/kn70pywhg0fyz996kpa8xj89s57yhv26/sag",
-      "downloads": 22563,
-      "suspicious": true,
-      "suspiciousLabel": "suspicious",
-      "usesAisaApi": false,
-      "source": "account",
-      "tags": [
-        "suspicious",
-        "skill"
-      ],
-      "lastCheckedAt": "2026-04-14T02:02:18.235Z",
-      "readmeSnippet": "--- name: sag description: ElevenLabs text-to-speech with mac-style say UX. homepage: https://sag.sh metadata: {\"clawdbot\":{\"emoji\":\"🗣️\",\"requires\":{\"bins\":[\"sag\"],\"env\":[\"ELEVENLABS_API_KEY\"]},\"primaryEnv\":\"ELEVENLABS_API_KEY\",\"install\":[{\"id\":\"brew\",\"kind\":\"brew\",\"formula\":\"steipete/tap/sag\",\"bins\":[\"sag\"],\"label\":\""
-    },
-    {
-      "id": "skill:c-goro:https://clawhub.ai/kn74d4an2jcx38h8ekvn7cseyn808hxh/agentledger",
-      "type": "skill",
-      "owner": "c-goro",
-      "name": "AgentLedger",
-      "description": "Expense tracking and accounting for AI agents. Log purchases, set budgets, generate spending reports, and manage multi-currency finances — all stored locally. Privacy.com card import, natural languag…",
-      "version": "1.1.1",
-      "clawhubUrl": "https://clawhub.ai/kn74d4an2jcx38h8ekvn7cseyn808hxh/agentledger",
-      "downloads": 3006,
-      "suspicious": true,
-      "suspiciousLabel": "suspicious",
-      "usesAisaApi": false,
-      "source": "account",
-      "tags": [
-        "suspicious",
-        "skill"
-      ],
-      "lastCheckedAt": "2026-04-14T02:02:19.494Z",
-      "readmeSnippet": "--- name: agentledger description: Expense tracking and accounting for AI agents. Log purchases, set budgets, generate spending reports, and manage multi-currency finances — all stored locally. Privacy.com card import, natural language queries, CSV/JSON export. Use when agents make purchases and need a financial audit "
-    },
-    {
-      "id": "plugin:colygon:https://clawhub.ai/plugins/%40colygon%2Fopenclaw-nebius",
-      "type": "plugin",
-      "owner": "colygon",
-      "name": "Nebius Token Factory",
-      "description": "Nebius Token Factory provider plugin for OpenClaw — 44+ open-source models via a single endpoint",
-      "version": "1.3.0",
-      "clawhubUrl": "https://clawhub.ai/plugins/%40colygon%2Fopenclaw-nebius",
-      "downloads": null,
-      "suspicious": true,
-      "suspiciousLabel": "suspicious",
-      "usesAisaApi": false,
-      "source": "catalog",
-      "tags": [
-        "suspicious",
-        "plugin"
-      ],
-      "lastCheckedAt": "2026-04-14T02:02:34.656Z",
-      "readmeSnippet": ""
-    },
-    {
-      "id": "plugin:agntdata:https://clawhub.ai/plugins/%40agntdata%2Fopenclaw-agnt-data",
-      "type": "plugin",
-      "owner": "agntdata",
-      "name": "Agnt Data",
-      "description": "Unified social data API for AI agents. One API key for LinkedIn, YouTube, TikTok, X, Instagram, Reddit, and Facebook.",
-      "version": "1.0.5",
-      "clawhubUrl": "https://clawhub.ai/plugins/%40agntdata%2Fopenclaw-agnt-data",
-      "downloads": null,
-      "suspicious": true,
-      "suspiciousLabel": "suspicious",
-      "usesAisaApi": false,
-      "source": "catalog",
-      "tags": [
-        "suspicious",
-        "plugin"
-      ],
-      "lastCheckedAt": "2026-04-14T02:02:34.751Z",
-      "readmeSnippet": ""
-    },
-    {
-      "id": "plugin:hivemind:https://clawhub.ai/plugins/hivemind",
-      "type": "plugin",
-      "owner": "hivemind",
-      "name": "Hivemind",
-      "description": "Hivemind — cloud-backed persistent shared memory for AI agents, powered by DeepLake",
-      "version": "0.6.27",
-      "clawhubUrl": "https://clawhub.ai/plugins/hivemind",
-      "downloads": null,
-      "suspicious": false,
-      "suspiciousLabel": null,
-      "usesAisaApi": false,
-      "source": "catalog",
-      "tags": [
-        "plugin"
-      ],
-      "lastCheckedAt": "2026-04-14T02:02:34.823Z",
-      "readmeSnippet": ""
-    },
-    {
-      "id": "plugin:jiggai:https://clawhub.ai/plugins/%40jiggai%2Frecipes",
-      "type": "plugin",
-      "owner": "jiggai",
-      "name": "ClawRecipes",
-      "description": "ClawRecipes plugin for OpenClaw (markdown recipes -&gt; scaffold agents/teams)",
-      "version": "0.4.52",
-      "clawhubUrl": "https://clawhub.ai/plugins/%40jiggai%2Frecipes",
-      "downloads": null,
-      "suspicious": false,
-      "suspiciousLabel": null,
-      "usesAisaApi": false,
-      "source": "catalog",
-      "tags": [
-        "plugin"
-      ],
-      "lastCheckedAt": "2026-04-14T02:02:35.640Z",
-      "readmeSnippet": ""
-    },
-    {
-      "id": "plugin:openclaw-plugin-vt-sentinel:https://clawhub.ai/plugins/openclaw-plugin-vt-sentinel",
-      "type": "plugin",
-      "owner": "openclaw-plugin-vt-sentinel",
-      "name": "VT Sentinel",
-      "description": "VirusTotal Sentinel for OpenClaw - Malware detection and AI-powered code analysis",
-      "version": "0.12.2",
-      "clawhubUrl": "https://clawhub.ai/plugins/openclaw-plugin-vt-sentinel",
-      "downloads": null,
-      "suspicious": false,
-      "suspiciousLabel": null,
-      "usesAisaApi": false,
-      "source": "catalog",
-      "tags": [
-        "plugin"
-      ],
-      "lastCheckedAt": "2026-04-14T02:02:35.720Z",
-      "readmeSnippet": ""
-    },
-    {
-      "id": "plugin:memrok:https://clawhub.ai/plugins/memrok",
-      "type": "plugin",
-      "owner": "memrok",
-      "name": "Memrok",
-      "description": "Memory with judgment. A graph-based curation layer for OpenClaw, complementing built-in recall and dreaming with explicit supersession, expiry, and topic-aware selection.",
-      "version": "0.5.1",
-      "clawhubUrl": "https://clawhub.ai/plugins/memrok",
-      "downloads": null,
-      "suspicious": false,
-      "suspiciousLabel": null,
-      "usesAisaApi": false,
-      "source": "catalog",
-      "tags": [
-        "plugin"
-      ],
-      "lastCheckedAt": "2026-04-14T02:02:35.721Z",
-      "readmeSnippet": ""
-    },
-    {
-      "id": "plugin:kryptt:https://clawhub.ai/plugins/%40kryptt%2Fopenclaw-home-auto-plugin",
-      "type": "plugin",
-      "owner": "kryptt",
-      "name": "Clawhub Github Publish VA36tn",
-      "description": "OpenClaw plugin: Home Assistant automation control surface — query state, call services, manage entities",
-      "version": "0.2.7",
-      "clawhubUrl": "https://clawhub.ai/plugins/%40kryptt%2Fopenclaw-home-auto-plugin",
-      "downloads": null,
-      "suspicious": true,
-      "suspiciousLabel": "suspicious",
-      "usesAisaApi": false,
-      "source": "catalog",
-      "tags": [
-        "suspicious",
-        "plugin"
-      ],
-      "lastCheckedAt": "2026-04-14T02:02:36.024Z",
-      "readmeSnippet": ""
-    },
-    {
-      "id": "plugin:kryptt:https://clawhub.ai/plugins/%40kryptt%2Fopenclaw-mqtt-plugin",
-      "type": "plugin",
-      "owner": "kryptt",
-      "name": "Clawhub Github Publish FwXbjN",
-      "description": "OpenClaw plugin: bridge agent bus messages to/from MQTT for cross-agent coordination",
-      "version": "0.2.7",
-      "clawhubUrl": "https://clawhub.ai/plugins/%40kryptt%2Fopenclaw-mqtt-plugin",
-      "downloads": null,
-      "suspicious": true,
-      "suspiciousLabel": "suspicious",
-      "usesAisaApi": false,
-      "source": "catalog",
-      "tags": [
-        "suspicious",
-        "plugin"
-      ],
-      "lastCheckedAt": "2026-04-14T02:02:36.851Z",
-      "readmeSnippet": ""
-    },
-    {
-      "id": "plugin:kryptt:https://clawhub.ai/plugins/%40kryptt%2Fopenclaw-jmap-plugin",
-      "type": "plugin",
-      "owner": "kryptt",
-      "name": "Clawhub Github Publish VcNh8z",
-      "description": "OpenClaw plugin: JMAP email integration — read/send/manage messages from any JMAP-compatible mail server",
-      "version": "0.2.7",
-      "clawhubUrl": "https://clawhub.ai/plugins/%40kryptt%2Fopenclaw-jmap-plugin",
-      "downloads": null,
-      "suspicious": true,
-      "suspiciousLabel": "suspicious",
-      "usesAisaApi": false,
-      "source": "catalog",
-      "tags": [
-        "suspicious",
-        "plugin"
-      ],
-      "lastCheckedAt": "2026-04-14T02:02:36.565Z",
-      "readmeSnippet": ""
-    },
-    {
-      "id": "plugin:macvoice:https://clawhub.ai/plugins/macvoice",
-      "type": "plugin",
-      "owner": "macvoice",
-      "name": "Openclaw Macvoice",
-      "description": "OpenClaw provider for macOS voice message support via voicecli",
-      "version": "1.0.0",
-      "clawhubUrl": "https://clawhub.ai/plugins/macvoice",
-      "downloads": null,
-      "suspicious": false,
-      "suspiciousLabel": null,
-      "usesAisaApi": false,
-      "source": "catalog",
-      "tags": [
-        "plugin"
-      ],
-      "lastCheckedAt": "2026-04-14T02:02:36.608Z",
-      "readmeSnippet": ""
-    },
-    {
-      "id": "plugin:murf-tts:https://clawhub.ai/plugins/murf-tts",
-      "type": "plugin",
-      "owner": "murf-tts",
-      "name": "Murf Falcon TTS",
-      "description": "OpenClaw speech provider plugin for Murf Falcon TTS",
-      "version": "0.2.4",
-      "clawhubUrl": "https://clawhub.ai/plugins/murf-tts",
-      "downloads": null,
-      "suspicious": true,
-      "suspiciousLabel": "suspicious",
-      "usesAisaApi": false,
-      "source": "catalog",
-      "tags": [
-        "suspicious",
-        "plugin"
-      ],
-      "lastCheckedAt": "2026-04-14T02:02:37.000Z",
-      "readmeSnippet": ""
-    },
-    {
-      "id": "plugin:openclaw:https://clawhub.ai/plugins/%40openclaw%2Fzulip",
-      "type": "plugin",
-      "owner": "openclaw",
-      "name": "Openclaw Zulip Bridge",
-      "description": "OpenClaw Zulip channel plugin",
-      "version": "2026.4.12",
-      "clawhubUrl": "https://clawhub.ai/plugins/%40openclaw%2Fzulip",
-      "downloads": null,
-      "suspicious": true,
-      "suspiciousLabel": "suspicious",
-      "usesAisaApi": false,
-      "source": "catalog",
-      "tags": [
-        "suspicious",
-        "plugin"
-      ],
-      "lastCheckedAt": "2026-04-14T02:02:37.666Z",
-      "readmeSnippet": ""
-    },
-    {
-      "id": "plugin:comment-io:https://clawhub.ai/plugins/%40comment-io%2Fopenclaw-plugin",
-      "type": "plugin",
-      "owner": "comment-io",
-      "name": "Openclaw Plugin Repo",
-      "description": "Official Comment.io plugin for OpenClaw — @mention notifications and agent API guidance",
-      "version": "1.3.11",
-      "clawhubUrl": "https://clawhub.ai/plugins/%40comment-io%2Fopenclaw-plugin",
-      "downloads": null,
-      "suspicious": true,
-      "suspiciousLabel": "suspicious",
-      "usesAisaApi": false,
-      "source": "catalog",
-      "tags": [
-        "suspicious",
-        "plugin"
-      ],
-      "lastCheckedAt": "2026-04-14T02:02:37.487Z",
-      "readmeSnippet": ""
-    },
-    {
-      "id": "plugin:nuberea:https://clawhub.ai/plugins/%40nuberea%2Fopenclaw",
-      "type": "plugin",
-      "owner": "nuberea",
-      "name": "NuBerea",
-      "description": "OpenClaw plugin for the NuBerea biblical data platform — exposes NuBerea MCP tools as native OpenClaw agent tools.",
-      "version": "1.0.0",
-      "clawhubUrl": "https://clawhub.ai/plugins/%40nuberea%2Fopenclaw",
-      "downloads": null,
-      "suspicious": false,
-      "suspiciousLabel": null,
-      "usesAisaApi": false,
-      "source": "catalog",
-      "tags": [
-        "plugin"
-      ],
-      "lastCheckedAt": "2026-04-14T02:02:37.697Z",
-      "readmeSnippet": ""
-    },
-    {
-      "id": "plugin:stablepay-agentpay-dev:https://clawhub.ai/plugins/stablepay-agentpay-dev",
-      "type": "plugin",
-      "owner": "stablepay-agentpay-dev",
-      "name": "StablePay OpenClaw Plugin",
-      "description": "StablePay wallet, client-side DID registration, OWS/local signing, and payment tools for OpenClaw.",
-      "version": "0.3.3",
-      "clawhubUrl": "https://clawhub.ai/plugins/stablepay-agentpay-dev",
-      "downloads": null,
-      "suspicious": true,
-      "suspiciousLabel": "suspicious",
-      "usesAisaApi": false,
-      "source": "catalog",
-      "tags": [
-        "suspicious",
-        "plugin"
-      ],
-      "lastCheckedAt": "2026-04-14T02:02:38.029Z",
-      "readmeSnippet": ""
-    },
-    {
-      "id": "plugin:qianyi-claw-test:https://clawhub.ai/plugins/qianyi-claw-test",
-      "type": "plugin",
-      "owner": "qianyi-claw-test",
-      "name": "Package",
-      "description": "Q-Claw common plugin shell for OpenClaw",
-      "version": "1.0.29",
-      "clawhubUrl": "https://clawhub.ai/plugins/qianyi-claw-test",
-      "downloads": null,
-      "suspicious": true,
-      "suspiciousLabel": "suspicious",
-      "usesAisaApi": false,
-      "source": "catalog",
-      "tags": [
-        "suspicious",
-        "plugin"
-      ],
-      "lastCheckedAt": "2026-04-14T02:02:38.740Z",
-      "readmeSnippet": ""
-    },
-    {
-      "id": "plugin:openclaw:https://clawhub.ai/plugins/%40openclaw%2Ficpswap",
-      "type": "plugin",
-      "owner": "openclaw",
-      "name": "ICPSwap",
-      "description": "ICPSwap plugin for OpenClaw: query prices, execute swaps, check balances on the Internet Computer",
-      "version": "1.0.0",
-      "clawhubUrl": "https://clawhub.ai/plugins/%40openclaw%2Ficpswap",
-      "downloads": null,
-      "suspicious": true,
-      "suspiciousLabel": "suspicious",
-      "usesAisaApi": false,
-      "source": "catalog",
-      "tags": [
-        "suspicious",
-        "plugin"
-      ],
-      "lastCheckedAt": "2026-04-14T02:02:38.659Z",
-      "readmeSnippet": ""
-    },
-    {
-      "id": "plugin:aporthq:https://clawhub.ai/plugins/%40aporthq%2Fopenclaw-aport",
-      "type": "plugin",
-      "owner": "aporthq",
-      "name": "APort Guardrails",
-      "description": "OpenClaw plugin for deterministic pre-action authorization via APort guardrails",
-      "version": "1.0.22",
-      "clawhubUrl": "https://clawhub.ai/plugins/%40aporthq%2Fopenclaw-aport",
-      "downloads": null,
-      "suspicious": true,
-      "suspiciousLabel": "suspicious",
-      "usesAisaApi": false,
-      "source": "catalog",
-      "tags": [
-        "suspicious",
-        "plugin"
-      ],
-      "lastCheckedAt": "2026-04-14T02:02:38.563Z",
-      "readmeSnippet": ""
-    },
-    {
-      "id": "plugin:myaider:https://clawhub.ai/plugins/%40myaider%2Fmyaider",
-      "type": "plugin",
-      "owner": "myaider",
-      "name": "Myaider",
-      "description": "OpenClaw plugin for MyAider MCP integration — connect to myaider.ai MCP, invoke tools, and import dynamic skills into OpenClaw.",
-      "version": "1.0.8",
-      "clawhubUrl": "https://clawhub.ai/plugins/%40myaider%2Fmyaider",
-      "downloads": null,
-      "suspicious": true,
-      "suspiciousLabel": "suspicious",
-      "usesAisaApi": false,
-      "source": "catalog",
-      "tags": [
-        "suspicious",
-        "plugin"
-      ],
-      "lastCheckedAt": "2026-04-14T02:02:38.862Z",
-      "readmeSnippet": ""
-    },
-    {
-      "id": "plugin:mnemospark:https://clawhub.ai/plugins/mnemospark",
-      "type": "plugin",
-      "owner": "mnemospark",
-      "name": "mnemospark",
-      "description": "mnemospark is an OpenClaw plugin that gives agentic systems instant, secure access to cloud storage, compute, and proprietary datasets paid via x402 with USDC on Base. Wallet and go.",
-      "version": "2026.4.8",
-      "clawhubUrl": "https://clawhub.ai/plugins/mnemospark",
-      "downloads": null,
-      "suspicious": true,
-      "suspiciousLabel": "suspicious",
-      "usesAisaApi": false,
-      "source": "catalog",
-      "tags": [
-        "suspicious",
-        "plugin"
-      ],
-      "lastCheckedAt": "2026-04-14T02:02:39.578Z",
-      "readmeSnippet": ""
-    },
-    {
-      "id": "plugin:llm-wiki-karpathy-plugin:https://clawhub.ai/plugins/llm-wiki-karpathy-plugin",
-      "type": "plugin",
-      "owner": "llm-wiki-karpathy-plugin",
-      "name": "LLM Wiki Karpathy",
-      "description": "Representation-first multimodal Markdown wiki runtime for Obsidian vaults, with standalone CLI, MCP server, and OpenClaw compatibility.",
-      "version": "0.4.4",
-      "clawhubUrl": "https://clawhub.ai/plugins/llm-wiki-karpathy-plugin",
-      "downloads": null,
-      "suspicious": true,
-      "suspiciousLabel": "suspicious",
-      "usesAisaApi": false,
-      "source": "catalog",
-      "tags": [
-        "suspicious",
-        "plugin"
-      ],
-      "lastCheckedAt": "2026-04-14T02:02:39.663Z",
-      "readmeSnippet": ""
-    },
-    {
-      "id": "plugin:aquaman-plugin:https://clawhub.ai/plugins/aquaman-plugin",
-      "type": "plugin",
-      "owner": "aquaman-plugin",
-      "name": "Aquaman — API Key Protection",
-      "description": "Protect API keys and secrets for OpenClaw — credentials stay in your vault, never in the agent&#x27;s memory",
-      "version": "0.11.1",
-      "clawhubUrl": "https://clawhub.ai/plugins/aquaman-plugin",
-      "downloads": null,
-      "suspicious": true,
-      "suspiciousLabel": "suspicious",
-      "usesAisaApi": false,
-      "source": "catalog",
-      "tags": [
-        "suspicious",
-        "plugin"
-      ],
-      "lastCheckedAt": "2026-04-14T02:02:39.691Z",
-      "readmeSnippet": ""
-    },
-    {
-      "id": "plugin:opera-news-plugin:https://clawhub.ai/plugins/opera-news-plugin",
-      "type": "plugin",
-      "owner": "opera-news-plugin",
-      "name": "Opera News Plugin",
-      "description": "OpenClaw plugin for Opera News API - provides AI assistants access to Opera News content",
-      "version": "1.1.3",
-      "clawhubUrl": "https://clawhub.ai/plugins/opera-news-plugin",
-      "downloads": null,
-      "suspicious": false,
-      "suspiciousLabel": null,
-      "usesAisaApi": false,
-      "source": "catalog",
-      "tags": [
-        "plugin"
-      ],
-      "lastCheckedAt": "2026-04-14T02:02:39.847Z",
-      "readmeSnippet": ""
-    },
-    {
-      "id": "plugin:mmanthe37-mcp-server:https://clawhub.ai/plugins/mmanthe37-mcp-server",
-      "type": "plugin",
-      "owner": "mmanthe37-mcp-server",
-      "name": "Mmanthe37 Mcp Server Publish",
-      "description": "Production MCP server with read-only web3, DeFi, NFT, and blockchain analytics tools",
-      "version": "0.1.5",
-      "clawhubUrl": "https://clawhub.ai/plugins/mmanthe37-mcp-server",
-      "downloads": null,
-      "suspicious": false,
-      "suspiciousLabel": null,
-      "usesAisaApi": false,
-      "source": "catalog",
-      "tags": [
-        "plugin"
-      ],
-      "lastCheckedAt": "2026-04-14T02:02:40.663Z",
-      "readmeSnippet": ""
-    },
-    {
-      "id": "plugin:kepler:https://clawhub.ai/plugins/kepler",
-      "type": "plugin",
-      "owner": "kepler",
-      "name": "KeplerPlugin",
-      "description": "Kepler - ChatGPT/Claude/OpenClaw Plugin",
-      "version": "0.2.5",
-      "clawhubUrl": "https://clawhub.ai/plugins/kepler",
-      "downloads": null,
-      "suspicious": true,
-      "suspiciousLabel": "suspicious",
-      "usesAisaApi": false,
-      "source": "catalog",
-      "tags": [
-        "suspicious",
-        "plugin"
-      ],
-      "lastCheckedAt": "2026-04-14T02:02:40.612Z",
-      "readmeSnippet": ""
-    },
-    {
-      "id": "plugin:kepler.bundle:https://clawhub.ai/plugins/kepler.bundle",
-      "type": "plugin",
-      "owner": "kepler.bundle",
-      "name": "KeplerPlugin",
-      "description": "Kepler - ChatGPT/Claude/OpenClaw Plugin",
-      "version": "0.2.4",
-      "clawhubUrl": "https://clawhub.ai/plugins/kepler.bundle",
-      "downloads": null,
-      "suspicious": true,
-      "suspiciousLabel": "suspicious",
-      "usesAisaApi": false,
-      "source": "catalog",
-      "tags": [
-        "suspicious",
-        "plugin"
-      ],
-      "lastCheckedAt": "2026-04-14T02:02:40.465Z",
-      "readmeSnippet": ""
-    },
-    {
-      "id": "plugin:qingtui:https://clawhub.ai/plugins/%40qingtui%2Fqingtui-openclaw-plugin",
-      "type": "plugin",
-      "owner": "qingtui",
-      "name": "qingtui",
-      "description": "OpenClaw QingTui (轻推) channel plugin (official by CISDI QingTui team)",
-      "version": "2026.4.10",
-      "clawhubUrl": "https://clawhub.ai/plugins/%40qingtui%2Fqingtui-openclaw-plugin",
-      "downloads": null,
-      "suspicious": false,
-      "suspiciousLabel": null,
-      "usesAisaApi": false,
-      "source": "catalog",
-      "tags": [
-        "plugin"
-      ],
-      "lastCheckedAt": "2026-04-14T02:02:40.847Z",
-      "readmeSnippet": ""
-    },
-    {
-      "id": "plugin:chrome-openclaw-sider:https://clawhub.ai/plugins/chrome-openclaw-sider",
-      "type": "plugin",
-      "owner": "chrome-openclaw-sider",
-      "name": "Chrome channel for OpenClaw by Sider",
-      "description": "Official Chrome channel plugin for connecting OpenClaw in Sider Chrome extension",
-      "version": "1.0.4",
-      "clawhubUrl": "https://clawhub.ai/plugins/chrome-openclaw-sider",
-      "downloads": null,
-      "suspicious": false,
-      "suspiciousLabel": null,
-      "usesAisaApi": false,
-      "source": "catalog",
-      "tags": [
-        "plugin"
-      ],
-      "lastCheckedAt": "2026-04-14T02:02:41.288Z",
-      "readmeSnippet": ""
-    },
-    {
-      "id": "plugin:openclaw-tui-notify:https://clawhub.ai/plugins/openclaw-tui-notify",
-      "type": "plugin",
-      "owner": "openclaw-tui-notify",
-      "name": "OpenClaw TUI Notify",
-      "description": "OpenClaw plugin for macOS desktop notifications when terminal TUI replies finish and Ghostty is unfocused.",
-      "version": "0.1.2",
-      "clawhubUrl": "https://clawhub.ai/plugins/openclaw-tui-notify",
-      "downloads": null,
-      "suspicious": true,
-      "suspiciousLabel": "suspicious",
-      "usesAisaApi": false,
-      "source": "catalog",
-      "tags": [
-        "suspicious",
-        "plugin"
-      ],
-      "lastCheckedAt": "2026-04-14T02:02:41.524Z",
-      "readmeSnippet": ""
-    },
-    {
-      "id": "plugin:hirey-openclaw-hi-install:https://clawhub.ai/plugins/hirey-openclaw-hi-install",
-      "type": "plugin",
-      "owner": "hirey-openclaw-hi-install",
-      "name": "Install Hirey Hi on OpenClaw",
-      "description": "hirey-openclaw-hi-install",
-      "version": "0.1.41",
-      "clawhubUrl": "https://clawhub.ai/plugins/hirey-openclaw-hi-install",
-      "downloads": null,
-      "suspicious": false,
-      "suspiciousLabel": null,
-      "usesAisaApi": false,
-      "source": "catalog",
-      "tags": [
-        "plugin"
-      ],
-      "lastCheckedAt": "2026-04-14T02:02:41.419Z",
-      "readmeSnippet": ""
-    },
-    {
-      "id": "plugin:openclaw-cohere-stt:https://clawhub.ai/plugins/openclaw-cohere-stt",
-      "type": "plugin",
-      "owner": "openclaw-cohere-stt",
-      "name": "Cohere STT",
-      "description": "OpenClaw Cohere audio transcription provider plugin",
-      "version": "1.0.1",
-      "clawhubUrl": "https://clawhub.ai/plugins/openclaw-cohere-stt",
-      "downloads": null,
-      "suspicious": false,
-      "suspiciousLabel": null,
-      "usesAisaApi": false,
-      "source": "catalog",
-      "tags": [
-        "plugin"
-      ],
-      "lastCheckedAt": "2026-04-14T02:02:41.609Z",
-      "readmeSnippet": ""
-    },
-    {
-      "id": "plugin:openclaw:https://clawhub.ai/plugins/%40openclaw%2Fopenviking",
-      "type": "plugin",
-      "owner": "openclaw",
-      "name": "Clawhub Staging",
-      "description": "OpenClaw OpenViking-backed long-term memory plugin (install to ~/.openclaw/extensions)",
-      "version": "2026.4.13",
-      "clawhubUrl": "https://clawhub.ai/plugins/%40openclaw%2Fopenviking",
-      "downloads": null,
-      "suspicious": true,
-      "suspiciousLabel": "suspicious",
-      "usesAisaApi": false,
-      "source": "catalog",
-      "tags": [
-        "suspicious",
-        "plugin"
-      ],
-      "lastCheckedAt": "2026-04-14T02:02:42.262Z",
-      "readmeSnippet": ""
-    },
-    {
-      "id": "plugin:mandisan:https://clawhub.ai/plugins/%40mandisan%2Fclawx-weather",
-      "type": "plugin",
-      "owner": "mandisan",
-      "name": "Clawx Weather",
-      "description": "&lt;p align=&quot;center&quot;&gt;",
-      "version": "1.0.1",
-      "clawhubUrl": "https://clawhub.ai/plugins/%40mandisan%2Fclawx-weather",
-      "downloads": null,
-      "suspicious": true,
-      "suspiciousLabel": "suspicious",
-      "usesAisaApi": false,
-      "source": "catalog",
-      "tags": [
-        "suspicious",
-        "plugin"
-      ],
-      "lastCheckedAt": "2026-04-14T02:02:42.179Z",
-      "readmeSnippet": ""
-    },
-    {
-      "id": "plugin:openmark-router:https://clawhub.ai/plugins/openmark-router",
-      "type": "plugin",
-      "owner": "openmark-router",
-      "name": "OpenMark AI Model Router",
-      "description": "Benchmark-driven model routing for OpenClaw, powered by OpenMark AI. Uses a bundled Python routing engine plus temporary OpenClaw model/session updates to keep same-turn routing aligned with benchmark data.",
-      "version": "7.1.3",
-      "clawhubUrl": "https://clawhub.ai/plugins/openmark-router",
-      "downloads": null,
-      "suspicious": true,
-      "suspiciousLabel": "suspicious",
-      "usesAisaApi": false,
-      "source": "catalog",
-      "tags": [
-        "suspicious",
-        "plugin"
-      ],
-      "lastCheckedAt": "2026-04-14T02:02:42.503Z",
-      "readmeSnippet": ""
-    },
-    {
-      "id": "plugin:jellyfish-security-plugin:https://clawhub.ai/plugins/jellyfish-security-plugin",
-      "type": "plugin",
-      "owner": "jellyfish-security-plugin",
-      "name": "Jellyfish Security Plugin",
-      "description": "Always-on OpenClaw security plugin with prompt-risk, behavioral-risk, and VirusTotal-backed file/site checks.",
-      "version": "1.2.1",
-      "clawhubUrl": "https://clawhub.ai/plugins/jellyfish-security-plugin",
-      "downloads": null,
-      "suspicious": true,
-      "suspiciousLabel": "suspicious",
-      "usesAisaApi": false,
-      "source": "catalog",
-      "tags": [
-        "suspicious",
-        "plugin"
-      ],
-      "lastCheckedAt": "2026-04-14T02:02:42.612Z",
-      "readmeSnippet": ""
-    },
-    {
-      "id": "plugin:mentholmike:https://clawhub.ai/plugins/%40mentholmike%2Flethe",
-      "type": "plugin",
-      "owner": "mentholmike",
-      "name": "Lethe",
-      "description": "Lethe — persistent memory layer for AI agents. OpenClaw plugin.",
-      "version": "0.1.7",
-      "clawhubUrl": "https://clawhub.ai/plugins/%40mentholmike%2Flethe",
-      "downloads": null,
-      "suspicious": false,
-      "suspiciousLabel": null,
-      "usesAisaApi": false,
-      "source": "catalog",
-      "tags": [
-        "plugin"
-      ],
-      "lastCheckedAt": "2026-04-14T02:02:43.196Z",
-      "readmeSnippet": ""
-    },
-    {
-      "id": "plugin:vauxr:https://clawhub.ai/plugins/%40vauxr%2Fopenclaw",
-      "type": "plugin",
-      "owner": "vauxr",
-      "name": "Vauxr Openclaw",
-      "description": "vauxr-openclaw",
-      "version": "2026.4.12-1",
-      "clawhubUrl": "https://clawhub.ai/plugins/%40vauxr%2Fopenclaw",
-      "downloads": null,
-      "suspicious": false,
-      "suspiciousLabel": null,
-      "usesAisaApi": false,
-      "source": "catalog",
-      "tags": [
-        "plugin"
-      ],
-      "lastCheckedAt": "2026-04-14T02:02:43.304Z",
-      "readmeSnippet": ""
-    },
-    {
-      "id": "plugin:rocketchat-openclaw:https://clawhub.ai/plugins/rocketchat-openclaw",
-      "type": "plugin",
-      "owner": "rocketchat-openclaw",
-      "name": "Rocketchat Openclaw",
-      "description": "Open-source Rocket.Chat channel plugin for OpenClaw",
-      "version": "0.7.1",
-      "clawhubUrl": "https://clawhub.ai/plugins/rocketchat-openclaw",
-      "downloads": null,
-      "suspicious": true,
-      "suspiciousLabel": "suspicious",
-      "usesAisaApi": false,
-      "source": "catalog",
-      "tags": [
-        "suspicious",
-        "plugin"
-      ],
-      "lastCheckedAt": "2026-04-14T02:02:43.355Z",
-      "readmeSnippet": ""
-    },
-    {
-      "id": "plugin:mdpersona-plugin:https://clawhub.ai/plugins/mdpersona-plugin",
-      "type": "plugin",
-      "owner": "mdpersona-plugin",
-      "name": "MDPersona",
-      "description": "Sync your MDPersona preference profiles into OpenClaw automatically",
-      "version": "1.0.3",
-      "clawhubUrl": "https://clawhub.ai/plugins/mdpersona-plugin",
-      "downloads": null,
-      "suspicious": true,
-      "suspiciousLabel": "suspicious",
-      "usesAisaApi": false,
-      "source": "catalog",
-      "tags": [
-        "suspicious",
-        "plugin"
-      ],
-      "lastCheckedAt": "2026-04-14T02:02:43.491Z",
-      "readmeSnippet": ""
-    },
-    {
-      "id": "plugin:fajarhide:https://clawhub.ai/plugins/%40fajarhide%2Fomni-signal-engine",
-      "type": "plugin",
-      "owner": "fajarhide",
-      "name": "OMNI Semantic Signal Engine",
-      "description": "Local-only semantic context filtering for OpenClaw using OMNI. Saves tokens by distilling shell output.",
-      "version": "0.5.10",
-      "clawhubUrl": "https://clawhub.ai/plugins/%40fajarhide%2Fomni-signal-engine",
-      "downloads": null,
-      "suspicious": true,
-      "suspiciousLabel": "suspicious",
-      "usesAisaApi": false,
-      "source": "catalog",
-      "tags": [
-        "suspicious",
-        "plugin"
-      ],
-      "lastCheckedAt": "2026-04-14T02:02:44.007Z",
-      "readmeSnippet": ""
-    },
-    {
-      "id": "plugin:openclaw-plugin-clawworld:https://clawhub.ai/plugins/openclaw-plugin-clawworld",
-      "type": "plugin",
-      "owner": "openclaw-plugin-clawworld",
-      "name": "ClawWorld",
-      "description": "ClawWorld plugin for posting Recent Activity on llm_input and status on llm_output.",
-      "version": "0.0.5",
-      "clawhubUrl": "https://clawhub.ai/plugins/openclaw-plugin-clawworld",
-      "downloads": null,
-      "suspicious": true,
-      "suspiciousLabel": "suspicious",
-      "usesAisaApi": false,
-      "source": "catalog",
-      "tags": [
-        "suspicious",
-        "plugin"
-      ],
-      "lastCheckedAt": "2026-04-14T02:02:44.261Z",
-      "readmeSnippet": ""
-    },
-    {
-      "id": "plugin:apple-pim-cli:https://clawhub.ai/plugins/apple-pim-cli",
-      "type": "plugin",
-      "owner": "apple-pim-cli",
-      "name": "Apple PIM",
-      "description": "OpenClaw plugin for macOS Calendar, Reminders, Contacts, and Mail via native Swift CLIs",
-      "version": "3.5.0",
-      "clawhubUrl": "https://clawhub.ai/plugins/apple-pim-cli",
-      "downloads": null,
-      "suspicious": true,
-      "suspiciousLabel": "suspicious",
-      "usesAisaApi": false,
-      "source": "catalog",
-      "tags": [
-        "suspicious",
-        "plugin"
-      ],
-      "lastCheckedAt": "2026-04-14T02:02:44.277Z",
-      "readmeSnippet": ""
-    },
-    {
-      "id": "plugin:openclaw-shortdrama-plugin:https://clawhub.ai/plugins/openclaw-shortdrama-plugin",
-      "type": "plugin",
-      "owner": "openclaw-shortdrama-plugin",
-      "name": "OpenClaw ShortDrama Plugin",
-      "description": "OpenClaw plugin that exposes the shortdrama workflow as a native tool",
-      "version": "1.0.7",
-      "clawhubUrl": "https://clawhub.ai/plugins/openclaw-shortdrama-plugin",
-      "downloads": null,
-      "suspicious": false,
-      "suspiciousLabel": null,
-      "usesAisaApi": false,
-      "source": "catalog",
-      "tags": [
-        "plugin"
-      ],
-      "lastCheckedAt": "2026-04-14T02:02:48.414Z",
-      "readmeSnippet": ""
-    },
-    {
-      "id": "plugin:openclaw-fish-audio-tts:https://clawhub.ai/plugins/openclaw-fish-audio-tts",
-      "type": "plugin",
-      "owner": "openclaw-fish-audio-tts",
-      "name": "Fish Audio TTS",
-      "description": "OpenClaw Fish Audio text-to-speech provider plugin",
-      "version": "1.0.0",
-      "clawhubUrl": "https://clawhub.ai/plugins/openclaw-fish-audio-tts",
-      "downloads": null,
-      "suspicious": false,
-      "suspiciousLabel": null,
-      "usesAisaApi": false,
-      "source": "catalog",
-      "tags": [
-        "plugin"
-      ],
-      "lastCheckedAt": "2026-04-14T02:02:45.081Z",
-      "readmeSnippet": ""
-    },
-    {
-      "id": "plugin:openclaw-channel-telnyx-sms:https://clawhub.ai/plugins/openclaw-channel-telnyx-sms",
-      "type": "plugin",
-      "owner": "openclaw-channel-telnyx-sms",
-      "name": "Telnyx SMS/MMS Channel",
-      "description": "Telnyx SMS/MMS channel extension for OpenClaw",
-      "version": "1.1.0",
-      "clawhubUrl": "https://clawhub.ai/plugins/openclaw-channel-telnyx-sms",
-      "downloads": null,
-      "suspicious": false,
-      "suspiciousLabel": null,
-      "usesAisaApi": false,
-      "source": "catalog",
-      "tags": [
-        "plugin"
-      ],
-      "lastCheckedAt": "2026-04-14T02:02:49.957Z",
-      "readmeSnippet": ""
-    },
-    {
-      "id": "plugin:emrekuruu:https://clawhub.ai/plugins/%40emrekuruu%2Fjob-search",
-      "type": "plugin",
-      "owner": "emrekuruu",
-      "name": "Openclaw Job Search Plugin",
-      "description": "Job Search for OpenClaw",
-      "version": "1.0.10",
-      "clawhubUrl": "https://clawhub.ai/plugins/%40emrekuruu%2Fjob-search",
-      "downloads": null,
-      "suspicious": false,
-      "suspiciousLabel": null,
-      "usesAisaApi": false,
-      "source": "catalog",
-      "tags": [
-        "plugin"
-      ],
-      "lastCheckedAt": "2026-04-14T02:02:45.137Z",
-      "readmeSnippet": ""
-    },
-    {
-      "id": "plugin:meshimize:https://clawhub.ai/plugins/%40meshimize%2Fopenclaw-plugin",
-      "type": "plugin",
-      "owner": "meshimize",
-      "name": "Meshimize",
-      "description": "Meshimize plugin for OpenClaw — connect AI agents to the Meshimize communication platform",
-      "version": "0.1.10",
-      "clawhubUrl": "https://clawhub.ai/plugins/%40meshimize%2Fopenclaw-plugin",
-      "downloads": null,
-      "suspicious": true,
-      "suspiciousLabel": "suspicious",
-      "usesAisaApi": false,
-      "source": "catalog",
-      "tags": [
-        "suspicious",
-        "plugin"
-      ],
-      "lastCheckedAt": "2026-04-14T02:02:46.220Z",
-      "readmeSnippet": ""
-    },
-    {
-      "id": "plugin:openclaw-onebot-plugin:https://clawhub.ai/plugins/openclaw-onebot-plugin",
-      "type": "plugin",
-      "owner": "openclaw-onebot-plugin",
-      "name": "OpenClaw OneBot Plugin",
-      "description": "OpenClaw OneBot 11 channel plugin for QQ messaging. Native integration with NapCat/go-cqhttp — voice pipeline, reactions, block streaming, and media delivery.",
-      "version": "1.2.10",
-      "clawhubUrl": "https://clawhub.ai/plugins/openclaw-onebot-plugin",
-      "downloads": null,
-      "suspicious": true,
-      "suspiciousLabel": "suspicious",
-      "usesAisaApi": false,
-      "source": "catalog",
-      "tags": [
-        "suspicious",
-        "plugin"
-      ],
-      "lastCheckedAt": "2026-04-14T02:02:46.221Z",
-      "readmeSnippet": ""
-    },
-    {
-      "id": "plugin:memorylake-openclaw:https://clawhub.ai/plugins/memorylake-openclaw",
-      "type": "plugin",
-      "owner": "memorylake-openclaw",
-      "name": "memorylake-openclaw",
-      "description": "MemoryLake memory backend for OpenClaw",
-      "version": "1.0.1",
-      "clawhubUrl": "https://clawhub.ai/plugins/memorylake-openclaw",
-      "downloads": null,
-      "suspicious": true,
-      "suspiciousLabel": "suspicious",
-      "usesAisaApi": false,
-      "source": "catalog",
-      "tags": [
-        "suspicious",
-        "plugin"
-      ],
-      "lastCheckedAt": "2026-04-14T02:02:47.125Z",
-      "readmeSnippet": ""
-    },
-    {
-      "id": "plugin:oh-my-browser:https://clawhub.ai/plugins/oh-my-browser",
-      "type": "plugin",
-      "owner": "oh-my-browser",
-      "name": "Oh My Browser",
-      "description": "Oh My Browser — let AI agents use your real browser session",
-      "version": "0.1.6",
-      "clawhubUrl": "https://clawhub.ai/plugins/oh-my-browser",
-      "downloads": null,
-      "suspicious": true,
-      "suspiciousLabel": "suspicious",
-      "usesAisaApi": false,
-      "source": "catalog",
-      "tags": [
-        "suspicious",
-        "plugin"
-      ],
-      "lastCheckedAt": "2026-04-14T02:02:47.116Z",
-      "readmeSnippet": ""
     }
   ]
 }
