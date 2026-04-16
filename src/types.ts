@@ -117,10 +117,11 @@ export interface AisaAnalysisInterface {
   skills: AisaAnalysisInterfaceSkillRef[];
   skillsBySource: { clawhub: number; github: number };
   implementedSkillCount: number;
+  inferredSkillCount: number;
   documentedOnlySkillCount: number;
   hasImplementation: boolean;
   skillCount: number;
-  coverageStatus: 'implemented' | 'no_skill_implementation';
+  coverageStatus: 'implemented' | 'inferred_implementation' | 'documented_only';
 }
 
 export interface AisaAnalysisGroup {

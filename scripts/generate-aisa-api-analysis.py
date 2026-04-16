@@ -40,8 +40,8 @@ TEXT_EXTENSIONS = {
     ".toml",
 }
 
-FULL_URL_PATTERN = re.compile(r"https://api\.aisa\.one(?P<path>/(?:apis/)?v1/[A-Za-z0-9_./:?=&%-]+)")
-RELATIVE_PATH_PATTERN = re.compile(r"(?<![A-Za-z0-9])(/(?:(?:apis/)?v1/)?[A-Za-z0-9][A-Za-z0-9_./:-]*)(?![A-Za-z0-9])")
+FULL_URL_PATTERN = re.compile(r"https://api\.aisa\.one(?P<path>/(?:apis/)?v1/[A-Za-z0-9_./:{}?=&%-]+)")
+RELATIVE_PATH_PATTERN = re.compile(r"(?<![A-Za-z0-9])(/(?:(?:apis/)?v1/)?[A-Za-z0-9][A-Za-z0-9_./:{}-]*)(?![A-Za-z0-9])")
 FRONTMATTER_NAME_PATTERN = re.compile(r'^\s*name:\s*["\']?(?P<name>[^\n"\']+)["\']?\s*$', re.MULTILINE)
 FRONTMATTER_DESCRIPTION_PATTERN = re.compile(
     r'^\s*description:\s*["\']?(?P<description>[^\n"\']+)["\']?\s*$',
@@ -310,6 +310,7 @@ def normalize_endpoint(path: str) -> str | None:
     cleaned = path.strip().strip('\'"`').rstrip(").,;")
     cleaned = cleaned.split("?", 1)[0]
     cleaned = cleaned.replace("https://api.aisa.one", "")
+    cleaned = re.sub(r"/\{[^}]+\}", "", cleaned)
     if cleaned.endswith("/"):
         cleaned = cleaned[:-1]
     if not cleaned.startswith("/"):
@@ -517,6 +518,7 @@ def main() -> None:
         "skills": [],
         "skillsBySource": {"clawhub": 0, "github": 0},
         "implementedSkillCount": 0,
+        "inferredSkillCount": 0,
         "documentedOnlySkillCount": 0,
         "hasImplementation": False,
     }
@@ -537,6 +539,7 @@ def main() -> None:
                     "skills": [],
                     "skillsBySource": {"clawhub": 0, "github": 0},
                     "implementedSkillCount": 0,
+                    "inferredSkillCount": 0,
                     "documentedOnlySkillCount": 0,
                     "hasImplementation": False,
                 },
@@ -561,11 +564,24 @@ def main() -> None:
             elif endpoint["status"] == "documented_only":
                 interface_entry["documentedOnlySkillCount"] += 1
 
+    implemented_endpoints = {interface["endpoint"] for interface in interface_map.values() if interface["implementedSkillCount"] > 0}
     interfaces = sorted(interface_map.values(), key=lambda item: item["endpoint"])
     for interface in interfaces:
         interface["skills"].sort(key=lambda item: (item["status"], item["sourceType"], item["owner"].lower(), item["skillName"].lower()))
         interface["skillCount"] = len(interface["skills"])
-        interface["coverageStatus"] = "implemented" if interface["hasImplementation"] else "no_skill_implementation"
+        inferred_count = 0
+        if not interface["hasImplementation"]:
+            for endpoint in implemented_endpoints:
+                if endpoint.startswith(f"{interface['endpoint']}/") or interface["endpoint"].startswith(f"{endpoint}/"):
+                    inferred_count += 1
+            interface["inferredSkillCount"] = inferred_count
+
+        if interface["hasImplementation"]:
+            interface["coverageStatus"] = "implemented"
+        elif interface["inferredSkillCount"] > 0:
+            interface["coverageStatus"] = "inferred_implementation"
+        else:
+            interface["coverageStatus"] = "documented_only"
 
     grouped_implementations = {}
     for interface in interfaces:
@@ -602,7 +618,7 @@ def main() -> None:
             "skillsWithoutEndpoints": sum(1 for skill in skills if skill["endpointCount"] == 0),
             "totalInterfaces": len(interfaces),
             "implementedInterfaces": sum(1 for interface in interfaces if interface["coverageStatus"] == "implemented"),
-            "unimplementedDocumentedInterfaces": sum(1 for interface in interfaces if interface["coverageStatus"] == "no_skill_implementation"),
+            "unimplementedDocumentedInterfaces": sum(1 for interface in interfaces if interface["coverageStatus"] != "implemented"),
         },
         "interfaces": interfaces,
         "skills": skills,

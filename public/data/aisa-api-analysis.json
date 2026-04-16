@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-16T09:23:32.811430+00:00",
+  "generatedAt": "2026-04-16T14:54:00.442421+00:00",
   "comparisonBase": {
     "name": "AISA createChatCompletion",
     "endpoint": "/v1/chat/completions",
@@ -72,6 +72,7 @@
         "github": 0
       },
       "implementedSkillCount": 4,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 4,
@@ -122,6 +123,7 @@
         "github": 0
       },
       "implementedSkillCount": 3,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 3,
@@ -172,6 +174,7 @@
         "github": 0
       },
       "implementedSkillCount": 3,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 3,
@@ -222,6 +225,7 @@
         "github": 0
       },
       "implementedSkillCount": 3,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 3,
@@ -272,6 +276,7 @@
         "github": 0
       },
       "implementedSkillCount": 3,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 3,
@@ -332,6 +337,7 @@
         "github": 0
       },
       "implementedSkillCount": 4,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 4,
@@ -362,10 +368,11 @@
         "github": 0
       },
       "implementedSkillCount": 0,
+      "inferredSkillCount": 4,
       "documentedOnlySkillCount": 1,
       "hasImplementation": false,
       "skillCount": 1,
-      "coverageStatus": "no_skill_implementation"
+      "coverageStatus": "inferred_implementation"
     },
     {
       "endpoint": "/apis/v1/financial/financial_statements/all",
@@ -422,6 +429,7 @@
         "github": 0
       },
       "implementedSkillCount": 4,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 4,
@@ -472,6 +480,7 @@
         "github": 0
       },
       "implementedSkillCount": 3,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 3,
@@ -522,6 +531,7 @@
         "github": 0
       },
       "implementedSkillCount": 3,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 3,
@@ -572,6 +582,7 @@
         "github": 0
       },
       "implementedSkillCount": 3,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 3,
@@ -632,6 +643,7 @@
         "github": 0
       },
       "implementedSkillCount": 4,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 4,
@@ -692,6 +704,7 @@
         "github": 0
       },
       "implementedSkillCount": 4,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 4,
@@ -742,6 +755,7 @@
         "github": 0
       },
       "implementedSkillCount": 3,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 3,
@@ -792,6 +806,7 @@
         "github": 0
       },
       "implementedSkillCount": 3,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 3,
@@ -852,6 +867,7 @@
         "github": 0
       },
       "implementedSkillCount": 4,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 4,
@@ -912,6 +928,7 @@
         "github": 0
       },
       "implementedSkillCount": 3,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 1,
       "hasImplementation": true,
       "skillCount": 4,
@@ -962,6 +979,7 @@
         "github": 0
       },
       "implementedSkillCount": 3,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 3,
@@ -1022,6 +1040,7 @@
         "github": 0
       },
       "implementedSkillCount": 4,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 4,
@@ -1072,6 +1091,7 @@
         "github": 0
       },
       "implementedSkillCount": 3,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 3,
@@ -1152,6 +1172,7 @@
         "github": 0
       },
       "implementedSkillCount": 6,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 6,
@@ -1232,6 +1253,7 @@
         "github": 0
       },
       "implementedSkillCount": 6,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 6,
@@ -1312,6 +1334,7 @@
         "github": 0
       },
       "implementedSkillCount": 6,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 6,
@@ -1392,6 +1415,7 @@
         "github": 0
       },
       "implementedSkillCount": 6,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 6,
@@ -1472,6 +1496,7 @@
         "github": 0
       },
       "implementedSkillCount": 6,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 6,
@@ -1502,10 +1527,11 @@
         "github": 0
       },
       "implementedSkillCount": 0,
+      "inferredSkillCount": 1,
       "documentedOnlySkillCount": 1,
       "hasImplementation": false,
       "skillCount": 1,
-      "coverageStatus": "no_skill_implementation"
+      "coverageStatus": "inferred_implementation"
     },
     {
       "endpoint": "/apis/v1/perplexity/sonar",
@@ -1542,6 +1568,7 @@
         "github": 0
       },
       "implementedSkillCount": 2,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 2,
@@ -1582,6 +1609,7 @@
         "github": 0
       },
       "implementedSkillCount": 2,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 2,
@@ -1622,6 +1650,7 @@
         "github": 0
       },
       "implementedSkillCount": 2,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 2,
@@ -1662,6 +1691,7 @@
         "github": 0
       },
       "implementedSkillCount": 2,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 2,
@@ -1742,6 +1772,7 @@
         "github": 0
       },
       "implementedSkillCount": 6,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 6,
@@ -1822,6 +1853,7 @@
         "github": 0
       },
       "implementedSkillCount": 6,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 6,
@@ -1902,6 +1934,7 @@
         "github": 0
       },
       "implementedSkillCount": 6,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 6,
@@ -2002,6 +2035,7 @@
         "github": 0
       },
       "implementedSkillCount": 8,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 8,
@@ -2082,6 +2116,7 @@
         "github": 0
       },
       "implementedSkillCount": 6,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 6,
@@ -2162,6 +2197,7 @@
         "github": 0
       },
       "implementedSkillCount": 6,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 6,
@@ -2242,6 +2278,7 @@
         "github": 0
       },
       "implementedSkillCount": 6,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 6,
@@ -2322,6 +2359,7 @@
         "github": 0
       },
       "implementedSkillCount": 6,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 6,
@@ -2402,6 +2440,7 @@
         "github": 0
       },
       "implementedSkillCount": 6,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 6,
@@ -2522,6 +2561,7 @@
         "github": 8
       },
       "implementedSkillCount": 10,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 10,
@@ -2652,6 +2692,7 @@
         "github": 8
       },
       "implementedSkillCount": 11,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 11,
@@ -2772,6 +2813,7 @@
         "github": 8
       },
       "implementedSkillCount": 10,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 10,
@@ -2902,6 +2944,7 @@
         "github": 8
       },
       "implementedSkillCount": 11,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 11,
@@ -2942,6 +2985,7 @@
         "github": 0
       },
       "implementedSkillCount": 1,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 1,
       "hasImplementation": true,
       "skillCount": 2,
@@ -2992,10 +3036,11 @@
         "github": 0
       },
       "implementedSkillCount": 0,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 3,
       "hasImplementation": false,
       "skillCount": 3,
-      "coverageStatus": "no_skill_implementation"
+      "coverageStatus": "documented_only"
     },
     {
       "endpoint": "/apis/v1/services/aigc/tasks",
@@ -3032,6 +3077,7 @@
         "github": 0
       },
       "implementedSkillCount": 2,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 2,
@@ -3072,6 +3118,7 @@
         "github": 0
       },
       "implementedSkillCount": 2,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 2,
@@ -3122,6 +3169,7 @@
         "github": 1
       },
       "implementedSkillCount": 2,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 1,
       "hasImplementation": true,
       "skillCount": 3,
@@ -3252,6 +3300,7 @@
         "github": 8
       },
       "implementedSkillCount": 11,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 11,
@@ -3302,6 +3351,7 @@
         "github": 1
       },
       "implementedSkillCount": 2,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 1,
       "hasImplementation": true,
       "skillCount": 3,
@@ -3452,6 +3502,7 @@
         "github": 8
       },
       "implementedSkillCount": 13,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 13,
@@ -3572,6 +3623,7 @@
         "github": 1
       },
       "implementedSkillCount": 10,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 10,
@@ -3642,6 +3694,7 @@
         "github": 0
       },
       "implementedSkillCount": 5,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 5,
@@ -3762,6 +3815,7 @@
         "github": 1
       },
       "implementedSkillCount": 10,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 10,
@@ -3882,6 +3936,7 @@
         "github": 1
       },
       "implementedSkillCount": 10,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 10,
@@ -4002,6 +4057,7 @@
         "github": 1
       },
       "implementedSkillCount": 10,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 10,
@@ -4122,6 +4178,7 @@
         "github": 1
       },
       "implementedSkillCount": 10,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 10,
@@ -4242,6 +4299,7 @@
         "github": 1
       },
       "implementedSkillCount": 10,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 10,
@@ -4362,6 +4420,7 @@
         "github": 1
       },
       "implementedSkillCount": 10,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 10,
@@ -4482,6 +4541,7 @@
         "github": 1
       },
       "implementedSkillCount": 10,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 10,
@@ -4552,6 +4612,7 @@
         "github": 0
       },
       "implementedSkillCount": 5,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 5,
@@ -4672,6 +4733,7 @@
         "github": 1
       },
       "implementedSkillCount": 10,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 10,
@@ -4792,6 +4854,7 @@
         "github": 1
       },
       "implementedSkillCount": 10,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 10,
@@ -4942,6 +5005,7 @@
         "github": 1
       },
       "implementedSkillCount": 13,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 13,
@@ -5062,6 +5126,7 @@
         "github": 1
       },
       "implementedSkillCount": 10,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 10,
@@ -5182,6 +5247,7 @@
         "github": 1
       },
       "implementedSkillCount": 10,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 10,
@@ -5302,6 +5368,7 @@
         "github": 1
       },
       "implementedSkillCount": 10,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 10,
@@ -5422,6 +5489,7 @@
         "github": 1
       },
       "implementedSkillCount": 10,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 10,
@@ -5542,6 +5610,7 @@
         "github": 1
       },
       "implementedSkillCount": 10,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 10,
@@ -5662,6 +5731,7 @@
         "github": 1
       },
       "implementedSkillCount": 10,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 10,
@@ -5782,6 +5852,7 @@
         "github": 1
       },
       "implementedSkillCount": 10,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 10,
@@ -5902,6 +5973,7 @@
         "github": 1
       },
       "implementedSkillCount": 10,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 10,
@@ -6022,6 +6094,7 @@
         "github": 1
       },
       "implementedSkillCount": 10,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 10,
@@ -6142,6 +6215,7 @@
         "github": 1
       },
       "implementedSkillCount": 10,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 10,
@@ -6262,6 +6336,7 @@
         "github": 1
       },
       "implementedSkillCount": 10,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 10,
@@ -6382,6 +6457,7 @@
         "github": 1
       },
       "implementedSkillCount": 10,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 10,
@@ -6502,6 +6578,7 @@
         "github": 1
       },
       "implementedSkillCount": 10,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 10,
@@ -6622,6 +6699,7 @@
         "github": 1
       },
       "implementedSkillCount": 10,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 10,
@@ -6742,6 +6820,7 @@
         "github": 1
       },
       "implementedSkillCount": 10,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 0,
       "hasImplementation": true,
       "skillCount": 10,
@@ -6852,6 +6931,7 @@
         "github": 0
       },
       "implementedSkillCount": 7,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 2,
       "hasImplementation": true,
       "skillCount": 9,
@@ -6952,6 +7032,7 @@
         "github": 0
       },
       "implementedSkillCount": 2,
+      "inferredSkillCount": 0,
       "documentedOnlySkillCount": 6,
       "hasImplementation": true,
       "skillCount": 8,
@@ -6977,26 +7058,6 @@
           "status": "documented_only"
         },
         {
-          "skillId": "clawhub:0xjordansg-yolo:openclaw-aisa-llm-gateway",
-          "skillName": "One API key for 70+ AI models. Route to GPT, Claude, Gemini, Qwen, Deepseek, Grok and more",
-          "owner": "0xjordansg-yolo",
-          "sourceType": "clawhub",
-          "sourceLabel": "ClawHub",
-          "sourceUrl": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-llm-gateway",
-          "downloadPath": "downloads/clawHub/0xjordansg-yolo/openclaw-aisa-llm-gateway.zip",
-          "status": "documented_only"
-        },
-        {
-          "skillId": "clawhub:0xjordansg-yolo:openclaw-aisa-affordable-llm-model-tokens",
-          "skillName": "Save upto 50% for model tokens: OpenAI GPT, Claude, Gemini, Qwen, Deepseek, Grok and more with one single key",
-          "owner": "0xjordansg-yolo",
-          "sourceType": "clawhub",
-          "sourceLabel": "ClawHub",
-          "sourceUrl": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-affordable-llm-model-tokens",
-          "downloadPath": "downloads/clawHub/0xjordansg-yolo/openclaw-aisa-affordable-llm-model-tokens.zip",
-          "status": "documented_only"
-        },
-        {
           "skillId": "clawhub:0xjordansg-yolo:openclaw-aisa-image-video-models-wan2-6-gemini-3-pro-image-nano-banana",
           "skillName": "Generate images & videos with: Gemini 3 Pro Image (image) + Qwen Wan 2.6 (video) via one API key",
           "owner": "0xjordansg-yolo",
@@ -7018,13 +7079,14 @@
         }
       ],
       "skillsBySource": {
-        "clawhub": 5,
+        "clawhub": 3,
         "github": 0
       },
       "implementedSkillCount": 2,
-      "documentedOnlySkillCount": 3,
+      "inferredSkillCount": 0,
+      "documentedOnlySkillCount": 1,
       "hasImplementation": true,
-      "skillCount": 5,
+      "skillCount": 3,
       "coverageStatus": "implemented"
     }
   ],
@@ -7131,15 +7193,12 @@
           "method": "GET",
           "status": "implemented",
           "files": [
-            "README.md",
             "scripts/media_gen_client.py"
           ],
           "codeFiles": [
             "scripts/media_gen_client.py"
           ],
-          "docFiles": [
-            "README.md"
-          ],
+          "docFiles": [],
           "comparisonToCreateChatCompletion": "不在 createchatcompletion 单页内，属于同一 OpenAI-compatible 家族",
           "officialDocUrl": null
         }
@@ -7395,32 +7454,16 @@
           ],
           "comparisonToCreateChatCompletion": "与官方 createchatcompletion 文档直接对应",
           "officialDocUrl": "https://docs.aisa.one/reference/createchatcompletion"
-        },
-        {
-          "endpoint": "/v1/models",
-          "name": "OpenAI-Compatible Models",
-          "method": "GET",
-          "status": "documented_only",
-          "files": [
-            "SKILL.md"
-          ],
-          "codeFiles": [],
-          "docFiles": [
-            "SKILL.md"
-          ],
-          "comparisonToCreateChatCompletion": "不在 createchatcompletion 单页内，属于同一 OpenAI-compatible 家族",
-          "officialDocUrl": null
         }
       ],
-      "endpointCount": 2,
+      "endpointCount": 1,
       "implementedEndpointCount": 0,
-      "documentedOnlyEndpointCount": 2,
+      "documentedOnlyEndpointCount": 1,
       "hasOfficialChatCompletion": true,
       "implementationStatus": "documented_only",
       "primaryInterfaceGroup": "/v1/chat/completions",
       "interfaceGroups": [
-        "/v1/chat/completions",
-        "/v1/models"
+        "/v1/chat/completions"
       ]
     },
     {
@@ -8221,32 +8264,16 @@
           ],
           "comparisonToCreateChatCompletion": "与官方 createchatcompletion 文档直接对应",
           "officialDocUrl": "https://docs.aisa.one/reference/createchatcompletion"
-        },
-        {
-          "endpoint": "/v1/models",
-          "name": "OpenAI-Compatible Models",
-          "method": "GET",
-          "status": "documented_only",
-          "files": [
-            "SKILL.md"
-          ],
-          "codeFiles": [],
-          "docFiles": [
-            "SKILL.md"
-          ],
-          "comparisonToCreateChatCompletion": "不在 createchatcompletion 单页内，属于同一 OpenAI-compatible 家族",
-          "officialDocUrl": null
         }
       ],
-      "endpointCount": 2,
+      "endpointCount": 1,
       "implementedEndpointCount": 0,
-      "documentedOnlyEndpointCount": 2,
+      "documentedOnlyEndpointCount": 1,
       "hasOfficialChatCompletion": true,
       "implementationStatus": "documented_only",
       "primaryInterfaceGroup": "/v1/chat/completions",
       "interfaceGroups": [
-        "/v1/chat/completions",
-        "/v1/models"
+        "/v1/chat/completions"
       ]
     },
     {
@@ -14700,15 +14727,12 @@
           "method": "GET",
           "status": "implemented",
           "files": [
-            "README.md",
             "scripts/media_gen_client.py"
           ],
           "codeFiles": [
             "scripts/media_gen_client.py"
           ],
-          "docFiles": [
-            "README.md"
-          ],
+          "docFiles": [],
           "comparisonToCreateChatCompletion": "不在 createchatcompletion 单页内，属于同一 OpenAI-compatible 家族",
           "officialDocUrl": null
         }
@@ -21988,20 +22012,6 @@
           "owner": "0xjordansg-yolo",
           "sourceType": "clawhub",
           "sourceUrl": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-chinese-llm-models"
-        },
-        {
-          "skillId": "clawhub:0xjordansg-yolo:openclaw-aisa-llm-gateway",
-          "skillName": "One API key for 70+ AI models. Route to GPT, Claude, Gemini, Qwen, Deepseek, Grok and more",
-          "owner": "0xjordansg-yolo",
-          "sourceType": "clawhub",
-          "sourceUrl": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-llm-gateway"
-        },
-        {
-          "skillId": "clawhub:0xjordansg-yolo:openclaw-aisa-affordable-llm-model-tokens",
-          "skillName": "Save upto 50% for model tokens: OpenAI GPT, Claude, Gemini, Qwen, Deepseek, Grok and more with one single key",
-          "owner": "0xjordansg-yolo",
-          "sourceType": "clawhub",
-          "sourceUrl": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-affordable-llm-model-tokens"
         },
         {
           "skillId": "clawhub:0xjordansg-yolo:openclaw-aisa-image-video-models-wan2-6-gemini-3-pro-image-nano-banana",
