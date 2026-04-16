@@ -4,6 +4,7 @@ import path from 'node:path';
 const root = process.cwd();
 const sourceRoot = path.join(root, 'artifacts', 'original-unpacked');
 const outputRoot = path.join(root, 'packages', 'source-optimized');
+const templatesRoot = path.join(root, 'templates', 'source-optimized');
 
 const PACKAGE_FILES = {
   '0xjordansg-yolo/openclaw-twitter': [
@@ -52,6 +53,17 @@ const PACKAGE_FILES = {
   ],
 };
 
+const SKILL_TEMPLATES = {
+  '0xjordansg-yolo/openclaw-twitter': '0xjordansg-yolo/openclaw-twitter/SKILL.md',
+  'aisapay/aisa-twitter-api': 'aisapay/aisa-twitter-api/SKILL.md',
+  'aisadocs/openclaw-twitter-post-engage': 'aisadocs/openclaw-twitter-post-engage/SKILL.md',
+  'karensheng/x-intelligence-automation': 'karensheng/x-intelligence-automation/SKILL.md',
+  'chaimengphp/openclaw-aisa-twitter': 'chaimengphp/openclaw-aisa-twitter/SKILL.md',
+  '0xjordansg-yolo/openclaw-aisa-youtube': '0xjordansg-yolo/openclaw-aisa-youtube/SKILL.md',
+  '0xjordansg-yolo/openclaw-aisa-youtube-search-serp-video-channels-trends-content-tracking':
+    '0xjordansg-yolo/openclaw-aisa-youtube-search-serp-video-channels-trends-content-tracking/SKILL.md',
+};
+
 async function copyFile(relativePackage, relativeFile) {
   const sourceFile = path.join(sourceRoot, relativePackage, relativeFile);
   const targetFile = path.join(outputRoot, relativePackage, relativeFile);
@@ -65,6 +77,13 @@ async function main() {
   for (const [relativePackage, files] of Object.entries(PACKAGE_FILES)) {
     for (const relativeFile of files) {
       await copyFile(relativePackage, relativeFile);
+    }
+
+    const templateRelative = SKILL_TEMPLATES[relativePackage];
+    if (templateRelative) {
+      const templatePath = path.join(templatesRoot, templateRelative);
+      const targetSkill = path.join(outputRoot, relativePackage, 'SKILL.md');
+      await fs.copyFile(templatePath, targetSkill);
     }
   }
 

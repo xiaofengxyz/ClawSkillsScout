@@ -167,6 +167,20 @@ Why this matters:
 
 - Even comments and docs can influence security review when they describe unconditional local data retention
 
+### 10. Frontmatter / registry mismatch
+
+Flag cases such as:
+
+- `SKILL.md` runtime instructions require `AISA_API_KEY` or another secret, but `metadata.openclaw.requires.env` is missing
+- `primaryEnv` appears only in prose, not in machine-readable frontmatter
+- `metadata` contains extra sibling keys that may cause fragile parsers to miss `metadata.openclaw`
+- release zip and source directory contain different frontmatter shapes
+- the package declares `curl` as a required runtime bin even though the shipped runtime path is actually a bundled Python client
+
+Why this matters:
+
+- ClawHub upload checks may classify the package as having undeclared credentials even when the prose is accurate
+
 ## Audit workflow
 
 1. Identify the target bundle or source directory.
@@ -200,6 +214,8 @@ Prefer this structure:
 - Prefer trimming release bundles over rewriting the whole skill.
 - Prefer repo-local persistence defaults over user-home defaults.
 - Prefer API-key-only runtime auth for published bundles.
+- When a credential mismatch is reported, first compare the package against a known-good uploaded skill and normalize the frontmatter shape before touching runtime files.
+- If multiple invocation styles exist in docs, prefer declaring only the true shipped runtime path in required bins; optional `curl` examples should not be treated as mandatory runtime deps.
 - Apply the same security trimming to both EN and ZH bundles; ClawHub may rescan them independently.
 
 ## Example requests

@@ -9,12 +9,37 @@ const publicDataPath = path.join(root, 'public', 'data', 'optimized-packages.jso
 const verificationPath = path.join(root, 'artifacts', 'source-optimized-verification.json');
 const catalogPath = path.join(root, 'public', 'data', 'catalog.json');
 
+function parseSimpleYamlValue(raw) {
+  const trimmed = raw.trim();
+  if ((trimmed.startsWith('"') && trimmed.endsWith('"')) || (trimmed.startsWith("'") && trimmed.endsWith("'"))) {
+    return trimmed.slice(1, -1);
+  }
+  return trimmed;
+}
+
+function extractPackageMetadata(skillText) {
+  const match = skillText.match(/^---\n([\s\S]*?)\n---/);
+  if (!match) {
+    return { requiredBins: [], requiredEnv: [], primaryEnv: '' };
+  }
+
+  const frontmatter = match[1];
+  const primaryEnvMatch = frontmatter.match(/^primaryEnv:\s*(.+)$/m);
+  const requiresBlockMatch = frontmatter.match(/^requires:\n((?: {2}.+\n?)*)/m);
+  const requiresBlock = requiresBlockMatch?.[1] ?? '';
+  const requiredBins = [...requiresBlock.matchAll(/^  bins:\n((?:    - .+\n?)*)/gm)]
+    .flatMap(([, block]) => [...block.matchAll(/^    - (.+)$/gm)].map(([, value]) => parseSimpleYamlValue(value)));
+  const requiredEnv = [...requiresBlock.matchAll(/^  env:\n((?:    - .+\n?)*)/gm)]
+    .flatMap(([, block]) => [...block.matchAll(/^    - (.+)$/gm)].map(([, value]) => parseSimpleYamlValue(value)));
+  const primaryEnv = primaryEnvMatch ? parseSimpleYamlValue(primaryEnvMatch[1]) : '';
+
+  return { requiredBins, requiredEnv, primaryEnv };
+}
+
 async function main() {
   const verification = JSON.parse(await fs.readFile(verificationPath, 'utf8'));
   const catalog = JSON.parse(await fs.readFile(catalogPath, 'utf8'));
-  const byPackage = new Map(verification.packages.map((item) => [item.package, item]));
 
-  await fs.rm(publicDownloadsRoot, { recursive: true, force: true });
   await fs.mkdir(publicDownloadsRoot, { recursive: true });
 
   const items = [];
@@ -23,6 +48,9 @@ async function main() {
     const zipName = `${owner}--${slug}.zip`;
     const zipSource = path.join(zipsRoot, zipName);
     const zipTarget = path.join(publicDownloadsRoot, zipName);
+    const skillPath = path.join(packagesRoot, owner, slug, 'SKILL.md');
+    const skillText = await fs.readFile(skillPath, 'utf8');
+    const packageMetadata = extractPackageMetadata(skillText);
     await fs.copyFile(zipSource, zipTarget);
 
     const catalogItem = catalog.items.find((item) => item.owner === owner && item.clawhubUrl.endsWith(`/${slug}`));
@@ -32,6 +60,9 @@ async function main() {
       name: catalogItem?.name ?? slug,
       clawhubUrl: catalogItem?.clawhubUrl ?? null,
       suspiciousReason: catalogItem?.suspiciousReason ?? '',
+      requiredBins: packageMetadata.requiredBins,
+      requiredEnv: packageMetadata.requiredEnv,
+      primaryEnv: packageMetadata.primaryEnv,
       packageDir: `packages/source-optimized/${owner}/${slug}`,
       downloadPath: `downloads/optimized/${zipName}`,
       verificationStatus: report.status,

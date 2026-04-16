@@ -6,6 +6,9 @@ const root = process.cwd();
 const packagesRoot = path.join(root, 'packages', 'source-optimized');
 const outputRoot = path.join(root, 'artifacts', 'optimized-release-zips');
 const indexPath = path.join(outputRoot, 'index.json');
+const EXCLUDED_BASENAMES = new Set(['CHECKLIST.md', 'README.md', '_meta.json']);
+const EXCLUDED_EXTENSIONS = new Set(['.pyc', '.pyo', '.log']);
+const EXCLUDED_SEGMENTS = new Set(['__pycache__', '.pytest_cache']);
 
 async function listPackages() {
   const owners = await fs.readdir(packagesRoot, { withFileTypes: true });
@@ -32,8 +35,9 @@ async function main() {
     const rel = path.relative(packagesRoot, packageDir).replaceAll(path.sep, '/');
     const [owner, slug] = rel.split('/');
     const zipPath = path.join(outputRoot, `${owner}--${slug}.zip`);
-    const result = spawnSync('python3', ['-m', 'zipfile', '-c', zipPath, ...await collectFiles(packageDir)], {
-      cwd: packageDir,
+    const files = await collectFiles(packageDir);
+    const result = spawnSync('python3', ['-c', ZIP_PYTHON_SCRIPT, zipPath, packageDir, ...files], {
+      cwd: root,
       stdio: 'inherit',
     });
     if (result.status !== 0) {
@@ -57,16 +61,36 @@ async function collectFiles(dir) {
   for (const entry of entries) {
     const full = path.join(dir, entry.name);
     if (entry.isDirectory()) {
+      if (EXCLUDED_SEGMENTS.has(entry.name)) {
+        continue;
+      }
       const nested = await collectFiles(full);
       for (const item of nested) {
         files.push(path.join(entry.name, item).replaceAll(path.sep, '/'));
       }
     } else {
+      if (EXCLUDED_BASENAMES.has(entry.name) || EXCLUDED_EXTENSIONS.has(path.extname(entry.name))) {
+        continue;
+      }
       files.push(entry.name);
     }
   }
   return files.sort();
 }
+
+const ZIP_PYTHON_SCRIPT = `
+import pathlib
+import sys
+import zipfile
+
+zip_path = pathlib.Path(sys.argv[1])
+package_dir = pathlib.Path(sys.argv[2])
+files = sys.argv[3:]
+
+with zipfile.ZipFile(zip_path, "w", compression=zipfile.ZIP_DEFLATED) as archive:
+    for relative in files:
+        archive.write(package_dir / relative, arcname=relative)
+`;
 
 main().catch((error) => {
   console.error(error);

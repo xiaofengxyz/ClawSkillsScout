@@ -20,6 +20,7 @@ import urllib.error
 import urllib.parse
 import urllib.request
 import unicodedata
+import webbrowser
 from typing import Any, Dict, List, Optional
 
 

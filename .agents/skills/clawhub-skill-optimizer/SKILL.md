@@ -79,6 +79,15 @@ Key points for the `description` field:
 [核心功能描述]。触发条件：当用户需要[场景]时使用。支持[特性]。
 ```
 
+**Upload-compatibility rule:**
+- Prefer a flat, conservative frontmatter shape for published skills.
+- Put `author`, `version`, `license`, and `user-invocable` at the top level when present.
+- Keep `metadata:` focused on `metadata.openclaw` only; avoid mixing unrelated sibling keys under `metadata`.
+- For relay/API-key skills, declare `primaryEnv` and `requires` both at the top level and under `metadata.openclaw`.
+- If a package was previously flagged for undeclared credentials, first compare its frontmatter shape against a known-good upload before changing runtime behavior.
+- If the shipped runtime is primarily a bundled Python client, declare `python3` as the required bin and treat `curl` as optional documentation only unless the release bundle truly depends on both paths equally.
+- Keep descriptions, setup steps, and command examples aligned with the same primary runtime path; mixed `curl` + `python` messaging can look like a metadata mismatch when only one path is actually shipped and supported.
+
 ### Step 2: Structure SKILL.md body
 
 The body is read only after agent selects the skill. Structure should match the skill type. Read `references/body-structure.md` for detailed guidance.
@@ -183,4 +192,6 @@ Use `clawhub skill publish` or `openclaw skills install` to publish. Ensure both
 - Use API key authentication only
 - Declare required binaries in `metadata.openclaw.requires.bins`
 - Declare required env vars in `metadata.openclaw.requires.env`
+- For maximum parser compatibility, also duplicate required env/bins at top-level `requires` and set top-level `primaryEnv`
+- Do not declare `curl` as a required bin when the published package's real execution path is a Python client and `curl` is only an illustrative example
 - Avoid shipping helper scripts that call external agent CLIs, sync into cache directories, or write persistent data into user-home locations by default
