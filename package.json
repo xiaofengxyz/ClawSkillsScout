@@ -6,11 +6,11 @@
   "main": "scripts/scrape-clawhub.ts",
   "scripts": {
     "dev": "vite",
-    "build": "npm run scrape && npm run analyze:aisa && vite build",
+    "build": "node scripts/ensure-public-data.mjs && npm run scrape && npm run analyze:aisa && vite build",
     "preview": "vite preview",
     "scrape": "node --import tsx scripts/scrape-clawhub.ts",
     "analyze:aisa": "python3 scripts/generate-aisa-api-analysis.py",
-    "pipeline:aisa-analysis": "npm run download:clawhub-account-skills && npm run download:github-account-skills && npm run analyze:aisa && vite build",
+    "pipeline:aisa-analysis": "node scripts/ensure-public-data.mjs && npm run download:clawhub-account-skills && npm run download:github-account-skills && npm run analyze:aisa && vite build",
     "build:source-optimized": "node scripts/build-source-optimized-packages.mjs",
     "build:source-optimized-zh": "node scripts/build-source-optimized-zh.mjs",
     "package:source-optimized": "node scripts/package-source-optimized.mjs",

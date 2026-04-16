@@ -347,17 +347,29 @@ export default function App() {
 
   useEffect(() => {
     fetch(`${import.meta.env.BASE_URL}data/catalog.json`)
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) throw new Error(`catalog.json ${response.status}`);
+        return response.json();
+      })
       .then((json: CatalogData) => setCatalog(json))
       .catch((error) => console.error('Failed to load catalog data', error));
 
     fetch(`${import.meta.env.BASE_URL}data/optimized-packages.json`)
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) {
+          setOptimized({ generatedAt: new Date().toISOString(), items: [] });
+          throw new Error(`optimized-packages.json ${response.status}`);
+        }
+        return response.json();
+      })
       .then((json: OptimizedPackageIndex) => setOptimized(json))
       .catch((error) => console.error('Failed to load optimized package index', error));
 
     fetch(`${import.meta.env.BASE_URL}data/aisa-api-analysis.json`)
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) throw new Error(`aisa-api-analysis.json ${response.status}`);
+        return response.json();
+      })
       .then((json: AisaApiAnalysisData) => setAnalysis(json))
       .catch((error) => console.error('Failed to load AISA API analysis data', error));
   }, []);
