@@ -59,3 +59,101 @@ export interface OptimizedPackageIndex {
   generatedAt: string;
   items: OptimizedPackage[];
 }
+
+export interface AisaAnalysisSkillEndpoint {
+  endpoint: string;
+  name: string;
+  method: string;
+  status: 'implemented' | 'documented_only' | 'referenced_only';
+  files: string[];
+  codeFiles: string[];
+  docFiles: string[];
+  comparisonToCreateChatCompletion: string;
+  officialDocUrl: string | null;
+}
+
+export interface AisaAnalysisSkill {
+  id: string;
+  name: string;
+  description: string;
+  owner: string;
+  sourceType: 'clawhub' | 'github';
+  sourceLabel: string;
+  sourceUrl: string;
+  downloadFile: string;
+  downloadPath: string;
+  repo?: string;
+  skillDir?: string;
+  archiveType: string;
+  endpoints: AisaAnalysisSkillEndpoint[];
+  endpointCount: number;
+  implementedEndpointCount: number;
+  documentedOnlyEndpointCount: number;
+  hasOfficialChatCompletion: boolean;
+  implementationStatus: 'implemented' | 'documented_only' | 'not_found';
+  primaryInterfaceGroup: string;
+  interfaceGroups: string[];
+}
+
+export interface AisaAnalysisInterfaceSkillRef {
+  skillId: string;
+  skillName: string;
+  owner: string;
+  sourceType: 'clawhub' | 'github';
+  sourceLabel: string;
+  sourceUrl: string;
+  downloadPath: string;
+  status: 'implemented' | 'documented_only' | 'referenced_only';
+}
+
+export interface AisaAnalysisInterface {
+  endpoint: string;
+  name: string;
+  method: string;
+  inputSummary: string;
+  outputSummary: string;
+  comparisonToCreateChatCompletion: string;
+  officialDocUrl: string | null;
+  skills: AisaAnalysisInterfaceSkillRef[];
+  skillsBySource: { clawhub: number; github: number };
+  implementedSkillCount: number;
+  documentedOnlySkillCount: number;
+  hasImplementation: boolean;
+  skillCount: number;
+  coverageStatus: 'implemented' | 'no_skill_implementation';
+}
+
+export interface AisaAnalysisGroup {
+  endpoint: string;
+  name: string;
+  skills: Array<{
+    skillId: string;
+    skillName: string;
+    owner: string;
+    sourceType: 'clawhub' | 'github';
+    sourceUrl: string;
+  }>;
+}
+
+export interface AisaApiAnalysisData {
+  generatedAt: string;
+  comparisonBase: {
+    name: string;
+    endpoint: string;
+    docUrl: string;
+    note: string;
+  };
+  summary: {
+    totalSkills: number;
+    clawhubSkills: number;
+    githubSkills: number;
+    skillsWithEndpoints: number;
+    skillsWithoutEndpoints: number;
+    totalInterfaces: number;
+    implementedInterfaces: number;
+    unimplementedDocumentedInterfaces: number;
+  };
+  interfaces: AisaAnalysisInterface[];
+  skills: AisaAnalysisSkill[];
+  implementationGroups: AisaAnalysisGroup[];
+}

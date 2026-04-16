@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-14T10:05:41.144Z",
+  "generatedAt": "2026-04-16T04:44:57.288Z",
   "scannedAccounts": [
     "0xjordansg-yolo",
     "AISADOCS",
@@ -29,9 +29,9 @@
     "total": 62,
     "skills": 57,
     "plugins": 5,
-    "suspicious": 9,
+    "suspicious": 15,
     "aisa": 62,
-    "owners": 7
+    "owners": 5
   },
   "items": [
     {
@@ -43,7 +43,7 @@
       "version": "1.0.0",
       "clawhubUrl": "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-web-search-tavily",
       "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=openclaw-aisa-web-search-tavily",
-      "downloads": 4058,
+      "downloads": 4088,
       "stars": 9,
       "suspicious": false,
       "suspiciousLabel": null,
@@ -60,7 +60,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T10:06:04.371Z",
+      "lastCheckedAt": "2026-04-16T04:46:10.276Z",
       "readmeSnippet": "--- name: aisa-tavily description: AI-optimized web search via AIsa's Tavily API proxy. Returns concise, relevant results for AI agents through AIsa's unified API gateway. homepage: https://aisa.one metadata: {\"clawdbot\":{\"emoji\":\"🔍\",\"requires\":{\"bins\":[\"node\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KEY\"}} ---"
     },
     {
@@ -72,7 +72,7 @@
       "version": "1.0.3",
       "clawhubUrl": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-twitter",
       "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=openclaw-twitter",
-      "downloads": 3465,
+      "downloads": 3484,
       "stars": 4,
       "suspicious": true,
       "suspiciousLabel": "suspicious",
@@ -90,7 +90,7 @@
         "suspicious",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T10:05:59.675Z",
+      "lastCheckedAt": "2026-04-16T04:45:52.418Z",
       "readmeSnippet": "--- name: Twitter Command Center (Search + Post) description: \"Searches and reads X (Twitter): profiles, timelines, mentions, followers, tweet search, trends, lists, communities, and Spaces. Publishes posts after the user completes OAuth in the browser. Use when the user asks about Twitter/X data, social listening, or "
     },
     {
@@ -102,7 +102,7 @@
       "version": "1.0.1",
       "clawhubUrl": "https://clawhub.ai/kn72abv2yp91hce9za0j31yycd80jxzv/aisa-twitter-api",
       "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=aisa-twitter-api",
-      "downloads": 3130,
+      "downloads": 3151,
       "stars": 4,
       "suspicious": true,
       "suspiciousLabel": "suspicious",
@@ -121,7 +121,7 @@
         "suspicious",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T10:06:00.825Z",
+      "lastCheckedAt": "2026-04-16T04:45:54.613Z",
       "readmeSnippet": "--- name: Twitter Command Center (Search + Post) description: \"Searches and reads X (Twitter): profiles, timelines, mentions, followers, tweet search, trends, lists, communities, and Spaces. Publishes posts after the user completes OAuth in the browser. Use when the user asks about Twitter/X data, social listening, or "
     },
     {
@@ -133,7 +133,7 @@
       "version": "1.0.0",
       "clawhubUrl": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-image-video-models-wan2-6-gemini-3-pro-image-nano-banana",
       "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=openclaw-aisa-image-video-models-wan2-6-gemini-3-pro-image-nano-banana",
-      "downloads": 2178,
+      "downloads": 2186,
       "stars": 11,
       "suspicious": false,
       "suspiciousLabel": null,
@@ -150,7 +150,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T10:05:58.058Z",
+      "lastCheckedAt": "2026-04-16T04:45:50.319Z",
       "readmeSnippet": "--- name: openclaw-media-gen description: \"Generate images & videos with AIsa. Gemini 3 Pro Image (image) + Qwen Wan 2.6 (video) via one API key.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"🎬\",\"requires\":{\"bins\":[\"python3\",\"curl\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KEY\"}} --- # OpenClaw "
     },
     {
@@ -162,7 +162,7 @@
       "version": "1.0.0",
       "clawhubUrl": "https://clawhub.ai/kn72abv2yp91hce9za0j31yycd80jxzv/aisa-youtube-search",
       "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=aisa-youtube-search",
-      "downloads": 1745,
+      "downloads": 1756,
       "stars": 1,
       "suspicious": false,
       "suspiciousLabel": null,
@@ -179,7 +179,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T10:06:07.764Z",
+      "lastCheckedAt": "2026-04-16T04:46:07.294Z",
       "readmeSnippet": "--- name: openclaw-youtube description: \"YouTube SERP Scout for agents. Search top-ranking videos, channels, and trends for content research and competitor tracking.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"📺\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KE"
     },
     {
@@ -191,7 +191,7 @@
       "version": "1.0.0",
       "clawhubUrl": "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-llm-image-video",
       "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=openclaw-aisa-llm-image-video",
-      "downloads": 1685,
+      "downloads": 1690,
       "stars": 3,
       "suspicious": false,
       "suspiciousLabel": null,
@@ -208,36 +208,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T10:06:05.872Z",
-      "readmeSnippet": "--- name: openclaw-media-gen description: \"Generate images & videos with AIsa. Gemini 3 Pro Image (image) + Qwen Wan 2.6 (video) via one API key.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"🎬\",\"requires\":{\"bins\":[\"python3\",\"curl\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KEY\"}} --- # OpenClaw "
-    },
-    {
-      "id": "skill:aisapay:https://clawhub.ai/kn72abv2yp91hce9za0j31yycd80jxzv/aisa-media-gen",
-      "type": "skill",
-      "owner": "aisapay",
-      "name": "AIsa Media Gen",
-      "description": "Generate images &amp; videos with AIsa. Gemini 3 Pro Image (image) + Qwen Wan 2.6 (video) via one API key.",
-      "version": "1.0.0",
-      "clawhubUrl": "https://clawhub.ai/kn72abv2yp91hce9za0j31yycd80jxzv/aisa-media-gen",
-      "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=aisa-media-gen",
-      "downloads": 1551,
-      "stars": 1,
-      "suspicious": false,
-      "suspiciousLabel": null,
-      "suspiciousReason": "",
-      "optimizationAdvice": [
-        "Use clawhub-skill-optimizer: add a frontmatter description with explicit \"Use when:\" trigger wording.",
-        "Use clawhub-skill-optimizer: add a \"When to use\" section with 3-5 concrete invocation scenarios.",
-        "Align metadata, homepage, source repo, and published version so ClawHub scanner sees consistent provenance.",
-        "Keep the package AISA-only: declare only AISA env vars, document the exact API scope, and remove legacy credential paths."
-      ],
-      "usesAisaApi": true,
-      "source": "account",
-      "tags": [
-        "aisa",
-        "skill"
-      ],
-      "lastCheckedAt": "2026-04-14T10:06:07.706Z",
+      "lastCheckedAt": "2026-04-16T04:46:01.160Z",
       "readmeSnippet": "--- name: openclaw-media-gen description: \"Generate images & videos with AIsa. Gemini 3 Pro Image (image) + Qwen Wan 2.6 (video) via one API key.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"🎬\",\"requires\":{\"bins\":[\"python3\",\"curl\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KEY\"}} --- # OpenClaw "
     },
     {
@@ -249,7 +220,7 @@
       "version": "1.0.0",
       "clawhubUrl": "https://clawhub.ai/kn72abv2yp91hce9za0j31yycd80jxzv/aisa-multi-source-search",
       "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=aisa-multi-source-search",
-      "downloads": 1546,
+      "downloads": 1558,
       "stars": 1,
       "suspicious": false,
       "suspiciousLabel": null,
@@ -267,8 +238,37 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T10:06:07.699Z",
+      "lastCheckedAt": "2026-04-16T04:46:07.148Z",
       "readmeSnippet": "--- name: openclaw-search description: \"Intelligent search for agents. Multi-source retrieval with confidence scoring - web, academic, and Tavily in one unified API.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"🔍\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KE"
+    },
+    {
+      "id": "skill:aisapay:https://clawhub.ai/kn72abv2yp91hce9za0j31yycd80jxzv/aisa-media-gen",
+      "type": "skill",
+      "owner": "aisapay",
+      "name": "AIsa Media Gen",
+      "description": "Generate images &amp; videos with AIsa. Gemini 3 Pro Image (image) + Qwen Wan 2.6 (video) via one API key.",
+      "version": "1.0.0",
+      "clawhubUrl": "https://clawhub.ai/kn72abv2yp91hce9za0j31yycd80jxzv/aisa-media-gen",
+      "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=aisa-media-gen",
+      "downloads": 1555,
+      "stars": 1,
+      "suspicious": false,
+      "suspiciousLabel": null,
+      "suspiciousReason": "",
+      "optimizationAdvice": [
+        "Use clawhub-skill-optimizer: add a frontmatter description with explicit \"Use when:\" trigger wording.",
+        "Use clawhub-skill-optimizer: add a \"When to use\" section with 3-5 concrete invocation scenarios.",
+        "Align metadata, homepage, source repo, and published version so ClawHub scanner sees consistent provenance.",
+        "Keep the package AISA-only: declare only AISA env vars, document the exact API scope, and remove legacy credential paths."
+      ],
+      "usesAisaApi": true,
+      "source": "account",
+      "tags": [
+        "aisa",
+        "skill"
+      ],
+      "lastCheckedAt": "2026-04-16T04:46:01.775Z",
+      "readmeSnippet": "--- name: openclaw-media-gen description: \"Generate images & videos with AIsa. Gemini 3 Pro Image (image) + Qwen Wan 2.6 (video) via one API key.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"🎬\",\"requires\":{\"bins\":[\"python3\",\"curl\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KEY\"}} --- # OpenClaw "
     },
     {
       "id": "skill:0xjordansg-yolo:https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-finance-stock-equity-crypto-market-price-data-yahoo-finance-coinhacko",
@@ -279,7 +279,7 @@
       "version": "1.0.0",
       "clawhubUrl": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-finance-stock-equity-crypto-market-price-data-yahoo-finance-coinhacko",
       "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=openclaw-aisa-finance-stock-equity-crypto-market-price-data-yahoo-finance-coinhacko",
-      "downloads": 1525,
+      "downloads": 1530,
       "stars": 5,
       "suspicious": false,
       "suspiciousLabel": null,
@@ -296,7 +296,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T10:05:56.601Z",
+      "lastCheckedAt": "2026-04-16T04:45:59.491Z",
       "readmeSnippet": "--- name: MarketPulse description: \"Query real-time and historical financial data across equities and crypto—prices, market moves, metrics, and trends for analysis, alerts, and reporting.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"📊\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"pr"
     },
     {
@@ -308,7 +308,7 @@
       "version": "1.0.0",
       "clawhubUrl": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-youtube-search-serp-video-channels-trends-content-tracking",
       "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=openclaw-aisa-youtube-search-serp-video-channels-trends-content-tracking",
-      "downloads": 1472,
+      "downloads": 1483,
       "stars": 3,
       "suspicious": true,
       "suspiciousLabel": "suspicious",
@@ -326,7 +326,7 @@
         "suspicious",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T10:05:58.237Z",
+      "lastCheckedAt": "2026-04-16T04:45:50.123Z",
       "readmeSnippet": "--- name: openclaw-youtube description: \"YouTube SERP Scout for agents. Search top-ranking videos, channels, and trends for content research and competitor tracking.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"📺\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KE"
     },
     {
@@ -338,7 +338,7 @@
       "version": "1.0.0",
       "clawhubUrl": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-llm-gateway",
       "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=openclaw-aisa-llm-gateway",
-      "downloads": 1446,
+      "downloads": 1455,
       "stars": 5,
       "suspicious": false,
       "suspiciousLabel": null,
@@ -355,7 +355,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T10:05:58.407Z",
+      "lastCheckedAt": "2026-04-16T04:45:51.741Z",
       "readmeSnippet": "--- name: llm-router description: \"Unified LLM Gateway - One API for 70+ AI models. Route to GPT, Claude, Gemini, Qwen, Deepseek, Grok and more with a single API key.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"🧠\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_K"
     },
     {
@@ -367,7 +367,7 @@
       "version": "1.0.4",
       "clawhubUrl": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-twitter-search-post",
       "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=openclaw-aisa-twitter-search-post",
-      "downloads": 1404,
+      "downloads": 1419,
       "stars": 4,
       "suspicious": false,
       "suspiciousLabel": null,
@@ -384,36 +384,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T10:05:58.335Z",
-      "readmeSnippet": "--- name: Twitter Command Center (Search + Post) description: \"Searches and reads X (Twitter): profiles, timelines, mentions, followers, tweet search, trends, lists, communities, and Spaces. Publishes posts after the user completes OAuth in the browser. Use when the user asks about Twitter/X data, social listening, or "
-    },
-    {
-      "id": "skill:bowen-dotcom:https://clawhub.ai/kn74pdks0k3ghs09pk2axym55h80xn01/aisa-twitter-skill",
-      "type": "skill",
-      "owner": "bowen-dotcom",
-      "name": "X/Twitter All-in-One: 30+ APIs, OAuth Post, One Key",
-      "description": "Searches and reads X (Twitter): profiles, timelines, mentions, followers, tweet search, trends, lists, communities, and Spaces. Publishes posts after the use...",
-      "version": "1.0.6",
-      "clawhubUrl": "https://clawhub.ai/kn74pdks0k3ghs09pk2axym55h80xn01/aisa-twitter-skill",
-      "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=aisa-twitter-skill",
-      "downloads": 1391,
-      "stars": 1,
-      "suspicious": false,
-      "suspiciousLabel": null,
-      "suspiciousReason": "",
-      "optimizationAdvice": [
-        "Use clawhub-skill-optimizer: add a frontmatter description with explicit \"Use when:\" trigger wording.",
-        "Use clawhub-skill-optimizer: add a \"When to use\" section with 3-5 concrete invocation scenarios.",
-        "Align metadata, homepage, source repo, and published version so ClawHub scanner sees consistent provenance.",
-        "Keep the package AISA-only: declare only AISA env vars, document the exact API scope, and remove legacy credential paths."
-      ],
-      "usesAisaApi": true,
-      "source": "account",
-      "tags": [
-        "aisa",
-        "skill"
-      ],
-      "lastCheckedAt": "2026-04-14T10:06:10.929Z",
+      "lastCheckedAt": "2026-04-16T04:45:51.813Z",
       "readmeSnippet": "--- name: Twitter Command Center (Search + Post) description: \"Searches and reads X (Twitter): profiles, timelines, mentions, followers, tweet search, trends, lists, communities, and Spaces. Publishes posts after the user completes OAuth in the browser. Use when the user asks about Twitter/X data, social listening, or "
     },
     {
@@ -425,7 +396,7 @@
       "version": "1.0.0",
       "clawhubUrl": "https://clawhub.ai/kn72abv2yp91hce9za0j31yycd80jxzv/financial-data",
       "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=financial-data",
-      "downloads": 1377,
+      "downloads": 1393,
       "stars": 0,
       "suspicious": false,
       "suspiciousLabel": null,
@@ -442,7 +413,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T10:06:08.012Z",
+      "lastCheckedAt": "2026-04-16T04:46:03.368Z",
       "readmeSnippet": "--- name: MarketPulse description: \"Query real-time and historical financial data across equities and crypto—prices, market moves, metrics, and trends for analysis, alerts, and reporting.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"📊\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"pr"
     },
     {
@@ -454,7 +425,7 @@
       "version": "1.0.1",
       "clawhubUrl": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-affordable-llm-model-tokens",
       "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=openclaw-aisa-affordable-llm-model-tokens",
-      "downloads": 1307,
+      "downloads": 1317,
       "stars": 5,
       "suspicious": false,
       "suspiciousLabel": null,
@@ -471,7 +442,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T10:05:58.428Z",
+      "lastCheckedAt": "2026-04-16T04:45:51.700Z",
       "readmeSnippet": "--- name: llm-router description: \"Unified LLM Gateway - One API for 70+ AI models. Route to GPT, Claude, Gemini, Qwen, Deepseek, Grok and more with a single API key.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"🧠\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_K"
     },
     {
@@ -483,7 +454,7 @@
       "version": "1.0.1",
       "clawhubUrl": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-us-stock-analyst",
       "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=openclaw-aisa-us-stock-analyst",
-      "downloads": 1294,
+      "downloads": 1306,
       "stars": 0,
       "suspicious": false,
       "suspiciousLabel": null,
@@ -500,7 +471,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T10:05:56.741Z",
+      "lastCheckedAt": "2026-04-16T04:45:48.848Z",
       "readmeSnippet": "--- name: us-stock-analyst description: \"Professional US stock analysis with financial data, news, social sentiment, and multi-model AI. Comprehensive reports at $0.02-0.10 per analysis.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"📈\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"pri"
     },
     {
@@ -512,7 +483,7 @@
       "version": "1.0.0",
       "clawhubUrl": "https://clawhub.ai/kn72abv2yp91hce9za0j31yycd80jxzv/aisa-financial-data",
       "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=aisa-financial-data",
-      "downloads": 1272,
+      "downloads": 1283,
       "stars": 0,
       "suspicious": false,
       "suspiciousLabel": null,
@@ -529,7 +500,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T10:06:07.518Z",
+      "lastCheckedAt": "2026-04-16T04:46:02.939Z",
       "readmeSnippet": "--- name: AIsaFinancialData description: \"Query real-time and historical financial data across equities and crypto—prices, market moves, metrics, and trends for analysis, alerts, and reporting.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"📊\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\""
     },
     {
@@ -541,7 +512,7 @@
       "version": "1.0.0",
       "clawhubUrl": "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-llm-router",
       "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=openclaw-aisa-llm-router",
-      "downloads": 1261,
+      "downloads": 1267,
       "stars": 2,
       "suspicious": false,
       "suspiciousLabel": null,
@@ -558,7 +529,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T10:06:06.451Z",
+      "lastCheckedAt": "2026-04-16T04:46:01.219Z",
       "readmeSnippet": "--- name: llm-router description: \"Unified LLM Gateway - One API for 70+ AI models. Route to GPT, Claude, Gemini, Qwen, Deepseek, Grok and more with a single API key.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"🧠\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_K"
     },
     {
@@ -570,7 +541,7 @@
       "version": "1.0.0",
       "clawhubUrl": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-financial-stock-crypto-market-price-data",
       "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=openclaw-aisa-financial-stock-crypto-market-price-data",
-      "downloads": 1260,
+      "downloads": 1265,
       "stars": 1,
       "suspicious": false,
       "suspiciousLabel": null,
@@ -587,7 +558,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T10:05:58.320Z",
+      "lastCheckedAt": "2026-04-16T04:45:50.771Z",
       "readmeSnippet": "--- name: MarketPulse description: \"Query real-time and historical financial data across equities and crypto—prices, market moves, metrics, and trends for analysis, alerts, and reporting.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"📊\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"pr"
     },
     {
@@ -599,7 +570,7 @@
       "version": "1.0.0",
       "clawhubUrl": "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-youtube-search-tracking",
       "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=openclaw-aisa-youtube-search-tracking",
-      "downloads": 1252,
+      "downloads": 1259,
       "stars": 0,
       "suspicious": false,
       "suspiciousLabel": null,
@@ -616,7 +587,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T10:06:06.317Z",
+      "lastCheckedAt": "2026-04-16T04:46:01.780Z",
       "readmeSnippet": "--- name: openclaw-youtube description: \"YouTube SERP Scout for agents. Search top-ranking videos, channels, and trends for content research and competitor tracking.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"📺\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KE"
     },
     {
@@ -628,7 +599,7 @@
       "version": "1.0.0",
       "clawhubUrl": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-search-website-academic-tavily-serp-exa",
       "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=openclaw-aisa-search-website-academic-tavily-serp-exa",
-      "downloads": 1234,
+      "downloads": 1240,
       "stars": 4,
       "suspicious": false,
       "suspiciousLabel": null,
@@ -646,7 +617,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T10:05:56.758Z",
+      "lastCheckedAt": "2026-04-16T04:45:49.997Z",
       "readmeSnippet": "--- name: openclaw-search description: \"Intelligent search for agents. Multi-source retrieval with confidence scoring - web, academic, and Tavily in one unified API.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"🔍\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KE"
     },
     {
@@ -658,7 +629,7 @@
       "version": "1.0.0",
       "clawhubUrl": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/ai-native-websearch-via-tavily-api-returns-concise-relevant-results-for-openclaw",
       "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=ai-native-websearch-via-tavily-api-returns-concise-relevant-results-for-openclaw",
-      "downloads": 1215,
+      "downloads": 1223,
       "stars": 0,
       "suspicious": false,
       "suspiciousLabel": null,
@@ -675,7 +646,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T10:05:56.558Z",
+      "lastCheckedAt": "2026-04-16T04:45:59.317Z",
       "readmeSnippet": "--- name: aisa-tavily description: AI-optimized web search via AIsa's Tavily API proxy. Returns concise, relevant results for AI agents through AIsa's unified API gateway. homepage: https://aisa.one metadata: {\"clawdbot\":{\"emoji\":\"🔍\",\"requires\":{\"bins\":[\"node\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KEY\"}} ---"
     },
     {
@@ -687,7 +658,7 @@
       "version": "1.0.5",
       "clawhubUrl": "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-twitter-search",
       "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=openclaw-aisa-twitter-search",
-      "downloads": 1191,
+      "downloads": 1210,
       "stars": 0,
       "suspicious": false,
       "suspiciousLabel": null,
@@ -704,7 +675,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T10:06:14.166Z",
+      "lastCheckedAt": "2026-04-16T04:46:15.918Z",
       "readmeSnippet": "--- name: Twitter Command Center (Search + Post) description: \"Searches and reads X (Twitter): profiles, timelines, mentions, followers, tweet search, trends, lists, communities, and Spaces. Publishes posts after the user completes OAuth in the browser. Use when the user asks about Twitter/X data, social listening, or "
     },
     {
@@ -716,7 +687,7 @@
       "version": "1.0.1",
       "clawhubUrl": "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-media-gen",
       "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=openclaw-aisa-media-gen",
-      "downloads": 1118,
+      "downloads": 1132,
       "stars": 1,
       "suspicious": false,
       "suspiciousLabel": null,
@@ -733,7 +704,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T10:06:12.675Z",
+      "lastCheckedAt": "2026-04-16T04:46:12.720Z",
       "readmeSnippet": "--- name: openclaw-media-gen description: \"Generate images & videos with AIsa. Gemini 3 Pro Image (image) + Qwen Wan 2.6 (video) via one API key.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"🎬\",\"requires\":{\"bins\":[\"python3\",\"curl\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KEY\"}} --- # OpenClaw "
     },
     {
@@ -745,7 +716,7 @@
       "version": "1.0.0",
       "clawhubUrl": "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-finance-equity-crypto-price-market-data-news",
       "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=openclaw-aisa-finance-equity-crypto-price-market-data-news",
-      "downloads": 1070,
+      "downloads": 1080,
       "stars": 0,
       "suspicious": false,
       "suspiciousLabel": null,
@@ -762,38 +733,8 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T10:06:05.884Z",
+      "lastCheckedAt": "2026-04-16T04:45:59.843Z",
       "readmeSnippet": "--- name: MarketPulse description: \"Query real-time and historical financial data across equities and crypto—prices, market moves, metrics, and trends for analysis, alerts, and reporting.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"📊\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"pr"
-    },
-    {
-      "id": "skill:bowen-dotcom:https://clawhub.ai/kn74pdks0k3ghs09pk2axym55h80xn01/aisa-search-skill",
-      "type": "skill",
-      "owner": "bowen-dotcom",
-      "name": "Intelligent Search Agent",
-      "description": "Intelligent search for agents. Multi-source retrieval across web, scholar, Tavily, and Perplexity Sonar models.",
-      "version": "1.0.2",
-      "clawhubUrl": "https://clawhub.ai/kn74pdks0k3ghs09pk2axym55h80xn01/aisa-search-skill",
-      "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=aisa-search-skill",
-      "downloads": 1030,
-      "stars": 1,
-      "suspicious": false,
-      "suspiciousLabel": null,
-      "suspiciousReason": "",
-      "optimizationAdvice": [
-        "Use clawhub-skill-optimizer: add a frontmatter description with explicit \"Use when:\" trigger wording.",
-        "Use clawhub-skill-optimizer: add a \"When to use\" section with 3-5 concrete invocation scenarios.",
-        "Align metadata, homepage, source repo, and published version so ClawHub scanner sees consistent provenance.",
-        "Keep the package AISA-only: declare only AISA env vars, document the exact API scope, and remove legacy credential paths.",
-        "Minimize the release bundle to runtime files, SKILL.md, and essential metadata; remove packaging/debug helpers."
-      ],
-      "usesAisaApi": true,
-      "source": "account",
-      "tags": [
-        "aisa",
-        "skill"
-      ],
-      "lastCheckedAt": "2026-04-14T10:06:11.328Z",
-      "readmeSnippet": "--- name: openclaw-search description: \"Intelligent search for agents. Multi-source retrieval across web, scholar, Tavily, and Perplexity Sonar models.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"🔎\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KEY\"}} --- # Ope"
     },
     {
       "id": "skill:aisadocs:https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-llm-image-video-qwen-wan26-gemini-3-pro-image",
@@ -804,7 +745,7 @@
       "version": "1.0.0",
       "clawhubUrl": "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-llm-image-video-qwen-wan26-gemini-3-pro-image",
       "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=openclaw-aisa-llm-image-video-qwen-wan26-gemini-3-pro-image",
-      "downloads": 1024,
+      "downloads": 1031,
       "stars": 2,
       "suspicious": false,
       "suspiciousLabel": null,
@@ -821,7 +762,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T10:06:06.036Z",
+      "lastCheckedAt": "2026-04-16T04:46:01.028Z",
       "readmeSnippet": "--- name: openclaw-media-gen description: \"Generate images & videos with AIsa. Gemini 3 Pro Image (image) + Qwen Wan 2.6 (video) via one API key.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"🎬\",\"requires\":{\"bins\":[\"python3\",\"curl\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KEY\"}} --- # OpenClaw "
     },
     {
@@ -833,7 +774,7 @@
       "version": "1.0.1",
       "clawhubUrl": "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-youtube-search",
       "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=openclaw-aisa-youtube-search",
-      "downloads": 1015,
+      "downloads": 1026,
       "stars": 3,
       "suspicious": false,
       "suspiciousLabel": null,
@@ -850,7 +791,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T10:06:14.137Z",
+      "lastCheckedAt": "2026-04-16T04:46:15.537Z",
       "readmeSnippet": "--- name: openclaw-youtube description: \"YouTube SERP Scout for agents. Search top-ranking videos, channels, and trends for content research and competitor tracking.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"📺\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KE"
     },
     {
@@ -862,7 +803,7 @@
       "version": "1.0.1",
       "clawhubUrl": "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-cn-llm",
       "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=openclaw-aisa-cn-llm",
-      "downloads": 967,
+      "downloads": 981,
       "stars": 0,
       "suspicious": false,
       "suspiciousLabel": null,
@@ -879,37 +820,8 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T10:06:13.182Z",
+      "lastCheckedAt": "2026-04-16T04:46:14.377Z",
       "readmeSnippet": "--- name: cn-llm description: \"China LLM Gateway - Unified interface for Chinese LLMs including Qwen, DeepSeek, GLM, Baichuan. OpenAI compatible, one API Key for all models.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"🐉\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AIS"
-    },
-    {
-      "id": "skill:bowen-dotcom:https://clawhub.ai/kn74pdks0k3ghs09pk2axym55h80xn01/aisa-market-skill",
-      "type": "skill",
-      "owner": "bowen-dotcom",
-      "name": "MarketPulse Financial Data",
-      "description": "Query real-time and historical financial data across equities and crypto—prices, market moves, metrics, and trends for analysis, alerts, and reporting.",
-      "version": "1.0.2",
-      "clawhubUrl": "https://clawhub.ai/kn74pdks0k3ghs09pk2axym55h80xn01/aisa-market-skill",
-      "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=aisa-market-skill",
-      "downloads": 958,
-      "stars": 0,
-      "suspicious": false,
-      "suspiciousLabel": null,
-      "suspiciousReason": "",
-      "optimizationAdvice": [
-        "Use clawhub-skill-optimizer: add a frontmatter description with explicit \"Use when:\" trigger wording.",
-        "Use clawhub-skill-optimizer: add a \"When to use\" section with 3-5 concrete invocation scenarios.",
-        "Align metadata, homepage, source repo, and published version so ClawHub scanner sees consistent provenance.",
-        "Keep the package AISA-only: declare only AISA env vars, document the exact API scope, and remove legacy credential paths."
-      ],
-      "usesAisaApi": true,
-      "source": "account",
-      "tags": [
-        "aisa",
-        "skill"
-      ],
-      "lastCheckedAt": "2026-04-14T10:06:11.047Z",
-      "readmeSnippet": "--- name: MarketPulse description: \"Query real-time and historical financial data across equities and crypto—prices, market moves, metrics, and trends for analysis, alerts, and reporting.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"📊\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"pr"
     },
     {
       "id": "skill:chaimengphp:https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-market-pulse",
@@ -920,7 +832,7 @@
       "version": "1.0.1",
       "clawhubUrl": "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-market-pulse",
       "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=openclaw-aisa-market-pulse",
-      "downloads": 949,
+      "downloads": 963,
       "stars": 0,
       "suspicious": false,
       "suspiciousLabel": null,
@@ -937,66 +849,8 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T10:06:14.145Z",
+      "lastCheckedAt": "2026-04-16T04:46:15.360Z",
       "readmeSnippet": "--- name: MarketPulse description: \"Query real-time and historical financial data across equities and crypto—prices, market moves, metrics, and trends for analysis, alerts, and reporting.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"📊\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"pr"
-    },
-    {
-      "id": "skill:bowen-dotcom:https://clawhub.ai/kn74pdks0k3ghs09pk2axym55h80xn01/aisa-youtube-skill",
-      "type": "skill",
-      "owner": "bowen-dotcom",
-      "name": "YouTube SERP Scout",
-      "description": "YouTube SERP Scout for agents. Search top-ranking videos, channels, and trends for content research and competitor tracking.",
-      "version": "1.0.1",
-      "clawhubUrl": "https://clawhub.ai/kn74pdks0k3ghs09pk2axym55h80xn01/aisa-youtube-skill",
-      "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=aisa-youtube-skill",
-      "downloads": 911,
-      "stars": 0,
-      "suspicious": false,
-      "suspiciousLabel": null,
-      "suspiciousReason": "",
-      "optimizationAdvice": [
-        "Use clawhub-skill-optimizer: add a frontmatter description with explicit \"Use when:\" trigger wording.",
-        "Use clawhub-skill-optimizer: add a \"When to use\" section with 3-5 concrete invocation scenarios.",
-        "Align metadata, homepage, source repo, and published version so ClawHub scanner sees consistent provenance.",
-        "Keep the package AISA-only: declare only AISA env vars, document the exact API scope, and remove legacy credential paths."
-      ],
-      "usesAisaApi": true,
-      "source": "account",
-      "tags": [
-        "aisa",
-        "skill"
-      ],
-      "lastCheckedAt": "2026-04-14T10:06:11.193Z",
-      "readmeSnippet": "--- name: openclaw-youtube description: \"YouTube SERP Scout for agents. Search top-ranking videos, channels, and trends for content research and competitor tracking.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"📺\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KE"
-    },
-    {
-      "id": "skill:bowen-dotcom:https://clawhub.ai/kn74pdks0k3ghs09pk2axym55h80xn01/aisa-media-gen-skill",
-      "type": "skill",
-      "owner": "bowen-dotcom",
-      "name": "AI Media Generation",
-      "description": "Generate images &amp; videos with AIsa. Gemini 3 Pro Image (image) + Qwen Wan 2.6 (video) via one API key.",
-      "version": "1.0.1",
-      "clawhubUrl": "https://clawhub.ai/kn74pdks0k3ghs09pk2axym55h80xn01/aisa-media-gen-skill",
-      "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=aisa-media-gen-skill",
-      "downloads": 901,
-      "stars": 4,
-      "suspicious": false,
-      "suspiciousLabel": null,
-      "suspiciousReason": "",
-      "optimizationAdvice": [
-        "Use clawhub-skill-optimizer: add a frontmatter description with explicit \"Use when:\" trigger wording.",
-        "Use clawhub-skill-optimizer: add a \"When to use\" section with 3-5 concrete invocation scenarios.",
-        "Align metadata, homepage, source repo, and published version so ClawHub scanner sees consistent provenance.",
-        "Keep the package AISA-only: declare only AISA env vars, document the exact API scope, and remove legacy credential paths."
-      ],
-      "usesAisaApi": true,
-      "source": "account",
-      "tags": [
-        "aisa",
-        "skill"
-      ],
-      "lastCheckedAt": "2026-04-14T10:06:10.822Z",
-      "readmeSnippet": "--- name: openclaw-media-gen description: \"Generate images & videos with AIsa. Gemini 3 Pro Image (image) + Qwen Wan 2.6 (video) via one API key.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"🎬\",\"requires\":{\"bins\":[\"python3\",\"curl\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KEY\"}} --- # OpenClaw "
     },
     {
       "id": "skill:aisadocs:https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-search-web-academic-tavily",
@@ -1007,7 +861,7 @@
       "version": "1.0.0",
       "clawhubUrl": "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-search-web-academic-tavily",
       "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=openclaw-aisa-search-web-academic-tavily",
-      "downloads": 892,
+      "downloads": 898,
       "stars": 0,
       "suspicious": false,
       "suspiciousLabel": null,
@@ -1025,37 +879,8 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T10:06:06.042Z",
+      "lastCheckedAt": "2026-04-16T04:45:59.813Z",
       "readmeSnippet": "--- name: openclaw-search description: \"Intelligent search for agents. Multi-source retrieval with confidence scoring - web, academic, and Tavily in one unified API.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"🔍\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KE"
-    },
-    {
-      "id": "skill:bowen-dotcom:https://clawhub.ai/kn74pdks0k3ghs09pk2axym55h80xn01/aisa-llm-router-skill",
-      "type": "skill",
-      "owner": "bowen-dotcom",
-      "name": "LLM Router Gateway",
-      "description": "Unified LLM Gateway - One API for 70+ AI models. Route to GPT, Claude, Gemini, Qwen, Deepseek, Grok and more with a single API key.",
-      "version": "1.0.0",
-      "clawhubUrl": "https://clawhub.ai/kn74pdks0k3ghs09pk2axym55h80xn01/aisa-llm-router-skill",
-      "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=aisa-llm-router-skill",
-      "downloads": 867,
-      "stars": 0,
-      "suspicious": false,
-      "suspiciousLabel": null,
-      "suspiciousReason": "",
-      "optimizationAdvice": [
-        "Use clawhub-skill-optimizer: add a frontmatter description with explicit \"Use when:\" trigger wording.",
-        "Use clawhub-skill-optimizer: add a \"When to use\" section with 3-5 concrete invocation scenarios.",
-        "Align metadata, homepage, source repo, and published version so ClawHub scanner sees consistent provenance.",
-        "Keep the package AISA-only: declare only AISA env vars, document the exact API scope, and remove legacy credential paths."
-      ],
-      "usesAisaApi": true,
-      "source": "account",
-      "tags": [
-        "aisa",
-        "skill"
-      ],
-      "lastCheckedAt": "2026-04-14T10:06:09.833Z",
-      "readmeSnippet": "--- name: llm-router description: \"Unified LLM Gateway - One API for 70+ AI models. Route to GPT, Claude, Gemini, Qwen, Deepseek, Grok and more with a single API key.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"🧠\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_K"
     },
     {
       "id": "skill:chaimengphp:https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-llm-gateway-route",
@@ -1066,7 +891,7 @@
       "version": "1.0.1",
       "clawhubUrl": "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-llm-gateway-route",
       "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=openclaw-aisa-llm-gateway-route",
-      "downloads": 829,
+      "downloads": 838,
       "stars": 2,
       "suspicious": false,
       "suspiciousLabel": null,
@@ -1083,7 +908,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T10:06:13.010Z",
+      "lastCheckedAt": "2026-04-16T04:46:13.894Z",
       "readmeSnippet": "--- name: llm-router description: \"Unified LLM Gateway - One API for 70+ AI models. Route to GPT, Claude, Gemini, Grok and more with a single API key.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"🧠\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KEY\"}} --- # Open"
     },
     {
@@ -1095,7 +920,7 @@
       "version": "1.0.1",
       "clawhubUrl": "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-search",
       "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=openclaw-aisa-search",
-      "downloads": 782,
+      "downloads": 792,
       "stars": 0,
       "suspicious": false,
       "suspiciousLabel": null,
@@ -1113,37 +938,8 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T10:06:14.375Z",
+      "lastCheckedAt": "2026-04-16T04:46:15.801Z",
       "readmeSnippet": "--- name: openclaw-search description: \"Intelligent search for agents. Multi-source retrieval across web, scholar, Tavily, and Perplexity Sonar models.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"🔎\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KEY\"}} --- # Ope"
-    },
-    {
-      "id": "skill:bowen-dotcom:https://clawhub.ai/kn74pdks0k3ghs09pk2axym55h80xn01/aisa-media-gen-en-skill",
-      "type": "skill",
-      "owner": "bowen-dotcom",
-      "name": "AI Media Generation En",
-      "description": "Generate images &amp; videos with AIsa. Gemini 3 Pro Image (image) + Qwen Wan 2.6 (video) via one API key.",
-      "version": "1.0.0",
-      "clawhubUrl": "https://clawhub.ai/kn74pdks0k3ghs09pk2axym55h80xn01/aisa-media-gen-en-skill",
-      "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=aisa-media-gen-en-skill",
-      "downloads": 762,
-      "stars": 0,
-      "suspicious": false,
-      "suspiciousLabel": null,
-      "suspiciousReason": "",
-      "optimizationAdvice": [
-        "Use clawhub-skill-optimizer: add a frontmatter description with explicit \"Use when:\" trigger wording.",
-        "Use clawhub-skill-optimizer: add a \"When to use\" section with 3-5 concrete invocation scenarios.",
-        "Align metadata, homepage, source repo, and published version so ClawHub scanner sees consistent provenance.",
-        "Keep the package AISA-only: declare only AISA env vars, document the exact API scope, and remove legacy credential paths."
-      ],
-      "usesAisaApi": true,
-      "source": "account",
-      "tags": [
-        "aisa",
-        "skill"
-      ],
-      "lastCheckedAt": "2026-04-14T10:06:09.614Z",
-      "readmeSnippet": "--- name: openclaw-media-gen description: \"Generate images & videos with AIsa. Gemini 3 Pro Image (image) + Qwen Wan 2.6 (video) via one API key.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"🎬\",\"requires\":{\"bins\":[\"python3\",\"curl\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KEY\"}} --- # OpenClaw "
     },
     {
       "id": "skill:0xjordansg-yolo:https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-chinese-llm-models",
@@ -1154,7 +950,7 @@
       "version": "1.0.1",
       "clawhubUrl": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-chinese-llm-models",
       "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=openclaw-aisa-chinese-llm-models",
-      "downloads": 758,
+      "downloads": 763,
       "stars": 0,
       "suspicious": false,
       "suspiciousLabel": null,
@@ -1171,7 +967,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T10:05:56.653Z",
+      "lastCheckedAt": "2026-04-16T04:45:49.081Z",
       "readmeSnippet": "--- name: aisa-provider description: Configure AIsa as a first-class model provider for OpenClaw, enabling production access to major Chinese AI models (Qwen, DeepSeek, Kimi K2.5, Doubao) through official partnerships with Alibaba Cloud, BytePlus, and Moonshot. Use this skill when the user wants to set up Chinese AI mo"
     },
     {
@@ -1183,7 +979,7 @@
       "version": "1.0.0",
       "clawhubUrl": "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-leading-chinese-llm",
       "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=openclaw-aisa-leading-chinese-llm",
-      "downloads": 622,
+      "downloads": 628,
       "stars": 0,
       "suspicious": false,
       "suspiciousLabel": null,
@@ -1200,7 +996,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T10:06:04.569Z",
+      "lastCheckedAt": "2026-04-16T04:46:00.077Z",
       "readmeSnippet": "--- name: aisa-provider description: Configure AIsa as a first-class model provider for OpenClaw, enabling production access to major Chinese AI models (Qwen, DeepSeek, Kimi K2.5, Doubao) through official partnerships with Alibaba Cloud, BytePlus, and Moonshot. Use this skill when the user wants to set up Chinese AI mo"
     },
     {
@@ -1212,7 +1008,7 @@
       "version": "1.0.0",
       "clawhubUrl": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-youtube",
       "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=openclaw-aisa-youtube",
-      "downloads": 525,
+      "downloads": 530,
       "stars": 0,
       "suspicious": true,
       "suspiciousLabel": "suspicious",
@@ -1232,7 +1028,7 @@
         "suspicious",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T10:05:56.786Z",
+      "lastCheckedAt": "2026-04-16T04:45:48.487Z",
       "readmeSnippet": "--- name: youtube-search description: | YouTube Search API via AIsa unified endpoint. Search YouTube videos, channels, and playlists with a single AIsa API key — no Google API key or OAuth required. Use this skill when users want to search YouTube content. For other AIsa capabilities (LLM, financial data, Twitter, web "
     },
     {
@@ -1244,7 +1040,7 @@
       "version": "1.0.0",
       "clawhubUrl": "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/aisaclaw-perplexity-search",
       "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=aisaclaw-perplexity-search",
-      "downloads": 186,
+      "downloads": 190,
       "stars": 0,
       "suspicious": false,
       "suspiciousLabel": null,
@@ -1261,7 +1057,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T10:06:12.489Z",
+      "lastCheckedAt": "2026-04-16T04:46:11.980Z",
       "readmeSnippet": "--- name: perplexity-search description: \"Perplexity Sonar search and answer generation through AIsa. Use when the task is specifically to call Perplexity Sonar, Sonar Pro, Sonar Reasoning Pro, or Sonar Deep Research for citation-backed web answers, analytical reasoning, or long-form research reports.\" homepage: https:"
     },
     {
@@ -1273,7 +1069,7 @@
       "version": "2.0.3",
       "clawhubUrl": "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-twitter-post-engage",
       "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=openclaw-twitter-post-engage",
-      "downloads": 181,
+      "downloads": 189,
       "stars": 1,
       "suspicious": true,
       "suspiciousLabel": "suspicious",
@@ -1291,37 +1087,8 @@
         "suspicious",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T10:06:04.536Z",
+      "lastCheckedAt": "2026-04-16T04:45:58.227Z",
       "readmeSnippet": "--- name: Twitter Command Center (Search + Post + Interact) description: \"Searches and reads X (Twitter): profiles, timelines, mentions, followers, tweet search, trends, lists, communities, and Spaces. Publishes posts, likes/unlikes tweets, and follows/unfollows users after the user completes OAuth in the browser. Use "
-    },
-    {
-      "id": "skill:bowen-dotcom:https://clawhub.ai/kn74pdks0k3ghs09pk2axym55h80xn01/aisa-perplexity-search-skill",
-      "type": "skill",
-      "owner": "bowen-dotcom",
-      "name": "Perplexity Search",
-      "description": "Perplexity Sonar search and answer generation through AIsa. Use when the task is specifically to call Perplexity Sonar, Sonar Pro, Sonar Reasoning Pro, or So...",
-      "version": "1.0.0",
-      "clawhubUrl": "https://clawhub.ai/kn74pdks0k3ghs09pk2axym55h80xn01/aisa-perplexity-search-skill",
-      "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=aisa-perplexity-search-skill",
-      "downloads": 155,
-      "stars": 0,
-      "suspicious": false,
-      "suspiciousLabel": null,
-      "suspiciousReason": "",
-      "optimizationAdvice": [
-        "Use clawhub-skill-optimizer: add a frontmatter description with explicit \"Use when:\" trigger wording.",
-        "Use clawhub-skill-optimizer: add a \"When to use\" section with 3-5 concrete invocation scenarios.",
-        "Align metadata, homepage, source repo, and published version so ClawHub scanner sees consistent provenance.",
-        "Keep the package AISA-only: declare only AISA env vars, document the exact API scope, and remove legacy credential paths."
-      ],
-      "usesAisaApi": true,
-      "source": "account",
-      "tags": [
-        "aisa",
-        "skill"
-      ],
-      "lastCheckedAt": "2026-04-14T10:06:09.391Z",
-      "readmeSnippet": "--- name: perplexity-search description: \"Perplexity Sonar search and answer generation through AIsa. Use when the task is specifically to call Perplexity Sonar, Sonar Pro, Sonar Reasoning Pro, or Sonar Deep Research for citation-backed web answers, analytical reasoning, or long-form research reports.\" homepage: https:"
     },
     {
       "id": "skill:aisadocs:https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/pred-polymarket",
@@ -1332,7 +1099,7 @@
       "version": "1.0.1",
       "clawhubUrl": "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/pred-polymarket",
       "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=pred-polymarket",
-      "downloads": 90,
+      "downloads": 95,
       "stars": 0,
       "suspicious": false,
       "suspiciousLabel": null,
@@ -1349,7 +1116,36 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T10:06:04.379Z",
+      "lastCheckedAt": "2026-04-16T04:45:58.225Z",
+      "readmeSnippet": "--- name: Prediction Market Data description: \"Prediction markets data - Polymarket, Kalshi markets, prices, positions, and trades\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"📈\",\"requires\":{\"bins\":[\"curl\",\"python\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KEY\"}} --- # Cross-Platform Prediction"
+    },
+    {
+      "id": "skill:chaimengphp:https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-prediction-market",
+      "type": "skill",
+      "owner": "chaimengphp",
+      "name": "Prediction markets data - Polymarket, Kalshi markets, prices, positions, and trades",
+      "description": "Prediction markets data - Polymarket, Kalshi markets, prices, positions, and trades",
+      "version": "1.0.0",
+      "clawhubUrl": "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-prediction-market",
+      "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=openclaw-aisa-prediction-market",
+      "downloads": 95,
+      "stars": 0,
+      "suspicious": false,
+      "suspiciousLabel": null,
+      "suspiciousReason": "",
+      "optimizationAdvice": [
+        "Use clawhub-skill-optimizer: add a frontmatter description with explicit \"Use when:\" trigger wording.",
+        "Use clawhub-skill-optimizer: add a \"When to use\" section with 3-5 concrete invocation scenarios.",
+        "Align metadata, homepage, source repo, and published version so ClawHub scanner sees consistent provenance.",
+        "Keep the package AISA-only: declare only AISA env vars, document the exact API scope, and remove legacy credential paths."
+      ],
+      "usesAisaApi": true,
+      "source": "account",
+      "tags": [
+        "aisa",
+        "skill"
+      ],
+      "lastCheckedAt": "2026-04-16T04:46:11.113Z",
       "readmeSnippet": "--- name: Prediction Market Data description: \"Prediction markets data - Polymarket, Kalshi markets, prices, positions, and trades\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"📈\",\"requires\":{\"bins\":[\"curl\",\"python\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KEY\"}} --- # Cross-Platform Prediction"
     },
     {
@@ -1361,7 +1157,7 @@
       "version": "1.0.1",
       "clawhubUrl": "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/polymarket-arb",
       "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=polymarket-arb",
-      "downloads": 89,
+      "downloads": 94,
       "stars": 0,
       "suspicious": false,
       "suspiciousLabel": null,
@@ -1379,67 +1175,8 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T10:06:04.411Z",
+      "lastCheckedAt": "2026-04-16T04:45:57.837Z",
       "readmeSnippet": "--- name: Prediction Market Arbitrage description: \"Find and analyze arbitrage opportunities across prediction markets like Polymarket and Kalshi.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"⚖️\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KEY\"}} --- # Cross-Pl"
-    },
-    {
-      "id": "skill:chaimengphp:https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-prediction-market",
-      "type": "skill",
-      "owner": "chaimengphp",
-      "name": "Prediction markets data - Polymarket, Kalshi markets, prices, positions, and trades",
-      "description": "Prediction markets data - Polymarket, Kalshi markets, prices, positions, and trades",
-      "version": "1.0.0",
-      "clawhubUrl": "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-prediction-market",
-      "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=openclaw-aisa-prediction-market",
-      "downloads": 82,
-      "stars": 0,
-      "suspicious": false,
-      "suspiciousLabel": null,
-      "suspiciousReason": "",
-      "optimizationAdvice": [
-        "Use clawhub-skill-optimizer: add a frontmatter description with explicit \"Use when:\" trigger wording.",
-        "Use clawhub-skill-optimizer: add a \"When to use\" section with 3-5 concrete invocation scenarios.",
-        "Align metadata, homepage, source repo, and published version so ClawHub scanner sees consistent provenance.",
-        "Keep the package AISA-only: declare only AISA env vars, document the exact API scope, and remove legacy credential paths."
-      ],
-      "usesAisaApi": true,
-      "source": "account",
-      "tags": [
-        "aisa",
-        "skill"
-      ],
-      "lastCheckedAt": "2026-04-14T10:06:12.633Z",
-      "readmeSnippet": "--- name: Prediction Market Data description: \"Prediction markets data - Polymarket, Kalshi markets, prices, positions, and trades\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"📈\",\"requires\":{\"bins\":[\"curl\",\"python\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KEY\"}} --- # Cross-Platform Prediction"
-    },
-    {
-      "id": "skill:karensheng:https://clawhub.ai/kn7091kqhak4t7mrx06be2c63n80hkmk/x-intelligence-automation",
-      "type": "skill",
-      "owner": "karensheng",
-      "name": "Twitter Intelligence & Automation — Read, Search, Write & Post (Text & Media)",
-      "description": "Searches and reads X (Twitter): profiles, timelines, mentions, followers, tweet search, trends, lists, communities, and Spaces. Publishes posts, likes/unlike...",
-      "version": "1.0.2",
-      "clawhubUrl": "https://clawhub.ai/kn7091kqhak4t7mrx06be2c63n80hkmk/x-intelligence-automation",
-      "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=x-intelligence-automation",
-      "downloads": 72,
-      "stars": 0,
-      "suspicious": true,
-      "suspiciousLabel": "suspicious",
-      "suspiciousReason": "The skill is broadly coherent with a Twitter/X automation client using the AIsa relay, but there are a few mismatches you should be aware of before installing (undeclared env overrides and uploading local files to an external relay).",
-      "optimizationAdvice": [
-        "Use clawhub-skill-optimizer: add a frontmatter description with explicit \"Use when:\" trigger wording.",
-        "Use clawhub-skill-optimizer: add a \"When to use\" section with 3-5 concrete invocation scenarios.",
-        "Align metadata, homepage, source repo, and published version so ClawHub scanner sees consistent provenance.",
-        "Keep the package AISA-only: declare only AISA env vars, document the exact API scope, and remove legacy credential paths."
-      ],
-      "usesAisaApi": true,
-      "source": "account",
-      "tags": [
-        "aisa",
-        "suspicious",
-        "skill"
-      ],
-      "lastCheckedAt": "2026-04-14T10:06:15.814Z",
-      "readmeSnippet": "--- name: Twitter Command Center (Search + Post + Interact) description: \"Searches and reads X (Twitter): profiles, timelines, mentions, followers, tweet search, trends, lists, communities, and Spaces. Publishes posts, likes/unlikes tweets, and follows/unfollows users after the user completes OAuth in the browser. Use "
     },
     {
       "id": "skill:bibaofeng:https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/prediction-market-data-zh",
@@ -1450,7 +1187,7 @@
       "version": "1.0.1",
       "clawhubUrl": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/prediction-market-data-zh",
       "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=prediction-market-data-zh",
-      "downloads": 71,
+      "downloads": 75,
       "stars": 0,
       "suspicious": false,
       "suspiciousLabel": null,
@@ -1466,8 +1203,36 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T10:06:08.133Z",
+      "lastCheckedAt": "2026-04-16T04:46:08.648Z",
       "readmeSnippet": "--- name: prediction-market-data-zh description: \"通过 AIsa API 查询跨平台预测市场数据。支持 Polymarket 和 Kalshi 的市场行情、价格、订单簿、K线、持仓和交易记录。适用场景：查询预测市场赔率、选举博彩、事件概率、市场情绪、Polymarket 价格、Kalshi 价格、体育博彩赔率、钱包盈亏、跨平台市场对比。\" license: MIT metadata: openclaw: emoji: \"📈\" requires: bins: [python3] env: [AISA_API_KEY] primaryEnv: AISA_API_KEY --- # 预测"
+    },
+    {
+      "id": "skill:bibaofeng:https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/last30days-aisa-zh",
+      "type": "skill",
+      "owner": "bibaofeng",
+      "name": "last30days",
+      "description": "聚合最近 30 天的 Reddit、X/Twitter、YouTube、TikTok、Instagram、Hacker News、Polymarket、GitHub 和 web search 结果。触发条件：当用户需要 recent social research、人物近况、公司动态、竞品对比、发布反应、趋势扫描...",
+      "version": "1.0.4",
+      "clawhubUrl": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/last30days-aisa-zh",
+      "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=last30days-aisa-zh",
+      "downloads": 68,
+      "stars": 0,
+      "suspicious": false,
+      "suspiciousLabel": null,
+      "suspiciousReason": "",
+      "optimizationAdvice": [
+        "Use clawhub-skill-optimizer: add a \"When to use\" section with 3-5 concrete invocation scenarios.",
+        "Align metadata, homepage, source repo, and published version so ClawHub scanner sees consistent provenance.",
+        "Keep the package AISA-only: declare only AISA env vars, document the exact API scope, and remove legacy credential paths."
+      ],
+      "usesAisaApi": true,
+      "source": "account",
+      "tags": [
+        "aisa",
+        "skill"
+      ],
+      "lastCheckedAt": "2026-04-16T04:46:08.172Z",
+      "readmeSnippet": "--- name: last30days-zh version: \"1.0.4\" description: \"聚合最近 30 天的 Reddit、X/Twitter、YouTube、TikTok、Instagram、Hacker News、Polymarket、GitHub 和 web search 结果。触发条件：当用户需要 recent social research、人物近况、公司动态、竞品对比、发布反应、趋势扫描时使用。支持 AISA 规划、聚类、重排和 JSON 输出。\" argument-hint: \"last30days OpenAI Agents SDK, last30days Peter Steinberger, "
     },
     {
       "id": "skill:aisadocs:https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/perplexity-sonar-search",
@@ -1478,7 +1243,7 @@
       "version": "1.0.0",
       "clawhubUrl": "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/perplexity-sonar-search",
       "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=perplexity-sonar-search",
-      "downloads": 61,
+      "downloads": 66,
       "stars": 0,
       "suspicious": false,
       "suspiciousLabel": null,
@@ -1495,7 +1260,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T10:06:04.392Z",
+      "lastCheckedAt": "2026-04-16T04:45:57.116Z",
       "readmeSnippet": "--- name: perplexity-search description: \"Perplexity Sonar search and answer generation through AIsa. Use when the task is specifically to call Perplexity Sonar, Sonar Pro, Sonar Reasoning Pro, or Sonar Deep Research for citation-backed web answers, analytical reasoning, or long-form research reports.\" homepage: https:"
     },
     {
@@ -1507,7 +1272,7 @@
       "version": "1.0.0",
       "clawhubUrl": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/prediction-market-arbitrage-zh",
       "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=prediction-market-arbitrage-zh",
-      "downloads": 60,
+      "downloads": 66,
       "stars": 0,
       "suspicious": false,
       "suspiciousLabel": null,
@@ -1523,7 +1288,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T10:06:09.177Z",
+      "lastCheckedAt": "2026-04-16T04:46:13.735Z",
       "readmeSnippet": "--- name: prediction-market-arbitrage-zh description: \"通过 AIsa API 发现 Polymarket 和 Kalshi 预测市场的套利机会。扫描体育市场跨平台价差、比较实时赔率、验证订单簿流动性。适用场景：预测市场套利、跨平台价差、体育博彩套利、赔率对比、无风险利润、市场低效。\" license: MIT metadata: openclaw: emoji: \"⚖️\" requires: bins: [python3] env: [AISA_API_KEY] primaryEnv: AISA_API_KEY --- # 预测市场套利 通过 [AIsa API](https:"
     },
     {
@@ -1535,7 +1300,7 @@
       "version": "1.0.0",
       "clawhubUrl": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/prediction-market-arbitrage-api",
       "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=prediction-market-arbitrage-api",
-      "downloads": 60,
+      "downloads": 64,
       "stars": 0,
       "suspicious": false,
       "suspiciousLabel": null,
@@ -1552,7 +1317,7 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T10:06:09.320Z",
+      "lastCheckedAt": "2026-04-16T04:46:14.050Z",
       "readmeSnippet": "--- name: prediction-market-arbitrage-api description: \"Find arbitrage opportunities across Polymarket and Kalshi prediction markets via AIsa API. Scan sports markets for cross-platform price discrepancies, compare real-time odds, verify orderbook liquidity. Use when user asks about: prediction market arbitrage, cross-"
     },
     {
@@ -1564,7 +1329,7 @@
       "version": "1.0.0",
       "clawhubUrl": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/prediction-market-data",
       "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=prediction-market-data",
-      "downloads": 57,
+      "downloads": 61,
       "stars": 0,
       "suspicious": false,
       "suspiciousLabel": null,
@@ -1580,26 +1345,24 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T10:06:09.489Z",
+      "lastCheckedAt": "2026-04-16T04:46:09.444Z",
       "readmeSnippet": "--- name: prediction-market-data description: \"Cross-platform prediction market data via AIsa API. Query Polymarket and Kalshi markets, prices, orderbooks, candlesticks, positions, and trades. Use when user asks about: prediction market odds, election betting, event probabilities, market sentiment, Polymarket prices, K"
     },
     {
-      "id": "skill:karensheng:https://clawhub.ai/kn7091kqhak4t7mrx06be2c63n80hkmk/prediction-agg",
+      "id": "skill:bibaofeng:https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/last30days-aisa",
       "type": "skill",
-      "owner": "karensheng",
-      "name": "Prediction Market Data Aggregator",
-      "description": "Prediction markets data - Polymarket, Kalshi markets, prices, positions, and trades",
-      "version": "1.0.0",
-      "clawhubUrl": "https://clawhub.ai/kn7091kqhak4t7mrx06be2c63n80hkmk/prediction-agg",
-      "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=prediction-agg",
-      "downloads": 56,
+      "owner": "bibaofeng",
+      "name": "last30days",
+      "description": "Research the last 30 days across Reddit, X/Twitter, YouTube, TikTok, Instagram, Hacker News, Polymarket, GitHub, and web search. Use when: you need recent so...",
+      "version": "1.0.4",
+      "clawhubUrl": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/last30days-aisa",
+      "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=last30days-aisa",
+      "downloads": 57,
       "stars": 0,
       "suspicious": false,
       "suspiciousLabel": null,
       "suspiciousReason": "",
       "optimizationAdvice": [
-        "Use clawhub-skill-optimizer: add a frontmatter description with explicit \"Use when:\" trigger wording.",
-        "Use clawhub-skill-optimizer: add a \"When to use\" section with 3-5 concrete invocation scenarios.",
         "Align metadata, homepage, source repo, and published version so ClawHub scanner sees consistent provenance.",
         "Keep the package AISA-only: declare only AISA env vars, document the exact API scope, and remove legacy credential paths."
       ],
@@ -1609,8 +1372,8 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T10:06:14.673Z",
-      "readmeSnippet": "--- name: Prediction Market Data description: \"Prediction markets data - Polymarket, Kalshi markets, prices, positions, and trades\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"📈\",\"requires\":{\"bins\":[\"curl\",\"python\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KEY\"}} --- # Cross-Platform Prediction"
+      "lastCheckedAt": "2026-04-16T04:46:08.130Z",
+      "readmeSnippet": "--- name: last30days version: \"1.0.4\" description: \"Research the last 30 days across Reddit, X/Twitter, YouTube, TikTok, Instagram, Hacker News, Polymarket, GitHub, and web search. Use when: you need recent social research, company updates, person profiles, competitor comparisons, launch reactions, or trend scans. Supp"
     },
     {
       "id": "skill:chaimengphp:https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-prediction-market-arbitrage",
@@ -1621,7 +1384,7 @@
       "version": "1.0.0",
       "clawhubUrl": "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-prediction-market-arbitrage",
       "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=openclaw-aisa-prediction-market-arbitrage",
-      "downloads": 51,
+      "downloads": 57,
       "stars": 0,
       "suspicious": false,
       "suspiciousLabel": null,
@@ -1639,27 +1402,24 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T10:06:12.423Z",
+      "lastCheckedAt": "2026-04-16T04:46:32.951Z",
       "readmeSnippet": "--- name: Prediction Market Arbitrage description: \"Find and analyze arbitrage opportunities across prediction markets like Polymarket and Kalshi.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"⚖️\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KEY\"}} --- # Cross-Pl"
     },
     {
-      "id": "skill:karensheng:https://clawhub.ai/kn7091kqhak4t7mrx06be2c63n80hkmk/prediction-market-arb",
+      "id": "skill:bibaofeng:https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/youtube-search-aisa",
       "type": "skill",
-      "owner": "karensheng",
-      "name": "Prediction Markets Arbitrage",
-      "description": "Find and analyze arbitrage opportunities across prediction markets like Polymarket and Kalshi.",
-      "version": "1.0.0",
-      "clawhubUrl": "https://clawhub.ai/kn7091kqhak4t7mrx06be2c63n80hkmk/prediction-market-arb",
-      "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=prediction-market-arb",
-      "downloads": 51,
+      "owner": "bibaofeng",
+      "name": "youtube-search-aisa",
+      "description": "Search YouTube videos, channels, and trends via AISA API using queries, filters, and pagination without requiring Google credentials.",
+      "version": "1.1.1",
+      "clawhubUrl": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/youtube-search-aisa",
+      "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=youtube-search-aisa",
+      "downloads": 54,
       "stars": 0,
       "suspicious": false,
       "suspiciousLabel": null,
       "suspiciousReason": "",
       "optimizationAdvice": [
-        "Use clawhub-skill-optimizer: add a frontmatter description with explicit \"Use when:\" trigger wording.",
-        "Use clawhub-skill-optimizer: add a \"When to use\" section with 3-5 concrete invocation scenarios.",
-        "Align metadata, homepage, source repo, and published version so ClawHub scanner sees consistent provenance.",
         "Keep the package AISA-only: declare only AISA env vars, document the exact API scope, and remove legacy credential paths.",
         "Minimize the release bundle to runtime files, SKILL.md, and essential metadata; remove packaging/debug helpers."
       ],
@@ -1669,8 +1429,8 @@
         "aisa",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T10:06:14.739Z",
-      "readmeSnippet": "--- name: Prediction Market Arbitrage description: \"Find and analyze arbitrage opportunities across prediction markets like Polymarket and Kalshi.\" homepage: https://openclaw.ai metadata: {\"openclaw\":{\"emoji\":\"⚖️\",\"requires\":{\"bins\":[\"curl\",\"python3\"],\"env\":[\"AISA_API_KEY\"]},\"primaryEnv\":\"AISA_API_KEY\"}} --- # Cross-Pl"
+      "lastCheckedAt": "2026-04-16T04:46:06.520Z",
+      "readmeSnippet": "--- name: openclaw-aisa-youtube-search-serp-video-channels-trends-content-tracking description: Search YouTube videos, channels, and trends through the AISA YouTube SERP client. Use when: the user asks for content research, competitor tracking, or trend discovery without managing Google credentials. Supports curl queri"
     },
     {
       "id": "skill:chaimengphp:https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-twitter",
@@ -1681,7 +1441,7 @@
       "version": "1.0.6",
       "clawhubUrl": "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-twitter",
       "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=openclaw-aisa-twitter",
-      "downloads": 45,
+      "downloads": 53,
       "stars": 0,
       "suspicious": true,
       "suspiciousLabel": "suspicious",
@@ -1699,8 +1459,241 @@
         "suspicious",
         "skill"
       ],
-      "lastCheckedAt": "2026-04-14T10:06:11.501Z",
+      "lastCheckedAt": "2026-04-16T04:46:14.235Z",
       "readmeSnippet": "--- name: Twitter Command Center (Search + Post + Interact) description: \"Searches and reads X (Twitter): profiles, timelines, mentions, followers, tweet search, trends, lists, communities, and Spaces. Publishes posts, likes/unlikes tweets, and follows/unfollows users after the user completes OAuth in the browser. Use "
+    },
+    {
+      "id": "skill:bibaofeng:https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/youtube-aisa",
+      "type": "skill",
+      "owner": "bibaofeng",
+      "name": "youtube-aisa",
+      "description": "Search YouTube videos, channels, and playlists using the AISA YouTube API with support for query, locale filters, pagination, and structured results via one...",
+      "version": "1.0.3",
+      "clawhubUrl": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/youtube-aisa",
+      "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=youtube-aisa",
+      "downloads": 47,
+      "stars": 0,
+      "suspicious": false,
+      "suspiciousLabel": null,
+      "suspiciousReason": "",
+      "optimizationAdvice": [
+        "Align metadata, homepage, source repo, and published version so ClawHub scanner sees consistent provenance.",
+        "Keep the package AISA-only: declare only AISA env vars, document the exact API scope, and remove legacy credential paths.",
+        "Minimize the release bundle to runtime files, SKILL.md, and essential metadata; remove packaging/debug helpers."
+      ],
+      "usesAisaApi": true,
+      "source": "account",
+      "tags": [
+        "aisa",
+        "skill"
+      ],
+      "lastCheckedAt": "2026-04-16T04:46:07.786Z",
+      "readmeSnippet": "--- name: openclaw-aisa-youtube description: Search YouTube videos, channels, and playlists through the AISA YouTube endpoint with one API key. Use when: the user asks for YouTube discovery, query expansion, or pagination without managing Google credentials. Supports search filters, locale parameters, and structured SE"
+    },
+    {
+      "id": "skill:bibaofeng:https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/twitter-aisa",
+      "type": "skill",
+      "owner": "bibaofeng",
+      "name": "twitter-aisa",
+      "description": "Search and retrieve Twitter/X profiles, tweets, trends, and Spaces via AISA relay, and publish approved posts with OAuth without sharing passwords.",
+      "version": "1.0.2",
+      "clawhubUrl": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/twitter-aisa",
+      "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=twitter-aisa",
+      "downloads": 45,
+      "stars": 0,
+      "suspicious": true,
+      "suspiciousLabel": "suspicious",
+      "suspiciousReason": "The skill's code and instructions match the claimed Twitter-via-AISA relay purpose, but metadata and provenance inconsistencies (missing declared env in registry, no homepage/source) and the fact that user media/ OAuth tokens are sent to a third-party relay (api.aisa.one) warrant caution before installing.",
+      "optimizationAdvice": [
+        "Align metadata, homepage, source repo, and published version so ClawHub scanner sees consistent provenance.",
+        "Keep the package AISA-only: declare only AISA env vars, document the exact API scope, and remove legacy credential paths.",
+        "Minimize the release bundle to runtime files, SKILL.md, and essential metadata; remove packaging/debug helpers."
+      ],
+      "usesAisaApi": true,
+      "source": "account",
+      "tags": [
+        "aisa",
+        "suspicious",
+        "skill"
+      ],
+      "lastCheckedAt": "2026-04-16T04:46:06.658Z",
+      "readmeSnippet": "--- name: openclaw-twitter description: Search X/Twitter profiles, tweets, trends, lists, communities, and Spaces through the AISA relay, then publish approved posts with OAuth. Use when: the user asks for Twitter/X research, monitoring, or posting without sharing passwords. Supports read APIs, authorization links, and"
+    },
+    {
+      "id": "skill:bibaofeng:https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/twitter-aisa-api",
+      "type": "skill",
+      "owner": "bibaofeng",
+      "name": "twitter-aisa-api",
+      "description": "Search and read Twitter/X profiles, tweets, trends, and Spaces via AISA relay, then publish posts with OAuth and approved media files using AISA_API_KEY.",
+      "version": "1.0.1",
+      "clawhubUrl": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/twitter-aisa-api",
+      "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=twitter-aisa-api",
+      "downloads": 38,
+      "stars": 0,
+      "suspicious": true,
+      "suspiciousLabel": "suspicious",
+      "suspiciousReason": "The skill appears to do what it says (uses an AISA relay to read and post to Twitter/X and needs an AISA_API_KEY), but the registry metadata omitted required env/bin declarations and that mismatch should be resolved before trusting it.",
+      "optimizationAdvice": [
+        "Align metadata, homepage, source repo, and published version so ClawHub scanner sees consistent provenance.",
+        "Keep the package AISA-only: declare only AISA env vars, document the exact API scope, and remove legacy credential paths.",
+        "Minimize the release bundle to runtime files, SKILL.md, and essential metadata; remove packaging/debug helpers."
+      ],
+      "usesAisaApi": true,
+      "source": "account",
+      "tags": [
+        "aisa",
+        "suspicious",
+        "skill"
+      ],
+      "lastCheckedAt": "2026-04-16T04:46:05.008Z",
+      "readmeSnippet": "--- name: aisa-twitter-api description: Search X/Twitter profiles, tweets, trends, lists, communities, and Spaces through the AISA relay, then publish approved posts with OAuth. Use when: the user asks for Twitter/X research, monitoring, or posting without sharing passwords. Supports read APIs, authorization links, and"
+    },
+    {
+      "id": "skill:bibaofeng:https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/twitter-post-aisa",
+      "type": "skill",
+      "owner": "bibaofeng",
+      "name": "twitter-post-aisa",
+      "description": "Search, post, like, follow, and engage with Twitter/X content via AISA relay using OAuth-approved API actions with no password sharing.",
+      "version": "1.0.1",
+      "clawhubUrl": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/twitter-post-aisa",
+      "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=twitter-post-aisa",
+      "downloads": 36,
+      "stars": 0,
+      "suspicious": true,
+      "suspiciousLabel": "suspicious",
+      "suspiciousReason": "The skill's code and runtime instructions align with a Twitter/X relay-based client, but there are inconsistencies between the registry metadata and the SKILL.md (missing declared env/binary requirements in the registry), and the skill forwards user media and OAuth flows through an external relay (api.aisa.one) you must trust.",
+      "optimizationAdvice": [
+        "Align metadata, homepage, source repo, and published version so ClawHub scanner sees consistent provenance.",
+        "Keep the package AISA-only: declare only AISA env vars, document the exact API scope, and remove legacy credential paths.",
+        "Minimize the release bundle to runtime files, SKILL.md, and essential metadata; remove packaging/debug helpers."
+      ],
+      "usesAisaApi": true,
+      "source": "account",
+      "tags": [
+        "aisa",
+        "suspicious",
+        "skill"
+      ],
+      "lastCheckedAt": "2026-04-16T04:46:06.186Z",
+      "readmeSnippet": "--- name: openclaw-twitter-post-engage description: Search X/Twitter profiles, tweets, trends, and approved engagement actions through the AISA relay. Use when: the user asks for Twitter/X research, posting, likes, follows, or related workflows without sharing passwords. Supports read APIs, OAuth-gated posting, and fol"
+    },
+    {
+      "id": "skill:aisadocs:https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-finance-equity-price-market-data-news",
+      "type": "skill",
+      "owner": "aisadocs",
+      "name": "Query real-time and historical financial data of equity prices, market moves, metrics, and trends for analysis, alerts, and reporting",
+      "description": "Query real-time and historical financial data for equities—prices, news, financial statements, metrics, analyst estimates, insider and institutional activity...",
+      "version": "2.0.1",
+      "clawhubUrl": "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-finance-equity-price-market-data-news",
+      "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=openclaw-aisa-finance-equity-price-market-data-news",
+      "downloads": 26,
+      "stars": 0,
+      "suspicious": true,
+      "suspiciousLabel": "suspicious",
+      "suspiciousReason": "The skill's functionality (querying AIsa market APIs) is coherent, but metadata inconsistencies — the SKILL.md requires an AISA_API_KEY and certain binaries while the registry metadata lists no requirements — and the presence of an executable client script with no install spec warrant caution.",
+      "optimizationAdvice": [
+        "Use clawhub-skill-optimizer: add a frontmatter description with explicit \"Use when:\" trigger wording.",
+        "Use clawhub-skill-optimizer: add a \"When to use\" section with 3-5 concrete invocation scenarios.",
+        "Align metadata, homepage, source repo, and published version so ClawHub scanner sees consistent provenance.",
+        "Keep the package AISA-only: declare only AISA env vars, document the exact API scope, and remove legacy credential paths.",
+        "Minimize the release bundle to runtime files, SKILL.md, and essential metadata; remove packaging/debug helpers."
+      ],
+      "usesAisaApi": true,
+      "source": "account",
+      "tags": [
+        "aisa",
+        "suspicious",
+        "skill"
+      ],
+      "lastCheckedAt": "2026-04-16T04:45:56.605Z",
+      "readmeSnippet": "--- name: marketpulse description: \"Query real-time and historical financial data for equities—prices, news, financial statements, metrics, analyst estimates, insider and institutional activity, SEC filings, earnings press releases, segmented revenues, stock screening, and macro interest rates.\" homepage: https://aisa."
+    },
+    {
+      "id": "skill:bibaofeng:https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/x-intelligence-automation-aisa",
+      "type": "skill",
+      "owner": "bibaofeng",
+      "name": "x-intelligence-automation-aisa",
+      "description": "Search and engage with Twitter/X profiles, tweets, trends, and perform authorized posting, liking, and following via the AISA relay using OAuth and API key.",
+      "version": "1.0.0",
+      "clawhubUrl": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/x-intelligence-automation-aisa",
+      "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=x-intelligence-automation-aisa",
+      "downloads": 22,
+      "stars": 0,
+      "suspicious": true,
+      "suspiciousLabel": "suspicious",
+      "suspiciousReason": "The skill's code and SKILL.md are consistent with a relay-based Twitter/X client that requires an AISA_API_KEY and will send reads, posts, and media to api.aisa.one, but there are metadata inconsistencies (registry claims no required env or primary credential) and ownership/homepage are missing — users should confirm they trust the AISA relay and the source before installing.",
+      "optimizationAdvice": [
+        "Align metadata, homepage, source repo, and published version so ClawHub scanner sees consistent provenance.",
+        "Keep the package AISA-only: declare only AISA env vars, document the exact API scope, and remove legacy credential paths.",
+        "Minimize the release bundle to runtime files, SKILL.md, and essential metadata; remove packaging/debug helpers."
+      ],
+      "usesAisaApi": true,
+      "source": "account",
+      "tags": [
+        "aisa",
+        "suspicious",
+        "skill"
+      ],
+      "lastCheckedAt": "2026-04-16T04:46:03.385Z",
+      "readmeSnippet": "--- name: x-intelligence-automation description: Search X/Twitter profiles, tweets, trends, and approved engagement actions through the AISA relay. Use when: the user asks for Twitter/X research, posting, likes, follows, or related workflows without sharing passwords. Supports read APIs, OAuth-gated posting, and follow"
+    },
+    {
+      "id": "skill:bibaofeng:https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/aisa-twitter",
+      "type": "skill",
+      "owner": "bibaofeng",
+      "name": "aisa-twitter",
+      "description": "Search and engage with Twitter/X profiles, tweets, trends, and post or interact via OAuth-secured AISA relay API using an API key.",
+      "version": "1.0.0",
+      "clawhubUrl": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/aisa-twitter",
+      "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=aisa-twitter",
+      "downloads": 20,
+      "stars": 0,
+      "suspicious": true,
+      "suspiciousLabel": "suspicious",
+      "suspiciousReason": "The package is a coherent Twitter/X relay client that contacts api.aisa.one and requires an AISA_API_KEY, but the registry metadata and package frontmatter disagree about required env and versioning—confirm the missing environment declaration and trust in the relay before installing.",
+      "optimizationAdvice": [
+        "Align metadata, homepage, source repo, and published version so ClawHub scanner sees consistent provenance.",
+        "Keep the package AISA-only: declare only AISA env vars, document the exact API scope, and remove legacy credential paths.",
+        "Minimize the release bundle to runtime files, SKILL.md, and essential metadata; remove packaging/debug helpers."
+      ],
+      "usesAisaApi": true,
+      "source": "account",
+      "tags": [
+        "aisa",
+        "suspicious",
+        "skill"
+      ],
+      "lastCheckedAt": "2026-04-16T04:46:04.566Z",
+      "readmeSnippet": "--- name: openclaw-aisa-twitter description: Search X/Twitter profiles, tweets, trends, and approved engagement actions through the AISA relay. Use when: the user asks for Twitter/X research, posting, likes, follows, or related workflows without sharing passwords. Supports read APIs, OAuth-gated posting, and follow or "
+    },
+    {
+      "id": "skill:bibaofeng:https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/openclaw-aisa-youtube-aisa",
+      "type": "skill",
+      "owner": "bibaofeng",
+      "name": "openclaw-aisa-youtube-aisa",
+      "description": "Search YouTube videos, channels, and trends via AISA API using Python or curl with locale and filter options, requiring AISA_API_KEY.",
+      "version": "1.0.0",
+      "clawhubUrl": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/openclaw-aisa-youtube-aisa",
+      "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=openclaw-aisa-youtube-aisa",
+      "downloads": 20,
+      "stars": 0,
+      "suspicious": true,
+      "suspiciousLabel": "suspicious",
+      "suspiciousReason": "The skill's code and SKILL.md match the described YouTube search purpose and only require an AISA API key, but the registry metadata incorrectly omits that required credential and overall provenance (homepage/owner) is thin — this mismatch warrants caution before installing.",
+      "optimizationAdvice": [
+        "Align metadata, homepage, source repo, and published version so ClawHub scanner sees consistent provenance.",
+        "Keep the package AISA-only: declare only AISA env vars, document the exact API scope, and remove legacy credential paths.",
+        "Minimize the release bundle to runtime files, SKILL.md, and essential metadata; remove packaging/debug helpers."
+      ],
+      "usesAisaApi": true,
+      "source": "account",
+      "tags": [
+        "aisa",
+        "suspicious",
+        "skill"
+      ],
+      "lastCheckedAt": "2026-04-16T04:46:05.002Z",
+      "readmeSnippet": "--- name: openclaw-aisa-youtube-aisa description: Search YouTube videos, channels, and trends through the AISA YouTube SERP client. Use when: the user asks for content research, competitor tracking, or trend discovery without managing Google credentials. Supports curl queries and the bundled Python client with locale a"
     },
     {
       "id": "plugin:bibaofeng:https://clawhub.ai/plugins/%40clawhub%2Fprediction-market-arbitrage",
@@ -1728,7 +1721,7 @@
         "suspicious",
         "plugin"
       ],
-      "lastCheckedAt": "2026-04-14T10:06:15.422Z",
+      "lastCheckedAt": "2026-04-16T04:46:15.788Z",
       "readmeSnippet": ""
     },
     {
@@ -1758,7 +1751,7 @@
         "suspicious",
         "plugin"
       ],
-      "lastCheckedAt": "2026-04-14T10:06:15.458Z",
+      "lastCheckedAt": "2026-04-16T04:46:16.591Z",
       "readmeSnippet": ""
     },
     {
@@ -1786,7 +1779,7 @@
         "aisa",
         "plugin"
       ],
-      "lastCheckedAt": "2026-04-14T10:06:15.644Z",
+      "lastCheckedAt": "2026-04-16T04:46:16.866Z",
       "readmeSnippet": ""
     },
     {
@@ -1814,7 +1807,7 @@
         "aisa",
         "plugin"
       ],
-      "lastCheckedAt": "2026-04-14T10:06:15.897Z",
+      "lastCheckedAt": "2026-04-16T04:46:17.009Z",
       "readmeSnippet": ""
     },
     {
@@ -1842,7 +1835,7 @@
         "aisa",
         "plugin"
       ],
-      "lastCheckedAt": "2026-04-14T10:06:15.990Z",
+      "lastCheckedAt": "2026-04-16T04:46:17.099Z",
       "readmeSnippet": ""
     }
   ]

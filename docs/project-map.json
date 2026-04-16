@@ -1,0 +1,402 @@
+{
+  "project": {
+    "name": "skillget",
+    "displayName": "Claw Skills Scout",
+    "summary": "A mixed product/tooling repository for ClawHub intelligence gathering, AISA-focused catalog publishing, suspicious package optimization, and AI skill packaging experiments.",
+    "primaryGoals": [
+      "Scrape ClawHub skills and plugins, detect probable AISA API usage, and publish a searchable static dashboard.",
+      "Repackage selected suspicious ClawHub skills into runtime-preserving optimized bundles with verification and downloadable release artifacts.",
+      "Maintain reusable AI skill assets and templates, including a standalone last30days research skill."
+    ],
+    "projectType": [
+      "static-site",
+      "scraper",
+      "package-pipeline",
+      "skill-repository"
+    ],
+    "status": {
+      "overall": "active",
+      "worktree": "dirty",
+      "confidence": "high"
+    }
+  },
+  "entryPoints": {
+    "humanFirstRead": [
+      "README.md",
+      "docs/PROJECT_OVERVIEW_AI.md",
+      "package.json"
+    ],
+    "runtimeEntryPoints": [
+      "scripts/scrape-clawhub.ts",
+      "src/App.tsx",
+      "sucess/last30days/scripts/run-last30days.sh",
+      "sucess/last30days/scripts/last30days.py"
+    ],
+    "buildEntryPoints": [
+      "scripts/generate-aisa-api-analysis.py",
+      "scripts/build-source-optimized-packages.mjs",
+      "scripts/build-source-optimized-zh.mjs",
+      "scripts/package-source-optimized.mjs",
+      "scripts/package-source-optimized-zh.mjs",
+      "scripts/publish-optimized-downloads.mjs"
+    ],
+    "verificationEntryPoints": [
+      "scripts/verify-source-optimized.mjs",
+      "scripts/live-test-source-optimized.mjs"
+    ]
+  },
+  "systems": [
+    {
+      "id": "clawhub-intelligence",
+      "name": "ClawHub Intelligence Collection",
+      "purpose": "Collect metadata from ClawHub accounts, catalog pages, and item detail pages, then normalize it into a machine-readable catalog.",
+      "keyFiles": [
+        "scripts/scrape-clawhub.ts",
+        "config/accounts.json",
+        "config/manual-seeds.json",
+        "extract_all_skills_correct.py",
+        "use_html_slugs.py"
+      ],
+      "inputs": [
+        "config/accounts.json",
+        "config/manual-seeds.json",
+        "public ClawHub account pages",
+        "public ClawHub skills catalog pages",
+        "public ClawHub plugins catalog pages"
+      ],
+      "outputs": [
+        "public/data/catalog.json",
+        "public/data/aisa-api-analysis.json",
+        "public/downloads/clawHub/",
+        "public/downloads/github/"
+      ],
+      "capabilities": [
+        "owner discovery",
+        "catalog traversal",
+        "detail page parsing",
+        "README extraction",
+        "download link extraction",
+        "suspicious status extraction",
+        "heuristic AISA usage detection",
+        "archive-level AISA endpoint extraction",
+        "optimization advice generation",
+        "ClawHub account skill download",
+        "GitHub account skill archive packaging"
+      ]
+    },
+    {
+      "id": "dashboard",
+      "name": "Static Dashboard",
+      "purpose": "Render the generated catalog, archive-level AISA API analysis, and optimized package index as a searchable static site.",
+      "keyFiles": [
+        "src/App.tsx",
+        "src/types.ts",
+        "src/styles.css",
+        "vite.config.ts",
+        "index.html"
+      ],
+      "inputs": [
+        "public/data/catalog.json",
+        "public/data/aisa-api-analysis.json",
+        "public/data/optimized-packages.json"
+      ],
+      "outputs": [
+        "dist/"
+      ],
+      "capabilities": [
+        "query filtering",
+        "interface-centric search view",
+        "skill-centric search view",
+        "ClawHub catalog fallback view",
+        "GitHub skill archive visibility",
+        "suspicious package highlighting",
+        "optimized bundle download links"
+      ]
+    },
+    {
+      "id": "optimized-packaging",
+      "name": "Suspicious Package Optimization Pipeline",
+      "purpose": "Download, trim, template, verify, package, and publish optimized bundles for suspicious ClawHub skills.",
+      "keyFiles": [
+        "scripts/download-suspicious-zips.mjs",
+        "scripts/build-source-optimized-packages.mjs",
+        "scripts/verify-source-optimized.mjs",
+        "scripts/live-test-source-optimized.mjs",
+        "scripts/package-source-optimized.mjs",
+        "scripts/publish-optimized-downloads.mjs",
+        "templates/source-optimized/",
+        "packages/source-optimized/"
+      ],
+      "inputs": [
+        "public/data/catalog.json",
+        "artifacts/original-zips/",
+        "artifacts/original-unpacked/",
+        "templates/source-optimized/"
+      ],
+      "outputs": [
+        "packages/source-optimized/",
+        "artifacts/source-optimized-verification.json",
+        "artifacts/live-test-source-optimized.json",
+        "artifacts/optimized-release-zips/",
+        "public/data/optimized-packages.json",
+        "public/downloads/optimized/"
+      ],
+      "capabilities": [
+        "download suspicious zips",
+        "retain runtime files only",
+        "replace SKILL.md with templates",
+        "python compile checks",
+        "CLI help smoke tests",
+        "live AISA-backed smoke tests",
+        "zip packaging",
+        "download index publishing"
+      ],
+      "knownManualSteps": [
+        "Original zip unpacking into artifacts/original-unpacked/ is not shown as a fully automated in-repo step.",
+        "OAuth approval and real write-path tests still require manual validation."
+      ]
+    },
+    {
+      "id": "optimized-packaging-zh",
+      "name": "Chinese Optimized Package Pipeline",
+      "purpose": "Clone optimized packages, swap in Chinese SKILL templates, then package and publish Chinese zip artifacts.",
+      "keyFiles": [
+        "scripts/build-source-optimized-zh.mjs",
+        "scripts/package-source-optimized-zh.mjs",
+        "templates/source-optimized-zh/",
+        "packages/source-optimized-zh/"
+      ],
+      "inputs": [
+        "packages/source-optimized/",
+        "templates/source-optimized-zh/"
+      ],
+      "outputs": [
+        "packages/source-optimized-zh/",
+        "artifacts/optimized-release-zips-zh/",
+        "public/downloads/optimized-zh/"
+      ],
+      "capabilities": [
+        "copy filtered runtime files from optimized source packages",
+        "replace SKILL.md with Chinese templates",
+        "build Chinese release zips"
+      ]
+    },
+    {
+      "id": "skill-assets",
+      "name": "Skill Assets And Reference Implementations",
+      "purpose": "Store reusable skill packages, templates, and a full-featured standalone skill example.",
+      "keyFiles": [
+        "sucess/last30days/SKILL.md",
+        "sucess/last30days/README.md",
+        "sucess/last30days/scripts/last30days.py",
+        "sucess/last30days/scripts/lib/",
+        "templates/source-optimized/",
+        "templates/source-optimized-zh/"
+      ],
+      "inputs": [
+        "AISA_API_KEY",
+        "optional GH_TOKEN or GITHUB_TOKEN",
+        "user query arguments"
+      ],
+      "outputs": [
+        "research brief or JSON output from last30days",
+        "skill package templates for optimized bundles"
+      ],
+      "capabilities": [
+        "multi-source last-30-days research",
+        "planning and reranking",
+        "social/community source collection",
+        "grounded search",
+        "skill packaging reference"
+      ]
+    }
+  ],
+  "pipelines": [
+    {
+      "id": "catalog-build",
+      "name": "Catalog Build",
+      "steps": [
+        "config/accounts.json + public ClawHub pages",
+        "scripts/scrape-clawhub.ts",
+        "public/data/catalog.json",
+        "scripts/generate-aisa-api-analysis.py",
+        "public/data/aisa-api-analysis.json",
+        "src/App.tsx",
+        "vite build",
+        "dist/"
+      ]
+    },
+    {
+      "id": "aisa-analysis-flow",
+      "name": "AISA Archive Analysis Flow",
+      "steps": [
+        "public/downloads/clawHub/index.json + public/downloads/clawHub/**/*.zip",
+        "public/downloads/github/index.json + public/downloads/github/**/*.tar.gz",
+        "scripts/generate-aisa-api-analysis.py",
+        "public/data/aisa-api-analysis.json",
+        "src/App.tsx",
+        "vite build",
+        "dist/"
+      ]
+    },
+    {
+      "id": "optimized-package-build",
+      "name": "Optimized Package Build",
+      "steps": [
+        "public/data/catalog.json",
+        "scripts/download-suspicious-zips.mjs",
+        "artifacts/original-zips/",
+        "external or manual unpack step",
+        "artifacts/original-unpacked/",
+        "scripts/build-source-optimized-packages.mjs",
+        "packages/source-optimized/",
+        "scripts/verify-source-optimized.mjs",
+        "scripts/live-test-source-optimized.mjs",
+        "scripts/package-source-optimized.mjs",
+        "artifacts/optimized-release-zips/",
+        "scripts/publish-optimized-downloads.mjs",
+        "public/data/optimized-packages.json",
+        "public/downloads/optimized/"
+      ]
+    },
+    {
+      "id": "optimized-package-build-zh",
+      "name": "Chinese Optimized Package Build",
+      "steps": [
+        "packages/source-optimized/",
+        "scripts/build-source-optimized-zh.mjs",
+        "packages/source-optimized-zh/",
+        "scripts/package-source-optimized-zh.mjs",
+        "artifacts/optimized-release-zips-zh/",
+        "public/downloads/optimized-zh/"
+      ]
+    },
+    {
+      "id": "github-account-skill-download",
+      "name": "GitHub Account Skill Download",
+      "steps": [
+        "public/data/catalog.json",
+        "scripts/download-github-account-skills.mjs",
+        "GitHub users/{owner}/repos",
+        "repo tarball download",
+        "SKILL.md directory packaging",
+        "public/downloads/github/",
+        "public/downloads/github/index.json"
+      ]
+    }
+  ],
+  "npmScripts": {
+    "dev": "Run the Vite development server.",
+    "build": "Scrape ClawHub, regenerate AISA API analysis data, and build the static site.",
+    "preview": "Preview the built static site.",
+    "scrape": "Run the ClawHub scraper and regenerate catalog.json.",
+    "analyze:aisa": "Scan all public/downloads skill archives and regenerate public/data/aisa-api-analysis.json.",
+    "pipeline:aisa-analysis": "Refresh ClawHub and GitHub skill archives, rebuild AISA analysis data, then build the static site.",
+    "build:source-optimized": "Build English optimized package directories from original-unpacked sources.",
+    "build:source-optimized-zh": "Build Chinese optimized package directories from source-optimized packages.",
+    "package:source-optimized": "Zip English optimized packages into release artifacts.",
+    "package:source-optimized-zh": "Zip Chinese optimized packages into release artifacts.",
+    "verify:source-optimized": "Run static checks for optimized packages.",
+    "live-test:source-optimized": "Run AISA-backed smoke tests for optimized packages.",
+    "publish:optimized-downloads": "Publish optimized package metadata and copy zips into public downloads.",
+    "download:suspicious-zips": "Download suspicious skill zips referenced by catalog.json.",
+    "refresh:clawhub-owner-seeds": "Use Playwright-rendered owner pages to refresh clawhub-hash-format-urls.csv for tracked accounts.",
+    "download:clawhub-account-skills": "Refresh rendered owner seeds when available, scrape ClawHub, then download all skills for tracked accounts into public/downloads/clawHub/, trying the CN mirror first and falling back to the ClawHub-origin URL.",
+    "download:github-account-skills": "Treat catalog owners as GitHub usernames, scan public repos for SKILL.md, and package discovered skill directories into public/downloads/github/.",
+    "typecheck": "Run TypeScript type checking.",
+    "deploy:server": "Run the server deployment helper."
+  },
+  "importantData": [
+    {
+      "path": "public/data/catalog.json",
+      "role": "Primary normalized dataset consumed by the dashboard and downstream packaging flows."
+    },
+    {
+      "path": "public/data/aisa-api-analysis.json",
+      "role": "Archive-level interface and skill analysis dataset used by the GitHub Pages dashboard."
+    },
+    {
+      "path": "public/data/optimized-packages.json",
+      "role": "Published index of optimized bundles shown in the dashboard."
+    },
+    {
+      "path": "artifacts/source-optimized-verification.json",
+      "role": "Static verification report for optimized packages."
+    },
+    {
+      "path": "artifacts/live-test-source-optimized.json",
+      "role": "Live smoke test report for optimized packages."
+    }
+  ],
+  "workflowDocs": [
+    {
+      "path": "docs/AISA_ANALYSIS_WORKFLOW.md",
+      "role": "Operational spec for archive refresh, AISA endpoint analysis, validation, and acceptance."
+    }
+  ],
+  "automation": [
+    {
+      "path": ".github/workflows/deploy.yml",
+      "role": "GitHub Pages deployment workflow; runs pipeline:aisa-analysis, refreshes downloads and AISA analysis during CI, retries transient failures, prevents overlapping runs, and uploads analysis artifacts for troubleshooting."
+    }
+  ],
+  "keyDirectories": [
+    {
+      "path": "src/",
+      "role": "Dashboard frontend source."
+    },
+    {
+      "path": "scripts/",
+      "role": "Operational scripts for scraping, interface analysis, building, verifying, packaging, and publishing."
+    },
+    {
+      "path": "config/",
+      "role": "Seeds and account configuration."
+    },
+    {
+      "path": "public/data/",
+      "role": "Published JSON data consumed by the frontend."
+    },
+    {
+      "path": "public/downloads/",
+      "role": "Published downloadable zip artifacts."
+    },
+    {
+      "path": "artifacts/",
+      "role": "Intermediate and release build artifacts."
+    },
+    {
+      "path": "packages/source-optimized/",
+      "role": "English optimized package directories."
+    },
+    {
+      "path": "packages/source-optimized-zh/",
+      "role": "Chinese optimized package directories."
+    },
+    {
+      "path": "templates/",
+      "role": "Template SKILL.md sources for optimized packaging."
+    },
+    {
+      "path": "sucess/last30days/",
+      "role": "Standalone research skill reference implementation."
+    }
+  ],
+  "assumptionsAndRisks": [
+    "AISA detection in the scraper is heuristic, not authoritative.",
+    "Global ClawHub catalog traversal is less reliable than account-page discovery.",
+    "Some packaging and runtime acceptance steps remain manual.",
+    "Repository contains generated assets, historical CSVs, and active work-in-progress changes."
+  ],
+  "recommendedReadOrderForAI": [
+    "docs/PROJECT_OVERVIEW_AI.md",
+    "README.md",
+    "package.json",
+    "scripts/scrape-clawhub.ts",
+    "src/App.tsx",
+    "scripts/build-source-optimized-packages.mjs",
+    "scripts/verify-source-optimized.mjs",
+    "scripts/publish-optimized-downloads.mjs",
+    "sucess/last30days/SKILL.md"
+  ]
+}

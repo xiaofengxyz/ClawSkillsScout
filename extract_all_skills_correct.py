@@ -6,6 +6,7 @@
 import asyncio
 from playwright.async_api import async_playwright
 import csv
+import json
 from pathlib import Path
 from bs4 import BeautifulSoup
 import re
@@ -17,6 +18,8 @@ LIST_PAGE_EXTRA_WAIT_MS = 1500
 SKILL_RENDER_MAX_WAIT_MS = 4000
 HTML_STABLE_ROUNDS = 2
 SKILL_CHECK_CONCURRENCY = 5
+ACCOUNTS_PATH = Path("config/accounts.json")
+OUTPUT_FILE = Path("clawhub-hash-format-urls.csv")
 
 
 async def wait_for_dynamic_html(page, max_wait_ms=SKILL_RENDER_MAX_WAIT_MS, interval_ms=400):
@@ -144,15 +147,7 @@ async def load_and_extract_skills(browser, author):
         await page.close()
 
 async def main():
-    authors = [
-        '0xjordansg-yolo',
-        'AISADOCS',
-        'AISAPAY',
-        'bibaofeng',
-        'bowen-dotcom',
-        'chaimengphp',
-        'karensheng'
-    ]
+    authors = json.loads(ACCOUNTS_PATH.read_text(encoding='utf-8'))
     
     print("=" * 70)
     print("🔗 提取所有用户的技能链接 (改进版)")
@@ -171,9 +166,8 @@ async def main():
             await browser.close()
     
     # 保存到 CSV
-    output_file = Path("clawhub-hash-format-urls.csv")
     
-    with open(output_file, 'w', newline='', encoding='utf-8') as f:
+    with open(OUTPUT_FILE, 'w', newline='', encoding='utf-8') as f:
         writer = csv.DictWriter(f, fieldnames=['Author', 'SkillName', 'FullURL', 'AIType'])
         writer.writeheader()
         
@@ -191,7 +185,7 @@ async def main():
                 total += 1
     
     print(f"\n" + "=" * 70)
-    print(f"✅ 已保存 {total} 个技能到: {output_file}")
+    print(f"✅ 已保存 {total} 个技能到: {OUTPUT_FILE}")
     print("=" * 70)
 
 if __name__ == "__main__":

@@ -1,5 +1,30 @@
 # Project Overview For AI
 
+机器可读索引见：[docs/project-map.json](/mnt/d/workplace/skillGet/docs/project-map.json)
+
+## 操作规则
+
+开始任务前先读：
+
+1. [AGENTS.md](/mnt/d/workplace/skillGet/AGENTS.md)
+2. [README.md](/mnt/d/workplace/skillGet/README.md)
+3. [docs/project-map.json](/mnt/d/workplace/skillGet/docs/project-map.json)
+
+结束任务时不需要每次都回写全部项目文档。只有在以下情况发生时，才更新 `README.md`、本文件或 `docs/project-map.json`：
+
+- 新增或删除目录
+- 新增或删除核心产物
+- 发布流程变化
+- 正式仓库或分支变化
+- 推荐工作流变化
+- 项目阶段变化
+
+如果需要更新，只改受影响的最小部分，不重写全部文档。
+
+与 AISA 接口分析相关的标准流程和验收规范见：
+
+- [docs/AISA_ANALYSIS_WORKFLOW.md](/mnt/d/workplace/skillGet/docs/AISA_ANALYSIS_WORKFLOW.md)
+
 ## 1. 项目一句话说明
 
 这是一个围绕 ClawHub 生态做“采集、识别、筛选、优化、发布”的仓库，核心目标有两条：
@@ -28,7 +53,9 @@
 ### 2.2 生成静态目录站
 
 - 产出 `public/data/catalog.json`
+- 产出 `public/data/aisa-api-analysis.json`
 - 前端读取 `catalog.json` 和 `optimized-packages.json`
+- 前端也读取 `aisa-api-analysis.json`，展示“接口列表 / 技能列表 / ClawHub 目录”三视图
 - 用 Vite + React 构建静态页面
 - 发布到 GitHub Pages 或服务器目录
 
@@ -54,9 +81,13 @@
 ### 已完成的主线
 
 - 已有可运行的 ClawHub 抓取脚本：[scripts/scrape-clawhub.ts](/mnt/d/workplace/skillGet/scripts/scrape-clawhub.ts)
+- 已有按 `config/accounts.json` 下载账号下全部 skills 到 `public/downloads/clawHub/` 的脚本：[scripts/download-clawhub-account-skills.mjs](/mnt/d/workplace/skillGet/scripts/download-clawhub-account-skills.mjs)，会先尝试刷新渲染后的 owner 页面种子，下载时优先尝试中文镜像，再回退到 ClawHub 原始下载地址
+- 已有按 `public/data/catalog.json` 中 owner 视作 GitHub 用户名，扫描公开仓库里的 `SKILL.md` 并打包到 `public/downloads/github/` 的脚本：[scripts/download-github-account-skills.mjs](/mnt/d/workplace/skillGet/scripts/download-github-account-skills.mjs)
+- 已有扫描 `public/downloads/clawHub/` 与 `public/downloads/github/` 全部归档、提取 AISA 接口并生成分析数据的脚本：[scripts/generate-aisa-api-analysis.py](/mnt/d/workplace/skillGet/scripts/generate-aisa-api-analysis.py)
+- 已有推荐的一键分析流水线：`npm run pipeline:aisa-analysis`
 - 已有静态站前端：[src/App.tsx](/mnt/d/workplace/skillGet/src/App.tsx)
 - 已有构建结果目录：`dist/`
-- 已有公开数据目录：`public/data/catalog.json`
+- 已有公开数据目录：`public/data/catalog.json`、`public/data/aisa-api-analysis.json`
 - 已有 GitHub Pages / 服务器部署说明：[docs/DEPLOYMENT.md](/mnt/d/workplace/skillGet/docs/DEPLOYMENT.md)
 
 ### 已完成的优化打包流水线
@@ -102,6 +133,7 @@
 输出：
 
 - `public/data/catalog.json`
+- `public/data/aisa-api-analysis.json`
 
 ### 子系统 B：展示与发布
 
@@ -117,6 +149,12 @@
 输出：
 
 - `dist/`
+
+能力补充：
+
+- 以接口为主汇总 AISA API 使用情况
+- 以技能为主汇总来源、接口与同接口分组
+- 在页面中同时展示 ClawHub 与 GitHub 归档技能
 
 ### 子系统 C：可疑包优化与再发布
 
@@ -154,11 +192,36 @@
 config/accounts.json + public catalog pages
   -> scripts/scrape-clawhub.ts
   -> public/data/catalog.json
+  -> scripts/generate-aisa-api-analysis.py
+  -> public/data/aisa-api-analysis.json
   -> src/App.tsx
   -> vite build
   -> dist/
   -> GitHub Pages / server
 ```
+
+### 5.1.1 AISA 接口分析标准操作流
+
+```text
+download:clawhub-account-skills
+  -> public/downloads/clawHub/
+download:github-account-skills
+  -> public/downloads/github/
+analyze:aisa
+  -> public/data/aisa-api-analysis.json
+vite build
+  -> dist/
+```
+
+推荐命令：
+
+```bash
+npm run pipeline:aisa-analysis
+```
+
+GitHub Pages 的 Action 也已经切到这条流水线，因此会自动刷新下载归档并重新分析数据，而不只是复用仓库里已有的旧分析结果。
+同时 workflow 会把 `catalog.json`、`aisa-api-analysis.json`、下载索引和 `dist/` 上传为 artifact，便于定位失败原因。
+另外还开启了并发保护和最多 3 次自动重试，用来降低源站或网络抖动带来的偶发失败。
 
 ### 5.2 优化包流水线
 
@@ -188,17 +251,42 @@ packages/source-optimized/
   -> public/downloads/optimized-zh/
 ```
 
+### 5.4 账号技能下载流水线
+
+```text
+config/accounts.json
+  -> extract_all_skills_correct.py
+  -> clawhub-hash-format-urls.csv
+  -> scripts/scrape-clawhub.ts
+  -> public/data/catalog.json
+  -> download-clawhub-account-skills.mjs
+  -> 优先 https://skills.volces.com/api/v1/download?slug={slug}
+  -> 失败后回退 item.downloadUrl
+  -> public/downloads/clawHub/<owner>/*.zip + public/downloads/clawHub/index.json
+```
+
+### 5.5 GitHub 账号技能归档流水线
+
+```text
+public/data/catalog.json 中的 owner
+  -> scripts/download-github-account-skills.mjs
+  -> GitHub users/{owner}/repos
+  -> 查找仓库内包含 SKILL.md 的目录
+  -> 下载 repo tarball 并裁出 skill 目录
+  -> public/downloads/github/<owner>/*.tar.gz + public/downloads/github/index.json
+```
+
 ## 6. 目录速查
 
 ### 核心源码
 
 - `src/`：静态站前端
-- `scripts/`：采集、构建、校验、打包、发布脚本
+- `scripts/`：采集、接口分析、构建、校验、打包、发布脚本
 - `config/`：扫描账号和手工种子配置
 
 ### 数据与产物
 
-- `public/data/`：前端消费的数据 JSON
+- `public/data/`：前端消费的数据 JSON（含 catalog 与 AISA 接口分析）
 - `public/downloads/`：前端提供下载的 zip
 - `dist/`：Vite 构建产物
 - `artifacts/`：构建中间产物、原始 zip、打包 zip、报告

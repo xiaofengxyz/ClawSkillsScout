@@ -6,9 +6,11 @@
   "main": "scripts/scrape-clawhub.ts",
   "scripts": {
     "dev": "vite",
-    "build": "npm run scrape && vite build",
+    "build": "npm run scrape && npm run analyze:aisa && vite build",
     "preview": "vite preview",
     "scrape": "node --import tsx scripts/scrape-clawhub.ts",
+    "analyze:aisa": "python3 scripts/generate-aisa-api-analysis.py",
+    "pipeline:aisa-analysis": "npm run download:clawhub-account-skills && npm run download:github-account-skills && npm run analyze:aisa && vite build",
     "build:source-optimized": "node scripts/build-source-optimized-packages.mjs",
     "build:source-optimized-zh": "node scripts/build-source-optimized-zh.mjs",
     "package:source-optimized": "node scripts/package-source-optimized.mjs",
@@ -17,6 +19,9 @@
     "live-test:source-optimized": "node scripts/live-test-source-optimized.mjs",
     "publish:optimized-downloads": "node scripts/publish-optimized-downloads.mjs",
     "download:suspicious-zips": "node scripts/download-suspicious-zips.mjs",
+    "refresh:clawhub-owner-seeds": "python3 extract_all_skills_correct.py",
+    "download:clawhub-account-skills": "node scripts/download-clawhub-account-skills.mjs --scrape",
+    "download:github-account-skills": "node scripts/download-github-account-skills.mjs",
     "typecheck": "tsc --noEmit",
     "deploy:server": "bash deploy/deploy-server.sh"
   },
