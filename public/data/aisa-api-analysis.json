@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-18T05:44:38.828551+00:00",
+  "generatedAt": "2026-04-18T08:41:01.550555+00:00",
   "comparisonBase": {
     "name": "AISA createChatCompletion",
     "endpoint": "/v1/chat/completions",
@@ -14,7 +14,9 @@
     "skillsWithoutEndpoints": 0,
     "totalInterfaces": 82,
     "implementedInterfaces": 79,
-    "unimplementedDocumentedInterfaces": 3
+    "inferredImplementedInterfaces": 2,
+    "documentedOnlyInterfaces": 1,
+    "unimplementedDocumentedInterfaces": 1
   },
   "interfaces": [
     {
@@ -2960,16 +2962,6 @@
       "officialDocUrl": null,
       "skills": [
         {
-          "skillId": "clawhub:chaimengphp:openclaw-aisa-search",
-          "skillName": "Verified Research Engine (Web + Academic + Confidence Score)",
-          "owner": "chaimengphp",
-          "sourceType": "clawhub",
-          "sourceLabel": "ClawHub",
-          "sourceUrl": "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-search",
-          "downloadPath": "downloads/clawHub/chaimengphp/openclaw-aisa-search.zip",
-          "status": "documented_only"
-        },
-        {
           "skillId": "clawhub:0xjordansg-yolo:openclaw-aisa-search-website-academic-tavily-serp-exa",
           "skillName": "Multi-source retrieval with confidence scoring - web, academic, and Tavily in one unified API",
           "owner": "0xjordansg-yolo",
@@ -2981,14 +2973,14 @@
         }
       ],
       "skillsBySource": {
-        "clawhub": 2,
+        "clawhub": 1,
         "github": 0
       },
       "implementedSkillCount": 1,
       "inferredSkillCount": 0,
-      "documentedOnlySkillCount": 1,
+      "documentedOnlySkillCount": 0,
       "hasImplementation": true,
-      "skillCount": 2,
+      "skillCount": 1,
       "coverageStatus": "implemented"
     },
     {
@@ -3019,27 +3011,17 @@
           "sourceUrl": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-youtube",
           "downloadPath": "downloads/clawHub/0xjordansg-yolo/openclaw-aisa-youtube.zip",
           "status": "documented_only"
-        },
-        {
-          "skillId": "clawhub:chaimengphp:openclaw-aisa-search",
-          "skillName": "Verified Research Engine (Web + Academic + Confidence Score)",
-          "owner": "chaimengphp",
-          "sourceType": "clawhub",
-          "sourceLabel": "ClawHub",
-          "sourceUrl": "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-search",
-          "downloadPath": "downloads/clawHub/chaimengphp/openclaw-aisa-search.zip",
-          "status": "documented_only"
         }
       ],
       "skillsBySource": {
-        "clawhub": 3,
+        "clawhub": 2,
         "github": 0
       },
       "implementedSkillCount": 0,
       "inferredSkillCount": 0,
-      "documentedOnlySkillCount": 3,
+      "documentedOnlySkillCount": 2,
       "hasImplementation": false,
-      "skillCount": 3,
+      "skillCount": 2,
       "coverageStatus": "documented_only"
     },
     {
@@ -14976,36 +14958,6 @@
           "officialDocUrl": null
         },
         {
-          "endpoint": "/apis/v1/search/full",
-          "name": "Search Full",
-          "method": "GET",
-          "status": "documented_only",
-          "files": [
-            "SKILL.md"
-          ],
-          "codeFiles": [],
-          "docFiles": [
-            "SKILL.md"
-          ],
-          "comparisonToCreateChatCompletion": "不在 createchatcompletion 单页内，属于 AISA 检索接口",
-          "officialDocUrl": null
-        },
-        {
-          "endpoint": "/apis/v1/search/smart",
-          "name": "Search Smart",
-          "method": "GET",
-          "status": "documented_only",
-          "files": [
-            "SKILL.md"
-          ],
-          "codeFiles": [],
-          "docFiles": [
-            "SKILL.md"
-          ],
-          "comparisonToCreateChatCompletion": "不在 createchatcompletion 单页内，属于 AISA 检索接口",
-          "officialDocUrl": null
-        },
-        {
           "endpoint": "/apis/v1/tavily/crawl",
           "name": "Tavily Crawl",
           "method": "POST",
@@ -15078,9 +15030,9 @@
           "officialDocUrl": null
         }
       ],
-      "endpointCount": 14,
+      "endpointCount": 12,
       "implementedEndpointCount": 12,
-      "documentedOnlyEndpointCount": 2,
+      "documentedOnlyEndpointCount": 0,
       "hasOfficialChatCompletion": false,
       "implementationStatus": "implemented",
       "primaryInterfaceGroup": "/apis/v1/perplexity/sonar",
@@ -15093,8 +15045,6 @@
         "/apis/v1/scholar/search/scholar",
         "/apis/v1/scholar/search/smart",
         "/apis/v1/scholar/search/web",
-        "/apis/v1/search/full",
-        "/apis/v1/search/smart",
         "/apis/v1/tavily/crawl",
         "/apis/v1/tavily/extract",
         "/apis/v1/tavily/map",
@@ -19648,26 +19598,6 @@
       ]
     },
     {
-      "endpoint": "/apis/v1/search/full",
-      "name": "Search Full",
-      "skills": [
-        {
-          "skillId": "clawhub:chaimengphp:openclaw-aisa-search",
-          "skillName": "Verified Research Engine (Web + Academic + Confidence Score)",
-          "owner": "chaimengphp",
-          "sourceType": "clawhub",
-          "sourceUrl": "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-search"
-        },
-        {
-          "skillId": "clawhub:0xjordansg-yolo:openclaw-aisa-search-website-academic-tavily-serp-exa",
-          "skillName": "Multi-source retrieval with confidence scoring - web, academic, and Tavily in one unified API",
-          "owner": "0xjordansg-yolo",
-          "sourceType": "clawhub",
-          "sourceUrl": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-search-website-academic-tavily-serp-exa"
-        }
-      ]
-    },
-    {
       "endpoint": "/apis/v1/search/smart",
       "name": "Search Smart",
       "skills": [
@@ -19684,13 +19614,6 @@
           "owner": "0xjordansg-yolo",
           "sourceType": "clawhub",
           "sourceUrl": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-youtube"
-        },
-        {
-          "skillId": "clawhub:chaimengphp:openclaw-aisa-search",
-          "skillName": "Verified Research Engine (Web + Academic + Confidence Score)",
-          "owner": "chaimengphp",
-          "sourceType": "clawhub",
-          "sourceUrl": "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-search"
         }
       ]
     },

@@ -7,7 +7,6 @@ import {
   Download,
   ExternalLink,
   FileCode2,
-  Github,
   Layers,
   Link2,
   Package2,
@@ -29,7 +28,8 @@ import type {
 
 type ViewMode = 'interfaces' | 'skills' | 'catalog';
 type SourceFilter = 'all' | 'clawhub' | 'github';
-type ImplementationFilter = 'all' | 'implemented' | 'documented_only' | 'not_found';
+type InterfaceImplementationFilter = 'all' | 'implemented' | 'inferred_implementation' | 'documented_only';
+type SkillImplementationFilter = 'all' | 'implemented' | 'documented_only' | 'not_found';
 type CatalogTypeFilter = 'all' | 'skill' | 'plugin';
 
 function makeCardId(kind: 'interface' | 'skill', value: string) {
@@ -479,7 +479,8 @@ export default function App() {
   const [view, setView] = useState<ViewMode>('interfaces');
   const [query, setQuery] = useState('');
   const [sourceFilter, setSourceFilter] = useState<SourceFilter>('all');
-  const [implementationFilter, setImplementationFilter] = useState<ImplementationFilter>('all');
+  const [interfaceImplementationFilter, setInterfaceImplementationFilter] = useState<InterfaceImplementationFilter>('all');
+  const [skillImplementationFilter, setSkillImplementationFilter] = useState<SkillImplementationFilter>('all');
   const [catalogTypeFilter, setCatalogTypeFilter] = useState<CatalogTypeFilter>('all');
   const [copiedCardId, setCopiedCardId] = useState<string | null>(null);
 
@@ -488,13 +489,20 @@ export default function App() {
     const initialView = params.get('view') as ViewMode | null;
     const initialQuery = params.get('q');
     const initialSource = params.get('source') as SourceFilter | null;
-    const initialImplementation = params.get('impl') as ImplementationFilter | null;
+    const initialImplementation = params.get('impl');
     const initialCatalogType = params.get('catalogType') as CatalogTypeFilter | null;
     if (initialView && ['interfaces', 'skills', 'catalog'].includes(initialView)) setView(initialView);
     if (initialQuery) setQuery(initialQuery);
     if (initialSource && ['all', 'clawhub', 'github'].includes(initialSource)) setSourceFilter(initialSource);
-    if (initialImplementation && ['all', 'implemented', 'documented_only', 'not_found'].includes(initialImplementation)) {
-      setImplementationFilter(initialImplementation);
+    if (
+      initialImplementation &&
+      ['all', 'implemented', 'inferred_implementation', 'documented_only'].includes(initialImplementation) &&
+      (!initialView || initialView === 'interfaces')
+    ) {
+      setInterfaceImplementationFilter(initialImplementation as InterfaceImplementationFilter);
+    }
+    if (initialImplementation && ['all', 'implemented', 'documented_only', 'not_found'].includes(initialImplementation) && initialView === 'skills') {
+      setSkillImplementationFilter(initialImplementation as SkillImplementationFilter);
     }
     if (initialCatalogType && ['all', 'skill', 'plugin'].includes(initialCatalogType)) setCatalogTypeFilter(initialCatalogType);
 
@@ -546,13 +554,14 @@ export default function App() {
       else params.delete('catalogType');
       params.delete('impl');
     } else {
-      if (implementationFilter !== 'all') params.set('impl', implementationFilter);
+      const activeImplementationFilter = view === 'interfaces' ? interfaceImplementationFilter : skillImplementationFilter;
+      if (activeImplementationFilter !== 'all') params.set('impl', activeImplementationFilter);
       else params.delete('impl');
       params.delete('catalogType');
     }
     const next = `${window.location.pathname}?${params.toString()}${window.location.hash}`;
     history.replaceState(null, '', next);
-  }, [catalogTypeFilter, implementationFilter, query, sourceFilter, view]);
+  }, [catalogTypeFilter, interfaceImplementationFilter, query, skillImplementationFilter, sourceFilter, view]);
 
   useEffect(() => {
     if (!copiedCardId) return;
@@ -584,30 +593,28 @@ export default function App() {
         if (sourceFilter === 'clawhub' && item.skillsBySource.clawhub === 0) return false;
         if (sourceFilter === 'github' && item.skillsBySource.github === 0) return false;
       }
-      if (implementationFilter === 'implemented' && item.coverageStatus !== 'implemented') return false;
-      if (implementationFilter === 'not_found' && item.coverageStatus !== 'documented_only') return false;
-      if (implementationFilter === 'documented_only' && item.documentedOnlySkillCount === 0) return false;
+      if (interfaceImplementationFilter !== 'all' && item.coverageStatus !== interfaceImplementationFilter) return false;
       if (!normalizedQuery) return true;
       const haystack = `${item.name} ${item.endpoint} ${item.inputSummary} ${item.outputSummary} ${item.skills
         .map((skill) => `${skill.skillName} ${skill.owner}`)
         .join(' ')}`.toLowerCase();
       return haystack.includes(normalizedQuery);
     });
-  }, [analysis, implementationFilter, query, sourceFilter]);
+  }, [analysis, interfaceImplementationFilter, query, sourceFilter]);
 
   const filteredSkills = useMemo(() => {
     if (!analysis) return [];
     const normalizedQuery = query.trim().toLowerCase();
     return analysis.skills.filter((skill) => {
       if (sourceFilter !== 'all' && skill.sourceType !== sourceFilter) return false;
-      if (implementationFilter !== 'all' && skill.implementationStatus !== implementationFilter) return false;
+      if (skillImplementationFilter !== 'all' && skill.implementationStatus !== skillImplementationFilter) return false;
       if (!normalizedQuery) return true;
       const haystack = `${skill.name} ${skill.description} ${skill.owner} ${skill.sourceType} ${skill.endpoints
         .map((endpoint) => `${endpoint.name} ${endpoint.endpoint}`)
         .join(' ')}`.toLowerCase();
       return haystack.includes(normalizedQuery);
     });
-  }, [analysis, implementationFilter, query, sourceFilter]);
+  }, [analysis, query, skillImplementationFilter, sourceFilter]);
 
   const filteredGroups = useMemo(() => {
     const normalizedQuery = query.trim().toLowerCase();
@@ -647,7 +654,8 @@ export default function App() {
   const jumpToSkillCard = (skillId: string) => {
     setQuery('');
     setSourceFilter('all');
-    setImplementationFilter('all');
+    setInterfaceImplementationFilter('all');
+    setSkillImplementationFilter('all');
     jumpToCard('skills', makeCardId('skill', skillId), setView);
   };
 
@@ -678,8 +686,8 @@ export default function App() {
         <div className="hero-panel hero-panel-grid">
           <StatCard icon={<TableProperties size={20} />} label="接口总数" value={analysis.summary.totalInterfaces} tone="sand" />
           <StatCard icon={<FileCode2 size={20} />} label="已实现接口" value={analysis.summary.implementedInterfaces} tone="mint" />
-          <StatCard icon={<Github size={20} />} label="GitHub 技能" value={analysis.summary.githubSkills} tone="sky" />
-          <StatCard icon={<AlertTriangle size={20} />} label="无接口实现技能" value={analysis.summary.skillsWithoutEndpoints} tone="ember" />
+          <StatCard icon={<Layers size={20} />} label="推断实现接口" value={analysis.summary.inferredImplementedInterfaces} tone="sky" />
+          <StatCard icon={<AlertTriangle size={20} />} label="仅文档声明接口" value={analysis.summary.documentedOnlyInterfaces} tone="ember" />
         </div>
       </section>
 
@@ -702,19 +710,40 @@ export default function App() {
             <option value="plugin">Plugins</option>
           </select>
         ) : (
-          <select value={implementationFilter} onChange={(event) => setImplementationFilter(event.target.value as ImplementationFilter)}>
-            <option value="all">全部实现状态</option>
-            <option value="implemented">已实现</option>
-            <option value="documented_only">仅文档声明</option>
-            <option value="not_found">未发现实现</option>
-          </select>
+          <>
+            {view === 'interfaces' ? (
+              <select
+                value={interfaceImplementationFilter}
+                onChange={(event) => setInterfaceImplementationFilter(event.target.value as InterfaceImplementationFilter)}
+              >
+                <option value="all">全部接口状态</option>
+                <option value="implemented">已实现</option>
+                <option value="inferred_implementation">推断实现</option>
+                <option value="documented_only">仅文档声明</option>
+              </select>
+            ) : (
+              <select
+                value={skillImplementationFilter}
+                onChange={(event) => setSkillImplementationFilter(event.target.value as SkillImplementationFilter)}
+              >
+                <option value="all">全部技能状态</option>
+                <option value="implemented">已实现</option>
+                <option value="documented_only">仅文档声明</option>
+                <option value="not_found">未发现接口</option>
+              </select>
+            )}
+          </>
         )}
       </section>
 
       <section className="notes">
         <div className="note">{analysis.comparisonBase.note}</div>
         <div className="note">接口表按 API 聚合；技能表已合并 GitHub 技能归档。</div>
-        <div className="note">“仅文档声明”表示当前只在 SKILL/README 中识别到接口；“推断有实现”表示代码里命中了它的子路径、动态路径或通用路径。</div>
+        <div className="note">
+          当前接口统计为 {analysis.summary.implementedInterfaces} 已实现 + {analysis.summary.inferredImplementedInterfaces} 推断实现 +{' '}
+          {analysis.summary.documentedOnlyInterfaces} 仅文档声明 = {analysis.summary.totalInterfaces} 总接口。
+        </div>
+        <div className="note">“仅文档声明”表示当前只在 SKILL/README 中识别到接口；“推断实现”表示代码里命中了它的子路径、动态路径或通用路径。</div>
       </section>
 
       {view === 'interfaces' ? (

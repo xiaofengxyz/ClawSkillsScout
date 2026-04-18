@@ -152,6 +152,8 @@ export interface AisaApiAnalysisData {
     skillsWithoutEndpoints: number;
     totalInterfaces: number;
     implementedInterfaces: number;
+    inferredImplementedInterfaces: number;
+    documentedOnlyInterfaces: number;
     unimplementedDocumentedInterfaces: number;
   };
   interfaces: AisaAnalysisInterface[];

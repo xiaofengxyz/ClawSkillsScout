@@ -49,6 +49,19 @@ FRONTMATTER_DESCRIPTION_PATTERN = re.compile(
     r'^\s*description:\s*["\']?(?P<description>[^\n"\']+)["\']?\s*$',
     re.MULTILINE,
 )
+NEGATIVE_DOC_CONTEXT_PATTERN = re.compile(
+    r"\b("
+    r"deprecated|"
+    r"removed|"
+    r"retired|"
+    r"no\s+longer|"
+    r"decommissioned|"
+    r"obsolete|"
+    r"not\s+supported|"
+    r"unsupported"
+    r")\b",
+    re.IGNORECASE,
+)
 
 
 @dataclass(frozen=True)
@@ -343,20 +356,45 @@ def is_known_endpoint(path: str) -> bool:
     return False
 
 
-def extract_endpoints_from_text(text: str) -> list[str]:
-    raw_paths: list[str] = []
+def has_negative_doc_context(text: str, span: tuple[int, int]) -> bool:
+    line_start = text.rfind("\n", 0, span[0]) + 1
+    line_end = text.find("\n", span[1])
+    if line_end == -1:
+        line_end = len(text)
+
+    context_lines = [text[line_start:line_end]]
+
+    prev_line_end = line_start - 1
+    if prev_line_end > 0:
+        prev_line_start = text.rfind("\n", 0, prev_line_end) + 1
+        context_lines.append(text[prev_line_start:prev_line_end])
+
+    next_line_start = line_end + 1
+    if next_line_start < len(text):
+        next_line_end = text.find("\n", next_line_start)
+        if next_line_end == -1:
+            next_line_end = len(text)
+        context_lines.append(text[next_line_start:next_line_end])
+
+    return any(NEGATIVE_DOC_CONTEXT_PATTERN.search(line) for line in context_lines)
+
+
+def extract_endpoints_from_text(text: str, *, exclude_negative_doc_context: bool = False) -> list[str]:
+    raw_paths: list[tuple[str, tuple[int, int]]] = []
     for match in FULL_URL_PATTERN.finditer(text):
-        raw_paths.append(match.group("path"))
+        raw_paths.append((match.group("path"), match.span("path")))
 
     if "api.aisa.one" in text or "AISA API" in text or "AIsa API" in text or "/apis/v1/" in text:
         for match in RELATIVE_PATH_PATTERN.finditer(text):
             raw = match.group(1)
             if raw.startswith("/docs.") or raw.startswith("/workspace/") or raw.startswith("/usr/") or raw.startswith("/mnt/"):
                 continue
-            raw_paths.append(raw)
+            raw_paths.append((raw, match.span(1)))
 
     normalized = []
-    for raw in raw_paths:
+    for raw, span in raw_paths:
+        if exclude_negative_doc_context and has_negative_doc_context(text, span):
+            continue
         endpoint = normalize_endpoint(raw)
         if endpoint and is_known_endpoint(endpoint):
             normalized.append(endpoint)
@@ -439,10 +477,15 @@ def build_skill_record(item: dict, source_type: str) -> dict:
     occurrences: dict[str, dict[str, set[str]]] = {}
 
     for member_name, text in texts:
-        endpoints = sorted(set(extract_endpoints_from_text(text) + infer_sdk_endpoints_from_text(text)))
+        kind = classify_file_kind(member_name)
+        endpoints = sorted(
+            set(
+                extract_endpoints_from_text(text, exclude_negative_doc_context=kind == "doc")
+                + infer_sdk_endpoints_from_text(text)
+            )
+        )
         if not endpoints:
             continue
-        kind = classify_file_kind(member_name)
         for endpoint in endpoints:
             bucket = occurrences.setdefault(endpoint, {"files": set(), "code_files": set(), "doc_files": set()})
             bucket["files"].add(member_name)
@@ -637,7 +680,13 @@ def main() -> None:
             "skillsWithoutEndpoints": sum(1 for skill in skills if skill["endpointCount"] == 0),
             "totalInterfaces": len(interfaces),
             "implementedInterfaces": sum(1 for interface in interfaces if interface["coverageStatus"] == "implemented"),
-            "unimplementedDocumentedInterfaces": sum(1 for interface in interfaces if interface["coverageStatus"] != "implemented"),
+            "inferredImplementedInterfaces": sum(
+                1 for interface in interfaces if interface["coverageStatus"] == "inferred_implementation"
+            ),
+            "documentedOnlyInterfaces": sum(1 for interface in interfaces if interface["coverageStatus"] == "documented_only"),
+            "unimplementedDocumentedInterfaces": sum(
+                1 for interface in interfaces if interface["coverageStatus"] == "documented_only"
+            ),
         },
         "interfaces": interfaces,
         "skills": skills,
