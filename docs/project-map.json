@@ -35,6 +35,7 @@
     "buildEntryPoints": [
       "scripts/generate-aisa-api-analysis.py",
       "scripts/generate-clawhub-growth-report.py",
+      "scripts/generate-clawhub-download-insights.py",
       "scripts/convert-github-skills-to-clawhub.py",
       "scripts/build-source-optimized-packages.mjs",
       "scripts/build-source-optimized-zh.mjs",
@@ -95,17 +96,20 @@
       "keyFiles": [
         "src/App.tsx",
         "src/clawhub-growth/App.tsx",
+        "src/clawhub-download-insights/App.tsx",
         "src/types.ts",
         "src/styles.css",
         "vite.config.ts",
         "index.html",
-        "clawhub-growth.html"
+        "clawhub-growth.html",
+        "clawhub-download-insights.html"
       ],
       "inputs": [
         "public/data/catalog.json",
         "public/data/aisa-api-analysis.json",
         "public/data/optimized-packages.json",
-        "public/data/clawhub-growth-report.json"
+        "public/data/clawhub-growth-report.json",
+        "public/data/clawhub-download-insights.json"
       ],
       "outputs": [
         "dist/"
@@ -118,7 +122,8 @@
         "GitHub skill archive visibility",
         "suspicious package highlighting",
         "optimized bundle download links",
-        "standalone ClawHub growth strategy page"
+        "standalone ClawHub growth strategy page",
+        "standalone ClawHub downloads-insights page"
       ]
     },
     {

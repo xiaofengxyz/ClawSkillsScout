@@ -11,6 +11,7 @@
     "scrape": "node --import tsx scripts/scrape-clawhub.ts",
     "analyze:aisa": "python3 scripts/generate-aisa-api-analysis.py",
     "analyze:clawhub-growth": "python3 scripts/generate-clawhub-growth-report.py",
+    "analyze:clawhub-download-insights": "python3 scripts/generate-clawhub-download-insights.py",
     "pipeline:aisa-analysis": "node scripts/ensure-public-data.mjs && npm run download:clawhub-account-skills && npm run download:github-account-skills && npm run analyze:aisa && vite build",
     "build:source-optimized": "node scripts/build-source-optimized-packages.mjs",
     "build:source-optimized-zh": "node scripts/build-source-optimized-zh.mjs",

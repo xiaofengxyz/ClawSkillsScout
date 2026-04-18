@@ -680,8 +680,14 @@ export default function App() {
             <a className="hero-link-button hero-link-button-primary" href={`${import.meta.env.BASE_URL}clawhub-growth.html`}>
               打开 ClawHub 商业分析页
             </a>
+            <a className="hero-link-button" href={`${import.meta.env.BASE_URL}clawhub-download-insights.html`}>
+              打开下载榜爆款分析页
+            </a>
             <a className="hero-link-button" href={`${import.meta.env.BASE_URL}data/clawhub-growth-report.json`} target="_blank" rel="noreferrer">
               查看分析数据
+            </a>
+            <a className="hero-link-button" href={`${import.meta.env.BASE_URL}data/clawhub-download-insights.json`} target="_blank" rel="noreferrer">
+              查看下载榜 JSON
             </a>
           </div>
           <div className="hero-meta">

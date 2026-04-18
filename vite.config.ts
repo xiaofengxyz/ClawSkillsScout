@@ -10,6 +10,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         clawhubGrowth: resolve(__dirname, 'clawhub-growth.html'),
+        clawhubDownloadInsights: resolve(__dirname, 'clawhub-download-insights.html'),
       },
     },
   },
