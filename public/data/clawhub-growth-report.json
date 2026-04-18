@@ -1,0 +1,3889 @@
+{
+  "generatedAt": "2026-04-18T15:17:25.089420+00:00",
+  "source": {
+    "skillsListUrl": "https://clawhub.ai/skills?sort=downloads",
+    "sampleType": "local catalog snapshot sorted by downloads",
+    "notes": [
+      "Data is generated from the repository snapshot in public/data/catalog.json and sorted by downloads.",
+      "Author-level metrics are derived from the sampled catalog set, not from live public profile inventories.",
+      "The report treats 5000+ downloads as the high-performance threshold."
+    ]
+  },
+  "summary": {
+    "sampledSkills": 57,
+    "sampledAuthors": 5,
+    "highDownloadSkills": 0,
+    "topSkillDownloads": 4088
+  },
+  "skills": [
+    {
+      "rank": 1,
+      "name": "Web Search by Tavily",
+      "url": "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-web-search-tavily",
+      "author": "aisadocs",
+      "slug": "openclaw-aisa-web-search-tavily",
+      "downloads": 4088,
+      "rating": 9,
+      "description": "AI-optimized web search via Tavily API proxy, providing concise and relevant results with options for deep or news-focused queries.",
+      "version": "1.0.0",
+      "badges": [],
+      "category": "Information",
+      "inputComplexity": "Medium",
+      "outputValue": "Medium",
+      "apiDependency": "Yes",
+      "monetizationPotential": "High",
+      "likelyApis": [
+        "Search API"
+      ],
+      "titleKeywords": [
+        "search"
+      ],
+      "repeatablePatternFlags": [
+        "clear-job-to-be-done",
+        "runtime-or-api-wrapper",
+        "immediate-utility",
+        "single-api-factory-fit"
+      ]
+    },
+    {
+      "rank": 2,
+      "name": "X/Twitter Automation: 30+ APIs, OAuth Post, One Key",
+      "url": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-twitter",
+      "author": "0xjordansg-yolo",
+      "slug": "openclaw-twitter",
+      "downloads": 3484,
+      "rating": 4,
+      "description": "Searches and reads X (Twitter): profiles, timelines, mentions, followers, tweet search, trends, lists, communities, and Spaces. Publishes posts after the use...",
+      "version": "1.0.3",
+      "badges": [],
+      "category": "Information",
+      "inputComplexity": "Low",
+      "outputValue": "High",
+      "apiDependency": "Yes",
+      "monetizationPotential": "High",
+      "likelyApis": [
+        "Search API",
+        "Social API"
+      ],
+      "titleKeywords": [
+        "automation",
+        "twitter"
+      ],
+      "repeatablePatternFlags": [
+        "clear-job-to-be-done",
+        "runtime-or-api-wrapper",
+        "immediate-utility"
+      ]
+    },
+    {
+      "rank": 3,
+      "name": "AIsa Twitter API (Search + Post)",
+      "url": "https://clawhub.ai/kn72abv2yp91hce9za0j31yycd80jxzv/aisa-twitter-api",
+      "author": "aisapay",
+      "slug": "aisa-twitter-api",
+      "downloads": 3151,
+      "rating": 4,
+      "description": "Searches and reads X (Twitter): profiles, timelines, mentions, followers, tweet search, trends, lists, communities, and Spaces. Publishes posts after the use...",
+      "version": "1.0.1",
+      "badges": [],
+      "category": "Information",
+      "inputComplexity": "Medium",
+      "outputValue": "High",
+      "apiDependency": "Yes",
+      "monetizationPotential": "High",
+      "likelyApis": [
+        "Search API",
+        "Social API"
+      ],
+      "titleKeywords": [
+        "ai",
+        "search",
+        "twitter"
+      ],
+      "repeatablePatternFlags": [
+        "clear-job-to-be-done",
+        "runtime-or-api-wrapper",
+        "immediate-utility"
+      ]
+    },
+    {
+      "rank": 4,
+      "name": "Generate images & videos with: Gemini 3 Pro Image (image) + Qwen Wan 2.6 (video) via one API key",
+      "url": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-image-video-models-wan2-6-gemini-3-pro-image-nano-banana",
+      "author": "0xjordansg-yolo",
+      "slug": "openclaw-aisa-image-video-models-wan2-6-gemini-3-pro-image-nano-banana",
+      "downloads": 2186,
+      "rating": 11,
+      "description": "Generate images &amp; videos with AIsa. Gemini 3 Pro Image (image) + Qwen Wan 2.6 (video) via one API key.",
+      "version": "1.0.0",
+      "badges": [],
+      "category": "AI Generation",
+      "inputComplexity": "Low",
+      "outputValue": "Medium",
+      "apiDependency": "Yes",
+      "monetizationPotential": "High",
+      "likelyApis": [
+        "Media Generation API"
+      ],
+      "titleKeywords": [
+        "video",
+        "image"
+      ],
+      "repeatablePatternFlags": [
+        "runtime-or-api-wrapper",
+        "single-api-factory-fit",
+        "low-friction-adoption"
+      ]
+    },
+    {
+      "rank": 5,
+      "name": "AIsa Youtube Search",
+      "url": "https://clawhub.ai/kn72abv2yp91hce9za0j31yycd80jxzv/aisa-youtube-search",
+      "author": "aisapay",
+      "slug": "aisa-youtube-search",
+      "downloads": 1756,
+      "rating": 1,
+      "description": "YouTube SERP Scout for agents. Search top-ranking videos, channels, and trends for content research and competitor tracking.",
+      "version": "1.0.0",
+      "badges": [],
+      "category": "Information",
+      "inputComplexity": "Medium",
+      "outputValue": "Medium",
+      "apiDependency": "Yes",
+      "monetizationPotential": "High",
+      "likelyApis": [
+        "Search API",
+        "Social API",
+        "Media Generation API"
+      ],
+      "titleKeywords": [
+        "ai",
+        "search",
+        "youtube"
+      ],
+      "repeatablePatternFlags": [
+        "clear-job-to-be-done",
+        "immediate-utility"
+      ]
+    },
+    {
+      "rank": 6,
+      "name": "Images & videos generation with Gemini 3 Pro Image + Qwen Wan 2.6 (video) via one API key",
+      "url": "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-llm-image-video",
+      "author": "aisadocs",
+      "slug": "openclaw-aisa-llm-image-video",
+      "downloads": 1690,
+      "rating": 3,
+      "description": "Generate images &amp; videos with AIsa. Gemini 3 Pro Image (image) + Qwen Wan 2.6 (video) via one API key.",
+      "version": "1.0.0",
+      "badges": [],
+      "category": "AI Generation",
+      "inputComplexity": "Low",
+      "outputValue": "Medium",
+      "apiDependency": "Yes",
+      "monetizationPotential": "High",
+      "likelyApis": [
+        "Media Generation API"
+      ],
+      "titleKeywords": [
+        "video",
+        "image"
+      ],
+      "repeatablePatternFlags": [
+        "runtime-or-api-wrapper",
+        "single-api-factory-fit",
+        "low-friction-adoption"
+      ]
+    },
+    {
+      "rank": 7,
+      "name": "AIsa Multi Source Search",
+      "url": "https://clawhub.ai/kn72abv2yp91hce9za0j31yycd80jxzv/aisa-multi-source-search",
+      "author": "aisapay",
+      "slug": "aisa-multi-source-search",
+      "downloads": 1558,
+      "rating": 1,
+      "description": "Intelligent search for agents. Multi-source retrieval with confidence scoring - web, academic, and Tavily in one unified API.",
+      "version": "1.0.0",
+      "badges": [],
+      "category": "Information",
+      "inputComplexity": "Medium",
+      "outputValue": "Medium",
+      "apiDependency": "Yes",
+      "monetizationPotential": "High",
+      "likelyApis": [
+        "Search API"
+      ],
+      "titleKeywords": [
+        "ai",
+        "search"
+      ],
+      "repeatablePatternFlags": [
+        "clear-job-to-be-done",
+        "runtime-or-api-wrapper",
+        "immediate-utility",
+        "single-api-factory-fit"
+      ]
+    },
+    {
+      "rank": 8,
+      "name": "AIsa Media Gen",
+      "url": "https://clawhub.ai/kn72abv2yp91hce9za0j31yycd80jxzv/aisa-media-gen",
+      "author": "aisapay",
+      "slug": "aisa-media-gen",
+      "downloads": 1555,
+      "rating": 1,
+      "description": "Generate images &amp; videos with AIsa. Gemini 3 Pro Image (image) + Qwen Wan 2.6 (video) via one API key.",
+      "version": "1.0.0",
+      "badges": [],
+      "category": "AI Generation",
+      "inputComplexity": "Low",
+      "outputValue": "Medium",
+      "apiDependency": "Yes",
+      "monetizationPotential": "High",
+      "likelyApis": [
+        "Media Generation API"
+      ],
+      "titleKeywords": [
+        "ai"
+      ],
+      "repeatablePatternFlags": [
+        "runtime-or-api-wrapper",
+        "single-api-factory-fit",
+        "low-friction-adoption"
+      ]
+    },
+    {
+      "rank": 9,
+      "name": "Query real-time and historical financial data across equities and crypto prices",
+      "url": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-finance-stock-equity-crypto-market-price-data-yahoo-finance-coinhacko",
+      "author": "0xjordansg-yolo",
+      "slug": "openclaw-aisa-finance-stock-equity-crypto-market-price-data-yahoo-finance-coinhacko",
+      "downloads": 1530,
+      "rating": 5,
+      "description": "Query real-time and historical financial data across equities and crypto—prices, market moves, metrics, and trends for analysis, alerts, and reporting.",
+      "version": "1.0.0",
+      "badges": [],
+      "category": "Information",
+      "inputComplexity": "Medium",
+      "outputValue": "High",
+      "apiDependency": "Unknown",
+      "monetizationPotential": "High",
+      "likelyApis": [
+        "Financial API"
+      ],
+      "titleKeywords": [],
+      "repeatablePatternFlags": [
+        "immediate-utility",
+        "single-api-factory-fit"
+      ]
+    },
+    {
+      "rank": 10,
+      "name": "YouTube SERP Scout for agents. Search top-ranking videos, channels, and trends for content research and competitor tracking",
+      "url": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-youtube-search-serp-video-channels-trends-content-tracking",
+      "author": "0xjordansg-yolo",
+      "slug": "openclaw-aisa-youtube-search-serp-video-channels-trends-content-tracking",
+      "downloads": 1483,
+      "rating": 3,
+      "description": "YouTube SERP Scout for agents. Search top-ranking videos, channels, and trends for content research and competitor tracking.",
+      "version": "1.0.0",
+      "badges": [],
+      "category": "Information",
+      "inputComplexity": "Medium",
+      "outputValue": "Medium",
+      "apiDependency": "Yes",
+      "monetizationPotential": "High",
+      "likelyApis": [
+        "Search API",
+        "Social API",
+        "Media Generation API"
+      ],
+      "titleKeywords": [
+        "search",
+        "agent",
+        "youtube",
+        "video"
+      ],
+      "repeatablePatternFlags": [
+        "clear-job-to-be-done",
+        "immediate-utility"
+      ]
+    },
+    {
+      "rank": 11,
+      "name": "One API key for 70+ AI models. Route to GPT, Claude, Gemini, Qwen, Deepseek, Grok and more",
+      "url": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-llm-gateway",
+      "author": "0xjordansg-yolo",
+      "slug": "openclaw-aisa-llm-gateway",
+      "downloads": 1455,
+      "rating": 5,
+      "description": "Unified LLM Gateway - One API for 70+ AI models. Route to GPT, Claude, Gemini, Qwen, Deepseek, Grok and more with a single API key.",
+      "version": "1.0.0",
+      "badges": [],
+      "category": "Tools",
+      "inputComplexity": "Low",
+      "outputValue": "Low",
+      "apiDependency": "Yes",
+      "monetizationPotential": "Low",
+      "likelyApis": [
+        "Unknown"
+      ],
+      "titleKeywords": [
+        "ai"
+      ],
+      "repeatablePatternFlags": [
+        "runtime-or-api-wrapper",
+        "immediate-utility",
+        "low-friction-adoption"
+      ]
+    },
+    {
+      "rank": 12,
+      "name": "X Twitter Automataion (Search + Post)",
+      "url": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-twitter-search-post",
+      "author": "0xjordansg-yolo",
+      "slug": "openclaw-aisa-twitter-search-post",
+      "downloads": 1419,
+      "rating": 4,
+      "description": "Searches and reads X (Twitter): profiles, timelines, mentions, followers, tweet search, trends, lists, communities, and Spaces. Publishes posts after the use...",
+      "version": "1.0.4",
+      "badges": [],
+      "category": "Information",
+      "inputComplexity": "Medium",
+      "outputValue": "High",
+      "apiDependency": "Yes",
+      "monetizationPotential": "High",
+      "likelyApis": [
+        "Search API",
+        "Social API"
+      ],
+      "titleKeywords": [
+        "ai",
+        "search",
+        "twitter"
+      ],
+      "repeatablePatternFlags": [
+        "clear-job-to-be-done",
+        "immediate-utility"
+      ]
+    },
+    {
+      "rank": 13,
+      "name": "Financial Data",
+      "url": "https://clawhub.ai/kn72abv2yp91hce9za0j31yycd80jxzv/financial-data",
+      "author": "aisapay",
+      "slug": "financial-data",
+      "downloads": 1393,
+      "rating": 0,
+      "description": "Query real-time and historical financial data across equities and crypto—prices, market moves, metrics, and trends for analysis, alerts, and reporting.",
+      "version": "1.0.0",
+      "badges": [],
+      "category": "Information",
+      "inputComplexity": "Medium",
+      "outputValue": "High",
+      "apiDependency": "Unknown",
+      "monetizationPotential": "High",
+      "likelyApis": [
+        "Financial API"
+      ],
+      "titleKeywords": [],
+      "repeatablePatternFlags": [
+        "immediate-utility",
+        "single-api-factory-fit"
+      ]
+    },
+    {
+      "rank": 14,
+      "name": "Save upto 50% for model tokens: OpenAI GPT, Claude, Gemini, Qwen, Deepseek, Grok and more with one single key",
+      "url": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-affordable-llm-model-tokens",
+      "author": "0xjordansg-yolo",
+      "slug": "openclaw-aisa-affordable-llm-model-tokens",
+      "downloads": 1317,
+      "rating": 5,
+      "description": "Unified LLM Gateway - One API for 70+ AI models. Route to GPT, Claude, Gemini, Qwen, Deepseek, Grok and more with a single API key.",
+      "version": "1.0.1",
+      "badges": [],
+      "category": "Tools",
+      "inputComplexity": "Low",
+      "outputValue": "Low",
+      "apiDependency": "Yes",
+      "monetizationPotential": "Low",
+      "likelyApis": [
+        "Unknown"
+      ],
+      "titleKeywords": [
+        "ai"
+      ],
+      "repeatablePatternFlags": [
+        "runtime-or-api-wrapper",
+        "immediate-utility"
+      ]
+    },
+    {
+      "rank": 15,
+      "name": "US Stock Analyst by leading AI LLM models with Bloomberg Data, Twitter Sentiment and Wall Street Equity Research Reports",
+      "url": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-us-stock-analyst",
+      "author": "0xjordansg-yolo",
+      "slug": "openclaw-aisa-us-stock-analyst",
+      "downloads": 1306,
+      "rating": 0,
+      "description": "Professional US stock analysis with financial data, news, social sentiment, and multi-model AI. Comprehensive reports at $0.02-0.10 per analysis.",
+      "version": "1.0.1",
+      "badges": [],
+      "category": "Information",
+      "inputComplexity": "Medium",
+      "outputValue": "High",
+      "apiDependency": "Yes",
+      "monetizationPotential": "High",
+      "likelyApis": [
+        "Financial API",
+        "Search API",
+        "Social API"
+      ],
+      "titleKeywords": [
+        "ai",
+        "search",
+        "stock",
+        "twitter"
+      ],
+      "repeatablePatternFlags": [
+        "clear-job-to-be-done",
+        "immediate-utility"
+      ]
+    },
+    {
+      "rank": 16,
+      "name": "AIsa Financial Data",
+      "url": "https://clawhub.ai/kn72abv2yp91hce9za0j31yycd80jxzv/aisa-financial-data",
+      "author": "aisapay",
+      "slug": "aisa-financial-data",
+      "downloads": 1283,
+      "rating": 0,
+      "description": "Query real-time and historical financial data across equities and crypto—prices, market moves, metrics, and trends for analysis, alerts, and reporting.",
+      "version": "1.0.0",
+      "badges": [],
+      "category": "Information",
+      "inputComplexity": "Medium",
+      "outputValue": "High",
+      "apiDependency": "Unknown",
+      "monetizationPotential": "High",
+      "likelyApis": [
+        "Financial API"
+      ],
+      "titleKeywords": [
+        "ai"
+      ],
+      "repeatablePatternFlags": [
+        "immediate-utility",
+        "single-api-factory-fit"
+      ]
+    },
+    {
+      "rank": 17,
+      "name": "Unified LLM Gateway - One API for 70+ AI models. Route to GPT, Claude, Gemini, Qwen, Deepseek, Grok and more",
+      "url": "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-llm-router",
+      "author": "aisadocs",
+      "slug": "openclaw-aisa-llm-router",
+      "downloads": 1267,
+      "rating": 2,
+      "description": "Unified LLM Gateway - One API for 70+ AI models. Route to GPT, Claude, Gemini, Qwen, Deepseek, Grok and more with a single API key.",
+      "version": "1.0.0",
+      "badges": [],
+      "category": "Tools",
+      "inputComplexity": "Low",
+      "outputValue": "Low",
+      "apiDependency": "Yes",
+      "monetizationPotential": "Low",
+      "likelyApis": [
+        "Unknown"
+      ],
+      "titleKeywords": [
+        "ai"
+      ],
+      "repeatablePatternFlags": [
+        "runtime-or-api-wrapper",
+        "immediate-utility"
+      ]
+    },
+    {
+      "rank": 18,
+      "name": "One API key for real time stock equity pricing data including crypto BTC ETH etc.",
+      "url": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-financial-stock-crypto-market-price-data",
+      "author": "0xjordansg-yolo",
+      "slug": "openclaw-aisa-financial-stock-crypto-market-price-data",
+      "downloads": 1265,
+      "rating": 1,
+      "description": "Query real-time and historical financial data across equities and crypto—prices, market moves, metrics, and trends for analysis, alerts, and reporting.",
+      "version": "1.0.0",
+      "badges": [],
+      "category": "Information",
+      "inputComplexity": "Low",
+      "outputValue": "High",
+      "apiDependency": "Yes",
+      "monetizationPotential": "High",
+      "likelyApis": [
+        "Financial API"
+      ],
+      "titleKeywords": [
+        "stock"
+      ],
+      "repeatablePatternFlags": [
+        "runtime-or-api-wrapper",
+        "immediate-utility",
+        "single-api-factory-fit",
+        "low-friction-adoption"
+      ]
+    },
+    {
+      "rank": 19,
+      "name": "Youtube Search and Tracking API",
+      "url": "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-youtube-search-tracking",
+      "author": "aisadocs",
+      "slug": "openclaw-aisa-youtube-search-tracking",
+      "downloads": 1259,
+      "rating": 0,
+      "description": "YouTube SERP Scout for agents. Search top-ranking videos, channels, and trends for content research and competitor tracking.",
+      "version": "1.0.0",
+      "badges": [],
+      "category": "Information",
+      "inputComplexity": "Medium",
+      "outputValue": "Medium",
+      "apiDependency": "Yes",
+      "monetizationPotential": "High",
+      "likelyApis": [
+        "Search API",
+        "Social API",
+        "Media Generation API"
+      ],
+      "titleKeywords": [
+        "search",
+        "youtube"
+      ],
+      "repeatablePatternFlags": [
+        "clear-job-to-be-done",
+        "runtime-or-api-wrapper",
+        "immediate-utility"
+      ]
+    },
+    {
+      "rank": 20,
+      "name": "Multi-source retrieval with confidence scoring - web, academic, and Tavily in one unified API",
+      "url": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-search-website-academic-tavily-serp-exa",
+      "author": "0xjordansg-yolo",
+      "slug": "openclaw-aisa-search-website-academic-tavily-serp-exa",
+      "downloads": 1240,
+      "rating": 4,
+      "description": "Intelligent search for agents. Multi-source retrieval with confidence scoring - web, academic, and Tavily in one unified API.",
+      "version": "1.0.0",
+      "badges": [],
+      "category": "Information",
+      "inputComplexity": "Medium",
+      "outputValue": "Medium",
+      "apiDependency": "Yes",
+      "monetizationPotential": "High",
+      "likelyApis": [
+        "Search API"
+      ],
+      "titleKeywords": [],
+      "repeatablePatternFlags": [
+        "clear-job-to-be-done",
+        "runtime-or-api-wrapper",
+        "immediate-utility",
+        "single-api-factory-fit"
+      ]
+    },
+    {
+      "rank": 21,
+      "name": "Web Search Tavily",
+      "url": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/ai-native-websearch-via-tavily-api-returns-concise-relevant-results-for-openclaw",
+      "author": "0xjordansg-yolo",
+      "slug": "ai-native-websearch-via-tavily-api-returns-concise-relevant-results-for-openclaw",
+      "downloads": 1223,
+      "rating": 0,
+      "description": "Performs AI-optimized web searches via Tavily API, returning concise and relevant results with options for depth, topic, and result count.",
+      "version": "1.0.0",
+      "badges": [],
+      "category": "Information",
+      "inputComplexity": "Medium",
+      "outputValue": "Medium",
+      "apiDependency": "Yes",
+      "monetizationPotential": "High",
+      "likelyApis": [
+        "Search API"
+      ],
+      "titleKeywords": [
+        "search"
+      ],
+      "repeatablePatternFlags": [
+        "clear-job-to-be-done",
+        "runtime-or-api-wrapper",
+        "immediate-utility",
+        "single-api-factory-fit"
+      ]
+    },
+    {
+      "rank": 22,
+      "name": "X Twitter Command Center (Search + Post)",
+      "url": "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-twitter-search",
+      "author": "chaimengphp",
+      "slug": "openclaw-aisa-twitter-search",
+      "downloads": 1210,
+      "rating": 0,
+      "description": "Searches and reads X (Twitter): profiles, timelines, mentions, followers, tweet search, trends, lists, communities, and Spaces. Publishes posts after the use...",
+      "version": "1.0.5",
+      "badges": [],
+      "category": "Information",
+      "inputComplexity": "Medium",
+      "outputValue": "High",
+      "apiDependency": "Yes",
+      "monetizationPotential": "High",
+      "likelyApis": [
+        "Search API",
+        "Social API"
+      ],
+      "titleKeywords": [
+        "search",
+        "twitter"
+      ],
+      "repeatablePatternFlags": [
+        "clear-job-to-be-done",
+        "immediate-utility"
+      ]
+    },
+    {
+      "rank": 23,
+      "name": "Unified API for powerful image and video generation",
+      "url": "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-media-gen",
+      "author": "chaimengphp",
+      "slug": "openclaw-aisa-media-gen",
+      "downloads": 1132,
+      "rating": 1,
+      "description": "Generate images &amp; videos with AIsa. Gemini 3 Pro Image (image) + Qwen Wan 2.6 (video) via one API key.",
+      "version": "1.0.1",
+      "badges": [],
+      "category": "AI Generation",
+      "inputComplexity": "Low",
+      "outputValue": "Medium",
+      "apiDependency": "Yes",
+      "monetizationPotential": "High",
+      "likelyApis": [
+        "Media Generation API"
+      ],
+      "titleKeywords": [
+        "video",
+        "image"
+      ],
+      "repeatablePatternFlags": [
+        "runtime-or-api-wrapper",
+        "single-api-factory-fit",
+        "low-friction-adoption"
+      ]
+    },
+    {
+      "rank": 24,
+      "name": "Query real-time and historical financial data across equities and crypto prices, market moves, metrics, and trends for analysis, alerts, and reporting",
+      "url": "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-finance-equity-crypto-price-market-data-news",
+      "author": "aisadocs",
+      "slug": "openclaw-aisa-finance-equity-crypto-price-market-data-news",
+      "downloads": 1080,
+      "rating": 0,
+      "description": "Query real-time and historical financial data across equities and crypto—prices, market moves, metrics, and trends for analysis, alerts, and reporting.",
+      "version": "1.0.0",
+      "badges": [],
+      "category": "Information",
+      "inputComplexity": "Medium",
+      "outputValue": "High",
+      "apiDependency": "Unknown",
+      "monetizationPotential": "High",
+      "likelyApis": [
+        "Financial API"
+      ],
+      "titleKeywords": [],
+      "repeatablePatternFlags": [
+        "immediate-utility",
+        "single-api-factory-fit"
+      ]
+    },
+    {
+      "rank": 25,
+      "name": "Generate images & videos with: Gemini 3 Pro Image + Qwen Wan 2.6 (video) via one API key",
+      "url": "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-llm-image-video-qwen-wan26-gemini-3-pro-image",
+      "author": "aisadocs",
+      "slug": "openclaw-aisa-llm-image-video-qwen-wan26-gemini-3-pro-image",
+      "downloads": 1031,
+      "rating": 2,
+      "description": "Generate images &amp; videos with AIsa. Gemini 3 Pro Image (image) + Qwen Wan 2.6 (video) via one API key.",
+      "version": "1.0.0",
+      "badges": [],
+      "category": "AI Generation",
+      "inputComplexity": "Low",
+      "outputValue": "Medium",
+      "apiDependency": "Yes",
+      "monetizationPotential": "High",
+      "likelyApis": [
+        "Media Generation API"
+      ],
+      "titleKeywords": [
+        "video",
+        "image"
+      ],
+      "repeatablePatternFlags": [
+        "runtime-or-api-wrapper",
+        "single-api-factory-fit",
+        "low-friction-adoption"
+      ]
+    },
+    {
+      "rank": 26,
+      "name": "YouTube SERP Scout (Rank + Discover)",
+      "url": "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-youtube-search",
+      "author": "chaimengphp",
+      "slug": "openclaw-aisa-youtube-search",
+      "downloads": 1026,
+      "rating": 3,
+      "description": "YouTube SERP Scout for agents. Search top-ranking videos, channels, and trends for content research and competitor tracking.",
+      "version": "1.0.1",
+      "badges": [],
+      "category": "Information",
+      "inputComplexity": "Medium",
+      "outputValue": "Medium",
+      "apiDependency": "Yes",
+      "monetizationPotential": "High",
+      "likelyApis": [
+        "Search API",
+        "Social API",
+        "Media Generation API"
+      ],
+      "titleKeywords": [
+        "youtube"
+      ],
+      "repeatablePatternFlags": [
+        "clear-job-to-be-done",
+        "immediate-utility"
+      ]
+    },
+    {
+      "rank": 27,
+      "name": "One API key for Chinese AI models. Route to Qwen, Deepseek",
+      "url": "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-cn-llm",
+      "author": "chaimengphp",
+      "slug": "openclaw-aisa-cn-llm",
+      "downloads": 981,
+      "rating": 0,
+      "description": "China LLM Gateway - Unified interface for Chinese LLMs including Qwen, DeepSeek, GLM, Baichuan. OpenAI compatible, one API Key for all models.",
+      "version": "1.0.1",
+      "badges": [],
+      "category": "Tools",
+      "inputComplexity": "Low",
+      "outputValue": "Low",
+      "apiDependency": "Yes",
+      "monetizationPotential": "Low",
+      "likelyApis": [
+        "Unknown"
+      ],
+      "titleKeywords": [
+        "ai"
+      ],
+      "repeatablePatternFlags": [
+        "runtime-or-api-wrapper",
+        "immediate-utility",
+        "low-friction-adoption"
+      ]
+    },
+    {
+      "rank": 28,
+      "name": "MarketPulse (Stocks + Crypto Data)",
+      "url": "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-market-pulse",
+      "author": "chaimengphp",
+      "slug": "openclaw-aisa-market-pulse",
+      "downloads": 963,
+      "rating": 0,
+      "description": "Query real-time and historical financial data across equities and crypto—prices, market moves, metrics, and trends for analysis, alerts, and reporting.",
+      "version": "1.0.1",
+      "badges": [],
+      "category": "Information",
+      "inputComplexity": "Medium",
+      "outputValue": "High",
+      "apiDependency": "Yes",
+      "monetizationPotential": "High",
+      "likelyApis": [
+        "Financial API"
+      ],
+      "titleKeywords": [
+        "stock"
+      ],
+      "repeatablePatternFlags": [
+        "immediate-utility",
+        "single-api-factory-fit"
+      ]
+    },
+    {
+      "rank": 29,
+      "name": "Intelligent search for agents. Multi-source retrieval with confidence scoring - web, academic, and Tavily in one unified API",
+      "url": "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-search-web-academic-tavily",
+      "author": "aisadocs",
+      "slug": "openclaw-aisa-search-web-academic-tavily",
+      "downloads": 898,
+      "rating": 0,
+      "description": "Intelligent search for agents. Multi-source retrieval with confidence scoring - web, academic, and Tavily in one unified API.",
+      "version": "1.0.0",
+      "badges": [],
+      "category": "Information",
+      "inputComplexity": "Medium",
+      "outputValue": "Medium",
+      "apiDependency": "Yes",
+      "monetizationPotential": "High",
+      "likelyApis": [
+        "Search API"
+      ],
+      "titleKeywords": [
+        "search",
+        "agent"
+      ],
+      "repeatablePatternFlags": [
+        "clear-job-to-be-done",
+        "runtime-or-api-wrapper",
+        "immediate-utility",
+        "single-api-factory-fit"
+      ]
+    },
+    {
+      "rank": 30,
+      "name": "One API key for 70+ AI models. Route to GPT, Claude, Gemini, Grok and more",
+      "url": "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-llm-gateway-route",
+      "author": "chaimengphp",
+      "slug": "openclaw-aisa-llm-gateway-route",
+      "downloads": 838,
+      "rating": 2,
+      "description": "Unified LLM Gateway - One API for 70+ AI models. Route to GPT, Claude, Gemini, Grok and more with a single API key.",
+      "version": "1.0.1",
+      "badges": [],
+      "category": "Tools",
+      "inputComplexity": "Low",
+      "outputValue": "Low",
+      "apiDependency": "Yes",
+      "monetizationPotential": "Low",
+      "likelyApis": [
+        "Unknown"
+      ],
+      "titleKeywords": [
+        "ai"
+      ],
+      "repeatablePatternFlags": [
+        "runtime-or-api-wrapper",
+        "immediate-utility",
+        "low-friction-adoption"
+      ]
+    },
+    {
+      "rank": 31,
+      "name": "Verified Research Engine (Web + Academic + Confidence Score)",
+      "url": "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-search",
+      "author": "chaimengphp",
+      "slug": "openclaw-aisa-search",
+      "downloads": 792,
+      "rating": 0,
+      "description": "Intelligent search for agents. Multi-source retrieval across web, scholar, Tavily, and Perplexity Sonar models.",
+      "version": "1.0.1",
+      "badges": [],
+      "category": "Information",
+      "inputComplexity": "Medium",
+      "outputValue": "Medium",
+      "apiDependency": "Yes",
+      "monetizationPotential": "High",
+      "likelyApis": [
+        "Search API"
+      ],
+      "titleKeywords": [
+        "search"
+      ],
+      "repeatablePatternFlags": [
+        "clear-job-to-be-done",
+        "immediate-utility",
+        "single-api-factory-fit"
+      ]
+    },
+    {
+      "rank": 32,
+      "name": "Chinese LLM Models (Kimi 2.5, MiniMax 2.5, Qwen, DeepSeek) with One Key",
+      "url": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-chinese-llm-models",
+      "author": "0xjordansg-yolo",
+      "slug": "openclaw-aisa-chinese-llm-models",
+      "downloads": 763,
+      "rating": 0,
+      "description": "Configure AIsa as a first-class model provider for OpenClaw, enabling production access to major Chinese AI models (Qwen, DeepSeek, Kimi K2.5, Doubao) throug...",
+      "version": "1.0.1",
+      "badges": [],
+      "category": "Automation",
+      "inputComplexity": "Low",
+      "outputValue": "Low",
+      "apiDependency": "Unknown",
+      "monetizationPotential": "Low",
+      "likelyApis": [
+        "Unknown"
+      ],
+      "titleKeywords": [],
+      "repeatablePatternFlags": []
+    },
+    {
+      "rank": 33,
+      "name": "Chines LLM Models (MiniMax 2.5,Kimi 2.5, Qwen, Doubao, DeepSeek) with one key",
+      "url": "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-leading-chinese-llm",
+      "author": "aisadocs",
+      "slug": "openclaw-aisa-leading-chinese-llm",
+      "downloads": 628,
+      "rating": 0,
+      "description": "Configure AIsa as a first-class model provider for OpenClaw, enabling production access to major Chinese AI models (Qwen, DeepSeek, Kimi K2.5, Doubao) throug...",
+      "version": "1.0.0",
+      "badges": [],
+      "category": "Automation",
+      "inputComplexity": "Low",
+      "outputValue": "Low",
+      "apiDependency": "Unknown",
+      "monetizationPotential": "Low",
+      "likelyApis": [
+        "Unknown"
+      ],
+      "titleKeywords": [],
+      "repeatablePatternFlags": []
+    },
+    {
+      "rank": 34,
+      "name": "Search YouTube videos, channels, and playlists",
+      "url": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-youtube",
+      "author": "0xjordansg-yolo",
+      "slug": "openclaw-aisa-youtube",
+      "downloads": 530,
+      "rating": 0,
+      "description": "YouTube Search API via AIsa unified endpoint. Search YouTube videos, channels, and playlists with a single AIsa API key — no Google API key or OAuth required...",
+      "version": "1.0.0",
+      "badges": [],
+      "category": "Information",
+      "inputComplexity": "Low",
+      "outputValue": "Medium",
+      "apiDependency": "Yes",
+      "monetizationPotential": "High",
+      "likelyApis": [
+        "Search API",
+        "Social API",
+        "Media Generation API"
+      ],
+      "titleKeywords": [
+        "search",
+        "youtube",
+        "video"
+      ],
+      "repeatablePatternFlags": [
+        "clear-job-to-be-done",
+        "runtime-or-api-wrapper",
+        "immediate-utility"
+      ]
+    },
+    {
+      "rank": 35,
+      "name": "Perplexity Sonar Search",
+      "url": "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/aisaclaw-perplexity-search",
+      "author": "chaimengphp",
+      "slug": "aisaclaw-perplexity-search",
+      "downloads": 190,
+      "rating": 0,
+      "description": "Perplexity Sonar search and answer generation through AIsa. Use when the task is specifically to call Perplexity Sonar, Sonar Pro, Sonar Reasoning Pro, or So...",
+      "version": "1.0.0",
+      "badges": [],
+      "category": "Information",
+      "inputComplexity": "Medium",
+      "outputValue": "Medium",
+      "apiDependency": "Yes",
+      "monetizationPotential": "High",
+      "likelyApis": [
+        "Search API"
+      ],
+      "titleKeywords": [
+        "search"
+      ],
+      "repeatablePatternFlags": [
+        "clear-job-to-be-done",
+        "immediate-utility",
+        "single-api-factory-fit"
+      ]
+    },
+    {
+      "rank": 36,
+      "name": "Twitter/X All-in-One — Search, Monitor & Publish Text & Media Posts",
+      "url": "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-twitter-post-engage",
+      "author": "aisadocs",
+      "slug": "openclaw-twitter-post-engage",
+      "downloads": 189,
+      "rating": 1,
+      "description": "Searches and reads X (Twitter): profiles, timelines, mentions, followers, tweet search, trends, lists, communities, and Spaces. Publishes posts, likes/unlike...",
+      "version": "2.0.3",
+      "badges": [],
+      "category": "Information",
+      "inputComplexity": "Medium",
+      "outputValue": "High",
+      "apiDependency": "Yes",
+      "monetizationPotential": "High",
+      "likelyApis": [
+        "Search API",
+        "Social API"
+      ],
+      "titleKeywords": [
+        "search",
+        "twitter"
+      ],
+      "repeatablePatternFlags": [
+        "clear-job-to-be-done",
+        "immediate-utility"
+      ]
+    },
+    {
+      "rank": 37,
+      "name": "Polymarket Data",
+      "url": "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/pred-polymarket",
+      "author": "aisadocs",
+      "slug": "pred-polymarket",
+      "downloads": 95,
+      "rating": 0,
+      "description": "Prediction markets data - Polymarket, Kalshi markets, prices, positions, and trades",
+      "version": "1.0.1",
+      "badges": [],
+      "category": "Information",
+      "inputComplexity": "Medium",
+      "outputValue": "Low",
+      "apiDependency": "Unknown",
+      "monetizationPotential": "High",
+      "likelyApis": [
+        "Financial API"
+      ],
+      "titleKeywords": [],
+      "repeatablePatternFlags": [
+        "immediate-utility",
+        "single-api-factory-fit"
+      ]
+    },
+    {
+      "rank": 38,
+      "name": "Prediction markets data - Polymarket, Kalshi markets, prices, positions, and trades",
+      "url": "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-prediction-market",
+      "author": "chaimengphp",
+      "slug": "openclaw-aisa-prediction-market",
+      "downloads": 95,
+      "rating": 0,
+      "description": "Prediction markets data - Polymarket, Kalshi markets, prices, positions, and trades",
+      "version": "1.0.0",
+      "badges": [],
+      "category": "Information",
+      "inputComplexity": "Medium",
+      "outputValue": "Low",
+      "apiDependency": "Unknown",
+      "monetizationPotential": "High",
+      "likelyApis": [
+        "Financial API"
+      ],
+      "titleKeywords": [],
+      "repeatablePatternFlags": [
+        "immediate-utility",
+        "single-api-factory-fit"
+      ]
+    },
+    {
+      "rank": 39,
+      "name": "Polymarket Spread Arbitrage",
+      "url": "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/polymarket-arb",
+      "author": "aisadocs",
+      "slug": "polymarket-arb",
+      "downloads": 94,
+      "rating": 0,
+      "description": "Find and analyze arbitrage opportunities across prediction markets like Polymarket and Kalshi.",
+      "version": "1.0.1",
+      "badges": [],
+      "category": "Information",
+      "inputComplexity": "Medium",
+      "outputValue": "Low",
+      "apiDependency": "Unknown",
+      "monetizationPotential": "High",
+      "likelyApis": [
+        "Financial API"
+      ],
+      "titleKeywords": [],
+      "repeatablePatternFlags": [
+        "immediate-utility",
+        "single-api-factory-fit"
+      ]
+    },
+    {
+      "rank": 40,
+      "name": "预测市场数据",
+      "url": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/prediction-market-data-zh",
+      "author": "bibaofeng",
+      "slug": "prediction-market-data-zh",
+      "downloads": 75,
+      "rating": 0,
+      "description": "通过 AIsa API 查询跨平台预测市场数据。支持 Polymarket 和 Kalshi 的市场行情、价格、订单簿、K线、持仓和交易记录。适用场景：查询预测市场赔率、选举博彩、事件概率、市场情绪、Polymarket 价格、Kalshi 价格、体育博彩赔率、钱包盈亏、跨平台市场对比。",
+      "version": "1.0.1",
+      "badges": [],
+      "category": "Information",
+      "inputComplexity": "Medium",
+      "outputValue": "Low",
+      "apiDependency": "Yes",
+      "monetizationPotential": "High",
+      "likelyApis": [
+        "Financial API"
+      ],
+      "titleKeywords": [],
+      "repeatablePatternFlags": [
+        "runtime-or-api-wrapper",
+        "immediate-utility",
+        "single-api-factory-fit"
+      ]
+    },
+    {
+      "rank": 41,
+      "name": "last30days",
+      "url": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/last30days-aisa-zh",
+      "author": "bibaofeng",
+      "slug": "last30days-aisa-zh",
+      "downloads": 68,
+      "rating": 0,
+      "description": "聚合最近 30 天的 Reddit、X/Twitter、YouTube、TikTok、Instagram、Hacker News、Polymarket、GitHub 和 web search 结果。触发条件：当用户需要 recent social research、人物近况、公司动态、竞品对比、发布反应、趋势扫描...",
+      "version": "1.0.4",
+      "badges": [],
+      "category": "Information",
+      "inputComplexity": "Medium",
+      "outputValue": "High",
+      "apiDependency": "Yes",
+      "monetizationPotential": "High",
+      "likelyApis": [
+        "Financial API",
+        "Search API",
+        "Social API"
+      ],
+      "titleKeywords": [],
+      "repeatablePatternFlags": [
+        "clear-job-to-be-done",
+        "immediate-utility"
+      ]
+    },
+    {
+      "rank": 42,
+      "name": "Perplexity Sonar",
+      "url": "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/perplexity-sonar-search",
+      "author": "aisadocs",
+      "slug": "perplexity-sonar-search",
+      "downloads": 66,
+      "rating": 0,
+      "description": "Perplexity Sonar search and answer generation through AIsa. Use when the task is specifically to call Perplexity Sonar, Sonar Pro, Sonar Reasoning Pro, or So...",
+      "version": "1.0.0",
+      "badges": [],
+      "category": "Information",
+      "inputComplexity": "Medium",
+      "outputValue": "Medium",
+      "apiDependency": "Yes",
+      "monetizationPotential": "High",
+      "likelyApis": [
+        "Search API"
+      ],
+      "titleKeywords": [],
+      "repeatablePatternFlags": [
+        "clear-job-to-be-done",
+        "immediate-utility",
+        "single-api-factory-fit"
+      ]
+    },
+    {
+      "rank": 43,
+      "name": "预测市场套利",
+      "url": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/prediction-market-arbitrage-zh",
+      "author": "bibaofeng",
+      "slug": "prediction-market-arbitrage-zh",
+      "downloads": 66,
+      "rating": 0,
+      "description": "通过 AIsa API 发现 Polymarket 和 Kalshi 预测市场的套利机会。扫描体育市场跨平台价差、比较实时赔率、验证订单簿流动性。适用场景：预测市场套利、跨平台价差、体育博彩套利、赔率对比、无风险利润、市场低效。",
+      "version": "1.0.0",
+      "badges": [],
+      "category": "Information",
+      "inputComplexity": "Medium",
+      "outputValue": "Low",
+      "apiDependency": "Yes",
+      "monetizationPotential": "High",
+      "likelyApis": [
+        "Financial API"
+      ],
+      "titleKeywords": [],
+      "repeatablePatternFlags": [
+        "runtime-or-api-wrapper",
+        "immediate-utility",
+        "single-api-factory-fit"
+      ]
+    },
+    {
+      "rank": 44,
+      "name": "Prediction Market Arbitrage Api",
+      "url": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/prediction-market-arbitrage-api",
+      "author": "bibaofeng",
+      "slug": "prediction-market-arbitrage-api",
+      "downloads": 64,
+      "rating": 0,
+      "description": "Find arbitrage opportunities across Polymarket and Kalshi prediction markets via AIsa API. Scan sports markets for cross-platform price discrepancies, compar...",
+      "version": "1.0.0",
+      "badges": [],
+      "category": "Information",
+      "inputComplexity": "Medium",
+      "outputValue": "Low",
+      "apiDependency": "Yes",
+      "monetizationPotential": "High",
+      "likelyApis": [
+        "Financial API"
+      ],
+      "titleKeywords": [],
+      "repeatablePatternFlags": [
+        "runtime-or-api-wrapper",
+        "immediate-utility",
+        "single-api-factory-fit"
+      ]
+    },
+    {
+      "rank": 45,
+      "name": "Prediction Market Data",
+      "url": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/prediction-market-data",
+      "author": "bibaofeng",
+      "slug": "prediction-market-data",
+      "downloads": 61,
+      "rating": 0,
+      "description": "Cross-platform prediction market data via AIsa API. Query Polymarket and Kalshi markets, prices, orderbooks, candlesticks, positions, and trades. Use when us...",
+      "version": "1.0.0",
+      "badges": [],
+      "category": "Information",
+      "inputComplexity": "Medium",
+      "outputValue": "Low",
+      "apiDependency": "Yes",
+      "monetizationPotential": "High",
+      "likelyApis": [
+        "Financial API"
+      ],
+      "titleKeywords": [],
+      "repeatablePatternFlags": [
+        "clear-job-to-be-done",
+        "runtime-or-api-wrapper",
+        "immediate-utility",
+        "single-api-factory-fit"
+      ]
+    },
+    {
+      "rank": 46,
+      "name": "Find and analyze arbitrage opportunities across prediction markets like Polymarket and Kalshi",
+      "url": "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-prediction-market-arbitrage",
+      "author": "chaimengphp",
+      "slug": "openclaw-aisa-prediction-market-arbitrage",
+      "downloads": 57,
+      "rating": 0,
+      "description": "Find and analyze arbitrage opportunities across prediction markets like Polymarket and Kalshi.",
+      "version": "1.0.0",
+      "badges": [],
+      "category": "Information",
+      "inputComplexity": "Medium",
+      "outputValue": "Low",
+      "apiDependency": "Unknown",
+      "monetizationPotential": "High",
+      "likelyApis": [
+        "Financial API"
+      ],
+      "titleKeywords": [],
+      "repeatablePatternFlags": [
+        "immediate-utility",
+        "single-api-factory-fit"
+      ]
+    },
+    {
+      "rank": 47,
+      "name": "last30days",
+      "url": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/last30days-aisa",
+      "author": "bibaofeng",
+      "slug": "last30days-aisa",
+      "downloads": 57,
+      "rating": 0,
+      "description": "Research the last 30 days across Reddit, X/Twitter, YouTube, TikTok, Instagram, Hacker News, Polymarket, GitHub, and web search. Use when: you need recent so...",
+      "version": "1.0.4",
+      "badges": [],
+      "category": "Information",
+      "inputComplexity": "Medium",
+      "outputValue": "High",
+      "apiDependency": "Yes",
+      "monetizationPotential": "High",
+      "likelyApis": [
+        "Financial API",
+        "Search API",
+        "Social API"
+      ],
+      "titleKeywords": [],
+      "repeatablePatternFlags": [
+        "clear-job-to-be-done",
+        "immediate-utility"
+      ]
+    },
+    {
+      "rank": 48,
+      "name": "youtube-search-aisa",
+      "url": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/youtube-search-aisa",
+      "author": "bibaofeng",
+      "slug": "youtube-search-aisa",
+      "downloads": 54,
+      "rating": 0,
+      "description": "Search YouTube videos, channels, and trends via AISA API using queries, filters, and pagination without requiring Google credentials.",
+      "version": "1.1.1",
+      "badges": [],
+      "category": "Information",
+      "inputComplexity": "Medium",
+      "outputValue": "Medium",
+      "apiDependency": "Yes",
+      "monetizationPotential": "High",
+      "likelyApis": [
+        "Search API",
+        "Social API",
+        "Media Generation API"
+      ],
+      "titleKeywords": [
+        "ai",
+        "search",
+        "youtube"
+      ],
+      "repeatablePatternFlags": [
+        "clear-job-to-be-done",
+        "runtime-or-api-wrapper",
+        "immediate-utility"
+      ]
+    },
+    {
+      "rank": 49,
+      "name": "X Twitter Command Center (Search + Post + Interact)",
+      "url": "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-twitter",
+      "author": "chaimengphp",
+      "slug": "openclaw-aisa-twitter",
+      "downloads": 53,
+      "rating": 0,
+      "description": "Searches and reads X (Twitter): profiles, timelines, mentions, followers, tweet search, trends, lists, communities, and Spaces. Publishes posts, likes/unlike...",
+      "version": "1.0.6",
+      "badges": [],
+      "category": "Information",
+      "inputComplexity": "Medium",
+      "outputValue": "High",
+      "apiDependency": "Yes",
+      "monetizationPotential": "High",
+      "likelyApis": [
+        "Search API",
+        "Social API"
+      ],
+      "titleKeywords": [
+        "search",
+        "twitter"
+      ],
+      "repeatablePatternFlags": [
+        "clear-job-to-be-done",
+        "immediate-utility"
+      ]
+    },
+    {
+      "rank": 50,
+      "name": "youtube-aisa",
+      "url": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/youtube-aisa",
+      "author": "bibaofeng",
+      "slug": "youtube-aisa",
+      "downloads": 47,
+      "rating": 0,
+      "description": "Search YouTube videos, channels, and playlists using the AISA YouTube API with support for query, locale filters, pagination, and structured results via one...",
+      "version": "1.0.3",
+      "badges": [],
+      "category": "Information",
+      "inputComplexity": "Medium",
+      "outputValue": "Medium",
+      "apiDependency": "Yes",
+      "monetizationPotential": "High",
+      "likelyApis": [
+        "Search API",
+        "Social API",
+        "Media Generation API"
+      ],
+      "titleKeywords": [
+        "ai",
+        "youtube"
+      ],
+      "repeatablePatternFlags": [
+        "clear-job-to-be-done",
+        "runtime-or-api-wrapper",
+        "immediate-utility"
+      ]
+    },
+    {
+      "rank": 51,
+      "name": "twitter-aisa",
+      "url": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/twitter-aisa",
+      "author": "bibaofeng",
+      "slug": "twitter-aisa",
+      "downloads": 45,
+      "rating": 0,
+      "description": "Search and retrieve Twitter/X profiles, tweets, trends, and Spaces via AISA relay, and publish approved posts with OAuth without sharing passwords.",
+      "version": "1.0.2",
+      "badges": [],
+      "category": "Information",
+      "inputComplexity": "Medium",
+      "outputValue": "High",
+      "apiDependency": "Yes",
+      "monetizationPotential": "High",
+      "likelyApis": [
+        "Search API",
+        "Social API"
+      ],
+      "titleKeywords": [
+        "ai",
+        "twitter"
+      ],
+      "repeatablePatternFlags": [
+        "clear-job-to-be-done",
+        "immediate-utility"
+      ]
+    },
+    {
+      "rank": 52,
+      "name": "twitter-aisa-api",
+      "url": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/twitter-aisa-api",
+      "author": "bibaofeng",
+      "slug": "twitter-aisa-api",
+      "downloads": 38,
+      "rating": 0,
+      "description": "Search and read Twitter/X profiles, tweets, trends, and Spaces via AISA relay, then publish posts with OAuth and approved media files using AISA_API_KEY.",
+      "version": "1.0.1",
+      "badges": [],
+      "category": "Information",
+      "inputComplexity": "Medium",
+      "outputValue": "High",
+      "apiDependency": "Yes",
+      "monetizationPotential": "High",
+      "likelyApis": [
+        "Search API",
+        "Social API"
+      ],
+      "titleKeywords": [
+        "ai",
+        "twitter"
+      ],
+      "repeatablePatternFlags": [
+        "clear-job-to-be-done",
+        "runtime-or-api-wrapper",
+        "immediate-utility"
+      ]
+    },
+    {
+      "rank": 53,
+      "name": "twitter-post-aisa",
+      "url": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/twitter-post-aisa",
+      "author": "bibaofeng",
+      "slug": "twitter-post-aisa",
+      "downloads": 36,
+      "rating": 0,
+      "description": "Search, post, like, follow, and engage with Twitter/X content via AISA relay using OAuth-approved API actions with no password sharing.",
+      "version": "1.0.1",
+      "badges": [],
+      "category": "Information",
+      "inputComplexity": "Medium",
+      "outputValue": "High",
+      "apiDependency": "Yes",
+      "monetizationPotential": "High",
+      "likelyApis": [
+        "Search API",
+        "Social API"
+      ],
+      "titleKeywords": [
+        "ai",
+        "twitter"
+      ],
+      "repeatablePatternFlags": [
+        "clear-job-to-be-done",
+        "runtime-or-api-wrapper",
+        "immediate-utility"
+      ]
+    },
+    {
+      "rank": 54,
+      "name": "Query real-time and historical financial data of equity prices, market moves, metrics, and trends for analysis, alerts, and reporting",
+      "url": "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-finance-equity-price-market-data-news",
+      "author": "aisadocs",
+      "slug": "openclaw-aisa-finance-equity-price-market-data-news",
+      "downloads": 26,
+      "rating": 0,
+      "description": "Query real-time and historical financial data for equities—prices, news, financial statements, metrics, analyst estimates, insider and institutional activity...",
+      "version": "2.0.1",
+      "badges": [],
+      "category": "Information",
+      "inputComplexity": "Medium",
+      "outputValue": "High",
+      "apiDependency": "Yes",
+      "monetizationPotential": "High",
+      "likelyApis": [
+        "Financial API"
+      ],
+      "titleKeywords": [],
+      "repeatablePatternFlags": [
+        "immediate-utility",
+        "single-api-factory-fit"
+      ]
+    },
+    {
+      "rank": 55,
+      "name": "x-intelligence-automation-aisa",
+      "url": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/x-intelligence-automation-aisa",
+      "author": "bibaofeng",
+      "slug": "x-intelligence-automation-aisa",
+      "downloads": 22,
+      "rating": 0,
+      "description": "Search and engage with Twitter/X profiles, tweets, trends, and perform authorized posting, liking, and following via the AISA relay using OAuth and API key.",
+      "version": "1.0.0",
+      "badges": [],
+      "category": "Information",
+      "inputComplexity": "High",
+      "outputValue": "High",
+      "apiDependency": "Yes",
+      "monetizationPotential": "High",
+      "likelyApis": [
+        "Search API",
+        "Social API"
+      ],
+      "titleKeywords": [
+        "ai",
+        "automation"
+      ],
+      "repeatablePatternFlags": [
+        "clear-job-to-be-done",
+        "runtime-or-api-wrapper",
+        "immediate-utility"
+      ]
+    },
+    {
+      "rank": 56,
+      "name": "aisa-twitter",
+      "url": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/aisa-twitter",
+      "author": "bibaofeng",
+      "slug": "aisa-twitter",
+      "downloads": 20,
+      "rating": 0,
+      "description": "Search and engage with Twitter/X profiles, tweets, trends, and post or interact via OAuth-secured AISA relay API using an API key.",
+      "version": "1.0.0",
+      "badges": [],
+      "category": "Information",
+      "inputComplexity": "Medium",
+      "outputValue": "High",
+      "apiDependency": "Yes",
+      "monetizationPotential": "High",
+      "likelyApis": [
+        "Search API",
+        "Social API"
+      ],
+      "titleKeywords": [
+        "ai",
+        "twitter"
+      ],
+      "repeatablePatternFlags": [
+        "clear-job-to-be-done",
+        "runtime-or-api-wrapper",
+        "immediate-utility"
+      ]
+    },
+    {
+      "rank": 57,
+      "name": "openclaw-aisa-youtube-aisa",
+      "url": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/openclaw-aisa-youtube-aisa",
+      "author": "bibaofeng",
+      "slug": "openclaw-aisa-youtube-aisa",
+      "downloads": 20,
+      "rating": 0,
+      "description": "Search YouTube videos, channels, and trends via AISA API using Python or curl with locale and filter options, requiring AISA_API_KEY.",
+      "version": "1.0.0",
+      "badges": [],
+      "category": "Information",
+      "inputComplexity": "Medium",
+      "outputValue": "Medium",
+      "apiDependency": "Yes",
+      "monetizationPotential": "High",
+      "likelyApis": [
+        "Search API",
+        "Social API",
+        "Media Generation API"
+      ],
+      "titleKeywords": [
+        "ai",
+        "youtube"
+      ],
+      "repeatablePatternFlags": [
+        "clear-job-to-be-done",
+        "runtime-or-api-wrapper",
+        "immediate-utility"
+      ]
+    }
+  ],
+  "authors": [
+    {
+      "author": "0xjordansg-yolo",
+      "profileUrl": "https://clawhub.ai/u/0xjordansg-yolo",
+      "sampledTotalSkills": 13,
+      "sampledSkillUrls": [
+        "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-twitter",
+        "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-image-video-models-wan2-6-gemini-3-pro-image-nano-banana",
+        "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-finance-stock-equity-crypto-market-price-data-yahoo-finance-coinhacko",
+        "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-youtube-search-serp-video-channels-trends-content-tracking",
+        "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-llm-gateway",
+        "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-twitter-search-post",
+        "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-affordable-llm-model-tokens",
+        "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-us-stock-analyst",
+        "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-financial-stock-crypto-market-price-data",
+        "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-search-website-academic-tavily-serp-exa",
+        "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/ai-native-websearch-via-tavily-api-returns-concise-relevant-results-for-openclaw",
+        "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-chinese-llm-models",
+        "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-youtube"
+      ],
+      "skills": [
+        {
+          "name": "X/Twitter Automation: 30+ APIs, OAuth Post, One Key",
+          "url": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-twitter",
+          "downloads": 3484,
+          "category": "Information",
+          "likelyApis": [
+            "Search API",
+            "Social API"
+          ]
+        },
+        {
+          "name": "Generate images & videos with: Gemini 3 Pro Image (image) + Qwen Wan 2.6 (video) via one API key",
+          "url": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-image-video-models-wan2-6-gemini-3-pro-image-nano-banana",
+          "downloads": 2186,
+          "category": "AI Generation",
+          "likelyApis": [
+            "Media Generation API"
+          ]
+        },
+        {
+          "name": "Query real-time and historical financial data across equities and crypto prices",
+          "url": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-finance-stock-equity-crypto-market-price-data-yahoo-finance-coinhacko",
+          "downloads": 1530,
+          "category": "Information",
+          "likelyApis": [
+            "Financial API"
+          ]
+        },
+        {
+          "name": "YouTube SERP Scout for agents. Search top-ranking videos, channels, and trends for content research and competitor tracking",
+          "url": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-youtube-search-serp-video-channels-trends-content-tracking",
+          "downloads": 1483,
+          "category": "Information",
+          "likelyApis": [
+            "Search API",
+            "Social API",
+            "Media Generation API"
+          ]
+        },
+        {
+          "name": "One API key for 70+ AI models. Route to GPT, Claude, Gemini, Qwen, Deepseek, Grok and more",
+          "url": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-llm-gateway",
+          "downloads": 1455,
+          "category": "Tools",
+          "likelyApis": [
+            "Unknown"
+          ]
+        },
+        {
+          "name": "X Twitter Automataion (Search + Post)",
+          "url": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-twitter-search-post",
+          "downloads": 1419,
+          "category": "Information",
+          "likelyApis": [
+            "Search API",
+            "Social API"
+          ]
+        },
+        {
+          "name": "Save upto 50% for model tokens: OpenAI GPT, Claude, Gemini, Qwen, Deepseek, Grok and more with one single key",
+          "url": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-affordable-llm-model-tokens",
+          "downloads": 1317,
+          "category": "Tools",
+          "likelyApis": [
+            "Unknown"
+          ]
+        },
+        {
+          "name": "US Stock Analyst by leading AI LLM models with Bloomberg Data, Twitter Sentiment and Wall Street Equity Research Reports",
+          "url": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-us-stock-analyst",
+          "downloads": 1306,
+          "category": "Information",
+          "likelyApis": [
+            "Financial API",
+            "Search API",
+            "Social API"
+          ]
+        },
+        {
+          "name": "One API key for real time stock equity pricing data including crypto BTC ETH etc.",
+          "url": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-financial-stock-crypto-market-price-data",
+          "downloads": 1265,
+          "category": "Information",
+          "likelyApis": [
+            "Financial API"
+          ]
+        },
+        {
+          "name": "Multi-source retrieval with confidence scoring - web, academic, and Tavily in one unified API",
+          "url": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-search-website-academic-tavily-serp-exa",
+          "downloads": 1240,
+          "category": "Information",
+          "likelyApis": [
+            "Search API"
+          ]
+        },
+        {
+          "name": "Web Search Tavily",
+          "url": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/ai-native-websearch-via-tavily-api-returns-concise-relevant-results-for-openclaw",
+          "downloads": 1223,
+          "category": "Information",
+          "likelyApis": [
+            "Search API"
+          ]
+        },
+        {
+          "name": "Chinese LLM Models (Kimi 2.5, MiniMax 2.5, Qwen, DeepSeek) with One Key",
+          "url": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-chinese-llm-models",
+          "downloads": 763,
+          "category": "Automation",
+          "likelyApis": [
+            "Unknown"
+          ]
+        },
+        {
+          "name": "Search YouTube videos, channels, and playlists",
+          "url": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-youtube",
+          "downloads": 530,
+          "category": "Information",
+          "likelyApis": [
+            "Search API",
+            "Social API",
+            "Media Generation API"
+          ]
+        }
+      ],
+      "numberOf5kPlusSkills": 0,
+      "categoryDistribution": {
+        "Information": 9,
+        "AI Generation": 1,
+        "Tools": 2,
+        "Automation": 1
+      },
+      "repetitionScore": 0.13,
+      "apiReuseLikelihood": "Medium",
+      "templateUsage": "Low",
+      "strategyLabel": "Multi-vertical portfolio led by Information",
+      "totalDownloadsInSample": 19201,
+      "topSkillNames": [
+        "X/Twitter Automation: 30+ APIs, OAuth Post, One Key",
+        "Generate images & videos with: Gemini 3 Pro Image (image) + Qwen Wan 2.6 (video) via one API key",
+        "Query real-time and historical financial data across equities and crypto prices"
+      ],
+      "authorPageStatus": "sample-derived"
+    },
+    {
+      "author": "aisadocs",
+      "profileUrl": "https://clawhub.ai/u/aisadocs",
+      "sampledTotalSkills": 13,
+      "sampledSkillUrls": [
+        "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-web-search-tavily",
+        "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-llm-image-video",
+        "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-llm-router",
+        "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-youtube-search-tracking",
+        "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-finance-equity-crypto-price-market-data-news",
+        "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-llm-image-video-qwen-wan26-gemini-3-pro-image",
+        "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-search-web-academic-tavily",
+        "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-leading-chinese-llm",
+        "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-twitter-post-engage",
+        "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/pred-polymarket",
+        "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/polymarket-arb",
+        "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/perplexity-sonar-search",
+        "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-finance-equity-price-market-data-news"
+      ],
+      "skills": [
+        {
+          "name": "Web Search by Tavily",
+          "url": "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-web-search-tavily",
+          "downloads": 4088,
+          "category": "Information",
+          "likelyApis": [
+            "Search API"
+          ]
+        },
+        {
+          "name": "Images & videos generation with Gemini 3 Pro Image + Qwen Wan 2.6 (video) via one API key",
+          "url": "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-llm-image-video",
+          "downloads": 1690,
+          "category": "AI Generation",
+          "likelyApis": [
+            "Media Generation API"
+          ]
+        },
+        {
+          "name": "Unified LLM Gateway - One API for 70+ AI models. Route to GPT, Claude, Gemini, Qwen, Deepseek, Grok and more",
+          "url": "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-llm-router",
+          "downloads": 1267,
+          "category": "Tools",
+          "likelyApis": [
+            "Unknown"
+          ]
+        },
+        {
+          "name": "Youtube Search and Tracking API",
+          "url": "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-youtube-search-tracking",
+          "downloads": 1259,
+          "category": "Information",
+          "likelyApis": [
+            "Search API",
+            "Social API",
+            "Media Generation API"
+          ]
+        },
+        {
+          "name": "Query real-time and historical financial data across equities and crypto prices, market moves, metrics, and trends for analysis, alerts, and reporting",
+          "url": "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-finance-equity-crypto-price-market-data-news",
+          "downloads": 1080,
+          "category": "Information",
+          "likelyApis": [
+            "Financial API"
+          ]
+        },
+        {
+          "name": "Generate images & videos with: Gemini 3 Pro Image + Qwen Wan 2.6 (video) via one API key",
+          "url": "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-llm-image-video-qwen-wan26-gemini-3-pro-image",
+          "downloads": 1031,
+          "category": "AI Generation",
+          "likelyApis": [
+            "Media Generation API"
+          ]
+        },
+        {
+          "name": "Intelligent search for agents. Multi-source retrieval with confidence scoring - web, academic, and Tavily in one unified API",
+          "url": "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-search-web-academic-tavily",
+          "downloads": 898,
+          "category": "Information",
+          "likelyApis": [
+            "Search API"
+          ]
+        },
+        {
+          "name": "Chines LLM Models (MiniMax 2.5,Kimi 2.5, Qwen, Doubao, DeepSeek) with one key",
+          "url": "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-leading-chinese-llm",
+          "downloads": 628,
+          "category": "Automation",
+          "likelyApis": [
+            "Unknown"
+          ]
+        },
+        {
+          "name": "Twitter/X All-in-One — Search, Monitor & Publish Text & Media Posts",
+          "url": "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-twitter-post-engage",
+          "downloads": 189,
+          "category": "Information",
+          "likelyApis": [
+            "Search API",
+            "Social API"
+          ]
+        },
+        {
+          "name": "Polymarket Data",
+          "url": "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/pred-polymarket",
+          "downloads": 95,
+          "category": "Information",
+          "likelyApis": [
+            "Financial API"
+          ]
+        },
+        {
+          "name": "Polymarket Spread Arbitrage",
+          "url": "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/polymarket-arb",
+          "downloads": 94,
+          "category": "Information",
+          "likelyApis": [
+            "Financial API"
+          ]
+        },
+        {
+          "name": "Perplexity Sonar",
+          "url": "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/perplexity-sonar-search",
+          "downloads": 66,
+          "category": "Information",
+          "likelyApis": [
+            "Search API"
+          ]
+        },
+        {
+          "name": "Query real-time and historical financial data of equity prices, market moves, metrics, and trends for analysis, alerts, and reporting",
+          "url": "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-finance-equity-price-market-data-news",
+          "downloads": 26,
+          "category": "Information",
+          "likelyApis": [
+            "Financial API"
+          ]
+        }
+      ],
+      "numberOf5kPlusSkills": 0,
+      "categoryDistribution": {
+        "Information": 9,
+        "AI Generation": 2,
+        "Tools": 1,
+        "Automation": 1
+      },
+      "repetitionScore": 0.09,
+      "apiReuseLikelihood": "Medium",
+      "templateUsage": "Low",
+      "strategyLabel": "Multi-vertical portfolio led by Information",
+      "totalDownloadsInSample": 12411,
+      "topSkillNames": [
+        "Web Search by Tavily",
+        "Images & videos generation with Gemini 3 Pro Image + Qwen Wan 2.6 (video) via one API key",
+        "Unified LLM Gateway - One API for 70+ AI models. Route to GPT, Claude, Gemini, Qwen, Deepseek, Grok and more"
+      ],
+      "authorPageStatus": "sample-derived"
+    },
+    {
+      "author": "aisapay",
+      "profileUrl": "https://clawhub.ai/u/aisapay",
+      "sampledTotalSkills": 6,
+      "sampledSkillUrls": [
+        "https://clawhub.ai/kn72abv2yp91hce9za0j31yycd80jxzv/aisa-twitter-api",
+        "https://clawhub.ai/kn72abv2yp91hce9za0j31yycd80jxzv/aisa-youtube-search",
+        "https://clawhub.ai/kn72abv2yp91hce9za0j31yycd80jxzv/aisa-multi-source-search",
+        "https://clawhub.ai/kn72abv2yp91hce9za0j31yycd80jxzv/aisa-media-gen",
+        "https://clawhub.ai/kn72abv2yp91hce9za0j31yycd80jxzv/financial-data",
+        "https://clawhub.ai/kn72abv2yp91hce9za0j31yycd80jxzv/aisa-financial-data"
+      ],
+      "skills": [
+        {
+          "name": "AIsa Twitter API (Search + Post)",
+          "url": "https://clawhub.ai/kn72abv2yp91hce9za0j31yycd80jxzv/aisa-twitter-api",
+          "downloads": 3151,
+          "category": "Information",
+          "likelyApis": [
+            "Search API",
+            "Social API"
+          ]
+        },
+        {
+          "name": "AIsa Youtube Search",
+          "url": "https://clawhub.ai/kn72abv2yp91hce9za0j31yycd80jxzv/aisa-youtube-search",
+          "downloads": 1756,
+          "category": "Information",
+          "likelyApis": [
+            "Search API",
+            "Social API",
+            "Media Generation API"
+          ]
+        },
+        {
+          "name": "AIsa Multi Source Search",
+          "url": "https://clawhub.ai/kn72abv2yp91hce9za0j31yycd80jxzv/aisa-multi-source-search",
+          "downloads": 1558,
+          "category": "Information",
+          "likelyApis": [
+            "Search API"
+          ]
+        },
+        {
+          "name": "AIsa Media Gen",
+          "url": "https://clawhub.ai/kn72abv2yp91hce9za0j31yycd80jxzv/aisa-media-gen",
+          "downloads": 1555,
+          "category": "AI Generation",
+          "likelyApis": [
+            "Media Generation API"
+          ]
+        },
+        {
+          "name": "Financial Data",
+          "url": "https://clawhub.ai/kn72abv2yp91hce9za0j31yycd80jxzv/financial-data",
+          "downloads": 1393,
+          "category": "Information",
+          "likelyApis": [
+            "Financial API"
+          ]
+        },
+        {
+          "name": "AIsa Financial Data",
+          "url": "https://clawhub.ai/kn72abv2yp91hce9za0j31yycd80jxzv/aisa-financial-data",
+          "downloads": 1283,
+          "category": "Information",
+          "likelyApis": [
+            "Financial API"
+          ]
+        }
+      ],
+      "numberOf5kPlusSkills": 0,
+      "categoryDistribution": {
+        "Information": 5,
+        "AI Generation": 1
+      },
+      "repetitionScore": 0.23,
+      "apiReuseLikelihood": "Medium",
+      "templateUsage": "Low",
+      "strategyLabel": "Focused utility builder in Information",
+      "totalDownloadsInSample": 10696,
+      "topSkillNames": [
+        "AIsa Twitter API (Search + Post)",
+        "AIsa Youtube Search",
+        "AIsa Multi Source Search"
+      ],
+      "authorPageStatus": "sample-derived"
+    },
+    {
+      "author": "chaimengphp",
+      "profileUrl": "https://clawhub.ai/u/chaimengphp",
+      "sampledTotalSkills": 11,
+      "sampledSkillUrls": [
+        "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-twitter-search",
+        "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-media-gen",
+        "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-youtube-search",
+        "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-cn-llm",
+        "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-market-pulse",
+        "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-llm-gateway-route",
+        "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-search",
+        "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/aisaclaw-perplexity-search",
+        "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-prediction-market",
+        "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-prediction-market-arbitrage",
+        "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-twitter"
+      ],
+      "skills": [
+        {
+          "name": "X Twitter Command Center (Search + Post)",
+          "url": "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-twitter-search",
+          "downloads": 1210,
+          "category": "Information",
+          "likelyApis": [
+            "Search API",
+            "Social API"
+          ]
+        },
+        {
+          "name": "Unified API for powerful image and video generation",
+          "url": "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-media-gen",
+          "downloads": 1132,
+          "category": "AI Generation",
+          "likelyApis": [
+            "Media Generation API"
+          ]
+        },
+        {
+          "name": "YouTube SERP Scout (Rank + Discover)",
+          "url": "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-youtube-search",
+          "downloads": 1026,
+          "category": "Information",
+          "likelyApis": [
+            "Search API",
+            "Social API",
+            "Media Generation API"
+          ]
+        },
+        {
+          "name": "One API key for Chinese AI models. Route to Qwen, Deepseek",
+          "url": "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-cn-llm",
+          "downloads": 981,
+          "category": "Tools",
+          "likelyApis": [
+            "Unknown"
+          ]
+        },
+        {
+          "name": "MarketPulse (Stocks + Crypto Data)",
+          "url": "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-market-pulse",
+          "downloads": 963,
+          "category": "Information",
+          "likelyApis": [
+            "Financial API"
+          ]
+        },
+        {
+          "name": "One API key for 70+ AI models. Route to GPT, Claude, Gemini, Grok and more",
+          "url": "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-llm-gateway-route",
+          "downloads": 838,
+          "category": "Tools",
+          "likelyApis": [
+            "Unknown"
+          ]
+        },
+        {
+          "name": "Verified Research Engine (Web + Academic + Confidence Score)",
+          "url": "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-search",
+          "downloads": 792,
+          "category": "Information",
+          "likelyApis": [
+            "Search API"
+          ]
+        },
+        {
+          "name": "Perplexity Sonar Search",
+          "url": "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/aisaclaw-perplexity-search",
+          "downloads": 190,
+          "category": "Information",
+          "likelyApis": [
+            "Search API"
+          ]
+        },
+        {
+          "name": "Prediction markets data - Polymarket, Kalshi markets, prices, positions, and trades",
+          "url": "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-prediction-market",
+          "downloads": 95,
+          "category": "Information",
+          "likelyApis": [
+            "Financial API"
+          ]
+        },
+        {
+          "name": "Find and analyze arbitrage opportunities across prediction markets like Polymarket and Kalshi",
+          "url": "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-prediction-market-arbitrage",
+          "downloads": 57,
+          "category": "Information",
+          "likelyApis": [
+            "Financial API"
+          ]
+        },
+        {
+          "name": "X Twitter Command Center (Search + Post + Interact)",
+          "url": "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-twitter",
+          "downloads": 53,
+          "category": "Information",
+          "likelyApis": [
+            "Search API",
+            "Social API"
+          ]
+        }
+      ],
+      "numberOf5kPlusSkills": 0,
+      "categoryDistribution": {
+        "Information": 8,
+        "AI Generation": 1,
+        "Tools": 2
+      },
+      "repetitionScore": 0.08,
+      "apiReuseLikelihood": "Medium",
+      "templateUsage": "Low",
+      "strategyLabel": "Multi-vertical portfolio led by Information",
+      "totalDownloadsInSample": 7337,
+      "topSkillNames": [
+        "X Twitter Command Center (Search + Post)",
+        "Unified API for powerful image and video generation",
+        "YouTube SERP Scout (Rank + Discover)"
+      ],
+      "authorPageStatus": "sample-derived"
+    },
+    {
+      "author": "bibaofeng",
+      "profileUrl": "https://clawhub.ai/u/bibaofeng",
+      "sampledTotalSkills": 14,
+      "sampledSkillUrls": [
+        "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/prediction-market-data-zh",
+        "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/last30days-aisa-zh",
+        "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/prediction-market-arbitrage-zh",
+        "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/prediction-market-arbitrage-api",
+        "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/prediction-market-data",
+        "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/last30days-aisa",
+        "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/youtube-search-aisa",
+        "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/youtube-aisa",
+        "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/twitter-aisa",
+        "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/twitter-aisa-api",
+        "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/twitter-post-aisa",
+        "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/x-intelligence-automation-aisa",
+        "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/aisa-twitter",
+        "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/openclaw-aisa-youtube-aisa"
+      ],
+      "skills": [
+        {
+          "name": "预测市场数据",
+          "url": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/prediction-market-data-zh",
+          "downloads": 75,
+          "category": "Information",
+          "likelyApis": [
+            "Financial API"
+          ]
+        },
+        {
+          "name": "last30days",
+          "url": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/last30days-aisa-zh",
+          "downloads": 68,
+          "category": "Information",
+          "likelyApis": [
+            "Financial API",
+            "Search API",
+            "Social API"
+          ]
+        },
+        {
+          "name": "预测市场套利",
+          "url": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/prediction-market-arbitrage-zh",
+          "downloads": 66,
+          "category": "Information",
+          "likelyApis": [
+            "Financial API"
+          ]
+        },
+        {
+          "name": "Prediction Market Arbitrage Api",
+          "url": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/prediction-market-arbitrage-api",
+          "downloads": 64,
+          "category": "Information",
+          "likelyApis": [
+            "Financial API"
+          ]
+        },
+        {
+          "name": "Prediction Market Data",
+          "url": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/prediction-market-data",
+          "downloads": 61,
+          "category": "Information",
+          "likelyApis": [
+            "Financial API"
+          ]
+        },
+        {
+          "name": "last30days",
+          "url": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/last30days-aisa",
+          "downloads": 57,
+          "category": "Information",
+          "likelyApis": [
+            "Financial API",
+            "Search API",
+            "Social API"
+          ]
+        },
+        {
+          "name": "youtube-search-aisa",
+          "url": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/youtube-search-aisa",
+          "downloads": 54,
+          "category": "Information",
+          "likelyApis": [
+            "Search API",
+            "Social API",
+            "Media Generation API"
+          ]
+        },
+        {
+          "name": "youtube-aisa",
+          "url": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/youtube-aisa",
+          "downloads": 47,
+          "category": "Information",
+          "likelyApis": [
+            "Search API",
+            "Social API",
+            "Media Generation API"
+          ]
+        },
+        {
+          "name": "twitter-aisa",
+          "url": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/twitter-aisa",
+          "downloads": 45,
+          "category": "Information",
+          "likelyApis": [
+            "Search API",
+            "Social API"
+          ]
+        },
+        {
+          "name": "twitter-aisa-api",
+          "url": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/twitter-aisa-api",
+          "downloads": 38,
+          "category": "Information",
+          "likelyApis": [
+            "Search API",
+            "Social API"
+          ]
+        },
+        {
+          "name": "twitter-post-aisa",
+          "url": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/twitter-post-aisa",
+          "downloads": 36,
+          "category": "Information",
+          "likelyApis": [
+            "Search API",
+            "Social API"
+          ]
+        },
+        {
+          "name": "x-intelligence-automation-aisa",
+          "url": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/x-intelligence-automation-aisa",
+          "downloads": 22,
+          "category": "Information",
+          "likelyApis": [
+            "Search API",
+            "Social API"
+          ]
+        },
+        {
+          "name": "aisa-twitter",
+          "url": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/aisa-twitter",
+          "downloads": 20,
+          "category": "Information",
+          "likelyApis": [
+            "Search API",
+            "Social API"
+          ]
+        },
+        {
+          "name": "openclaw-aisa-youtube-aisa",
+          "url": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/openclaw-aisa-youtube-aisa",
+          "downloads": 20,
+          "category": "Information",
+          "likelyApis": [
+            "Search API",
+            "Social API",
+            "Media Generation API"
+          ]
+        }
+      ],
+      "numberOf5kPlusSkills": 0,
+      "categoryDistribution": {
+        "Information": 14
+      },
+      "repetitionScore": 0.22,
+      "apiReuseLikelihood": "High",
+      "templateUsage": "Medium",
+      "strategyLabel": "Focused utility builder in Information",
+      "totalDownloadsInSample": 673,
+      "topSkillNames": [
+        "预测市场数据",
+        "last30days",
+        "预测市场套利"
+      ],
+      "authorPageStatus": "sample-derived"
+    }
+  ],
+  "documents": {
+    "document1": {
+      "title": "Top Skills Analysis",
+      "categoryDistribution": [
+        {
+          "category": "Information",
+          "count": 45,
+          "share": 78.9
+        },
+        {
+          "category": "AI Generation",
+          "count": 5,
+          "share": 8.8
+        },
+        {
+          "category": "Tools",
+          "count": 5,
+          "share": 8.8
+        },
+        {
+          "category": "Automation",
+          "count": 2,
+          "share": 3.5
+        }
+      ],
+      "top20Skills": [
+        {
+          "rank": 1,
+          "name": "Web Search by Tavily",
+          "url": "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-web-search-tavily",
+          "author": "aisadocs",
+          "slug": "openclaw-aisa-web-search-tavily",
+          "downloads": 4088,
+          "rating": 9,
+          "description": "AI-optimized web search via Tavily API proxy, providing concise and relevant results with options for deep or news-focused queries.",
+          "version": "1.0.0",
+          "badges": [],
+          "category": "Information",
+          "inputComplexity": "Medium",
+          "outputValue": "Medium",
+          "apiDependency": "Yes",
+          "monetizationPotential": "High",
+          "likelyApis": [
+            "Search API"
+          ],
+          "titleKeywords": [
+            "search"
+          ],
+          "repeatablePatternFlags": [
+            "clear-job-to-be-done",
+            "runtime-or-api-wrapper",
+            "immediate-utility",
+            "single-api-factory-fit"
+          ]
+        },
+        {
+          "rank": 2,
+          "name": "X/Twitter Automation: 30+ APIs, OAuth Post, One Key",
+          "url": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-twitter",
+          "author": "0xjordansg-yolo",
+          "slug": "openclaw-twitter",
+          "downloads": 3484,
+          "rating": 4,
+          "description": "Searches and reads X (Twitter): profiles, timelines, mentions, followers, tweet search, trends, lists, communities, and Spaces. Publishes posts after the use...",
+          "version": "1.0.3",
+          "badges": [],
+          "category": "Information",
+          "inputComplexity": "Low",
+          "outputValue": "High",
+          "apiDependency": "Yes",
+          "monetizationPotential": "High",
+          "likelyApis": [
+            "Search API",
+            "Social API"
+          ],
+          "titleKeywords": [
+            "automation",
+            "twitter"
+          ],
+          "repeatablePatternFlags": [
+            "clear-job-to-be-done",
+            "runtime-or-api-wrapper",
+            "immediate-utility"
+          ]
+        },
+        {
+          "rank": 3,
+          "name": "AIsa Twitter API (Search + Post)",
+          "url": "https://clawhub.ai/kn72abv2yp91hce9za0j31yycd80jxzv/aisa-twitter-api",
+          "author": "aisapay",
+          "slug": "aisa-twitter-api",
+          "downloads": 3151,
+          "rating": 4,
+          "description": "Searches and reads X (Twitter): profiles, timelines, mentions, followers, tweet search, trends, lists, communities, and Spaces. Publishes posts after the use...",
+          "version": "1.0.1",
+          "badges": [],
+          "category": "Information",
+          "inputComplexity": "Medium",
+          "outputValue": "High",
+          "apiDependency": "Yes",
+          "monetizationPotential": "High",
+          "likelyApis": [
+            "Search API",
+            "Social API"
+          ],
+          "titleKeywords": [
+            "ai",
+            "search",
+            "twitter"
+          ],
+          "repeatablePatternFlags": [
+            "clear-job-to-be-done",
+            "runtime-or-api-wrapper",
+            "immediate-utility"
+          ]
+        },
+        {
+          "rank": 4,
+          "name": "Generate images & videos with: Gemini 3 Pro Image (image) + Qwen Wan 2.6 (video) via one API key",
+          "url": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-image-video-models-wan2-6-gemini-3-pro-image-nano-banana",
+          "author": "0xjordansg-yolo",
+          "slug": "openclaw-aisa-image-video-models-wan2-6-gemini-3-pro-image-nano-banana",
+          "downloads": 2186,
+          "rating": 11,
+          "description": "Generate images &amp; videos with AIsa. Gemini 3 Pro Image (image) + Qwen Wan 2.6 (video) via one API key.",
+          "version": "1.0.0",
+          "badges": [],
+          "category": "AI Generation",
+          "inputComplexity": "Low",
+          "outputValue": "Medium",
+          "apiDependency": "Yes",
+          "monetizationPotential": "High",
+          "likelyApis": [
+            "Media Generation API"
+          ],
+          "titleKeywords": [
+            "video",
+            "image"
+          ],
+          "repeatablePatternFlags": [
+            "runtime-or-api-wrapper",
+            "single-api-factory-fit",
+            "low-friction-adoption"
+          ]
+        },
+        {
+          "rank": 5,
+          "name": "AIsa Youtube Search",
+          "url": "https://clawhub.ai/kn72abv2yp91hce9za0j31yycd80jxzv/aisa-youtube-search",
+          "author": "aisapay",
+          "slug": "aisa-youtube-search",
+          "downloads": 1756,
+          "rating": 1,
+          "description": "YouTube SERP Scout for agents. Search top-ranking videos, channels, and trends for content research and competitor tracking.",
+          "version": "1.0.0",
+          "badges": [],
+          "category": "Information",
+          "inputComplexity": "Medium",
+          "outputValue": "Medium",
+          "apiDependency": "Yes",
+          "monetizationPotential": "High",
+          "likelyApis": [
+            "Search API",
+            "Social API",
+            "Media Generation API"
+          ],
+          "titleKeywords": [
+            "ai",
+            "search",
+            "youtube"
+          ],
+          "repeatablePatternFlags": [
+            "clear-job-to-be-done",
+            "immediate-utility"
+          ]
+        },
+        {
+          "rank": 6,
+          "name": "Images & videos generation with Gemini 3 Pro Image + Qwen Wan 2.6 (video) via one API key",
+          "url": "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-llm-image-video",
+          "author": "aisadocs",
+          "slug": "openclaw-aisa-llm-image-video",
+          "downloads": 1690,
+          "rating": 3,
+          "description": "Generate images &amp; videos with AIsa. Gemini 3 Pro Image (image) + Qwen Wan 2.6 (video) via one API key.",
+          "version": "1.0.0",
+          "badges": [],
+          "category": "AI Generation",
+          "inputComplexity": "Low",
+          "outputValue": "Medium",
+          "apiDependency": "Yes",
+          "monetizationPotential": "High",
+          "likelyApis": [
+            "Media Generation API"
+          ],
+          "titleKeywords": [
+            "video",
+            "image"
+          ],
+          "repeatablePatternFlags": [
+            "runtime-or-api-wrapper",
+            "single-api-factory-fit",
+            "low-friction-adoption"
+          ]
+        },
+        {
+          "rank": 7,
+          "name": "AIsa Multi Source Search",
+          "url": "https://clawhub.ai/kn72abv2yp91hce9za0j31yycd80jxzv/aisa-multi-source-search",
+          "author": "aisapay",
+          "slug": "aisa-multi-source-search",
+          "downloads": 1558,
+          "rating": 1,
+          "description": "Intelligent search for agents. Multi-source retrieval with confidence scoring - web, academic, and Tavily in one unified API.",
+          "version": "1.0.0",
+          "badges": [],
+          "category": "Information",
+          "inputComplexity": "Medium",
+          "outputValue": "Medium",
+          "apiDependency": "Yes",
+          "monetizationPotential": "High",
+          "likelyApis": [
+            "Search API"
+          ],
+          "titleKeywords": [
+            "ai",
+            "search"
+          ],
+          "repeatablePatternFlags": [
+            "clear-job-to-be-done",
+            "runtime-or-api-wrapper",
+            "immediate-utility",
+            "single-api-factory-fit"
+          ]
+        },
+        {
+          "rank": 8,
+          "name": "AIsa Media Gen",
+          "url": "https://clawhub.ai/kn72abv2yp91hce9za0j31yycd80jxzv/aisa-media-gen",
+          "author": "aisapay",
+          "slug": "aisa-media-gen",
+          "downloads": 1555,
+          "rating": 1,
+          "description": "Generate images &amp; videos with AIsa. Gemini 3 Pro Image (image) + Qwen Wan 2.6 (video) via one API key.",
+          "version": "1.0.0",
+          "badges": [],
+          "category": "AI Generation",
+          "inputComplexity": "Low",
+          "outputValue": "Medium",
+          "apiDependency": "Yes",
+          "monetizationPotential": "High",
+          "likelyApis": [
+            "Media Generation API"
+          ],
+          "titleKeywords": [
+            "ai"
+          ],
+          "repeatablePatternFlags": [
+            "runtime-or-api-wrapper",
+            "single-api-factory-fit",
+            "low-friction-adoption"
+          ]
+        },
+        {
+          "rank": 9,
+          "name": "Query real-time and historical financial data across equities and crypto prices",
+          "url": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-finance-stock-equity-crypto-market-price-data-yahoo-finance-coinhacko",
+          "author": "0xjordansg-yolo",
+          "slug": "openclaw-aisa-finance-stock-equity-crypto-market-price-data-yahoo-finance-coinhacko",
+          "downloads": 1530,
+          "rating": 5,
+          "description": "Query real-time and historical financial data across equities and crypto—prices, market moves, metrics, and trends for analysis, alerts, and reporting.",
+          "version": "1.0.0",
+          "badges": [],
+          "category": "Information",
+          "inputComplexity": "Medium",
+          "outputValue": "High",
+          "apiDependency": "Unknown",
+          "monetizationPotential": "High",
+          "likelyApis": [
+            "Financial API"
+          ],
+          "titleKeywords": [],
+          "repeatablePatternFlags": [
+            "immediate-utility",
+            "single-api-factory-fit"
+          ]
+        },
+        {
+          "rank": 10,
+          "name": "YouTube SERP Scout for agents. Search top-ranking videos, channels, and trends for content research and competitor tracking",
+          "url": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-youtube-search-serp-video-channels-trends-content-tracking",
+          "author": "0xjordansg-yolo",
+          "slug": "openclaw-aisa-youtube-search-serp-video-channels-trends-content-tracking",
+          "downloads": 1483,
+          "rating": 3,
+          "description": "YouTube SERP Scout for agents. Search top-ranking videos, channels, and trends for content research and competitor tracking.",
+          "version": "1.0.0",
+          "badges": [],
+          "category": "Information",
+          "inputComplexity": "Medium",
+          "outputValue": "Medium",
+          "apiDependency": "Yes",
+          "monetizationPotential": "High",
+          "likelyApis": [
+            "Search API",
+            "Social API",
+            "Media Generation API"
+          ],
+          "titleKeywords": [
+            "search",
+            "agent",
+            "youtube",
+            "video"
+          ],
+          "repeatablePatternFlags": [
+            "clear-job-to-be-done",
+            "immediate-utility"
+          ]
+        },
+        {
+          "rank": 11,
+          "name": "One API key for 70+ AI models. Route to GPT, Claude, Gemini, Qwen, Deepseek, Grok and more",
+          "url": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-llm-gateway",
+          "author": "0xjordansg-yolo",
+          "slug": "openclaw-aisa-llm-gateway",
+          "downloads": 1455,
+          "rating": 5,
+          "description": "Unified LLM Gateway - One API for 70+ AI models. Route to GPT, Claude, Gemini, Qwen, Deepseek, Grok and more with a single API key.",
+          "version": "1.0.0",
+          "badges": [],
+          "category": "Tools",
+          "inputComplexity": "Low",
+          "outputValue": "Low",
+          "apiDependency": "Yes",
+          "monetizationPotential": "Low",
+          "likelyApis": [
+            "Unknown"
+          ],
+          "titleKeywords": [
+            "ai"
+          ],
+          "repeatablePatternFlags": [
+            "runtime-or-api-wrapper",
+            "immediate-utility",
+            "low-friction-adoption"
+          ]
+        },
+        {
+          "rank": 12,
+          "name": "X Twitter Automataion (Search + Post)",
+          "url": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-twitter-search-post",
+          "author": "0xjordansg-yolo",
+          "slug": "openclaw-aisa-twitter-search-post",
+          "downloads": 1419,
+          "rating": 4,
+          "description": "Searches and reads X (Twitter): profiles, timelines, mentions, followers, tweet search, trends, lists, communities, and Spaces. Publishes posts after the use...",
+          "version": "1.0.4",
+          "badges": [],
+          "category": "Information",
+          "inputComplexity": "Medium",
+          "outputValue": "High",
+          "apiDependency": "Yes",
+          "monetizationPotential": "High",
+          "likelyApis": [
+            "Search API",
+            "Social API"
+          ],
+          "titleKeywords": [
+            "ai",
+            "search",
+            "twitter"
+          ],
+          "repeatablePatternFlags": [
+            "clear-job-to-be-done",
+            "immediate-utility"
+          ]
+        },
+        {
+          "rank": 13,
+          "name": "Financial Data",
+          "url": "https://clawhub.ai/kn72abv2yp91hce9za0j31yycd80jxzv/financial-data",
+          "author": "aisapay",
+          "slug": "financial-data",
+          "downloads": 1393,
+          "rating": 0,
+          "description": "Query real-time and historical financial data across equities and crypto—prices, market moves, metrics, and trends for analysis, alerts, and reporting.",
+          "version": "1.0.0",
+          "badges": [],
+          "category": "Information",
+          "inputComplexity": "Medium",
+          "outputValue": "High",
+          "apiDependency": "Unknown",
+          "monetizationPotential": "High",
+          "likelyApis": [
+            "Financial API"
+          ],
+          "titleKeywords": [],
+          "repeatablePatternFlags": [
+            "immediate-utility",
+            "single-api-factory-fit"
+          ]
+        },
+        {
+          "rank": 14,
+          "name": "Save upto 50% for model tokens: OpenAI GPT, Claude, Gemini, Qwen, Deepseek, Grok and more with one single key",
+          "url": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-affordable-llm-model-tokens",
+          "author": "0xjordansg-yolo",
+          "slug": "openclaw-aisa-affordable-llm-model-tokens",
+          "downloads": 1317,
+          "rating": 5,
+          "description": "Unified LLM Gateway - One API for 70+ AI models. Route to GPT, Claude, Gemini, Qwen, Deepseek, Grok and more with a single API key.",
+          "version": "1.0.1",
+          "badges": [],
+          "category": "Tools",
+          "inputComplexity": "Low",
+          "outputValue": "Low",
+          "apiDependency": "Yes",
+          "monetizationPotential": "Low",
+          "likelyApis": [
+            "Unknown"
+          ],
+          "titleKeywords": [
+            "ai"
+          ],
+          "repeatablePatternFlags": [
+            "runtime-or-api-wrapper",
+            "immediate-utility"
+          ]
+        },
+        {
+          "rank": 15,
+          "name": "US Stock Analyst by leading AI LLM models with Bloomberg Data, Twitter Sentiment and Wall Street Equity Research Reports",
+          "url": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-us-stock-analyst",
+          "author": "0xjordansg-yolo",
+          "slug": "openclaw-aisa-us-stock-analyst",
+          "downloads": 1306,
+          "rating": 0,
+          "description": "Professional US stock analysis with financial data, news, social sentiment, and multi-model AI. Comprehensive reports at $0.02-0.10 per analysis.",
+          "version": "1.0.1",
+          "badges": [],
+          "category": "Information",
+          "inputComplexity": "Medium",
+          "outputValue": "High",
+          "apiDependency": "Yes",
+          "monetizationPotential": "High",
+          "likelyApis": [
+            "Financial API",
+            "Search API",
+            "Social API"
+          ],
+          "titleKeywords": [
+            "ai",
+            "search",
+            "stock",
+            "twitter"
+          ],
+          "repeatablePatternFlags": [
+            "clear-job-to-be-done",
+            "immediate-utility"
+          ]
+        },
+        {
+          "rank": 16,
+          "name": "AIsa Financial Data",
+          "url": "https://clawhub.ai/kn72abv2yp91hce9za0j31yycd80jxzv/aisa-financial-data",
+          "author": "aisapay",
+          "slug": "aisa-financial-data",
+          "downloads": 1283,
+          "rating": 0,
+          "description": "Query real-time and historical financial data across equities and crypto—prices, market moves, metrics, and trends for analysis, alerts, and reporting.",
+          "version": "1.0.0",
+          "badges": [],
+          "category": "Information",
+          "inputComplexity": "Medium",
+          "outputValue": "High",
+          "apiDependency": "Unknown",
+          "monetizationPotential": "High",
+          "likelyApis": [
+            "Financial API"
+          ],
+          "titleKeywords": [
+            "ai"
+          ],
+          "repeatablePatternFlags": [
+            "immediate-utility",
+            "single-api-factory-fit"
+          ]
+        },
+        {
+          "rank": 17,
+          "name": "Unified LLM Gateway - One API for 70+ AI models. Route to GPT, Claude, Gemini, Qwen, Deepseek, Grok and more",
+          "url": "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-llm-router",
+          "author": "aisadocs",
+          "slug": "openclaw-aisa-llm-router",
+          "downloads": 1267,
+          "rating": 2,
+          "description": "Unified LLM Gateway - One API for 70+ AI models. Route to GPT, Claude, Gemini, Qwen, Deepseek, Grok and more with a single API key.",
+          "version": "1.0.0",
+          "badges": [],
+          "category": "Tools",
+          "inputComplexity": "Low",
+          "outputValue": "Low",
+          "apiDependency": "Yes",
+          "monetizationPotential": "Low",
+          "likelyApis": [
+            "Unknown"
+          ],
+          "titleKeywords": [
+            "ai"
+          ],
+          "repeatablePatternFlags": [
+            "runtime-or-api-wrapper",
+            "immediate-utility"
+          ]
+        },
+        {
+          "rank": 18,
+          "name": "One API key for real time stock equity pricing data including crypto BTC ETH etc.",
+          "url": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-financial-stock-crypto-market-price-data",
+          "author": "0xjordansg-yolo",
+          "slug": "openclaw-aisa-financial-stock-crypto-market-price-data",
+          "downloads": 1265,
+          "rating": 1,
+          "description": "Query real-time and historical financial data across equities and crypto—prices, market moves, metrics, and trends for analysis, alerts, and reporting.",
+          "version": "1.0.0",
+          "badges": [],
+          "category": "Information",
+          "inputComplexity": "Low",
+          "outputValue": "High",
+          "apiDependency": "Yes",
+          "monetizationPotential": "High",
+          "likelyApis": [
+            "Financial API"
+          ],
+          "titleKeywords": [
+            "stock"
+          ],
+          "repeatablePatternFlags": [
+            "runtime-or-api-wrapper",
+            "immediate-utility",
+            "single-api-factory-fit",
+            "low-friction-adoption"
+          ]
+        },
+        {
+          "rank": 19,
+          "name": "Youtube Search and Tracking API",
+          "url": "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-youtube-search-tracking",
+          "author": "aisadocs",
+          "slug": "openclaw-aisa-youtube-search-tracking",
+          "downloads": 1259,
+          "rating": 0,
+          "description": "YouTube SERP Scout for agents. Search top-ranking videos, channels, and trends for content research and competitor tracking.",
+          "version": "1.0.0",
+          "badges": [],
+          "category": "Information",
+          "inputComplexity": "Medium",
+          "outputValue": "Medium",
+          "apiDependency": "Yes",
+          "monetizationPotential": "High",
+          "likelyApis": [
+            "Search API",
+            "Social API",
+            "Media Generation API"
+          ],
+          "titleKeywords": [
+            "search",
+            "youtube"
+          ],
+          "repeatablePatternFlags": [
+            "clear-job-to-be-done",
+            "runtime-or-api-wrapper",
+            "immediate-utility"
+          ]
+        },
+        {
+          "rank": 20,
+          "name": "Multi-source retrieval with confidence scoring - web, academic, and Tavily in one unified API",
+          "url": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-search-website-academic-tavily-serp-exa",
+          "author": "0xjordansg-yolo",
+          "slug": "openclaw-aisa-search-website-academic-tavily-serp-exa",
+          "downloads": 1240,
+          "rating": 4,
+          "description": "Intelligent search for agents. Multi-source retrieval with confidence scoring - web, academic, and Tavily in one unified API.",
+          "version": "1.0.0",
+          "badges": [],
+          "category": "Information",
+          "inputComplexity": "Medium",
+          "outputValue": "Medium",
+          "apiDependency": "Yes",
+          "monetizationPotential": "High",
+          "likelyApis": [
+            "Search API"
+          ],
+          "titleKeywords": [],
+          "repeatablePatternFlags": [
+            "clear-job-to-be-done",
+            "runtime-or-api-wrapper",
+            "immediate-utility",
+            "single-api-factory-fit"
+          ]
+        }
+      ],
+      "keySuccessFactors": [
+        "Information is the leading category in the sampled top skills, showing that immediate utility beats novelty.",
+        "100.0% of the top 20 skills keep input complexity low or medium, which reduces decision friction.",
+        "40.0% of the top 20 promise high-value outputs such as control, automation, or operational leverage.",
+        "85.0% of the top 20 are strong API monetization candidates, especially in Search API, Social API, Financial API.",
+        "Most repeated title hooks in the top set: ai, search, twitter, video, youtube, image."
+      ]
+    },
+    "document2": {
+      "title": "Top Authors Analysis",
+      "top10Authors": [
+        {
+          "author": "0xjordansg-yolo",
+          "profileUrl": "https://clawhub.ai/u/0xjordansg-yolo",
+          "sampledTotalSkills": 13,
+          "sampledSkillUrls": [
+            "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-twitter",
+            "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-image-video-models-wan2-6-gemini-3-pro-image-nano-banana",
+            "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-finance-stock-equity-crypto-market-price-data-yahoo-finance-coinhacko",
+            "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-youtube-search-serp-video-channels-trends-content-tracking",
+            "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-llm-gateway",
+            "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-twitter-search-post",
+            "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-affordable-llm-model-tokens",
+            "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-us-stock-analyst",
+            "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-financial-stock-crypto-market-price-data",
+            "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-search-website-academic-tavily-serp-exa",
+            "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/ai-native-websearch-via-tavily-api-returns-concise-relevant-results-for-openclaw",
+            "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-chinese-llm-models",
+            "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-youtube"
+          ],
+          "skills": [
+            {
+              "name": "X/Twitter Automation: 30+ APIs, OAuth Post, One Key",
+              "url": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-twitter",
+              "downloads": 3484,
+              "category": "Information",
+              "likelyApis": [
+                "Search API",
+                "Social API"
+              ]
+            },
+            {
+              "name": "Generate images & videos with: Gemini 3 Pro Image (image) + Qwen Wan 2.6 (video) via one API key",
+              "url": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-image-video-models-wan2-6-gemini-3-pro-image-nano-banana",
+              "downloads": 2186,
+              "category": "AI Generation",
+              "likelyApis": [
+                "Media Generation API"
+              ]
+            },
+            {
+              "name": "Query real-time and historical financial data across equities and crypto prices",
+              "url": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-finance-stock-equity-crypto-market-price-data-yahoo-finance-coinhacko",
+              "downloads": 1530,
+              "category": "Information",
+              "likelyApis": [
+                "Financial API"
+              ]
+            },
+            {
+              "name": "YouTube SERP Scout for agents. Search top-ranking videos, channels, and trends for content research and competitor tracking",
+              "url": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-youtube-search-serp-video-channels-trends-content-tracking",
+              "downloads": 1483,
+              "category": "Information",
+              "likelyApis": [
+                "Search API",
+                "Social API",
+                "Media Generation API"
+              ]
+            },
+            {
+              "name": "One API key for 70+ AI models. Route to GPT, Claude, Gemini, Qwen, Deepseek, Grok and more",
+              "url": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-llm-gateway",
+              "downloads": 1455,
+              "category": "Tools",
+              "likelyApis": [
+                "Unknown"
+              ]
+            },
+            {
+              "name": "X Twitter Automataion (Search + Post)",
+              "url": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-twitter-search-post",
+              "downloads": 1419,
+              "category": "Information",
+              "likelyApis": [
+                "Search API",
+                "Social API"
+              ]
+            },
+            {
+              "name": "Save upto 50% for model tokens: OpenAI GPT, Claude, Gemini, Qwen, Deepseek, Grok and more with one single key",
+              "url": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-affordable-llm-model-tokens",
+              "downloads": 1317,
+              "category": "Tools",
+              "likelyApis": [
+                "Unknown"
+              ]
+            },
+            {
+              "name": "US Stock Analyst by leading AI LLM models with Bloomberg Data, Twitter Sentiment and Wall Street Equity Research Reports",
+              "url": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-us-stock-analyst",
+              "downloads": 1306,
+              "category": "Information",
+              "likelyApis": [
+                "Financial API",
+                "Search API",
+                "Social API"
+              ]
+            },
+            {
+              "name": "One API key for real time stock equity pricing data including crypto BTC ETH etc.",
+              "url": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-financial-stock-crypto-market-price-data",
+              "downloads": 1265,
+              "category": "Information",
+              "likelyApis": [
+                "Financial API"
+              ]
+            },
+            {
+              "name": "Multi-source retrieval with confidence scoring - web, academic, and Tavily in one unified API",
+              "url": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-search-website-academic-tavily-serp-exa",
+              "downloads": 1240,
+              "category": "Information",
+              "likelyApis": [
+                "Search API"
+              ]
+            },
+            {
+              "name": "Web Search Tavily",
+              "url": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/ai-native-websearch-via-tavily-api-returns-concise-relevant-results-for-openclaw",
+              "downloads": 1223,
+              "category": "Information",
+              "likelyApis": [
+                "Search API"
+              ]
+            },
+            {
+              "name": "Chinese LLM Models (Kimi 2.5, MiniMax 2.5, Qwen, DeepSeek) with One Key",
+              "url": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-chinese-llm-models",
+              "downloads": 763,
+              "category": "Automation",
+              "likelyApis": [
+                "Unknown"
+              ]
+            },
+            {
+              "name": "Search YouTube videos, channels, and playlists",
+              "url": "https://clawhub.ai/kn76s7azw5ts056pvhv1adht7s8052ne/openclaw-aisa-youtube",
+              "downloads": 530,
+              "category": "Information",
+              "likelyApis": [
+                "Search API",
+                "Social API",
+                "Media Generation API"
+              ]
+            }
+          ],
+          "numberOf5kPlusSkills": 0,
+          "categoryDistribution": {
+            "Information": 9,
+            "AI Generation": 1,
+            "Tools": 2,
+            "Automation": 1
+          },
+          "repetitionScore": 0.13,
+          "apiReuseLikelihood": "Medium",
+          "templateUsage": "Low",
+          "strategyLabel": "Multi-vertical portfolio led by Information",
+          "totalDownloadsInSample": 19201,
+          "topSkillNames": [
+            "X/Twitter Automation: 30+ APIs, OAuth Post, One Key",
+            "Generate images & videos with: Gemini 3 Pro Image (image) + Qwen Wan 2.6 (video) via one API key",
+            "Query real-time and historical financial data across equities and crypto prices"
+          ],
+          "authorPageStatus": "sample-derived"
+        },
+        {
+          "author": "aisadocs",
+          "profileUrl": "https://clawhub.ai/u/aisadocs",
+          "sampledTotalSkills": 13,
+          "sampledSkillUrls": [
+            "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-web-search-tavily",
+            "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-llm-image-video",
+            "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-llm-router",
+            "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-youtube-search-tracking",
+            "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-finance-equity-crypto-price-market-data-news",
+            "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-llm-image-video-qwen-wan26-gemini-3-pro-image",
+            "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-search-web-academic-tavily",
+            "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-leading-chinese-llm",
+            "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-twitter-post-engage",
+            "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/pred-polymarket",
+            "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/polymarket-arb",
+            "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/perplexity-sonar-search",
+            "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-finance-equity-price-market-data-news"
+          ],
+          "skills": [
+            {
+              "name": "Web Search by Tavily",
+              "url": "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-web-search-tavily",
+              "downloads": 4088,
+              "category": "Information",
+              "likelyApis": [
+                "Search API"
+              ]
+            },
+            {
+              "name": "Images & videos generation with Gemini 3 Pro Image + Qwen Wan 2.6 (video) via one API key",
+              "url": "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-llm-image-video",
+              "downloads": 1690,
+              "category": "AI Generation",
+              "likelyApis": [
+                "Media Generation API"
+              ]
+            },
+            {
+              "name": "Unified LLM Gateway - One API for 70+ AI models. Route to GPT, Claude, Gemini, Qwen, Deepseek, Grok and more",
+              "url": "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-llm-router",
+              "downloads": 1267,
+              "category": "Tools",
+              "likelyApis": [
+                "Unknown"
+              ]
+            },
+            {
+              "name": "Youtube Search and Tracking API",
+              "url": "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-youtube-search-tracking",
+              "downloads": 1259,
+              "category": "Information",
+              "likelyApis": [
+                "Search API",
+                "Social API",
+                "Media Generation API"
+              ]
+            },
+            {
+              "name": "Query real-time and historical financial data across equities and crypto prices, market moves, metrics, and trends for analysis, alerts, and reporting",
+              "url": "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-finance-equity-crypto-price-market-data-news",
+              "downloads": 1080,
+              "category": "Information",
+              "likelyApis": [
+                "Financial API"
+              ]
+            },
+            {
+              "name": "Generate images & videos with: Gemini 3 Pro Image + Qwen Wan 2.6 (video) via one API key",
+              "url": "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-llm-image-video-qwen-wan26-gemini-3-pro-image",
+              "downloads": 1031,
+              "category": "AI Generation",
+              "likelyApis": [
+                "Media Generation API"
+              ]
+            },
+            {
+              "name": "Intelligent search for agents. Multi-source retrieval with confidence scoring - web, academic, and Tavily in one unified API",
+              "url": "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-search-web-academic-tavily",
+              "downloads": 898,
+              "category": "Information",
+              "likelyApis": [
+                "Search API"
+              ]
+            },
+            {
+              "name": "Chines LLM Models (MiniMax 2.5,Kimi 2.5, Qwen, Doubao, DeepSeek) with one key",
+              "url": "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-leading-chinese-llm",
+              "downloads": 628,
+              "category": "Automation",
+              "likelyApis": [
+                "Unknown"
+              ]
+            },
+            {
+              "name": "Twitter/X All-in-One — Search, Monitor & Publish Text & Media Posts",
+              "url": "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-twitter-post-engage",
+              "downloads": 189,
+              "category": "Information",
+              "likelyApis": [
+                "Search API",
+                "Social API"
+              ]
+            },
+            {
+              "name": "Polymarket Data",
+              "url": "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/pred-polymarket",
+              "downloads": 95,
+              "category": "Information",
+              "likelyApis": [
+                "Financial API"
+              ]
+            },
+            {
+              "name": "Polymarket Spread Arbitrage",
+              "url": "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/polymarket-arb",
+              "downloads": 94,
+              "category": "Information",
+              "likelyApis": [
+                "Financial API"
+              ]
+            },
+            {
+              "name": "Perplexity Sonar",
+              "url": "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/perplexity-sonar-search",
+              "downloads": 66,
+              "category": "Information",
+              "likelyApis": [
+                "Search API"
+              ]
+            },
+            {
+              "name": "Query real-time and historical financial data of equity prices, market moves, metrics, and trends for analysis, alerts, and reporting",
+              "url": "https://clawhub.ai/kn72xnry9tr39a40x4awwpzs1n80kvg1/openclaw-aisa-finance-equity-price-market-data-news",
+              "downloads": 26,
+              "category": "Information",
+              "likelyApis": [
+                "Financial API"
+              ]
+            }
+          ],
+          "numberOf5kPlusSkills": 0,
+          "categoryDistribution": {
+            "Information": 9,
+            "AI Generation": 2,
+            "Tools": 1,
+            "Automation": 1
+          },
+          "repetitionScore": 0.09,
+          "apiReuseLikelihood": "Medium",
+          "templateUsage": "Low",
+          "strategyLabel": "Multi-vertical portfolio led by Information",
+          "totalDownloadsInSample": 12411,
+          "topSkillNames": [
+            "Web Search by Tavily",
+            "Images & videos generation with Gemini 3 Pro Image + Qwen Wan 2.6 (video) via one API key",
+            "Unified LLM Gateway - One API for 70+ AI models. Route to GPT, Claude, Gemini, Qwen, Deepseek, Grok and more"
+          ],
+          "authorPageStatus": "sample-derived"
+        },
+        {
+          "author": "aisapay",
+          "profileUrl": "https://clawhub.ai/u/aisapay",
+          "sampledTotalSkills": 6,
+          "sampledSkillUrls": [
+            "https://clawhub.ai/kn72abv2yp91hce9za0j31yycd80jxzv/aisa-twitter-api",
+            "https://clawhub.ai/kn72abv2yp91hce9za0j31yycd80jxzv/aisa-youtube-search",
+            "https://clawhub.ai/kn72abv2yp91hce9za0j31yycd80jxzv/aisa-multi-source-search",
+            "https://clawhub.ai/kn72abv2yp91hce9za0j31yycd80jxzv/aisa-media-gen",
+            "https://clawhub.ai/kn72abv2yp91hce9za0j31yycd80jxzv/financial-data",
+            "https://clawhub.ai/kn72abv2yp91hce9za0j31yycd80jxzv/aisa-financial-data"
+          ],
+          "skills": [
+            {
+              "name": "AIsa Twitter API (Search + Post)",
+              "url": "https://clawhub.ai/kn72abv2yp91hce9za0j31yycd80jxzv/aisa-twitter-api",
+              "downloads": 3151,
+              "category": "Information",
+              "likelyApis": [
+                "Search API",
+                "Social API"
+              ]
+            },
+            {
+              "name": "AIsa Youtube Search",
+              "url": "https://clawhub.ai/kn72abv2yp91hce9za0j31yycd80jxzv/aisa-youtube-search",
+              "downloads": 1756,
+              "category": "Information",
+              "likelyApis": [
+                "Search API",
+                "Social API",
+                "Media Generation API"
+              ]
+            },
+            {
+              "name": "AIsa Multi Source Search",
+              "url": "https://clawhub.ai/kn72abv2yp91hce9za0j31yycd80jxzv/aisa-multi-source-search",
+              "downloads": 1558,
+              "category": "Information",
+              "likelyApis": [
+                "Search API"
+              ]
+            },
+            {
+              "name": "AIsa Media Gen",
+              "url": "https://clawhub.ai/kn72abv2yp91hce9za0j31yycd80jxzv/aisa-media-gen",
+              "downloads": 1555,
+              "category": "AI Generation",
+              "likelyApis": [
+                "Media Generation API"
+              ]
+            },
+            {
+              "name": "Financial Data",
+              "url": "https://clawhub.ai/kn72abv2yp91hce9za0j31yycd80jxzv/financial-data",
+              "downloads": 1393,
+              "category": "Information",
+              "likelyApis": [
+                "Financial API"
+              ]
+            },
+            {
+              "name": "AIsa Financial Data",
+              "url": "https://clawhub.ai/kn72abv2yp91hce9za0j31yycd80jxzv/aisa-financial-data",
+              "downloads": 1283,
+              "category": "Information",
+              "likelyApis": [
+                "Financial API"
+              ]
+            }
+          ],
+          "numberOf5kPlusSkills": 0,
+          "categoryDistribution": {
+            "Information": 5,
+            "AI Generation": 1
+          },
+          "repetitionScore": 0.23,
+          "apiReuseLikelihood": "Medium",
+          "templateUsage": "Low",
+          "strategyLabel": "Focused utility builder in Information",
+          "totalDownloadsInSample": 10696,
+          "topSkillNames": [
+            "AIsa Twitter API (Search + Post)",
+            "AIsa Youtube Search",
+            "AIsa Multi Source Search"
+          ],
+          "authorPageStatus": "sample-derived"
+        },
+        {
+          "author": "chaimengphp",
+          "profileUrl": "https://clawhub.ai/u/chaimengphp",
+          "sampledTotalSkills": 11,
+          "sampledSkillUrls": [
+            "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-twitter-search",
+            "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-media-gen",
+            "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-youtube-search",
+            "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-cn-llm",
+            "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-market-pulse",
+            "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-llm-gateway-route",
+            "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-search",
+            "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/aisaclaw-perplexity-search",
+            "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-prediction-market",
+            "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-prediction-market-arbitrage",
+            "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-twitter"
+          ],
+          "skills": [
+            {
+              "name": "X Twitter Command Center (Search + Post)",
+              "url": "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-twitter-search",
+              "downloads": 1210,
+              "category": "Information",
+              "likelyApis": [
+                "Search API",
+                "Social API"
+              ]
+            },
+            {
+              "name": "Unified API for powerful image and video generation",
+              "url": "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-media-gen",
+              "downloads": 1132,
+              "category": "AI Generation",
+              "likelyApis": [
+                "Media Generation API"
+              ]
+            },
+            {
+              "name": "YouTube SERP Scout (Rank + Discover)",
+              "url": "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-youtube-search",
+              "downloads": 1026,
+              "category": "Information",
+              "likelyApis": [
+                "Search API",
+                "Social API",
+                "Media Generation API"
+              ]
+            },
+            {
+              "name": "One API key for Chinese AI models. Route to Qwen, Deepseek",
+              "url": "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-cn-llm",
+              "downloads": 981,
+              "category": "Tools",
+              "likelyApis": [
+                "Unknown"
+              ]
+            },
+            {
+              "name": "MarketPulse (Stocks + Crypto Data)",
+              "url": "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-market-pulse",
+              "downloads": 963,
+              "category": "Information",
+              "likelyApis": [
+                "Financial API"
+              ]
+            },
+            {
+              "name": "One API key for 70+ AI models. Route to GPT, Claude, Gemini, Grok and more",
+              "url": "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-llm-gateway-route",
+              "downloads": 838,
+              "category": "Tools",
+              "likelyApis": [
+                "Unknown"
+              ]
+            },
+            {
+              "name": "Verified Research Engine (Web + Academic + Confidence Score)",
+              "url": "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-search",
+              "downloads": 792,
+              "category": "Information",
+              "likelyApis": [
+                "Search API"
+              ]
+            },
+            {
+              "name": "Perplexity Sonar Search",
+              "url": "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/aisaclaw-perplexity-search",
+              "downloads": 190,
+              "category": "Information",
+              "likelyApis": [
+                "Search API"
+              ]
+            },
+            {
+              "name": "Prediction markets data - Polymarket, Kalshi markets, prices, positions, and trades",
+              "url": "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-prediction-market",
+              "downloads": 95,
+              "category": "Information",
+              "likelyApis": [
+                "Financial API"
+              ]
+            },
+            {
+              "name": "Find and analyze arbitrage opportunities across prediction markets like Polymarket and Kalshi",
+              "url": "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-prediction-market-arbitrage",
+              "downloads": 57,
+              "category": "Information",
+              "likelyApis": [
+                "Financial API"
+              ]
+            },
+            {
+              "name": "X Twitter Command Center (Search + Post + Interact)",
+              "url": "https://clawhub.ai/kn78gmwngrm7wzprfdf96g59rx80wnrt/openclaw-aisa-twitter",
+              "downloads": 53,
+              "category": "Information",
+              "likelyApis": [
+                "Search API",
+                "Social API"
+              ]
+            }
+          ],
+          "numberOf5kPlusSkills": 0,
+          "categoryDistribution": {
+            "Information": 8,
+            "AI Generation": 1,
+            "Tools": 2
+          },
+          "repetitionScore": 0.08,
+          "apiReuseLikelihood": "Medium",
+          "templateUsage": "Low",
+          "strategyLabel": "Multi-vertical portfolio led by Information",
+          "totalDownloadsInSample": 7337,
+          "topSkillNames": [
+            "X Twitter Command Center (Search + Post)",
+            "Unified API for powerful image and video generation",
+            "YouTube SERP Scout (Rank + Discover)"
+          ],
+          "authorPageStatus": "sample-derived"
+        },
+        {
+          "author": "bibaofeng",
+          "profileUrl": "https://clawhub.ai/u/bibaofeng",
+          "sampledTotalSkills": 14,
+          "sampledSkillUrls": [
+            "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/prediction-market-data-zh",
+            "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/last30days-aisa-zh",
+            "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/prediction-market-arbitrage-zh",
+            "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/prediction-market-arbitrage-api",
+            "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/prediction-market-data",
+            "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/last30days-aisa",
+            "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/youtube-search-aisa",
+            "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/youtube-aisa",
+            "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/twitter-aisa",
+            "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/twitter-aisa-api",
+            "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/twitter-post-aisa",
+            "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/x-intelligence-automation-aisa",
+            "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/aisa-twitter",
+            "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/openclaw-aisa-youtube-aisa"
+          ],
+          "skills": [
+            {
+              "name": "预测市场数据",
+              "url": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/prediction-market-data-zh",
+              "downloads": 75,
+              "category": "Information",
+              "likelyApis": [
+                "Financial API"
+              ]
+            },
+            {
+              "name": "last30days",
+              "url": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/last30days-aisa-zh",
+              "downloads": 68,
+              "category": "Information",
+              "likelyApis": [
+                "Financial API",
+                "Search API",
+                "Social API"
+              ]
+            },
+            {
+              "name": "预测市场套利",
+              "url": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/prediction-market-arbitrage-zh",
+              "downloads": 66,
+              "category": "Information",
+              "likelyApis": [
+                "Financial API"
+              ]
+            },
+            {
+              "name": "Prediction Market Arbitrage Api",
+              "url": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/prediction-market-arbitrage-api",
+              "downloads": 64,
+              "category": "Information",
+              "likelyApis": [
+                "Financial API"
+              ]
+            },
+            {
+              "name": "Prediction Market Data",
+              "url": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/prediction-market-data",
+              "downloads": 61,
+              "category": "Information",
+              "likelyApis": [
+                "Financial API"
+              ]
+            },
+            {
+              "name": "last30days",
+              "url": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/last30days-aisa",
+              "downloads": 57,
+              "category": "Information",
+              "likelyApis": [
+                "Financial API",
+                "Search API",
+                "Social API"
+              ]
+            },
+            {
+              "name": "youtube-search-aisa",
+              "url": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/youtube-search-aisa",
+              "downloads": 54,
+              "category": "Information",
+              "likelyApis": [
+                "Search API",
+                "Social API",
+                "Media Generation API"
+              ]
+            },
+            {
+              "name": "youtube-aisa",
+              "url": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/youtube-aisa",
+              "downloads": 47,
+              "category": "Information",
+              "likelyApis": [
+                "Search API",
+                "Social API",
+                "Media Generation API"
+              ]
+            },
+            {
+              "name": "twitter-aisa",
+              "url": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/twitter-aisa",
+              "downloads": 45,
+              "category": "Information",
+              "likelyApis": [
+                "Search API",
+                "Social API"
+              ]
+            },
+            {
+              "name": "twitter-aisa-api",
+              "url": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/twitter-aisa-api",
+              "downloads": 38,
+              "category": "Information",
+              "likelyApis": [
+                "Search API",
+                "Social API"
+              ]
+            },
+            {
+              "name": "twitter-post-aisa",
+              "url": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/twitter-post-aisa",
+              "downloads": 36,
+              "category": "Information",
+              "likelyApis": [
+                "Search API",
+                "Social API"
+              ]
+            },
+            {
+              "name": "x-intelligence-automation-aisa",
+              "url": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/x-intelligence-automation-aisa",
+              "downloads": 22,
+              "category": "Information",
+              "likelyApis": [
+                "Search API",
+                "Social API"
+              ]
+            },
+            {
+              "name": "aisa-twitter",
+              "url": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/aisa-twitter",
+              "downloads": 20,
+              "category": "Information",
+              "likelyApis": [
+                "Search API",
+                "Social API"
+              ]
+            },
+            {
+              "name": "openclaw-aisa-youtube-aisa",
+              "url": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/openclaw-aisa-youtube-aisa",
+              "downloads": 20,
+              "category": "Information",
+              "likelyApis": [
+                "Search API",
+                "Social API",
+                "Media Generation API"
+              ]
+            }
+          ],
+          "numberOf5kPlusSkills": 0,
+          "categoryDistribution": {
+            "Information": 14
+          },
+          "repetitionScore": 0.22,
+          "apiReuseLikelihood": "High",
+          "templateUsage": "Medium",
+          "strategyLabel": "Focused utility builder in Information",
+          "totalDownloadsInSample": 673,
+          "topSkillNames": [
+            "预测市场数据",
+            "last30days",
+            "预测市场套利"
+          ],
+          "authorPageStatus": "sample-derived"
+        }
+      ],
+      "authorPatterns": [
+        "Winning authors usually compound around one reusable capability, then branch into adjacent use cases instead of starting from scratch each time.",
+        "High-performing portfolios often mix one broad traffic driver with several narrower utility wrappers that reuse the same trust and install base.",
+        "Authors with repeated naming patterns and shared API families look the most like scalable skill producers rather than one-off creators."
+      ]
+    },
+    "document3": {
+      "title": "Skill Factory Playbook",
+      "productionSystem": [
+        "Choose one high-demand API or runtime and create a small family of skills around search, read, generate, monitor, and automate jobs.",
+        "Use titles that make the value legible in under 5 words, then let the description clarify exact jobs-to-be-done with 'Use when' phrasing.",
+        "Keep inputs narrow, outputs concrete, and time-to-first-value short enough that users can validate the skill in one prompt.",
+        "Ship variations from a shared template: same core wrapper, different vertical framing, example prompts, and monetization hooks.",
+        "Prioritize discoverability with plain-English nouns, recognizable brand names, and keywords that match user intent rather than internal implementation terms."
+      ],
+      "templates": [
+        {
+          "name": "Search Wrapper",
+          "bestFor": "news, docs, web, YouTube, finance",
+          "structure": "single query -> ranked results -> optional deep mode"
+        },
+        {
+          "name": "Control Panel",
+          "bestFor": "Slack, GitHub, Notion, browser, desktop",
+          "structure": "authenticate -> inspect -> act -> confirm"
+        },
+        {
+          "name": "Generator",
+          "bestFor": "images, videos, translation, summaries",
+          "structure": "minimal prompt -> preset options -> premium quality upgrade"
+        },
+        {
+          "name": "Monitor + Alert",
+          "bestFor": "weather, markets, social mentions",
+          "structure": "watch target -> threshold/trigger -> notification or follow-up action"
+        }
+      ],
+      "namingPatterns": [
+        "Brand + job: 'Tavily Search', 'Brave Search', 'Github'.",
+        "Outcome + modality: 'News Summary', 'Browser Automation'.",
+        "Immediate utility noun: 'Weather', 'Slack', 'Notion'."
+      ]
+    },
+    "document4": {
+      "title": "AIsa Monetization Strategy",
+      "replaceableApis": [
+        {
+          "apiFamily": "Search API",
+          "skillCount": 30,
+          "whyItMatters": "Strong candidate for AIsa packaging because multiple top skills appear to wrap the same external capability."
+        },
+        {
+          "apiFamily": "Social API",
+          "skillCount": 22,
+          "whyItMatters": "Strong candidate for AIsa packaging because multiple top skills appear to wrap the same external capability."
+        },
+        {
+          "apiFamily": "Financial API",
+          "skillCount": 18,
+          "whyItMatters": "Strong candidate for AIsa packaging because multiple top skills appear to wrap the same external capability."
+        },
+        {
+          "apiFamily": "Media Generation API",
+          "skillCount": 13,
+          "whyItMatters": "Strong candidate for AIsa packaging because multiple top skills appear to wrap the same external capability."
+        },
+        {
+          "apiFamily": "Unknown",
+          "skillCount": 7,
+          "whyItMatters": "Unclear dependency, but still useful as a template baseline."
+        }
+      ],
+      "freeVsPaidByCategory": [
+        {
+          "category": "Information",
+          "freeTier": "Basic lookup, small result sets, cached responses.",
+          "paidTier": "Fresh data, richer filters, alerts, historical depth, batch enrichment."
+        },
+        {
+          "category": "AI Generation",
+          "freeTier": "Low-res output or short text transforms.",
+          "paidTier": "Premium models, higher throughput, branded presets, multi-step workflows."
+        },
+        {
+          "category": "Tools",
+          "freeTier": "Single-file or single-task utility access.",
+          "paidTier": "Automation bundles, audit logs, team controls, higher concurrency."
+        },
+        {
+          "category": "Automation",
+          "freeTier": "Simple triggers and one-shot actions.",
+          "paidTier": "Scheduled runs, multi-step orchestration, webhooks, analytics, retries."
+        }
+      ],
+      "top10Rebuilds": [
+        {
+          "skill": "Web Search by Tavily",
+          "author": "aisadocs",
+          "category": "Information",
+          "rationale": "High visibility in top downloads and a clean fit for Search API.",
+          "aisaAngle": "Sell better freshness, rate limits, and reusable API credits."
+        },
+        {
+          "skill": "X/Twitter Automation: 30+ APIs, OAuth Post, One Key",
+          "author": "0xjordansg-yolo",
+          "category": "Information",
+          "rationale": "High visibility in top downloads and a clean fit for Search API, Social API.",
+          "aisaAngle": "Sell better freshness, rate limits, and reusable API credits."
+        },
+        {
+          "skill": "AIsa Twitter API (Search + Post)",
+          "author": "aisapay",
+          "category": "Information",
+          "rationale": "High visibility in top downloads and a clean fit for Search API, Social API.",
+          "aisaAngle": "Sell better freshness, rate limits, and reusable API credits."
+        },
+        {
+          "skill": "Generate images & videos with: Gemini 3 Pro Image (image) + Qwen Wan 2.6 (video) via one API key",
+          "author": "0xjordansg-yolo",
+          "category": "AI Generation",
+          "rationale": "High visibility in top downloads and a clean fit for Media Generation API.",
+          "aisaAngle": "Sell better freshness, rate limits, and reusable API credits."
+        },
+        {
+          "skill": "AIsa Youtube Search",
+          "author": "aisapay",
+          "category": "Information",
+          "rationale": "High visibility in top downloads and a clean fit for Search API, Social API.",
+          "aisaAngle": "Sell better freshness, rate limits, and reusable API credits."
+        },
+        {
+          "skill": "Images & videos generation with Gemini 3 Pro Image + Qwen Wan 2.6 (video) via one API key",
+          "author": "aisadocs",
+          "category": "AI Generation",
+          "rationale": "High visibility in top downloads and a clean fit for Media Generation API.",
+          "aisaAngle": "Sell better freshness, rate limits, and reusable API credits."
+        },
+        {
+          "skill": "AIsa Multi Source Search",
+          "author": "aisapay",
+          "category": "Information",
+          "rationale": "High visibility in top downloads and a clean fit for Search API.",
+          "aisaAngle": "Sell better freshness, rate limits, and reusable API credits."
+        },
+        {
+          "skill": "AIsa Media Gen",
+          "author": "aisapay",
+          "category": "AI Generation",
+          "rationale": "High visibility in top downloads and a clean fit for Media Generation API.",
+          "aisaAngle": "Sell better freshness, rate limits, and reusable API credits."
+        },
+        {
+          "skill": "Query real-time and historical financial data across equities and crypto prices",
+          "author": "0xjordansg-yolo",
+          "category": "Information",
+          "rationale": "High visibility in top downloads and a clean fit for Financial API.",
+          "aisaAngle": "Bundle as a low-friction template that upgrades into paid orchestration."
+        },
+        {
+          "skill": "YouTube SERP Scout for agents. Search top-ranking videos, channels, and trends for content research and competitor tracking",
+          "author": "0xjordansg-yolo",
+          "category": "Information",
+          "rationale": "High visibility in top downloads and a clean fit for Search API, Social API.",
+          "aisaAngle": "Sell better freshness, rate limits, and reusable API credits."
+        }
+      ],
+      "skillFactorySystemDesign": [
+        "Layer 1: shared auth, billing, telemetry, and retry middleware for every AIsa-backed skill.",
+        "Layer 2: category-specific adapters such as weather, finance, search, social, and generation endpoints.",
+        "Layer 3: reusable prompt-friendly skill templates that only swap branding, examples, and endpoint config.",
+        "Layer 4: analytics loop that tracks installs, retention, conversion triggers, and high-performing naming patterns."
+      ],
+      "apiMonetizationFunnel": [
+        "Free discovery skills drive adoption with limited requests, cached data, or lower-quality outputs.",
+        "Pro plans unlock freshness, larger result sets, premium models, scheduled jobs, and higher rate limits.",
+        "Team plans add audit logs, shared credits, workspace governance, and white-label templates."
+      ],
+      "roadmap": [
+        "Start with search, weather, and finance because they are common, legible, and easy to turn into usage-based APIs.",
+        "Add social and productivity connectors next, since top skills show strong demand for actionable workflows, not just read-only data.",
+        "Use the best-performing wrappers as templates for a semi-automated skill factory that can launch new verticals quickly."
+      ]
+    }
+  }
+}

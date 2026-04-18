@@ -34,6 +34,7 @@
     ],
     "buildEntryPoints": [
       "scripts/generate-aisa-api-analysis.py",
+      "scripts/generate-clawhub-growth-report.py",
       "scripts/convert-github-skills-to-clawhub.py",
       "scripts/build-source-optimized-packages.mjs",
       "scripts/build-source-optimized-zh.mjs",
@@ -93,15 +94,18 @@
       "purpose": "Render the generated catalog, archive-level AISA API analysis, and optimized package index as a searchable static site.",
       "keyFiles": [
         "src/App.tsx",
+        "src/clawhub-growth/App.tsx",
         "src/types.ts",
         "src/styles.css",
         "vite.config.ts",
-        "index.html"
+        "index.html",
+        "clawhub-growth.html"
       ],
       "inputs": [
         "public/data/catalog.json",
         "public/data/aisa-api-analysis.json",
-        "public/data/optimized-packages.json"
+        "public/data/optimized-packages.json",
+        "public/data/clawhub-growth-report.json"
       ],
       "outputs": [
         "dist/"
@@ -113,7 +117,8 @@
         "ClawHub catalog fallback view",
         "GitHub skill archive visibility",
         "suspicious package highlighting",
-        "optimized bundle download links"
+        "optimized bundle download links",
+        "standalone ClawHub growth strategy page"
       ]
     },
     {

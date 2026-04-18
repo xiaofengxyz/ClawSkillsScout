@@ -56,6 +56,7 @@
 - 产出 `public/data/aisa-api-analysis.json`
 - 前端读取 `catalog.json` 和 `optimized-packages.json`
 - 前端也读取 `aisa-api-analysis.json`，展示“接口列表 / 技能列表 / ClawHub 目录”三视图
+- 另有独立的 ClawHub 增长分析页，读取 `public/data/clawhub-growth-report.json` 输出 4 份商业分析文档
 - 用 Vite + React 构建静态页面
 - 发布到 GitHub Pages 或服务器目录
 
@@ -87,8 +88,9 @@
 - 已有扫描 `public/downloads/clawHub/` 与 `public/downloads/github/` 全部归档、提取 AISA 接口并生成分析数据的脚本：[scripts/generate-aisa-api-analysis.py](/mnt/d/workplace/skillGet/scripts/generate-aisa-api-analysis.py)
 - 已有推荐的一键分析流水线：`npm run pipeline:aisa-analysis`
 - 已有静态站前端：[src/App.tsx](/mnt/d/workplace/skillGet/src/App.tsx)
+- 已有独立增长分析页入口：`clawhub-growth.html` + `src/clawhub-growth/*`
 - 已有构建结果目录：`dist/`
-- 已有公开数据目录：`public/data/catalog.json`、`public/data/aisa-api-analysis.json`
+- 已有公开数据目录：`public/data/catalog.json`、`public/data/aisa-api-analysis.json`、`public/data/clawhub-growth-report.json`
 - 已有 GitHub Pages / 服务器部署说明：[docs/DEPLOYMENT.md](/mnt/d/workplace/skillGet/docs/DEPLOYMENT.md)
 
 ### 已完成的优化打包流水线
@@ -143,6 +145,7 @@
 关键文件：
 
 - [src/App.tsx](/mnt/d/workplace/skillGet/src/App.tsx)
+- `src/clawhub-growth/App.tsx`
 - [src/types.ts](/mnt/d/workplace/skillGet/src/types.ts)
 - `src/styles.css`
 - `vite.config.ts`
@@ -156,6 +159,7 @@
 - 以接口为主汇总 AISA API 使用情况
 - 以技能为主汇总来源、接口与同接口分组
 - 在页面中同时展示 ClawHub 与 GitHub 归档技能
+- 以独立页面输出 ClawHub 热门技能/作者/变现机会分析
 
 ### 子系统 C：可疑包优化与再发布
 

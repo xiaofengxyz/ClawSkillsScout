@@ -33,6 +33,7 @@ Project-level context docs do not need to be updated after every task. Only upda
   - probable AISA API usage
 - Analyze AISA API usage from all archives in `public/downloads/`
 - Generate a static dashboard in `dist/` with interface and skill search views
+- Generate a standalone ClawHub growth strategy page from `public/data/clawhub-growth-report.json`
 - Deploy daily through GitHub Actions
 - Package GitHub-hosted skill directories from tracked owner accounts into `public/downloads/github/`
 
@@ -44,6 +45,7 @@ npm run scrape
 npm run download:clawhub-account-skills
 npm run download:github-account-skills
 npm run analyze:aisa
+npm run analyze:clawhub-growth
 npm run dev
 ```
 
@@ -68,6 +70,7 @@ npm run build
 ```
 
 `build` now runs `scrape` + `analyze:aisa` before `vite build`, so the GitHub Pages site includes the latest interface table, skill table, and GitHub skill archive analysis.
+`analyze:clawhub-growth` builds the separate business-analysis dataset consumed by `clawhub-growth.html`.
 
 ## Deployment
 

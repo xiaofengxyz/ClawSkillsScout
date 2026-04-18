@@ -676,6 +676,14 @@ export default function App() {
             </a>
             文档展示接口覆盖与技能实现分组。
           </p>
+          <div className="hero-link-row">
+            <a className="hero-link-button hero-link-button-primary" href={`${import.meta.env.BASE_URL}clawhub-growth.html`}>
+              打开 ClawHub 商业分析页
+            </a>
+            <a className="hero-link-button" href={`${import.meta.env.BASE_URL}data/clawhub-growth-report.json`} target="_blank" rel="noreferrer">
+              查看分析数据
+            </a>
+          </div>
           <div className="hero-meta">
             <span>Updated {format(new Date(analysis.generatedAt), 'yyyy-MM-dd HH:mm')}</span>
             <span>{analysis.summary.totalInterfaces} interfaces</span>
@@ -742,6 +750,9 @@ export default function App() {
         <div className="note">
           当前接口统计为 {analysis.summary.implementedInterfaces} 已实现 + {analysis.summary.inferredImplementedInterfaces} 推断实现 +{' '}
           {analysis.summary.documentedOnlyInterfaces} 仅文档声明 = {analysis.summary.totalInterfaces} 总接口。
+        </div>
+        <div className="note">
+          “推断实现”表示当前没有抓到这条接口的完全同路径代码，但已经抓到它的子路径、父路径或同族通用路径实现，因此页面把它标记为大概率已被代码覆盖。
         </div>
         <div className="note">“仅文档声明”表示当前只在 SKILL/README 中识别到接口；“推断实现”表示代码里命中了它的子路径、动态路径或通用路径。</div>
       </section>
