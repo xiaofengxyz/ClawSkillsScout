@@ -1,0 +1,341 @@
+{
+  "generatedAt": "2026-04-17T10:23:50.186304Z",
+  "generatedFrom": "public/downloads/github/index.json",
+  "total": 30,
+  "languages": [
+    "en",
+    "zh"
+  ],
+  "items": [
+    {
+      "owner": "0xjordansg-yolo",
+      "sourceRepo": "Twitter-Skills-Hermes-Agent",
+      "language": "en",
+      "slug": "twitter-autopilot",
+      "title": "Twitter Autopilot",
+      "githubUrl": "https://github.com/0xjordansg-yolo/Twitter-Skills-Hermes-Agent",
+      "convertedFrom": "public/downloads/github/0xjordansg-yolo/Twitter-Skills-Hermes-Agent.tar.gz",
+      "file": "public/downloads/clawHub-github/0xjordansg-yolo/twitter-autopilot.zip",
+      "bytes": 16187
+    },
+    {
+      "owner": "0xjordansg-yolo",
+      "sourceRepo": "Twitter-Skills-Hermes-Agent",
+      "language": "zh",
+      "slug": "twitter-autopilot-zh",
+      "title": "Twitter 自动化助手",
+      "githubUrl": "https://github.com/0xjordansg-yolo/Twitter-Skills-Hermes-Agent",
+      "convertedFrom": "public/downloads/github/0xjordansg-yolo/Twitter-Skills-Hermes-Agent.tar.gz",
+      "file": "public/downloads/clawHub-github/0xjordansg-yolo/twitter-autopilot-zh.zip",
+      "bytes": 16349
+    },
+    {
+      "owner": "0xjordansg-yolo",
+      "sourceRepo": "aisa-multi-search-engine",
+      "language": "en",
+      "slug": "aisa-multi-search-engine",
+      "title": "AISA Multi Search Engine",
+      "githubUrl": "https://github.com/0xjordansg-yolo/aisa-multi-search-engine",
+      "convertedFrom": "public/downloads/github/0xjordansg-yolo/aisa-multi-search-engine.tar.gz",
+      "file": "public/downloads/clawHub-github/0xjordansg-yolo/aisa-multi-search-engine.zip",
+      "bytes": 5545
+    },
+    {
+      "owner": "0xjordansg-yolo",
+      "sourceRepo": "aisa-multi-search-engine",
+      "language": "zh",
+      "slug": "aisa-multi-search-engine-zh",
+      "title": "AISA 多源搜索引擎",
+      "githubUrl": "https://github.com/0xjordansg-yolo/aisa-multi-search-engine",
+      "convertedFrom": "public/downloads/github/0xjordansg-yolo/aisa-multi-search-engine.tar.gz",
+      "file": "public/downloads/clawHub-github/0xjordansg-yolo/aisa-multi-search-engine-zh.zip",
+      "bytes": 5688
+    },
+    {
+      "owner": "0xjordansg-yolo",
+      "sourceRepo": "aisa-multi-search-engine-claude",
+      "language": "en",
+      "slug": "multi-search",
+      "title": "Multi Search",
+      "githubUrl": "https://github.com/0xjordansg-yolo/aisa-multi-search-engine-claude",
+      "convertedFrom": "public/downloads/github/0xjordansg-yolo/aisa-multi-search-engine-claude-skills-multi-search.tar.gz",
+      "file": "public/downloads/clawHub-github/0xjordansg-yolo/multi-search.zip",
+      "bytes": 4732
+    },
+    {
+      "owner": "0xjordansg-yolo",
+      "sourceRepo": "aisa-multi-search-engine-claude",
+      "language": "zh",
+      "slug": "multi-search-zh",
+      "title": "多源综合搜索",
+      "githubUrl": "https://github.com/0xjordansg-yolo/aisa-multi-search-engine-claude",
+      "convertedFrom": "public/downloads/github/0xjordansg-yolo/aisa-multi-search-engine-claude-skills-multi-search.tar.gz",
+      "file": "public/downloads/clawHub-github/0xjordansg-yolo/multi-search-zh.zip",
+      "bytes": 4884
+    },
+    {
+      "owner": "0xjordansg-yolo",
+      "sourceRepo": "aisa-multi-search-engine-claude",
+      "language": "en",
+      "slug": "perplexity-research",
+      "title": "Perplexity Research",
+      "githubUrl": "https://github.com/0xjordansg-yolo/aisa-multi-search-engine-claude",
+      "convertedFrom": "public/downloads/github/0xjordansg-yolo/aisa-multi-search-engine-claude-skills-perplexity-research.tar.gz",
+      "file": "public/downloads/clawHub-github/0xjordansg-yolo/perplexity-research.zip",
+      "bytes": 4737
+    },
+    {
+      "owner": "0xjordansg-yolo",
+      "sourceRepo": "aisa-multi-search-engine-claude",
+      "language": "zh",
+      "slug": "perplexity-research-zh",
+      "title": "Perplexity 深度研究",
+      "githubUrl": "https://github.com/0xjordansg-yolo/aisa-multi-search-engine-claude",
+      "convertedFrom": "public/downloads/github/0xjordansg-yolo/aisa-multi-search-engine-claude-skills-perplexity-research.tar.gz",
+      "file": "public/downloads/clawHub-github/0xjordansg-yolo/perplexity-research-zh.zip",
+      "bytes": 4860
+    },
+    {
+      "owner": "0xjordansg-yolo",
+      "sourceRepo": "aisa-multi-search-engine-claude",
+      "language": "en",
+      "slug": "scholar-search",
+      "title": "Scholar Search",
+      "githubUrl": "https://github.com/0xjordansg-yolo/aisa-multi-search-engine-claude",
+      "convertedFrom": "public/downloads/github/0xjordansg-yolo/aisa-multi-search-engine-claude-skills-scholar-search.tar.gz",
+      "file": "public/downloads/clawHub-github/0xjordansg-yolo/scholar-search.zip",
+      "bytes": 4697
+    },
+    {
+      "owner": "0xjordansg-yolo",
+      "sourceRepo": "aisa-multi-search-engine-claude",
+      "language": "zh",
+      "slug": "scholar-search-zh",
+      "title": "学术论文搜索",
+      "githubUrl": "https://github.com/0xjordansg-yolo/aisa-multi-search-engine-claude",
+      "convertedFrom": "public/downloads/github/0xjordansg-yolo/aisa-multi-search-engine-claude-skills-scholar-search.tar.gz",
+      "file": "public/downloads/clawHub-github/0xjordansg-yolo/scholar-search-zh.zip",
+      "bytes": 4833
+    },
+    {
+      "owner": "0xjordansg-yolo",
+      "sourceRepo": "aisa-multi-search-engine-claude",
+      "language": "en",
+      "slug": "smart-search",
+      "title": "Smart Search",
+      "githubUrl": "https://github.com/0xjordansg-yolo/aisa-multi-search-engine-claude",
+      "convertedFrom": "public/downloads/github/0xjordansg-yolo/aisa-multi-search-engine-claude-skills-smart-search.tar.gz",
+      "file": "public/downloads/clawHub-github/0xjordansg-yolo/smart-search.zip",
+      "bytes": 4701
+    },
+    {
+      "owner": "0xjordansg-yolo",
+      "sourceRepo": "aisa-multi-search-engine-claude",
+      "language": "zh",
+      "slug": "smart-search-zh",
+      "title": "智能混合搜索",
+      "githubUrl": "https://github.com/0xjordansg-yolo/aisa-multi-search-engine-claude",
+      "convertedFrom": "public/downloads/github/0xjordansg-yolo/aisa-multi-search-engine-claude-skills-smart-search.tar.gz",
+      "file": "public/downloads/clawHub-github/0xjordansg-yolo/smart-search-zh.zip",
+      "bytes": 4854
+    },
+    {
+      "owner": "0xjordansg-yolo",
+      "sourceRepo": "aisa-multi-search-engine-claude",
+      "language": "en",
+      "slug": "tavily-extract",
+      "title": "Tavily Extract",
+      "githubUrl": "https://github.com/0xjordansg-yolo/aisa-multi-search-engine-claude",
+      "convertedFrom": "public/downloads/github/0xjordansg-yolo/aisa-multi-search-engine-claude-skills-tavily-extract.tar.gz",
+      "file": "public/downloads/clawHub-github/0xjordansg-yolo/tavily-extract.zip",
+      "bytes": 4725
+    },
+    {
+      "owner": "0xjordansg-yolo",
+      "sourceRepo": "aisa-multi-search-engine-claude",
+      "language": "zh",
+      "slug": "tavily-extract-zh",
+      "title": "Tavily 页面抽取",
+      "githubUrl": "https://github.com/0xjordansg-yolo/aisa-multi-search-engine-claude",
+      "convertedFrom": "public/downloads/github/0xjordansg-yolo/aisa-multi-search-engine-claude-skills-tavily-extract.tar.gz",
+      "file": "public/downloads/clawHub-github/0xjordansg-yolo/tavily-extract-zh.zip",
+      "bytes": 4846
+    },
+    {
+      "owner": "0xjordansg-yolo",
+      "sourceRepo": "aisa-multi-search-engine-claude",
+      "language": "en",
+      "slug": "tavily-search",
+      "title": "Tavily Search",
+      "githubUrl": "https://github.com/0xjordansg-yolo/aisa-multi-search-engine-claude",
+      "convertedFrom": "public/downloads/github/0xjordansg-yolo/aisa-multi-search-engine-claude-skills-tavily-search.tar.gz",
+      "file": "public/downloads/clawHub-github/0xjordansg-yolo/tavily-search.zip",
+      "bytes": 4688
+    },
+    {
+      "owner": "0xjordansg-yolo",
+      "sourceRepo": "aisa-multi-search-engine-claude",
+      "language": "zh",
+      "slug": "tavily-search-zh",
+      "title": "Tavily 网页搜索",
+      "githubUrl": "https://github.com/0xjordansg-yolo/aisa-multi-search-engine-claude",
+      "convertedFrom": "public/downloads/github/0xjordansg-yolo/aisa-multi-search-engine-claude-skills-tavily-search.tar.gz",
+      "file": "public/downloads/clawHub-github/0xjordansg-yolo/tavily-search-zh.zip",
+      "bytes": 4840
+    },
+    {
+      "owner": "0xjordansg-yolo",
+      "sourceRepo": "aisa-multi-search-engine-claude",
+      "language": "en",
+      "slug": "web-search",
+      "title": "Web Search",
+      "githubUrl": "https://github.com/0xjordansg-yolo/aisa-multi-search-engine-claude",
+      "convertedFrom": "public/downloads/github/0xjordansg-yolo/aisa-multi-search-engine-claude-skills-web-search.tar.gz",
+      "file": "public/downloads/clawHub-github/0xjordansg-yolo/web-search.zip",
+      "bytes": 4719
+    },
+    {
+      "owner": "0xjordansg-yolo",
+      "sourceRepo": "aisa-multi-search-engine-claude",
+      "language": "zh",
+      "slug": "web-search-zh",
+      "title": "网页搜索",
+      "githubUrl": "https://github.com/0xjordansg-yolo/aisa-multi-search-engine-claude",
+      "convertedFrom": "public/downloads/github/0xjordansg-yolo/aisa-multi-search-engine-claude-skills-web-search.tar.gz",
+      "file": "public/downloads/clawHub-github/0xjordansg-yolo/web-search-zh.zip",
+      "bytes": 4846
+    },
+    {
+      "owner": "0xjordansg-yolo",
+      "sourceRepo": "stock-analysis-aisa-claude",
+      "language": "en",
+      "slug": "stock-analysis",
+      "title": "Stock Analysis",
+      "githubUrl": "https://github.com/0xjordansg-yolo/stock-analysis-aisa-claude",
+      "convertedFrom": "public/downloads/github/0xjordansg-yolo/stock-analysis-aisa-claude-skills-stock-analysis.tar.gz",
+      "file": "public/downloads/clawHub-github/0xjordansg-yolo/stock-analysis.zip",
+      "bytes": 4350
+    },
+    {
+      "owner": "0xjordansg-yolo",
+      "sourceRepo": "stock-analysis-aisa-claude",
+      "language": "zh",
+      "slug": "stock-analysis-zh",
+      "title": "股票与加密分析",
+      "githubUrl": "https://github.com/0xjordansg-yolo/stock-analysis-aisa-claude",
+      "convertedFrom": "public/downloads/github/0xjordansg-yolo/stock-analysis-aisa-claude-skills-stock-analysis.tar.gz",
+      "file": "public/downloads/clawHub-github/0xjordansg-yolo/stock-analysis-zh.zip",
+      "bytes": 4501
+    },
+    {
+      "owner": "0xjordansg-yolo",
+      "sourceRepo": "stock-analysis-aisa-claude",
+      "language": "en",
+      "slug": "stock-dividend",
+      "title": "Dividend Analysis",
+      "githubUrl": "https://github.com/0xjordansg-yolo/stock-analysis-aisa-claude",
+      "convertedFrom": "public/downloads/github/0xjordansg-yolo/stock-analysis-aisa-claude-skills-stock-dividend.tar.gz",
+      "file": "public/downloads/clawHub-github/0xjordansg-yolo/stock-dividend.zip",
+      "bytes": 3729
+    },
+    {
+      "owner": "0xjordansg-yolo",
+      "sourceRepo": "stock-analysis-aisa-claude",
+      "language": "zh",
+      "slug": "stock-dividend-zh",
+      "title": "股息分析",
+      "githubUrl": "https://github.com/0xjordansg-yolo/stock-analysis-aisa-claude",
+      "convertedFrom": "public/downloads/github/0xjordansg-yolo/stock-analysis-aisa-claude-skills-stock-dividend.tar.gz",
+      "file": "public/downloads/clawHub-github/0xjordansg-yolo/stock-dividend-zh.zip",
+      "bytes": 3873
+    },
+    {
+      "owner": "0xjordansg-yolo",
+      "sourceRepo": "stock-analysis-aisa-claude",
+      "language": "en",
+      "slug": "stock-hot",
+      "title": "Hot Scanner",
+      "githubUrl": "https://github.com/0xjordansg-yolo/stock-analysis-aisa-claude",
+      "convertedFrom": "public/downloads/github/0xjordansg-yolo/stock-analysis-aisa-claude-skills-stock-hot.tar.gz",
+      "file": "public/downloads/clawHub-github/0xjordansg-yolo/stock-hot.zip",
+      "bytes": 3746
+    },
+    {
+      "owner": "0xjordansg-yolo",
+      "sourceRepo": "stock-analysis-aisa-claude",
+      "language": "zh",
+      "slug": "stock-hot-zh",
+      "title": "热门标的扫描",
+      "githubUrl": "https://github.com/0xjordansg-yolo/stock-analysis-aisa-claude",
+      "convertedFrom": "public/downloads/github/0xjordansg-yolo/stock-analysis-aisa-claude-skills-stock-hot.tar.gz",
+      "file": "public/downloads/clawHub-github/0xjordansg-yolo/stock-hot-zh.zip",
+      "bytes": 3919
+    },
+    {
+      "owner": "0xjordansg-yolo",
+      "sourceRepo": "stock-analysis-aisa-claude",
+      "language": "en",
+      "slug": "stock-portfolio",
+      "title": "Portfolio Management",
+      "githubUrl": "https://github.com/0xjordansg-yolo/stock-analysis-aisa-claude",
+      "convertedFrom": "public/downloads/github/0xjordansg-yolo/stock-analysis-aisa-claude-skills-stock-portfolio.tar.gz",
+      "file": "public/downloads/clawHub-github/0xjordansg-yolo/stock-portfolio.zip",
+      "bytes": 4564
+    },
+    {
+      "owner": "0xjordansg-yolo",
+      "sourceRepo": "stock-analysis-aisa-claude",
+      "language": "zh",
+      "slug": "stock-portfolio-zh",
+      "title": "投资组合管理",
+      "githubUrl": "https://github.com/0xjordansg-yolo/stock-analysis-aisa-claude",
+      "convertedFrom": "public/downloads/github/0xjordansg-yolo/stock-analysis-aisa-claude-skills-stock-portfolio.tar.gz",
+      "file": "public/downloads/clawHub-github/0xjordansg-yolo/stock-portfolio-zh.zip",
+      "bytes": 4715
+    },
+    {
+      "owner": "0xjordansg-yolo",
+      "sourceRepo": "stock-analysis-aisa-claude",
+      "language": "en",
+      "slug": "stock-rumors",
+      "title": "Rumor Scanner",
+      "githubUrl": "https://github.com/0xjordansg-yolo/stock-analysis-aisa-claude",
+      "convertedFrom": "public/downloads/github/0xjordansg-yolo/stock-analysis-aisa-claude-skills-stock-rumors.tar.gz",
+      "file": "public/downloads/clawHub-github/0xjordansg-yolo/stock-rumors.zip",
+      "bytes": 4311
+    },
+    {
+      "owner": "0xjordansg-yolo",
+      "sourceRepo": "stock-analysis-aisa-claude",
+      "language": "zh",
+      "slug": "stock-rumors-zh",
+      "title": "市场传闻扫描",
+      "githubUrl": "https://github.com/0xjordansg-yolo/stock-analysis-aisa-claude",
+      "convertedFrom": "public/downloads/github/0xjordansg-yolo/stock-analysis-aisa-claude-skills-stock-rumors.tar.gz",
+      "file": "public/downloads/clawHub-github/0xjordansg-yolo/stock-rumors-zh.zip",
+      "bytes": 4435
+    },
+    {
+      "owner": "0xjordansg-yolo",
+      "sourceRepo": "stock-analysis-aisa-claude",
+      "language": "en",
+      "slug": "stock-watchlist",
+      "title": "Watchlist Management",
+      "githubUrl": "https://github.com/0xjordansg-yolo/stock-analysis-aisa-claude",
+      "convertedFrom": "public/downloads/github/0xjordansg-yolo/stock-analysis-aisa-claude-skills-stock-watchlist.tar.gz",
+      "file": "public/downloads/clawHub-github/0xjordansg-yolo/stock-watchlist.zip",
+      "bytes": 4262
+    },
+    {
+      "owner": "0xjordansg-yolo",
+      "sourceRepo": "stock-analysis-aisa-claude",
+      "language": "zh",
+      "slug": "stock-watchlist-zh",
+      "title": "观察列表管理",
+      "githubUrl": "https://github.com/0xjordansg-yolo/stock-analysis-aisa-claude",
+      "convertedFrom": "public/downloads/github/0xjordansg-yolo/stock-analysis-aisa-claude-skills-stock-watchlist.tar.gz",
+      "file": "public/downloads/clawHub-github/0xjordansg-yolo/stock-watchlist-zh.zip",
+      "bytes": 4432
+    }
+  ]
+}

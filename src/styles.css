@@ -393,6 +393,11 @@ select:focus {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.skill-ref-card {
+  display: grid;
+  gap: 8px;
+}
+
 .skill-ref {
   display: grid;
   gap: 4px;
@@ -403,6 +408,16 @@ select:focus {
   text-align: left;
   font: inherit;
   color: inherit;
+}
+
+.skill-ref-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  width: fit-content;
+  padding: 0 2px;
+  color: var(--sky);
+  font-size: 13px;
 }
 
 .skill-ref span {

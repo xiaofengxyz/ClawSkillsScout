@@ -34,6 +34,7 @@
     ],
     "buildEntryPoints": [
       "scripts/generate-aisa-api-analysis.py",
+      "scripts/convert-github-skills-to-clawhub.py",
       "scripts/build-source-optimized-packages.mjs",
       "scripts/build-source-optimized-zh.mjs",
       "scripts/package-source-optimized.mjs",
@@ -68,7 +69,8 @@
         "public/data/catalog.json",
         "public/data/aisa-api-analysis.json",
         "public/downloads/clawHub/",
-        "public/downloads/github/"
+        "public/downloads/github/",
+        "public/downloads/clawHub-github/"
       ],
       "capabilities": [
         "owner discovery",
@@ -81,7 +83,8 @@
         "archive-level AISA endpoint extraction",
         "optimization advice generation",
         "ClawHub account skill download",
-        "GitHub account skill archive packaging"
+        "GitHub account skill archive packaging",
+        "GitHub skill to ClawHub skill conversion"
       ]
     },
     {

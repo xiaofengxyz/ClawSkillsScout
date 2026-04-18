@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-16T14:54:00.442421+00:00",
+  "generatedAt": "2026-04-18T05:44:38.828551+00:00",
   "comparisonBase": {
     "name": "AISA createChatCompletion",
     "endpoint": "/v1/chat/completions",
@@ -10,8 +10,8 @@
     "totalSkills": 53,
     "clawhubSkills": 38,
     "githubSkills": 15,
-    "skillsWithEndpoints": 47,
-    "skillsWithoutEndpoints": 6,
+    "skillsWithEndpoints": 53,
+    "skillsWithoutEndpoints": 0,
     "totalInterfaces": 82,
     "implementedInterfaces": 79,
     "unimplementedDocumentedInterfaces": 3
@@ -2486,7 +2486,7 @@
           "status": "implemented"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/multi-search",
           "skillName": "multi-search",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
@@ -2496,7 +2496,7 @@
           "status": "implemented"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/perplexity-research",
           "skillName": "perplexity-research",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
@@ -2506,7 +2506,7 @@
           "status": "implemented"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/scholar-search",
           "skillName": "scholar-search",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
@@ -2516,7 +2516,7 @@
           "status": "implemented"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/smart-search",
           "skillName": "smart-search",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
@@ -2526,7 +2526,7 @@
           "status": "implemented"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/tavily-extract",
           "skillName": "tavily-extract",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
@@ -2536,7 +2536,7 @@
           "status": "implemented"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/tavily-search",
           "skillName": "tavily-search",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
@@ -2546,7 +2546,7 @@
           "status": "implemented"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/web-search",
           "skillName": "web-search",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
@@ -2617,7 +2617,7 @@
           "status": "implemented"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/multi-search",
           "skillName": "multi-search",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
@@ -2627,7 +2627,7 @@
           "status": "implemented"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/perplexity-research",
           "skillName": "perplexity-research",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
@@ -2637,7 +2637,7 @@
           "status": "implemented"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/scholar-search",
           "skillName": "scholar-search",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
@@ -2647,7 +2647,7 @@
           "status": "implemented"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/smart-search",
           "skillName": "smart-search",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
@@ -2657,7 +2657,7 @@
           "status": "implemented"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/tavily-extract",
           "skillName": "tavily-extract",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
@@ -2667,7 +2667,7 @@
           "status": "implemented"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/tavily-search",
           "skillName": "tavily-search",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
@@ -2677,7 +2677,7 @@
           "status": "implemented"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/web-search",
           "skillName": "web-search",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
@@ -2738,7 +2738,7 @@
           "status": "implemented"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/multi-search",
           "skillName": "multi-search",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
@@ -2748,7 +2748,7 @@
           "status": "implemented"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/perplexity-research",
           "skillName": "perplexity-research",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
@@ -2758,7 +2758,7 @@
           "status": "implemented"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/scholar-search",
           "skillName": "scholar-search",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
@@ -2768,7 +2768,7 @@
           "status": "implemented"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/smart-search",
           "skillName": "smart-search",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
@@ -2778,7 +2778,7 @@
           "status": "implemented"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/tavily-extract",
           "skillName": "tavily-extract",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
@@ -2788,7 +2788,7 @@
           "status": "implemented"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/tavily-search",
           "skillName": "tavily-search",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
@@ -2798,7 +2798,7 @@
           "status": "implemented"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/web-search",
           "skillName": "web-search",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
@@ -2869,7 +2869,7 @@
           "status": "implemented"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/multi-search",
           "skillName": "multi-search",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
@@ -2879,7 +2879,7 @@
           "status": "implemented"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/perplexity-research",
           "skillName": "perplexity-research",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
@@ -2889,7 +2889,7 @@
           "status": "implemented"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/scholar-search",
           "skillName": "scholar-search",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
@@ -2899,7 +2899,7 @@
           "status": "implemented"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/smart-search",
           "skillName": "smart-search",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
@@ -2909,7 +2909,7 @@
           "status": "implemented"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/tavily-extract",
           "skillName": "tavily-extract",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
@@ -2919,7 +2919,7 @@
           "status": "implemented"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/tavily-search",
           "skillName": "tavily-search",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
@@ -2929,7 +2929,7 @@
           "status": "implemented"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/web-search",
           "skillName": "web-search",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
@@ -3225,7 +3225,7 @@
           "status": "implemented"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/multi-search",
           "skillName": "multi-search",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
@@ -3235,7 +3235,7 @@
           "status": "implemented"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/perplexity-research",
           "skillName": "perplexity-research",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
@@ -3245,7 +3245,7 @@
           "status": "implemented"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/scholar-search",
           "skillName": "scholar-search",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
@@ -3255,7 +3255,7 @@
           "status": "implemented"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/smart-search",
           "skillName": "smart-search",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
@@ -3265,7 +3265,7 @@
           "status": "implemented"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/tavily-extract",
           "skillName": "tavily-extract",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
@@ -3275,7 +3275,7 @@
           "status": "implemented"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/tavily-search",
           "skillName": "tavily-search",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
@@ -3285,7 +3285,7 @@
           "status": "implemented"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/web-search",
           "skillName": "web-search",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
@@ -3427,7 +3427,7 @@
           "status": "implemented"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/multi-search",
           "skillName": "multi-search",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
@@ -3437,7 +3437,7 @@
           "status": "implemented"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/perplexity-research",
           "skillName": "perplexity-research",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
@@ -3447,7 +3447,7 @@
           "status": "implemented"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/scholar-search",
           "skillName": "scholar-search",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
@@ -3457,7 +3457,7 @@
           "status": "implemented"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/smart-search",
           "skillName": "smart-search",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
@@ -3467,7 +3467,7 @@
           "status": "implemented"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/tavily-extract",
           "skillName": "tavily-extract",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
@@ -3477,7 +3477,7 @@
           "status": "implemented"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/tavily-search",
           "skillName": "tavily-search",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
@@ -3487,7 +3487,7 @@
           "status": "implemented"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/web-search",
           "skillName": "web-search",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
@@ -7025,17 +7025,77 @@
           "sourceUrl": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/last30days-aisa",
           "downloadPath": "downloads/clawHub/bibaofeng/last30days-aisa.zip",
           "status": "implemented"
+        },
+        {
+          "skillId": "github:0xjordansg-yolo:stock-analysis-aisa-claude:skills/stock-analysis",
+          "skillName": "stock-analysis",
+          "owner": "0xjordansg-yolo",
+          "sourceType": "github",
+          "sourceLabel": "GitHub",
+          "sourceUrl": "https://github.com/0xjordansg-yolo/stock-analysis-aisa-claude",
+          "downloadPath": "downloads/github/0xjordansg-yolo/stock-analysis-aisa-claude-skills-stock-analysis.tar.gz",
+          "status": "implemented"
+        },
+        {
+          "skillId": "github:0xjordansg-yolo:stock-analysis-aisa-claude:skills/stock-dividend",
+          "skillName": "stock-dividend",
+          "owner": "0xjordansg-yolo",
+          "sourceType": "github",
+          "sourceLabel": "GitHub",
+          "sourceUrl": "https://github.com/0xjordansg-yolo/stock-analysis-aisa-claude",
+          "downloadPath": "downloads/github/0xjordansg-yolo/stock-analysis-aisa-claude-skills-stock-dividend.tar.gz",
+          "status": "implemented"
+        },
+        {
+          "skillId": "github:0xjordansg-yolo:stock-analysis-aisa-claude:skills/stock-hot",
+          "skillName": "stock-hot",
+          "owner": "0xjordansg-yolo",
+          "sourceType": "github",
+          "sourceLabel": "GitHub",
+          "sourceUrl": "https://github.com/0xjordansg-yolo/stock-analysis-aisa-claude",
+          "downloadPath": "downloads/github/0xjordansg-yolo/stock-analysis-aisa-claude-skills-stock-hot.tar.gz",
+          "status": "implemented"
+        },
+        {
+          "skillId": "github:0xjordansg-yolo:stock-analysis-aisa-claude:skills/stock-portfolio",
+          "skillName": "stock-portfolio",
+          "owner": "0xjordansg-yolo",
+          "sourceType": "github",
+          "sourceLabel": "GitHub",
+          "sourceUrl": "https://github.com/0xjordansg-yolo/stock-analysis-aisa-claude",
+          "downloadPath": "downloads/github/0xjordansg-yolo/stock-analysis-aisa-claude-skills-stock-portfolio.tar.gz",
+          "status": "implemented"
+        },
+        {
+          "skillId": "github:0xjordansg-yolo:stock-analysis-aisa-claude:skills/stock-rumors",
+          "skillName": "stock-rumors",
+          "owner": "0xjordansg-yolo",
+          "sourceType": "github",
+          "sourceLabel": "GitHub",
+          "sourceUrl": "https://github.com/0xjordansg-yolo/stock-analysis-aisa-claude",
+          "downloadPath": "downloads/github/0xjordansg-yolo/stock-analysis-aisa-claude-skills-stock-rumors.tar.gz",
+          "status": "implemented"
+        },
+        {
+          "skillId": "github:0xjordansg-yolo:stock-analysis-aisa-claude:skills/stock-watchlist",
+          "skillName": "stock-watchlist",
+          "owner": "0xjordansg-yolo",
+          "sourceType": "github",
+          "sourceLabel": "GitHub",
+          "sourceUrl": "https://github.com/0xjordansg-yolo/stock-analysis-aisa-claude",
+          "downloadPath": "downloads/github/0xjordansg-yolo/stock-analysis-aisa-claude-skills-stock-watchlist.tar.gz",
+          "status": "implemented"
         }
       ],
       "skillsBySource": {
         "clawhub": 8,
-        "github": 0
+        "github": 6
       },
-      "implementedSkillCount": 2,
+      "implementedSkillCount": 8,
       "inferredSkillCount": 0,
       "documentedOnlySkillCount": 6,
       "hasImplementation": true,
-      "skillCount": 8,
+      "skillCount": 14,
       "coverageStatus": "implemented"
     },
     {
@@ -7446,10 +7506,12 @@
           "method": "POST",
           "status": "documented_only",
           "files": [
+            "README.md",
             "SKILL.md"
           ],
           "codeFiles": [],
           "docFiles": [
+            "README.md",
             "SKILL.md"
           ],
           "comparisonToCreateChatCompletion": "与官方 createchatcompletion 文档直接对应",
@@ -8256,10 +8318,12 @@
           "method": "POST",
           "status": "documented_only",
           "files": [
+            "README.md",
             "SKILL.md"
           ],
           "codeFiles": [],
           "docFiles": [
+            "README.md",
             "SKILL.md"
           ],
           "comparisonToCreateChatCompletion": "与官方 createchatcompletion 文档直接对应",
@@ -14205,10 +14269,12 @@
           "method": "POST",
           "status": "documented_only",
           "files": [
+            "README.md",
             "SKILL.md"
           ],
           "codeFiles": [],
           "docFiles": [
+            "README.md",
             "SKILL.md"
           ],
           "comparisonToCreateChatCompletion": "与官方 createchatcompletion 文档直接对应",
@@ -14245,10 +14311,12 @@
           "method": "POST",
           "status": "documented_only",
           "files": [
+            "README.md",
             "SKILL.md"
           ],
           "codeFiles": [],
           "docFiles": [
+            "README.md",
             "SKILL.md"
           ],
           "comparisonToCreateChatCompletion": "与官方 createchatcompletion 文档直接对应",
@@ -16327,7 +16395,7 @@
       ]
     },
     {
-      "id": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+      "id": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/multi-search",
       "name": "multi-search",
       "description": "Parallel multi-source search combining Web, Scholar, Smart, and Tavily results with confidence scoring and AI synthesis. Best for comprehensive research requiring cross-source validation.",
       "owner": "0xjordansg-yolo",
@@ -16447,7 +16515,7 @@
       ]
     },
     {
-      "id": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+      "id": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/perplexity-research",
       "name": "perplexity-research",
       "description": "Deep research using Perplexity Sonar models via AIsa API. Provides synthesized answers with citations. Supports 4 models from fast to exhaustive deep research.",
       "owner": "0xjordansg-yolo",
@@ -16567,7 +16635,7 @@
       ]
     },
     {
-      "id": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+      "id": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/scholar-search",
       "name": "scholar-search",
       "description": "Search academic papers and scholarly articles via AIsa Scholar endpoint. Supports year range filtering for targeted research.",
       "owner": "0xjordansg-yolo",
@@ -16687,7 +16755,7 @@
       ]
     },
     {
-      "id": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+      "id": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/smart-search",
       "name": "smart-search",
       "description": "Intelligent hybrid search combining web and academic sources via AIsa Smart Search endpoint. Best when you need both web and scholarly results.",
       "owner": "0xjordansg-yolo",
@@ -16807,7 +16875,7 @@
       ]
     },
     {
-      "id": "github:0xjordansg-yolo:stock-analysis-aisa-claude",
+      "id": "github:0xjordansg-yolo:stock-analysis-aisa-claude:skills/stock-analysis",
       "name": "stock-analysis",
       "description": "Analyze stocks and cryptocurrencies with 8-dimension scoring via AIsa API. Provides BUY/HOLD/SELL signals with confidence levels, entry/target/stop prices, and risk flags. Supports single or multi-ticker analysis with optional fast mode and JSON output. Use when the user asks to analyze a stock, check a ticker, or compare investments.",
       "owner": "0xjordansg-yolo",
@@ -16819,17 +16887,35 @@
       "repo": "stock-analysis-aisa-claude",
       "skillDir": "skills/stock-analysis",
       "archiveType": "tar.gz",
-      "endpoints": [],
-      "endpointCount": 0,
-      "implementedEndpointCount": 0,
+      "endpoints": [
+        {
+          "endpoint": "/v1/chat/completions",
+          "name": "OpenAI Chat Completions",
+          "method": "POST",
+          "status": "implemented",
+          "files": [
+            "stock-analysis-aisa-claude-skills-stock-analysis/scripts/analyze_stock.py"
+          ],
+          "codeFiles": [
+            "stock-analysis-aisa-claude-skills-stock-analysis/scripts/analyze_stock.py"
+          ],
+          "docFiles": [],
+          "comparisonToCreateChatCompletion": "与官方 createchatcompletion 文档直接对应",
+          "officialDocUrl": "https://docs.aisa.one/reference/createchatcompletion"
+        }
+      ],
+      "endpointCount": 1,
+      "implementedEndpointCount": 1,
       "documentedOnlyEndpointCount": 0,
-      "hasOfficialChatCompletion": false,
-      "implementationStatus": "not_found",
-      "primaryInterfaceGroup": "none",
-      "interfaceGroups": []
+      "hasOfficialChatCompletion": true,
+      "implementationStatus": "implemented",
+      "primaryInterfaceGroup": "/v1/chat/completions",
+      "interfaceGroups": [
+        "/v1/chat/completions"
+      ]
     },
     {
-      "id": "github:0xjordansg-yolo:stock-analysis-aisa-claude",
+      "id": "github:0xjordansg-yolo:stock-analysis-aisa-claude:skills/stock-dividend",
       "name": "stock-dividend",
       "description": "Analyze dividend metrics for stocks via AIsa API. Provides yield, payout ratio, growth CAGR, safety score (0-100), income rating, and Dividend Aristocrat/King status. Use when the user asks about dividends, income investing, or dividend safety.",
       "owner": "0xjordansg-yolo",
@@ -16841,17 +16927,35 @@
       "repo": "stock-analysis-aisa-claude",
       "skillDir": "skills/stock-dividend",
       "archiveType": "tar.gz",
-      "endpoints": [],
-      "endpointCount": 0,
-      "implementedEndpointCount": 0,
+      "endpoints": [
+        {
+          "endpoint": "/v1/chat/completions",
+          "name": "OpenAI Chat Completions",
+          "method": "POST",
+          "status": "implemented",
+          "files": [
+            "stock-analysis-aisa-claude-skills-stock-dividend/scripts/dividends.py"
+          ],
+          "codeFiles": [
+            "stock-analysis-aisa-claude-skills-stock-dividend/scripts/dividends.py"
+          ],
+          "docFiles": [],
+          "comparisonToCreateChatCompletion": "与官方 createchatcompletion 文档直接对应",
+          "officialDocUrl": "https://docs.aisa.one/reference/createchatcompletion"
+        }
+      ],
+      "endpointCount": 1,
+      "implementedEndpointCount": 1,
       "documentedOnlyEndpointCount": 0,
-      "hasOfficialChatCompletion": false,
-      "implementationStatus": "not_found",
-      "primaryInterfaceGroup": "none",
-      "interfaceGroups": []
+      "hasOfficialChatCompletion": true,
+      "implementationStatus": "implemented",
+      "primaryInterfaceGroup": "/v1/chat/completions",
+      "interfaceGroups": [
+        "/v1/chat/completions"
+      ]
     },
     {
-      "id": "github:0xjordansg-yolo:stock-analysis-aisa-claude",
+      "id": "github:0xjordansg-yolo:stock-analysis-aisa-claude:skills/stock-hot",
       "name": "stock-hot",
       "description": "",
       "owner": "0xjordansg-yolo",
@@ -16863,17 +16967,35 @@
       "repo": "stock-analysis-aisa-claude",
       "skillDir": "skills/stock-hot",
       "archiveType": "tar.gz",
-      "endpoints": [],
-      "endpointCount": 0,
-      "implementedEndpointCount": 0,
+      "endpoints": [
+        {
+          "endpoint": "/v1/chat/completions",
+          "name": "OpenAI Chat Completions",
+          "method": "POST",
+          "status": "implemented",
+          "files": [
+            "stock-analysis-aisa-claude-skills-stock-hot/scripts/hot_scanner.py"
+          ],
+          "codeFiles": [
+            "stock-analysis-aisa-claude-skills-stock-hot/scripts/hot_scanner.py"
+          ],
+          "docFiles": [],
+          "comparisonToCreateChatCompletion": "与官方 createchatcompletion 文档直接对应",
+          "officialDocUrl": "https://docs.aisa.one/reference/createchatcompletion"
+        }
+      ],
+      "endpointCount": 1,
+      "implementedEndpointCount": 1,
       "documentedOnlyEndpointCount": 0,
-      "hasOfficialChatCompletion": false,
-      "implementationStatus": "not_found",
-      "primaryInterfaceGroup": "none",
-      "interfaceGroups": []
+      "hasOfficialChatCompletion": true,
+      "implementationStatus": "implemented",
+      "primaryInterfaceGroup": "/v1/chat/completions",
+      "interfaceGroups": [
+        "/v1/chat/completions"
+      ]
     },
     {
-      "id": "github:0xjordansg-yolo:stock-analysis-aisa-claude",
+      "id": "github:0xjordansg-yolo:stock-analysis-aisa-claude:skills/stock-portfolio",
       "name": "stock-portfolio",
       "description": "Manage investment portfolios with live P&L tracking via AIsa API. Create, add, update, remove positions, rename, and show portfolio summary with real-time profit/loss. Use when the user wants to track investments, manage a portfolio, check P&L, or add/remove holdings.",
       "owner": "0xjordansg-yolo",
@@ -16885,17 +17007,35 @@
       "repo": "stock-analysis-aisa-claude",
       "skillDir": "skills/stock-portfolio",
       "archiveType": "tar.gz",
-      "endpoints": [],
-      "endpointCount": 0,
-      "implementedEndpointCount": 0,
+      "endpoints": [
+        {
+          "endpoint": "/v1/chat/completions",
+          "name": "OpenAI Chat Completions",
+          "method": "POST",
+          "status": "implemented",
+          "files": [
+            "stock-analysis-aisa-claude-skills-stock-portfolio/scripts/portfolio.py"
+          ],
+          "codeFiles": [
+            "stock-analysis-aisa-claude-skills-stock-portfolio/scripts/portfolio.py"
+          ],
+          "docFiles": [],
+          "comparisonToCreateChatCompletion": "与官方 createchatcompletion 文档直接对应",
+          "officialDocUrl": "https://docs.aisa.one/reference/createchatcompletion"
+        }
+      ],
+      "endpointCount": 1,
+      "implementedEndpointCount": 1,
       "documentedOnlyEndpointCount": 0,
-      "hasOfficialChatCompletion": false,
-      "implementationStatus": "not_found",
-      "primaryInterfaceGroup": "none",
-      "interfaceGroups": []
+      "hasOfficialChatCompletion": true,
+      "implementationStatus": "implemented",
+      "primaryInterfaceGroup": "/v1/chat/completions",
+      "interfaceGroups": [
+        "/v1/chat/completions"
+      ]
     },
     {
-      "id": "github:0xjordansg-yolo:stock-analysis-aisa-claude",
+      "id": "github:0xjordansg-yolo:stock-analysis-aisa-claude:skills/stock-rumors",
       "name": "stock-rumors",
       "description": "Rumor Scanner — find early signals including M&A rumors, insider activity, analyst upgrades/downgrades, social whispers, and SEC/regulatory activity via AIsa API. Ranked by impact score. Use when the user asks about rumors, insider trading, M&A activity, analyst changes, or early market signals.",
       "owner": "0xjordansg-yolo",
@@ -16907,17 +17047,35 @@
       "repo": "stock-analysis-aisa-claude",
       "skillDir": "skills/stock-rumors",
       "archiveType": "tar.gz",
-      "endpoints": [],
-      "endpointCount": 0,
-      "implementedEndpointCount": 0,
+      "endpoints": [
+        {
+          "endpoint": "/v1/chat/completions",
+          "name": "OpenAI Chat Completions",
+          "method": "POST",
+          "status": "implemented",
+          "files": [
+            "stock-analysis-aisa-claude-skills-stock-rumors/scripts/rumor_scanner.py"
+          ],
+          "codeFiles": [
+            "stock-analysis-aisa-claude-skills-stock-rumors/scripts/rumor_scanner.py"
+          ],
+          "docFiles": [],
+          "comparisonToCreateChatCompletion": "与官方 createchatcompletion 文档直接对应",
+          "officialDocUrl": "https://docs.aisa.one/reference/createchatcompletion"
+        }
+      ],
+      "endpointCount": 1,
+      "implementedEndpointCount": 1,
       "documentedOnlyEndpointCount": 0,
-      "hasOfficialChatCompletion": false,
-      "implementationStatus": "not_found",
-      "primaryInterfaceGroup": "none",
-      "interfaceGroups": []
+      "hasOfficialChatCompletion": true,
+      "implementationStatus": "implemented",
+      "primaryInterfaceGroup": "/v1/chat/completions",
+      "interfaceGroups": [
+        "/v1/chat/completions"
+      ]
     },
     {
-      "id": "github:0xjordansg-yolo:stock-analysis-aisa-claude",
+      "id": "github:0xjordansg-yolo:stock-analysis-aisa-claude:skills/stock-watchlist",
       "name": "stock-watchlist",
       "description": "Manage a stock/crypto watchlist with price target and stop-loss alerts via AIsa API. Add, remove, list, and check tickers with live price alerts. Use when the user wants to track stocks, set price alerts, manage a watchlist, or check triggered alerts.",
       "owner": "0xjordansg-yolo",
@@ -16929,17 +17087,35 @@
       "repo": "stock-analysis-aisa-claude",
       "skillDir": "skills/stock-watchlist",
       "archiveType": "tar.gz",
-      "endpoints": [],
-      "endpointCount": 0,
-      "implementedEndpointCount": 0,
+      "endpoints": [
+        {
+          "endpoint": "/v1/chat/completions",
+          "name": "OpenAI Chat Completions",
+          "method": "POST",
+          "status": "implemented",
+          "files": [
+            "stock-analysis-aisa-claude-skills-stock-watchlist/scripts/watchlist.py"
+          ],
+          "codeFiles": [
+            "stock-analysis-aisa-claude-skills-stock-watchlist/scripts/watchlist.py"
+          ],
+          "docFiles": [],
+          "comparisonToCreateChatCompletion": "与官方 createchatcompletion 文档直接对应",
+          "officialDocUrl": "https://docs.aisa.one/reference/createchatcompletion"
+        }
+      ],
+      "endpointCount": 1,
+      "implementedEndpointCount": 1,
       "documentedOnlyEndpointCount": 0,
-      "hasOfficialChatCompletion": false,
-      "implementationStatus": "not_found",
-      "primaryInterfaceGroup": "none",
-      "interfaceGroups": []
+      "hasOfficialChatCompletion": true,
+      "implementationStatus": "implemented",
+      "primaryInterfaceGroup": "/v1/chat/completions",
+      "interfaceGroups": [
+        "/v1/chat/completions"
+      ]
     },
     {
-      "id": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+      "id": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/tavily-extract",
       "name": "tavily-extract",
       "description": "Extract clean, readable content from one or more URLs using Tavily Extract via AIsa API. Useful for reading full articles without visiting the page.",
       "owner": "0xjordansg-yolo",
@@ -17059,7 +17235,7 @@
       ]
     },
     {
-      "id": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+      "id": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/tavily-search",
       "name": "tavily-search",
       "description": "Advanced web search via Tavily through AIsa API. Supports search depth, topic filtering (general/news/finance), time ranges, domain inclusion/exclusion, and LLM-generated answers.",
       "owner": "0xjordansg-yolo",
@@ -17697,7 +17873,7 @@
       ]
     },
     {
-      "id": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+      "id": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/web-search",
       "name": "web-search",
       "description": "Search the web using AIsa Scholar Web endpoint. Returns structured web results with titles, URLs, and snippets.",
       "owner": "0xjordansg-yolo",
@@ -19179,49 +19355,49 @@
           "sourceUrl": "https://github.com/0xjordansg-yolo/aisa-multi-search-engine"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/multi-search",
           "skillName": "multi-search",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
           "sourceUrl": "https://github.com/0xjordansg-yolo/aisa-multi-search-engine-claude"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/perplexity-research",
           "skillName": "perplexity-research",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
           "sourceUrl": "https://github.com/0xjordansg-yolo/aisa-multi-search-engine-claude"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/scholar-search",
           "skillName": "scholar-search",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
           "sourceUrl": "https://github.com/0xjordansg-yolo/aisa-multi-search-engine-claude"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/smart-search",
           "skillName": "smart-search",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
           "sourceUrl": "https://github.com/0xjordansg-yolo/aisa-multi-search-engine-claude"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/tavily-extract",
           "skillName": "tavily-extract",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
           "sourceUrl": "https://github.com/0xjordansg-yolo/aisa-multi-search-engine-claude"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/tavily-search",
           "skillName": "tavily-search",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
           "sourceUrl": "https://github.com/0xjordansg-yolo/aisa-multi-search-engine-claude"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/web-search",
           "skillName": "web-search",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
@@ -19262,49 +19438,49 @@
           "sourceUrl": "https://github.com/0xjordansg-yolo/aisa-multi-search-engine"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/multi-search",
           "skillName": "multi-search",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
           "sourceUrl": "https://github.com/0xjordansg-yolo/aisa-multi-search-engine-claude"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/perplexity-research",
           "skillName": "perplexity-research",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
           "sourceUrl": "https://github.com/0xjordansg-yolo/aisa-multi-search-engine-claude"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/scholar-search",
           "skillName": "scholar-search",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
           "sourceUrl": "https://github.com/0xjordansg-yolo/aisa-multi-search-engine-claude"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/smart-search",
           "skillName": "smart-search",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
           "sourceUrl": "https://github.com/0xjordansg-yolo/aisa-multi-search-engine-claude"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/tavily-extract",
           "skillName": "tavily-extract",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
           "sourceUrl": "https://github.com/0xjordansg-yolo/aisa-multi-search-engine-claude"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/tavily-search",
           "skillName": "tavily-search",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
           "sourceUrl": "https://github.com/0xjordansg-yolo/aisa-multi-search-engine-claude"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/web-search",
           "skillName": "web-search",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
@@ -19338,49 +19514,49 @@
           "sourceUrl": "https://github.com/0xjordansg-yolo/aisa-multi-search-engine"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/multi-search",
           "skillName": "multi-search",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
           "sourceUrl": "https://github.com/0xjordansg-yolo/aisa-multi-search-engine-claude"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/perplexity-research",
           "skillName": "perplexity-research",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
           "sourceUrl": "https://github.com/0xjordansg-yolo/aisa-multi-search-engine-claude"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/scholar-search",
           "skillName": "scholar-search",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
           "sourceUrl": "https://github.com/0xjordansg-yolo/aisa-multi-search-engine-claude"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/smart-search",
           "skillName": "smart-search",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
           "sourceUrl": "https://github.com/0xjordansg-yolo/aisa-multi-search-engine-claude"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/tavily-extract",
           "skillName": "tavily-extract",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
           "sourceUrl": "https://github.com/0xjordansg-yolo/aisa-multi-search-engine-claude"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/tavily-search",
           "skillName": "tavily-search",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
           "sourceUrl": "https://github.com/0xjordansg-yolo/aisa-multi-search-engine-claude"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/web-search",
           "skillName": "web-search",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
@@ -19421,49 +19597,49 @@
           "sourceUrl": "https://github.com/0xjordansg-yolo/aisa-multi-search-engine"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/multi-search",
           "skillName": "multi-search",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
           "sourceUrl": "https://github.com/0xjordansg-yolo/aisa-multi-search-engine-claude"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/perplexity-research",
           "skillName": "perplexity-research",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
           "sourceUrl": "https://github.com/0xjordansg-yolo/aisa-multi-search-engine-claude"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/scholar-search",
           "skillName": "scholar-search",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
           "sourceUrl": "https://github.com/0xjordansg-yolo/aisa-multi-search-engine-claude"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/smart-search",
           "skillName": "smart-search",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
           "sourceUrl": "https://github.com/0xjordansg-yolo/aisa-multi-search-engine-claude"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/tavily-extract",
           "skillName": "tavily-extract",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
           "sourceUrl": "https://github.com/0xjordansg-yolo/aisa-multi-search-engine-claude"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/tavily-search",
           "skillName": "tavily-search",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
           "sourceUrl": "https://github.com/0xjordansg-yolo/aisa-multi-search-engine-claude"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/web-search",
           "skillName": "web-search",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
@@ -19618,49 +19794,49 @@
           "sourceUrl": "https://github.com/0xjordansg-yolo/aisa-multi-search-engine"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/multi-search",
           "skillName": "multi-search",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
           "sourceUrl": "https://github.com/0xjordansg-yolo/aisa-multi-search-engine-claude"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/perplexity-research",
           "skillName": "perplexity-research",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
           "sourceUrl": "https://github.com/0xjordansg-yolo/aisa-multi-search-engine-claude"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/scholar-search",
           "skillName": "scholar-search",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
           "sourceUrl": "https://github.com/0xjordansg-yolo/aisa-multi-search-engine-claude"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/smart-search",
           "skillName": "smart-search",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
           "sourceUrl": "https://github.com/0xjordansg-yolo/aisa-multi-search-engine-claude"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/tavily-extract",
           "skillName": "tavily-extract",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
           "sourceUrl": "https://github.com/0xjordansg-yolo/aisa-multi-search-engine-claude"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/tavily-search",
           "skillName": "tavily-search",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
           "sourceUrl": "https://github.com/0xjordansg-yolo/aisa-multi-search-engine-claude"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/web-search",
           "skillName": "web-search",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
@@ -19742,49 +19918,49 @@
           "sourceUrl": "https://github.com/0xjordansg-yolo/aisa-multi-search-engine"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/multi-search",
           "skillName": "multi-search",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
           "sourceUrl": "https://github.com/0xjordansg-yolo/aisa-multi-search-engine-claude"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/perplexity-research",
           "skillName": "perplexity-research",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
           "sourceUrl": "https://github.com/0xjordansg-yolo/aisa-multi-search-engine-claude"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/scholar-search",
           "skillName": "scholar-search",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
           "sourceUrl": "https://github.com/0xjordansg-yolo/aisa-multi-search-engine-claude"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/smart-search",
           "skillName": "smart-search",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
           "sourceUrl": "https://github.com/0xjordansg-yolo/aisa-multi-search-engine-claude"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/tavily-extract",
           "skillName": "tavily-extract",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
           "sourceUrl": "https://github.com/0xjordansg-yolo/aisa-multi-search-engine-claude"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/tavily-search",
           "skillName": "tavily-search",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
           "sourceUrl": "https://github.com/0xjordansg-yolo/aisa-multi-search-engine-claude"
         },
         {
-          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude",
+          "skillId": "github:0xjordansg-yolo:aisa-multi-search-engine-claude:skills/web-search",
           "skillName": "web-search",
           "owner": "0xjordansg-yolo",
           "sourceType": "github",
@@ -21999,6 +22175,48 @@
           "owner": "bibaofeng",
           "sourceType": "clawhub",
           "sourceUrl": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/last30days-aisa"
+        },
+        {
+          "skillId": "github:0xjordansg-yolo:stock-analysis-aisa-claude:skills/stock-analysis",
+          "skillName": "stock-analysis",
+          "owner": "0xjordansg-yolo",
+          "sourceType": "github",
+          "sourceUrl": "https://github.com/0xjordansg-yolo/stock-analysis-aisa-claude"
+        },
+        {
+          "skillId": "github:0xjordansg-yolo:stock-analysis-aisa-claude:skills/stock-dividend",
+          "skillName": "stock-dividend",
+          "owner": "0xjordansg-yolo",
+          "sourceType": "github",
+          "sourceUrl": "https://github.com/0xjordansg-yolo/stock-analysis-aisa-claude"
+        },
+        {
+          "skillId": "github:0xjordansg-yolo:stock-analysis-aisa-claude:skills/stock-hot",
+          "skillName": "stock-hot",
+          "owner": "0xjordansg-yolo",
+          "sourceType": "github",
+          "sourceUrl": "https://github.com/0xjordansg-yolo/stock-analysis-aisa-claude"
+        },
+        {
+          "skillId": "github:0xjordansg-yolo:stock-analysis-aisa-claude:skills/stock-portfolio",
+          "skillName": "stock-portfolio",
+          "owner": "0xjordansg-yolo",
+          "sourceType": "github",
+          "sourceUrl": "https://github.com/0xjordansg-yolo/stock-analysis-aisa-claude"
+        },
+        {
+          "skillId": "github:0xjordansg-yolo:stock-analysis-aisa-claude:skills/stock-rumors",
+          "skillName": "stock-rumors",
+          "owner": "0xjordansg-yolo",
+          "sourceType": "github",
+          "sourceUrl": "https://github.com/0xjordansg-yolo/stock-analysis-aisa-claude"
+        },
+        {
+          "skillId": "github:0xjordansg-yolo:stock-analysis-aisa-claude:skills/stock-watchlist",
+          "skillName": "stock-watchlist",
+          "owner": "0xjordansg-yolo",
+          "sourceType": "github",
+          "sourceUrl": "https://github.com/0xjordansg-yolo/stock-analysis-aisa-claude"
         }
       ]
     },

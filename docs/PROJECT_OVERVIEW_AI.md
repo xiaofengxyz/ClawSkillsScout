@@ -83,6 +83,7 @@
 - 已有可运行的 ClawHub 抓取脚本：[scripts/scrape-clawhub.ts](/mnt/d/workplace/skillGet/scripts/scrape-clawhub.ts)
 - 已有按 `config/accounts.json` 下载账号下全部 skills 到 `public/downloads/clawHub/` 的脚本：[scripts/download-clawhub-account-skills.mjs](/mnt/d/workplace/skillGet/scripts/download-clawhub-account-skills.mjs)，会先尝试刷新渲染后的 owner 页面种子，下载时优先尝试中文镜像，再回退到 ClawHub 原始下载地址
 - 已有按 `public/data/catalog.json` 中 owner 视作 GitHub 用户名，扫描公开仓库里的 `SKILL.md` 并打包到 `public/downloads/github/` 的脚本：[scripts/download-github-account-skills.mjs](/mnt/d/workplace/skillGet/scripts/download-github-account-skills.mjs)
+- 已有把 GitHub skill tar 包转换成 ClawHub 可发布 zip 包的脚本：[scripts/convert-github-skills-to-clawhub.py](/mnt/d/workplace/skillGet/scripts/convert-github-skills-to-clawhub.py)，输出到 `public/downloads/clawHub-github/`，并生成 EN/ZH 两套 `SKILL.md`
 - 已有扫描 `public/downloads/clawHub/` 与 `public/downloads/github/` 全部归档、提取 AISA 接口并生成分析数据的脚本：[scripts/generate-aisa-api-analysis.py](/mnt/d/workplace/skillGet/scripts/generate-aisa-api-analysis.py)
 - 已有推荐的一键分析流水线：`npm run pipeline:aisa-analysis`
 - 已有静态站前端：[src/App.tsx](/mnt/d/workplace/skillGet/src/App.tsx)

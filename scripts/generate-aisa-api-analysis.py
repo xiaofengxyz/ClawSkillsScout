@@ -42,6 +42,8 @@ TEXT_EXTENSIONS = {
 
 FULL_URL_PATTERN = re.compile(r"https://api\.aisa\.one(?P<path>/(?:apis/)?v1/[A-Za-z0-9_./:{}?=&%-]+)")
 RELATIVE_PATH_PATTERN = re.compile(r"(?<![A-Za-z0-9])(/(?:(?:apis/)?v1/)?[A-Za-z0-9][A-Za-z0-9_./:{}-]*)(?![A-Za-z0-9])")
+OPENAI_AISA_BASE_URL_PATTERN = re.compile(r"https://api\.aisa\.one(?:/(?:apis/)?v1)?/?")
+CHAT_COMPLETIONS_CALL_PATTERN = re.compile(r"\bchat\s*\.\s*completions\s*\.\s*create\s*\(")
 FRONTMATTER_NAME_PATTERN = re.compile(r'^\s*name:\s*["\']?(?P<name>[^\n"\']+)["\']?\s*$', re.MULTILINE)
 FRONTMATTER_DESCRIPTION_PATTERN = re.compile(
     r'^\s*description:\s*["\']?(?P<description>[^\n"\']+)["\']?\s*$',
@@ -361,6 +363,16 @@ def extract_endpoints_from_text(text: str) -> list[str]:
     return sorted(set(normalized))
 
 
+def infer_sdk_endpoints_from_text(text: str) -> list[str]:
+    inferred: set[str] = set()
+
+    uses_aisa_base_url = bool(OPENAI_AISA_BASE_URL_PATTERN.search(text)) and "base_url" in text
+    if uses_aisa_base_url and CHAT_COMPLETIONS_CALL_PATTERN.search(text):
+        inferred.add(OFFICIAL_CHAT_ENDPOINT)
+
+    return sorted(inferred)
+
+
 def parse_skill_metadata(texts: Iterable[tuple[str, str]]) -> tuple[str | None, str | None]:
     name = None
     description = None
@@ -427,7 +439,7 @@ def build_skill_record(item: dict, source_type: str) -> dict:
     occurrences: dict[str, dict[str, set[str]]] = {}
 
     for member_name, text in texts:
-        endpoints = extract_endpoints_from_text(text)
+        endpoints = sorted(set(extract_endpoints_from_text(text) + infer_sdk_endpoints_from_text(text)))
         if not endpoints:
             continue
         kind = classify_file_kind(member_name)
@@ -472,8 +484,15 @@ def build_skill_record(item: dict, source_type: str) -> dict:
     primary_group = sorted({endpoint["endpoint"] for endpoint in endpoints})[0] if endpoints else "none"
     family_groups = sorted({endpoint["endpoint"] for endpoint in endpoints})
 
+    skill_dir = item.get("skillDir")
+    repo = item.get("repo")
+    if skill_dir and skill_dir != "." and repo:
+        unique_id = f"{repo}:{skill_dir}"
+    else:
+        unique_id = item.get("slug") or repo or skill_dir or archive_path.name
+
     return {
-        "id": f"{source_type}:{item.get('owner', 'unknown')}:{item.get('repo') or item.get('slug') or archive_path.name}",
+        "id": f"{source_type}:{item.get('owner', 'unknown')}:{unique_id}",
         "name": name,
         "description": description,
         "owner": item.get("owner", ""),

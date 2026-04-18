@@ -58,6 +58,7 @@ Detailed workflow and operating rules: [docs/AISA_ANALYSIS_WORKFLOW.md](/mnt/d/w
 `download:clawhub-account-skills` will try the Chinese mirror download URL first and fall back to the ClawHub-origin download URL when the mirror does not have the latest synced skill yet.
 When Python `playwright` + `bs4` are available, it also refreshes owner-page HTML seeds first so newly published skills from tracked accounts can be discovered before scraping.
 `download:github-account-skills` treats catalog owners as GitHub usernames, scans their public repositories for `SKILL.md`, and packages each discovered skill directory to `public/downloads/github/`.
+`convert:github-to-clawhub` converts those GitHub tarballs into ClawHub-ready zip bundles in `public/downloads/clawHub-github/`, rewrites `SKILL.md` for ClawHub metadata/search, trims non-runtime packaging files, and emits both EN and ZH variants.
 `pipeline:aisa-analysis` is the recommended full refresh command for the AISA analysis page: it refreshes ClawHub downloads, refreshes GitHub skill archives, rebuilds `public/data/aisa-api-analysis.json`, and then runs `vite build`.
 
 Production build:

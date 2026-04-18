@@ -38,15 +38,22 @@ function makeCardId(kind: 'interface' | 'skill', value: string) {
 
 function jumpToCard(view: ViewMode, cardId: string, setView: (view: ViewMode) => void) {
   setView(view);
-  window.requestAnimationFrame(() => {
-    window.requestAnimationFrame(() => {
-      const element = document.getElementById(cardId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        history.replaceState(null, '', `#${cardId}`);
-      }
-    });
-  });
+  history.replaceState(null, '', `${window.location.pathname}${window.location.search}#${cardId}`);
+
+  let attempts = 0;
+  const tryScroll = () => {
+    const element = document.getElementById(cardId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      return;
+    }
+    attempts += 1;
+    if (attempts < 12) {
+      window.requestAnimationFrame(tryScroll);
+    }
+  };
+
+  window.requestAnimationFrame(tryScroll);
 }
 
 function viewForCardId(cardId: string): ViewMode | null {
@@ -66,6 +73,31 @@ function splitSummary(summary: string) {
     .split(/[、,，]/)
     .map((part) => part.trim())
     .filter(Boolean);
+}
+
+function SkillRefCard({
+  skill,
+  onJumpToSkill,
+}: {
+  skill: AisaAnalysisInterface['skills'][number] | AisaAnalysisGroup['skills'][number];
+  onJumpToSkill: (skillId: string) => void;
+}) {
+  const externalLabel = 'sourceLabel' in skill && skill.sourceType === 'clawhub' ? 'ClawHub' : '来源';
+
+  return (
+    <div className="skill-ref-card">
+      <button type="button" className="skill-ref jump-card" onClick={() => onJumpToSkill(skill.skillId)}>
+        <span>{skill.skillName}</span>
+        <small>
+          @{skill.owner} · {'sourceLabel' in skill ? skill.sourceLabel : skill.sourceType === 'github' ? 'GitHub' : 'ClawHub'}
+          {'status' in skill ? ` · ${skill.status}` : ''}
+        </small>
+      </button>
+      <a className="skill-ref-link" href={skill.sourceUrl} target="_blank" rel="noreferrer">
+        {externalLabel} <ExternalLink size={14} />
+      </a>
+    </div>
+  );
 }
 
 function StatCard({
@@ -282,17 +314,7 @@ function InterfaceTable({
             <div className="skill-ref-list">
               {item.skills.length > 0 ? (
                 item.skills.map((skill) => (
-                  <button
-                    key={`${item.endpoint}-${skill.skillId}`}
-                    type="button"
-                    className="skill-ref jump-card"
-                    onClick={() => onJumpToSkill(skill.skillId)}
-                  >
-                    <span>{skill.skillName}</span>
-                    <small>
-                      @{skill.owner} · {skill.sourceLabel} · {skill.status}
-                    </small>
-                  </button>
+                  <SkillRefCard key={`${item.endpoint}-${skill.skillId}`} skill={skill} onJumpToSkill={onJumpToSkill} />
                 ))
               ) : (
                 <div className="empty-state small">当前下载包里没有识别到这个接口的同路径代码实现。</div>
@@ -334,17 +356,7 @@ function GroupTable({
             </div>
             <div className="skill-ref-list skill-ref-list-dense">
               {group.skills.map((skill) => (
-                <button
-                  key={`${group.endpoint}-${skill.skillId}`}
-                  type="button"
-                  className="skill-ref jump-card"
-                  onClick={() => onJumpToSkill(skill.skillId)}
-                >
-                  <span>{skill.skillName}</span>
-                  <small>
-                    @{skill.owner} · {skill.sourceType === 'github' ? 'GitHub' : 'ClawHub'}
-                  </small>
-                </button>
+                <SkillRefCard key={`${group.endpoint}-${skill.skillId}`} skill={skill} onJumpToSkill={onJumpToSkill} />
               ))}
             </div>
           </article>
@@ -632,6 +644,13 @@ export default function App() {
     catalog: filteredCatalog.length,
   };
 
+  const jumpToSkillCard = (skillId: string) => {
+    setQuery('');
+    setSourceFilter('all');
+    setImplementationFilter('all');
+    jumpToCard('skills', makeCardId('skill', skillId), setView);
+  };
+
   if (!catalog || !optimized || !analysis) {
     return <main className="shell loading">Loading AISA skill intelligence...</main>;
   }
@@ -701,7 +720,7 @@ export default function App() {
       {view === 'interfaces' ? (
         <InterfaceTable
           items={filteredInterfaces}
-          onJumpToSkill={(skillId) => jumpToCard('skills', makeCardId('skill', skillId), setView)}
+          onJumpToSkill={jumpToSkillCard}
           copiedCardId={copiedCardId}
           onCopyCard={(cardId) => {
             copyCardLink(cardId).then(() => setCopiedCardId(cardId)).catch((error) => console.error('Failed to copy interface link', error));
@@ -722,7 +741,7 @@ export default function App() {
       {view === 'skills' ? (
         <GroupTable
           items={filteredGroups.slice(0, 24)}
-          onJumpToSkill={(skillId) => jumpToCard('skills', makeCardId('skill', skillId), setView)}
+          onJumpToSkill={jumpToSkillCard}
           onJumpToInterface={(endpoint) => jumpToCard('interfaces', makeCardId('interface', endpoint), setView)}
         />
       ) : null}

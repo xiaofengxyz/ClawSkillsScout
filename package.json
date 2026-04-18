@@ -22,6 +22,7 @@
     "refresh:clawhub-owner-seeds": "python3 extract_all_skills_correct.py",
     "download:clawhub-account-skills": "node scripts/download-clawhub-account-skills.mjs --scrape",
     "download:github-account-skills": "node scripts/download-github-account-skills.mjs",
+    "convert:github-to-clawhub": "node scripts/convert-github-skills-to-clawhub.mjs",
     "typecheck": "tsc --noEmit",
     "deploy:server": "bash deploy/deploy-server.sh"
   },
