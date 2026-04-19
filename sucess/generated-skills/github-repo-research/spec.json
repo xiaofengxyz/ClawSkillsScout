@@ -1,0 +1,29 @@
+{
+  "inputIdea": "github repo research",
+  "apiFamily": "Search API / Social API",
+  "stage": "0-to-1",
+  "jobToBeDone": "Given one GitHub repository URL, tell the user what the repo does, who it is for, what stack and APIs it uses, where to start, and whether it is worth more time.",
+  "primaryTitle": "GitHub Repo Research",
+  "slug": "github-repo-research",
+  "descriptionCandidate": "GitHub Repo Research turns a repository URL into a fast decision brief. Use when: you want to understand what a repo does, whether it is worth reading, what stack and APIs it uses, where to start, and what risks or reuse opportunities exist.",
+  "breakoutScorecard": {
+    "demandFit": "High",
+    "timeToValue": "High",
+    "discoverability": "High",
+    "portfolioFit": "High",
+    "monetizationFit": "High"
+  },
+  "monetizationHooks": [
+    "Free: one repo at a time with shallow analysis.",
+    "Pro: deep file traversal, issue and PR review, dependency risk scan, and multi-repo comparison.",
+    "Team: shared workspace, watchlists, alerting on repo changes, and reusable evaluation templates."
+  ],
+  "portfolioVariants": [
+    "GitHub Repo Summary",
+    "GitHub Repo Due Diligence",
+    "GitHub PR Review",
+    "GitHub Issue Triage",
+    "GitHub Tech Stack Audit",
+    "GitHub Competitor Repo Compare"
+  ]
+}

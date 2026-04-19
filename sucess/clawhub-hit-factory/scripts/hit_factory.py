@@ -159,19 +159,17 @@ def render_skill_md(spec: dict[str, Any]) -> str:
     alt_titles = "\n".join(f"- {item}" for item in spec["alternativeTitles"])
     return f"""---
 name: {slug}
-version: "0.1.0"
 description: "{description}"
-argument-hint: "{spec['inputIdea']}"
-allowed-tools: Bash, Read, Write
-author: AIsa-team
-license: MIT
-user-invocable: true
 metadata:
-  openclaw:
+  aisa:
     emoji: "🚀"
     requires:
       bins:
         - python3
+    compatibility:
+      - openclaw
+      - claude-code
+      - hermes
 ---
 
 # {title}
@@ -197,6 +195,13 @@ metadata:
 ## Breakout Characteristics
 
 {characteristics}
+
+## Packaging Guardrails
+
+- Use `metadata.aisa` frontmatter only; do not add extra publication metadata fields unless the target harness explicitly requires them.
+- Use `{{baseDir}}` when SKILL examples reference bundled scripts.
+- Ship runtime files only; do not bundle test, eval, sync, or build tooling with the published skill.
+- Prefer stdlib-only Python dependencies for portable skill bundles.
 
 ## Title Options
 

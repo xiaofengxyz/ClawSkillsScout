@@ -1,0 +1,71 @@
+Overview
+This PR adds a new last30days/ skill (~15.4k LOC, ~50 files) that aggregates recent evidence across Reddit, X/Twitter, YouTube, TikTok, Instagram, HN, Polymarket, GitHub, and web search, with an SQLite-backed watchlist/briefing layer on top.
+
+Overall the breadth is impressive, but the bundle as shipped does not line up with several hard conventions in CLAUDE.md. Listing the blocking items first.
+
+🚫 Blocking — violates CLAUDE.md conventions
+1. Introduces requests as a third-party dep
+CLAUDE.md is explicit:
+
+All clients are zero-dependency Python stdlib (urllib.request, argparse, json). Do not introduce requests, httpx, or other third-party libs — the skill must run with only python3 and curl on the host.
+
+But:
+
+last30days/pyproject.toml declares requests>=2.32,<3 as a runtime dep.
+At least 5 lib files import requests (lib/instagram.py, lib/http.py, lib/pinterest.py, lib/xiaohongshu_api.py, scripts/verify_v3.py).
+Fix: port every requests call to urllib.request (see marketpulse/scripts/market_client.py / media-gen/scripts/media_gen_client.py for the pattern), and drop pyproject.toml entirely — this repo has no build system.
+
+2. SKILL.md frontmatter doesn't match the repo shape
+Compare to marketpulse/SKILL.md:
+
+metadata: {\"aisa\":{\"emoji\":\"📊\",\"requires\":{...},\"primaryEnv\":\"AISA_API_KEY\",\"compatibility\":[\"openclaw\",\"claude-code\",\"hermes\"]}}
+This PR uses:
+
+metadata.openclaw.* instead of metadata.aisa.* — the harness keys on aisa.
+Non-standard frontmatter fields: version, argument-hint, allowed-tools, author, license, user-invocable, repository — none of the existing skills ship these.
+Missing compatibility array under aisa.
+Fix: rewrite frontmatter to the metadata.aisa.{emoji,requires,primaryEnv,compatibility} shape and drop the extra fields.
+
+3. SKILL.md uses ${SKILL_ROOT} instead of {baseDir}
+CLAUDE.md:
+
+When SKILL.md references scripts, it uses the literal token {baseDir} (e.g. python3 {baseDir}/scripts/market_client.py ...). The harness substitutes this at load time.
+
+Every Quick Reference line in last30days/SKILL.md uses ${SKILL_ROOT} / ${LAST30DAYS_PYTHON}, which the harness won't substitute. These will break at invocation time for OpenClaw/Claude Code/Hermes.
+
+4. Ships files this repo explicitly doesn't host
+CLAUDE.md: "There is no test harness." The README even says tests are "Excluded on purpose," yet the PR includes:
+
+scripts/run-tests.sh, scripts/test-aisa-planner.py, scripts/test-aisa-provider.py, scripts/test-v1-vs-v2.sh, scripts/verify_v3.py, scripts/evaluate_search_quality.py (520 LOC), scripts/compare.sh, scripts/generate-synthesis-inputs.py, scripts/sync.sh, scripts/dev-python.sh.
+pyproject.toml with pytest / pytest-cov dev deps and [tool.coverage.*] config.
+Fix: keep only the runtime CLI entry points (e.g. last30days.py, briefing.py, watchlist.py, store.py, lib/*) plus one run-last30days.sh wrapper if the harness needs it. Everything test/build/sync-related should stay in whatever upstream repo this was bundled from.
+
+⚠️ Design questions worth discussing before merge
+5. Scope is an order of magnitude larger than any sibling skill
+Sibling skills top out at ~1–2k LOC and one CLI. This PR is 15.4k LOC across ~50 files and includes:
+
+A persistent SQLite store (store.py, 772 LOC) with topics, findings, cost budgets, daily/weekly briefings.
+A watchlist CLI (watchlist.py) and morning-briefing CLI (briefing.py) that write to ~/.local/share/last30days/.
+These feel like a standalone research app rather than an "agent skill" in the sense the rest of the repo uses. Two questions:
+
+Is the SQLite accumulator in scope for a skill, or should it be a separate product? The harness contract is stateless today.
+Can the skill be sliced thinner — e.g. ship only the last30days.py search/synthesis CLI here, and keep watch/briefing in a separate project?
+6. Direct GitHub API surface adds a second auth story
+scripts/lib/github.py (906 LOC) hits api.github.com directly with GH_TOKEN/GITHUB_TOKEN. Every other skill in the repo routes through api.aisa.one with a single AISA_API_KEY. Worth confirming with the team whether bypassing the AISA gateway for GitHub is intentional, or whether /apis/v1/... should front this too — otherwise users now need to manage a second credential per skill.
+
+7. PR description is empty
+Just "last30days" — please fill in motivation, scope, manual test evidence (live API calls per CLAUDE.md guidance), and whether this was generated/ported from an external repo. For a 15k-line change a proper description would help reviewers a lot.
+
+Minor
+SKILL.md Python bootstrap block (for py in /usr/local/python3.12/...) hardcodes a Homebrew-style path; most users will just have python3. The >=3.12 requirement itself is stricter than anything else in this repo (no sibling constrains Python version) — consider whether 3.10/3.11 support is achievable once requests is removed.
+last30days/pyproject.toml and last30days/SKILL.md disagree on version (1.0.2 vs 1.0.4). If versioning matters, pick one source of truth; if it doesn't, drop the field.
+README claims the bundle excludes "tests, historical docs, hooks, fixtures" but scripts/ still contains ~8 test/eval/verify scripts — either the exclusion text or the file list is wrong.
+scripts/lib/http.py implements its own retry/timeout wrapper on top of requests; once you drop requests, consider whether the minimal urllib.request helper in marketpulse/scripts/market_client.py is enough.
+Summary
+The functionality looks genuinely useful, but the bundle as shipped will not load correctly in the harness ({baseDir} token, metadata.aisa shape) and violates the zero-dep Python rule. I'd suggest:
+
+Port requests → urllib.request, delete pyproject.toml.
+Rewrite SKILL.md frontmatter + bodies to match marketpulse/SKILL.md (metadata.aisa.*, {baseDir}).
+Strip test/eval/dev-tooling scripts.
+Open a design discussion on whether the SQLite watch/brief layer belongs in this repo at all.
+Once (1)–(3) are done the PR should be reviewable at a more normal size.

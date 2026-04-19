@@ -2,7 +2,7 @@
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-PYTHON="$("$ROOT/scripts/dev-python.sh")"
+PYTHON="${LAST30DAYS_PYTHON:-python3}"
 
 cd "$ROOT"
 exec "$PYTHON" "$ROOT/scripts/watchlist.py" "$@"

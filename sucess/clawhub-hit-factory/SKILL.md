@@ -1,22 +1,17 @@
 ---
 name: clawhub-hit-factory
-version: "0.1.0"
-description: "Design viral-ready ClawHub skills from repeatable systems. Use when: you want to go from 0 to 1 on a new skill, turn an ordinary skill into a breakout candidate, or build a multi-variant portfolio around one API family. Supports title design, positioning, structure, monetization hooks, and launch sequencing."
-argument-hint: "clawhub-hit-factory search api for devtools, clawhub-hit-factory weather assistant for travelers"
-allowed-tools: Bash, Read, Write
-author: AIsa-team
-license: MIT
-user-invocable: true
+description: "Design viral-ready ClawHub skills from repeatable systems. Use when: you want to go from 0 to 1 on a new skill, turn an ordinary skill into a breakout candidate, or build a multi-variant portfolio around one API family. Supports title design, positioning, packaging guardrails, monetization hooks, and launch sequencing."
 metadata:
-  openclaw:
+  aisa:
     emoji: "🏭"
     requires:
       bins:
         - python3
         - bash
-    files:
-      - "scripts/*"
-      - "references/*"
+    compatibility:
+      - openclaw
+      - claude-code
+      - hermes
 ---
 
 # clawhub-hit-factory
@@ -46,15 +41,16 @@ Turn the ClawHub 10K+ systems analysis into an execution-ready skill design work
 ## Quick Reference
 
 ```bash
-python3 "${SKILL_ROOT}/scripts/hit_factory.py" "search api for developer workflows"
-python3 "${SKILL_ROOT}/scripts/hit_factory.py" "weather assistant for travelers" --format=json
-python3 "${SKILL_ROOT}/scripts/hit_factory.py" "browser automation for support agents" --stage=portfolio
+python3 {baseDir}/scripts/hit_factory.py "search api for developer workflows"
+python3 {baseDir}/scripts/hit_factory.py "weather assistant for travelers" --format=json
+python3 {baseDir}/scripts/hit_factory.py "browser automation for support agents" --stage=portfolio
 ```
 
 ## Workflow
 
-- Read [references/playbook-zh.md](/mnt/d/workplace/skillGet/sucess/clawhub-hit-factory/references/playbook-zh.md) when the user wants Chinese strategy guidance or local team execution wording.
-- Read [references/playbook-en.md](/mnt/d/workplace/skillGet/sucess/clawhub-hit-factory/references/playbook-en.md) when you need the English operating model or bilingual packaging.
+- Read [references/playbook-zh.md](/mnt/d/workplace/skillget/sucess/clawhub-hit-factory/references/playbook-zh.md) when the user wants Chinese strategy guidance or local team execution wording.
+- Read [references/playbook-en.md](/mnt/d/workplace/skillget/sucess/clawhub-hit-factory/references/playbook-en.md) when you need the English operating model or bilingual packaging.
+- Read [references/skill-packaging-rules.md](/mnt/d/workplace/skillget/sucess/clawhub-hit-factory/references/skill-packaging-rules.md) before shipping or updating a skill bundle so the output follows the repo's harness rules.
 - Run `scripts/hit_factory.py` whenever you want a structured spec instead of freeform advice.
 - If the output is intended for ClawHub publication, apply the naming and description patterns from the generated spec before writing `SKILL.md`.
 

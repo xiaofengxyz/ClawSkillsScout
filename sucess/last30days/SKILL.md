@@ -1,16 +1,8 @@
 ---
 name: last30days
-version: "1.0.4"
-description: "Research the last 30 days across Reddit, X/Twitter, YouTube, TikTok, Instagram, Hacker News, Polymarket, GitHub, and web search. Use when: you need recent social research, company updates, person profiles, competitor comparisons, launch reactions, or trend scans. Supports AISA-powered planning, clustering, reranking, and JSON output."
-argument-hint: "last30days OpenAI Agents SDK, last30days Peter Steinberger, last30days OpenClaw"
-allowed-tools: Bash, Read, Write, AskUserQuestion, WebSearch
-homepage: https://github.com/AIsa-team/agent-skills
-repository: https://github.com/AIsa-team/agent-skills
-author: mvanhorn
-license: MIT
-user-invocable: true
+description: "Research the last 30 days across Reddit, X/Twitter, YouTube, TikTok, Instagram, Hacker News, Polymarket, GitHub, and grounded web results. Use when: you need recent social research, company updates, competitor comparisons, launch reactions, or trend scans with one-query first-run success. Supports AISA-powered planning, clustering, reranking, JSON output, and optional local watchlist/briefing workflows."
 metadata:
-  openclaw:
+  aisa:
     emoji: "📰"
     requires:
       env:
@@ -19,8 +11,10 @@ metadata:
         - python3
         - bash
     primaryEnv: AISA_API_KEY
-    files:
-      - "scripts/*"
+    compatibility:
+      - openclaw
+      - claude-code
+      - hermes
 ---
 
 # last30days
@@ -49,26 +43,20 @@ Research recent evidence across social platforms, community forums, prediction m
 
 - `AISA_API_KEY` is the main hosted credential.
 - `GH_TOKEN` or `GITHUB_TOKEN` is optional for GitHub search only.
-- Python `3.12+` is required.
-
-```bash
-for py in /usr/local/python3.12/bin/python3.12 python3.14 python3.13 python3.12 python3; do
-  command -v "$py" >/dev/null 2>&1 || continue
-  "$py" -c 'import sys; raise SystemExit(0 if sys.version_info >= (3, 12) else 1)' || continue
-  LAST30DAYS_PYTHON="$py"
-  break
-done
-```
+- `python3` and `bash` are the only host binaries required.
+- The runtime is stdlib-only Python. Do not assume `requests`, `httpx`, `pytest`, or project build tooling is available.
 
 ## Quick Reference
 
 ```bash
-bash "${SKILL_ROOT}/scripts/run-last30days.sh" "$ARGUMENTS" --emit=compact
-"${LAST30DAYS_PYTHON}" "${SKILL_ROOT}/scripts/last30days.py" "$ARGUMENTS" --emit=json
-"${LAST30DAYS_PYTHON}" "${SKILL_ROOT}/scripts/last30days.py" "$ARGUMENTS" --quick
-"${LAST30DAYS_PYTHON}" "${SKILL_ROOT}/scripts/last30days.py" "$ARGUMENTS" --deep
-"${LAST30DAYS_PYTHON}" "${SKILL_ROOT}/scripts/last30days.py" "$ARGUMENTS" --search=reddit,x,grounding
-"${LAST30DAYS_PYTHON}" "${SKILL_ROOT}/scripts/last30days.py" --diagnose
+bash {baseDir}/scripts/run-last30days.sh "$ARGUMENTS" --emit=compact
+python3 {baseDir}/scripts/last30days.py "$ARGUMENTS" --emit=json
+python3 {baseDir}/scripts/last30days.py "$ARGUMENTS" --quick
+python3 {baseDir}/scripts/last30days.py "$ARGUMENTS" --deep
+python3 {baseDir}/scripts/last30days.py "$ARGUMENTS" --search=reddit,x,grounding
+python3 {baseDir}/scripts/last30days.py --diagnose
+python3 {baseDir}/scripts/watchlist.py list
+python3 {baseDir}/scripts/briefing.py generate
 ```
 
 ## Inputs And Outputs
@@ -82,4 +70,11 @@ bash "${SKILL_ROOT}/scripts/run-last30days.sh" "$ARGUMENTS" --emit=compact
 - `last30days Peter Steinberger`
 - `last30days OpenClaw vs Codex`
 - `last30days Kanye West --quick`
+
+## Packaging Guardrails
+
+- Keep the bundle runtime-only: `last30days.py`, `watchlist.py`, `briefing.py`, `store.py`, wrapper scripts, and `scripts/lib/*`.
+- Do not add `pyproject.toml`, test scripts, sync helpers, evaluation tooling, or extra docs to the shipped skill bundle.
+- When referencing local scripts in this file, always use the literal token `{baseDir}` so the harness can substitute the install path.
+- Keep Python HTTP clients stdlib-only with `urllib.request`; do not introduce `requests` or other third-party runtime deps.
 

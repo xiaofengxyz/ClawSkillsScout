@@ -1,18 +1,16 @@
 ---
 name: search-api-developer
-version: "0.1.0"
 description: "Search API Developer for search api for developer workflows. Use when: the user needs this exact result quickly. Supports a fast first-run success path and obvious next actions."
-argument-hint: "search api for developer workflows"
-allowed-tools: Bash, Read, Write
-author: AIsa-team
-license: MIT
-user-invocable: true
 metadata:
-  openclaw:
+  aisa:
     emoji: "🚀"
     requires:
       bins:
         - python3
+    compatibility:
+      - openclaw
+      - claude-code
+      - hermes
 ---
 
 # Search API Developer
