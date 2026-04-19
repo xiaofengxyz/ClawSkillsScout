@@ -36,6 +36,8 @@
       "scripts/generate-aisa-api-analysis.py",
       "scripts/generate-clawhub-growth-report.py",
       "scripts/generate-clawhub-download-insights.py",
+      "scripts/build-clawhub-10k-system-report.py",
+      "scripts/generate-clawhub-10k-followup-assets.py",
       "scripts/convert-github-skills-to-clawhub.py",
       "scripts/build-source-optimized-packages.mjs",
       "scripts/build-source-optimized-zh.mjs",
@@ -97,19 +99,26 @@
         "src/App.tsx",
         "src/clawhub-growth/App.tsx",
         "src/clawhub-download-insights/App.tsx",
+        "src/clawhub-10k-system/App.tsx",
         "src/types.ts",
         "src/styles.css",
         "vite.config.ts",
         "index.html",
         "clawhub-growth.html",
-        "clawhub-download-insights.html"
+        "clawhub-download-insights.html",
+        "clawhub-10k-system.html"
       ],
       "inputs": [
         "public/data/catalog.json",
         "public/data/aisa-api-analysis.json",
         "public/data/optimized-packages.json",
         "public/data/clawhub-growth-report.json",
-        "public/data/clawhub-download-insights.json"
+        "public/data/clawhub-download-insights.json",
+        "public/data/clawhub-10k-system-report.json",
+        "public/reports/ClawHub_10K_System_Report.docx",
+        "public/reports/ClawHub_10K_System_Report_ZH.docx",
+        "public/reports/ClawHub_10K_Boss_Brief_EN.docx",
+        "public/reports/ClawHub_10K_Boss_Brief_ZH.docx"
       ],
       "outputs": [
         "dist/"
@@ -123,7 +132,10 @@
         "suspicious package highlighting",
         "optimized bundle download links",
         "standalone ClawHub growth strategy page",
-        "standalone ClawHub downloads-insights page"
+        "standalone ClawHub downloads-insights page",
+        "standalone ClawHub 10k+ repeatable-systems page",
+        "public Word report download for system analysis",
+        "public Chinese report and boss brief download"
       ]
     },
     {

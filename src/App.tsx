@@ -683,11 +683,17 @@ export default function App() {
             <a className="hero-link-button" href={`${import.meta.env.BASE_URL}clawhub-download-insights.html`}>
               打开下载榜爆款分析页
             </a>
+            <a className="hero-link-button" href={`${import.meta.env.BASE_URL}clawhub-10k-system.html`}>
+              打开 10K+ 系统报告页
+            </a>
             <a className="hero-link-button" href={`${import.meta.env.BASE_URL}data/clawhub-growth-report.json`} target="_blank" rel="noreferrer">
               查看分析数据
             </a>
             <a className="hero-link-button" href={`${import.meta.env.BASE_URL}data/clawhub-download-insights.json`} target="_blank" rel="noreferrer">
               查看下载榜 JSON
+            </a>
+            <a className="hero-link-button" href={`${import.meta.env.BASE_URL}data/clawhub-10k-system-report.json`} target="_blank" rel="noreferrer">
+              查看 10K+ 系统 JSON
             </a>
           </div>
           <div className="hero-meta">

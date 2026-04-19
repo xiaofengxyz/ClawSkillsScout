@@ -35,6 +35,8 @@ Project-level context docs do not need to be updated after every task. Only upda
 - Generate a static dashboard in `dist/` with interface and skill search views
 - Generate a standalone ClawHub growth strategy page from `public/data/clawhub-growth-report.json`
 - Generate a standalone ClawHub downloads-insights page from `public/data/clawhub-download-insights.json`
+- Generate a standalone ClawHub `10k+` repeatable-systems page from `public/data/clawhub-10k-system-report.json`
+- Generate Chinese and boss-facing EN/ZH follow-up reports from the `10k+` system dataset
 - Deploy daily through GitHub Actions
 - Package GitHub-hosted skill directories from tracked owner accounts into `public/downloads/github/`
 
@@ -48,6 +50,8 @@ npm run download:github-account-skills
 npm run analyze:aisa
 npm run analyze:clawhub-growth
 npm run analyze:clawhub-download-insights
+npm run analyze:clawhub-10k-system
+npm run analyze:clawhub-10k-followups
 npm run dev
 ```
 
@@ -74,6 +78,8 @@ npm run build
 `build` now runs `scrape` + `analyze:aisa` before `vite build`, so the GitHub Pages site includes the latest interface table, skill table, and GitHub skill archive analysis.
 `analyze:clawhub-growth` builds the separate business-analysis dataset consumed by `clawhub-growth.html`.
 `analyze:clawhub-download-insights` queries the live ClawHub downloads ranking, builds the standalone breakout-skill/author strategy dataset, and feeds `clawhub-download-insights.html`.
+`analyze:clawhub-10k-system` downloads all live 10k+ skills, downloads prolific-author portfolios, and outputs JSON + Markdown + Word (`.docx`) system reports for repeatable production and AIsa monetization strategy.
+`analyze:clawhub-10k-followups` converts the 10k system report into a Chinese system report plus boss-facing EN/ZH briefs, and publishes both Markdown and Word outputs under `public/reports/`.
 
 ## Deployment
 

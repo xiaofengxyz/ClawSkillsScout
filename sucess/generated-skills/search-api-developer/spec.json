@@ -1,0 +1,71 @@
+{
+  "inputIdea": "search api for developer workflows",
+  "apiFamily": "Search API",
+  "stage": "0-to-1",
+  "jobToBeDone": "Help the user complete this narrow job: search api for developer workflows.",
+  "primaryTitle": "Search API Developer",
+  "alternativeTitles": [
+    "Search API Developer Pro",
+    "Search API Developer Agent",
+    "Search API Developer Assistant"
+  ],
+  "slug": "search-api-developer",
+  "descriptionCandidate": "Search API Developer for search api for developer workflows. Use when: the user needs this exact result quickly. Supports a fast first-run success path and obvious next actions.",
+  "viralUpgradePath": {
+    "ordinaryVersion": "Broad positioning, generic title, unclear first-run value.",
+    "improvedVersion": "Narrow use case, clear promise, more direct title.",
+    "viralVersion": "Exact intent title, instant first success, stronger proof of value, visible monetization hook."
+  },
+  "breakoutScorecard": {
+    "demandFit": "High",
+    "timeToValue": "High",
+    "discoverability": "High",
+    "portfolioFit": "High",
+    "monetizationFit": "High"
+  },
+  "contentCharacteristics": [
+    "Lead with the job, not the implementation.",
+    "Make the first prompt succeed without heavy setup.",
+    "Keep input requirements low and output certainty high.",
+    "Use search-intent vocabulary in title and description.",
+    "Design one obvious upgrade reason from the first version."
+  ],
+  "structure": {
+    "nameRule": "Use exact user-intent terms, not internal architecture language.",
+    "descriptionRule": "State what it does, when to use it, and what it supports.",
+    "exampleRule": "The first example must succeed with one prompt.",
+    "outputRule": "Return concrete, decision-ready output rather than vague capability prose."
+  },
+  "monetizationHooks": [
+    "Free: small result set or capped usage.",
+    "Pro: real-time freshness or better quality output.",
+    "Pro: batch mode or automation depth.",
+    "Team: governance, logs, and shared credits."
+  ],
+  "launchChecklist": [
+    "Validate one-sentence job-to-be-done.",
+    "Test first-run success path.",
+    "Ship with 3 example prompts.",
+    "Track install velocity and repeat usage.",
+    "Design 5 adjacent variants from the same capability core."
+  ],
+  "operationalSteps": [
+    "Day 1: validate the narrow user problem and choose one API/runtime.",
+    "Day 2: draft title, description, and first-run prompt flow.",
+    "Day 3: implement the minimal successful path only.",
+    "Day 4: package for ClawHub with examples and clear 'when to use'.",
+    "Day 5-7: release, observe usage, and prepare adjacent variants."
+  ],
+  "portfolioVariants": [
+    "Search API Developer for operators",
+    "Search API Developer for researchers",
+    "Search API Developer for analysts",
+    "Search API Developer monitor",
+    "Search API Developer automation"
+  ],
+  "examplePrompts": [
+    "Use Search API Developer to handle: search api for developer workflows",
+    "Give me the fastest successful path for: search api for developer workflows",
+    "Help me turn this into an automation-ready workflow: search api for developer workflows"
+  ]
+}
