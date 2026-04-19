@@ -169,7 +169,39 @@ def build_chinese_report(payload: dict) -> str:
         lines.append(f"- {zh_map.get(item, item)}")
     lines.append("")
 
-    lines.append("## 四、AIsa API 盈利优化")
+    lines.append("## 四、直接开做的选品方案")
+    lines.append("")
+    lines.append("### 我建议你现在就做：GitHub Repo Research")
+    lines.extend(
+        [
+            "- 选它，不选更复杂的方向。理由很直接：GitHub / 搜索方向同时验证过高下载需求，用户任务明确，而且从 0 到 1 最容易快速做出可感知价值。",
+            "- 它比“自进化 agent”更适合落地。Self-Improving 很吸睛，但实现和验收都更虚；GitHub Research 则能清楚回答用户问题，例如“这个仓库做什么”“值不值得参考”“有哪些 API/技术栈/风险点”。",
+            "- 它天然适合变体工厂。同一底层能力可以继续拆出 Repo Summarizer、Issue Triage、PR Reviewer、README Writer、Competitor Scanner 等多个变体。",
+        ]
+    )
+    lines.append("")
+    lines.append("### 从头到尾怎么做")
+    lines.extend(
+        [
+            "- 第 1 步：先做最小可用版。输入一个 GitHub 仓库 URL，输出仓库摘要、技术栈、目录结构、关键文件、是否值得继续阅读。",
+            "- 第 2 步：把首轮成功做扎实。保证用户第一次只给一个链接，就能得到结构化结果，而不是还要补很多参数。",
+            "- 第 3 步：用搜索词命名。标题不要抽象，直接叫 Github Repo Research、Github Repo Analyzer、Github Codebase Summary 这类用户会搜的词。",
+            "- 第 4 步：设计付费钩子。免费版限制仓库大小、分析深度、调用频次；付费版开放多仓库对比、Issue/PR 分析、依赖风险检查、团队批量扫描。",
+            "- 第 5 步：发布 3 到 5 个变体。先围绕同一底层能力发 Repo Research、Repo README、Repo PR Review、Repo Issue Triage、Repo Tech Stack Audit。",
+        ]
+    )
+    lines.append("")
+    lines.append("### 你现在就能抄的产品定义")
+    lines.extend(
+        [
+            "- 用户是谁：开发者、独立黑客、技术运营、投研和 AI agent 使用者。",
+            "- 一句话价值：给我一个 GitHub 链接，我在一轮内告诉你这个项目值不值得看、核心代码在哪、适合怎么继续用。",
+            "- 为什么容易起量：搜索意图强、使用门槛低、结果可验证、适合反复使用，也适合内容传播。",
+        ]
+    )
+    lines.append("")
+
+    lines.append("## 五、AIsa API 盈利优化")
     lines.append("")
     lines.append("### 优化后的判断")
     lines.extend(
@@ -182,7 +214,10 @@ def build_chinese_report(payload: dict) -> str:
     lines.append("")
     lines.append("### 可替换 API 家族")
     for item in d4["replaceableApis"][:8]:
-        lines.append(f"- {item['apiFamily']}：{item['skillCount']} 个技能，系统打法：{item['systemPlay']}")
+        api_family = item["apiFamily"]
+        if api_family == "Unknown":
+            api_family = "Unknown（当前仅表示脚本暂时无法从标题/简介里判断依赖，不代表真的没有 API）"
+        lines.append(f"- {api_family}：{item['skillCount']} 个技能，系统打法：{item['systemPlay']}")
     lines.append("")
     lines.append("### 给老板的结论")
     lines.extend(

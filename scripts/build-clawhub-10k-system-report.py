@@ -414,6 +414,46 @@ def normalize_author_skill(handle: str, item: dict[str, Any], index: int) -> dic
     }
 
 
+def merge_portfolio_with_sample(
+    portfolio: list[dict[str, Any]],
+    sample_skills: list[SkillRecord],
+) -> list[dict[str, Any]]:
+    merged: dict[str, dict[str, Any]] = {}
+
+    for item in portfolio:
+        slug = item["slug"]
+        merged[slug] = dict(item)
+
+    for skill in sample_skills:
+        sample_item = {
+            "name": skill.name,
+            "slug": skill.slug,
+            "url": skill.url,
+            "downloads": skill.downloads,
+            "description": skill.description,
+            "category": skill.category,
+            "likelyApis": skill.likelyApis,
+        }
+        existing = merged.get(skill.slug)
+        if not existing:
+            merged[skill.slug] = sample_item
+            continue
+
+        existing["downloads"] = max(existing.get("downloads", 0), sample_item["downloads"])
+        if not compact_spaces(existing.get("description")) and sample_item["description"]:
+            existing["description"] = sample_item["description"]
+        if existing.get("category") == "Automation" and sample_item["category"] != "Automation":
+            existing["category"] = sample_item["category"]
+        if existing.get("likelyApis") == ["Unknown"] and sample_item["likelyApis"] != ["Unknown"]:
+            existing["likelyApis"] = sample_item["likelyApis"]
+        if not compact_spaces(existing.get("name")) and sample_item["name"]:
+            existing["name"] = sample_item["name"]
+        if not compact_spaces(existing.get("url")) and sample_item["url"]:
+            existing["url"] = sample_item["url"]
+
+    return list(merged.values())
+
+
 def build_author_records(skills: list[SkillRecord]) -> list[dict[str, Any]]:
     by_author: dict[str, list[SkillRecord]] = defaultdict(list)
     for skill in skills:
@@ -459,10 +499,8 @@ def build_author_records(skills: list[SkillRecord]) -> list[dict[str, Any]]:
             ]
             status = "sample-derived"
 
-        deduped: dict[str, dict[str, Any]] = {}
-        for item in portfolio:
-            deduped[item["slug"]] = item
-        portfolio = sorted(deduped.values(), key=lambda x: (-x["downloads"], x["name"].lower()))
+        portfolio = merge_portfolio_with_sample(portfolio, sample_skills)
+        portfolio = sorted(portfolio, key=lambda x: (-x["downloads"], x["name"].lower()))
 
         category_counter = Counter(item["category"] for item in portfolio)
         api_counter = Counter(api for item in portfolio for api in item["likelyApis"])

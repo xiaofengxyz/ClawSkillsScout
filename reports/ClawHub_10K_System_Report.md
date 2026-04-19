@@ -1,6 +1,6 @@
 # ClawHub 10K+ Skills System Report
 
-- GeneratedAt: 2026-04-18T18:00:24.388976+00:00
+- GeneratedAt: 2026-04-19T04:59:30.742108+00:00
 - Sampled10kSkills: 307
 - SampledAuthors: 182
 - ProlificAuthors: 24
@@ -24,21 +24,21 @@
 
 ### Top Authors
 - @steipete: totalSkills=53, 10kPlus=38, strategy=Medium/Medium
+- @byungkyu: totalSkills=131, 10kPlus=37, strategy=Medium/High
+- @ivangdavila: totalSkills=119, 10kPlus=19, strategy=High/High
 - @wscats: totalSkills=39, 10kPlus=13, strategy=High/High
-- @byungkyu: totalSkills=100, 10kPlus=6, strategy=Medium/High
 - @financial-ai-analyst: totalSkills=14, 10kPlus=4, strategy=Medium/Medium
 - @gitgoodordietrying: totalSkills=24, 10kPlus=3, strategy=High/High
 - @xejrax: totalSkills=3, 10kPlus=3, strategy=Low/Low
 - @joelchance: totalSkills=5, 10kPlus=2, strategy=High/Medium
 - @ide-rea: totalSkills=8, 10kPlus=2, strategy=Medium/Medium
 - @biostartechnology: totalSkills=2, 10kPlus=2, strategy=Medium/Low
-- @jk-0001: totalSkills=39, 10kPlus=2, strategy=Medium/Medium
 
 ### Self-Improving Focus
 - @steipete: topSkills=Github, Gog, Weather, totalSkills=53, 10kPlus=38
+- @ivangdavila: topSkills=Self-Improving + Proactive Agent, Word / DOCX, Excel / XLSX, totalSkills=119, 10kPlus=19
 - @pskoett: topSkills=self-improving-agent, simplify-and-harden, intent-framed-agents, totalSkills=5, 10kPlus=1
 - @yueyanc: topSkills=Self-Improving Proactive Agent, totalSkills=1, 10kPlus=1
-- @ivangdavila: topSkills=Self-Evolving, Jarvis, Word, totalSkills=100, 10kPlus=0
 
 - High-output authors are running portfolio systems, not one-off releases: shared scaffolds, naming templates, and API reuse.
 - They maximize derivative output from one core capability by framing multiple adjacent user jobs.
@@ -80,16 +80,16 @@
 - Weather API: 2 skills. Use AIsa as unified paid backend and ship many low-friction wrappers.
 
 ### Top 10 Rebuild Candidates
-- Skill Vetter (@spclaudehome): 211,987 downloads, APIs=Social API. Validated demand with 211,987 downloads and clean API wrapper potential.
-- Github (@steipete): 159,495 downloads, APIs=Social API. Validated demand with 159,495 downloads and clean API wrapper potential.
-- Gog (@steipete): 157,513 downloads, APIs=Search API, Productivity API. Validated demand with 157,513 downloads and clean API wrapper potential.
-- Weather (@steipete): 135,871 downloads, APIs=Weather API. Validated demand with 135,871 downloads and clean API wrapper potential.
-- Multi Search Engine (@gpyangyoujun): 121,602 downloads, APIs=Search API. Validated demand with 121,602 downloads and clean API wrapper potential.
-- Polymarket (@joelchance): 120,101 downloads, APIs=Financial API, Search API. Validated demand with 120,101 downloads and clean API wrapper potential.
-- Nano Pdf (@steipete): 92,133 downloads, APIs=Unknown. Validated demand with 92,133 downloads and clean API wrapper potential.
-- Humanizer (@biostartechnology): 92,084 downloads, APIs=Media Generation API. Validated demand with 92,084 downloads and clean API wrapper potential.
-- Agent Browser (@matrixy): 90,807 downloads, APIs=Browser Automation Runtime. Validated demand with 90,807 downloads and clean API wrapper potential.
-- Nano Banana Pro (@steipete): 87,540 downloads, APIs=Media Generation API. Validated demand with 87,540 downloads and clean API wrapper potential.
+- Skill Vetter (@spclaudehome): 212,538 downloads, APIs=Social API. Validated demand with 212,538 downloads and clean API wrapper potential.
+- Github (@steipete): 159,844 downloads, APIs=Social API. Validated demand with 159,844 downloads and clean API wrapper potential.
+- Gog (@steipete): 157,849 downloads, APIs=Search API, Productivity API. Validated demand with 157,849 downloads and clean API wrapper potential.
+- Weather (@steipete): 136,145 downloads, APIs=Weather API. Validated demand with 136,145 downloads and clean API wrapper potential.
+- Multi Search Engine (@gpyangyoujun): 122,042 downloads, APIs=Search API. Validated demand with 122,042 downloads and clean API wrapper potential.
+- Polymarket (@joelchance): 121,282 downloads, APIs=Financial API, Search API. Validated demand with 121,282 downloads and clean API wrapper potential.
+- Nano Pdf (@steipete): 92,356 downloads, APIs=Unknown. Validated demand with 92,356 downloads and clean API wrapper potential.
+- Humanizer (@biostartechnology): 92,334 downloads, APIs=Media Generation API. Validated demand with 92,334 downloads and clean API wrapper potential.
+- Agent Browser (@matrixy): 91,255 downloads, APIs=Browser Automation Runtime. Validated demand with 91,255 downloads and clean API wrapper potential.
+- Nano Banana Pro (@steipete): 87,745 downloads, APIs=Media Generation API. Validated demand with 87,745 downloads and clean API wrapper potential.
 
 ### Monetization Funnel
 - Acquire: free utility skill with clear task completion.

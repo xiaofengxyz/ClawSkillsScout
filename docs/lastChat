@@ -1,0 +1,14 @@
+这次我已经把两件关键事一起处理了。
+
+你指出的问题是对的。@ivangdavila 之前显示 10K+ 技能 0 是统计 bug，不是数据事实。原因是作者画像阶段把作者页返回的低下载量作品集数据，覆盖了 10k 榜单里的真实高下载样本。我已经修了合并逻辑，在 scripts/build-clawhub-10k-system-report.py 里把作者作品集和 10k 榜单样本按 slug 合并，并取更高下载量。现在重新生成后的结果是：@ivangdavila 变成 总技能 119，10K+ 技能 19，代表作也回正为 Self-Improving + Proactive Agent, Word / DOCX, Excel / XLSX。对应产物已经更新到 public/data/clawhub-10k-system-report.json 和 public/reports/ClawHub_10K_System_Report.md。
+
+Unknown：125 个技能 的意思也不是“没有 API”，而是“当前脚本只靠标题和简介做启发式判断，暂时识别不出明确 API 家族”。也就是说它是“未识别依赖桶”，不是一个真实 API 类别。我已经在中文 follow-up 报告里把这个解释写清楚了，并补了一个可直接落地的选品方案：public/reports/ClawHub_10K_System_Report_ZH.md。我给你的直接建议是先做 GitHub Repo Research，不要先做更虚的 Self-Improving Agent。原因很简单：搜索意图强、需求已验证、第一次使用门槛低，而且最容易做成一个底层能力复用到多个变体的工厂。
+
+这次我改动了：
+
+scripts/build-clawhub-10k-system-report.py
+scripts/generate-clawhub-10k-followup-assets.py
+public/data/clawhub-10k-system-report.json
+public/reports/ClawHub_10K_System_Report.md
+public/reports/ClawHub_10K_System_Report_ZH.md
+有一个小阻塞需要你知道：public/reports/ClawHub_10K_System_Report_ZH.docx 正在被外部程序占用，所以脚本没法覆盖它；Markdown 已经更新，本地 reports/ClawHub_10K_System_Report_ZH.docx 写成功了。你如果关掉占用这个 Word 文件的程序，我下一轮可以把 public 目录下的中文版 .docx 也补齐。

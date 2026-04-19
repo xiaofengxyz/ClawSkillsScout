@@ -1,10 +1,10 @@
 # ClawHub 10K+ 爆款系统报告（中文版）
 
-- 生成时间：2026-04-18T18:00:24.388976+00:00
+- 生成时间：2026-04-19T04:59:30.742108+00:00
 - 10K+ 技能样本：307
 - 作者样本：182
 - 高产作者：24
-- 10K+ 下载成功数：274
+- 10K+ 下载成功数：303
 
 ## 一、头部技能系统分析
 
@@ -25,9 +25,9 @@
 
 ### Self-Improving 相关作者
 - @steipete：总技能 53，10K+ 技能 38，代表作 Github, Gog, Weather
+- @ivangdavila：总技能 119，10K+ 技能 19，代表作 Self-Improving + Proactive Agent, Word / DOCX, Excel / XLSX
 - @pskoett：总技能 5，10K+ 技能 1，代表作 self-improving-agent, simplify-and-harden, intent-framed-agents
 - @yueyanc：总技能 1，10K+ 技能 1，代表作 Self-Improving Proactive Agent
-- @ivangdavila：总技能 100，10K+ 技能 0，代表作 Self-Evolving, Jarvis, Word
 
 ### 方法论结论
 - 高产作者并不是反复从零开始做新产品，而是在运行一套作品集系统。
@@ -59,7 +59,26 @@
 - 维护可复用 starter template，避免重复造轮子。
 - 从第一天就设计价格钩子：限额、实时性、批量、自动化深度。
 
-## 四、AIsa API 盈利优化
+## 四、直接开做的选品方案
+
+### 我建议你现在就做：GitHub Repo Research
+- 选它，不选更复杂的方向。理由很直接：GitHub / 搜索方向同时验证过高下载需求，用户任务明确，而且从 0 到 1 最容易快速做出可感知价值。
+- 它比“自进化 agent”更适合落地。Self-Improving 很吸睛，但实现和验收都更虚；GitHub Research 则能清楚回答用户问题，例如“这个仓库做什么”“值不值得参考”“有哪些 API/技术栈/风险点”。
+- 它天然适合变体工厂。同一底层能力可以继续拆出 Repo Summarizer、Issue Triage、PR Reviewer、README Writer、Competitor Scanner 等多个变体。
+
+### 从头到尾怎么做
+- 第 1 步：先做最小可用版。输入一个 GitHub 仓库 URL，输出仓库摘要、技术栈、目录结构、关键文件、是否值得继续阅读。
+- 第 2 步：把首轮成功做扎实。保证用户第一次只给一个链接，就能得到结构化结果，而不是还要补很多参数。
+- 第 3 步：用搜索词命名。标题不要抽象，直接叫 Github Repo Research、Github Repo Analyzer、Github Codebase Summary 这类用户会搜的词。
+- 第 4 步：设计付费钩子。免费版限制仓库大小、分析深度、调用频次；付费版开放多仓库对比、Issue/PR 分析、依赖风险检查、团队批量扫描。
+- 第 5 步：发布 3 到 5 个变体。先围绕同一底层能力发 Repo Research、Repo README、Repo PR Review、Repo Issue Triage、Repo Tech Stack Audit。
+
+### 你现在就能抄的产品定义
+- 用户是谁：开发者、独立黑客、技术运营、投研和 AI agent 使用者。
+- 一句话价值：给我一个 GitHub 链接，我在一轮内告诉你这个项目值不值得看、核心代码在哪、适合怎么继续用。
+- 为什么容易起量：搜索意图强、使用门槛低、结果可验证、适合反复使用，也适合内容传播。
+
+## 五、AIsa API 盈利优化
 
 ### 优化后的判断
 - 当前最值得做成 AIsa 统一能力层的不是单个 skill，而是一组可被大量 skill 重复调用的 API 家族。
@@ -67,7 +86,7 @@
 - 最好的盈利方式不是一开始就卖单个 skill，而是通过免费 skill 获取安装与使用，再引导到付费 API 能力。
 
 ### 可替换 API 家族
-- Unknown：125 个技能，系统打法：Keep as experimental template pool; prioritize clearer dependency mapping.
+- Unknown（当前仅表示脚本暂时无法从标题/简介里判断依赖，不代表真的没有 API）：125 个技能，系统打法：Keep as experimental template pool; prioritize clearer dependency mapping.
 - Search API：98 个技能，系统打法：Use AIsa as unified paid backend and ship many low-friction wrappers.
 - Media Generation API：42 个技能，系统打法：Use AIsa as unified paid backend and ship many low-friction wrappers.
 - Productivity API：41 个技能，系统打法：Use AIsa as unified paid backend and ship many low-friction wrappers.
