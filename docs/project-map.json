@@ -39,6 +39,7 @@
       "scripts/build-clawhub-10k-system-report.py",
       "scripts/generate-clawhub-10k-followup-assets.py",
       "scripts/build-clawhub-multi-ranking-report.py",
+      "scripts/build-clawhub-viral-boss-report.py",
       "scripts/convert-github-skills-to-clawhub.py",
       "scripts/build-source-optimized-packages.mjs",
       "scripts/build-source-optimized-zh.mjs",
@@ -121,7 +122,8 @@
         "public/reports/ClawHub_10K_System_Report_ZH.docx",
         "public/reports/ClawHub_10K_Boss_Brief_EN.docx",
         "public/reports/ClawHub_10K_Boss_Brief_ZH.docx",
-        "public/reports/ClawHub_Multi_Ranking_Report_ZH.docx"
+        "public/reports/ClawHub_Multi_Ranking_Report_ZH.docx",
+        "public/reports/ClawHub_Viral_Boss_Report_ZH.docx"
       ],
       "outputs": [
         "dist/"
@@ -321,6 +323,7 @@
     "scrape": "Run the ClawHub scraper and regenerate catalog.json.",
     "analyze:aisa": "Scan all public/downloads skill archives and regenerate public/data/aisa-api-analysis.json.",
     "analyze:clawhub-multi-ranking": "Fetch the latest ClawHub downloads/stars/installs top lists and regenerate the boss-facing multi-ranking report assets.",
+    "analyze:clawhub-viral-boss": "Generate the long-form boss report that turns multi-ranking market analysis into a ClawHub viral-skill playbook and Word deliverable.",
     "pipeline:aisa-analysis": "Refresh ClawHub and GitHub skill archives, rebuild AISA analysis data, then build the static site.",
     "build:source-optimized": "Build English optimized package directories from original-unpacked sources.",
     "build:source-optimized-zh": "Build Chinese optimized package directories from source-optimized packages.",

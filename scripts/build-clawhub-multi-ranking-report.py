@@ -153,7 +153,33 @@ def fetch_ranking(sort_key: str) -> list[dict[str, Any]]:
     return [normalize_skill(entry, index + 1) for index, entry in enumerate(page[:TOP_N])]
 
 
-def fetch_author_portfolio(handle: str) -> list[dict[str, Any]]:
+def merge_portfolio_with_samples(portfolio: list[dict[str, Any]], sample_skills: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    merged: dict[str, dict[str, Any]] = {item["slug"]: dict(item) for item in portfolio}
+    for sample in sample_skills:
+        slug = sample["slug"]
+        current = merged.get(slug)
+        if current is None:
+            merged[slug] = {
+                "slug": slug,
+                "name": sample["name"],
+                "downloads": sample["downloads"],
+                "stars": sample["stars"],
+                "installsCurrent": sample["installsCurrent"],
+                "theme": sample["theme"],
+            }
+            continue
+        current["downloads"] = max(parse_int(current.get("downloads")), parse_int(sample.get("downloads")))
+        current["stars"] = max(parse_int(current.get("stars")), parse_int(sample.get("stars")))
+        current["installsCurrent"] = max(parse_int(current.get("installsCurrent")), parse_int(sample.get("installsCurrent")))
+        if not current.get("name"):
+            current["name"] = sample["name"]
+        if not current.get("theme"):
+            current["theme"] = sample["theme"]
+    return sorted(merged.values(), key=lambda item: (-item["downloads"], -item["stars"], item["name"].lower()))
+
+
+def fetch_author_portfolio(handle: str, sample_skills: list[dict[str, Any]] | None = None) -> list[dict[str, Any]]:
+    sample_skills = sample_skills or []
     try:
         user = convex_query("users:getByHandle", {"handle": handle}, retries=2)
         if user and user.get("_id"):
@@ -178,9 +204,11 @@ def fetch_author_portfolio(handle: str) -> list[dict[str, Any]]:
                             "theme": theme_label(name, description),
                         }
                     )
-                return sorted(records, key=lambda item: (-item["downloads"], -item["stars"], item["name"].lower()))
+                return merge_portfolio_with_samples(records, sample_skills)
     except Exception:
         pass
+    if sample_skills:
+        return merge_portfolio_with_samples([], sample_skills)
     return []
 
 
@@ -303,11 +331,15 @@ def build_local_aisa_snapshot() -> dict[str, Any]:
 def build_payload() -> dict[str, Any]:
     rankings = {sort_key: fetch_ranking(sort_key) for sort_key in ["downloads", "stars", "installs"]}
     cross_skills, cross_authors = build_cross_rank_summary(rankings)
+    ranking_samples_by_author: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    for items in rankings.values():
+        for item in items:
+            ranking_samples_by_author[item["author"]].append(item)
     aisa_snapshot = build_local_aisa_snapshot()
     top_author_handles = [item["author"] for item in cross_authors[:8]]
     top_author_profiles = {}
     for handle in top_author_handles:
-        portfolio = fetch_author_portfolio(handle)
+        portfolio = fetch_author_portfolio(handle, ranking_samples_by_author.get(handle, []))
         top_author_profiles[handle] = {
             "totalSkills": len(portfolio),
             "topSkills": portfolio[:5],

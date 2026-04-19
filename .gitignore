@@ -13,3 +13,4 @@ public/data/optimized-packages.json
 # Python cache files inside package worktrees
 __pycache__/
 *.pyc
+docs/accounts
