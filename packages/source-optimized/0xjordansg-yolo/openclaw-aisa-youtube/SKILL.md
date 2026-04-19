@@ -1,19 +1,8 @@
 ---
 name: openclaw-aisa-youtube
-description: Search YouTube videos, channels, and playlists through the AISA YouTube endpoint with one API key. Use when: the user asks for YouTube discovery, query expansion, or pagination without managing Google credentials. Supports search filters, locale parameters, and structured SERP results.
-homepage: https://openclaw.ai
-version: "1.0.3"
-author: aisa-one
-license: MIT-0
-user-invocable: true
-primaryEnv: AISA_API_KEY
-requires:
-  bins:
-    - curl
-  env:
-    - AISA_API_KEY
+description: "Search YouTube videos, channels, and playlists through the AISA YouTube endpoint with one API key. Use when: the user needs fast YouTube lookup, locale-aware discovery, or filter-token pagination without Google credentials. Supports query search, region/language filters, and structured SERP output."
 metadata:
-  openclaw:
+  aisa:
     emoji: "🎬"
     requires:
       bins:
@@ -21,17 +10,21 @@ metadata:
       env:
         - AISA_API_KEY
     primaryEnv: AISA_API_KEY
+    compatibility:
+      - openclaw
+      - claude-code
+      - hermes
 ---
 
-# OpenClaw AISA YouTube
+# YouTube Search API
 
-Runtime-focused release bundle for YouTube search through the AISA relay.
+Fast YouTube lookup skill for videos, channels, playlists, and locale-aware discovery through the AISA relay.
 
 ## When to use
 
-- The user wants to search YouTube videos, channels, or playlists.
-- The task needs region or language filters without direct Google API setup.
-- The workflow can call the AISA YouTube search endpoint with `AISA_API_KEY`.
+- The user wants a fast YouTube lookup skill without setting up Google credentials.
+- The task needs region, language, or pagination filters on top of normal YouTube search.
+- The workflow prefers quick curl-first checks over a heavier research workflow.
 
 ## When NOT to use
 
@@ -70,6 +63,18 @@ curl -s "https://api.aisa.one/apis/v1/youtube/search?engine=youtube&q=python+tut
 - Locale filtering with `gl` and `hl`
 - Pagination and search filtering with `sp`
 - Structured responses that may return `videos` or grouped `sections`
+
+## High-Intent Workflows
+
+- Quick validation of YouTube demand for a topic or keyword.
+- Region-specific search checks before a content or SEO decision.
+- Lightweight YouTube API access for agents that only need structured results.
+
+## Example Requests
+
+- "Search YouTube for AI coding tutorials and return the top structured results."
+- "Check YouTube results for this keyword in the US and Japan."
+- "Use the YouTube Search API skill when I need fast video discovery, not full competitor research."
 
 ## ClawHub Suspicious Review Notes
 

@@ -103,6 +103,7 @@ def build_spec(idea: str, stage: str) -> dict[str, Any]:
             "Make the first prompt succeed without heavy setup.",
             "Keep input requirements low and output certainty high.",
             "Use search-intent vocabulary in title and description.",
+            "Expose high-intent workflows and example requests directly in SKILL.md.",
             "Design one obvious upgrade reason from the first version.",
         ],
         "structure": {
@@ -122,6 +123,7 @@ def build_spec(idea: str, stage: str) -> dict[str, Any]:
             "Test first-run success path.",
             "Ship with 3 example prompts.",
             "Track install velocity and repeat usage.",
+            "Define the flagship skill before branching into narrower variants.",
             "Design 5 adjacent variants from the same capability core.",
         ],
         "operationalSteps": [

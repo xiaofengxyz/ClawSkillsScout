@@ -1,13 +1,8 @@
 ---
 name: openclaw-aisa-youtube-search-serp-video-channels-trends-content-tracking
-description: Search YouTube videos, channels, and trends through the AISA YouTube SERP client. Use when: the user asks for content research, competitor tracking, or trend discovery without managing Google credentials. Supports curl queries and the bundled Python client with locale and filter controls.
-homepage: https://openclaw.ai
-version: "1.0.1"
-author: 0xjordansg-yolo
-license: MIT-0
-user-invocable: true
+description: "Research YouTube demand and competitors through the AISA YouTube SERP client. Use when: the user needs video search, channel discovery, trend scouting, or competitor analysis without Google credentials. Supports ranked results, locale filters, top-video scouting, and competitor workflows."
 metadata:
-  openclaw:
+  aisa:
     emoji: "📺"
     requires:
       bins:
@@ -16,13 +11,15 @@ metadata:
       env:
         - AISA_API_KEY
     primaryEnv: AISA_API_KEY
-    files:
-      - "scripts/*"
+    compatibility:
+      - openclaw
+      - claude-code
+      - hermes
 ---
 
-# OpenClaw YouTube SERP Scout
+# YouTube SERP Scout
 
-Runtime-focused release bundle for YouTube search, competitor tracking, and trend discovery through the AISA relay.
+High-intent YouTube research skill for ranked search, trend discovery, and competitor scouting through the AISA relay.
 
 ## When to use
 
@@ -65,6 +62,18 @@ python3 {baseDir}/scripts/youtube_client.py competitor --name "OpenAI" --topic "
 - Filter by country with `gl` and language with `hl`
 - Reuse `sp` tokens for pagination or SERP narrowing
 - Run competitor and top-video research from the bundled Python client
+
+## High-Intent Workflows
+
+- Discover which videos dominate a search term before making content.
+- Research competitor channels and topic coverage.
+- Compare region-specific YouTube demand with country and language filters.
+
+## Example Requests
+
+- "Search YouTube for AI agents and show me the top-ranking videos."
+- "Research a competitor channel and tell me what topics they dominate."
+- "Use YouTube SERP Scout to compare trend results in the US vs Japan."
 
 ## ClawHub Suspicious Review Notes
 

@@ -1,16 +1,8 @@
 ---
 name: aisa-twitter-api
-description: Search X/Twitter profiles, tweets, trends, lists, communities, and Spaces through the AISA relay, then publish approved posts with OAuth. Use when: the user asks for Twitter/X research, monitoring, or posting without sharing passwords. Supports read APIs, authorization links, and media-aware posting.
-homepage: https://openclaw.ai
-author: aisapay
-user-invocable: true
-requires:
-  bins:
-    - python3
-  env:
-    - AISA_API_KEY
+description: "Manage X/Twitter research and posting through the AISA relay. Use when: the user needs tweet search, trend tracking, account intel, or OAuth-gated posting with one API key. Supports profile lookup, advanced search, trend discovery, thread context, and media-aware publishing."
 metadata:
-  openclaw:
+  aisa:
     emoji: "🐦"
     requires:
       bins:
@@ -18,20 +10,21 @@ metadata:
       env:
         - AISA_API_KEY
     primaryEnv: AISA_API_KEY
-    files:
-      - "scripts/*"
-      - "references/*"
+    compatibility:
+      - openclaw
+      - claude-code
+      - hermes
 ---
 
-# AISA Twitter API
+# Twitter API Command Center
 
-Runtime-focused release bundle for Twitter/X search and posting through the AISA relay.
+High-intent X/Twitter command center for research, monitoring, and approved posting through the AISA relay.
 
 ## When to use
 
-- The user wants to read profiles, timelines, mentions, followers, tweet search results, trends, lists, communities, or Spaces.
-- The user wants to draft or publish posts after completing OAuth without sharing passwords.
-- The task needs a Python client for repeatable Twitter/X automation backed by `AISA_API_KEY`.
+- The user wants one skill for tweet search, account research, trend tracking, and post publishing.
+- The workflow needs repeated Twitter/X operations backed by `AISA_API_KEY` instead of direct password or cookie handling.
+- The user needs a command-center style skill that starts with research and can graduate into publishing.
 
 ## When NOT to use
 
@@ -60,6 +53,12 @@ All network calls go to `https://api.aisa.one/apis/v1/...`.
 - Publish text, image, and video posts after explicit OAuth approval.
 - Split long posts into threaded chunks when the publish script needs it.
 
+## High-Intent Workflows
+
+- Research an account before engagement or outreach.
+- Search a topic, inspect thread context, then draft a post based on what is trending.
+- Track keywords, communities, or Spaces without juggling separate Twitter tools.
+
 ## Common Commands
 
 ```bash
@@ -78,6 +77,12 @@ When the user asks to send, publish, reply, or quote on X/Twitter, follow `./ref
 - Return the authorization link first when posting is not yet approved.
 - Use `--media-file` only for user-provided workspace files.
 - Do not invent captions, remote URLs, or extra media attachments.
+
+## Example Requests
+
+- "Search X for AI agent launches and show me the strongest recent posts."
+- "Check what people are saying about a competitor, then draft a post in response."
+- "Look up a creator, inspect their latest tweets, and prepare a media post after OAuth."
 
 ## ClawHub Suspicious Review Notes
 

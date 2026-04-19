@@ -94,9 +94,10 @@
 - 已有独立增长分析页入口：`clawhub-growth.html` + `src/clawhub-growth/*`
 - 已有独立下载榜爆款分析页入口：`clawhub-download-insights.html` + `src/clawhub-download-insights/*`
 - 已有独立 10k+ 系统分析页入口：`clawhub-10k-system.html` + `src/clawhub-10k-system/*`
+- 已有 downloads / stars / installs 三榜综合分析脚本：[scripts/build-clawhub-multi-ranking-report.py](/mnt/d/workplace/skillGet/scripts/build-clawhub-multi-ranking-report.py)
 - 已有构建结果目录：`dist/`
-- 已有公开数据目录：`public/data/catalog.json`、`public/data/aisa-api-analysis.json`、`public/data/clawhub-growth-report.json`、`public/data/clawhub-download-insights.json`、`public/data/clawhub-10k-system-report.json`
-- 已有公开报告目录：`public/reports/ClawHub_10K_System_Report*.md/.docx`、`public/reports/ClawHub_10K_Boss_Brief_*.md/.docx`
+- 已有公开数据目录：`public/data/catalog.json`、`public/data/aisa-api-analysis.json`、`public/data/clawhub-growth-report.json`、`public/data/clawhub-download-insights.json`、`public/data/clawhub-10k-system-report.json`、`public/data/clawhub-multi-ranking-report.json`
+- 已有公开报告目录：`public/reports/ClawHub_10K_System_Report*.md/.docx`、`public/reports/ClawHub_10K_Boss_Brief_*.md/.docx`、`public/reports/ClawHub_Multi_Ranking_Report_ZH.md/.docx`、`public/reports/AISA_Breakout_*.md`
 - 已有可复用技能样板：`sucess/clawhub-hit-factory/*`
 - 已有 GitHub Pages / 服务器部署说明：[docs/DEPLOYMENT.md](/mnt/d/workplace/skillGet/docs/DEPLOYMENT.md)
 
@@ -105,6 +106,7 @@
 - 已有原始 suspicious zip 下载脚本：[scripts/download-suspicious-zips.mjs](/mnt/d/workplace/skillGet/scripts/download-suspicious-zips.mjs)
 - 已有 source-optimized 构建脚本：[scripts/build-source-optimized-packages.mjs](/mnt/d/workplace/skillGet/scripts/build-source-optimized-packages.mjs)
 - 已有静态校验脚本：[scripts/verify-source-optimized.mjs](/mnt/d/workplace/skillGet/scripts/verify-source-optimized.mjs)
+- 该静态校验脚本现在还会检查 `metadata.aisa`、`compatibility` 和 `${SKILL_ROOT}` 违规，避免优化包退回旧 frontmatter 规范
 - 已有 live smoke test 脚本：[scripts/live-test-source-optimized.mjs](/mnt/d/workplace/skillGet/scripts/live-test-source-optimized.mjs)
 - 已有发布 optimized 下载索引脚本：[scripts/publish-optimized-downloads.mjs](/mnt/d/workplace/skillGet/scripts/publish-optimized-downloads.mjs)
 - 已有中文优化包构建/打包脚本：

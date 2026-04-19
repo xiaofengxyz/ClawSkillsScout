@@ -1,16 +1,8 @@
 ---
 name: aisa-twitter-api-zh
-description: 通过 AISA relay 查询 X/推特资料、推文、趋势、列表、社区和 Spaces，并在 OAuth 授权后发布内容。触发条件：当用户需要推特搜索、监控、发帖且不想暴露密码时使用。支持读接口、授权链接和图文媒体发布。
-homepage: https://openclaw.ai
-author: aisapay
-user-invocable: true
-requires:
-  bins:
-    - python3
-  env:
-    - AISA_API_KEY
+description: "通过 AISA relay 管理 X/推特研究与发帖。触发条件：当用户需要推文搜索、趋势追踪、账号情报或用一个 API key 完成 OAuth 发帖时使用。支持资料查询、高级搜索、趋势发现、线程上下文和图文媒体发布。"
 metadata:
-  openclaw:
+  aisa:
     emoji: "🐦"
     requires:
       bins:
@@ -18,20 +10,21 @@ metadata:
       env:
         - AISA_API_KEY
     primaryEnv: AISA_API_KEY
-    files:
-      - "scripts/*"
-      - "references/*"
+    compatibility:
+      - openclaw
+      - claude-code
+      - hermes
 ---
 
-# AISA 推特接口中文包
+# 推特指挥台中文包
 
-面向 cn.clawhub-mirror.com 的中文发布版，用于通过 AISA relay 执行 X/推特检索与发帖。
+面向 cn.clawhub-mirror.com 的中文发布版，用于通过 AISA relay 执行 X/推特研究、监控与发帖。
 
 ## When to use
 
-- 当用户要查询 X/推特账号资料、时间线、提及、粉丝、搜索结果、趋势、列表、社区或 Spaces。
-- 当用户要在完成 OAuth 授权后发帖，但又不希望共享密码或 cookie。
-- 当工作流需要使用 `AISA_API_KEY` 驱动的 Python 客户端重复执行推特研究与发帖任务。
+- 当用户希望用一个 skill 同时完成推文搜索、账号研究、趋势追踪和发帖。
+- 当工作流需要 `AISA_API_KEY` 驱动的重复型 X/推特研究与发布，而不是密码或 cookie。
+- 当用户想先研究，再在确认后发帖。
 
 ## When NOT to use
 
@@ -60,6 +53,12 @@ export AISA_API_KEY="your-key"
 - 在明确 OAuth 授权后发布文本、图片和视频推文。
 - 当内容过长时，自动按线程拆分发布。
 
+## 高意图工作流
+
+- 先研究一个账号或话题，再决定是否发帖。
+- 先看趋势和讨论热点，再生成一条回应内容。
+- 用一个 skill 处理账号情报、搜索、趋势和发布。
+
 ## Common Commands
 
 ```bash
@@ -78,6 +77,12 @@ python3 {baseDir}/scripts/twitter_oauth_client.py post --text "Hello from OpenCl
 - 如果尚未完成授权，先返回授权链接。
 - 仅在用户提供本地文件时使用 `--media-file`。
 - 不要臆造文案、远程图片 URL 或额外媒体附件。
+
+## 示例请求
+
+- “帮我搜索 X 上 AI agent launch 的热门讨论，并总结重点。”
+- “先研究一个账号最近在发什么，再帮我准备发帖。”
+- “查趋势、看线程、然后在 OAuth 完成后发一条推文。”
 
 ## ClawHub Suspicious Review Notes
 

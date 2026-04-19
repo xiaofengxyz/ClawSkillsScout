@@ -1,16 +1,8 @@
 ---
 name: x-intelligence-automation
-description: Search X/Twitter profiles, tweets, trends, and approved engagement actions through the AISA relay. Use when: the user asks for Twitter/X research, posting, likes, follows, or related workflows without sharing passwords. Supports read APIs, OAuth-gated posting, and follow or like operations.
-homepage: https://openclaw.ai
-author: karensheng
-user-invocable: true
-requires:
-  bins:
-    - python3
-  env:
-    - AISA_API_KEY
+description: "Run X/Twitter intelligence and growth workflows through the AISA relay. Use when: the user needs tweet search, monitoring, posting, likes, follows, or market intelligence with one API key. Supports read APIs, OAuth-gated publishing, and engagement actions."
 metadata:
-  openclaw:
+  aisa:
     emoji: "🐦"
     requires:
       bins:
@@ -18,20 +10,21 @@ metadata:
       env:
         - AISA_API_KEY
     primaryEnv: AISA_API_KEY
-    files:
-      - "scripts/*"
-      - "references/*"
+    compatibility:
+      - openclaw
+      - claude-code
+      - hermes
 ---
 
 # X Intelligence Automation
 
-Runtime-focused release bundle for Twitter/X search, posting, and engagement through the AISA relay.
+Intelligence-first X/Twitter operator for monitoring, publishing, and approved engagement through the AISA relay.
 
 ## When to use
 
-- The user wants Twitter/X research plus posting, liking, unliking, following, or unfollowing workflows.
-- The task can use a Python client with `AISA_API_KEY` and explicit OAuth approval.
-- The workflow needs a single package that covers read, post, and engagement actions.
+- The user wants Twitter/X monitoring and intelligence, not just one-off tweet search.
+- The workflow needs one package for read, publish, and engagement actions after explicit approval.
+- The task fits analyst, operator, or competitor-tracking use cases powered by `AISA_API_KEY`.
 
 ## When NOT to use
 
@@ -62,6 +55,12 @@ All network calls go to `https://api.aisa.one/apis/v1/...`.
 - Like, unlike, follow, and unfollow through the engagement client once authorization exists.
 - Reuse OpenClaw context instead of local file-based conversation persistence.
 
+## High-Intent Workflows
+
+- Monitor creators, competitors, or trends before taking action.
+- Search a topic, identify who matters, then follow or engage after approval.
+- Use one skill as an X/Twitter intelligence desk for operators.
+
 ## Common Commands
 
 ```bash
@@ -77,6 +76,12 @@ python3 {baseDir}/scripts/twitter_engagement_client.py follow-user --user "@elon
 - Use `./references/post_twitter.md` for post, reply, quote, and media-upload actions.
 - Use `./references/engage_twitter.md` for likes, unlikes, follows, and unfollows.
 - Obtain OAuth authorization before any write action.
+
+## Example Requests
+
+- "Monitor X for competitors in AI coding and show me the strongest accounts to track."
+- "Search a niche, summarize the conversation, then follow the top operators after approval."
+- "Use X Intelligence Automation as a research-and-action workflow."
 
 ## ClawHub Suspicious Review Notes
 

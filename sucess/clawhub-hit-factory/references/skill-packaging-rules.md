@@ -32,3 +32,11 @@ Use these rules when turning an idea into a shippable skill bundle in this repo.
 - Title and description should mirror user search intent.
 - Output should be decision-ready, not a vague capability description.
 - If the skill is too broad, ship the narrowest useful slice first and expand later with variants.
+
+## Breakout remix rules for AISA API skills
+
+- Start with one flagship skill per API family, then branch into narrower variants only after the flagship positioning is clear.
+- Prefer exact-intent titles such as `Twitter API Command Center`, `YouTube SERP Scout`, or `YouTube Search API` over generic internal names.
+- Add both `High-Intent Workflows` and `Example Requests` sections so the first run is obvious from the catalog page alone.
+- Package the same runtime in two layers when possible: one command-center bundle for power users and one narrower single-job bundle for quick adoption.
+- Keep English and Chinese variants aligned so future rebuilds do not regress the stronger positioning.

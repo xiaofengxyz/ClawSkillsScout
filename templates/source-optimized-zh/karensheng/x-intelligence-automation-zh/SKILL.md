@@ -1,16 +1,8 @@
 ---
 name: x-intelligence-automation-zh
-description: 通过 AISA relay 查询 X/推特资料、推文、趋势，并执行已授权的发帖、点赞和关注动作。触发条件：当用户需要推特研究、发帖、点赞、关注且不想暴露密码时使用。支持读接口、OAuth 写操作和互动命令。
-homepage: https://openclaw.ai
-author: karensheng
-user-invocable: true
-requires:
-  bins:
-    - python3
-  env:
-    - AISA_API_KEY
+description: "通过 AISA relay 执行 X/推特情报与增长工作流。触发条件：当用户需要推文搜索、监控、发帖、点赞、关注或市场情报且只想用一个 API key 时使用。支持读接口、OAuth 发布和互动动作。"
 metadata:
-  openclaw:
+  aisa:
     emoji: "🐦"
     requires:
       bins:
@@ -18,20 +10,21 @@ metadata:
       env:
         - AISA_API_KEY
     primaryEnv: AISA_API_KEY
-    files:
-      - "scripts/*"
-      - "references/*"
+    compatibility:
+      - openclaw
+      - claude-code
+      - hermes
 ---
 
 # X 推特情报与自动化中文包
 
-面向 cn.clawhub-mirror.com 的中文发布版，用于通过 AISA relay 执行 X/推特检索、发帖与互动。
+面向 cn.clawhub-mirror.com 的中文发布版，用于通过 AISA relay 执行 X/推特监控、情报研究、发帖与互动。
 
 ## When to use
 
-- 当用户既要做 X/推特研究，又要执行发帖、点赞、取消点赞、关注或取消关注。
-- 当任务可以接受 `AISA_API_KEY` 加显式 OAuth 授权的 relay 模式。
-- 当工作流希望用一个包同时覆盖读、发、互动三类动作。
+- 当用户更关注监控、情报研究和竞品追踪，而不只是单次搜索。
+- 当工作流需要一个包同时覆盖读、发帖和互动。
+- 当任务适合分析师、运营或竞品监控场景，并由 `AISA_API_KEY` 驱动。
 
 ## When NOT to use
 
@@ -62,6 +55,12 @@ export AISA_API_KEY="your-key"
 - 通过互动客户端执行点赞、取消点赞、关注和取消关注。
 - 优先复用 OpenClaw 上下文，而不是依赖本地持久化会话文件。
 
+## 高意图工作流
+
+- 监控创作者、竞品和趋势后再采取行动。
+- 搜索一个赛道，找出关键账号，再在确认后关注或互动。
+- 把它当成 X/Twitter 情报台来用。
+
 ## Common Commands
 
 ```bash
@@ -77,6 +76,12 @@ python3 {baseDir}/scripts/twitter_engagement_client.py follow-user --user "@elon
 - 发帖、回复、引用、媒体上传遵循 `./references/post_twitter.md`。
 - 点赞、取消点赞、关注、取消关注遵循 `./references/engage_twitter.md`。
 - 任意写操作前都必须先完成 OAuth 授权。
+
+## 示例请求
+
+- “帮我监控 X 上 AI coding 赛道，找出最值得跟踪的账号。”
+- “搜索一个垂类并总结讨论，再关注几个关键操盘手。”
+- “把 X 情报自动化作为研究和行动的一体化 workflow。”
 
 ## ClawHub Suspicious Review Notes
 

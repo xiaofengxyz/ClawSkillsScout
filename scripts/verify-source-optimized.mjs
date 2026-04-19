@@ -138,6 +138,8 @@ async function verifyPackage(relativePackage, config) {
   await removePycacheDirs(optimizedDir);
   const optimizedFiles = await listFiles(optimizedDir);
   const originalFiles = await listFiles(originalDir);
+  const skillPath = path.join(optimizedDir, 'SKILL.md');
+  const skillText = await fs.readFile(skillPath, 'utf8');
 
   const retainedChecks = config.retained.map((file) => ({
     file,
@@ -155,12 +157,31 @@ async function verifyPackage(relativePackage, config) {
     : { command: 'python3 -m py_compile', exitCode: 0, passed: true, stdout: '', stderr: '' };
 
   const commandChecks = config.commands.map((command) => runCommand(command, optimizedDir));
+  const skillChecks = [
+    {
+      check: 'uses_metadata_aisa',
+      passed: /metadata:\s*\n\s+aisa:\s*\n/.test(skillText),
+    },
+    {
+      check: 'omits_metadata_openclaw',
+      passed: !/metadata:\s*\n\s+openclaw:\s*\n/.test(skillText),
+    },
+    {
+      check: 'declares_compatibility',
+      passed: /compatibility:\s*\n\s+- openclaw\s*\n\s+- claude-code\s*\n\s+- hermes\s*\n/.test(skillText),
+    },
+    {
+      check: 'uses_baseDir_token',
+      passed: !skillText.includes('${SKILL_ROOT}') && !skillText.includes('${LAST30DAYS_PYTHON}'),
+    },
+  ];
 
   const failed =
     retainedChecks.some((check) => !check.exists) ||
     removedChecks.some((check) => check.existedInOriginal && !check.removed) ||
     !pyCompile.passed ||
-    commandChecks.some((check) => !check.passed);
+    commandChecks.some((check) => !check.passed) ||
+    skillChecks.some((check) => !check.passed);
 
   const manualTestRequired = ['AISA_API_KEY-backed network calls'];
   if (optimizedFiles.includes('scripts/twitter_oauth_client.py') || optimizedFiles.includes('scripts/twitter_engagement_client.py')) {
@@ -174,6 +195,7 @@ async function verifyPackage(relativePackage, config) {
     removedChecks,
     pyCompile,
     commandChecks,
+    skillChecks,
     status: failed ? 'needs_manual_runtime_test' : 'static_checks_passed',
     manualTestRequired,
   };

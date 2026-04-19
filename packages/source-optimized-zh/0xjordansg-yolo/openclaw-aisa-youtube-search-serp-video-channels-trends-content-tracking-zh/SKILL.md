@@ -1,20 +1,8 @@
 ---
 name: openclaw-aisa-youtube-search-serp-video-channels-trends-content-tracking-zh
-description: 通过 AISA YouTube SERP 客户端搜索 YouTube 视频、频道和趋势。触发条件：当用户需要内容研究、竞品频道追踪、趋势发现或中文搜索且不想管理 Google 凭证时使用。支持 curl 查询和内置 Python 客户端，并带地区语言过滤。
-homepage: https://openclaw.ai
-version: "1.0.1"
-author: 0xjordansg-yolo
-license: MIT-0
-user-invocable: true
-primaryEnv: AISA_API_KEY
-requires:
-  bins:
-    - curl
-    - python3
-  env:
-    - AISA_API_KEY
+description: "通过 AISA YouTube SERP 客户端搜索 YouTube 视频、频道和趋势。触发条件：当用户需要内容研究、竞品频道追踪、趋势发现或中文搜索且不想管理 Google 凭证时使用。支持 curl 查询和内置 Python 客户端，并带地区语言过滤。"
 metadata:
-  openclaw:
+  aisa:
     emoji: "📺"
     requires:
       bins:
@@ -23,37 +11,41 @@ metadata:
       env:
         - AISA_API_KEY
     primaryEnv: AISA_API_KEY
+    compatibility:
+      - openclaw
+      - claude-code
+      - hermes
 ---
 
-# OpenClaw YouTube SERP 中文包
+# YouTube SERP 侦察台
 
-面向 cn.clawhub-mirror.com 的中文发布版，用于通过 AISA relay 执行 YouTube 搜索、竞品研究和趋势发现。
+高意图 YouTube 研究技能，用于通过 AISA relay 做选题验证、竞品频道扫描、趋势发现和区域对比。
 
-## When to use
+## 适用场景
 
-- 当用户需要 YouTube 内容研究、频道发现、竞品跟踪或趋势监控。
-- 当工作流希望复用内置 Python 客户端执行多次查询。
-- 当任务可以接受使用 `AISA_API_KEY`，而不直接管理 Google API 凭证。
+- 当用户想判断某个关键词在 YouTube 上到底是谁在占据结果页。
+- 当团队要做内容选题、频道研究、竞品监控或趋势追踪。
+- 当工作流需要内置 Python 客户端连续跑多次查询，而不想自己管理 Google 凭证。
 
-## When NOT to use
+## 不适用场景
 
 - 不适合浏览器自动化、本地爬取或 YouTube 账号级操作。
 - 不适合必须避免把搜索请求发送到 `api.aisa.one` 的场景。
 - 不适合依赖本发布包之外文件的场景。
 
-## Quick Reference
+## 快速参考
 
 - 必需环境变量：`AISA_API_KEY`
 - 接口地址：`https://api.aisa.one/apis/v1/youtube/search`
 - Python 客户端：`./scripts/youtube_client.py`
 
-## Setup
+## 安装准备
 
 ```bash
 export AISA_API_KEY="your-key"
 ```
 
-## Common Commands
+## 常用命令
 
 ```bash
 curl "https://api.aisa.one/apis/v1/youtube/search?engine=youtube&q=AI+agents+tutorial" \
@@ -64,12 +56,24 @@ python3 {baseDir}/scripts/youtube_client.py search --query "machine learning" --
 python3 {baseDir}/scripts/youtube_client.py competitor --name "OpenAI" --topic "GPT tutorial"
 ```
 
-## Capabilities
+## 核心能力
 
 - 用 `q` 搜索视频、频道和播放列表
 - 用 `gl` 按国家过滤、用 `hl` 按语言过滤
 - 复用 `sp` token 做分页或 SERP 收窄
 - 用内置 Python 客户端执行竞品研究和 top video 查询
+
+## 高意图工作流
+
+- 先搜一个主题，判断哪些视频和频道长期占位。
+- 输入竞品名称和主题，快速判断对方重点覆盖了哪些内容方向。
+- 对比不同国家和语言结果，验证是否值得本地化做内容。
+
+## 示例请求
+
+- “帮我搜索 AI agents，在 YouTube 上谁排得最靠前？”
+- “研究 OpenAI 相关频道，看看它们主要靠哪些主题拿流量。”
+- “比较美国和日本对同一个关键词的 YouTube 结果差异。”
 
 ## ClawHub Suspicious Review Notes
 
