@@ -226,6 +226,13 @@ table {
   margin-top: 18px;
 }
 
+.detail-grid {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.92fr) minmax(0, 1.15fr);
+  gap: 18px;
+  margin-top: 18px;
+}
+
 .doc-card,
 .spotlight-card {
   padding: 24px;
@@ -287,8 +294,84 @@ tbody tr:last-child td {
   box-shadow: 0 14px 28px rgba(79, 49, 23, 0.12);
 }
 
+.insight-board-card,
+.insight-detail-card {
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  background: var(--paper);
+  box-shadow: 0 22px 52px rgba(79, 49, 23, 0.1);
+  backdrop-filter: blur(16px);
+  padding: 22px;
+}
+
+.board-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.board-top h3,
+.insight-detail-card h3 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.board-top span {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.detail-list {
+  display: grid;
+  gap: 10px;
+}
+
+.detail-item {
+  display: grid;
+  gap: 6px;
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.76);
+  color: var(--ink);
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+}
+
+.detail-item strong {
+  font-size: 15px;
+}
+
+.detail-item small {
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.detail-item.is-active {
+  background: linear-gradient(135deg, rgba(191, 123, 48, 0.16), rgba(33, 95, 122, 0.14));
+}
+
+.insight-detail-card {
+  display: grid;
+  gap: 14px;
+}
+
+.detail-bullets {
+  margin-top: 0;
+}
+
+.inline-link {
+  gap: 8px;
+  width: fit-content;
+}
+
 @media (max-width: 980px) {
   .hero,
+  .detail-grid,
   .spotlight-strip,
   .doc-grid,
   .two-col-list {
@@ -307,6 +390,8 @@ tbody tr:last-child td {
   }
 
   .hero,
+  .insight-board-card,
+  .insight-detail-card,
   .doc-card,
   .spotlight-card,
   .notice-panel {

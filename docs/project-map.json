@@ -41,6 +41,7 @@
       "scripts/build-clawhub-multi-ranking-report.py",
       "scripts/build-clawhub-viral-boss-report.py",
       "scripts/build-aisa-expansion-plans.py",
+      "scripts/build-market-ecosystem-report.mjs",
       "scripts/convert-github-skills-to-clawhub.py",
       "scripts/build-source-optimized-packages.mjs",
       "scripts/build-source-optimized-zh.mjs",
@@ -103,13 +104,15 @@
         "src/clawhub-growth/App.tsx",
         "src/clawhub-download-insights/App.tsx",
         "src/clawhub-10k-system/App.tsx",
+        "src/market-intelligence/App.tsx",
         "src/types.ts",
         "src/styles.css",
         "vite.config.ts",
         "index.html",
         "clawhub-growth.html",
         "clawhub-download-insights.html",
-        "clawhub-10k-system.html"
+        "clawhub-10k-system.html",
+        "market-intelligence.html"
       ],
       "inputs": [
         "public/data/catalog.json",
@@ -121,6 +124,7 @@
         "public/data/clawhub-multi-ranking-report.json",
         "public/data/aisa-all-skills-breakout-plan.json",
         "public/data/clawhub-top200-aisa-conversion-plan.json",
+        "public/data/market-ecosystem-report.json",
         "public/reports/ClawHub_10K_System_Report.docx",
         "public/reports/ClawHub_10K_System_Report_ZH.docx",
         "public/reports/ClawHub_10K_Boss_Brief_EN.docx",
@@ -144,6 +148,7 @@
         "standalone ClawHub growth strategy page",
         "standalone ClawHub downloads-insights page",
         "standalone ClawHub 10k+ repeatable-systems page",
+        "standalone cross-market intelligence page for ClawHub, Claude Marketplaces, and Hermes",
         "public Word report download for system analysis",
         "public Chinese report and boss brief download"
       ]
@@ -377,6 +382,10 @@
     {
       "path": "public/data/clawhub-top200-aisa-conversion-plan.json",
       "role": "Top 200 cross-ranking analysis plus ranked non-AISA candidates most suitable for conversion into AISA-based skills."
+    },
+    {
+      "path": "public/data/market-ecosystem-report.json",
+      "role": "Cross-market intelligence dataset combining ClawHub, Claude Marketplaces, and Hermes skill-atlas analysis into one AISA opportunity view."
     }
   ],
   "workflowDocs": [

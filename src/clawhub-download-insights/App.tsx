@@ -1,17 +1,10 @@
 import { useEffect, useMemo, useState } from 'react';
 import { format } from 'date-fns';
+import { ArrowRight, ExternalLink } from 'lucide-react';
 import type { DownloadInsightAuthor, DownloadInsightsReport, DownloadInsightSkill } from './types';
 
 function metricValue(value: number) {
   return value.toLocaleString('en-US');
-}
-
-function toneClass(value: string) {
-  const normalized = value.toLowerCase();
-  if (normalized === 'high') return 'is-high';
-  if (normalized === 'medium') return 'is-medium';
-  if (normalized === 'low') return 'is-low';
-  return 'is-neutral';
 }
 
 function topApis(skills: DownloadInsightSkill[]) {
@@ -24,92 +17,116 @@ function topApis(skills: DownloadInsightSkill[]) {
   return [...counts.entries()].sort((left, right) => right[1] - left[1]).slice(0, 6);
 }
 
-function TopSkillsTable({ skills }: { skills: DownloadInsightSkill[] }) {
+function SkillBoard({
+  skills,
+  activeSlug,
+  onSelect,
+}: {
+  skills: DownloadInsightSkill[];
+  activeSlug: string | null;
+  onSelect: (slug: string) => void;
+}) {
   return (
-    <div className="table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th>Rank</th>
-            <th>Skill</th>
-            <th>Author</th>
-            <th>Downloads</th>
-            <th>Category</th>
-            <th>Input</th>
-            <th>Output</th>
-            <th>Monetization</th>
-          </tr>
-        </thead>
-        <tbody>
-          {skills.map((skill) => (
-            <tr key={skill.url}>
-              <td>{skill.rank}</td>
-              <td>
-                <a href={skill.url} target="_blank" rel="noreferrer">
-                  {skill.name}
-                </a>
-                <div className="row-subtext">{skill.likelyApis.join(' · ')}</div>
-              </td>
-              <td>@{skill.author}</td>
-              <td>{metricValue(skill.downloads)}</td>
-              <td>{skill.category}</td>
-              <td>{skill.inputComplexity}</td>
-              <td>{skill.outputValue}</td>
-              <td>
-                <span className={`status-pill ${toneClass(skill.monetizationPotential)}`}>{skill.monetizationPotential}</span>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+    <section className="insight-board-card">
+      <div className="board-top">
+        <h3>爆款 Skill 详情</h3>
+        <span>{skills.length}</span>
+      </div>
+      <div className="detail-list">
+        {skills.map((skill) => (
+          <button
+            key={skill.slug}
+            type="button"
+            className={`detail-item${skill.slug === activeSlug ? ' is-active' : ''}`}
+            onClick={() => onSelect(skill.slug)}
+          >
+            <strong>{skill.name}</strong>
+            <small>
+              @{skill.author} · {metricValue(skill.downloads)} 下载 · {skill.category}
+            </small>
+          </button>
+        ))}
+      </div>
+    </section>
   );
 }
 
-function AuthorTable({ authors }: { authors: DownloadInsightAuthor[] }) {
+function AuthorBoard({
+  authors,
+  activeAuthor,
+  onSelect,
+}: {
+  authors: DownloadInsightAuthor[];
+  activeAuthor: string | null;
+  onSelect: (author: string) => void;
+}) {
   return (
-    <div className="table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th>Author</th>
-            <th>Total Skills</th>
-            <th>10K+ Skills</th>
-            <th>Top-sample Downloads</th>
-            <th>API Reuse</th>
-            <th>Template Usage</th>
-            <th>Strategy</th>
-          </tr>
-        </thead>
-        <tbody>
-          {authors.map((author) => (
-            <tr key={author.author}>
-              <td>
-                <a href={author.profileUrl} target="_blank" rel="noreferrer">
-                  @{author.author}
-                </a>
-                <div className="row-subtext">{author.apiFamilies.join(' · ') || 'Unknown'}</div>
-              </td>
-              <td>{author.totalSkills}</td>
-              <td>{author.numberOf10kPlusSkills}</td>
-              <td>{metricValue(author.totalDownloadsInTopSample)}</td>
-              <td>
-                <span className={`status-pill ${toneClass(author.apiReuseLikelihood)}`}>{author.apiReuseLikelihood}</span>
-              </td>
-              <td>
-                <span className={`status-pill ${toneClass(author.templateUsage)}`}>{author.templateUsage}</span>
-              </td>
-              <td>{author.strategyLabel}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+    <section className="insight-board-card">
+      <div className="board-top">
+        <h3>爆款作者详情</h3>
+        <span>{authors.length}</span>
+      </div>
+      <div className="detail-list">
+        {authors.map((author) => (
+          <button
+            key={author.author}
+            type="button"
+            className={`detail-item${author.author === activeAuthor ? ' is-active' : ''}`}
+            onClick={() => onSelect(author.author)}
+          >
+            <strong>@{author.author}</strong>
+            <small>
+              {author.totalSkills} total · 10K+ {author.numberOf10kPlusSkills} · {metricValue(author.totalDownloadsInTopSample)} sample downloads
+            </small>
+          </button>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function DetailPanel({
+  title,
+  eyebrow,
+  chips,
+  bullets,
+  link,
+}: {
+  title: string;
+  eyebrow: string;
+  chips: string[];
+  bullets: string[];
+  link?: string;
+}) {
+  return (
+    <article className="insight-detail-card">
+      <div className="doc-kicker">{eyebrow}</div>
+      <h3>{title}</h3>
+      <div className="chip-row">
+        {chips.map((chip) => (
+          <span key={chip} className="chip">
+            {chip}
+          </span>
+        ))}
+      </div>
+      <ul className="bullet-list detail-bullets">
+        {bullets.map((bullet) => (
+          <li key={bullet}>{bullet}</li>
+        ))}
+      </ul>
+      {link ? (
+        <a className="secondary-link inline-link" href={link} target="_blank" rel="noreferrer">
+          打开来源 <ExternalLink size={14} />
+        </a>
+      ) : null}
+    </article>
   );
 }
 
 export default function App() {
   const [report, setReport] = useState<DownloadInsightsReport | null>(null);
+  const [activeSkillSlug, setActiveSkillSlug] = useState<string | null>(null);
+  const [activeAuthor, setActiveAuthor] = useState<string | null>(null);
 
   useEffect(() => {
     fetch(`${import.meta.env.BASE_URL}data/clawhub-download-insights.json`)
@@ -117,11 +134,23 @@ export default function App() {
         if (!response.ok) throw new Error(`clawhub-download-insights.json ${response.status}`);
         return response.json();
       })
-      .then((json: DownloadInsightsReport) => setReport(json))
+      .then((json: DownloadInsightsReport) => {
+        setReport(json);
+        setActiveSkillSlug(json.documents.document1.top20Skills[0]?.slug ?? null);
+        setActiveAuthor(json.documents.document2.top10Authors[0]?.author ?? null);
+      })
       .catch((error) => console.error('Failed to load clawhub download insights report', error));
   }, []);
 
   const apis = useMemo(() => (report ? topApis(report.skills) : []), [report]);
+  const activeSkill = useMemo(
+    () => report?.documents.document1.top20Skills.find((skill) => skill.slug === activeSkillSlug) ?? null,
+    [report, activeSkillSlug],
+  );
+  const activeAuthorProfile = useMemo(
+    () => report?.documents.document2.top10Authors.find((author) => author.author === activeAuthor) ?? null,
+    [report, activeAuthor],
+  );
 
   if (!report) {
     return <main className="insights-shell loading">Loading ClawHub download insights...</main>;
@@ -132,14 +161,14 @@ export default function App() {
       <section className="hero">
         <div className="hero-copy">
           <div className="eyebrow">ClawHub breakout analysis</div>
-          <h1>下载榜爆款技能、作者打法、以及 AIsa API 变现入口</h1>
+          <h1>把爆款 Skill、爆款作者、复制打法放到一页看清楚</h1>
           <p>
-            单独分析 ClawHub 实时下载榜，而不是本项目本地 skills。页面聚焦 5K 到 10K+ 下载技能、爆款又多产的作者，
-            再把这些模式映射成可复制的 skill factory 和 AIsa 变现路线。
+            这页不再只给大表格，而是直接把当前下载榜里最重要的爆款 skill、爆款作者、可复制打法和 AIsa 变现入口拆成清晰的详情面板。
+            这样你看一眼就知道“谁在赢、为什么赢、我们该怎么做”。
           </p>
           <div className="hero-actions">
-            <a className="primary-link" href={`${import.meta.env.BASE_URL}`}>
-              Back to AISA Atlas
+            <a className="primary-link" href={`${import.meta.env.BASE_URL}market-intelligence.html`}>
+              打开跨生态情报页 <ArrowRight size={16} />
             </a>
             <a className="secondary-link" href={report.source.skillsListUrl} target="_blank" rel="noreferrer">
               Open live downloads page
@@ -190,55 +219,67 @@ export default function App() {
         </ul>
       </section>
 
-      <section className="spotlight-strip">
-        <article className="spotlight-card">
-          <div className="doc-kicker">Breakout authors</div>
-          <h2>爆款又多产的作者</h2>
-          <div className="card-stack compact">
-            {report.documents.document2.viralProductiveAuthors.map((author) => (
-              <a key={author.author} href={author.profileUrl} target="_blank" rel="noreferrer" className="sub-card anchor-card">
-                <strong>@{author.author}</strong>
-                <span>
-                  {author.numberOf10kPlusSkills} skills above 10K · {author.totalSkills} total skills
-                </span>
-                <small>{author.strategyLabel}</small>
-              </a>
-            ))}
-          </div>
-        </article>
+      <section className="detail-grid">
+        <SkillBoard skills={report.documents.document1.top20Skills} activeSlug={activeSkillSlug} onSelect={setActiveSkillSlug} />
+        {activeSkill ? (
+          <DetailPanel
+            title={activeSkill.name}
+            eyebrow={`@${activeSkill.author}`}
+            chips={[
+              `${metricValue(activeSkill.downloads)} 下载`,
+              activeSkill.category,
+              activeSkill.monetizationPotential,
+              activeSkill.apiDependency,
+            ]}
+            bullets={[
+              activeSkill.description,
+              `为什么容易起量：输入门槛 ${activeSkill.inputComplexity}，输出价值 ${activeSkill.outputValue}。`,
+              `API 线索：${activeSkill.likelyApis.join(' · ') || 'Unknown'}。`,
+              `可复制标签：${activeSkill.repeatablePatternFlags.join(' · ') || '暂无'}。`,
+            ]}
+            link={activeSkill.url}
+          />
+        ) : null}
+      </section>
 
-        <article className="spotlight-card">
-          <div className="doc-kicker">Collection diagnostics</div>
-          <h2>作者页抓取状态</h2>
-          <div className="chip-row">
-            {Object.entries(report.collectionDiagnostics.authorPageStatusCounts).map(([status, count]) => (
-              <span key={status} className="chip">
-                {status}: {count}
-              </span>
-            ))}
-          </div>
-          <p className="section-copy">
-            优先尝试作者页公开查询；如果站点接口不稳定，则回退到搜索或样本重建，这样页面仍能持续产出策略洞察。
-          </p>
-        </article>
+      <section className="detail-grid">
+        <AuthorBoard authors={report.documents.document2.top10Authors} activeAuthor={activeAuthor} onSelect={setActiveAuthor} />
+        {activeAuthorProfile ? (
+          <DetailPanel
+            title={`@${activeAuthorProfile.author}`}
+            eyebrow="Author profile"
+            chips={[
+              `${activeAuthorProfile.totalSkills} total skills`,
+              `10K+ ${activeAuthorProfile.numberOf10kPlusSkills}`,
+              activeAuthorProfile.strategyLabel,
+              activeAuthorProfile.authorPageStatus,
+            ]}
+            bullets={[
+              `Top sample downloads: ${metricValue(activeAuthorProfile.totalDownloadsInTopSample)}。`,
+              `API families: ${activeAuthorProfile.apiFamilies.join(' · ') || 'Unknown'}。`,
+              `代表作：${activeAuthorProfile.topSkillNames.join(' · ') || '暂无'}。`,
+              `作品结构：${activeAuthorProfile.skills.slice(0, 5).map((item) => item.name).join(' · ')}。`,
+            ]}
+            link={activeAuthorProfile.profileUrl}
+          />
+        ) : null}
       </section>
 
       <section className="doc-grid">
         <article className="doc-card">
-          <div className="doc-kicker">Document 1</div>
-          <h2>{report.documents.document1.title}</h2>
-          <p className="section-copy">看清下载榜头部技能的类别结构、标题模式、输入输出设计，以及为什么它们容易起量。</p>
-          <div className="mini-grid">
-            {report.documents.document1.categoryDistribution.map((item) => (
-              <div key={item.category} className="mini-stat">
-                <strong>{item.count}</strong>
+          <div className="doc-kicker">How Viral</div>
+          <h2>爆款是怎么被做出来的</h2>
+          <div className="card-stack compact">
+            {report.documents.document1.top20Skills.slice(0, 6).map((skill) => (
+              <a key={skill.slug} href={skill.url} target="_blank" rel="noreferrer" className="sub-card anchor-card">
+                <strong>{skill.name}</strong>
                 <span>
-                  {item.category} · {item.share}%
+                  {metricValue(skill.downloads)} 下载 · {skill.category}
                 </span>
-              </div>
+                <small>{skill.likelyApis.join(' · ') || 'Unknown'}</small>
+              </a>
             ))}
           </div>
-          <TopSkillsTable skills={report.documents.document1.top20Skills} />
           <ul className="bullet-list">
             {report.documents.document1.keySuccessFactors.map((factor) => (
               <li key={factor}>{factor}</li>
@@ -247,32 +288,8 @@ export default function App() {
         </article>
 
         <article className="doc-card">
-          <div className="doc-kicker">Document 2</div>
-          <h2>{report.documents.document2.title}</h2>
-          <p className="section-copy">聚焦高表现作者的作品密度、10K+ 爆款数、API 复用概率，以及是否在做模板化量产。</p>
-          <AuthorTable authors={report.documents.document2.top10Authors} />
-          <ul className="bullet-list">
-            {report.documents.document2.authorPatterns.map((pattern) => (
-              <li key={pattern}>{pattern}</li>
-            ))}
-          </ul>
-        </article>
-      </section>
-
-      <section className="doc-grid lower-grid">
-        <article className="doc-card">
-          <div className="doc-kicker">Document 3</div>
-          <h2>{report.documents.document3.title}</h2>
-          <p className="section-copy">把爆款规律沉淀成一套可重复执行的生产打法，而不是一次性的爆款复盘。</p>
-          <div className="card-stack">
-            {report.documents.document3.templates.map((template) => (
-              <div key={template.name} className="sub-card">
-                <h3>{template.name}</h3>
-                <p>{template.bestFor}</p>
-                <small>{template.structure}</small>
-              </div>
-            ))}
-          </div>
+          <div className="doc-kicker">How To Copy</div>
+          <h2>怎么复制，而不是只复盘</h2>
           <div className="two-col-list">
             <div>
               <h3>Production rules</h3>
@@ -292,85 +309,40 @@ export default function App() {
             </div>
           </div>
         </article>
+      </section>
+
+      <section className="doc-grid lower-grid">
+        <article className="doc-card">
+          <div className="doc-kicker">AIsa Moves</div>
+          <h2>最值得改造成 AIsa API 的方向</h2>
+          <div className="card-stack compact">
+            {report.documents.document4.top10Rebuilds.slice(0, 6).map((item) => (
+              <div key={item.skill} className="sub-card">
+                <strong>
+                  {item.skill} · @{item.author}
+                </strong>
+                <span>{item.category}</span>
+                <p>{item.rationale}</p>
+                <small>{item.aisaAngle}</small>
+              </div>
+            ))}
+          </div>
+        </article>
 
         <article className="doc-card">
-          <div className="doc-kicker">Document 4</div>
-          <h2>{report.documents.document4.title}</h2>
-          <p className="section-copy">把头部技能的流量结构，翻译成 AIsa API 的替代路径、收费梯度和产品路线。</p>
-
-          <div className="two-col-list">
-            <div>
-              <h3>Replaceable APIs</h3>
-              <div className="card-stack compact">
-                {report.documents.document4.replaceableApis.map((api) => (
-                  <div key={api.apiFamily} className="sub-card">
-                    <strong>
-                      {api.apiFamily} · {api.skillCount}
-                    </strong>
-                    <p>{api.whyItMatters}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <h3>Free vs Pro</h3>
-              <div className="card-stack compact">
-                {report.documents.document4.freeVsPaidByCategory.map((tier) => (
-                  <div key={tier.category} className="sub-card">
-                    <strong>{tier.category}</strong>
-                    <p>Free: {tier.freeTier}</p>
-                    <small>Paid: {tier.paidTier}</small>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          <h3>Top rebuild opportunities</h3>
-          <div className="table-wrap">
-            <table>
-              <thead>
-                <tr>
-                  <th>Skill</th>
-                  <th>Author</th>
-                  <th>Category</th>
-                  <th>Why rebuild</th>
-                  <th>AIsa angle</th>
-                </tr>
-              </thead>
-              <tbody>
-                {report.documents.document4.top10Rebuilds.map((item) => (
-                  <tr key={`${item.author}-${item.skill}`}>
-                    <td>{item.skill}</td>
-                    <td>@{item.author}</td>
-                    <td>{item.category}</td>
-                    <td>{item.rationale}</td>
-                    <td>{item.aisaAngle}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-
-          <div className="two-col-list">
-            <div>
-              <h3>System design</h3>
-              <ul className="bullet-list">
-                {report.documents.document4.skillFactorySystemDesign.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h3>Roadmap</h3>
-              <ul className="bullet-list">
-                {report.documents.document4.roadmap.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </div>
-          </div>
+          <div className="doc-kicker">Roadmap</div>
+          <h2>接下来怎么落地</h2>
+          <ul className="bullet-list">
+            {report.documents.document4.roadmap.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+          <h3>Factory funnel</h3>
+          <ul className="bullet-list">
+            {report.documents.document4.apiMonetizationFunnel.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
         </article>
       </section>
     </main>

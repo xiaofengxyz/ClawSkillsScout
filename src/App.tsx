@@ -677,6 +677,9 @@ export default function App() {
             文档展示接口覆盖与技能实现分组。
           </p>
           <div className="hero-link-row">
+            <a className="hero-link-button hero-link-button-primary" href={`${import.meta.env.BASE_URL}market-intelligence.html`}>
+              打开跨生态情报页
+            </a>
             <a className="hero-link-button hero-link-button-primary" href={`${import.meta.env.BASE_URL}clawhub-growth.html`}>
               打开 ClawHub 商业分析页
             </a>

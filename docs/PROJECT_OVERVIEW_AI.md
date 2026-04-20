@@ -59,6 +59,7 @@
 - 另有独立的 ClawHub 增长分析页，读取 `public/data/clawhub-growth-report.json` 输出 4 份商业分析文档
 - 另有独立的 ClawHub 下载榜爆款分析页，读取 `public/data/clawhub-download-insights.json` 输出技能/作者/skill factory/AIsa 变现分析
 - 另有独立的 ClawHub 10k+ 系统分析页，读取 `public/data/clawhub-10k-system-report.json` 输出“可复制生产系统 + AIsa API 盈利系统”报告，并同步生成 Word 文档
+- 另有独立的跨生态情报页，读取 `public/data/market-ecosystem-report.json`，统一展示 ClawHub、Claude Marketplaces、Hermes 的爆款结构与 AISA 改造机会
 - 另有 10k+ 报告的后处理脚本，会输出中文版系统报告、老板版 EN/ZH 简报，以及公开下载的 Word/Markdown 文档
 - 用 Vite + React 构建静态页面
 - 发布到 GitHub Pages 或服务器目录
@@ -94,11 +95,13 @@
 - 已有独立增长分析页入口：`clawhub-growth.html` + `src/clawhub-growth/*`
 - 已有独立下载榜爆款分析页入口：`clawhub-download-insights.html` + `src/clawhub-download-insights/*`
 - 已有独立 10k+ 系统分析页入口：`clawhub-10k-system.html` + `src/clawhub-10k-system/*`
+- 已有独立跨生态情报页入口：`market-intelligence.html` + `src/market-intelligence/*`
 - 已有 downloads / stars / installs 三榜综合分析脚本：[scripts/build-clawhub-multi-ranking-report.py](/mnt/d/workplace/skillGet/scripts/build-clawhub-multi-ranking-report.py)
 - 已有老板版总报告脚本：[scripts/build-clawhub-viral-boss-report.py](/mnt/d/workplace/skillGet/scripts/build-clawhub-viral-boss-report.py)
 - 已有 AISA 全量技能改造计划与 Top 200 转 AISA 计划脚本：[scripts/build-aisa-expansion-plans.py](/mnt/d/workplace/skillGet/scripts/build-aisa-expansion-plans.py)
+- 已有跨生态市场情报脚本：[scripts/build-market-ecosystem-report.mjs](/mnt/d/workplace/skillGet/scripts/build-market-ecosystem-report.mjs)
 - 已有构建结果目录：`dist/`
-- 已有公开数据目录：`public/data/catalog.json`、`public/data/aisa-api-analysis.json`、`public/data/clawhub-growth-report.json`、`public/data/clawhub-download-insights.json`、`public/data/clawhub-10k-system-report.json`、`public/data/clawhub-multi-ranking-report.json`、`public/data/aisa-all-skills-breakout-plan.json`、`public/data/clawhub-top200-aisa-conversion-plan.json`
+- 已有公开数据目录：`public/data/catalog.json`、`public/data/aisa-api-analysis.json`、`public/data/clawhub-growth-report.json`、`public/data/clawhub-download-insights.json`、`public/data/clawhub-10k-system-report.json`、`public/data/clawhub-multi-ranking-report.json`、`public/data/aisa-all-skills-breakout-plan.json`、`public/data/clawhub-top200-aisa-conversion-plan.json`、`public/data/market-ecosystem-report.json`
 - 已有公开报告目录：`public/reports/ClawHub_10K_System_Report*.md/.docx`、`public/reports/ClawHub_10K_Boss_Brief_*.md/.docx`、`public/reports/ClawHub_Multi_Ranking_Report_ZH.md/.docx`、`public/reports/ClawHub_Viral_Boss_Report_ZH.md/.docx`、`public/reports/AISA_All_Skills_Breakout_Plan_ZH.md/.docx`、`public/reports/ClawHub_Top200_AISA_Conversion_Report_ZH.md/.docx`、`public/reports/AISA_Breakout_*.md`
 - 已有可复用技能样板：`sucess/clawhub-hit-factory/*`
 - 已有 GitHub Pages / 服务器部署说明：[docs/DEPLOYMENT.md](/mnt/d/workplace/skillGet/docs/DEPLOYMENT.md)
@@ -159,6 +162,7 @@
 - `src/clawhub-growth/App.tsx`
 - `src/clawhub-download-insights/App.tsx`
 - `src/clawhub-10k-system/App.tsx`
+- `src/market-intelligence/App.tsx`
 - `scripts/generate-clawhub-10k-followup-assets.py`
 - [src/types.ts](/mnt/d/workplace/skillGet/src/types.ts)
 - `src/styles.css`
@@ -176,6 +180,7 @@
 - 以独立页面输出 ClawHub 热门技能/作者/变现机会分析
 - 以独立页面输出 ClawHub 下载榜爆款技能/作者/skill factory/AIsa 变现分析
 - 以独立页面输出 ClawHub 10k+ 技能/作者的可复制生产系统与 AIsa API 盈利系统
+- 以独立页面横向比较 ClawHub、Claude Marketplaces、Hermes 的爆款结构与 AISA 改造机会
 - 以 Markdown / Word 双格式输出中文系统报告和老板版中英文简报
 
 ### 子系统 C：可疑包优化与再发布

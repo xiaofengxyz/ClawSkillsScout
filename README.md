@@ -36,6 +36,7 @@ Project-level context docs do not need to be updated after every task. Only upda
 - Generate a standalone ClawHub growth strategy page from `public/data/clawhub-growth-report.json`
 - Generate a standalone ClawHub downloads-insights page from `public/data/clawhub-download-insights.json`
 - Generate a standalone ClawHub `10k+` repeatable-systems page from `public/data/clawhub-10k-system-report.json`
+- Generate a standalone cross-market intelligence page from `public/data/market-ecosystem-report.json`
 - Generate Chinese and boss-facing EN/ZH follow-up reports from the `10k+` system dataset
 - Deploy daily through GitHub Actions
 - Package GitHub-hosted skill directories from tracked owner accounts into `public/downloads/github/`
@@ -52,6 +53,7 @@ npm run analyze:clawhub-growth
 npm run analyze:clawhub-download-insights
 npm run analyze:clawhub-10k-system
 npm run analyze:clawhub-10k-followups
+npm run analyze:market-ecosystem
 npm run dev
 ```
 

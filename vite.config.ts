@@ -12,6 +12,7 @@ export default defineConfig({
         clawhubGrowth: resolve(__dirname, 'clawhub-growth.html'),
         clawhubDownloadInsights: resolve(__dirname, 'clawhub-download-insights.html'),
         clawhub10kSystem: resolve(__dirname, 'clawhub-10k-system.html'),
+        marketIntelligence: resolve(__dirname, 'market-intelligence.html'),
       },
     },
   },
