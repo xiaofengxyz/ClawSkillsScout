@@ -16,6 +16,7 @@
     "analyze:clawhub-10k-followups": "python3 scripts/generate-clawhub-10k-followup-assets.py",
     "analyze:clawhub-multi-ranking": "python3 scripts/build-clawhub-multi-ranking-report.py",
     "analyze:clawhub-viral-boss": "python3 scripts/build-clawhub-viral-boss-report.py",
+    "analyze:aisa-expansion-plans": "python3 scripts/build-aisa-expansion-plans.py",
     "pipeline:aisa-analysis": "node scripts/ensure-public-data.mjs && npm run download:clawhub-account-skills && npm run download:github-account-skills && npm run analyze:aisa && vite build",
     "build:source-optimized": "node scripts/build-source-optimized-packages.mjs",
     "build:source-optimized-zh": "node scripts/build-source-optimized-zh.mjs",

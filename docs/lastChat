@@ -1,14 +1,71 @@
-这次我已经把两件关键事一起处理了。
+历史结论压缩摘要
 
-你指出的问题是对的。@ivangdavila 之前显示 10K+ 技能 0 是统计 bug，不是数据事实。原因是作者画像阶段把作者页返回的低下载量作品集数据，覆盖了 10k 榜单里的真实高下载样本。我已经修了合并逻辑，在 scripts/build-clawhub-10k-system-report.py 里把作者作品集和 10k 榜单样本按 slug 合并，并取更高下载量。现在重新生成后的结果是：@ivangdavila 变成 总技能 119，10K+ 技能 19，代表作也回正为 Self-Improving + Proactive Agent, Word / DOCX, Excel / XLSX。对应产物已经更新到 public/data/clawhub-10k-system-report.json 和 public/reports/ClawHub_10K_System_Report.md。
+1. 10K+ 系统报告已修正关键统计错误。
+- `@ivangdavila` 原先被错误显示为 `10K+ 技能 0`，根因是作者作品集低下载数据覆盖了 10k 榜单高下载样本。
+- 已在 `scripts/build-clawhub-10k-system-report.py` 修复为按 `slug` 合并并取更高下载量。
+- 修复后 `@ivangdavila` 回正为多款 10K+ 技能作者，代表作包括 `Self-Improving + Proactive Agent`、`Word / DOCX`、`Excel / XLSX`。
 
-Unknown：125 个技能 的意思也不是“没有 API”，而是“当前脚本只靠标题和简介做启发式判断，暂时识别不出明确 API 家族”。也就是说它是“未识别依赖桶”，不是一个真实 API 类别。我已经在中文 follow-up 报告里把这个解释写清楚了，并补了一个可直接落地的选品方案：public/reports/ClawHub_10K_System_Report_ZH.md。我给你的直接建议是先做 GitHub Repo Research，不要先做更虚的 Self-Improving Agent。原因很简单：搜索意图强、需求已验证、第一次使用门槛低，而且最容易做成一个底层能力复用到多个变体的工厂。
+2. `Unknown` API 家族不是“没有 API”，而是“当前脚本无法从标题/简介准确识别依赖家族”。
 
-这次我改动了：
+3. 本地 7 个 AISA runtime 包已完成第一轮爆款化包装升级。
+- 已统一为 `metadata.aisa`
+- 已补 `compatibility`
+- 已去掉旧式 `${SKILL_ROOT}` 引用
+- 已补 `High-Intent Workflows` 和 `Example Requests`
+- 已同步到 `packages/source-optimized*` 和 `templates/source-optimized*`
 
-scripts/build-clawhub-10k-system-report.py
-scripts/generate-clawhub-10k-followup-assets.py
-public/data/clawhub-10k-system-report.json
-public/reports/ClawHub_10K_System_Report.md
-public/reports/ClawHub_10K_System_Report_ZH.md
-有一个小阻塞需要你知道：public/reports/ClawHub_10K_System_Report_ZH.docx 正在被外部程序占用，所以脚本没法覆盖它；Markdown 已经更新，本地 reports/ClawHub_10K_System_Report_ZH.docx 写成功了。你如果关掉占用这个 Word 文件的程序，我下一轮可以把 public 目录下的中文版 .docx 也补齐。
+4. `verify-source-optimized.mjs` 已增强。
+- 现在会检查 `metadata.aisa`
+- 会检查 `compatibility`
+- 会拦旧式 `${SKILL_ROOT}` / `${LAST30DAYS_PYTHON}`
+
+5. 本地 AISA 旗舰 skill 已明确。
+- 第一优先：`aisa-twitter-api`
+- 原因：本地 AISA 包里安装转化最强，品牌一致性最好，最适合做 AISA 官方旗舰包
+- 第二梯队：`openclaw-twitter`
+- 第三梯队：YouTube 家族
+
+6. 多榜单分析已经建立。
+- 已支持 ClawHub `downloads` / `stars` / `installs` 三榜综合分析
+- 已生成 `public/data/clawhub-multi-ranking-report.json`
+- 已生成老板版综合报告 `ClawHub_Viral_Boss_Report_ZH`
+
+7. 当前对爆款系统的核心判断。
+- 真正爆款不是只看下载量，而是同时在下载、星标、安装上有强表现
+- 爆款 skill 的共同点：标题即任务、首轮价值明确、可长期驻留
+- 爆款作者的共同点：围绕一个能力核做作品集，而不是随机做单点 skill
+
+8. 对 AISA 的方向判断。
+- 先做旗舰包，再做家族矩阵，不要平均发力
+- 当前最值得继续打磨的家族：
+  - Twitter / X
+  - YouTube
+  - GitHub
+  - Search Aggregation
+  - Workspace
+  - Document Office
+  - Browser Automation
+
+9. 已完成的真实测试结论。
+- 静态校验与 CLI smoke tests 已通过
+- 使用提供的 `AISA_API_KEY` 做非破坏性在线测试后：
+  - `twitter/trends` 成功
+  - `twitter/auth_twitter` 成功并返回授权链接
+  - `youtube/search` 成功并返回结果
+  - `twitter/user/info` 超时
+- 使用 `python3.12 + GITHUB_TOKEN` 跑 `last30days` 时，已进入真实运行态，但 planner、GitHub、Reddit 等链路存在 timeout / 422 等稳定性问题
+
+10. 当前最大阻塞已经从“缺凭证”变成“远端链路稳定性不一致”。
+
+11. 已生成的重要产物。
+- `reports/ClawHub_Multi_Ranking_Report_ZH.md`
+- `reports/ClawHub_Viral_Boss_Report_ZH.md`
+- `reports/AISA_Breakout_Execution_Plan_ZH.md`
+- `reports/AISA_Breakout_Test_Evidence_ZH.md`
+- 对应 `.docx` 与 `public/reports/*` 副本
+
+12. 下一阶段应做的事。
+- 分析 ClawHub 三榜 Top 200
+- 分类哪些 skill 适合改造成 AISA API
+- 为“所有现有 AISA API skill”做爆款化改造计划
+- 为“最适合转 AISA 的 Top 100 非 AISA 热门 skill”做改造与产品化计划

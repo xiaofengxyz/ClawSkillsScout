@@ -40,6 +40,7 @@
       "scripts/generate-clawhub-10k-followup-assets.py",
       "scripts/build-clawhub-multi-ranking-report.py",
       "scripts/build-clawhub-viral-boss-report.py",
+      "scripts/build-aisa-expansion-plans.py",
       "scripts/convert-github-skills-to-clawhub.py",
       "scripts/build-source-optimized-packages.mjs",
       "scripts/build-source-optimized-zh.mjs",
@@ -118,12 +119,16 @@
         "public/data/clawhub-download-insights.json",
         "public/data/clawhub-10k-system-report.json",
         "public/data/clawhub-multi-ranking-report.json",
+        "public/data/aisa-all-skills-breakout-plan.json",
+        "public/data/clawhub-top200-aisa-conversion-plan.json",
         "public/reports/ClawHub_10K_System_Report.docx",
         "public/reports/ClawHub_10K_System_Report_ZH.docx",
         "public/reports/ClawHub_10K_Boss_Brief_EN.docx",
         "public/reports/ClawHub_10K_Boss_Brief_ZH.docx",
         "public/reports/ClawHub_Multi_Ranking_Report_ZH.docx",
-        "public/reports/ClawHub_Viral_Boss_Report_ZH.docx"
+        "public/reports/ClawHub_Viral_Boss_Report_ZH.docx",
+        "public/reports/AISA_All_Skills_Breakout_Plan_ZH.docx",
+        "public/reports/ClawHub_Top200_AISA_Conversion_Report_ZH.docx"
       ],
       "outputs": [
         "dist/"
@@ -324,6 +329,7 @@
     "analyze:aisa": "Scan all public/downloads skill archives and regenerate public/data/aisa-api-analysis.json.",
     "analyze:clawhub-multi-ranking": "Fetch the latest ClawHub downloads/stars/installs top lists and regenerate the boss-facing multi-ranking report assets.",
     "analyze:clawhub-viral-boss": "Generate the long-form boss report that turns multi-ranking market analysis into a ClawHub viral-skill playbook and Word deliverable.",
+    "analyze:aisa-expansion-plans": "Generate full breakout plans for current AISA skills plus a ranked Top 200 non-AISA conversion plan and Word deliverables.",
     "pipeline:aisa-analysis": "Refresh ClawHub and GitHub skill archives, rebuild AISA analysis data, then build the static site.",
     "build:source-optimized": "Build English optimized package directories from original-unpacked sources.",
     "build:source-optimized-zh": "Build Chinese optimized package directories from source-optimized packages.",
@@ -363,6 +369,14 @@
     {
       "path": "public/data/clawhub-multi-ranking-report.json",
       "role": "Latest multi-ranking market analysis data across downloads, stars, installs, and AISA local-package priorities."
+    },
+    {
+      "path": "public/data/aisa-all-skills-breakout-plan.json",
+      "role": "Structured breakout upgrade plan for all current AISA skills tracked by the repo."
+    },
+    {
+      "path": "public/data/clawhub-top200-aisa-conversion-plan.json",
+      "role": "Top 200 cross-ranking analysis plus ranked non-AISA candidates most suitable for conversion into AISA-based skills."
     }
   ],
   "workflowDocs": [

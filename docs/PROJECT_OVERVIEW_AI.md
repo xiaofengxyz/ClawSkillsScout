@@ -96,9 +96,10 @@
 - 已有独立 10k+ 系统分析页入口：`clawhub-10k-system.html` + `src/clawhub-10k-system/*`
 - 已有 downloads / stars / installs 三榜综合分析脚本：[scripts/build-clawhub-multi-ranking-report.py](/mnt/d/workplace/skillGet/scripts/build-clawhub-multi-ranking-report.py)
 - 已有老板版总报告脚本：[scripts/build-clawhub-viral-boss-report.py](/mnt/d/workplace/skillGet/scripts/build-clawhub-viral-boss-report.py)
+- 已有 AISA 全量技能改造计划与 Top 200 转 AISA 计划脚本：[scripts/build-aisa-expansion-plans.py](/mnt/d/workplace/skillGet/scripts/build-aisa-expansion-plans.py)
 - 已有构建结果目录：`dist/`
-- 已有公开数据目录：`public/data/catalog.json`、`public/data/aisa-api-analysis.json`、`public/data/clawhub-growth-report.json`、`public/data/clawhub-download-insights.json`、`public/data/clawhub-10k-system-report.json`、`public/data/clawhub-multi-ranking-report.json`
-- 已有公开报告目录：`public/reports/ClawHub_10K_System_Report*.md/.docx`、`public/reports/ClawHub_10K_Boss_Brief_*.md/.docx`、`public/reports/ClawHub_Multi_Ranking_Report_ZH.md/.docx`、`public/reports/ClawHub_Viral_Boss_Report_ZH.md/.docx`、`public/reports/AISA_Breakout_*.md`
+- 已有公开数据目录：`public/data/catalog.json`、`public/data/aisa-api-analysis.json`、`public/data/clawhub-growth-report.json`、`public/data/clawhub-download-insights.json`、`public/data/clawhub-10k-system-report.json`、`public/data/clawhub-multi-ranking-report.json`、`public/data/aisa-all-skills-breakout-plan.json`、`public/data/clawhub-top200-aisa-conversion-plan.json`
+- 已有公开报告目录：`public/reports/ClawHub_10K_System_Report*.md/.docx`、`public/reports/ClawHub_10K_Boss_Brief_*.md/.docx`、`public/reports/ClawHub_Multi_Ranking_Report_ZH.md/.docx`、`public/reports/ClawHub_Viral_Boss_Report_ZH.md/.docx`、`public/reports/AISA_All_Skills_Breakout_Plan_ZH.md/.docx`、`public/reports/ClawHub_Top200_AISA_Conversion_Report_ZH.md/.docx`、`public/reports/AISA_Breakout_*.md`
 - 已有可复用技能样板：`sucess/clawhub-hit-factory/*`
 - 已有 GitHub Pages / 服务器部署说明：[docs/DEPLOYMENT.md](/mnt/d/workplace/skillGet/docs/DEPLOYMENT.md)
 
