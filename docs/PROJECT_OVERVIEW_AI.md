@@ -9,6 +9,7 @@
 1. [AGENTS.md](/mnt/d/workplace/skillGet/AGENTS.md)
 2. [README.md](/mnt/d/workplace/skillGet/README.md)
 3. [docs/project-map.json](/mnt/d/workplace/skillGet/docs/project-map.json)
+4. [docs/AI_PROJECT_MEMORY.md](/mnt/d/workplace/skillGet/docs/AI_PROJECT_MEMORY.md)
 
 结束任务时不需要每次都回写全部项目文档。只有在以下情况发生时，才更新 `README.md`、本文件或 `docs/project-map.json`：
 
@@ -24,6 +25,12 @@
 与 AISA 接口分析相关的标准流程和验收规范见：
 
 - [docs/AISA_ANALYSIS_WORKFLOW.md](/mnt/d/workplace/skillGet/docs/AISA_ANALYSIS_WORKFLOW.md)
+
+快速查项目功能和文档时，优先看：
+
+- [docs/PROJECT_MANUAL.md](/mnt/d/workplace/skillGet/docs/PROJECT_MANUAL.md)
+- [reports/README.md](/mnt/d/workplace/skillGet/reports/README.md)
+- [public/reports/index.html](/mnt/d/workplace/skillGet/public/reports/index.html)
 
 ## 1. 项目一句话说明
 
@@ -58,8 +65,12 @@
 - 前端也读取 `aisa-api-analysis.json`，展示“接口列表 / 技能列表 / ClawHub 目录”三视图
 - 另有独立的 ClawHub 增长分析页，读取 `public/data/clawhub-growth-report.json` 输出 4 份商业分析文档
 - 另有独立的 ClawHub 下载榜爆款分析页，读取 `public/data/clawhub-download-insights.json` 输出技能/作者/skill factory/AIsa 变现分析
+- 另有独立的 ClawHub plugin 爆款报告数据，读取 `public/data/clawhub-plugin-report.json` 输出插件/作者/AISA 改造策略报告
 - 另有独立的 ClawHub 10k+ 系统分析页，读取 `public/data/clawhub-10k-system-report.json` 输出“可复制生产系统 + AIsa API 盈利系统”报告，并同步生成 Word 文档
 - 另有独立的跨生态情报页，读取 `public/data/market-ecosystem-report.json`，统一展示 ClawHub、Claude Marketplaces、Hermes 的爆款结构与 AISA 改造机会
+- `analyze:market-ecosystem` 现在会分别产出 Claude 与 Hermes 的 EN/ZH Markdown 报告，便于不打开页面也能直接看选品与爆款分析
+- 另有独立的 AgentSkill 专项报告数据，读取 `public/data/agentskill-report.json` 输出 skill / plugin / creator / ranking factors / AISA 改造机会报告
+- 另有独立的 AgentSkills.so 专项报告数据，读取 `public/data/agentskills-so-report.json` 输出 skill / author / 安全信号 / AISA 改造机会报告
 - 另有 10k+ 报告的后处理脚本，会输出中文版系统报告、老板版 EN/ZH 简报，以及公开下载的 Word/Markdown 文档
 - 用 Vite + React 构建静态页面
 - 发布到 GitHub Pages 或服务器目录
@@ -100,11 +111,15 @@
 - 已有老板版总报告脚本：[scripts/build-clawhub-viral-boss-report.py](/mnt/d/workplace/skillGet/scripts/build-clawhub-viral-boss-report.py)
 - 已有 AISA 全量技能改造计划与 Top 200 转 AISA 计划脚本：[scripts/build-aisa-expansion-plans.py](/mnt/d/workplace/skillGet/scripts/build-aisa-expansion-plans.py)
 - 已有跨生态市场情报脚本：[scripts/build-market-ecosystem-report.mjs](/mnt/d/workplace/skillGet/scripts/build-market-ecosystem-report.mjs)
+- 已有 AgentSkill 专项分析脚本：[scripts/build-agentskill-report.mjs](/mnt/d/workplace/skillGet/scripts/build-agentskill-report.mjs)
+- 已有 AgentSkills.so 专项分析脚本：[scripts/build-agentskills-so-report.mjs](/mnt/d/workplace/skillGet/scripts/build-agentskills-so-report.mjs)
+- 已有 ClawHub plugin 爆款分析脚本：[scripts/build-clawhub-plugin-report.mjs](/mnt/d/workplace/skillGet/scripts/build-clawhub-plugin-report.mjs)
 - 已有构建结果目录：`dist/`
-- 已有公开数据目录：`public/data/catalog.json`、`public/data/aisa-api-analysis.json`、`public/data/clawhub-growth-report.json`、`public/data/clawhub-download-insights.json`、`public/data/clawhub-10k-system-report.json`、`public/data/clawhub-multi-ranking-report.json`、`public/data/aisa-all-skills-breakout-plan.json`、`public/data/clawhub-top200-aisa-conversion-plan.json`、`public/data/market-ecosystem-report.json`
-- 已有公开报告目录：`public/reports/ClawHub_10K_System_Report*.md/.docx`、`public/reports/ClawHub_10K_Boss_Brief_*.md/.docx`、`public/reports/ClawHub_Multi_Ranking_Report_ZH.md/.docx`、`public/reports/ClawHub_Viral_Boss_Report_ZH.md/.docx`、`public/reports/AISA_All_Skills_Breakout_Plan_ZH.md/.docx`、`public/reports/ClawHub_Top200_AISA_Conversion_Report_ZH.md/.docx`、`public/reports/AISA_Breakout_*.md`
+- 已有公开数据目录：`public/data/catalog.json`、`public/data/aisa-api-analysis.json`、`public/data/clawhub-growth-report.json`、`public/data/clawhub-download-insights.json`、`public/data/clawhub-plugin-report.json`、`public/data/clawhub-10k-system-report.json`、`public/data/clawhub-multi-ranking-report.json`、`public/data/aisa-all-skills-breakout-plan.json`、`public/data/clawhub-top200-aisa-conversion-plan.json`、`public/data/market-ecosystem-report.json`、`public/data/agentskill-report.json`、`public/data/agentskills-so-report.json`
+- 已有公开报告目录：`public/reports/ClawHub_Plugin_Viral_Report_*.md`、`public/reports/ClawHub_10K_System_Report*.md/.docx`、`public/reports/ClawHub_10K_Boss_Brief_*.md/.docx`、`public/reports/ClawHub_Multi_Ranking_Report_ZH.md/.docx`、`public/reports/ClawHub_Viral_Boss_Report_ZH.md/.docx`、`public/reports/AISA_All_Skills_Breakout_Plan_ZH.md/.docx`、`public/reports/ClawHub_Top200_AISA_Conversion_Report_ZH.md/.docx`、`public/reports/AISA_Breakout_*.md`、`public/reports/Claude_AISA_Report_*.md`、`public/reports/Hermes_AISA_Report_*.md`、`public/reports/AgentSkill_Report_*.md`、`public/reports/AgentSkills_SO_Report_*.md`
 - 已有可复用技能样板：`sucess/clawhub-hit-factory/*`
 - 已有 GitHub Pages / 服务器部署说明：[docs/DEPLOYMENT.md](/mnt/d/workplace/skillGet/docs/DEPLOYMENT.md)
+- 已有项目记忆入口：[docs/AI_PROJECT_MEMORY.md](/mnt/d/workplace/skillGet/docs/AI_PROJECT_MEMORY.md)，可直接查看当前能力、最近完成工作和下一步建议
 
 ### 已完成的优化打包流水线
 
@@ -179,8 +194,10 @@
 - 在页面中同时展示 ClawHub 与 GitHub 归档技能
 - 以独立页面输出 ClawHub 热门技能/作者/变现机会分析
 - 以独立页面输出 ClawHub 下载榜爆款技能/作者/skill factory/AIsa 变现分析
+- 以独立报告输出 ClawHub plugin 的爆款结构、作者结构与 AISA 改造机会
 - 以独立页面输出 ClawHub 10k+ 技能/作者的可复制生产系统与 AIsa API 盈利系统
 - 以独立页面横向比较 ClawHub、Claude Marketplaces、Hermes 的爆款结构与 AISA 改造机会
+- 以独立 Markdown 报告输出 Claude、Hermes、AgentSkill、AgentSkills.so 的专项爆款分析与 AISA 选品建议
 - 以 Markdown / Word 双格式输出中文系统报告和老板版中英文简报
 
 ### 子系统 C：可疑包优化与再发布

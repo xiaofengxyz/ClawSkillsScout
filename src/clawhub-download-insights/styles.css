@@ -233,6 +233,10 @@ table {
   margin-top: 18px;
 }
 
+.detail-grid-single {
+  grid-template-columns: 1fr;
+}
+
 .doc-card,
 .spotlight-card {
   padding: 24px;
@@ -328,13 +332,25 @@ tbody tr:last-child td {
   gap: 10px;
 }
 
+.detail-item-shell {
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.62);
+  overflow: hidden;
+  transition: box-shadow 180ms ease, transform 180ms ease;
+}
+
+.detail-item-shell.is-active {
+  box-shadow: 0 16px 32px rgba(79, 49, 23, 0.08);
+}
+
 .detail-item {
   display: grid;
   gap: 6px;
   width: 100%;
-  padding: 14px 16px;
-  border: 1px solid var(--line);
-  border-radius: 18px;
+  padding: 16px 18px;
+  border: none;
+  border-radius: 0;
   background: rgba(255, 255, 255, 0.76);
   color: var(--ink);
   cursor: pointer;
@@ -355,9 +371,12 @@ tbody tr:last-child td {
   background: linear-gradient(135deg, rgba(191, 123, 48, 0.16), rgba(33, 95, 122, 0.14));
 }
 
-.insight-detail-card {
+.accordion-body {
   display: grid;
-  gap: 14px;
+  gap: 12px;
+  padding: 0 18px 18px;
+  border-top: 1px solid var(--line);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.86), rgba(250, 243, 235, 0.96));
 }
 
 .detail-bullets {

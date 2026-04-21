@@ -5,16 +5,31 @@ export interface MarketSkill {
   owner?: string;
   author?: string;
   repo?: string;
+  href?: string;
   description: string;
   category: string;
   apiFamily: string;
   targetTitle: string;
-  summary: string;
-  moves: string[];
+  summary?: string;
+  moves?: string[];
   stars?: number;
   installs?: number;
   installsCurrent?: number;
+  weeklyDownloads?: number;
   pluginCount?: number;
+  listedSkillCount?: number;
+  listedGithubStars?: number;
+  githubStars?: number;
+  qualityScore?: number;
+  securityScore?: number;
+  trustIdentityScore?: number;
+  behavioralMonitoringScore?: number;
+  vulnerabilityExposureScore?: number;
+  securitySignalsResolved?: boolean;
+  platformCoverageCount?: number;
+  totalDistributionInstalls?: number;
+  platformCoverageScore?: number;
+  rating?: number;
   aisaFitScore?: number;
   monetizationScore?: number;
   factoryScore?: number;
@@ -183,5 +198,112 @@ export interface MarketEcosystemReport {
     combinedOpportunities: MarketSkill[];
     designPrinciples: string[];
     executionLanes: string[];
+  };
+}
+
+export interface AgentSkillRankingFactor {
+  factor: string;
+  importance: string;
+  evidence: string;
+  whyItMatters: string;
+}
+
+export interface AgentSkillCreatorProfile {
+  owner: string;
+  sampledSkills: number;
+  sampledPlugins: number;
+  totalInstalls: number;
+  totalGithubStars: number;
+  avgQualityScore: number;
+  avgSecurityScore: number;
+  primaryCategories: string[];
+}
+
+export interface AgentSkillReport {
+  generatedAt: string;
+  sources: {
+    skills: string;
+    plugins: string[];
+  };
+  sampleNotes: {
+    skills: string;
+    plugins: string;
+  };
+  summary: {
+    sampledSkills: number;
+    sampledPlugins: number;
+    sampledCreators: number;
+    ownerPagesFetched: number;
+    totalSkillInstalls: number;
+    totalSkillGithubStars: number;
+    avgQualityScore: number;
+    avgSecurityScore: number;
+    topSkillCategory: string | null;
+    topPluginCategory: string | null;
+  };
+  rankingFactors: AgentSkillRankingFactor[];
+  skills: {
+    items: MarketSkill[];
+    topByOpportunity: MarketSkill[];
+    topByInstalls: MarketSkill[];
+    topByQuality: MarketSkill[];
+    topBySecurity: MarketSkill[];
+    topCategories: MarketCategorySummary[];
+    commonPatterns: string[];
+  };
+  plugins: {
+    items: MarketSkill[];
+    topByOpportunity: MarketSkill[];
+    topBySkillCount: MarketSkill[];
+    topByGithubStars: MarketSkill[];
+    commonPatterns: string[];
+  };
+  creators: {
+    topCreators: AgentSkillCreatorProfile[];
+  };
+}
+
+export interface AgentSkillsSoAuthorProfile {
+  owner: string;
+  skillCount: number;
+  totalWeeklyDownloads: number;
+  totalGithubStars: number;
+  avgSecurityScore: number;
+  primaryCategories: string[];
+}
+
+export interface AgentSkillsSoReport {
+  generatedAt: string;
+  sources: {
+    listings: string[];
+  };
+  sampleNotes: {
+    pagesFetched: string[];
+    listingCount: number;
+    detailCount: number;
+  };
+  summary: {
+    sampledSkills: number;
+    sampledAuthors: number;
+    totalWeeklyDownloads: number;
+    totalGithubStars: number;
+    avgPlatformCoverage: number;
+    resolvedSecuritySamples: number;
+    avgSecurityScore: number;
+    topCategory: string | null;
+  };
+  rankingFactors: AgentSkillRankingFactor[];
+  skills: {
+    items: MarketSkill[];
+    topByOpportunity: MarketSkill[];
+    topByWeeklyDownloads: MarketSkill[];
+    topByGithubStars: MarketSkill[];
+    topBySecurity: MarketSkill[];
+    topByPlatformCoverage: MarketSkill[];
+    topCategories: MarketCategorySummary[];
+    commonPatterns: string[];
+  };
+  authors: {
+    topAuthors: AgentSkillsSoAuthorProfile[];
   };
 }

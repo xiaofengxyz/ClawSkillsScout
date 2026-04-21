@@ -174,6 +174,7 @@ a {
 
 .mi-tabs {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
   margin-top: 18px;
   padding: 10px;
@@ -181,7 +182,7 @@ a {
 }
 
 .mi-tab {
-  flex: 1;
+  flex: 1 1 140px;
   min-height: 48px;
   border: 0;
   border-radius: 18px;

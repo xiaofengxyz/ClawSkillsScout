@@ -24,6 +24,7 @@
     "humanFirstRead": [
       "README.md",
       "docs/PROJECT_OVERVIEW_AI.md",
+      "docs/AI_PROJECT_MEMORY.md",
       "package.json"
     ],
     "runtimeEntryPoints": [
@@ -36,12 +37,15 @@
       "scripts/generate-aisa-api-analysis.py",
       "scripts/generate-clawhub-growth-report.py",
       "scripts/generate-clawhub-download-insights.py",
+      "scripts/build-clawhub-plugin-report.mjs",
       "scripts/build-clawhub-10k-system-report.py",
       "scripts/generate-clawhub-10k-followup-assets.py",
       "scripts/build-clawhub-multi-ranking-report.py",
       "scripts/build-clawhub-viral-boss-report.py",
       "scripts/build-aisa-expansion-plans.py",
       "scripts/build-market-ecosystem-report.mjs",
+      "scripts/build-agentskill-report.mjs",
+      "scripts/build-agentskills-so-report.mjs",
       "scripts/convert-github-skills-to-clawhub.py",
       "scripts/build-source-optimized-packages.mjs",
       "scripts/build-source-optimized-zh.mjs",
@@ -120,17 +124,30 @@
         "public/data/optimized-packages.json",
         "public/data/clawhub-growth-report.json",
         "public/data/clawhub-download-insights.json",
+        "public/data/clawhub-plugin-report.json",
         "public/data/clawhub-10k-system-report.json",
         "public/data/clawhub-multi-ranking-report.json",
         "public/data/aisa-all-skills-breakout-plan.json",
         "public/data/clawhub-top200-aisa-conversion-plan.json",
         "public/data/market-ecosystem-report.json",
+        "public/data/agentskill-report.json",
+        "public/data/agentskills-so-report.json",
         "public/reports/ClawHub_10K_System_Report.docx",
         "public/reports/ClawHub_10K_System_Report_ZH.docx",
         "public/reports/ClawHub_10K_Boss_Brief_EN.docx",
         "public/reports/ClawHub_10K_Boss_Brief_ZH.docx",
         "public/reports/ClawHub_Multi_Ranking_Report_ZH.docx",
         "public/reports/ClawHub_Viral_Boss_Report_ZH.docx",
+        "public/reports/ClawHub_Plugin_Viral_Report_ZH.md",
+        "public/reports/ClawHub_Plugin_Viral_Report_EN.md",
+        "public/reports/Claude_AISA_Report_ZH.md",
+        "public/reports/Claude_AISA_Report_EN.md",
+        "public/reports/Hermes_AISA_Report_ZH.md",
+        "public/reports/Hermes_AISA_Report_EN.md",
+        "public/reports/AgentSkill_Report_ZH.md",
+        "public/reports/AgentSkill_Report_EN.md",
+        "public/reports/AgentSkills_SO_Report_ZH.md",
+        "public/reports/AgentSkills_SO_Report_EN.md",
         "public/reports/AISA_All_Skills_Breakout_Plan_ZH.docx",
         "public/reports/ClawHub_Top200_AISA_Conversion_Report_ZH.docx"
       ],
@@ -147,8 +164,10 @@
         "optimized bundle download links",
         "standalone ClawHub growth strategy page",
         "standalone ClawHub downloads-insights page",
+        "standalone ClawHub plugin viral report dataset and Markdown reports",
         "standalone ClawHub 10k+ repeatable-systems page",
         "standalone cross-market intelligence page for ClawHub, Claude Marketplaces, and Hermes",
+        "standalone Claude, Hermes, AgentSkill, and AgentSkills.so Markdown report generation",
         "public Word report download for system analysis",
         "public Chinese report and boss brief download"
       ]
@@ -335,6 +354,9 @@
     "analyze:clawhub-multi-ranking": "Fetch the latest ClawHub downloads/stars/installs top lists and regenerate the boss-facing multi-ranking report assets.",
     "analyze:clawhub-viral-boss": "Generate the long-form boss report that turns multi-ranking market analysis into a ClawHub viral-skill playbook and Word deliverable.",
     "analyze:aisa-expansion-plans": "Generate full breakout plans for current AISA skills plus a ranked Top 200 non-AISA conversion plan and Word deliverables.",
+    "analyze:market-ecosystem": "Refresh cross-market intelligence data and publish separate Claude and Hermes EN/ZH AISA reports.",
+    "analyze:agentskill": "Capture current AgentSkill skill/plugin leaderboard samples plus detail-page trust signals and publish JSON plus EN/ZH reports.",
+    "analyze:agentskills-so": "Capture current AgentSkills.so skill samples plus detail-page security/download/repo signals and publish JSON plus EN/ZH reports.",
     "pipeline:aisa-analysis": "Refresh ClawHub and GitHub skill archives, rebuild AISA analysis data, then build the static site.",
     "build:source-optimized": "Build English optimized package directories from original-unpacked sources.",
     "build:source-optimized-zh": "Build Chinese optimized package directories from source-optimized packages.",
@@ -386,12 +408,32 @@
     {
       "path": "public/data/market-ecosystem-report.json",
       "role": "Cross-market intelligence dataset combining ClawHub, Claude Marketplaces, and Hermes skill-atlas analysis into one AISA opportunity view."
+    },
+    {
+      "path": "public/data/agentskill-report.json",
+      "role": "AgentSkill-specific dataset covering visible skill/plugin leaderboard samples, trust/rating signals, creators, and AISA conversion opportunities."
+    },
+    {
+      "path": "public/data/agentskills-so-report.json",
+      "role": "AgentSkills.so dataset covering sampled skills, author factories, security posture, weekly downloads, and AISA conversion opportunities."
+    },
+    {
+      "path": "public/reports/index.html",
+      "role": "Public browser-friendly report library that explains which generated report covers which market or planning question."
     }
   ],
   "workflowDocs": [
     {
       "path": "docs/AISA_ANALYSIS_WORKFLOW.md",
       "role": "Operational spec for archive refresh, AISA endpoint analysis, validation, and acceptance."
+    },
+    {
+      "path": "docs/PROJECT_MANUAL.md",
+      "role": "Chat-independent handbook covering project functions, pages, datasets, report families, and recommended starting paths."
+    },
+    {
+      "path": "reports/README.md",
+      "role": "Repo-local report index that explains the purpose of each generated report family."
     }
   ],
   "automation": [
@@ -416,6 +458,14 @@
     {
       "path": "public/data/",
       "role": "Published JSON data consumed by the frontend."
+    },
+    {
+      "path": "reports/",
+      "role": "Repo-local generated report sources."
+    },
+    {
+      "path": "public/reports/",
+      "role": "Published report copies plus the public report library page."
     },
     {
       "path": "public/downloads/",

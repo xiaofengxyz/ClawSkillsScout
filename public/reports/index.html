@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Report Library</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f4efe7;
+        --panel: #fffaf4;
+        --ink: #1f2937;
+        --muted: #6b7280;
+        --line: rgba(31, 41, 55, 0.14);
+        --accent: #0f766e;
+        --accent-soft: rgba(15, 118, 110, 0.08);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+        background:
+          radial-gradient(circle at top left, rgba(15, 118, 110, 0.08), transparent 32%),
+          radial-gradient(circle at top right, rgba(180, 83, 9, 0.08), transparent 28%),
+          var(--bg);
+        color: var(--ink);
+      }
+
+      main {
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 40px 20px 72px;
+      }
+
+      .hero,
+      .section {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        padding: 24px;
+        box-shadow: 0 18px 50px rgba(31, 41, 55, 0.06);
+      }
+
+      .hero {
+        margin-bottom: 20px;
+      }
+
+      .eyebrow {
+        font-size: 12px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--accent);
+        font-weight: 700;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+
+      h1 {
+        margin-top: 8px;
+        font-size: clamp(2rem, 4vw, 3rem);
+      }
+
+      .hero p {
+        margin-top: 12px;
+        max-width: 860px;
+        line-height: 1.65;
+        color: var(--muted);
+      }
+
+      .hero-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 18px;
+      }
+
+      .hero a {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 14px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        color: var(--ink);
+        text-decoration: none;
+        background: white;
+      }
+
+      .hero a.primary {
+        border-color: transparent;
+        background: var(--accent);
+        color: white;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 20px;
+      }
+
+      .section {
+        margin-top: 20px;
+      }
+
+      .section > p {
+        margin-top: 10px;
+        line-height: 1.6;
+        color: var(--muted);
+      }
+
+      .card {
+        padding: 18px;
+        border-radius: 18px;
+        border: 1px solid var(--line);
+        background: linear-gradient(180deg, white, var(--accent-soft));
+      }
+
+      .card h3 {
+        font-size: 1rem;
+      }
+
+      .card p {
+        margin-top: 10px;
+        line-height: 1.6;
+        color: var(--muted);
+      }
+
+      .links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 14px;
+      }
+
+      .links a {
+        color: var(--accent);
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      .note {
+        margin-top: 20px;
+        padding: 16px 18px;
+        border-radius: 16px;
+        border: 1px dashed var(--line);
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      @media (max-width: 640px) {
+        main {
+          padding: 24px 14px 48px;
+        }
+
+        .hero,
+        .section {
+          padding: 18px;
+          border-radius: 18px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="hero">
+        <div class="eyebrow">Report Library</div>
+        <h1>Market & AISA report index</h1>
+        <p>
+          This page lists the generated reports published by the project. Use it when you need to know which document covers ClawHub,
+          Claude, Hermes, AgentSkill, AgentSkills.so, or the AISA rollout plan.
+        </p>
+        <div class="hero-links">
+          <a class="primary" href="../market-intelligence.html">Open market-intelligence</a>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>ClawHub</h2>
+        <p>These documents focus on ClawHub breakout logic, plugin growth, 10k+ repeatability, and AISA conversion planning.</p>
+        <div class="grid">
+          <article class="card">
+            <h3>ClawHub Plugin Viral Report</h3>
+            <p>Explains which plugins and plugin authors are winning on ClawHub, what their shared packaging traits are, and which plugin ideas suit AISA.</p>
+            <div class="links">
+              <a href="./ClawHub_Plugin_Viral_Report_ZH.md">ZH</a>
+              <a href="./ClawHub_Plugin_Viral_Report_EN.md">EN</a>
+            </div>
+          </article>
+          <article class="card">
+            <h3>ClawHub 10K System Report</h3>
+            <p>Analyzes the repeatable system behind ClawHub `10k+` skills and prolific authors. Best for understanding large-scale production patterns.</p>
+            <div class="links">
+              <a href="./ClawHub_10K_System_Report.md">MD</a>
+              <a href="./ClawHub_10K_System_Report_ZH.md">ZH</a>
+              <a href="./ClawHub_10K_System_Report.docx">DOCX</a>
+              <a href="./ClawHub_10K_System_Report_ZH.docx">ZH DOCX</a>
+            </div>
+          </article>
+          <article class="card">
+            <h3>ClawHub 10K Boss Brief</h3>
+            <p>Short boss-facing brief distilled from the 10k system report for decision-makers who need the takeaways faster.</p>
+            <div class="links">
+              <a href="./ClawHub_10K_Boss_Brief_ZH.md">ZH</a>
+              <a href="./ClawHub_10K_Boss_Brief_EN.md">EN</a>
+              <a href="./ClawHub_10K_Boss_Brief_ZH.docx">ZH DOCX</a>
+              <a href="./ClawHub_10K_Boss_Brief_EN.docx">EN DOCX</a>
+            </div>
+          </article>
+          <article class="card">
+            <h3>ClawHub Multi-Ranking Report</h3>
+            <p>Merges downloads, stars, and installs into one market view to show what truly repeats across multiple leaderboard dimensions.</p>
+            <div class="links">
+              <a href="./ClawHub_Multi_Ranking_Report_ZH.md">ZH</a>
+              <a href="./ClawHub_Multi_Ranking_Report_ZH.docx">DOCX</a>
+            </div>
+          </article>
+          <article class="card">
+            <h3>ClawHub Viral Boss Report</h3>
+            <p>Management summary of ClawHub viral skill and author strategy, suitable for planning and resource allocation discussions.</p>
+            <div class="links">
+              <a href="./ClawHub_Viral_Boss_Report_ZH.md">ZH</a>
+              <a href="./ClawHub_Viral_Boss_Report_ZH.docx">DOCX</a>
+            </div>
+          </article>
+          <article class="card">
+            <h3>ClawHub Top-200 AISA Conversion Report</h3>
+            <p>Prioritized queue of the strongest ClawHub skills that can be adapted into AISA API-driven products.</p>
+            <div class="links">
+              <a href="./ClawHub_Top200_AISA_Conversion_Report_ZH.md">ZH</a>
+              <a href="./ClawHub_Top200_AISA_Conversion_Report_ZH.docx">DOCX</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Cross-market</h2>
+        <p>These reports compare external marketplaces and show which patterns can be copied into AISA-facing skills and plugins.</p>
+        <div class="grid">
+          <article class="card">
+            <h3>Claude AISA Report</h3>
+            <p>Separate Claude-only analysis covering skills, marketplaces, top owner factories, repeatable playbooks, and AISA product selection.</p>
+            <div class="links">
+              <a href="./Claude_AISA_Report_ZH.md">ZH</a>
+              <a href="./Claude_AISA_Report_EN.md">EN</a>
+            </div>
+          </article>
+          <article class="card">
+            <h3>Hermes AISA Report</h3>
+            <p>Hermes-only workflow-atlas analysis covering bundled/optional skills, section fit, and which workflow boundaries are best for AISA.</p>
+            <div class="links">
+              <a href="./Hermes_AISA_Report_ZH.md">ZH</a>
+              <a href="./Hermes_AISA_Report_EN.md">EN</a>
+            </div>
+          </article>
+          <article class="card">
+            <h3>AgentSkill Report</h3>
+            <p>AgentSkill analysis of skills, plugins, creators, installs, GitHub trust, quality score, security score, and AISA conversion opportunities.</p>
+            <div class="links">
+              <a href="./AgentSkill_Report_ZH.md">ZH</a>
+              <a href="./AgentSkill_Report_EN.md">EN</a>
+            </div>
+          </article>
+          <article class="card">
+            <h3>AgentSkills.so Report</h3>
+            <p>AgentSkills.so analysis of weekly downloads, repo stars, security posture, distribution coverage, author factories, and AISA fit.</p>
+            <div class="links">
+              <a href="./AgentSkills_SO_Report_ZH.md">ZH</a>
+              <a href="./AgentSkills_SO_Report_EN.md">EN</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>AISA rollout</h2>
+        <p>These reports focus on execution planning, evidence capture, and expansion sequencing for AISA-based skills.</p>
+        <div class="grid">
+          <article class="card">
+            <h3>AISA All Skills Breakout Plan</h3>
+            <p>High-level expansion and packaging plan for the current AISA skill portfolio.</p>
+            <div class="links">
+              <a href="./AISA_All_Skills_Breakout_Plan_ZH.md">ZH</a>
+              <a href="./AISA_All_Skills_Breakout_Plan_ZH.docx">DOCX</a>
+            </div>
+          </article>
+          <article class="card">
+            <h3>AISA Breakout Execution Plan</h3>
+            <p>Step-by-step rollout sequence for implementing the breakout opportunities.</p>
+            <div class="links">
+              <a href="./AISA_Breakout_Execution_Plan_ZH.md">ZH</a>
+            </div>
+          </article>
+          <article class="card">
+            <h3>AISA Breakout Test Evidence</h3>
+            <p>Collected validation output and acceptance evidence for the breakout plan.</p>
+            <div class="links">
+              <a href="./AISA_Breakout_Test_Evidence_ZH.md">ZH</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <div class="note">
+        Repo-local report sources live in <code>reports/</code>. Public copies used by the deployed site live in <code>public/reports/</code>.
+        If you are working inside the repository and need the full project handbook, open <code>docs/PROJECT_MANUAL.md</code>.
+      </div>
+    </main>
+  </body>
+</html>

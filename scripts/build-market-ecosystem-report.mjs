@@ -7,6 +7,14 @@ import fetch from 'node-fetch';
 
 const ROOT = process.cwd();
 const OUTPUT_PATH = resolve(ROOT, 'public/data/market-ecosystem-report.json');
+const CLAUDE_REPORT_ZH_PATH = resolve(ROOT, 'reports/Claude_AISA_Report_ZH.md');
+const CLAUDE_REPORT_ZH_PUBLIC_PATH = resolve(ROOT, 'public/reports/Claude_AISA_Report_ZH.md');
+const CLAUDE_REPORT_EN_PATH = resolve(ROOT, 'reports/Claude_AISA_Report_EN.md');
+const CLAUDE_REPORT_EN_PUBLIC_PATH = resolve(ROOT, 'public/reports/Claude_AISA_Report_EN.md');
+const HERMES_REPORT_ZH_PATH = resolve(ROOT, 'reports/Hermes_AISA_Report_ZH.md');
+const HERMES_REPORT_ZH_PUBLIC_PATH = resolve(ROOT, 'public/reports/Hermes_AISA_Report_ZH.md');
+const HERMES_REPORT_EN_PATH = resolve(ROOT, 'reports/Hermes_AISA_Report_EN.md');
+const HERMES_REPORT_EN_PUBLIC_PATH = resolve(ROOT, 'public/reports/Hermes_AISA_Report_EN.md');
 
 const CLAUDE_SKILLS_URL = 'https://claudemarketplaces.com/skills';
 const CLAUDE_MARKETPLACES_URL = 'https://claudemarketplaces.com/marketplaces';
@@ -231,6 +239,49 @@ function sortByNumber(items, selector) {
   return [...items].sort((a, b) => selector(b) - selector(a));
 }
 
+function uniqueBy(items, selector) {
+  const seen = new Set();
+  const result = [];
+  for (const item of items) {
+    const key = selector(item);
+    if (!key || seen.has(key)) continue;
+    seen.add(key);
+    result.push(item);
+  }
+  return result;
+}
+
+function topUnion(lists, selector, limit = 200) {
+  return uniqueBy(lists.flat(), selector).slice(0, limit);
+}
+
+function markdownTable(rows) {
+  if (!rows.length) return '';
+  const headers = Object.keys(rows[0]);
+  return [
+    `| ${headers.join(' | ')} |`,
+    `| ${headers.map(() => '---').join(' | ')} |`,
+    ...rows.map((row) => `| ${headers.map((header) => String(row[header] ?? '')).join(' | ')} |`),
+    '',
+  ].join('\n');
+}
+
+function formatZhDatasetDate(date) {
+  const year = date.getFullYear();
+  const month = `${date.getMonth() + 1}`.padStart(2, '0');
+  const day = `${date.getDate()}`.padStart(2, '0');
+  return `${year}-${month}-${day}`;
+}
+
+function formatEnDatasetDate(date) {
+  return new Intl.DateTimeFormat('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    timeZone: 'Asia/Shanghai',
+  }).format(date);
+}
+
 function categoryLeader(categories) {
   return sortByNumber(categories, (item) => toNumber(item.count))[0]?.name ?? null;
 }
@@ -338,12 +389,20 @@ async function fetchClaudeSkillsData() {
   });
 
   const categories = extractJsonArrayFromChunks(chunks, 'categories');
-  const topByInstalls = sortByNumber(skills, (item) => item.installs).slice(0, 20);
-  const topByStars = sortByNumber(skills, (item) => item.stars).slice(0, 20);
-  const topByComposite = sortByNumber(
+  const skillsByInstalls = sortByNumber(skills, (item) => item.installs);
+  const skillsByStars = sortByNumber(skills, (item) => item.stars);
+  const skillsByComposite = sortByNumber(
     skills.map((item) => ({ ...item, compositeScore: scoreComposite(item, 0.6, 0.3, 0.1) })),
     (item) => item.compositeScore,
-  ).slice(0, 20);
+  );
+  const topByInstalls = skillsByInstalls.slice(0, 20);
+  const topByStars = skillsByStars.slice(0, 20);
+  const topByComposite = skillsByComposite.slice(0, 20);
+  const top200Union = topUnion(
+    [skillsByInstalls.slice(0, 200), skillsByStars.slice(0, 200), skillsByComposite.slice(0, 200)],
+    (item) => item.repo || `${item.owner}:${item.name}`,
+    200,
+  );
 
   const ownerProfiles = new Map();
   for (const skill of skills) {
@@ -416,6 +475,7 @@ async function fetchClaudeSkillsData() {
     topByInstalls,
     topByStars,
     topByComposite,
+    top200Union,
     topOwners,
     aisaCandidates,
     commonPatterns: [
@@ -454,9 +514,17 @@ async function fetchClaudeMarketplacesData() {
   });
 
   const categories = extractJsonArrayFromChunks(chunks, 'categories');
-  const topByStars = sortByNumber(marketplaces, (item) => item.stars).slice(0, 20);
-  const topByPluginCount = sortByNumber(marketplaces, (item) => item.pluginCount).slice(0, 20);
-  const topByComposite = sortByNumber(marketplaces, (item) => item.compositeScore).slice(0, 20);
+  const marketplacesByStars = sortByNumber(marketplaces, (item) => item.stars);
+  const marketplacesByPluginCount = sortByNumber(marketplaces, (item) => item.pluginCount);
+  const marketplacesByComposite = sortByNumber(marketplaces, (item) => item.compositeScore);
+  const topByStars = marketplacesByStars.slice(0, 20);
+  const topByPluginCount = marketplacesByPluginCount.slice(0, 20);
+  const topByComposite = marketplacesByComposite.slice(0, 20);
+  const top200Union = topUnion(
+    [marketplacesByStars.slice(0, 200), marketplacesByPluginCount.slice(0, 200), marketplacesByComposite.slice(0, 200)],
+    (item) => item.repo || item.slug,
+    200,
+  );
 
   const ownerProfiles = new Map();
   for (const marketplace of marketplaces) {
@@ -524,6 +592,7 @@ async function fetchClaudeMarketplacesData() {
     topByStars,
     topByPluginCount,
     topByComposite,
+    top200Union,
     topOwners,
     aisaCandidates,
     commonPatterns: [
@@ -610,6 +679,7 @@ async function fetchHermesData() {
     })),
     (item) => item.aisaOpportunityScore,
   ).slice(0, 25);
+  const top200Union = topUnion([topBundledByAisaFit, topOptionalByAisaFit], (item) => item.path || item.name, 200);
 
   return {
     sourceUrl: parsed.sourceUrl,
@@ -628,6 +698,7 @@ async function fetchHermesData() {
     tags,
     bundled: topBundledByAisaFit,
     optional: topOptionalByAisaFit,
+    top200Union,
     commonPatterns: [
       'Hermes 官方 skill atlas 不是下载榜，而是“先看类别、再选具体 skill”的发现层。',
       '分类非常强调运行环境和工作流边界，例如 Apple / GitHub / MLOps / Research。',
@@ -715,7 +786,291 @@ function buildCombinedView({ clawhub, claude, hermes }) {
   };
 }
 
+function buildClaudeZhReport(report, datasetDate) {
+  const claudeSkillRows = report.claude.skills.top200Union.slice(0, 15).map((item, index) => ({
+    排名: index + 1,
+    Skill: item.name,
+    Owner: item.owner,
+    类目: item.category,
+    安装: item.installs,
+    Stars: item.stars,
+    AISA机会分: item.aisaOpportunityScore ?? '-',
+  }));
+  const claudeMarketplaceRows = report.claude.marketplaces.top200Union.slice(0, 12).map((item, index) => ({
+    排名: index + 1,
+    Marketplace: item.repo,
+    Owner: item.owner,
+    类目: item.category,
+    Plugins: item.pluginCount,
+    Stars: item.stars,
+  }));
+  const claudeCandidateRows = report.combined.combinedOpportunities
+    .filter((item) => item.ecosystem.startsWith('Claude'))
+    .slice(0, 12)
+    .map((item, index) => ({
+      排名: index + 1,
+      板块: item.ecosystem,
+      名称: item.name,
+      类目: item.category,
+      机会分: item.opportunityScore,
+    }));
+  const topOwnerRows = report.claude.skills.topOwners.slice(0, 10).map((item, index) => ({
+    排名: index + 1,
+    Owner: item.owner,
+    技能数: item.skillCount,
+    Repo数: item.repoCount,
+    总安装: item.totalInstalls,
+    总Stars: item.totalStars,
+  }));
+
+  return `# Claude AISA Report
+
+- 生成时间：${report.generatedAt}
+- 数据日期：${formatZhDatasetDate(datasetDate)}
+- 来源：Claude Skills、Claude Marketplaces
+
+## 一句话结论
+
+Claude 的爆款更接近“高星仓库 + 高意图任务词 + 技能矩阵”的分发模式。真正可复制的不是某一个单品，而是围绕同一主线持续发布旗舰 skill、邻接变体和 marketplace 包，让 GitHub 信任、安装量、类目聚焦和命名策略相互放大。
+
+## 爆款共同点
+
+- 标题直接说任务、平台、系统或工作流，而不是抽象概念。
+- 描述都在强调什么时候用、直接能产出什么。
+- 高安装作者往往不是只做一个 skill，而是沿着一个主线连续扩张。
+- GitHub repo、stars、安装量、结构完整度都会影响转化。
+- 最适合 AISA 的，依然是外部 API 边界清晰、付费价值高、可复用性强的能力层。
+
+## Claude Skills Top-200 合并观察
+
+${markdownTable(claudeSkillRows)}
+## Claude Marketplaces Top-200 合并观察
+
+${markdownTable(claudeMarketplaceRows)}
+## Claude 高产作者画像
+
+${markdownTable(topOwnerRows)}
+## 爆款方法论什么能复制，什么不能复制
+
+能复制：
+
+- 任务词命名
+- 旗舰包 + 窄变体包
+- 以 GitHub/source trust 为冷启动证明
+- 按作者主线持续扩 SKU
+
+不容易直接复制：
+
+- 仅靠某个明星仓库历史 stars 获得的先发优势
+- 强平台绑定、强本地环境绑定的运行时
+- 需要大量隐性运营资源才能持续维护的重度工作流
+
+## 高产作者通常怎么做
+
+- 先占一个主线，例如开发者、研究、办公、自动化、文档。
+- 再围绕这个主线连续发相邻技能，而不是随机换赛道。
+- 让所有技能共享同一套信任信号：repo、结构、命名、文档风格、结果示例。
+
+## AISA API 怎么在 Claude 做爆款
+
+1. 先做高频、高价值、边界清晰的能力，例如 Research、Developer、Security、Workspace、Documents。
+2. 先发一个旗舰 command center，再拆 2 到 4 个高意图 SKU。
+3. 用 GitHub 证明和真实输出样例降低冷启动阻力。
+4. 先把 repo、readme、真实 demo 做扎实，再扩大矩阵。
+
+## 选品计划
+
+- 第一梯队：Developer、Search & Research、Security、Productivity & Workspace、Office Documents。
+- 第二梯队：Browser & Automation、Finance & Market Data、Social & Growth。
+- 第三梯队：Media Generation、Weather & Utility、Agentic Systems。
+
+## Claude Top 机会
+
+${markdownTable(claudeCandidateRows)}
+`;
+}
+
+function buildClaudeEnReport(report, datasetDate) {
+  const combinedRows = report.combined.combinedOpportunities
+    .filter((item) => item.ecosystem.startsWith('Claude'))
+    .slice(0, 15)
+    .map((item, index) => ({
+      Rank: index + 1,
+      Surface: item.ecosystem,
+      Name: item.name,
+      Category: item.category,
+      Opportunity: item.opportunityScore,
+    }));
+  const ownerRows = report.claude.skills.topOwners.slice(0, 12).map((item, index) => ({
+    Rank: index + 1,
+    Owner: item.owner,
+    Skills: item.skillCount,
+    Repos: item.repoCount,
+    Installs: item.totalInstalls,
+    Stars: item.totalStars,
+  }));
+
+  return `# Claude AISA Report
+
+- Generated at: ${report.generatedAt}
+- Dataset date: ${formatEnDatasetDate(datasetDate)}
+
+## Executive Summary
+
+Claude rewards the same breakout fundamentals that work on ClawHub, but with a stronger repo-distribution bias. High-performing entries cluster around sharp task naming, high-trust GitHub repos, repeated publishing inside one lane, and flagship-plus-variants packaging.
+
+## Repeatable Playbook
+
+1. Lead with a task, platform, or system in the title.
+2. Publish a flagship skill plus a ladder of narrower siblings.
+3. Use GitHub and real examples as cold-start trust anchors.
+4. Keep the category lane narrow enough that adjacent variants still reinforce each other.
+5. Build an author factory, not isolated one-off skills.
+
+## Top Author Factories
+
+${markdownTable(ownerRows)}
+## Best Claude Opportunities
+
+${markdownTable(combinedRows)}
+`;
+}
+
+function buildHermesZhReport(report, datasetDate) {
+  const hermesRows = report.hermes.top200Union.slice(0, 15).map((item, index) => ({
+    排名: index + 1,
+    Skill: item.name,
+    Section: item.sectionTitle,
+    类目: item.category,
+    AISA机会分: item.aisaOpportunityScore,
+    平台边界: item.platformScope,
+  }));
+  const bundledRows = report.hermes.bundled.slice(0, 12).map((item, index) => ({
+    排名: index + 1,
+    Skill: item.name,
+    Section: item.sectionTitle,
+    类目: item.category,
+    标签: item.tags.join(', ') || '-',
+    AISA机会分: item.aisaOpportunityScore,
+  }));
+  const optionalRows = report.hermes.optional.slice(0, 12).map((item, index) => ({
+    排名: index + 1,
+    Skill: item.name,
+    Section: item.sectionTitle,
+    类目: item.category,
+    标签: item.tags.join(', ') || '-',
+    AISA机会分: item.aisaOpportunityScore,
+  }));
+  const hermesCandidateRows = report.combined.combinedOpportunities
+    .filter((item) => item.ecosystem.startsWith('Hermes'))
+    .slice(0, 12)
+    .map((item, index) => ({
+      排名: index + 1,
+      板块: item.ecosystem,
+      名称: item.name,
+      类目: item.category,
+      机会分: item.opportunityScore,
+    }));
+
+  return `# Hermes AISA Report
+
+- 生成时间：${report.generatedAt}
+- 数据日期：${formatZhDatasetDate(datasetDate)}
+- 来源：Hermes Skills Guide、Hermes raw catalog
+
+## 一句话结论
+
+Hermes 更像“内置工作流能力目录”，而不是公开下载榜。它的爆款逻辑不是谁更会包装 GitHub，而是谁更清楚地把某个工作流边界讲明白，并且放进正确的 section 里。适合 AISA 的仍然是 GitHub、Research、Documents、Workspace、Automation 这些可抽象成 API 的高频边界。
+
+## Hermes 爆款共同点
+
+- 先按工作流类别被发现，再按具体 skill 被选择。
+- 类别名、section 文案、技能名共同定义了用户的预期边界。
+- 高适配项普遍贴近真实外部系统，而不是只停留在抽象 agent 自增强。
+- Apple / macOS 类能力价值高，但平台限制强，不适合作为通用旗舰。
+
+## Hermes Top-200 合并观察
+
+${markdownTable(hermesRows)}
+## Hermes Bundled 技能机会
+
+${markdownTable(bundledRows)}
+## Hermes Optional 技能机会
+
+${markdownTable(optionalRows)}
+## 什么能复制，什么不能复制
+
+能复制：
+
+- section 优先的命名与分类策略
+- 把技能边界写得非常具体
+- 用 workflow 词而不是抽象概念词
+- 优先做外部系统清晰、重复调用多的能力
+
+不容易直接复制：
+
+- 强 Apple / macOS / 本地设备耦合的运行时
+- 依赖宿主能力或内置工具链的深耦合 skill
+- 需要重度本地权限和持续维护的复杂系统能力
+
+## AISA API 怎么在 Hermes 做爆款
+
+1. 从 GitHub、Research、Workspace、Documents、Automation 五条线先做。
+2. 技能标题和描述优先强调明确工作流，而不是“更聪明”“更强大”。
+3. 用一个旗舰 skill 证明价值，再拆垂直窄入口。
+4. 对 Apple / macOS 方向只做专属 SKU，不作为通用主线。
+
+## Hermes Top 机会
+
+${markdownTable(hermesCandidateRows)}
+`;
+}
+
+function buildHermesEnReport(report, datasetDate) {
+  const bundledRows = report.hermes.bundled.slice(0, 15).map((item, index) => ({
+    Rank: index + 1,
+    Skill: item.name,
+    Section: item.sectionTitle,
+    Category: item.category,
+    Opportunity: item.aisaOpportunityScore,
+    Scope: item.platformScope,
+  }));
+  const optionalRows = report.hermes.optional.slice(0, 15).map((item, index) => ({
+    Rank: index + 1,
+    Skill: item.name,
+    Section: item.sectionTitle,
+    Category: item.category,
+    Opportunity: item.aisaOpportunityScore,
+    Scope: item.platformScope,
+  }));
+
+  return `# Hermes AISA Report
+
+- Generated at: ${report.generatedAt}
+- Dataset date: ${formatEnDatasetDate(datasetDate)}
+
+## Executive Summary
+
+Hermes behaves more like a workflow atlas than a public install marketplace. Breakout leverage comes from section fit, operational clarity, and tightly scoped capability boundaries. The best AISA conversion targets are still the same practical surfaces: GitHub, research, documents, workspace tooling, and automation.
+
+## Repeatable Playbook
+
+1. Match the section before optimizing the title.
+2. Describe an operational workflow, not an abstract capability.
+3. Prefer portable external-system surfaces over deeply local-only runtime surfaces.
+4. Treat Apple and macOS-heavy skills as premium niche SKUs, not the universal flagship.
+
+## Best Bundled Opportunities
+
+${markdownTable(bundledRows)}
+## Best Optional Opportunities
+
+${markdownTable(optionalRows)}
+`;
+}
+
 async function buildReport() {
+  const datasetDate = new Date();
   const [claudeSkills, claudeMarketplaces, hermes] = await Promise.all([
     fetchClaudeSkillsData(),
     fetchClaudeMarketplacesData(),
@@ -743,8 +1098,23 @@ async function buildReport() {
     hermes,
   };
   report.combined = buildCombinedView(report);
-  await mkdir(dirname(OUTPUT_PATH), { recursive: true });
+  const outputs = [
+    [CLAUDE_REPORT_ZH_PATH, buildClaudeZhReport(report, datasetDate)],
+    [CLAUDE_REPORT_ZH_PUBLIC_PATH, buildClaudeZhReport(report, datasetDate)],
+    [CLAUDE_REPORT_EN_PATH, buildClaudeEnReport(report, datasetDate)],
+    [CLAUDE_REPORT_EN_PUBLIC_PATH, buildClaudeEnReport(report, datasetDate)],
+    [HERMES_REPORT_ZH_PATH, buildHermesZhReport(report, datasetDate)],
+    [HERMES_REPORT_ZH_PUBLIC_PATH, buildHermesZhReport(report, datasetDate)],
+    [HERMES_REPORT_EN_PATH, buildHermesEnReport(report, datasetDate)],
+    [HERMES_REPORT_EN_PUBLIC_PATH, buildHermesEnReport(report, datasetDate)],
+  ];
+  for (const output of [OUTPUT_PATH, ...outputs.map(([path]) => path)]) {
+    await mkdir(dirname(output), { recursive: true });
+  }
   await writeFile(OUTPUT_PATH, `${JSON.stringify(report, null, 2)}\n`, 'utf8');
+  for (const [path, content] of outputs) {
+    await writeFile(path, `${content}\n`, 'utf8');
+  }
 }
 
 buildReport().catch((error) => {

@@ -34,17 +34,43 @@ function SkillBoard({
       </div>
       <div className="detail-list">
         {skills.map((skill) => (
-          <button
-            key={skill.slug}
-            type="button"
-            className={`detail-item${skill.slug === activeSlug ? ' is-active' : ''}`}
-            onClick={() => onSelect(skill.slug)}
-          >
-            <strong>{skill.name}</strong>
-            <small>
-              @{skill.author} · {metricValue(skill.downloads)} 下载 · {skill.category}
-            </small>
-          </button>
+          <div key={skill.slug} className={`detail-item-shell${skill.slug === activeSlug ? ' is-active' : ''}`}>
+            <button
+              type="button"
+              className={`detail-item${skill.slug === activeSlug ? ' is-active' : ''}`}
+              onClick={() => onSelect(skill.slug === activeSlug ? '' : skill.slug)}
+            >
+              <strong>{skill.name}</strong>
+              <small>
+                @{skill.author} · {metricValue(skill.downloads)} 下载 · {skill.category}
+              </small>
+            </button>
+            {skill.slug === activeSlug ? (
+              <div className="accordion-body">
+                <div className="chip-row">
+                  {[
+                    `${metricValue(skill.downloads)} 下载`,
+                    skill.category,
+                    skill.monetizationPotential,
+                    skill.apiDependency,
+                  ].map((chip) => (
+                    <span key={chip} className="chip">
+                      {chip}
+                    </span>
+                  ))}
+                </div>
+                <ul className="bullet-list detail-bullets">
+                  <li>{skill.description}</li>
+                  <li>为什么容易起量：输入门槛 {skill.inputComplexity}，输出价值 {skill.outputValue}。</li>
+                  <li>API 线索：{skill.likelyApis.join(' · ') || 'Unknown'}。</li>
+                  <li>可复制标签：{skill.repeatablePatternFlags.join(' · ') || '暂无'}。</li>
+                </ul>
+                <a className="secondary-link inline-link" href={skill.url} target="_blank" rel="noreferrer">
+                  打开来源 <ExternalLink size={14} />
+                </a>
+              </div>
+            ) : null}
+          </div>
         ))}
       </div>
     </section>
@@ -68,58 +94,48 @@ function AuthorBoard({
       </div>
       <div className="detail-list">
         {authors.map((author) => (
-          <button
-            key={author.author}
-            type="button"
-            className={`detail-item${author.author === activeAuthor ? ' is-active' : ''}`}
-            onClick={() => onSelect(author.author)}
-          >
-            <strong>@{author.author}</strong>
-            <small>
-              {author.totalSkills} total · 10K+ {author.numberOf10kPlusSkills} · {metricValue(author.totalDownloadsInTopSample)} sample downloads
-            </small>
-          </button>
+          <div key={author.author} className={`detail-item-shell${author.author === activeAuthor ? ' is-active' : ''}`}>
+            <button
+              type="button"
+              className={`detail-item${author.author === activeAuthor ? ' is-active' : ''}`}
+              onClick={() => onSelect(author.author === activeAuthor ? '' : author.author)}
+            >
+              <strong>@{author.author}</strong>
+              <small>
+                {author.totalSkills} total · 10K+ {author.numberOf10kPlusSkills} · {metricValue(author.totalDownloadsInTopSample)} sample downloads
+              </small>
+            </button>
+            {author.author === activeAuthor ? (
+              <div className="accordion-body">
+                <div className="chip-row">
+                  {[
+                    `${author.totalSkills} total skills`,
+                    `10K+ ${author.numberOf10kPlusSkills}`,
+                    author.strategyLabel,
+                    author.authorPageStatus,
+                  ].map((chip) => (
+                    <span key={chip} className="chip">
+                      {chip}
+                    </span>
+                  ))}
+                </div>
+                <ul className="bullet-list detail-bullets">
+                  <li>Top sample downloads: {metricValue(author.totalDownloadsInTopSample)}。</li>
+                  <li>API families: {author.apiFamilies.join(' · ') || 'Unknown'}。</li>
+                  <li>代表作：{author.topSkillNames.join(' · ') || '暂无'}。</li>
+                  <li>作品结构：{author.skills.slice(0, 5).map((item) => item.name).join(' · ')}。</li>
+                </ul>
+                {author.profileUrl ? (
+                  <a className="secondary-link inline-link" href={author.profileUrl} target="_blank" rel="noreferrer">
+                    打开来源 <ExternalLink size={14} />
+                  </a>
+                ) : null}
+              </div>
+            ) : null}
+          </div>
         ))}
       </div>
     </section>
-  );
-}
-
-function DetailPanel({
-  title,
-  eyebrow,
-  chips,
-  bullets,
-  link,
-}: {
-  title: string;
-  eyebrow: string;
-  chips: string[];
-  bullets: string[];
-  link?: string;
-}) {
-  return (
-    <article className="insight-detail-card">
-      <div className="doc-kicker">{eyebrow}</div>
-      <h3>{title}</h3>
-      <div className="chip-row">
-        {chips.map((chip) => (
-          <span key={chip} className="chip">
-            {chip}
-          </span>
-        ))}
-      </div>
-      <ul className="bullet-list detail-bullets">
-        {bullets.map((bullet) => (
-          <li key={bullet}>{bullet}</li>
-        ))}
-      </ul>
-      {link ? (
-        <a className="secondary-link inline-link" href={link} target="_blank" rel="noreferrer">
-          打开来源 <ExternalLink size={14} />
-        </a>
-      ) : null}
-    </article>
   );
 }
 
@@ -143,15 +159,6 @@ export default function App() {
   }, []);
 
   const apis = useMemo(() => (report ? topApis(report.skills) : []), [report]);
-  const activeSkill = useMemo(
-    () => report?.documents.document1.top20Skills.find((skill) => skill.slug === activeSkillSlug) ?? null,
-    [report, activeSkillSlug],
-  );
-  const activeAuthorProfile = useMemo(
-    () => report?.documents.document2.top10Authors.find((author) => author.author === activeAuthor) ?? null,
-    [report, activeAuthor],
-  );
-
   if (!report) {
     return <main className="insights-shell loading">Loading ClawHub download insights...</main>;
   }
@@ -219,50 +226,12 @@ export default function App() {
         </ul>
       </section>
 
-      <section className="detail-grid">
+      <section className="detail-grid detail-grid-single">
         <SkillBoard skills={report.documents.document1.top20Skills} activeSlug={activeSkillSlug} onSelect={setActiveSkillSlug} />
-        {activeSkill ? (
-          <DetailPanel
-            title={activeSkill.name}
-            eyebrow={`@${activeSkill.author}`}
-            chips={[
-              `${metricValue(activeSkill.downloads)} 下载`,
-              activeSkill.category,
-              activeSkill.monetizationPotential,
-              activeSkill.apiDependency,
-            ]}
-            bullets={[
-              activeSkill.description,
-              `为什么容易起量：输入门槛 ${activeSkill.inputComplexity}，输出价值 ${activeSkill.outputValue}。`,
-              `API 线索：${activeSkill.likelyApis.join(' · ') || 'Unknown'}。`,
-              `可复制标签：${activeSkill.repeatablePatternFlags.join(' · ') || '暂无'}。`,
-            ]}
-            link={activeSkill.url}
-          />
-        ) : null}
       </section>
 
-      <section className="detail-grid">
+      <section className="detail-grid detail-grid-single">
         <AuthorBoard authors={report.documents.document2.top10Authors} activeAuthor={activeAuthor} onSelect={setActiveAuthor} />
-        {activeAuthorProfile ? (
-          <DetailPanel
-            title={`@${activeAuthorProfile.author}`}
-            eyebrow="Author profile"
-            chips={[
-              `${activeAuthorProfile.totalSkills} total skills`,
-              `10K+ ${activeAuthorProfile.numberOf10kPlusSkills}`,
-              activeAuthorProfile.strategyLabel,
-              activeAuthorProfile.authorPageStatus,
-            ]}
-            bullets={[
-              `Top sample downloads: ${metricValue(activeAuthorProfile.totalDownloadsInTopSample)}。`,
-              `API families: ${activeAuthorProfile.apiFamilies.join(' · ') || 'Unknown'}。`,
-              `代表作：${activeAuthorProfile.topSkillNames.join(' · ') || '暂无'}。`,
-              `作品结构：${activeAuthorProfile.skills.slice(0, 5).map((item) => item.name).join(' · ')}。`,
-            ]}
-            link={activeAuthorProfile.profileUrl}
-          />
-        ) : null}
       </section>
 
       <section className="doc-grid">

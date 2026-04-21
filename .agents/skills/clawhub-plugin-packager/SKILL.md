@@ -1,199 +1,264 @@
 ---
 name: clawhub-plugin-packager
-description: "Package OpenClaw skills into ClawHub plugins. Use when: converting a skill into a plugin, generating plugin manifests like package.json, .claude-plugin/plugin.json, or openclaw.plugin.json, and assembling a release-ready plugin directory. Not for SKILL.md search optimization or standalone Suspicious-risk auditing."
+description: "Package skills into publishable plugin or bundle formats across ClawHub, Claude, Hermes, AgentSkill, and GitHub. Use when: converting a skill into a release plugin, generating manifests, trimming runtime-only files, and assembling a breakout-ready upload artifact."
 ---
 
-# ClawHub Plugin Packager
+# Publish Plugin Packager
 
-Convert existing OpenClaw skills into standard, highly-optimized **ClawHub Plugins** (Bundle or Code). This skill supports **Dual-Mode Packaging**: it determines the required plugin architecture based on the source's capabilities (Pure Skill Bundle vs. Native Code Plugin requiring config schemas or extensions), and generates the correct directory structure, manifests, and optimized metadata.
+This skill keeps the legacy `clawhub-*` name for compatibility, but it now packages skills for multiple public ecosystems, not just ClawHub.
 
 ## When to use
 
-- When converting an existing OpenClaw skill (from local directory or GitHub URL) into a ClawHub Plugin
-- When generating or fixing bundle plugin manifests (`package.json`, `.claude-plugin/plugin.json`)
-- When optimizing a skill's metadata for better OpenClaw agent invocation
-- When creating the final `package/` zip structure for upload to ClawHub
-- When the target artifact is a plugin rather than a raw skill bundle
+- When converting an existing skill into a publishable plugin or bundle
+- When generating or fixing manifests such as `package.json`, `.claude-plugin/plugin.json`, or `openclaw.plugin.json`
+- When creating the final runtime-only directory and zip structure for upload or distribution
+- When producing a release artifact from an already-optimized source skill
+- When shaping the package so it can compete better in public plugin directories
 
 ## When NOT to use
 
-- When the deliverable is only a `SKILL.md` skill package; use `clawhub-skill-optimizer`
-- When the main task is investigating why a bundle was flagged `Suspicious`; use `clawhub-security-auditor`
-- When the user only wants metadata rewrites and not plugin manifests
+- When the deliverable is only a `SKILL.md` optimization; use `clawhub-skill-optimizer`
+- When the main task is auditing upload risk; use `clawhub-security-auditor`
+- When the main work is rewriting runtime behavior rather than packaging it
 
 ## Scope boundary
 
 This skill owns:
 
-- plugin directory structure
-- plugin manifests
-- release bundle layout
-- plugin packaging validation
+- plugin or bundle directory structure
+- manifest generation
+- release layout and zip shape
+- packaging validation
+- runtime-only file trimming
+- platform-aware breakout packaging rules
 
 This skill does not own:
 
-- rewriting source skill semantics
-- primary search wording optimization for standalone skills
-- standalone security auditing as the main deliverable
+- primary search-copy optimization
+- deep Suspicious/security auditing
+- large runtime refactors beyond what packaging requires
 
-## Core Mechanisms & Strategy
+## Packaging targets
 
-ClawHub supports two types of plugins: **Code Plugins** (Native Plugins) and **Bundle Plugins** (Skill collections). This skill supports **Dual-Mode Packaging** based on the source content:
+Choose the artifact first:
 
-1. **Bundle Mode (Pure Skills)**: Used for standard OpenClaw Skills (Markdown + basic scripts). Creates a `.claude-plugin/plugin.json` manifest and a minimal `package.json`. This is the most lightweight format for skill collections.
-2. **Code Mode (Native Plugin)**: Used when the source requires advanced OpenClaw features (e.g., a `configSchema` for API keys, custom TypeScript extensions, or specific runtime entries like a Python engine). Creates `openclaw.plugin.json` and a `package.json` with `openclaw.extensions` set to `["./openclaw.plugin.json"]` (self-referential). If the original skill includes an `index.js` or `index.ts` file, it should be included in the root of the plugin package, and its path should be added to `openclaw.extensions` (e.g., `["./openclaw.plugin.json", "./index.js"]`). No `.claude-plugin` directory is needed.
+- `runtime skill bundle`
+  - for direct GitHub distribution or skill-layer publishing
+  - keeps the skill directory itself as the primary artifact
+- `ClawHub bundle plugin`
+  - `.claude-plugin/plugin.json` plus minimal `package.json`
+  - best for pure skill collections
+- `ClawHub code plugin`
+  - `openclaw.plugin.json` plus `package.json`
+  - use when config schema, native extensions, or code entrypoints are required
+- `Claude marketplace plugin`
+  - `.claude-plugin/plugin.json` and marketplace-compatible layout
+- `Hermes runtime bundle`
+  - runtime-only skill directory with Hermes-safe copy and structure
+- `AgentSkill publish bundle`
+  - runtime-only bundle optimized for quality/security review, platform labels, and GitHub trust proof
 
-## Packaging Workflow
+## Cross-market breakout packaging rules
 
-When asked to package or optimize a ClawHub plugin, follow these exact steps:
+### 1. Package for trust, not just parser correctness
 
-1. **Analyze the Source Skill**: Understand its core functionality. If the source is a GitHub URL, clone or download the specific directory first.
-2. **Establish the Bundle Structure**: Set up the standard directory layout. Ensure any lowercase `skill.md` from external sources is renamed to `SKILL.md`.
-3. **Determine Packaging Mode**: Check if the source requires advanced OpenClaw features (like `configSchema` for secrets, or has a specific code entry point). If yes, use Code Mode (Native Plugin); otherwise, use Bundle Mode (Pure Skills).
-4. **Generate Manifests**:
-   - **Bundle Mode**: Create `.claude-plugin/plugin.json` (4 fields) and a minimal `package.json`.
-   - **Code Mode**: Create `openclaw.plugin.json` and a complex `package.json` with `openclaw.extensions`.
-5. **Preserve Core Skill Content**: The content within `skills/<skill-name>/` (including `SKILL.md`) MUST NOT be modified during packaging. Optimization for agent invocation (e.g., "Use when:" triggers) should be handled at the source skill level, not by the packager. This ensures the integrity of the original skill definition.
-6. **Validate the Plugin**: Run the validation script to ensure all requirements are met.
-7. **Create the Release Zip**: Package the plugin into the strict `package/` subdirectory format required by ClawHub.
+Public users install plugins only when the package feels coherent:
 
-### Packaging Safety Lessons From Real Suspicious Flags
+- name, description, manifests, and README must describe the same thing
+- side effects must be visible
+- source repo and shipped files must agree
+- only runtime files should ship
 
-Recent real ClawHub uploads were flagged `Suspicious` for these concrete reasons:
+### 2. Package one sharp JTBD per artifact
 
-1. **External CLI execution inside shipped helper scripts**
-   - Examples: `claude -p --dangerously-skip-permissions`
-   - Risk: looks like privileged local-agent execution
+Breakout plugins usually win because each artifact has a tight job:
 
-2. **Self-install or cache-sync behavior**
-   - Examples: copying into `~/.claude/plugins/cache`, `~/.openclaw/skills`, `~/.agents/skills`
-   - Risk: looks like persistence or self-modifying install behavior
+- one system
+- one operational surface
+- one clear result
 
-3. **Default writes into user-home data locations**
-   - Examples: `~/.local/share/<tool>`, `~/Documents/...`
-   - Risk: looks like persistent local data collection
+Do not ship a bloated "everything plugin" unless the flagship package is intentionally a command center with clear sibling plugins below it.
 
-4. **Version-swapping or repo-mutation helpers**
-   - Examples: `git show upstream/main`, scripts that overwrite local `SKILL.md`
-   - Risk: looks like code mutation or repo rewriting
+### 3. Package a flagship plus a sibling ladder
 
-5. **Shipping non-runtime test/compare/sync utilities**
-   - Examples: compare harnesses, local sync scripts, migration helpers, packaging-only scripts
-   - Risk: they often contain one or more of the flagged behaviors above
+The best public creators rarely stop at one package. Prefer:
 
-6. **Aggressive data-retention wording or unconditional dump helpers**
-   - Examples: “always save the FULL dump to disk”
-   - Risk: scanners may interpret this as suspicious storage behavior
+- flagship package
+  - broad command center or broad plugin surface
+- sibling packages
+  - narrower high-intent actions or adjacent workflows
 
-7. **Browser cookie / Keychain / local credential access helpers**
-   - Examples: `chrome_cookies.py`, `cookie_extract.py`, `safari_cookies.py`
-   - Risk: scanners map these to `cookie extraction`, `Keychain access`, or `local sensitive credentials`
-   - Typical indicators include reading browser cookie databases or invoking macOS `security` / `openssl`
+Packaging should make this family structure obvious rather than accidental.
 
-8. **Legacy secret inputs left in runtime config**
-   - Examples: `AUTH_TOKEN`, `CT0`, `FROM_BROWSER`, `XAI_API_KEY`, `GOOGLE_API_KEY`, `GEMINI_API_KEY`, `SCRAPECREATORS_API_KEY`
-   - Risk: even if deprecated, these expand the visible secret surface and can trigger suspicion during upload scans
-   - If the published artifact is supposed to be AISA-only or API-key-only, these compatibility env vars should not be present in the release bundle
+### 4. Package proof and install clarity
+
+Strong public packages usually include:
+
+- coherent manifest fields
+- runtime-only files
+- README proof of what the package actually does
+- trustworthy install/setup steps
+- clear scope boundaries
+
+## Platform-specific packaging heuristics
+
+### ClawHub
+
+- keep bundle vs code-plugin boundaries crisp
+- make `runtimeId`, capabilities, and README match exactly
+- prefer source-linked, coherent, scanner-friendly bundles
+- if packaging a plugin, describe concrete side effects such as config writes, gateway restarts, or remote fetches
+
+### Claude
+
+- prefer clean repo-backed layouts and example-driven READMEs
+- marketplace bundles should read clearly without relying on out-of-bundle files
+- discovery improves when the package feels like one sharp workflow, not a dev dump
+
+### Hermes
+
+- optimize for category/tag clarity and runtime-only contents
+- avoid noisy install or dev sections in the publish bundle
+
+### AgentSkill
+
+- quality score, security score, rating, GitHub stars, and platform coverage become part of the packaging surface
+- package so reviewers can see discovery, implementation, structure, and expertise clearly
+- if GitHub is the proof anchor, preserve the source linkage and README coherence
+
+### GitHub
+
+- package as a trustworthy source release, not a local workspace snapshot
+- keep changelog/provenance/readme/install paths aligned
+
+## Source skill hard conventions
+
+Before packaging, validate that the source skill follows these conventions:
+
+- published source skills should use `name`, `description`, and canonical `metadata.aisa`
+- `metadata.aisa` should normally contain `emoji`, `requires`, `primaryEnv`, and `compatibility`
+- command examples should use `{baseDir}` rather than bootstrap-only variables
+- package only runtime-essential files by default: `SKILL.md`, runtime scripts, libraries, manifests, and minimal wrappers
+- exclude compare, evaluate, test, sync, migration, and dev utilities unless the user explicitly asks for a developer bundle
+- if the repo keeps a richer mother skill plus publish bundles, preserve the mother skill and trim only the publish bundles
+- prefer repo-local config and data defaults over home-directory defaults when the packaged runtime persists files
+
+## Packaging workflow
+
+1. Analyze the source skill and the target platform.
+2. Determine the artifact type.
+3. Normalize the shipped file set.
+4. Generate the correct manifests.
+5. Preserve core skill semantics inside `skills/<skill-name>/`.
+6. Validate the package layout and manifest fields.
+7. Create a root-level release zip so required files sit directly at the zip root.
+
+## Preserve core skill content
+
+The content within `skills/<skill-name>/`, especially `SKILL.md`, should remain semantically intact during packaging. The packager may:
+
+- remove non-runtime helpers from the release bundle
+- trim caches, logs, and generated artifacts
+- add platform manifests and wrapper files
+- add packaging metadata that improves trust and publish clarity
+
+The packager should not:
+
+- silently rewrite the skill's core workflow
+- introduce new auth paths
+- broaden the runtime surface just to satisfy packaging convenience
+
+## Real upload lessons
+
+Recent real uploads were flagged for these reasons:
+
+1. External CLI execution inside shipped helpers
+2. Self-install or cache-sync behavior
+3. Default writes into user-home data locations
+4. Version-swapping or repo-mutation helpers
+5. Shipping non-runtime test/compare/sync utilities
+6. Aggressive data-retention wording
+7. Browser cookie, Keychain, or local credential access helpers
+8. Legacy secret inputs left in runtime config
 
 Required packager behavior:
 
-- Bundle only runtime-essential files by default.
-- Exclude helper scripts that invoke external CLIs, mutate local installs, or sync into cache directories unless the user explicitly requests a developer bundle.
-- If persistence is required, prefer repo-local paths over user-home defaults.
-- Do not include `.pytest_cache`, `__pycache__`, logs, debug artifacts, or non-text binaries in release zips.
-- Exclude browser-cookie, Keychain, and local-credential extraction helpers from release bundles.
-- Exclude deprecated multi-provider auth paths and browser-derived credential inputs from release bundles when packaging an API-key-only runtime.
-- If both EN and ZH variants are published, apply the same safety trimming to both; a re-uploaded language variant may be rescanned independently.
+- bundle only runtime-essential files by default
+- exclude helper scripts that invoke external CLIs or mutate local installs
+- prefer repo-local persistence when persistence is required
+- do not include `__pycache__`, `.pytest_cache`, logs, debug artifacts, or non-text binaries in release zips
+- exclude deprecated multi-provider auth paths from API-key-only bundles
+- apply the same safety trimming to EN and ZH variants
 
----
+## Plugin breakout lessons from live ClawHub plugin analysis
 
-### Step 1 & 2: Establish the Plugin Structure
+As of 2026-04-20, ClawHub plugin pages expose weak public install/download metrics, so public trust comes mostly from structure and coherence. Packaging should therefore emphasize:
 
-**Bundle Mode (Default) — Pure Skills:**
+- task-first or system-first titles
+- explicit side effects and setup expectations
+- strong verification surfaces such as source-linked provenance
+- code-plugin clarity when real runtime behavior exists
+- family logic that supports a flagship plugin plus narrower siblings
+
+In other words: public packaging now needs to carry part of the growth strategy.
+
+## Layout rules
+
+### ClawHub bundle plugin
+
 ```text
 plugin-name/
 ├── .claude-plugin/
-│   └── plugin.json       # Minimal bundle manifest (name, description, version, skills)
-├── package.json          # Minimal package metadata (NO openclaw field)
+│   └── plugin.json
+├── package.json
 ├── skills/
 │   └── skill-name/
-│       ├── SKILL.md      # MUST be optimized with "Use when:" trigger
+│       ├── SKILL.md
 │       └── ...
 └── README.md
 ```
 
-**Code Mode (Advanced) — Native Plugin (TS/Python/etc.):**
+### ClawHub code plugin
+
 ```text
 plugin-name/
-├── openclaw.plugin.json  # Native plugin config schema
-├── package.json          # Complex metadata WITH openclaw.extensions: ["./openclaw.plugin.json"]
-
-├── skills/               # Optional
+├── openclaw.plugin.json
+├── package.json
+├── skills/
 │   └── skill-name/
 │       └── SKILL.md
 └── README.md
 ```
 
-See `references/skill-to-plugin-conversion.md` for detailed conversion instructions.
+### Claude marketplace plugin
 
----
-
-### Step 3 & 4: Generate Manifests based on Mode
-
-**Mode A: Bundle Plugin (Pure Skills - Default)**
-- Create `.claude-plugin/plugin.json` with exactly 4 fields: `name`, `description`, `version`, `skills`.
-- Create a minimal `package.json` with NO `openclaw` field.
-- See `references/manifest-rules.md` for exact JSON structures.
-
-**Mode B: Code Plugin (TypeScript Native Tools)**
-- Create `openclaw.plugin.json` defining the plugin `id`, `name`, `description`, and `configSchema`.
-- Create a complex `package.json` including the `openclaw.extensions`, `openclaw.compat`, and `openclaw.build` fields.
-- Do NOT create `.claude-plugin` or `.codex-plugin` directories.
-- See `references/manifest-rules.md` for exact JSON structures.
-
----
-
-### Step 5: Preserve Core Skill Content Integrity
-
-It is critical that the content within the `skills/<skill-name>/` directory, especially `SKILL.md`, remains unchanged during the packaging process. Any optimization for OpenClaw agent invocation (e.g., adding "Use when:" triggers to the `description` in the YAML frontmatter) should be performed on the original source skill before packaging. The packager's role is to package, not to modify the skill's core content.
-
-Exception for safety packaging:
-
-- You may remove non-runtime helper scripts, caches, logs, and packaging utilities from the final release bundle if they are not required for the skill's end-user functionality.
-- You should not alter the semantics of the core skill, but you should aggressively exclude packaging-only or test-only files from the upload artifact.
-
----
-
-### Step 6: Validate the Plugin
-
-Use the provided validation script to ensure the plugin meets all Bundle Plugin requirements:
-
-```bash
-python3 /home/ubuntu/skills/clawhub-plugin-packager/scripts/validate_plugin.py <path-to-plugin-dir>
+```text
+plugin-name/
+├── .claude-plugin/
+│   └── plugin.json
+├── package.json
+├── skills/
+│   └── skill-name/
+│       ├── SKILL.md
+│       └── ...
+└── README.md
 ```
 
----
+## Zip rule
 
-### Step 7: Create the Release Zip
+The release zip should place `package.json`, manifests, `skills/`, and other required root files directly at the root of the archive, not inside an extra `package/` folder.
 
-#### **v1.0.1 到 v1.0.5 的关键改进总结：**
+## Validation
 
-| 特性             | v1.0.1 版本 (旧)                                  | v1.0.5 版本 (当前)                                        |
-| :--------------- | :------------------------------------------------ | :-------------------------------------------------------- |
-| **`index.js` 文件** | 可能被错误生成或包含，导致冗余。                  | **按需处理**：仅当原始 Skill 包含 `index.js` 或 `index.ts` 时才复制并包含，否则不生成。|
-| **`openclaw.extensions`** | 可能为空或指向不存在的 `index.js`，导致上传失败。 | **正确且按需配置**：对于纯 Skill 插件，指向 `["./openclaw.plugin.json"]`；对于包含原生代码的插件，会包含其入口文件（如 `["./openclaw.plugin.json", "./index.js"]`）。|
-| **打包结构**     | 可能存在 `package/` 嵌套目录，导致 ClawHub 上传失败。| **标准化根目录结构**：所有核心文件直接位于 `.zip` 根目录，符合 ClawHub 上传要求。|
-| **元数据完整性** | 缺少 `openclaw.compat`、`openclaw.build` 和 `repository` 等字段。| **已补全**：包含所有 ClawHub 要求的元数据字段，并支持 `repository` 自动预填。|
-| **Skill 内容修改** | 脚本可能自动修改 `SKILL.md` 的 `description` 字段。| **严格禁止修改**：打包过程不再对 `skills/<skill-name>/` 目录下的任何文件进行内容修改，确保原始 Skill 的完整性。|
+For local ClawHub-oriented plugin validation, use:
 
-ClawHub's web upload system expects the plugin's root files (e.g., `package.json`, `openclaw.plugin.json`, `skills/`) to be directly at the root of the `.zip` file, NOT nested inside a `package/` subdirectory.
+```bash
+python3 /mnt/d/workplace/skillGet/.agents/skills/clawhub-plugin-packager/scripts/validate_plugin.py <path-to-plugin-dir>
+```
 
-    To create the release zip:
-    ```bash
-    # Assuming you are in the parent directory of your plugin (e.g., /home/ubuntu/work/plugins)
-    cd plugin-name
-    zip -r ../plugin-name-1.0.0.zip ./*
-    ```
-    Deliver this `.zip` file to the user.
+## Example requests
 
-    **重要提示：** 在 ClawHub 网页上传 `.zip` 包时，`Source commit` 和 `Source ref (tag or branch)` 字段通常需要**手动填写**。`Source repo` 字段会根据 `package.json` 中的 `repository` 字段自动预填。
+- `Package this runtime skill as a ClawHub code plugin`
+- `Wrap this release skill as a Claude marketplace plugin`
+- `Trim this repo down to a publishable AgentSkill bundle and zip it correctly`
+- `Generate the manifests for this plugin without changing the skill semantics`

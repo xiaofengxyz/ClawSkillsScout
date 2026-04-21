@@ -1,24 +1,25 @@
 ---
 name: clawhub-security-auditor
-description: "Audit ClawHub skill or plugin bundles for Suspicious upload risks. Use when: checking whether a skill or plugin may be flagged for cookie extraction, dangerous CLI calls, local persistence, cache sync, legacy auth env vars, or non-runtime files. This skill audits risk; it does not optimize SKILL.md search metadata or generate plugin manifests."
+description: "Audit public skill or plugin bundles for ClawHub, Claude, Hermes, AgentSkill, and GitHub release risks. Use when: checking Suspicious/upload flags, dangerous local behaviors, quality/security mismatches, legacy auth surface, or non-runtime files before publishing."
 ---
 
-# ClawHub Security Auditor
+# Publish Security Auditor
 
-Audit OpenClaw skills and ClawHub plugin bundles for patterns that commonly trigger `Suspicious` flags during ClawHub upload scans.
+This skill keeps the legacy `clawhub-*` name for compatibility, but its real job is broader: audit public skill and plugin bundles for patterns that commonly trigger `Suspicious` flags, marketplace rejection, quality-score collapse, or avoidable trust regressions during publishing.
 
 ## When to use
 
-- When a skill or plugin was flagged `Suspicious` on ClawHub and you need to find the likely causes
-- When preparing a skill for upload to `clawhub.ai` or `cn.clawhub-mirror.com`
-- When comparing EN and ZH bundles to ensure both were trimmed consistently
+- When a skill or plugin was flagged `Suspicious` on ClawHub and you need the likely causes
+- When preparing a release bundle for ClawHub, Claude, Hermes, AgentSkill, or public GitHub distribution
+- When comparing EN and ZH bundles to ensure they were trimmed consistently
 - When checking whether a release bundle still contains risky helper scripts, legacy auth paths, or local credential access code
+- When a package looks structurally correct but may still fail scanner, audit, or trust review
 
 ## When NOT to use
 
-- When you are editing product functionality unrelated to publishing
-- When you only need search-discoverability optimization; use `clawhub-skill-optimizer` for metadata work
-- When you need to package a plugin structure; use `clawhub-plugin-packager` for manifest generation
+- When you only need metadata optimization or search wording; use `clawhub-skill-optimizer`
+- When you need plugin manifests or marketplace wrappers; use `clawhub-plugin-packager`
+- When the task is general product refactoring unrelated to publishing
 
 ## Scope boundary
 
@@ -27,22 +28,24 @@ This skill owns:
 - suspicious-pattern detection
 - upload-risk explanation
 - smallest-safe cleanup recommendations
-- EN/ZH bundle consistency checks for security trimming
+- EN/ZH consistency checks for shipped runtime scope
+- frontmatter and registry mismatch detection
+- quality/security trust-surface mismatch detection
 
 This skill does not own:
 
-- SKILL.md search optimization
+- search-copy optimization
 - plugin manifest generation
-- broad feature refactors unless needed to remove a concrete upload risk
+- broad feature redesign unless required to remove a concrete publish risk
 
 ## Core goal
 
-Find and explain upload risks without breaking the skill's runtime behavior. Prefer:
+Find and explain publish risks without breaking runtime behavior. Prefer:
 
 - removing non-runtime files from release bundles
-- changing dangerous helper defaults to safe local-only behavior
-- reducing credential surface area
-- keeping the main runtime intact
+- downgrading dangerous defaults to repo-local or explicit behavior
+- shrinking credential surface area
+- preserving the main shipped workflow
 
 ## Primary risk categories
 
@@ -59,7 +62,7 @@ Flag files or code paths such as:
 
 Why this matters:
 
-- ClawHub may classify these as `cookie extraction`, `Keychain access`, or `local sensitive credentials`
+- scanners may classify these as `cookie extraction`, `Keychain access`, or `local sensitive credentials`
 
 ### 2. Dangerous external CLI invocation
 
@@ -71,7 +74,7 @@ Flag patterns such as:
 
 Why this matters:
 
-- Scanners may interpret this as privileged or unbounded local-agent execution
+- scanners may interpret this as privileged or unbounded local-agent execution
 
 ### 3. Self-install or cache sync behavior
 
@@ -84,7 +87,7 @@ Flag paths and scripts touching:
 
 Why this matters:
 
-- Scanners may interpret this as persistence or self-modifying install behavior
+- scanners may interpret this as persistence or self-modifying install behavior
 
 ### 4. Default writes into user-home data locations
 
@@ -96,7 +99,7 @@ Flag defaults such as:
 
 Why this matters:
 
-- Scanners may interpret this as persistent local data collection
+- scanners may interpret this as persistent local data collection
 
 ### 5. Legacy secret surface area
 
@@ -112,7 +115,7 @@ Flag runtime config or setup code exposing deprecated credentials such as:
 
 Why this matters:
 
-- Even if deprecated, these enlarge the visible secret surface and can trigger suspicion
+- even if deprecated, these enlarge the visible secret surface and can trigger suspicion
 
 ### 6. Version-switching or repo-mutation helpers
 
@@ -124,7 +127,7 @@ Flag patterns such as:
 
 Why this matters:
 
-- Scanners may interpret this as code mutation or repo rewriting
+- scanners may interpret this as code mutation or repo rewriting
 
 ### 7. Non-runtime developer utilities in release bundles
 
@@ -139,7 +142,7 @@ Flag files such as:
 
 Why this matters:
 
-- These often contain one or more flagged behaviors even if runtime is clean
+- these often contain one or more flagged behaviors even if runtime is clean
 
 ### 8. Non-text files and generated artifacts
 
@@ -154,7 +157,7 @@ Flag and usually remove:
 
 Why this matters:
 
-- They enlarge the upload surface and are unnecessary for published skills
+- they enlarge the upload surface and are unnecessary for published skills
 
 ### 9. Aggressive persistence wording
 
@@ -165,62 +168,98 @@ Flag wording such as:
 
 Why this matters:
 
-- Even comments and docs can influence security review when they describe unconditional local data retention
+- comments and docs can influence security review when they describe unconditional local retention
 
-### 10. Frontmatter / registry mismatch
+### 10. Frontmatter or registry mismatch
 
 Flag cases such as:
 
-- `SKILL.md` runtime instructions require `AISA_API_KEY` or another secret, but `metadata.openclaw.requires.env` is missing
-- `primaryEnv` appears only in prose, not in machine-readable frontmatter
-- `metadata` contains extra sibling keys that may cause fragile parsers to miss `metadata.openclaw`
-- release zip and source directory contain different frontmatter shapes
-- the package declares `curl` as a required runtime bin even though the shipped runtime path is actually a bundled Python client
+- runtime instructions require `AISA_API_KEY` or another secret, but machine-readable metadata is missing or stale
+- `primaryEnv` appears only in prose, not in frontmatter
+- release bundles ship different frontmatter shapes across EN and ZH variants
+- the package declares bins or env vars that do not match the actual shipped runtime path
+- source and publish bundles drift so far apart that the publish copy claims capabilities the bundle no longer ships
 
 Why this matters:
 
-- ClawHub upload checks may classify the package as having undeclared credentials even when the prose is accurate
+- a package can fail upload or trust review even when the runtime itself is fine
 
-## Audit workflow
+### 11. Quality-score collapse from bundle drift
 
-1. Identify the target bundle or source directory.
-2. Scan for the risk categories above.
-3. Separate findings into:
-   - runtime-breaking risks
-   - non-runtime packaging risks
-   - wording / metadata risks
-4. Recommend the smallest safe fix.
-5. Re-scan after fixes.
-6. If EN and ZH bundles exist, compare both and ensure the same safety trimming was applied.
+Flag cases such as:
+
+- the title promises a narrow expert workflow, but the bundle is generic or empty
+- examples mention outputs the shipped files do not produce
+- AgentSkill or marketplace metadata claims platform support the bundle does not actually ship
+- GitHub README, marketplace listing, and bundle contents disagree materially
+
+Why this matters:
+
+- a package can survive upload and still lose discovery because quality/security/rating reviewers see a trust mismatch
+
+## Platform-specific review lenses
+
+### ClawHub
+
+- watch for `Suspicious`, source mismatch, capability/install incoherence, and unsafe local side effects
+
+### Claude
+
+- watch for runtime vs README drift, non-runtime helpers, and overly broad install claims
+
+### Hermes
+
+- watch for unsafe community wording, non-runtime references, and category/tag mismatch
+
+### AgentSkill
+
+- watch for obvious security findings, weak implementation evidence, and copy that would depress discovery/structure/expertise scores
+- quality and security pages effectively become part of the public product surface
+
+### GitHub
+
+- watch for provenance gaps, stale README claims, and missing install proof
+
+## Severity model
+
+Classify every finding as exactly one of:
+
+- `blocker`
+  - high likelihood of upload rejection, `Suspicious`, or hidden trust regression
+- `warning`
+  - upload may succeed, but residual risk or trust fragility remains
+- `note`
+  - informational cleanup or polish item
 
 ## Output format
 
 Prefer this structure:
 
 1. Findings
-   - ordered by upload risk severity
-   - include file paths and the suspicious pattern
+   - grouped into `blocker`, `warning`, and `note`
+   - include file paths, the suspicious pattern, and why the platform may care
 2. Safe fixes
    - explain the smallest change that removes the risk
-   - explicitly say whether runtime functionality is preserved
+   - state whether runtime functionality is preserved, reduced, or unchanged
 3. Final verdict
    - `ready to upload`
+   - `uploadable with low residual risk`
    - `uploadable with residual risk`
    - `not ready`
 
 ## Practical rules
 
-- Do not recommend deleting core runtime code just because it looks noisy.
-- Prefer trimming release bundles over rewriting the whole skill.
-- Prefer repo-local persistence defaults over user-home defaults.
-- Prefer API-key-only runtime auth for published bundles.
-- When a credential mismatch is reported, first compare the package against a known-good uploaded skill and normalize the frontmatter shape before touching runtime files.
-- If multiple invocation styles exist in docs, prefer declaring only the true shipped runtime path in required bins; optional `curl` examples should not be treated as mandatory runtime deps.
-- Apply the same security trimming to both EN and ZH bundles; ClawHub may rescan them independently.
+- do not recommend deleting core runtime code just because it looks noisy
+- prefer trimming publish bundles over rewriting the whole skill
+- prefer API-key-only runtime auth for published bundles
+- when a credential mismatch is reported, compare against a known-good uploaded bundle before touching runtime code
+- if multiple invocation styles exist in docs, prefer declaring only the true shipped runtime path as required
+- apply the same trimming to EN and ZH bundles; platforms may rescan them independently
+- if AgentSkill/marketplace pages emphasize security or quality reviews, treat mismatched documentation as a trust issue, not just a style issue
 
 ## Example requests
 
 - `Audit this skill bundle for ClawHub Suspicious risks`
-- `Compare last30days and last30days-zh and tell me why one got flagged`
-- `Check whether this upload package still has cookie extraction or cache sync behavior`
-- `Give me the smallest safe cleanup before publishing to ClawHub`
+- `Check whether this Claude or AgentSkill bundle still ships non-runtime files`
+- `Compare the Hermes and ClawHub releases for the same skill and list publish risks`
+- `Give me the smallest safe cleanup before uploading this package`

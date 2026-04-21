@@ -11,7 +11,8 @@ Before making code changes, file moves, release changes, or documentation update
 1. `README.md`
 2. `docs/PROJECT_OVERVIEW_AI.md`
 3. `docs/project-map.json`
-4. `package.json`
+4. `docs/AI_PROJECT_MEMORY.md`
+5. `package.json`
 
 If the task touches a specific subsystem, also read its direct entry files before editing:
 
@@ -31,6 +32,7 @@ Every AI agent should follow this default workflow:
 4. Make the requested change.
 5. Before finishing, decide whether project-level context documents need updates.
 6. Update only the minimal sections that changed.
+7. If the task materially changes current status or next steps, append a concise entry to `docs/AI_PROJECT_MEMORY.md`.
 
 ## Documentation Update Rule
 
@@ -45,6 +47,13 @@ Only update `README.md`, `docs/PROJECT_OVERVIEW_AI.md`, and `docs/project-map.js
 - the recommended workflow changed
 - the project stage changed
 
+Update `docs/AI_PROJECT_MEMORY.md` whenever a substantive task changes:
+
+- current capabilities
+- recently completed work
+- active in-progress work
+- next recommended steps
+
 ## Preferred End-Of-Task Behavior
 
 At the end of a task:
@@ -52,11 +61,13 @@ At the end of a task:
 - update project-level docs only if one of the trigger conditions above is true
 - if no trigger condition is true, leave project-level docs unchanged
 - if only one section changed, update only that section instead of rewriting the whole document
+- keep `docs/AI_PROJECT_MEMORY.md` as the lightweight chat-independent handoff layer
 
 ## Source Of Truth
 
 - `README.md`: human-facing quick entry
 - `docs/PROJECT_OVERVIEW_AI.md`: human-readable AI handoff overview
 - `docs/project-map.json`: machine-readable project map
+- `docs/AI_PROJECT_MEMORY.md`: current capabilities, recent progress, and next-step archive for future chats
 
 When these files disagree, prefer fixing the smallest stale layer rather than rewriting all three.
