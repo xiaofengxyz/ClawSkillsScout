@@ -38,6 +38,39 @@ a {
   padding: 28px 0 64px;
 }
 
+.page-toolbar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 14px;
+}
+
+.lang-toggle {
+  display: inline-flex;
+  gap: 6px;
+  padding: 6px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 252, 247, 0.82);
+  box-shadow: 0 12px 28px rgba(79, 49, 23, 0.08);
+  backdrop-filter: blur(14px);
+}
+
+.lang-toggle-button {
+  min-height: 36px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  cursor: pointer;
+}
+
+.lang-toggle-button.is-active {
+  background: var(--ink);
+  color: #fff;
+}
+
 .mi-loading {
   display: grid;
   min-height: 100vh;
@@ -270,13 +303,25 @@ a {
   gap: 10px;
 }
 
+.mi-accordion-item {
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.66);
+  overflow: hidden;
+  transition: box-shadow 180ms ease, transform 180ms ease;
+}
+
+.mi-accordion-item.is-active {
+  box-shadow: 0 16px 32px rgba(79, 49, 23, 0.08);
+}
+
 .mi-list-item {
   display: grid;
   gap: 6px;
   width: 100%;
   padding: 14px 16px;
-  border: 1px solid var(--line);
-  border-radius: 18px;
+  border: 0;
+  border-radius: 0;
   background: rgba(255, 255, 255, 0.74);
   text-align: left;
   cursor: pointer;
@@ -297,9 +342,28 @@ a {
   background: linear-gradient(135deg, rgba(191, 133, 65, 0.16), rgba(31, 95, 121, 0.12));
 }
 
+.mi-accordion-body {
+  padding: 0 12px 12px;
+  border-top: 1px solid var(--line);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.86), rgba(250, 243, 235, 0.96));
+}
+
+.mi-accordion-body .mi-detail-card {
+  padding: 18px;
+  border-radius: 20px;
+  box-shadow: none;
+  background: rgba(255, 255, 255, 0.78);
+}
+
 .mi-detail-card {
   display: grid;
   gap: 14px;
+}
+
+.mi-loading-copy {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
 }
 
 .mi-bullets {
@@ -334,6 +398,10 @@ a {
   .mi-shell {
     width: min(100vw - 18px, 100%);
     padding-top: 18px;
+  }
+
+  .page-toolbar {
+    margin-bottom: 10px;
   }
 
   .mi-hero,

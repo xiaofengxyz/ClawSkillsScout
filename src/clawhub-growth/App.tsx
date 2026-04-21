@@ -1,10 +1,120 @@
 import { useEffect, useMemo, useState } from 'react';
 import { format } from 'date-fns';
 import type { GrowthAuthor, GrowthReport, GrowthSkill } from './types';
+import {
+  LanguageToggle,
+  formatMetricValue,
+  loadJsonCached,
+  peekJsonCache,
+  translateLevel,
+  useAppLanguage,
+  useDocumentTitle,
+} from '../site';
 
-function metricValue(value: number) {
-  return value.toLocaleString('en-US');
-}
+const copyByLanguage = {
+  zh: {
+    pageTitle: 'ClawHub 增长报告',
+    loading: '正在加载 ClawHub 增长报告...',
+    heroEyebrow: 'ClawHub 增长情报',
+    heroTitle: '爆款 Skill、爆款作者与 AISA 变现地图',
+    heroDescription:
+      '这页把当前 ClawHub 目录快照整理成四份可直接阅读的业务分析：爆款技能、爆款作者、skill factory 复制打法，以及 AISA 变现路径。',
+    backToAtlas: '返回 AISA Atlas',
+    sourcePage: '来源页面',
+    sampledSkills: '采样技能',
+    sampledAuthors: '采样作者',
+    topDownloads: '最高下载量',
+    highDownloadSkills: '快照内 5K+ 技能',
+    snapshotNotes: '快照说明',
+    updatedAt: '更新于',
+    doc1Kicker: '文档 1',
+    doc1Title: '爆款技能分析',
+    doc1Description: '看清类目分布、头部 skill 的共同结构，以及为什么这些能力更容易持续放大下载。',
+    doc2Kicker: '文档 2',
+    doc2Title: '爆款作者分析',
+    doc2Description: '识别哪些作者已经形成持续复用的产能系统，以及他们的作品组合在暗示什么。',
+    doc3Kicker: '文档 3',
+    doc3Title: 'Skill Factory 复制打法',
+    doc3Description: '把小团队如何用共享模板、共享封装和命名规律做出连续上新的打法拆开来看。',
+    doc4Kicker: '文档 4',
+    doc4Title: 'AISA 变现地图',
+    doc4Description: '把哪些外部 API 最值得替换、免费层/付费层如何拆、产品漏斗如何设计讲清楚。',
+    productionRules: '生产规则',
+    namingRules: '命名规则',
+    replaceableApis: '可替换 API',
+    funnelDesign: '变现漏斗',
+    category: '类别',
+    freeTier: '免费层',
+    paidTier: '付费层',
+    topRebuildOpportunities: '优先重构机会',
+    factorySystemDesign: '工厂化系统设计',
+    roadmap: '落地路线图',
+    author: '作者',
+    sampledSkillsHeader: '采样技能数',
+    totalDownloads: '总下载量',
+    apiReuse: 'API 复用',
+    templateUsage: '模板复用',
+    strategy: '策略',
+    rank: '排名',
+    skill: '技能',
+    downloads: '下载量',
+    input: '输入门槛',
+    output: '输出价值',
+    monetization: '变现潜力',
+  },
+  en: {
+    pageTitle: 'ClawHub Growth Report',
+    loading: 'Loading ClawHub growth report...',
+    heroEyebrow: 'ClawHub Growth Intelligence',
+    heroTitle: 'Top Skills, Top Authors, and the AISA Monetization Map',
+    heroDescription:
+      'This page turns the current ClawHub snapshot into four readable strategy documents: breakout skills, breakout authors, a reusable skill-factory playbook, and an AISA monetization path.',
+    backToAtlas: 'Back to AISA Atlas',
+    sourcePage: 'Source page',
+    sampledSkills: 'Sampled skills',
+    sampledAuthors: 'Sampled authors',
+    topDownloads: 'Top downloads',
+    highDownloadSkills: '5K+ skills in snapshot',
+    snapshotNotes: 'Snapshot notes',
+    updatedAt: 'Updated',
+    doc1Kicker: 'Document 1',
+    doc1Title: 'Top Skills Analysis',
+    doc1Description: 'See the category mix, the repeated traits of top skills, and why those patterns keep compounding downloads.',
+    doc2Kicker: 'Document 2',
+    doc2Title: 'Top Authors Analysis',
+    doc2Description: 'Identify which authors already operate reusable production systems and what their portfolio shape implies.',
+    doc3Kicker: 'Document 3',
+    doc3Title: 'Skill Factory Playbook',
+    doc3Description: 'Break down how a small team can keep shipping by reusing templates, wrappers, and naming systems.',
+    doc4Kicker: 'Document 4',
+    doc4Title: 'AISA Monetization Map',
+    doc4Description: 'Clarify which external APIs are most worth replacing, how free and paid tiers should split, and what funnel to build.',
+    productionRules: 'Production rules',
+    namingRules: 'Naming rules',
+    replaceableApis: 'Replaceable APIs',
+    funnelDesign: 'Funnel design',
+    category: 'Category',
+    freeTier: 'Free tier',
+    paidTier: 'Paid tier',
+    topRebuildOpportunities: 'Top rebuild opportunities',
+    factorySystemDesign: 'Factory system design',
+    roadmap: 'Roadmap',
+    author: 'Author',
+    sampledSkillsHeader: 'Sampled skills',
+    totalDownloads: 'Total downloads',
+    apiReuse: 'API reuse',
+    templateUsage: 'Template usage',
+    strategy: 'Strategy',
+    rank: 'Rank',
+    skill: 'Skill',
+    downloads: 'Downloads',
+    input: 'Input',
+    output: 'Output',
+    monetization: 'Monetization',
+  },
+} as const;
+
+type GrowthCopy = (typeof copyByLanguage)[keyof typeof copyByLanguage];
 
 function toneClass(value: string) {
   const normalized = value.toLowerCase();
@@ -24,18 +134,26 @@ function topApis(skills: GrowthSkill[]) {
   return [...counts.entries()].sort((left, right) => right[1] - left[1]).slice(0, 6);
 }
 
-function StrategyTable({ authors }: { authors: GrowthAuthor[] }) {
+function StrategyTable({
+  authors,
+  language,
+  copy,
+}: {
+  authors: GrowthAuthor[];
+  language: 'zh' | 'en';
+  copy: GrowthCopy;
+}) {
   return (
     <div className="table-wrap">
       <table>
         <thead>
           <tr>
-            <th>Author</th>
-            <th>Sampled Skills</th>
-            <th>Total Downloads</th>
-            <th>API Reuse</th>
-            <th>Template Usage</th>
-            <th>Strategy</th>
+            <th>{copy.author}</th>
+            <th>{copy.sampledSkillsHeader}</th>
+            <th>{copy.totalDownloads}</th>
+            <th>{copy.apiReuse}</th>
+            <th>{copy.templateUsage}</th>
+            <th>{copy.strategy}</th>
           </tr>
         </thead>
         <tbody>
@@ -47,12 +165,12 @@ function StrategyTable({ authors }: { authors: GrowthAuthor[] }) {
                 </a>
               </td>
               <td>{author.sampledTotalSkills}</td>
-              <td>{metricValue(author.totalDownloadsInSample)}</td>
+              <td>{formatMetricValue(author.totalDownloadsInSample, language)}</td>
               <td>
-                <span className={`status-pill ${toneClass(author.apiReuseLikelihood)}`}>{author.apiReuseLikelihood}</span>
+                <span className={`status-pill ${toneClass(author.apiReuseLikelihood)}`}>{translateLevel(author.apiReuseLikelihood, language)}</span>
               </td>
               <td>
-                <span className={`status-pill ${toneClass(author.templateUsage)}`}>{author.templateUsage}</span>
+                <span className={`status-pill ${toneClass(author.templateUsage)}`}>{translateLevel(author.templateUsage, language)}</span>
               </td>
               <td>{author.strategyLabel}</td>
             </tr>
@@ -63,20 +181,28 @@ function StrategyTable({ authors }: { authors: GrowthAuthor[] }) {
   );
 }
 
-function TopSkillsTable({ skills }: { skills: GrowthSkill[] }) {
+function TopSkillsTable({
+  skills,
+  language,
+  copy,
+}: {
+  skills: GrowthSkill[];
+  language: 'zh' | 'en';
+  copy: GrowthCopy;
+}) {
   return (
     <div className="table-wrap">
       <table>
         <thead>
           <tr>
-            <th>Rank</th>
-            <th>Skill</th>
-            <th>Author</th>
-            <th>Downloads</th>
-            <th>Category</th>
-            <th>Input</th>
-            <th>Output</th>
-            <th>Monetization</th>
+            <th>{copy.rank}</th>
+            <th>{copy.skill}</th>
+            <th>{copy.author}</th>
+            <th>{copy.downloads}</th>
+            <th>{copy.category}</th>
+            <th>{copy.input}</th>
+            <th>{copy.output}</th>
+            <th>{copy.monetization}</th>
           </tr>
         </thead>
         <tbody>
@@ -90,12 +216,12 @@ function TopSkillsTable({ skills }: { skills: GrowthSkill[] }) {
                 <div className="row-subtext">{skill.likelyApis.join(' · ')}</div>
               </td>
               <td>@{skill.author}</td>
-              <td>{metricValue(skill.downloads)}</td>
+              <td>{formatMetricValue(skill.downloads, language)}</td>
               <td>{skill.category}</td>
               <td>{skill.inputComplexity}</td>
               <td>{skill.outputValue}</td>
               <td>
-                <span className={`status-pill ${toneClass(skill.monetizationPotential)}`}>{skill.monetizationPotential}</span>
+                <span className={`status-pill ${toneClass(skill.monetizationPotential)}`}>{translateLevel(skill.monetizationPotential, language)}</span>
               </td>
             </tr>
           ))}
@@ -106,67 +232,70 @@ function TopSkillsTable({ skills }: { skills: GrowthSkill[] }) {
 }
 
 export default function App() {
-  const [report, setReport] = useState<GrowthReport | null>(null);
+  const { language, setLanguage } = useAppLanguage();
+  const copy = copyByLanguage[language];
+  const [report, setReport] = useState<GrowthReport | null>(() => peekJsonCache<GrowthReport>('data/clawhub-growth-report.json'));
+
+  useDocumentTitle(copy.pageTitle);
 
   useEffect(() => {
-    fetch(`${import.meta.env.BASE_URL}data/clawhub-growth-report.json`)
-      .then((response) => {
-        if (!response.ok) throw new Error(`clawhub-growth-report.json ${response.status}`);
-        return response.json();
-      })
-      .then((json: GrowthReport) => setReport(json))
+    loadJsonCached<GrowthReport>('data/clawhub-growth-report.json')
+      .then((json) => setReport(json))
       .catch((error) => console.error('Failed to load clawhub growth report', error));
   }, []);
 
   const apis = useMemo(() => (report ? topApis(report.skills) : []), [report]);
 
   if (!report) {
-    return <main className="growth-shell loading">Loading ClawHub growth report...</main>;
+    return <main className="growth-shell loading">{copy.loading}</main>;
   }
 
   return (
     <main className="growth-shell">
+      <section className="page-toolbar">
+        <LanguageToggle language={language} onChange={setLanguage} />
+      </section>
+
       <section className="growth-hero">
         <div>
-          <div className="eyebrow">ClawHub growth intelligence</div>
-          <h1>Top Skills, Top Authors, and the AIsa Monetization Map</h1>
-          <p>
-            A standalone strategy page that turns the current ClawHub catalog snapshot into four business documents:
-            skills analysis, author analysis, a skill factory playbook, and an AIsa monetization strategy.
-          </p>
+          <div className="eyebrow">{copy.heroEyebrow}</div>
+          <h1>{copy.heroTitle}</h1>
+          <p>{copy.heroDescription}</p>
           <div className="hero-actions">
             <a className="primary-link" href={`${import.meta.env.BASE_URL}`}>
-              Back to AISA Atlas
+              {copy.backToAtlas}
             </a>
             <a className="secondary-link" href={report.source.skillsListUrl} target="_blank" rel="noreferrer">
-              Source page
+              {copy.sourcePage}
             </a>
           </div>
         </div>
         <div className="hero-metrics">
           <article className="metric-card">
-            <span>Sampled skills</span>
+            <span>{copy.sampledSkills}</span>
             <strong>{report.summary.sampledSkills}</strong>
           </article>
           <article className="metric-card">
-            <span>Sampled authors</span>
+            <span>{copy.sampledAuthors}</span>
             <strong>{report.summary.sampledAuthors}</strong>
           </article>
           <article className="metric-card">
-            <span>Top downloads</span>
-            <strong>{metricValue(report.summary.topSkillDownloads)}</strong>
+            <span>{copy.topDownloads}</span>
+            <strong>{formatMetricValue(report.summary.topSkillDownloads, language)}</strong>
           </article>
           <article className="metric-card">
-            <span>5K+ skills in snapshot</span>
+            <span>{copy.highDownloadSkills}</span>
             <strong>{report.summary.highDownloadSkills}</strong>
           </article>
         </div>
       </section>
 
       <section className="notice-panel">
-        <div className="panel-title">Snapshot notes</div>
+        <div className="panel-title">{copy.snapshotNotes}</div>
         <div className="chip-row">
-          <span className="chip">Updated {format(new Date(report.generatedAt), 'yyyy-MM-dd HH:mm')}</span>
+          <span className="chip">
+            {copy.updatedAt} {format(new Date(report.generatedAt), 'yyyy-MM-dd HH:mm')}
+          </span>
           <span className="chip">{report.source.sampleType}</span>
           {apis.map(([api, count]) => (
             <span key={api} className="chip">
@@ -183,9 +312,9 @@ export default function App() {
 
       <section className="doc-grid">
         <article className="doc-card">
-          <div className="doc-kicker">Document 1</div>
-          <h2>{report.documents.document1.title}</h2>
-          <p className="section-copy">Category mix, top-skill breakdown, and the repeatable traits behind the strongest current catalog entries.</p>
+          <div className="doc-kicker">{copy.doc1Kicker}</div>
+          <h2>{copy.doc1Title}</h2>
+          <p className="section-copy">{copy.doc1Description}</p>
           <div className="mini-grid">
             {report.documents.document1.categoryDistribution.map((item) => (
               <div key={item.category} className="mini-stat">
@@ -196,7 +325,7 @@ export default function App() {
               </div>
             ))}
           </div>
-          <TopSkillsTable skills={report.documents.document1.top20Skills} />
+          <TopSkillsTable skills={report.documents.document1.top20Skills} language={language} copy={copy} />
           <ul className="bullet-list">
             {report.documents.document1.keySuccessFactors.map((factor) => (
               <li key={factor}>{factor}</li>
@@ -205,10 +334,10 @@ export default function App() {
         </article>
 
         <article className="doc-card">
-          <div className="doc-kicker">Document 2</div>
-          <h2>{report.documents.document2.title}</h2>
-          <p className="section-copy">Which authors are compounding fastest inside the snapshot and what their portfolios suggest about repeatable production behavior.</p>
-          <StrategyTable authors={report.documents.document2.top10Authors} />
+          <div className="doc-kicker">{copy.doc2Kicker}</div>
+          <h2>{copy.doc2Title}</h2>
+          <p className="section-copy">{copy.doc2Description}</p>
+          <StrategyTable authors={report.documents.document2.top10Authors} language={language} copy={copy} />
           <ul className="bullet-list">
             {report.documents.document2.authorPatterns.map((pattern) => (
               <li key={pattern}>{pattern}</li>
@@ -219,9 +348,9 @@ export default function App() {
 
       <section className="doc-grid lower-grid">
         <article className="doc-card">
-          <div className="doc-kicker">Document 3</div>
-          <h2>{report.documents.document3.title}</h2>
-          <p className="section-copy">A practical operating model for launching many high-clarity skills from a small set of shared wrappers and templates.</p>
+          <div className="doc-kicker">{copy.doc3Kicker}</div>
+          <h2>{copy.doc3Title}</h2>
+          <p className="section-copy">{copy.doc3Description}</p>
           <div className="card-stack">
             {report.documents.document3.templates.map((template) => (
               <div key={template.name} className="sub-card">
@@ -233,7 +362,7 @@ export default function App() {
           </div>
           <div className="two-col-list">
             <div>
-              <h3>Production rules</h3>
+              <h3>{copy.productionRules}</h3>
               <ul className="bullet-list">
                 {report.documents.document3.productionSystem.map((item) => (
                   <li key={item}>{item}</li>
@@ -241,7 +370,7 @@ export default function App() {
               </ul>
             </div>
             <div>
-              <h3>Naming rules</h3>
+              <h3>{copy.namingRules}</h3>
               <ul className="bullet-list">
                 {report.documents.document3.namingPatterns.map((item) => (
                   <li key={item}>{item}</li>
@@ -252,13 +381,13 @@ export default function App() {
         </article>
 
         <article className="doc-card">
-          <div className="doc-kicker">Document 4</div>
-          <h2>{report.documents.document4.title}</h2>
-          <p className="section-copy">The monetization map for AIsa: where to replace external APIs, what to give away for free, and how to structure a scalable API funnel.</p>
+          <div className="doc-kicker">{copy.doc4Kicker}</div>
+          <h2>{copy.doc4Title}</h2>
+          <p className="section-copy">{copy.doc4Description}</p>
 
           <div className="two-col-list">
             <div>
-              <h3>Replaceable APIs</h3>
+              <h3>{copy.replaceableApis}</h3>
               <ul className="bullet-list">
                 {report.documents.document4.replaceableApis.map((item) => (
                   <li key={item.apiFamily}>
@@ -268,7 +397,7 @@ export default function App() {
               </ul>
             </div>
             <div>
-              <h3>Funnel design</h3>
+              <h3>{copy.funnelDesign}</h3>
               <ul className="bullet-list">
                 {report.documents.document4.apiMonetizationFunnel.map((item) => (
                   <li key={item}>{item}</li>
@@ -281,9 +410,9 @@ export default function App() {
             <table>
               <thead>
                 <tr>
-                  <th>Category</th>
-                  <th>Free Tier</th>
-                  <th>Paid Tier</th>
+                  <th>{copy.category}</th>
+                  <th>{copy.freeTier}</th>
+                  <th>{copy.paidTier}</th>
                 </tr>
               </thead>
               <tbody>
@@ -298,7 +427,7 @@ export default function App() {
             </table>
           </div>
 
-          <h3>Top rebuild opportunities</h3>
+          <h3>{copy.topRebuildOpportunities}</h3>
           <div className="card-stack">
             {report.documents.document4.top10Rebuilds.map((item) => (
               <div key={`${item.skill}-${item.author}`} className="sub-card">
@@ -314,7 +443,7 @@ export default function App() {
 
           <div className="two-col-list">
             <div>
-              <h3>Factory system design</h3>
+              <h3>{copy.factorySystemDesign}</h3>
               <ul className="bullet-list">
                 {report.documents.document4.skillFactorySystemDesign.map((item) => (
                   <li key={item}>{item}</li>
@@ -322,7 +451,7 @@ export default function App() {
               </ul>
             </div>
             <div>
-              <h3>Roadmap</h3>
+              <h3>{copy.roadmap}</h3>
               <ul className="bullet-list">
                 {report.documents.document4.roadmap.map((item) => (
                   <li key={item}>{item}</li>

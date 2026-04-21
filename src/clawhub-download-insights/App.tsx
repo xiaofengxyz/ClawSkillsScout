@@ -2,10 +2,102 @@ import { useEffect, useMemo, useState } from 'react';
 import { format } from 'date-fns';
 import { ArrowRight, ExternalLink } from 'lucide-react';
 import type { DownloadInsightAuthor, DownloadInsightsReport, DownloadInsightSkill } from './types';
+import {
+  LanguageToggle,
+  formatMetricValue,
+  loadJsonCached,
+  peekJsonCache,
+  useAppLanguage,
+  useDocumentTitle,
+  warmJsonCache,
+} from '../site';
 
-function metricValue(value: number) {
-  return value.toLocaleString('en-US');
-}
+const copyByLanguage = {
+  zh: {
+    pageTitle: 'ClawHub 下载洞察',
+    loading: '正在加载 ClawHub 下载洞察...',
+    heroEyebrow: 'ClawHub 爆款分析',
+    heroTitle: '把爆款 Skill、爆款作者、复制打法放到一页看清楚',
+    heroDescription:
+      '这页直接把当前下载榜里最重要的爆款 skill、爆款作者、可复制打法和 AISA 变现入口拆成清晰的展开卡片，让你快速知道谁在赢、为什么赢、我们该怎么做。',
+    openMarketPage: '打开跨生态情报页',
+    openLivePage: '打开实时下载榜',
+    openJson: '查看 JSON',
+    sampledSkills: '采样技能',
+    skills5kPlus: '5K+ 技能',
+    skills10kPlus: '10K+ 技能',
+    prolificHitAuthors: '连续爆款作者',
+    snapshotNotes: '快照说明',
+    updatedAt: '更新于',
+    topCategory: '头部类目',
+    topDownloads: '最高下载量',
+    skillDetails: '爆款 Skill 详情',
+    authorDetails: '爆款作者详情',
+    openSource: '打开来源',
+    howViral: '为什么会火',
+    howViralTitle: '爆款是怎么被做出来的',
+    howToCopy: '怎么复制',
+    howToCopyTitle: '怎么复制，而不是只复盘',
+    productionRules: '生产规则',
+    namingRules: '命名规则',
+    aisaMoves: 'AISA 动作',
+    aisaMovesTitle: '最值得改造成 AISA API 的方向',
+    roadmap: '路线图',
+    roadmapTitle: '接下来怎么落地',
+    factoryFunnel: '工厂化漏斗',
+    downloads: '下载',
+    whyEasy: '为什么容易起量',
+    apiClues: 'API 线索',
+    repeatableTags: '可复制标签',
+    topSampleDownloads: '头部样本下载量',
+    apiFamilies: 'API 家族',
+    signatureSkills: '代表作',
+    portfolioShape: '作品结构',
+  },
+  en: {
+    pageTitle: 'ClawHub Download Insights',
+    loading: 'Loading ClawHub download insights...',
+    heroEyebrow: 'ClawHub Breakout Analysis',
+    heroTitle: 'See breakout skills, breakout authors, and repeatable playbooks on one page',
+    heroDescription:
+      'This page turns the live downloads leaderboard into expandable cards for breakout skills, breakout authors, repeatable production moves, and the clearest AISA monetization entries.',
+    openMarketPage: 'Open market intelligence',
+    openLivePage: 'Open live downloads page',
+    openJson: 'View JSON',
+    sampledSkills: 'Sampled skills',
+    skills5kPlus: '5K+ skills',
+    skills10kPlus: '10K+ skills',
+    prolificHitAuthors: 'Prolific hit authors',
+    snapshotNotes: 'Snapshot notes',
+    updatedAt: 'Updated',
+    topCategory: 'Top category',
+    topDownloads: 'Top downloads',
+    skillDetails: 'Breakout skill details',
+    authorDetails: 'Breakout author details',
+    openSource: 'Open source',
+    howViral: 'How Viral',
+    howViralTitle: 'How breakout skills are made',
+    howToCopy: 'How To Copy',
+    howToCopyTitle: 'How to copy the playbook instead of only reviewing it',
+    productionRules: 'Production rules',
+    namingRules: 'Naming rules',
+    aisaMoves: 'AISA Moves',
+    aisaMovesTitle: 'Best directions to rebuild into AISA APIs',
+    roadmap: 'Roadmap',
+    roadmapTitle: 'What to do next',
+    factoryFunnel: 'Factory funnel',
+    downloads: 'downloads',
+    whyEasy: 'Why it scales',
+    apiClues: 'API clues',
+    repeatableTags: 'Repeatable tags',
+    topSampleDownloads: 'Top sample downloads',
+    apiFamilies: 'API families',
+    signatureSkills: 'Signature skills',
+    portfolioShape: 'Portfolio shape',
+  },
+} as const;
+
+type InsightsCopy = (typeof copyByLanguage)[keyof typeof copyByLanguage];
 
 function topApis(skills: DownloadInsightSkill[]) {
   const counts = new Map<string, number>();
@@ -21,57 +113,72 @@ function SkillBoard({
   skills,
   activeSlug,
   onSelect,
+  language,
+  copy,
 }: {
   skills: DownloadInsightSkill[];
   activeSlug: string | null;
-  onSelect: (slug: string) => void;
+  onSelect: (slug: string | null) => void;
+  language: 'zh' | 'en';
+  copy: InsightsCopy;
 }) {
   return (
     <section className="insight-board-card">
       <div className="board-top">
-        <h3>爆款 Skill 详情</h3>
+        <h3>{copy.skillDetails}</h3>
         <span>{skills.length}</span>
       </div>
       <div className="detail-list">
-        {skills.map((skill) => (
-          <div key={skill.slug} className={`detail-item-shell${skill.slug === activeSlug ? ' is-active' : ''}`}>
-            <button
-              type="button"
-              className={`detail-item${skill.slug === activeSlug ? ' is-active' : ''}`}
-              onClick={() => onSelect(skill.slug === activeSlug ? '' : skill.slug)}
-            >
-              <strong>{skill.name}</strong>
-              <small>
-                @{skill.author} · {metricValue(skill.downloads)} 下载 · {skill.category}
-              </small>
-            </button>
-            {skill.slug === activeSlug ? (
-              <div className="accordion-body">
-                <div className="chip-row">
-                  {[
-                    `${metricValue(skill.downloads)} 下载`,
-                    skill.category,
-                    skill.monetizationPotential,
-                    skill.apiDependency,
-                  ].map((chip) => (
-                    <span key={chip} className="chip">
-                      {chip}
-                    </span>
-                  ))}
+        {skills.map((skill) => {
+          const isActive = skill.slug === activeSlug;
+          return (
+            <div key={skill.slug} className={`detail-item-shell${isActive ? ' is-active' : ''}`}>
+              <button
+                type="button"
+                className={`detail-item${isActive ? ' is-active' : ''}`}
+                onClick={() => onSelect(isActive ? null : skill.slug)}
+                aria-expanded={isActive}
+              >
+                <strong>{skill.name}</strong>
+                <small>
+                  @{skill.author} · {formatMetricValue(skill.downloads, language)} {copy.downloads} · {skill.category}
+                </small>
+              </button>
+              {isActive ? (
+                <div className="accordion-body">
+                  <div className="chip-row">
+                    {[
+                      `${formatMetricValue(skill.downloads, language)} ${copy.downloads}`,
+                      skill.category,
+                      skill.monetizationPotential,
+                      skill.apiDependency,
+                    ].map((chip) => (
+                      <span key={chip} className="chip">
+                        {chip}
+                      </span>
+                    ))}
+                  </div>
+                  <ul className="bullet-list detail-bullets">
+                    <li>{skill.description}</li>
+                    <li>
+                      {copy.whyEasy}：{language === 'zh' ? '输入门槛' : 'input complexity'} {skill.inputComplexity}
+                      {language === 'zh' ? '，输出价值' : ', output value'} {skill.outputValue}。
+                    </li>
+                    <li>
+                      {copy.apiClues}：{skill.likelyApis.join(' · ') || 'Unknown'}。
+                    </li>
+                    <li>
+                      {copy.repeatableTags}：{skill.repeatablePatternFlags.join(' · ') || (language === 'zh' ? '暂无' : 'n/a')}。
+                    </li>
+                  </ul>
+                  <a className="secondary-link inline-link" href={skill.url} target="_blank" rel="noreferrer">
+                    {copy.openSource} <ExternalLink size={14} />
+                  </a>
                 </div>
-                <ul className="bullet-list detail-bullets">
-                  <li>{skill.description}</li>
-                  <li>为什么容易起量：输入门槛 {skill.inputComplexity}，输出价值 {skill.outputValue}。</li>
-                  <li>API 线索：{skill.likelyApis.join(' · ') || 'Unknown'}。</li>
-                  <li>可复制标签：{skill.repeatablePatternFlags.join(' · ') || '暂无'}。</li>
-                </ul>
-                <a className="secondary-link inline-link" href={skill.url} target="_blank" rel="noreferrer">
-                  打开来源 <ExternalLink size={14} />
-                </a>
-              </div>
-            ) : null}
-          </div>
-        ))}
+              ) : null}
+            </div>
+          );
+        })}
       </div>
     </section>
   );
@@ -81,138 +188,162 @@ function AuthorBoard({
   authors,
   activeAuthor,
   onSelect,
+  language,
+  copy,
 }: {
   authors: DownloadInsightAuthor[];
   activeAuthor: string | null;
-  onSelect: (author: string) => void;
+  onSelect: (author: string | null) => void;
+  language: 'zh' | 'en';
+  copy: InsightsCopy;
 }) {
   return (
     <section className="insight-board-card">
       <div className="board-top">
-        <h3>爆款作者详情</h3>
+        <h3>{copy.authorDetails}</h3>
         <span>{authors.length}</span>
       </div>
       <div className="detail-list">
-        {authors.map((author) => (
-          <div key={author.author} className={`detail-item-shell${author.author === activeAuthor ? ' is-active' : ''}`}>
-            <button
-              type="button"
-              className={`detail-item${author.author === activeAuthor ? ' is-active' : ''}`}
-              onClick={() => onSelect(author.author === activeAuthor ? '' : author.author)}
-            >
-              <strong>@{author.author}</strong>
-              <small>
-                {author.totalSkills} total · 10K+ {author.numberOf10kPlusSkills} · {metricValue(author.totalDownloadsInTopSample)} sample downloads
-              </small>
-            </button>
-            {author.author === activeAuthor ? (
-              <div className="accordion-body">
-                <div className="chip-row">
-                  {[
-                    `${author.totalSkills} total skills`,
-                    `10K+ ${author.numberOf10kPlusSkills}`,
-                    author.strategyLabel,
-                    author.authorPageStatus,
-                  ].map((chip) => (
-                    <span key={chip} className="chip">
-                      {chip}
-                    </span>
-                  ))}
+        {authors.map((author) => {
+          const isActive = author.author === activeAuthor;
+          return (
+            <div key={author.author} className={`detail-item-shell${isActive ? ' is-active' : ''}`}>
+              <button
+                type="button"
+                className={`detail-item${isActive ? ' is-active' : ''}`}
+                onClick={() => onSelect(isActive ? null : author.author)}
+                aria-expanded={isActive}
+              >
+                <strong>@{author.author}</strong>
+                <small>
+                  {author.totalSkills} total · 10K+ {author.numberOf10kPlusSkills} · {formatMetricValue(author.totalDownloadsInTopSample, language)}{' '}
+                  {language === 'zh' ? '样本下载' : 'sample downloads'}
+                </small>
+              </button>
+              {isActive ? (
+                <div className="accordion-body">
+                  <div className="chip-row">
+                    {[
+                      `${author.totalSkills} total skills`,
+                      `10K+ ${author.numberOf10kPlusSkills}`,
+                      author.strategyLabel,
+                      author.authorPageStatus,
+                    ].map((chip) => (
+                      <span key={chip} className="chip">
+                        {chip}
+                      </span>
+                    ))}
+                  </div>
+                  <ul className="bullet-list detail-bullets">
+                    <li>
+                      {copy.topSampleDownloads}: {formatMetricValue(author.totalDownloadsInTopSample, language)}。
+                    </li>
+                    <li>
+                      {copy.apiFamilies}: {author.apiFamilies.join(' · ') || 'Unknown'}。
+                    </li>
+                    <li>
+                      {copy.signatureSkills}：{author.topSkillNames.join(' · ') || (language === 'zh' ? '暂无' : 'n/a')}。
+                    </li>
+                    <li>
+                      {copy.portfolioShape}：{author.skills.slice(0, 5).map((item) => item.name).join(' · ')}。
+                    </li>
+                  </ul>
+                  {author.profileUrl ? (
+                    <a className="secondary-link inline-link" href={author.profileUrl} target="_blank" rel="noreferrer">
+                      {copy.openSource} <ExternalLink size={14} />
+                    </a>
+                  ) : null}
                 </div>
-                <ul className="bullet-list detail-bullets">
-                  <li>Top sample downloads: {metricValue(author.totalDownloadsInTopSample)}。</li>
-                  <li>API families: {author.apiFamilies.join(' · ') || 'Unknown'}。</li>
-                  <li>代表作：{author.topSkillNames.join(' · ') || '暂无'}。</li>
-                  <li>作品结构：{author.skills.slice(0, 5).map((item) => item.name).join(' · ')}。</li>
-                </ul>
-                {author.profileUrl ? (
-                  <a className="secondary-link inline-link" href={author.profileUrl} target="_blank" rel="noreferrer">
-                    打开来源 <ExternalLink size={14} />
-                  </a>
-                ) : null}
-              </div>
-            ) : null}
-          </div>
-        ))}
+              ) : null}
+            </div>
+          );
+        })}
       </div>
     </section>
   );
 }
 
 export default function App() {
-  const [report, setReport] = useState<DownloadInsightsReport | null>(null);
+  const { language, setLanguage } = useAppLanguage();
+  const copy = copyByLanguage[language];
+  const [report, setReport] = useState<DownloadInsightsReport | null>(() => peekJsonCache<DownloadInsightsReport>('data/clawhub-download-insights.json'));
   const [activeSkillSlug, setActiveSkillSlug] = useState<string | null>(null);
   const [activeAuthor, setActiveAuthor] = useState<string | null>(null);
 
+  useDocumentTitle(copy.pageTitle);
+
   useEffect(() => {
-    fetch(`${import.meta.env.BASE_URL}data/clawhub-download-insights.json`)
-      .then((response) => {
-        if (!response.ok) throw new Error(`clawhub-download-insights.json ${response.status}`);
-        return response.json();
-      })
-      .then((json: DownloadInsightsReport) => {
+    loadJsonCached<DownloadInsightsReport>('data/clawhub-download-insights.json')
+      .then((json) => {
         setReport(json);
-        setActiveSkillSlug(json.documents.document1.top20Skills[0]?.slug ?? null);
-        setActiveAuthor(json.documents.document2.top10Authors[0]?.author ?? null);
+        warmJsonCache(['data/market-ecosystem-report.json']);
       })
       .catch((error) => console.error('Failed to load clawhub download insights report', error));
   }, []);
 
   const apis = useMemo(() => (report ? topApis(report.skills) : []), [report]);
+
   if (!report) {
-    return <main className="insights-shell loading">Loading ClawHub download insights...</main>;
+    return <main className="insights-shell loading">{copy.loading}</main>;
   }
 
   return (
     <main className="insights-shell">
+      <section className="page-toolbar">
+        <LanguageToggle language={language} onChange={setLanguage} />
+      </section>
+
       <section className="hero">
         <div className="hero-copy">
-          <div className="eyebrow">ClawHub breakout analysis</div>
-          <h1>把爆款 Skill、爆款作者、复制打法放到一页看清楚</h1>
-          <p>
-            这页不再只给大表格，而是直接把当前下载榜里最重要的爆款 skill、爆款作者、可复制打法和 AIsa 变现入口拆成清晰的详情面板。
-            这样你看一眼就知道“谁在赢、为什么赢、我们该怎么做”。
-          </p>
+          <div className="eyebrow">{copy.heroEyebrow}</div>
+          <h1>{copy.heroTitle}</h1>
+          <p>{copy.heroDescription}</p>
           <div className="hero-actions">
             <a className="primary-link" href={`${import.meta.env.BASE_URL}market-intelligence.html`}>
-              打开跨生态情报页 <ArrowRight size={16} />
+              {copy.openMarketPage} <ArrowRight size={16} />
             </a>
             <a className="secondary-link" href={report.source.skillsListUrl} target="_blank" rel="noreferrer">
-              Open live downloads page
+              {copy.openLivePage}
             </a>
             <a className="secondary-link" href={`${import.meta.env.BASE_URL}data/clawhub-download-insights.json`} target="_blank" rel="noreferrer">
-              View JSON
+              {copy.openJson}
             </a>
           </div>
         </div>
 
         <div className="hero-metrics">
           <article className="metric-card">
-            <span>Sampled skills</span>
+            <span>{copy.sampledSkills}</span>
             <strong>{report.summary.sampledSkills}</strong>
           </article>
           <article className="metric-card">
-            <span>5K+ skills</span>
+            <span>{copy.skills5kPlus}</span>
             <strong>{report.summary.skills5kPlus}</strong>
           </article>
           <article className="metric-card">
-            <span>10K+ skills</span>
+            <span>{copy.skills10kPlus}</span>
             <strong>{report.summary.skills10kPlus}</strong>
           </article>
           <article className="metric-card">
-            <span>Prolific hit authors</span>
+            <span>{copy.prolificHitAuthors}</span>
             <strong>{report.summary.prolificHitAuthors}</strong>
           </article>
         </div>
       </section>
 
       <section className="notice-panel">
-        <div className="panel-title">Snapshot notes</div>
+        <div className="panel-title">{copy.snapshotNotes}</div>
         <div className="chip-row">
-          <span className="chip">Updated {format(new Date(report.generatedAt), 'yyyy-MM-dd HH:mm')}</span>
+          <span className="chip">
+            {copy.updatedAt} {format(new Date(report.generatedAt), 'yyyy-MM-dd HH:mm')}
+          </span>
           <span className="chip">{report.source.sampleType}</span>
-          <span className="chip">Top category: {report.summary.topCategory}</span>
-          <span className="chip">Top downloads: {metricValue(report.summary.topSkillDownloads)}</span>
+          <span className="chip">
+            {copy.topCategory}: {report.summary.topCategory}
+          </span>
+          <span className="chip">
+            {copy.topDownloads}: {formatMetricValue(report.summary.topSkillDownloads, language)}
+          </span>
           {apis.map(([api, count]) => (
             <span key={api} className="chip">
               {api}: {count}
@@ -227,23 +358,23 @@ export default function App() {
       </section>
 
       <section className="detail-grid detail-grid-single">
-        <SkillBoard skills={report.documents.document1.top20Skills} activeSlug={activeSkillSlug} onSelect={setActiveSkillSlug} />
+        <SkillBoard skills={report.documents.document1.top20Skills} activeSlug={activeSkillSlug} onSelect={setActiveSkillSlug} language={language} copy={copy} />
       </section>
 
       <section className="detail-grid detail-grid-single">
-        <AuthorBoard authors={report.documents.document2.top10Authors} activeAuthor={activeAuthor} onSelect={setActiveAuthor} />
+        <AuthorBoard authors={report.documents.document2.top10Authors} activeAuthor={activeAuthor} onSelect={setActiveAuthor} language={language} copy={copy} />
       </section>
 
       <section className="doc-grid">
         <article className="doc-card">
-          <div className="doc-kicker">How Viral</div>
-          <h2>爆款是怎么被做出来的</h2>
+          <div className="doc-kicker">{copy.howViral}</div>
+          <h2>{copy.howViralTitle}</h2>
           <div className="card-stack compact">
             {report.documents.document1.top20Skills.slice(0, 6).map((skill) => (
               <a key={skill.slug} href={skill.url} target="_blank" rel="noreferrer" className="sub-card anchor-card">
                 <strong>{skill.name}</strong>
                 <span>
-                  {metricValue(skill.downloads)} 下载 · {skill.category}
+                  {formatMetricValue(skill.downloads, language)} {copy.downloads} · {skill.category}
                 </span>
                 <small>{skill.likelyApis.join(' · ') || 'Unknown'}</small>
               </a>
@@ -257,11 +388,11 @@ export default function App() {
         </article>
 
         <article className="doc-card">
-          <div className="doc-kicker">How To Copy</div>
-          <h2>怎么复制，而不是只复盘</h2>
+          <div className="doc-kicker">{copy.howToCopy}</div>
+          <h2>{copy.howToCopyTitle}</h2>
           <div className="two-col-list">
             <div>
-              <h3>Production rules</h3>
+              <h3>{copy.productionRules}</h3>
               <ul className="bullet-list">
                 {report.documents.document3.productionSystem.map((item) => (
                   <li key={item}>{item}</li>
@@ -269,7 +400,7 @@ export default function App() {
               </ul>
             </div>
             <div>
-              <h3>Naming rules</h3>
+              <h3>{copy.namingRules}</h3>
               <ul className="bullet-list">
                 {report.documents.document3.namingPatterns.map((item) => (
                   <li key={item}>{item}</li>
@@ -282,8 +413,8 @@ export default function App() {
 
       <section className="doc-grid lower-grid">
         <article className="doc-card">
-          <div className="doc-kicker">AIsa Moves</div>
-          <h2>最值得改造成 AIsa API 的方向</h2>
+          <div className="doc-kicker">{copy.aisaMoves}</div>
+          <h2>{copy.aisaMovesTitle}</h2>
           <div className="card-stack compact">
             {report.documents.document4.top10Rebuilds.slice(0, 6).map((item) => (
               <div key={item.skill} className="sub-card">
@@ -299,14 +430,14 @@ export default function App() {
         </article>
 
         <article className="doc-card">
-          <div className="doc-kicker">Roadmap</div>
-          <h2>接下来怎么落地</h2>
+          <div className="doc-kicker">{copy.roadmap}</div>
+          <h2>{copy.roadmapTitle}</h2>
           <ul className="bullet-list">
             {report.documents.document4.roadmap.map((item) => (
               <li key={item}>{item}</li>
             ))}
           </ul>
-          <h3>Factory funnel</h3>
+          <h3>{copy.factoryFunnel}</h3>
           <ul className="bullet-list">
             {report.documents.document4.apiMonetizationFunnel.map((item) => (
               <li key={item}>{item}</li>

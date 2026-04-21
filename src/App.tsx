@@ -25,12 +25,102 @@ import type {
   OptimizedPackage,
   OptimizedPackageIndex,
 } from './types';
+import {
+  LanguageToggle,
+  loadJsonCached,
+  peekJsonCache,
+  useAppLanguage,
+  useDocumentTitle,
+} from './site';
 
 type ViewMode = 'interfaces' | 'skills' | 'catalog';
 type SourceFilter = 'all' | 'clawhub' | 'github';
 type InterfaceImplementationFilter = 'all' | 'implemented' | 'inferred_implementation' | 'documented_only';
 type SkillImplementationFilter = 'all' | 'implemented' | 'documented_only' | 'not_found';
 type CatalogTypeFilter = 'all' | 'skill' | 'plugin';
+
+const copyByLanguage = {
+  zh: {
+    pageTitle: 'AISA Skill & API Atlas',
+    loading: '正在加载 AISA 技能情报...',
+    heroEyebrow: 'AISA 情报面板',
+    heroTitle: 'AISA Skill & API Atlas',
+    heroDescriptionPrefix: '扫描 `public/downloads` 下的 ClawHub 与 GitHub 技能包，提取 AISA API 使用情况，并对照',
+    heroDescriptionSuffix: '文档展示接口覆盖与技能实现分组。',
+    openMarketPage: '打开跨生态情报页',
+    openGrowthPage: '打开 ClawHub 商业分析页',
+    openDownloadsPage: '打开下载榜爆款分析页',
+    open10kPage: '打开 10K+ 系统报告页',
+    viewGrowthData: '查看分析数据',
+    viewDownloadsJson: '查看下载榜 JSON',
+    view10kJson: '查看 10K+ 系统 JSON',
+    updatedAt: '更新于',
+    interfaces: '接口列表',
+    skills: '技能列表',
+    catalog: 'ClawHub 目录',
+    searchPlaceholder: '搜索接口、技能名、owner、描述...',
+    allSources: '全部来源',
+    allCatalogTypes: '全部目录类型',
+    allInterfaceStates: '全部接口状态',
+    allSkillStates: '全部技能状态',
+    implemented: '已实现',
+    inferred: '推断实现',
+    documentedOnly: '仅文档声明',
+    notFound: '未发现接口',
+    note1: '接口表按 API 聚合；技能表已合并 GitHub 技能归档。',
+    note2Prefix: '当前接口统计为',
+    note2Middle: '已实现 +',
+    note2Middle2: '推断实现 +',
+    note2Middle3: '仅文档声明 =',
+    note2Suffix: '总接口。',
+    note3: '“推断实现”表示当前没有抓到完全同路径代码，但已抓到子路径、父路径或同族通用路径实现。',
+    note4: '“仅文档声明”表示当前只在 SKILL/README 中识别到接口；“推断实现”表示代码里命中了子路径、动态路径或通用路径。',
+    totalInterfaces: '接口总数',
+    implementedInterfaces: '已实现接口',
+    inferredInterfaces: '推断实现接口',
+    documentedInterfaces: '仅文档声明接口',
+  },
+  en: {
+    pageTitle: 'AISA Skill & API Atlas',
+    loading: 'Loading AISA skill intelligence...',
+    heroEyebrow: 'AISA Intelligence Dashboard',
+    heroTitle: 'AISA Skill & API Atlas',
+    heroDescriptionPrefix: 'Scan ClawHub and GitHub skill archives under `public/downloads`, extract AISA API usage, and compare them against the official',
+    heroDescriptionSuffix: 'docs to show interface coverage and grouped skill implementations.',
+    openMarketPage: 'Open market intelligence',
+    openGrowthPage: 'Open ClawHub growth report',
+    openDownloadsPage: 'Open downloads insights',
+    open10kPage: 'Open 10K+ systems report',
+    viewGrowthData: 'View growth data',
+    viewDownloadsJson: 'View downloads JSON',
+    view10kJson: 'View 10K+ JSON',
+    updatedAt: 'Updated',
+    interfaces: 'Interfaces',
+    skills: 'Skills',
+    catalog: 'Catalog',
+    searchPlaceholder: 'Search interfaces, skills, owners, descriptions...',
+    allSources: 'All sources',
+    allCatalogTypes: 'All catalog types',
+    allInterfaceStates: 'All interface states',
+    allSkillStates: 'All skill states',
+    implemented: 'Implemented',
+    inferred: 'Inferred',
+    documentedOnly: 'Documented only',
+    notFound: 'Not found',
+    note1: 'Interface view is API-centric; skill view merges GitHub archives into the same table.',
+    note2Prefix: 'Current interface totals:',
+    note2Middle: 'implemented +',
+    note2Middle2: 'inferred +',
+    note2Middle3: 'documented-only =',
+    note2Suffix: 'total interfaces.',
+    note3: '"Inferred" means we did not find the exact path, but we did detect a related child path, parent path, or family-level implementation.',
+    note4: '"Documented only" means the endpoint appeared in SKILL/README text; "inferred" means code matched a related dynamic or shared path.',
+    totalInterfaces: 'Total interfaces',
+    implementedInterfaces: 'Implemented interfaces',
+    inferredInterfaces: 'Inferred interfaces',
+    documentedInterfaces: 'Documented-only interfaces',
+  },
+} as const;
 
 function makeCardId(kind: 'interface' | 'skill', value: string) {
   return `${kind}-card-${value.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
@@ -163,21 +253,27 @@ function ItemCard({ item, optimizedPackage }: { item: CatalogItem; optimizedPack
   );
 }
 
-function ViewTabs({ view, setView, counts }: { view: ViewMode; setView: (view: ViewMode) => void; counts: Record<ViewMode, number> }) {
+function ViewTabs({
+  view,
+  setView,
+  counts,
+  labels,
+}: {
+  view: ViewMode;
+  setView: (view: ViewMode) => void;
+  counts: Record<ViewMode, number>;
+  labels: Record<ViewMode, string>;
+}) {
   return (
     <section className="tabs">
-      {[
-        ['interfaces', '接口列表'],
-        ['skills', '技能列表'],
-        ['catalog', 'ClawHub 目录'],
-      ].map(([value, label]) => (
+      {(['interfaces', 'skills', 'catalog'] as ViewMode[]).map((value) => (
         <button
           key={value}
           type="button"
           className={clsx('tab-button', view === value && 'tab-button-active')}
           onClick={() => setView(value as ViewMode)}
         >
-          <span>{label}</span>
+          <span>{labels[value]}</span>
           <strong>{counts[value as ViewMode]}</strong>
         </button>
       ))}
@@ -473,9 +569,11 @@ function SkillTable({
 }
 
 export default function App() {
-  const [catalog, setCatalog] = useState<CatalogData | null>(null);
-  const [optimized, setOptimized] = useState<OptimizedPackageIndex | null>(null);
-  const [analysis, setAnalysis] = useState<AisaApiAnalysisData | null>(null);
+  const { language, setLanguage } = useAppLanguage();
+  const copy = copyByLanguage[language];
+  const [catalog, setCatalog] = useState<CatalogData | null>(() => peekJsonCache<CatalogData>('data/catalog.json'));
+  const [optimized, setOptimized] = useState<OptimizedPackageIndex | null>(() => peekJsonCache<OptimizedPackageIndex>('data/optimized-packages.json'));
+  const [analysis, setAnalysis] = useState<AisaApiAnalysisData | null>(() => peekJsonCache<AisaApiAnalysisData>('data/aisa-api-analysis.json'));
   const [view, setView] = useState<ViewMode>('interfaces');
   const [query, setQuery] = useState('');
   const [sourceFilter, setSourceFilter] = useState<SourceFilter>('all');
@@ -483,6 +581,8 @@ export default function App() {
   const [skillImplementationFilter, setSkillImplementationFilter] = useState<SkillImplementationFilter>('all');
   const [catalogTypeFilter, setCatalogTypeFilter] = useState<CatalogTypeFilter>('all');
   const [copiedCardId, setCopiedCardId] = useState<string | null>(null);
+
+  useDocumentTitle(copy.pageTitle);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -506,33 +606,25 @@ export default function App() {
     }
     if (initialCatalogType && ['all', 'skill', 'plugin'].includes(initialCatalogType)) setCatalogTypeFilter(initialCatalogType);
 
-    fetch(`${import.meta.env.BASE_URL}data/catalog.json`)
-      .then((response) => {
-        if (!response.ok) throw new Error(`catalog.json ${response.status}`);
-        return response.json();
-      })
-      .then((json: CatalogData) => setCatalog(json))
+    loadJsonCached<CatalogData>('data/catalog.json')
+      .then((json) => setCatalog(json))
       .catch((error) => console.error('Failed to load catalog data', error));
 
-    fetch(`${import.meta.env.BASE_URL}data/optimized-packages.json`)
-      .then((response) => {
-        if (!response.ok) {
-          setOptimized({ generatedAt: new Date().toISOString(), items: [] });
-          throw new Error(`optimized-packages.json ${response.status}`);
-        }
-        return response.json();
-      })
-      .then((json: OptimizedPackageIndex) => setOptimized(json))
-      .catch((error) => console.error('Failed to load optimized package index', error));
-
-    fetch(`${import.meta.env.BASE_URL}data/aisa-api-analysis.json`)
-      .then((response) => {
-        if (!response.ok) throw new Error(`aisa-api-analysis.json ${response.status}`);
-        return response.json();
-      })
-      .then((json: AisaApiAnalysisData) => setAnalysis(json))
+    loadJsonCached<AisaApiAnalysisData>('data/aisa-api-analysis.json')
+      .then((json) => setAnalysis(json))
       .catch((error) => console.error('Failed to load AISA API analysis data', error));
   }, []);
+
+  useEffect(() => {
+    if (optimized || view !== 'catalog') return;
+
+    loadJsonCached<OptimizedPackageIndex>('data/optimized-packages.json')
+      .then((json) => setOptimized(json))
+      .catch((error) => {
+        setOptimized({ generatedAt: new Date().toISOString(), items: [] });
+        console.error('Failed to load optimized package index', error);
+      });
+  }, [optimized, view]);
 
   useEffect(() => {
     const hash = window.location.hash.replace(/^#/, '');
@@ -659,76 +751,87 @@ export default function App() {
     jumpToCard('skills', makeCardId('skill', skillId), setView);
   };
 
-  if (!catalog || !optimized || !analysis) {
-    return <main className="shell loading">Loading AISA skill intelligence...</main>;
+  if (!catalog || !analysis || (view === 'catalog' && !optimized)) {
+    return <main className="shell loading">{copy.loading}</main>;
   }
 
   return (
     <main className="shell">
+      <section className="page-toolbar">
+        <LanguageToggle language={language} onChange={setLanguage} />
+      </section>
+
       <section className="hero hero-wide">
         <div className="hero-copy">
-          <span className="eyebrow">AISA intelligence dashboard</span>
-          <h1>AISA Skill & API Atlas</h1>
+          <span className="eyebrow">{copy.heroEyebrow}</span>
+          <h1>{copy.heroTitle}</h1>
           <p>
-            扫描 `public/downloads` 下的 ClawHub 与 GitHub 技能包，提取 AISA API 使用情况，并对照
+            {copy.heroDescriptionPrefix}
             <a href={analysis.comparisonBase.docUrl} target="_blank" rel="noreferrer">
               官方 `createchatcompletion`
             </a>
-            文档展示接口覆盖与技能实现分组。
+            {copy.heroDescriptionSuffix}
           </p>
           <div className="hero-link-row">
             <a className="hero-link-button hero-link-button-primary" href={`${import.meta.env.BASE_URL}market-intelligence.html`}>
-              打开跨生态情报页
+              {copy.openMarketPage}
             </a>
             <a className="hero-link-button hero-link-button-primary" href={`${import.meta.env.BASE_URL}clawhub-growth.html`}>
-              打开 ClawHub 商业分析页
+              {copy.openGrowthPage}
             </a>
             <a className="hero-link-button" href={`${import.meta.env.BASE_URL}clawhub-download-insights.html`}>
-              打开下载榜爆款分析页
+              {copy.openDownloadsPage}
             </a>
             <a className="hero-link-button" href={`${import.meta.env.BASE_URL}clawhub-10k-system.html`}>
-              打开 10K+ 系统报告页
+              {copy.open10kPage}
             </a>
             <a className="hero-link-button" href={`${import.meta.env.BASE_URL}data/clawhub-growth-report.json`} target="_blank" rel="noreferrer">
-              查看分析数据
+              {copy.viewGrowthData}
             </a>
             <a className="hero-link-button" href={`${import.meta.env.BASE_URL}data/clawhub-download-insights.json`} target="_blank" rel="noreferrer">
-              查看下载榜 JSON
+              {copy.viewDownloadsJson}
             </a>
             <a className="hero-link-button" href={`${import.meta.env.BASE_URL}data/clawhub-10k-system-report.json`} target="_blank" rel="noreferrer">
-              查看 10K+ 系统 JSON
+              {copy.view10kJson}
             </a>
           </div>
           <div className="hero-meta">
-            <span>Updated {format(new Date(analysis.generatedAt), 'yyyy-MM-dd HH:mm')}</span>
+            <span>
+              {copy.updatedAt} {format(new Date(analysis.generatedAt), 'yyyy-MM-dd HH:mm')}
+            </span>
             <span>{analysis.summary.totalInterfaces} interfaces</span>
             <span>{analysis.summary.totalSkills} skills</span>
             <span>{analysis.summary.githubSkills} GitHub archives</span>
           </div>
         </div>
         <div className="hero-panel hero-panel-grid">
-          <StatCard icon={<TableProperties size={20} />} label="接口总数" value={analysis.summary.totalInterfaces} tone="sand" />
-          <StatCard icon={<FileCode2 size={20} />} label="已实现接口" value={analysis.summary.implementedInterfaces} tone="mint" />
-          <StatCard icon={<Layers size={20} />} label="推断实现接口" value={analysis.summary.inferredImplementedInterfaces} tone="sky" />
-          <StatCard icon={<AlertTriangle size={20} />} label="仅文档声明接口" value={analysis.summary.documentedOnlyInterfaces} tone="ember" />
+          <StatCard icon={<TableProperties size={20} />} label={copy.totalInterfaces} value={analysis.summary.totalInterfaces} tone="sand" />
+          <StatCard icon={<FileCode2 size={20} />} label={copy.implementedInterfaces} value={analysis.summary.implementedInterfaces} tone="mint" />
+          <StatCard icon={<Layers size={20} />} label={copy.inferredInterfaces} value={analysis.summary.inferredImplementedInterfaces} tone="sky" />
+          <StatCard icon={<AlertTriangle size={20} />} label={copy.documentedInterfaces} value={analysis.summary.documentedOnlyInterfaces} tone="ember" />
         </div>
       </section>
 
-      <ViewTabs view={view} setView={setView} counts={counts} />
+      <ViewTabs
+        view={view}
+        setView={setView}
+        counts={counts}
+        labels={{ interfaces: copy.interfaces, skills: copy.skills, catalog: copy.catalog }}
+      />
 
       <section className="controls controls-wide">
         <label className="search-box">
           <Search size={16} />
-          <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="搜索接口、技能名、owner、描述..." />
+          <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder={copy.searchPlaceholder} />
         </label>
         <select value={sourceFilter} onChange={(event) => setSourceFilter(event.target.value as SourceFilter)}>
-          <option value="all">全部来源</option>
+          <option value="all">{copy.allSources}</option>
           <option value="clawhub">ClawHub</option>
           <option value="github">GitHub</option>
         </select>
         {view === 'catalog' ? (
           <select value={catalogTypeFilter} onChange={(event) => setCatalogTypeFilter(event.target.value as CatalogTypeFilter)}>
-            <option value="all">全部目录类型</option>
+            <option value="all">{copy.allCatalogTypes}</option>
             <option value="skill">Skills</option>
             <option value="plugin">Plugins</option>
           </select>
@@ -739,20 +842,20 @@ export default function App() {
                 value={interfaceImplementationFilter}
                 onChange={(event) => setInterfaceImplementationFilter(event.target.value as InterfaceImplementationFilter)}
               >
-                <option value="all">全部接口状态</option>
-                <option value="implemented">已实现</option>
-                <option value="inferred_implementation">推断实现</option>
-                <option value="documented_only">仅文档声明</option>
+                <option value="all">{copy.allInterfaceStates}</option>
+                <option value="implemented">{copy.implemented}</option>
+                <option value="inferred_implementation">{copy.inferred}</option>
+                <option value="documented_only">{copy.documentedOnly}</option>
               </select>
             ) : (
               <select
                 value={skillImplementationFilter}
                 onChange={(event) => setSkillImplementationFilter(event.target.value as SkillImplementationFilter)}
               >
-                <option value="all">全部技能状态</option>
-                <option value="implemented">已实现</option>
-                <option value="documented_only">仅文档声明</option>
-                <option value="not_found">未发现接口</option>
+                <option value="all">{copy.allSkillStates}</option>
+                <option value="implemented">{copy.implemented}</option>
+                <option value="documented_only">{copy.documentedOnly}</option>
+                <option value="not_found">{copy.notFound}</option>
               </select>
             )}
           </>
@@ -761,15 +864,13 @@ export default function App() {
 
       <section className="notes">
         <div className="note">{analysis.comparisonBase.note}</div>
-        <div className="note">接口表按 API 聚合；技能表已合并 GitHub 技能归档。</div>
+        <div className="note">{copy.note1}</div>
         <div className="note">
-          当前接口统计为 {analysis.summary.implementedInterfaces} 已实现 + {analysis.summary.inferredImplementedInterfaces} 推断实现 +{' '}
-          {analysis.summary.documentedOnlyInterfaces} 仅文档声明 = {analysis.summary.totalInterfaces} 总接口。
+          {copy.note2Prefix} {analysis.summary.implementedInterfaces} {copy.note2Middle} {analysis.summary.inferredImplementedInterfaces} {copy.note2Middle2}{' '}
+          {analysis.summary.documentedOnlyInterfaces} {copy.note2Middle3} {analysis.summary.totalInterfaces} {copy.note2Suffix}
         </div>
-        <div className="note">
-          “推断实现”表示当前没有抓到这条接口的完全同路径代码，但已经抓到它的子路径、父路径或同族通用路径实现，因此页面把它标记为大概率已被代码覆盖。
-        </div>
-        <div className="note">“仅文档声明”表示当前只在 SKILL/README 中识别到接口；“推断实现”表示代码里命中了它的子路径、动态路径或通用路径。</div>
+        <div className="note">{copy.note3}</div>
+        <div className="note">{copy.note4}</div>
       </section>
 
       {view === 'interfaces' ? (

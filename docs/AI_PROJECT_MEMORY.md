@@ -40,6 +40,14 @@ This file is the fast handoff layer for future chats. Read it when you need to k
 
 ## Recently Completed
 
+### 2026-04-22
+
+- Updated the main dashboard plus the ClawHub growth, download-insights, 10k-system, and market-intelligence pages with a shared EN/ZH language toggle stored in browser state
+- Reworked `src/market-intelligence/App.tsx` so skill/owner/opportunity details now expand inline as accordions instead of using the tall right-side detail panel
+- Added shared browser-side JSON caching in `src/site.tsx`, switched report pages to cached loads, and made the main dashboard defer `optimized-packages.json` until the catalog view is opened
+- Changed market-intelligence loading so `market-ecosystem-report.json` can render first while AgentSkill / AgentSkills.so datasets continue loading in the background
+- Verified the frontend changes with `npm run typecheck` and a clean `npx vite build`
+
 ### 2026-04-21
 
 - Tightened `scripts/build-agentskills-so-report.mjs` so it now targets security breakdown fields and cross-distribution install coverage more directly from live detail pages

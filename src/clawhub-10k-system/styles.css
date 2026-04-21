@@ -41,6 +41,39 @@ table {
   padding: 26px 0 60px;
 }
 
+.page-toolbar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 14px;
+}
+
+.lang-toggle {
+  display: inline-flex;
+  gap: 6px;
+  padding: 6px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(254, 251, 245, 0.84);
+  box-shadow: 0 12px 28px rgba(66, 44, 27, 0.08);
+  backdrop-filter: blur(14px);
+}
+
+.lang-toggle-button {
+  min-height: 36px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  cursor: pointer;
+}
+
+.lang-toggle-button.is-active {
+  background: var(--ink);
+  color: #fff;
+}
+
 .loading {
   min-height: 100vh;
   display: grid;
@@ -277,6 +310,10 @@ tbody tr:last-child td {
   .system-shell {
     width: min(100vw - 16px, 100%);
     padding-top: 16px;
+  }
+
+  .page-toolbar {
+    margin-bottom: 10px;
   }
 
   .hero,

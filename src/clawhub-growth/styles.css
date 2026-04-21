@@ -42,6 +42,39 @@ table {
   padding: 28px 0 64px;
 }
 
+.page-toolbar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 14px;
+}
+
+.lang-toggle {
+  display: inline-flex;
+  gap: 6px;
+  padding: 6px;
+  border: 1px solid var(--growth-line);
+  border-radius: 999px;
+  background: rgba(255, 251, 245, 0.82);
+  box-shadow: 0 12px 28px rgba(77, 49, 22, 0.08);
+  backdrop-filter: blur(14px);
+}
+
+.lang-toggle-button {
+  min-height: 36px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--growth-muted);
+  font: inherit;
+  cursor: pointer;
+}
+
+.lang-toggle-button.is-active {
+  background: var(--growth-ink);
+  color: #fff;
+}
+
 .loading {
   display: grid;
   place-items: center;
@@ -289,6 +322,10 @@ tbody tr:last-child td {
   .growth-shell {
     width: min(100vw - 20px, 100%);
     padding: 18px 0 42px;
+  }
+
+  .page-toolbar {
+    margin-bottom: 10px;
   }
 
   .growth-hero,
