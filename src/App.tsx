@@ -31,6 +31,7 @@ import {
   peekJsonCache,
   useAppLanguage,
   useDocumentTitle,
+  warmJsonCache,
 } from './site';
 
 type ViewMode = 'interfaces' | 'skills' | 'catalog';
@@ -79,6 +80,54 @@ const copyByLanguage = {
     implementedInterfaces: '已实现接口',
     inferredInterfaces: '推断实现接口',
     documentedInterfaces: '仅文档声明接口',
+    interfacesMeta: '个接口',
+    skillsMeta: '个技能',
+    githubArchivesMeta: '个 GitHub 归档',
+    officialDocLinkLabel: '官方 `createchatcompletion`',
+    sourceFallback: '来源',
+    suspiciousDefault: '可疑',
+    noDescription: '未找到描述。',
+    unknownVersion: '未知版本',
+    notAvailable: '暂无',
+    optimizedRelease: '优化版本',
+    automatedChecks: '自动校验',
+    viewClawhub: '查看 ClawHub',
+    originalZip: '原始压缩包',
+    optimizedPassed: '已通过',
+    interfaceSectionTitle: '接口列表',
+    interfaceSectionDescription: '以接口为主，展示 API、方法、入参出参摘要、技能实现和来源。',
+    coverageImplemented: '个技能',
+    coverageInferred: '推断有实现',
+    coverageDocumented: '仅文档声明',
+    interfacePath: '接口路径',
+    method: '方法',
+    implementationCoverage: '实现覆盖',
+    compareOfficial: '对比官方文档',
+    officialReference: '官方参考',
+    openDoc: '打开文档',
+    noDocPage: '当前未绑定具体文档页',
+    typicalInput: '典型入参',
+    typicalOutput: '典型出参',
+    noSamePathImpl: '当前下载包里没有识别到这个接口的同路径代码实现。',
+    groupSectionTitle: '同接口技能分组',
+    groupSectionDescription: '把实现了同一个接口的技能直接编成组，方便快速看重复实现、不同来源和可替代项。',
+    skillSectionTitle: '技能列表',
+    skillSectionDescription: '以技能为主，汇总来源、使用接口，以及同接口下的其它技能实现分组。',
+    noInterfaceImpl: '未发现接口实现',
+    useInterfaces: '使用接口',
+    relatedGroups: '同接口分组',
+    noEndpointFound: '未从代码或 SKILL 文档中提取到 AISA endpoint。',
+    noGroupAvailable: '无可分组接口。',
+    viewSource: '查看来源',
+    downloadArchive: '下载归档',
+    catalogSectionTitle: 'ClawHub 目录',
+    catalogSectionDescription: '保留原始目录视图，方便回看抓取结果与优化包下载入口。',
+    copyInterfaceLink: '复制接口卡片链接',
+    copySkillLink: '复制技能卡片链接',
+    implementedCount: '已实现',
+    inferredCount: '推断实现',
+    documentedCount: '仅文档',
+    implementationCoverageSources: '来源分布',
   },
   en: {
     pageTitle: 'AISA Skill & API Atlas',
@@ -119,8 +168,58 @@ const copyByLanguage = {
     implementedInterfaces: 'Implemented interfaces',
     inferredInterfaces: 'Inferred interfaces',
     documentedInterfaces: 'Documented-only interfaces',
+    interfacesMeta: 'interfaces',
+    skillsMeta: 'skills',
+    githubArchivesMeta: 'GitHub archives',
+    officialDocLinkLabel: 'official `createchatcompletion`',
+    sourceFallback: 'Source',
+    suspiciousDefault: 'Suspicious',
+    noDescription: 'No description found.',
+    unknownVersion: 'unknown',
+    notAvailable: 'n/a',
+    optimizedRelease: 'Optimized release',
+    automatedChecks: 'Automated checks',
+    viewClawhub: 'View ClawHub',
+    originalZip: 'Original zip',
+    optimizedPassed: 'passed',
+    interfaceSectionTitle: 'Interface list',
+    interfaceSectionDescription: 'API-first view of endpoints, methods, parameter summaries, skill implementations, and sources.',
+    coverageImplemented: 'skills',
+    coverageInferred: 'Likely implemented',
+    coverageDocumented: 'Documented only',
+    interfacePath: 'Interface path',
+    method: 'Method',
+    implementationCoverage: 'Coverage',
+    compareOfficial: 'Compared with official docs',
+    officialReference: 'Official reference',
+    openDoc: 'Open docs',
+    noDocPage: 'No specific doc page is linked yet.',
+    typicalInput: 'Typical input',
+    typicalOutput: 'Typical output',
+    noSamePathImpl: 'No same-path code implementation was detected in the downloaded archives.',
+    groupSectionTitle: 'Shared-interface groups',
+    groupSectionDescription: 'Group skills that implement the same interface so repeated implementations and substitutes are easy to compare.',
+    skillSectionTitle: 'Skill list',
+    skillSectionDescription: 'Skill-first view of sources, interfaces used, and related implementation groups.',
+    noInterfaceImpl: 'No interface implementation found',
+    useInterfaces: 'Interfaces used',
+    relatedGroups: 'Related groups',
+    noEndpointFound: 'No AISA endpoints were extracted from code or SKILL docs.',
+    noGroupAvailable: 'No related groups.',
+    viewSource: 'View source',
+    downloadArchive: 'Download archive',
+    catalogSectionTitle: 'ClawHub catalog',
+    catalogSectionDescription: 'Keep the raw catalog view for reviewing scraped items and optimized bundle entry points.',
+    copyInterfaceLink: 'Copy interface card link',
+    copySkillLink: 'Copy skill card link',
+    implementedCount: 'Implemented',
+    inferredCount: 'Inferred',
+    documentedCount: 'Documented',
+    implementationCoverageSources: 'Source mix',
   },
 } as const;
+
+type MainCopy = (typeof copyByLanguage)[keyof typeof copyByLanguage];
 
 function makeCardId(kind: 'interface' | 'skill', value: string) {
   return `${kind}-card-${value.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
@@ -168,11 +267,13 @@ function splitSummary(summary: string) {
 function SkillRefCard({
   skill,
   onJumpToSkill,
+  copy,
 }: {
   skill: AisaAnalysisInterface['skills'][number] | AisaAnalysisGroup['skills'][number];
   onJumpToSkill: (skillId: string) => void;
+  copy: MainCopy;
 }) {
-  const externalLabel = 'sourceLabel' in skill && skill.sourceType === 'clawhub' ? 'ClawHub' : '来源';
+  const externalLabel = 'sourceLabel' in skill && skill.sourceType === 'clawhub' ? 'ClawHub' : copy.sourceFallback;
 
   return (
     <div className="skill-ref-card">
@@ -212,7 +313,7 @@ function StatCard({
   );
 }
 
-function ItemCard({ item, optimizedPackage }: { item: CatalogItem; optimizedPackage?: OptimizedPackage }) {
+function ItemCard({ item, optimizedPackage, copy }: { item: CatalogItem; optimizedPackage?: OptimizedPackage; copy: MainCopy }) {
   const staticChecksPassed = optimizedPackage?.verificationStatus === 'static_checks_passed';
 
   return (
@@ -220,32 +321,34 @@ function ItemCard({ item, optimizedPackage }: { item: CatalogItem; optimizedPack
       <div className="item-topline">
         <span className={clsx('pill', item.type === 'plugin' ? 'pill-plugin' : 'pill-skill')}>{item.type}</span>
         {item.usesAisaApi ? <span className="pill pill-aisa">AISA API</span> : null}
-        {item.suspicious ? <span className="pill pill-alert">{item.suspiciousLabel ?? 'Suspicious'}</span> : null}
+        {item.suspicious ? <span className="pill pill-alert">{item.suspiciousLabel ?? copy.suspiciousDefault}</span> : null}
       </div>
       <h3>{item.name}</h3>
-      <p>{item.description || 'No description found.'}</p>
+      <p>{item.description || copy.noDescription}</p>
       <div className="item-meta">
         <span>@{item.owner}</span>
-        <span>v{item.version || 'unknown'}</span>
+        <span>v{item.version || copy.unknownVersion}</span>
         <span>
           <Download size={14} />
-          {item.downloads ?? 'n/a'}
+          {item.downloads ?? copy.notAvailable}
         </span>
       </div>
       {item.suspiciousReason ? <div className="item-warning">{item.suspiciousReason}</div> : null}
       {optimizedPackage ? (
         <div className="item-release">
-          <div className="item-release-title">Optimized release</div>
-          <div className="item-release-copy">Automated checks: {staticChecksPassed ? 'passed' : optimizedPackage.verificationStatus}</div>
+          <div className="item-release-title">{copy.optimizedRelease}</div>
+          <div className="item-release-copy">
+            {copy.automatedChecks}: {staticChecksPassed ? copy.optimizedPassed : optimizedPackage.verificationStatus}
+          </div>
         </div>
       ) : null}
       <div className="item-actions">
         <a className="item-action item-action-secondary" href={item.clawhubUrl} target="_blank" rel="noreferrer">
-          View ClawHub
+          {copy.viewClawhub}
         </a>
         {item.downloadUrl ? (
           <a className="item-action item-action-primary" href={item.downloadUrl} target="_blank" rel="noreferrer">
-            Original zip
+            {copy.originalZip}
           </a>
         ) : null}
       </div>
@@ -286,23 +389,25 @@ function InterfaceTable({
   onJumpToSkill,
   copiedCardId,
   onCopyCard,
+  copy,
 }: {
   items: AisaAnalysisInterface[];
   onJumpToSkill: (skillId: string) => void;
   copiedCardId: string | null;
   onCopyCard: (cardId: string) => void;
+  copy: MainCopy;
 }) {
   const coverageLabel = (item: AisaAnalysisInterface) => {
-    if (item.coverageStatus === 'implemented') return `${item.skillCount} skills`;
-    if (item.coverageStatus === 'inferred_implementation') return '推断有实现';
-    return '仅文档声明';
+    if (item.coverageStatus === 'implemented') return `${item.skillCount} ${copy.coverageImplemented}`;
+    if (item.coverageStatus === 'inferred_implementation') return copy.coverageInferred;
+    return copy.coverageDocumented;
   };
 
   return (
     <section className="table-shell">
       <div className="section-title">
-        <h2>接口列表</h2>
-        <p>以接口为主，展示 API、方法、入参出参摘要、技能实现和来源。</p>
+        <h2>{copy.interfaceSectionTitle}</h2>
+        <p>{copy.interfaceSectionDescription}</p>
       </div>
       <div className="table-list">
         {items.map((item) => (
@@ -332,7 +437,7 @@ function InterfaceTable({
                   className="icon-button"
                   onClick={() => onCopyCard(makeCardId('interface', item.endpoint))}
                   aria-label="Copy interface link"
-                  title="复制接口卡片链接"
+                  title={copy.copyInterfaceLink}
                 >
                   {copiedCardId === makeCardId('interface', item.endpoint) ? <Check size={15} /> : <Link2 size={15} />}
                 </button>
@@ -353,41 +458,49 @@ function InterfaceTable({
             </div>
             <div className="matrix matrix-compact">
               <div>
-                <div className="matrix-label">接口路径</div>
+                <div className="matrix-label">{copy.interfacePath}</div>
                 <div className="field-stack">
                   <code>{item.endpoint}</code>
-                  <span className="muted">Method: {item.method}</span>
+                  <span className="muted">
+                    {copy.method}: {item.method}
+                  </span>
                 </div>
               </div>
               <div>
-                <div className="matrix-label">实现覆盖</div>
+                <div className="matrix-label">{copy.implementationCoverage}</div>
                 <div className="field-stack">
-                  <span>已实现 {item.implementedSkillCount}</span>
-                  <span>推断实现 {item.inferredSkillCount}</span>
-                  <span>仅文档 {item.documentedOnlySkillCount}</span>
+                  <span>
+                    {copy.implementedCount} {item.implementedSkillCount}
+                  </span>
+                  <span>
+                    {copy.inferredCount} {item.inferredSkillCount}
+                  </span>
+                  <span>
+                    {copy.documentedCount} {item.documentedOnlySkillCount}
+                  </span>
                   <span>ClawHub {item.skillsBySource.clawhub} / GitHub {item.skillsBySource.github}</span>
                 </div>
               </div>
               <div>
-                <div className="matrix-label">对比官方文档</div>
+                <div className="matrix-label">{copy.compareOfficial}</div>
                 <div>{item.comparisonToCreateChatCompletion}</div>
               </div>
               <div>
-                <div className="matrix-label">官方参考</div>
+                <div className="matrix-label">{copy.officialReference}</div>
                 <div>
                   {item.officialDocUrl ? (
                     <a className="inline-link" href={item.officialDocUrl} target="_blank" rel="noreferrer">
-                      打开文档 <ExternalLink size={14} />
+                      {copy.openDoc} <ExternalLink size={14} />
                     </a>
                   ) : (
-                    <span className="muted">当前未绑定具体文档页</span>
+                    <span className="muted">{copy.noDocPage}</span>
                   )}
                 </div>
               </div>
             </div>
             <div className="matrix matrix-dual">
               <div>
-                <div className="matrix-label">典型入参</div>
+                <div className="matrix-label">{copy.typicalInput}</div>
                 <div className="chip-wrap">
                   {splitSummary(item.inputSummary).map((part) => (
                     <span key={`${item.endpoint}-input-${part}`} className="chip">
@@ -397,7 +510,7 @@ function InterfaceTable({
                 </div>
               </div>
               <div>
-                <div className="matrix-label">典型出参</div>
+                <div className="matrix-label">{copy.typicalOutput}</div>
                 <div className="chip-wrap">
                   {splitSummary(item.outputSummary).map((part) => (
                     <span key={`${item.endpoint}-output-${part}`} className="chip chip-muted">
@@ -410,10 +523,10 @@ function InterfaceTable({
             <div className="skill-ref-list">
               {item.skills.length > 0 ? (
                 item.skills.map((skill) => (
-                  <SkillRefCard key={`${item.endpoint}-${skill.skillId}`} skill={skill} onJumpToSkill={onJumpToSkill} />
+                  <SkillRefCard key={`${item.endpoint}-${skill.skillId}`} skill={skill} onJumpToSkill={onJumpToSkill} copy={copy} />
                 ))
               ) : (
-                <div className="empty-state small">当前下载包里没有识别到这个接口的同路径代码实现。</div>
+                <div className="empty-state small">{copy.noSamePathImpl}</div>
               )}
             </div>
           </article>
@@ -427,16 +540,18 @@ function GroupTable({
   items,
   onJumpToSkill,
   onJumpToInterface,
+  copy,
 }: {
   items: AisaAnalysisGroup[];
   onJumpToSkill: (skillId: string) => void;
   onJumpToInterface: (endpoint: string) => void;
+  copy: MainCopy;
 }) {
   return (
     <section className="table-shell">
       <div className="section-title">
-        <h2>同接口技能分组</h2>
-        <p>把实现了同一个接口的技能直接编成组，方便快速看重复实现、不同来源和可替代项。</p>
+        <h2>{copy.groupSectionTitle}</h2>
+        <p>{copy.groupSectionDescription}</p>
       </div>
       <div className="group-grid">
         {items.map((group) => (
@@ -452,7 +567,7 @@ function GroupTable({
             </div>
             <div className="skill-ref-list skill-ref-list-dense">
               {group.skills.map((skill) => (
-                <SkillRefCard key={`${group.endpoint}-${skill.skillId}`} skill={skill} onJumpToSkill={onJumpToSkill} />
+                <SkillRefCard key={`${group.endpoint}-${skill.skillId}`} skill={skill} onJumpToSkill={onJumpToSkill} copy={copy} />
               ))}
             </div>
           </article>
@@ -468,18 +583,20 @@ function SkillTable({
   onJumpToInterface,
   copiedCardId,
   onCopyCard,
+  copy,
 }: {
   items: AisaAnalysisSkill[];
   relatedByEndpoint: Map<string, string[]>;
   onJumpToInterface: (endpoint: string) => void;
   copiedCardId: string | null;
   onCopyCard: (cardId: string) => void;
+  copy: MainCopy;
 }) {
   return (
     <section className="table-shell">
       <div className="section-title">
-        <h2>技能列表</h2>
-        <p>以技能为主，汇总来源、使用接口，以及同接口下的其它技能实现分组。</p>
+        <h2>{copy.skillSectionTitle}</h2>
+        <p>{copy.skillSectionDescription}</p>
       </div>
       <div className="table-list">
         {items.map((skill) => (
@@ -497,7 +614,7 @@ function SkillTable({
                   className="icon-button"
                   onClick={() => onCopyCard(makeCardId('skill', skill.id))}
                   aria-label="Copy skill link"
-                  title="复制技能卡片链接"
+                  title={copy.copySkillLink}
                 >
                   {copiedCardId === makeCardId('skill', skill.id) ? <Check size={15} /> : <Link2 size={15} />}
                 </button>
@@ -505,14 +622,14 @@ function SkillTable({
                   {skill.sourceLabel}
                 </span>
                 <span className={clsx('pill', skill.endpointCount > 0 ? 'pill-aisa' : 'pill-alert')}>
-                  {skill.endpointCount > 0 ? `${skill.endpointCount} interfaces` : '未发现接口实现'}
+                  {skill.endpointCount > 0 ? `${skill.endpointCount} ${copy.interfacesMeta}` : copy.noInterfaceImpl}
                 </span>
               </div>
             </div>
-            <p className="skill-description">{skill.description || 'No description found.'}</p>
+            <p className="skill-description">{skill.description || copy.noDescription}</p>
             <div className="matrix skill-matrix">
               <div>
-                <div className="matrix-label">使用接口</div>
+                <div className="matrix-label">{copy.useInterfaces}</div>
                 <div className="chip-wrap">
                   {skill.endpoints.length > 0 ? (
                     skill.endpoints.map((endpoint) => (
@@ -526,12 +643,12 @@ function SkillTable({
                       </button>
                     ))
                   ) : (
-                    <span className="muted">未从代码或 SKILL 文档中提取到 AISA endpoint。</span>
+                    <span className="muted">{copy.noEndpointFound}</span>
                   )}
                 </div>
               </div>
               <div>
-                <div className="matrix-label">同接口分组</div>
+                <div className="matrix-label">{copy.relatedGroups}</div>
                 <div className="chip-wrap">
                   {skill.endpoints.length > 0 ? (
                     skill.endpoints
@@ -548,17 +665,17 @@ function SkillTable({
                         </button>
                       ))
                   ) : (
-                    <span className="muted">无可分组接口。</span>
+                    <span className="muted">{copy.noGroupAvailable}</span>
                   )}
                 </div>
               </div>
             </div>
             <div className="item-actions">
               <a className="item-action item-action-secondary" href={skill.sourceUrl} target="_blank" rel="noreferrer">
-                查看来源
+                {copy.viewSource}
               </a>
               <a className="item-action item-action-primary" href={`${import.meta.env.BASE_URL}${skill.downloadPath}`} download>
-                下载归档
+                {copy.downloadArchive}
               </a>
             </div>
           </article>
@@ -614,6 +731,16 @@ export default function App() {
       .then((json) => setAnalysis(json))
       .catch((error) => console.error('Failed to load AISA API analysis data', error));
   }, []);
+
+  useEffect(() => {
+    if (!analysis) return;
+    warmJsonCache([
+      'data/clawhub-growth-report.json',
+      'data/clawhub-download-insights.json',
+      'data/clawhub-10k-system-report.json',
+      'data/market-ecosystem-report.json',
+    ]);
+  }, [analysis]);
 
   useEffect(() => {
     if (optimized || view !== 'catalog') return;
@@ -768,7 +895,7 @@ export default function App() {
           <p>
             {copy.heroDescriptionPrefix}
             <a href={analysis.comparisonBase.docUrl} target="_blank" rel="noreferrer">
-              官方 `createchatcompletion`
+              {copy.officialDocLinkLabel}
             </a>
             {copy.heroDescriptionSuffix}
           </p>
@@ -799,9 +926,15 @@ export default function App() {
             <span>
               {copy.updatedAt} {format(new Date(analysis.generatedAt), 'yyyy-MM-dd HH:mm')}
             </span>
-            <span>{analysis.summary.totalInterfaces} interfaces</span>
-            <span>{analysis.summary.totalSkills} skills</span>
-            <span>{analysis.summary.githubSkills} GitHub archives</span>
+            <span>
+              {analysis.summary.totalInterfaces} {copy.interfacesMeta}
+            </span>
+            <span>
+              {analysis.summary.totalSkills} {copy.skillsMeta}
+            </span>
+            <span>
+              {analysis.summary.githubSkills} {copy.githubArchivesMeta}
+            </span>
           </div>
         </div>
         <div className="hero-panel hero-panel-grid">
@@ -878,6 +1011,7 @@ export default function App() {
           items={filteredInterfaces}
           onJumpToSkill={jumpToSkillCard}
           copiedCardId={copiedCardId}
+          copy={copy}
           onCopyCard={(cardId) => {
             copyCardLink(cardId).then(() => setCopiedCardId(cardId)).catch((error) => console.error('Failed to copy interface link', error));
           }}
@@ -889,6 +1023,7 @@ export default function App() {
           relatedByEndpoint={relatedByEndpoint}
           onJumpToInterface={(endpoint) => jumpToCard('interfaces', makeCardId('interface', endpoint), setView)}
           copiedCardId={copiedCardId}
+          copy={copy}
           onCopyCard={(cardId) => {
             copyCardLink(cardId).then(() => setCopiedCardId(cardId)).catch((error) => console.error('Failed to copy skill link', error));
           }}
@@ -898,18 +1033,19 @@ export default function App() {
         <GroupTable
           items={filteredGroups.slice(0, 24)}
           onJumpToSkill={jumpToSkillCard}
+          copy={copy}
           onJumpToInterface={(endpoint) => jumpToCard('interfaces', makeCardId('interface', endpoint), setView)}
         />
       ) : null}
       {view === 'catalog' ? (
         <section className="table-shell">
           <div className="section-title">
-            <h2>ClawHub 目录</h2>
-            <p>保留原始目录视图，方便回看抓取结果与优化包下载入口。</p>
+            <h2>{copy.catalogSectionTitle}</h2>
+            <p>{copy.catalogSectionDescription}</p>
           </div>
           <div className="catalog-grid">
             {filteredCatalog.map((item) => (
-              <ItemCard key={item.id} item={item} optimizedPackage={optimizedByUrl.get(item.clawhubUrl)} />
+              <ItemCard key={item.id} item={item} optimizedPackage={optimizedByUrl.get(item.clawhubUrl)} copy={copy} />
             ))}
           </div>
         </section>

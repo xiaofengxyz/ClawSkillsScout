@@ -5,6 +5,7 @@ export type AppLanguage = 'zh' | 'en';
 const LANGUAGE_STORAGE_KEY = 'skillget-language';
 const JSON_CACHE_PREFIX = 'skillget-json:';
 const jsonMemoryCache = new Map<string, unknown>();
+const jsonLoadCache = new Map<string, Promise<unknown>>();
 
 type NetworkNavigator = Navigator & {
   connection?: {
@@ -107,17 +108,29 @@ export function useDocumentTitle(title: string) {
 }
 
 export async function loadJsonCached<T>(path: string): Promise<T> {
+  const url = resolveJsonUrl(path);
   const cached = readCachedJson<T>(path);
   if (cached) return cached;
 
-  const response = await fetch(resolveJsonUrl(path));
-  if (!response.ok) {
-    throw new Error(`${path.split('/').pop() ?? path} ${response.status}`);
-  }
+  const pending = jsonLoadCache.get(url);
+  if (pending) return pending as Promise<T>;
 
-  const json = (await response.json()) as T;
-  writeCachedJson(path, json);
-  return json;
+  const request = fetch(url)
+    .then(async (response) => {
+      if (!response.ok) {
+        throw new Error(`${path.split('/').pop() ?? path} ${response.status}`);
+      }
+
+      const json = (await response.json()) as T;
+      writeCachedJson(path, json);
+      return json;
+    })
+    .finally(() => {
+      jsonLoadCache.delete(url);
+    });
+
+  jsonLoadCache.set(url, request);
+  return request;
 }
 
 export function peekJsonCache<T>(path: string): T | null {
@@ -139,6 +152,9 @@ export function warmJsonCache(paths: string[]) {
 
   schedule(() => {
     paths.forEach((path) => {
+      const url = resolveJsonUrl(path);
+      if (jsonMemoryCache.has(url) || jsonLoadCache.has(url)) return;
+
       void loadJsonCached(path).catch(() => {
         // Best-effort warm cache only.
       });

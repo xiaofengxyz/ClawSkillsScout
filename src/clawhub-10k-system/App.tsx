@@ -9,6 +9,7 @@ import {
   translateLevel,
   useAppLanguage,
   useDocumentTitle,
+  warmJsonCache,
 } from '../site';
 
 const copyByLanguage = {
@@ -60,6 +61,9 @@ const copyByLanguage = {
     replaceableApis: '可替换 API 家族',
     monetizationFunnel: '变现漏斗',
     roadmap: '路线图',
+    downloadsThreshold: '10K 下载门槛',
+    repeatableSystems: '可复制系统',
+    totalSkillsSummary: '总数',
   },
   en: {
     pageTitle: 'ClawHub 10K System Report',
@@ -109,6 +113,9 @@ const copyByLanguage = {
     replaceableApis: 'Replaceable API families',
     monetizationFunnel: 'Monetization funnel',
     roadmap: 'Roadmap',
+    downloadsThreshold: '10K downloads threshold',
+    repeatableSystems: 'Repeatable systems',
+    totalSkillsSummary: 'total',
   },
 } as const;
 
@@ -239,7 +246,10 @@ export default function App() {
 
   useEffect(() => {
     loadJsonCached<SystemReport>('data/clawhub-10k-system-report.json')
-      .then((json) => setReport(json))
+      .then((json) => {
+        setReport(json);
+        warmJsonCache(['data/clawhub-download-insights.json', 'data/market-ecosystem-report.json']);
+      })
       .catch((error) => console.error('Failed to load system report', error));
   }, []);
 
@@ -305,7 +315,7 @@ export default function App() {
           <span className="chip">
             {copy.updatedAt} {format(new Date(report.generatedAt), 'yyyy-MM-dd HH:mm')}
           </span>
-          <span className="chip">10K downloads threshold</span>
+          <span className="chip">{copy.downloadsThreshold}</span>
           <span className="chip">
             {copy.downloaded10k}: {report.summary.downloaded10kSkills}
           </span>
@@ -330,7 +340,7 @@ export default function App() {
               <li key={item}>{item}</li>
             ))}
           </ul>
-          <h3>Repeatable systems</h3>
+          <h3>{copy.repeatableSystems}</h3>
           <ul className="bullet-list">
             {report.documents.document1.repeatableSystem.map((item) => (
               <li key={item}>{item}</li>
@@ -348,7 +358,7 @@ export default function App() {
               <a key={author.author} href={author.profileUrl} target="_blank" rel="noreferrer" className="sub-card anchor-card">
                 <strong>@{author.author}</strong>
                 <span>
-                  total={author.totalSkills} · 10k+={author.numberOf10kPlusSkills}
+                  {copy.totalSkillsSummary}={author.totalSkills} · 10k+={author.numberOf10kPlusSkills}
                 </span>
                 <small>{author.topSkillNames.join(' · ')}</small>
               </a>

@@ -46,6 +46,11 @@ This file is the fast handoff layer for future chats. Read it when you need to k
 - Reworked `src/market-intelligence/App.tsx` so skill/owner/opportunity details now expand inline as accordions instead of using the tall right-side detail panel
 - Added shared browser-side JSON caching in `src/site.tsx`, switched report pages to cached loads, and made the main dashboard defer `optimized-packages.json` until the catalog view is opened
 - Changed market-intelligence loading so `market-ecosystem-report.json` can render first while AgentSkill / AgentSkills.so datasets continue loading in the background
+- Finished a second frontend localization pass so the main dashboard and market-intelligence page now translate more of their headings, action labels, stat labels, and empty states instead of leaving mixed-language shell UI
+- Added idle-time warming from the main dashboard for the growth, downloads, 10k-system, and market-intelligence JSON datasets, plus fallback HTML titles/descriptions for the standalone pages
+- Added JSON request de-duplication in `src/site.tsx` so parallel effects and idle warmups no longer fetch the same dataset twice in one session
+- Added a third UI polish pass across `src/clawhub-download-insights/App.tsx`, `src/clawhub-growth/App.tsx`, `src/clawhub-10k-system/App.tsx`, and `src/market-intelligence/App.tsx` so more inline metrics and accordion labels follow the EN/ZH toggle instead of staying mixed-language
+- Expanded secondary-page idle warming so the growth, download-insights, and 10k-system pages now prewarm adjacent report datasets for faster same-session navigation
 - Verified the frontend changes with `npm run typecheck` and a clean `npx vite build`
 
 ### 2026-04-21

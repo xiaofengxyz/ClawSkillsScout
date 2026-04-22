@@ -53,6 +53,10 @@ const copyByLanguage = {
     apiFamilies: 'API 家族',
     signatureSkills: '代表作',
     portfolioShape: '作品结构',
+    unknown: '未知',
+    totalSkillsLabel: '总技能数',
+    totalLabel: '总数',
+    sampleDownloadsLabel: '样本下载',
   },
   en: {
     pageTitle: 'ClawHub Download Insights',
@@ -94,6 +98,10 @@ const copyByLanguage = {
     apiFamilies: 'API families',
     signatureSkills: 'Signature skills',
     portfolioShape: 'Portfolio shape',
+    unknown: 'Unknown',
+    totalSkillsLabel: 'total skills',
+    totalLabel: 'total',
+    sampleDownloadsLabel: 'sample downloads',
   },
 } as const;
 
@@ -165,7 +173,7 @@ function SkillBoard({
                       {language === 'zh' ? '，输出价值' : ', output value'} {skill.outputValue}。
                     </li>
                     <li>
-                      {copy.apiClues}：{skill.likelyApis.join(' · ') || 'Unknown'}。
+                      {copy.apiClues}：{skill.likelyApis.join(' · ') || copy.unknown}。
                     </li>
                     <li>
                       {copy.repeatableTags}：{skill.repeatablePatternFlags.join(' · ') || (language === 'zh' ? '暂无' : 'n/a')}。
@@ -216,15 +224,14 @@ function AuthorBoard({
               >
                 <strong>@{author.author}</strong>
                 <small>
-                  {author.totalSkills} total · 10K+ {author.numberOf10kPlusSkills} · {formatMetricValue(author.totalDownloadsInTopSample, language)}{' '}
-                  {language === 'zh' ? '样本下载' : 'sample downloads'}
+                  {author.totalSkills} {copy.totalLabel} · 10K+ {author.numberOf10kPlusSkills} · {formatMetricValue(author.totalDownloadsInTopSample, language)} {copy.sampleDownloadsLabel}
                 </small>
               </button>
               {isActive ? (
                 <div className="accordion-body">
                   <div className="chip-row">
                     {[
-                      `${author.totalSkills} total skills`,
+                      `${author.totalSkills} ${copy.totalSkillsLabel}`,
                       `10K+ ${author.numberOf10kPlusSkills}`,
                       author.strategyLabel,
                       author.authorPageStatus,
@@ -239,7 +246,7 @@ function AuthorBoard({
                       {copy.topSampleDownloads}: {formatMetricValue(author.totalDownloadsInTopSample, language)}。
                     </li>
                     <li>
-                      {copy.apiFamilies}: {author.apiFamilies.join(' · ') || 'Unknown'}。
+                      {copy.apiFamilies}: {author.apiFamilies.join(' · ') || copy.unknown}。
                     </li>
                     <li>
                       {copy.signatureSkills}：{author.topSkillNames.join(' · ') || (language === 'zh' ? '暂无' : 'n/a')}。
@@ -276,7 +283,7 @@ export default function App() {
     loadJsonCached<DownloadInsightsReport>('data/clawhub-download-insights.json')
       .then((json) => {
         setReport(json);
-        warmJsonCache(['data/market-ecosystem-report.json']);
+        warmJsonCache(['data/clawhub-growth-report.json', 'data/market-ecosystem-report.json']);
       })
       .catch((error) => console.error('Failed to load clawhub download insights report', error));
   }, []);
@@ -376,7 +383,7 @@ export default function App() {
                 <span>
                   {formatMetricValue(skill.downloads, language)} {copy.downloads} · {skill.category}
                 </span>
-                <small>{skill.likelyApis.join(' · ') || 'Unknown'}</small>
+                <small>{skill.likelyApis.join(' · ') || copy.unknown}</small>
               </a>
             ))}
           </div>

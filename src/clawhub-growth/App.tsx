@@ -9,6 +9,7 @@ import {
   translateLevel,
   useAppLanguage,
   useDocumentTitle,
+  warmJsonCache,
 } from '../site';
 
 const copyByLanguage = {
@@ -61,6 +62,7 @@ const copyByLanguage = {
     input: '输入门槛',
     output: '输出价值',
     monetization: '变现潜力',
+    skillsUnit: '个技能',
   },
   en: {
     pageTitle: 'ClawHub Growth Report',
@@ -111,6 +113,7 @@ const copyByLanguage = {
     input: 'Input',
     output: 'Output',
     monetization: 'Monetization',
+    skillsUnit: 'skills',
   },
 } as const;
 
@@ -240,7 +243,10 @@ export default function App() {
 
   useEffect(() => {
     loadJsonCached<GrowthReport>('data/clawhub-growth-report.json')
-      .then((json) => setReport(json))
+      .then((json) => {
+        setReport(json);
+        warmJsonCache(['data/clawhub-download-insights.json', 'data/market-ecosystem-report.json']);
+      })
       .catch((error) => console.error('Failed to load clawhub growth report', error));
   }, []);
 
@@ -391,7 +397,7 @@ export default function App() {
               <ul className="bullet-list">
                 {report.documents.document4.replaceableApis.map((item) => (
                   <li key={item.apiFamily}>
-                    <strong>{item.apiFamily}</strong> · {item.skillCount} skills · {item.whyItMatters}
+                    <strong>{item.apiFamily}</strong> · {item.skillCount} {copy.skillsUnit} · {item.whyItMatters}
                   </li>
                 ))}
               </ul>
