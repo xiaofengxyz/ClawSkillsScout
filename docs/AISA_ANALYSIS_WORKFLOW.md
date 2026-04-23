@@ -49,7 +49,26 @@ npm run pipeline:aisa-analysis
 3. `npm run analyze:aisa`
 4. `vite build`
 
-GitHub Actions 也应该优先使用这条流水线，而不是只跑 `build`。
+`push master` 的 GitHub Actions 主站刷新也使用这条流水线，而不是只跑 `build`。
+
+### 定时全量流水线
+
+如果除了主站 AISA 分析，还要把增长、下载榜、plugin、10k、跨生态和专项报告全部刷新：
+
+```bash
+npm run pipeline:scheduled-analysis
+```
+
+这个命令会在标准分析流水线之后继续执行：
+
+1. `npm run analyze:full-report-suite`
+2. `vite build`
+
+适用于：
+
+- GitHub Actions 的 `schedule`
+- GitHub Actions 的 `workflow_dispatch`
+- 本地模拟一次“定时全量更新”
 
 ### 站点构建
 
@@ -67,24 +86,25 @@ npm run build
 
 ## 2.1 GitHub Actions 行为
 
-当前 `.github/workflows/deploy.yml` 已配置为执行：
+当前 `.github/workflows/deploy.yml` 按触发方式分成两档：
 
-```bash
-npm run pipeline:aisa-analysis
-```
+- `push master`：执行 `npm run pipeline:aisa-analysis`
+- `schedule` 和 `workflow_dispatch`：执行 `npm run pipeline:scheduled-analysis`
 
-这意味着 GitHub Actions 在每次触发时会：
+这意味着 GitHub Actions 在不同触发场景下会：
 
 1. 刷新 ClawHub skill 下载归档
 2. 刷新 GitHub skill 归档
 3. 重新生成 `public/data/aisa-api-analysis.json`
-4. 构建 GitHub Pages 页面
-5. 上传分析产物 artifact，便于失败排查和离线核对
+4. 在定时/手动触发时继续刷新完整报告链路
+5. 构建 GitHub Pages 页面
+6. 上传分析产物与报告产物 artifact，便于失败排查和离线核对
 
 结论：
 
 - 会自己分析数据
-- 也会自己刷新分析所依赖的归档
+- 会自己刷新分析所依赖的归档
+- 定时/手动触发会额外刷新报告库，而不只是主站 AISA 数据
 - 如果某一步因为外部网络失败，整个 workflow 可能失败
 - 即使部署失败，只要 workflow 跑到上传步骤，仍可从 artifact 下载分析结果和索引
 
@@ -93,7 +113,7 @@ npm run pipeline:aisa-analysis
 - `build` job 设置了超时保护
 - workflow 开启了 concurrency，避免同一分支的重复部署互相覆盖
 - `pipeline:aisa-analysis` 在 CI 中会自动重试 3 次，缓解外部网络抖动
-- 上传 `catalog.json`、`aisa-api-analysis.json`、下载索引和 `dist/` 作为 artifact
+- 上传 `public/data/*.json`、`public/reports/`、下载索引和 `dist/` 作为 artifact
 
 ## 3. 输入与输出
 
@@ -112,8 +132,8 @@ npm run pipeline:aisa-analysis
 
 ### 页面消费关系
 
-- `[src/App.tsx](/mnt/d/workplace/skillGet/src/App.tsx)` 读取 `aisa-api-analysis.json`
-- `[src/types.ts](/mnt/d/workplace/skillGet/src/types.ts)` 定义接口/技能/分组数据结构
+- `[src/App.tsx](/mnt/d/workplace/skillget/src/App.tsx)` 读取 `aisa-api-analysis.json`
+- `[src/types.ts](/mnt/d/workplace/skillget/src/types.ts)` 定义接口/技能/分组数据结构
 - 页面展示三块核心视图：
   - 接口列表
   - 技能列表
@@ -249,9 +269,9 @@ npx vite build
 
 最少需要同步检查这些文件：
 
-- `[README.md](/mnt/d/workplace/skillGet/README.md)`
-- `[docs/PROJECT_OVERVIEW_AI.md](/mnt/d/workplace/skillGet/docs/PROJECT_OVERVIEW_AI.md)`
-- `[docs/project-map.json](/mnt/d/workplace/skillGet/docs/project-map.json)`
+- `[README.md](/mnt/d/workplace/skillget/README.md)`
+- `[docs/PROJECT_OVERVIEW_AI.md](/mnt/d/workplace/skillget/docs/PROJECT_OVERVIEW_AI.md)`
+- `[docs/project-map.json](/mnt/d/workplace/skillget/docs/project-map.json)`
 
 ## 9. 推荐日常用法
 

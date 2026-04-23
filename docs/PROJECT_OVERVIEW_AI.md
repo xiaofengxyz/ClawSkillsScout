@@ -1,15 +1,15 @@
 # Project Overview For AI
 
-机器可读索引见：[docs/project-map.json](/mnt/d/workplace/skillGet/docs/project-map.json)
+机器可读索引见：[docs/project-map.json](/mnt/d/workplace/skillget/docs/project-map.json)
 
 ## 操作规则
 
 开始任务前先读：
 
-1. [AGENTS.md](/mnt/d/workplace/skillGet/AGENTS.md)
-2. [README.md](/mnt/d/workplace/skillGet/README.md)
-3. [docs/project-map.json](/mnt/d/workplace/skillGet/docs/project-map.json)
-4. [docs/AI_PROJECT_MEMORY.md](/mnt/d/workplace/skillGet/docs/AI_PROJECT_MEMORY.md)
+1. [AGENTS.md](/mnt/d/workplace/skillget/AGENTS.md)
+2. [README.md](/mnt/d/workplace/skillget/README.md)
+3. [docs/project-map.json](/mnt/d/workplace/skillget/docs/project-map.json)
+4. [docs/AI_PROJECT_MEMORY.md](/mnt/d/workplace/skillget/docs/AI_PROJECT_MEMORY.md)
 
 结束任务时不需要每次都回写全部项目文档。只有在以下情况发生时，才更新 `README.md`、本文件或 `docs/project-map.json`：
 
@@ -24,14 +24,14 @@
 
 与 AISA 接口分析相关的标准流程和验收规范见：
 
-- [docs/AISA_ANALYSIS_WORKFLOW.md](/mnt/d/workplace/skillGet/docs/AISA_ANALYSIS_WORKFLOW.md)
+- [docs/AISA_ANALYSIS_WORKFLOW.md](/mnt/d/workplace/skillget/docs/AISA_ANALYSIS_WORKFLOW.md)
 
 快速查项目功能和文档时，优先看：
 
-- [docs/PROJECT_MANUAL.md](/mnt/d/workplace/skillGet/docs/PROJECT_MANUAL.md)
+- [docs/PROJECT_MANUAL.md](/mnt/d/workplace/skillget/docs/PROJECT_MANUAL.md)
 - [scripts/README.md](/mnt/d/workplace/skillget/scripts/README.md)
-- [reports/README.md](/mnt/d/workplace/skillGet/reports/README.md)
-- [public/reports/index.html](/mnt/d/workplace/skillGet/public/reports/index.html)
+- [reports/README.md](/mnt/d/workplace/skillget/reports/README.md)
+- [public/reports/index.html](/mnt/d/workplace/skillget/public/reports/index.html)
 
 ## 1. 项目一句话说明
 
@@ -99,44 +99,44 @@
 
 ### 已完成的主线
 
-- 已有可运行的 ClawHub 抓取脚本：[scripts/scrape-clawhub.ts](/mnt/d/workplace/skillGet/scripts/scrape-clawhub.ts)
-- 已有按 `config/accounts.json` 下载账号下全部 skills 到 `public/downloads/clawHub/` 的脚本：[scripts/download-clawhub-account-skills.mjs](/mnt/d/workplace/skillGet/scripts/download-clawhub-account-skills.mjs)，会先尝试刷新渲染后的 owner 页面种子，下载时优先尝试中文镜像，再回退到 ClawHub 原始下载地址
-- 已有按 `public/data/catalog.json` 中 owner 视作 GitHub 用户名，扫描公开仓库里的 `SKILL.md` 并打包到 `public/downloads/github/` 的脚本：[scripts/download-github-account-skills.mjs](/mnt/d/workplace/skillGet/scripts/download-github-account-skills.mjs)
-- 已有把 GitHub skill tar 包转换成 ClawHub 可发布 zip 包的脚本：[scripts/convert-github-skills-to-clawhub.py](/mnt/d/workplace/skillGet/scripts/convert-github-skills-to-clawhub.py)，输出到 `public/downloads/clawHub-github/`，并生成 EN/ZH 两套 `SKILL.md`
-- 已有扫描 `public/downloads/clawHub/` 与 `public/downloads/github/` 全部归档、提取 AISA 接口并生成分析数据的脚本：[scripts/generate-aisa-api-analysis.py](/mnt/d/workplace/skillGet/scripts/generate-aisa-api-analysis.py)
+- 已有可运行的 ClawHub 抓取脚本：[scripts/scrape-clawhub.ts](/mnt/d/workplace/skillget/scripts/scrape-clawhub.ts)
+- 已有按 `config/accounts.json` 下载账号下全部 skills 到 `public/downloads/clawHub/` 的脚本：[scripts/download-clawhub-account-skills.mjs](/mnt/d/workplace/skillget/scripts/download-clawhub-account-skills.mjs)，会先尝试刷新渲染后的 owner 页面种子，下载时优先尝试中文镜像，再回退到 ClawHub 原始下载地址
+- 已有按 `public/data/catalog.json` 中 owner 视作 GitHub 用户名，扫描公开仓库里的 `SKILL.md` 并打包到 `public/downloads/github/` 的脚本：[scripts/download-github-account-skills.mjs](/mnt/d/workplace/skillget/scripts/download-github-account-skills.mjs)
+- 已有把 GitHub skill tar 包转换成 ClawHub 可发布 zip 包的脚本：[scripts/convert-github-skills-to-clawhub.py](/mnt/d/workplace/skillget/scripts/convert-github-skills-to-clawhub.py)，输出到 `public/downloads/clawHub-github/`，并生成 EN/ZH 两套 `SKILL.md`
+- 已有扫描 `public/downloads/clawHub/` 与 `public/downloads/github/` 全部归档、提取 AISA 接口并生成分析数据的脚本：[scripts/generate-aisa-api-analysis.py](/mnt/d/workplace/skillget/scripts/generate-aisa-api-analysis.py)
 - 已有推荐的一键分析流水线：`npm run pipeline:aisa-analysis`
 - 已有给 GitHub Action 定时任务使用的全量刷新流水线：`npm run pipeline:scheduled-analysis`
-- 已有静态站前端：[src/App.tsx](/mnt/d/workplace/skillGet/src/App.tsx)
+- 已有静态站前端：[src/App.tsx](/mnt/d/workplace/skillget/src/App.tsx)
 - 已有独立增长分析页入口：`clawhub-growth.html` + `src/clawhub-growth/*`
 - 已有独立下载榜爆款分析页入口：`clawhub-download-insights.html` + `src/clawhub-download-insights/*`
 - 已有独立 plugin 三榜分析页入口：`clawhub-plugins.html` + `src/clawhub-plugins/*`
 - 已有独立 10k+ 系统分析页入口：`clawhub-10k-system.html` + `src/clawhub-10k-system/*`
 - 已有独立跨生态情报页入口：`market-intelligence.html` + `src/market-intelligence/*`
-- 已有 downloads / stars / installs 三榜综合分析脚本：[scripts/build-clawhub-multi-ranking-report.py](/mnt/d/workplace/skillGet/scripts/build-clawhub-multi-ranking-report.py)
-- 已有老板版总报告脚本：[scripts/build-clawhub-viral-boss-report.py](/mnt/d/workplace/skillGet/scripts/build-clawhub-viral-boss-report.py)
-- 已有 AISA 全量技能改造计划与 Top 200 转 AISA 计划脚本：[scripts/build-aisa-expansion-plans.py](/mnt/d/workplace/skillGet/scripts/build-aisa-expansion-plans.py)
-- 已有跨生态市场情报脚本：[scripts/build-market-ecosystem-report.mjs](/mnt/d/workplace/skillGet/scripts/build-market-ecosystem-report.mjs)
-- 已有 AgentSkill 专项分析脚本：[scripts/build-agentskill-report.mjs](/mnt/d/workplace/skillGet/scripts/build-agentskill-report.mjs)
-- 已有 AgentSkills.so 专项分析脚本：[scripts/build-agentskills-so-report.mjs](/mnt/d/workplace/skillGet/scripts/build-agentskills-so-report.mjs)
-- 已有 ClawHub plugin 爆款分析脚本：[scripts/build-clawhub-plugin-report.mjs](/mnt/d/workplace/skillGet/scripts/build-clawhub-plugin-report.mjs)
+- 已有 downloads / stars / installs 三榜综合分析脚本：[scripts/build-clawhub-multi-ranking-report.py](/mnt/d/workplace/skillget/scripts/build-clawhub-multi-ranking-report.py)
+- 已有老板版总报告脚本：[scripts/build-clawhub-viral-boss-report.py](/mnt/d/workplace/skillget/scripts/build-clawhub-viral-boss-report.py)
+- 已有 AISA 全量技能改造计划与 Top 200 转 AISA 计划脚本：[scripts/build-aisa-expansion-plans.py](/mnt/d/workplace/skillget/scripts/build-aisa-expansion-plans.py)
+- 已有跨生态市场情报脚本：[scripts/build-market-ecosystem-report.mjs](/mnt/d/workplace/skillget/scripts/build-market-ecosystem-report.mjs)
+- 已有 AgentSkill 专项分析脚本：[scripts/build-agentskill-report.mjs](/mnt/d/workplace/skillget/scripts/build-agentskill-report.mjs)
+- 已有 AgentSkills.so 专项分析脚本：[scripts/build-agentskills-so-report.mjs](/mnt/d/workplace/skillget/scripts/build-agentskills-so-report.mjs)
+- 已有 ClawHub plugin 爆款分析脚本：[scripts/build-clawhub-plugin-report.mjs](/mnt/d/workplace/skillget/scripts/build-clawhub-plugin-report.mjs)
 - 已有构建结果目录：`dist/`
 - 已有公开数据目录：`public/data/catalog.json`、`public/data/aisa-api-analysis.json`、`public/data/clawhub-growth-report.json`、`public/data/clawhub-download-insights.json`、`public/data/clawhub-plugin-report.json`、`public/data/clawhub-10k-system-report.json`、`public/data/clawhub-multi-ranking-report.json`、`public/data/aisa-all-skills-breakout-plan.json`、`public/data/clawhub-top200-aisa-conversion-plan.json`、`public/data/market-ecosystem-report.json`、`public/data/agentskill-report.json`、`public/data/agentskills-so-report.json`
 - 已有公开报告目录：`public/reports/ClawHub_Plugin_Viral_Report_*.md/.docx`、`public/reports/ClawHub_10K_System_Report*.md/.docx`、`public/reports/ClawHub_10K_Boss_Brief_*.md/.docx`、`public/reports/ClawHub_Multi_Ranking_Report_ZH.md/.docx`、`public/reports/ClawHub_Viral_Boss_Report_ZH.md/.docx`、`public/reports/AISA_All_Skills_Breakout_Plan_ZH.md/.docx`、`public/reports/ClawHub_Top200_AISA_Conversion_Report_ZH.md/.docx`、`public/reports/AISA_Breakout_*.md/.docx`、`public/reports/Claude_AISA_Report_*.md/.docx`、`public/reports/Hermes_AISA_Report_*.md/.docx`、`public/reports/AgentSkill_Report_*.md/.docx`、`public/reports/AgentSkills_SO_Report_*.md/.docx`
 - 已有可复用技能样板：`sucess/clawhub-hit-factory/*`
-- 已有 GitHub Pages / 服务器部署说明：[docs/DEPLOYMENT.md](/mnt/d/workplace/skillGet/docs/DEPLOYMENT.md)
-- 已有项目记忆入口：[docs/AI_PROJECT_MEMORY.md](/mnt/d/workplace/skillGet/docs/AI_PROJECT_MEMORY.md)，可直接查看当前能力、最近完成工作和下一步建议
+- 已有 GitHub Pages / 服务器部署说明：[docs/DEPLOYMENT.md](/mnt/d/workplace/skillget/docs/DEPLOYMENT.md)
+- 已有项目记忆入口：[docs/AI_PROJECT_MEMORY.md](/mnt/d/workplace/skillget/docs/AI_PROJECT_MEMORY.md)，可直接查看当前能力、最近完成工作和下一步建议
 
 ### 已完成的优化打包流水线
 
-- 已有原始 suspicious zip 下载脚本：[scripts/download-suspicious-zips.mjs](/mnt/d/workplace/skillGet/scripts/download-suspicious-zips.mjs)
-- 已有 source-optimized 构建脚本：[scripts/build-source-optimized-packages.mjs](/mnt/d/workplace/skillGet/scripts/build-source-optimized-packages.mjs)
-- 已有静态校验脚本：[scripts/verify-source-optimized.mjs](/mnt/d/workplace/skillGet/scripts/verify-source-optimized.mjs)
+- 已有原始 suspicious zip 下载脚本：[scripts/download-suspicious-zips.mjs](/mnt/d/workplace/skillget/scripts/download-suspicious-zips.mjs)
+- 已有 source-optimized 构建脚本：[scripts/build-source-optimized-packages.mjs](/mnt/d/workplace/skillget/scripts/build-source-optimized-packages.mjs)
+- 已有静态校验脚本：[scripts/verify-source-optimized.mjs](/mnt/d/workplace/skillget/scripts/verify-source-optimized.mjs)
 - 该静态校验脚本现在还会检查 `metadata.aisa`、`compatibility` 和 `${SKILL_ROOT}` 违规，避免优化包退回旧 frontmatter 规范
-- 已有 live smoke test 脚本：[scripts/live-test-source-optimized.mjs](/mnt/d/workplace/skillGet/scripts/live-test-source-optimized.mjs)
-- 已有发布 optimized 下载索引脚本：[scripts/publish-optimized-downloads.mjs](/mnt/d/workplace/skillGet/scripts/publish-optimized-downloads.mjs)
+- 已有 live smoke test 脚本：[scripts/live-test-source-optimized.mjs](/mnt/d/workplace/skillget/scripts/live-test-source-optimized.mjs)
+- 已有发布 optimized 下载索引脚本：[scripts/publish-optimized-downloads.mjs](/mnt/d/workplace/skillget/scripts/publish-optimized-downloads.mjs)
 - 已有中文优化包构建/打包脚本：
-  - [scripts/build-source-optimized-zh.mjs](/mnt/d/workplace/skillGet/scripts/build-source-optimized-zh.mjs)
-  - [scripts/package-source-optimized-zh.mjs](/mnt/d/workplace/skillGet/scripts/package-source-optimized-zh.mjs)
+  - [scripts/build-source-optimized-zh.mjs](/mnt/d/workplace/skillget/scripts/build-source-optimized-zh.mjs)
+  - [scripts/package-source-optimized-zh.mjs](/mnt/d/workplace/skillget/scripts/package-source-optimized-zh.mjs)
 
 ### 已有的优化包资产
 
@@ -147,8 +147,8 @@
 
 ### 已有的独立技能样例
 
-- [sucess/last30days/SKILL.md](/mnt/d/workplace/skillGet/sucess/last30days/SKILL.md)
-- [sucess/last30days/README.md](/mnt/d/workplace/skillGet/sucess/last30days/README.md)
+- [sucess/last30days/SKILL.md](/mnt/d/workplace/skillget/sucess/last30days/SKILL.md)
+- [sucess/last30days/README.md](/mnt/d/workplace/skillget/sucess/last30days/README.md)
 - `sucess/last30days/scripts/lib/` 下已包含较完整的多源研究检索与融合逻辑
 
 ## 4. 顶层架构
@@ -161,7 +161,7 @@
 
 关键文件：
 
-- [scripts/scrape-clawhub.ts](/mnt/d/workplace/skillGet/scripts/scrape-clawhub.ts)
+- [scripts/scrape-clawhub.ts](/mnt/d/workplace/skillget/scripts/scrape-clawhub.ts)
 - `config/accounts.json`
 - `config/manual-seeds.json`
 - `extract_all_skills_correct.py`
@@ -178,14 +178,14 @@
 
 关键文件：
 
-- [src/App.tsx](/mnt/d/workplace/skillGet/src/App.tsx)
+- [src/App.tsx](/mnt/d/workplace/skillget/src/App.tsx)
 - `src/clawhub-growth/App.tsx`
 - `src/clawhub-download-insights/App.tsx`
 - `src/clawhub-plugins/App.tsx`
 - `src/clawhub-10k-system/App.tsx`
 - `src/market-intelligence/App.tsx`
 - `scripts/generate-clawhub-10k-followup-assets.py`
-- [src/types.ts](/mnt/d/workplace/skillGet/src/types.ts)
+- [src/types.ts](/mnt/d/workplace/skillget/src/types.ts)
 - `src/styles.css`
 - `vite.config.ts`
 
@@ -212,12 +212,12 @@
 
 关键文件：
 
-- [scripts/download-suspicious-zips.mjs](/mnt/d/workplace/skillGet/scripts/download-suspicious-zips.mjs)
-- [scripts/build-source-optimized-packages.mjs](/mnt/d/workplace/skillGet/scripts/build-source-optimized-packages.mjs)
-- [scripts/verify-source-optimized.mjs](/mnt/d/workplace/skillGet/scripts/verify-source-optimized.mjs)
-- [scripts/live-test-source-optimized.mjs](/mnt/d/workplace/skillGet/scripts/live-test-source-optimized.mjs)
-- [scripts/package-source-optimized.mjs](/mnt/d/workplace/skillGet/scripts/package-source-optimized.mjs)
-- [scripts/publish-optimized-downloads.mjs](/mnt/d/workplace/skillGet/scripts/publish-optimized-downloads.mjs)
+- [scripts/download-suspicious-zips.mjs](/mnt/d/workplace/skillget/scripts/download-suspicious-zips.mjs)
+- [scripts/build-source-optimized-packages.mjs](/mnt/d/workplace/skillget/scripts/build-source-optimized-packages.mjs)
+- [scripts/verify-source-optimized.mjs](/mnt/d/workplace/skillget/scripts/verify-source-optimized.mjs)
+- [scripts/live-test-source-optimized.mjs](/mnt/d/workplace/skillget/scripts/live-test-source-optimized.mjs)
+- [scripts/package-source-optimized.mjs](/mnt/d/workplace/skillget/scripts/package-source-optimized.mjs)
+- [scripts/publish-optimized-downloads.mjs](/mnt/d/workplace/skillget/scripts/publish-optimized-downloads.mjs)
 - `packages/source-optimized/`
 - `templates/source-optimized/`
 - `artifacts/original-zips/`
@@ -230,7 +230,7 @@
 
 关键文件：
 
-- [sucess/last30days/SKILL.md](/mnt/d/workplace/skillGet/sucess/last30days/SKILL.md)
+- [sucess/last30days/SKILL.md](/mnt/d/workplace/skillget/sucess/last30days/SKILL.md)
 - `sucess/last30days/scripts/*.py`
 - `sucess/last30days/scripts/lib/*.py`
 
@@ -448,14 +448,14 @@ public/data/catalog.json 中的 owner
 
 如果是另一个 AI 账号接手，建议按这个顺序建立上下文：
 
-1. [README.md](/mnt/d/workplace/skillGet/README.md)
-2. [package.json](/mnt/d/workplace/skillGet/package.json)
-3. [scripts/scrape-clawhub.ts](/mnt/d/workplace/skillGet/scripts/scrape-clawhub.ts)
-4. [src/App.tsx](/mnt/d/workplace/skillGet/src/App.tsx)
-5. [scripts/build-source-optimized-packages.mjs](/mnt/d/workplace/skillGet/scripts/build-source-optimized-packages.mjs)
-6. [scripts/verify-source-optimized.mjs](/mnt/d/workplace/skillGet/scripts/verify-source-optimized.mjs)
-7. [scripts/publish-optimized-downloads.mjs](/mnt/d/workplace/skillGet/scripts/publish-optimized-downloads.mjs)
-8. [sucess/last30days/SKILL.md](/mnt/d/workplace/skillGet/sucess/last30days/SKILL.md)
+1. [README.md](/mnt/d/workplace/skillget/README.md)
+2. [package.json](/mnt/d/workplace/skillget/package.json)
+3. [scripts/scrape-clawhub.ts](/mnt/d/workplace/skillget/scripts/scrape-clawhub.ts)
+4. [src/App.tsx](/mnt/d/workplace/skillget/src/App.tsx)
+5. [scripts/build-source-optimized-packages.mjs](/mnt/d/workplace/skillget/scripts/build-source-optimized-packages.mjs)
+6. [scripts/verify-source-optimized.mjs](/mnt/d/workplace/skillget/scripts/verify-source-optimized.mjs)
+7. [scripts/publish-optimized-downloads.mjs](/mnt/d/workplace/skillget/scripts/publish-optimized-downloads.mjs)
+8. [sucess/last30days/SKILL.md](/mnt/d/workplace/skillget/sucess/last30days/SKILL.md)
 
 ## 13. 一句话总结给 AI
 

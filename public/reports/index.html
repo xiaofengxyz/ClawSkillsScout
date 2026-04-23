@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Report Library</title>
+    <title>Report Library | Claw Skills Scout</title>
     <style>
       :root {
         color-scheme: light;
@@ -101,6 +101,25 @@
         color: white;
       }
 
+      .chipline {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 18px;
+      }
+
+      .chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 7px 12px;
+        border-radius: 999px;
+        background: var(--accent-soft);
+        color: var(--accent);
+        font-size: 0.92rem;
+        font-weight: 600;
+      }
+
       .grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -173,14 +192,62 @@
     <main>
       <section class="hero">
         <div class="eyebrow">Report Library</div>
-        <h1>Market & AISA report index</h1>
+        <h1>Choose the right market or AISA report</h1>
         <p>
-          This page lists the generated reports published by the project. Use it when you need to know which document covers ClawHub,
-          Claude, Hermes, AgentSkill, AgentSkills.so, or the AISA rollout plan.
+          This page is the public report shelf for the project. Use it when you need the right document for ClawHub growth, plugin rankings,
+          cross-market comparison, or the AISA rollout plan without digging through the repository first.
         </p>
+        <div class="chipline">
+          <span class="chip">MD = editable source</span>
+          <span class="chip">DOCX = shareable export</span>
+          <span class="chip">ClawHub + Claude + Hermes + Agent platforms</span>
+        </div>
         <div class="hero-links">
           <a class="primary" href="../market-intelligence.html">Open market-intelligence</a>
           <a href="../clawhub-plugins.html">Open clawhub-plugins</a>
+          <a href="../clawhub-download-insights.html">Open download-insights</a>
+          <a href="../clawhub-10k-system.html">Open 10k system</a>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>How to choose</h2>
+        <p>Start with the question you need answered, then jump into the matching report family or standalone page.</p>
+        <div class="grid">
+          <article class="card">
+            <h3>I want winning ClawHub plugins</h3>
+            <p>Start with the plugin viral report and the plugin page if you need downloads, installs, stars, trust signals, or AISA retrofit ideas.</p>
+            <div class="links">
+              <a href="../clawhub-plugins.html">Plugin page</a>
+              <a href="./ClawHub_Plugin_Viral_Report_ZH.md">Plugin report</a>
+            </div>
+          </article>
+          <article class="card">
+            <h3>I want repeatable ClawHub systems</h3>
+            <p>Use the 10K system report when you care about prolific authors, repeatable production loops, and what scales beyond one-off hits.</p>
+            <div class="links">
+              <a href="../clawhub-10k-system.html">10K page</a>
+              <a href="./ClawHub_10K_System_Report_ZH.md">10K report</a>
+            </div>
+          </article>
+          <article class="card">
+            <h3>I want cross-platform comparison</h3>
+            <p>Use the market-intelligence page plus the Claude, Hermes, AgentSkill, and AgentSkills.so reports when choosing where to publish next.</p>
+            <div class="links">
+              <a href="../market-intelligence.html">Market page</a>
+              <a href="./Claude_AISA_Report_ZH.md">Claude</a>
+              <a href="./Hermes_AISA_Report_ZH.md">Hermes</a>
+            </div>
+          </article>
+          <article class="card">
+            <h3>I want the AISA rollout sequence</h3>
+            <p>Use the breakout plan, execution plan, and test evidence set when you need roadmap, rollout order, and acceptance proof together.</p>
+            <div class="links">
+              <a href="./AISA_All_Skills_Breakout_Plan_ZH.md">Plan</a>
+              <a href="./AISA_Breakout_Execution_Plan_ZH.md">Execution</a>
+              <a href="./AISA_Breakout_Test_Evidence_ZH.md">Evidence</a>
+            </div>
+          </article>
         </div>
       </section>
 
@@ -326,7 +393,8 @@
 
       <div class="note">
         Repo-local report sources live in <code>reports/</code>. Public copies used by the deployed site live in <code>public/reports/</code>.
-        If you are working inside the repository and need the full project handbook, open <code>docs/PROJECT_MANUAL.md</code>.
+        Markdown files are the editable source layer; DOCX files are the shareable export layer. If a Markdown report changes inside the repo,
+        refresh its Word companion with <code>npm run sync:report-docx</code>.
       </div>
     </main>
   </body>

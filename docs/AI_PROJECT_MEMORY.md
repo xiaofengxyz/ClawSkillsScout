@@ -42,6 +42,9 @@ This file is the fast handoff layer for future chats. Read it when you need to k
 
 ### 2026-04-23
 
+- Reworked `reports/README.md` into a report chooser with question-to-report mapping, report-family summaries, format guidance, and report-library usage notes
+- Reworked `public/reports/index.html` into a clearer public report shelf with quick-pick guidance, stronger page shortcuts, and explicit Markdown-vs-DOCX usage cues
+- Updated `docs/AISA_ANALYSIS_WORKFLOW.md` so it now matches the real push-vs-schedule GitHub Actions behavior and no longer points at stale local path casing
 - Reorganized `README.md` into a clearer operator entry point with project overview, feature map, page map, grouped npm-script summaries, parameter notes, and workflow guidance
 - Added `scripts/README.md` as the repo-wide script catalog covering npm aliases, direct script responsibilities, inputs/outputs, CLI parameters, and environment-variable requirements
 - Added `example/accounts` as the shareable local-credentials template and documented the pattern of keeping real private values in gitignored `docs/accounts`
