@@ -8,6 +8,8 @@ Use it when you need to answer three questions quickly:
 - which pages / datasets / reports exist and what each one is for
 - which commands and files you should touch next
 
+When you need the direct script catalog, CLI parameters, or environment-variable notes, read [scripts/README.md](/mnt/d/workplace/skillget/scripts/README.md).
+
 ## 1. Project Mission
 
 This repository is a mixed intelligence + packaging + publishing workspace around AI skills and plugins.
@@ -63,6 +65,8 @@ Its main jobs are:
   Purpose: ClawHub business and growth strategy view.
 - `clawhub-download-insights.html`
   Purpose: downloads leaderboard, breakout-skill, and prolific-author analysis.
+- `clawhub-plugins.html`
+  Purpose: plugin downloads / installs / stars boards, composite ranking, trust, and AISA opportunity view.
 - `clawhub-10k-system.html`
   Purpose: repeatable production-system view for `10k+` skills and authors.
 - `market-intelligence.html`
@@ -103,7 +107,7 @@ The editable report sources live in `reports/`. Public copies live in `public/re
 
 ### ClawHub reports
 
-- `ClawHub_Plugin_Viral_Report_*.md`
+- `ClawHub_Plugin_Viral_Report_*.md/.docx`
   Use when you want plugin breakout logic, plugin-author patterns, and plugin-to-AISA opportunities.
 - `ClawHub_10K_System_Report*.md/.docx`
   Use when you want the full repeatable-system view for `10k+` skills and prolific authors.
@@ -118,22 +122,22 @@ The editable report sources live in `reports/`. Public copies live in `public/re
 
 ### Cross-market reports
 
-- `Claude_AISA_Report_*.md`
+- `Claude_AISA_Report_*.md/.docx`
   Use when you want Claude-only breakout patterns and AISA selection guidance.
-- `Hermes_AISA_Report_*.md`
+- `Hermes_AISA_Report_*.md/.docx`
   Use when you want Hermes-only workflow-atlas and AISA packaging guidance.
-- `AgentSkill_Report_*.md`
+- `AgentSkill_Report_*.md/.docx`
   Use when you want AgentSkill skill / plugin / creator analysis.
-- `AgentSkills_SO_Report_*.md`
+- `AgentSkills_SO_Report_*.md/.docx`
   Use when you want AgentSkills.so skill / author / security / distribution analysis.
 
 ### AISA execution reports
 
 - `AISA_All_Skills_Breakout_Plan_ZH.md/.docx`
   Use when you want the overall AISA portfolio expansion roadmap.
-- `AISA_Breakout_Execution_Plan_ZH.md`
+- `AISA_Breakout_Execution_Plan_ZH.md/.docx`
   Use when you want the rollout sequence.
-- `AISA_Breakout_Test_Evidence_ZH.md`
+- `AISA_Breakout_Test_Evidence_ZH.md/.docx`
   Use when you want validation proof and acceptance notes.
 
 ## 6. Key Commands
@@ -151,7 +155,7 @@ The editable report sources live in `reports/`. Public copies live in `public/re
 - `npm run analyze:clawhub-download-insights`
   Rebuild ClawHub downloads-insights dataset.
 - `npm run analyze:clawhub-plugins`
-  Rebuild ClawHub plugin dataset and EN/ZH reports.
+  Rebuild the ClawHub plugin downloads / installs / stars dataset, the standalone plugin page input, and EN/ZH reports.
 - `npm run analyze:clawhub-10k-system`
   Rebuild ClawHub `10k+` dataset and reports.
 - `npm run analyze:clawhub-10k-followups`
@@ -162,8 +166,14 @@ The editable report sources live in `reports/`. Public copies live in `public/re
   Rebuild the AgentSkill dataset and reports.
 - `npm run analyze:agentskills-so`
   Rebuild the AgentSkills.so dataset and reports.
+- `npm run analyze:full-report-suite`
+  Run the full report-generation chain for ClawHub, cross-market, and AISA planning outputs.
+- `npm run sync:report-docx`
+  Backfill or refresh `.docx` companions for Markdown report files in `reports/` and `public/reports/`.
 - `npm run pipeline:aisa-analysis`
   Recommended end-to-end refresh for ClawHub downloads, GitHub downloads, AISA archive analysis, and build.
+- `npm run pipeline:scheduled-analysis`
+  CI-oriented full refresh for downloads, AISA analysis, report datasets, and the final site build.
 - `npm run typecheck`
   TypeScript validation.
 - `npm run build`
@@ -183,6 +193,8 @@ The editable report sources live in `reports/`. Public copies live in `public/re
   Published report copies and public report index.
 - `public/downloads/`
   Downloadable generated packages and mirrors.
+- `example/`
+  Shareable local-template files such as `example/accounts`; keep real private values in ignored local files.
 - `packages/source-optimized/`
   English optimized package directories.
 - `packages/source-optimized-zh/`
@@ -205,6 +217,7 @@ Read in this order:
 Read in this order:
 
 - `clawhub-download-insights.html`
+- `clawhub-plugins.html`
 - `reports/ClawHub_Plugin_Viral_Report_ZH.md`
 - `reports/ClawHub_10K_System_Report_ZH.md`
 
@@ -230,6 +243,7 @@ Read in this order:
 ## 9. Maintenance Notes
 
 - When a new core page, dataset, or report family is added, update this manual.
+- When a script is added or a script parameter changes, update `scripts/README.md`.
 - When only “recent progress / next steps” changes, update `docs/AI_PROJECT_MEMORY.md` instead of rewriting this file.
 - When you need the report list in a browser, use `public/reports/index.html`.
 - When you need the repo-local source list, use `reports/README.md`.

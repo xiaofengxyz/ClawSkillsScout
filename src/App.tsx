@@ -51,9 +51,11 @@ const copyByLanguage = {
     openMarketPage: '打开跨生态情报页',
     openGrowthPage: '打开 ClawHub 商业分析页',
     openDownloadsPage: '打开下载榜爆款分析页',
+    openPluginPage: '打开 Plugin 三榜分析页',
     open10kPage: '打开 10K+ 系统报告页',
     viewGrowthData: '查看分析数据',
     viewDownloadsJson: '查看下载榜 JSON',
+    viewPluginJson: '查看 Plugin JSON',
     view10kJson: '查看 10K+ 系统 JSON',
     updatedAt: '更新于',
     interfaces: '接口列表',
@@ -139,9 +141,11 @@ const copyByLanguage = {
     openMarketPage: 'Open market intelligence',
     openGrowthPage: 'Open ClawHub growth report',
     openDownloadsPage: 'Open downloads insights',
+    openPluginPage: 'Open plugin board analysis',
     open10kPage: 'Open 10K+ systems report',
     viewGrowthData: 'View growth data',
     viewDownloadsJson: 'View downloads JSON',
+    viewPluginJson: 'View plugin JSON',
     view10kJson: 'View 10K+ JSON',
     updatedAt: 'Updated',
     interfaces: 'Interfaces',
@@ -737,6 +741,7 @@ export default function App() {
     warmJsonCache([
       'data/clawhub-growth-report.json',
       'data/clawhub-download-insights.json',
+      'data/clawhub-plugin-report.json',
       'data/clawhub-10k-system-report.json',
       'data/market-ecosystem-report.json',
     ]);
@@ -909,6 +914,9 @@ export default function App() {
             <a className="hero-link-button" href={`${import.meta.env.BASE_URL}clawhub-download-insights.html`}>
               {copy.openDownloadsPage}
             </a>
+            <a className="hero-link-button" href={`${import.meta.env.BASE_URL}clawhub-plugins.html`}>
+              {copy.openPluginPage}
+            </a>
             <a className="hero-link-button" href={`${import.meta.env.BASE_URL}clawhub-10k-system.html`}>
               {copy.open10kPage}
             </a>
@@ -917,6 +925,9 @@ export default function App() {
             </a>
             <a className="hero-link-button" href={`${import.meta.env.BASE_URL}data/clawhub-download-insights.json`} target="_blank" rel="noreferrer">
               {copy.viewDownloadsJson}
+            </a>
+            <a className="hero-link-button" href={`${import.meta.env.BASE_URL}data/clawhub-plugin-report.json`} target="_blank" rel="noreferrer">
+              {copy.viewPluginJson}
             </a>
             <a className="hero-link-button" href={`${import.meta.env.BASE_URL}data/clawhub-10k-system-report.json`} target="_blank" rel="noreferrer">
               {copy.view10kJson}

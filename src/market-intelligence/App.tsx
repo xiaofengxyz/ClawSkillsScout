@@ -35,6 +35,7 @@ const copyByLanguage = {
     heroDescription:
       '这页把 ClawHub、Claude、Hermes、AgentSkill、AgentSkills.so 的实时采样和爆款结构统一翻译成一套“什么会火、为什么会火、哪些最适合改造成 AISA API、发布时要避开什么坑”的实战视图。',
     openClawhubPage: '打开 ClawHub 详情页',
+    openPluginPage: 'Plugin 三榜页',
     reportsIndex: '报告索引',
     updatedAt: '更新于',
     topSourceLine: '爆款、风控、AISA 选品一张图',
@@ -68,6 +69,7 @@ const copyByLanguage = {
     heroDescription:
       'This page translates live samples and breakout structures from ClawHub, Claude, Hermes, AgentSkill, and AgentSkills.so into one operating view: what breaks out, why it breaks out, what should become an AISA API, and what release risks to avoid.',
     openClawhubPage: 'Open ClawHub details',
+    openPluginPage: 'Plugin boards',
     reportsIndex: 'Report index',
     updatedAt: 'Updated',
     topSourceLine: 'One map for breakout picks, trust signals, and AISA conversion',
@@ -334,6 +336,9 @@ export default function App() {
           <div className="mi-hero-links">
             <a href={`${import.meta.env.BASE_URL}clawhub-download-insights.html`} className="mi-primary-link">
               {copy.openClawhubPage}
+            </a>
+            <a href={`${import.meta.env.BASE_URL}clawhub-plugins.html`} className="mi-secondary-link">
+              {copy.openPluginPage}
             </a>
             <a href={marketReport.sources.claudeSkills} target="_blank" rel="noreferrer" className="mi-secondary-link">
               {isZh ? 'Claude 技能' : 'Claude Skills'}

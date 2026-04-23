@@ -29,6 +29,7 @@
 快速查项目功能和文档时，优先看：
 
 - [docs/PROJECT_MANUAL.md](/mnt/d/workplace/skillGet/docs/PROJECT_MANUAL.md)
+- [scripts/README.md](/mnt/d/workplace/skillget/scripts/README.md)
 - [reports/README.md](/mnt/d/workplace/skillGet/reports/README.md)
 - [public/reports/index.html](/mnt/d/workplace/skillGet/public/reports/index.html)
 
@@ -65,13 +66,14 @@
 - 前端也读取 `aisa-api-analysis.json`，展示“接口列表 / 技能列表 / ClawHub 目录”三视图
 - 另有独立的 ClawHub 增长分析页，读取 `public/data/clawhub-growth-report.json` 输出 4 份商业分析文档
 - 另有独立的 ClawHub 下载榜爆款分析页，读取 `public/data/clawhub-download-insights.json` 输出技能/作者/skill factory/AIsa 变现分析
-- 另有独立的 ClawHub plugin 爆款报告数据，读取 `public/data/clawhub-plugin-report.json` 输出插件/作者/AISA 改造策略报告
+- 另有独立的 ClawHub plugin 三榜分析页，读取 `public/data/clawhub-plugin-report.json` 输出插件的 downloads / installs / stars 排序、信任机制、作者工厂与 AISA 改造策略
 - 另有独立的 ClawHub 10k+ 系统分析页，读取 `public/data/clawhub-10k-system-report.json` 输出“可复制生产系统 + AIsa API 盈利系统”报告，并同步生成 Word 文档
-- 另有独立的跨生态情报页，读取 `public/data/market-ecosystem-report.json`，统一展示 ClawHub、Claude Marketplaces、Hermes 的爆款结构与 AISA 改造机会
-- `analyze:market-ecosystem` 现在会分别产出 Claude 与 Hermes 的 EN/ZH Markdown 报告，便于不打开页面也能直接看选品与爆款分析
-- 另有独立的 AgentSkill 专项报告数据，读取 `public/data/agentskill-report.json` 输出 skill / plugin / creator / ranking factors / AISA 改造机会报告
-- 另有独立的 AgentSkills.so 专项报告数据，读取 `public/data/agentskills-so-report.json` 输出 skill / author / 安全信号 / AISA 改造机会报告
+- 另有独立的跨生态情报页，读取 `public/data/market-ecosystem-report.json`，统一展示 ClawHub、Claude、Hermes、AgentSkill、AgentSkills.so 的爆款结构与 AISA 改造机会
+- `analyze:market-ecosystem` 现在会分别产出 Claude 与 Hermes 的 EN/ZH Markdown + Word 报告，便于不打开页面也能直接看选品与爆款分析
+- 另有独立的 AgentSkill 专项报告数据，读取 `public/data/agentskill-report.json` 输出 skill / plugin / creator / ranking factors / AISA 改造机会 Markdown + Word 报告
+- 另有独立的 AgentSkills.so 专项报告数据，读取 `public/data/agentskills-so-report.json` 输出 skill / author / 安全信号 / AISA 改造机会 Markdown + Word 报告
 - 另有 10k+ 报告的后处理脚本，会输出中文版系统报告、老板版 EN/ZH 简报，以及公开下载的 Word/Markdown 文档
+- 对手动整理过的 `reports/*.md` / `public/reports/*.md`，现在可通过 `npm run sync:report-docx` 批量补齐或刷新对应 `.docx`
 - 用 Vite + React 构建静态页面
 - 发布到 GitHub Pages 或服务器目录
 
@@ -89,6 +91,7 @@
 
 - `packages/`、`templates/`、`sucess/last30days/` 说明这个仓库不只是“站点项目”，也是一个技能包整理和发布实验场。
 - `last30days` 展示了一个完整的 AI skill 如何组织 `SKILL.md`、脚本、运行入口和发布内容。
+- `example/accounts` 提供本地账号/令牌模板，真实私有值写入 `docs/accounts`（已 gitignore）。
 
 ## 3. 这个项目已经做了什么
 
@@ -102,9 +105,11 @@
 - 已有把 GitHub skill tar 包转换成 ClawHub 可发布 zip 包的脚本：[scripts/convert-github-skills-to-clawhub.py](/mnt/d/workplace/skillGet/scripts/convert-github-skills-to-clawhub.py)，输出到 `public/downloads/clawHub-github/`，并生成 EN/ZH 两套 `SKILL.md`
 - 已有扫描 `public/downloads/clawHub/` 与 `public/downloads/github/` 全部归档、提取 AISA 接口并生成分析数据的脚本：[scripts/generate-aisa-api-analysis.py](/mnt/d/workplace/skillGet/scripts/generate-aisa-api-analysis.py)
 - 已有推荐的一键分析流水线：`npm run pipeline:aisa-analysis`
+- 已有给 GitHub Action 定时任务使用的全量刷新流水线：`npm run pipeline:scheduled-analysis`
 - 已有静态站前端：[src/App.tsx](/mnt/d/workplace/skillGet/src/App.tsx)
 - 已有独立增长分析页入口：`clawhub-growth.html` + `src/clawhub-growth/*`
 - 已有独立下载榜爆款分析页入口：`clawhub-download-insights.html` + `src/clawhub-download-insights/*`
+- 已有独立 plugin 三榜分析页入口：`clawhub-plugins.html` + `src/clawhub-plugins/*`
 - 已有独立 10k+ 系统分析页入口：`clawhub-10k-system.html` + `src/clawhub-10k-system/*`
 - 已有独立跨生态情报页入口：`market-intelligence.html` + `src/market-intelligence/*`
 - 已有 downloads / stars / installs 三榜综合分析脚本：[scripts/build-clawhub-multi-ranking-report.py](/mnt/d/workplace/skillGet/scripts/build-clawhub-multi-ranking-report.py)
@@ -116,7 +121,7 @@
 - 已有 ClawHub plugin 爆款分析脚本：[scripts/build-clawhub-plugin-report.mjs](/mnt/d/workplace/skillGet/scripts/build-clawhub-plugin-report.mjs)
 - 已有构建结果目录：`dist/`
 - 已有公开数据目录：`public/data/catalog.json`、`public/data/aisa-api-analysis.json`、`public/data/clawhub-growth-report.json`、`public/data/clawhub-download-insights.json`、`public/data/clawhub-plugin-report.json`、`public/data/clawhub-10k-system-report.json`、`public/data/clawhub-multi-ranking-report.json`、`public/data/aisa-all-skills-breakout-plan.json`、`public/data/clawhub-top200-aisa-conversion-plan.json`、`public/data/market-ecosystem-report.json`、`public/data/agentskill-report.json`、`public/data/agentskills-so-report.json`
-- 已有公开报告目录：`public/reports/ClawHub_Plugin_Viral_Report_*.md`、`public/reports/ClawHub_10K_System_Report*.md/.docx`、`public/reports/ClawHub_10K_Boss_Brief_*.md/.docx`、`public/reports/ClawHub_Multi_Ranking_Report_ZH.md/.docx`、`public/reports/ClawHub_Viral_Boss_Report_ZH.md/.docx`、`public/reports/AISA_All_Skills_Breakout_Plan_ZH.md/.docx`、`public/reports/ClawHub_Top200_AISA_Conversion_Report_ZH.md/.docx`、`public/reports/AISA_Breakout_*.md`、`public/reports/Claude_AISA_Report_*.md`、`public/reports/Hermes_AISA_Report_*.md`、`public/reports/AgentSkill_Report_*.md`、`public/reports/AgentSkills_SO_Report_*.md`
+- 已有公开报告目录：`public/reports/ClawHub_Plugin_Viral_Report_*.md/.docx`、`public/reports/ClawHub_10K_System_Report*.md/.docx`、`public/reports/ClawHub_10K_Boss_Brief_*.md/.docx`、`public/reports/ClawHub_Multi_Ranking_Report_ZH.md/.docx`、`public/reports/ClawHub_Viral_Boss_Report_ZH.md/.docx`、`public/reports/AISA_All_Skills_Breakout_Plan_ZH.md/.docx`、`public/reports/ClawHub_Top200_AISA_Conversion_Report_ZH.md/.docx`、`public/reports/AISA_Breakout_*.md/.docx`、`public/reports/Claude_AISA_Report_*.md/.docx`、`public/reports/Hermes_AISA_Report_*.md/.docx`、`public/reports/AgentSkill_Report_*.md/.docx`、`public/reports/AgentSkills_SO_Report_*.md/.docx`
 - 已有可复用技能样板：`sucess/clawhub-hit-factory/*`
 - 已有 GitHub Pages / 服务器部署说明：[docs/DEPLOYMENT.md](/mnt/d/workplace/skillGet/docs/DEPLOYMENT.md)
 - 已有项目记忆入口：[docs/AI_PROJECT_MEMORY.md](/mnt/d/workplace/skillGet/docs/AI_PROJECT_MEMORY.md)，可直接查看当前能力、最近完成工作和下一步建议
@@ -176,6 +181,7 @@
 - [src/App.tsx](/mnt/d/workplace/skillGet/src/App.tsx)
 - `src/clawhub-growth/App.tsx`
 - `src/clawhub-download-insights/App.tsx`
+- `src/clawhub-plugins/App.tsx`
 - `src/clawhub-10k-system/App.tsx`
 - `src/market-intelligence/App.tsx`
 - `scripts/generate-clawhub-10k-followup-assets.py`
@@ -194,11 +200,11 @@
 - 在页面中同时展示 ClawHub 与 GitHub 归档技能
 - 以独立页面输出 ClawHub 热门技能/作者/变现机会分析
 - 以独立页面输出 ClawHub 下载榜爆款技能/作者/skill factory/AIsa 变现分析
-- 以独立报告输出 ClawHub plugin 的爆款结构、作者结构与 AISA 改造机会
+- 以独立 Markdown / Word 报告输出 ClawHub plugin 的爆款结构、作者结构与 AISA 改造机会
 - 以独立页面输出 ClawHub 10k+ 技能/作者的可复制生产系统与 AIsa API 盈利系统
 - 以独立页面横向比较 ClawHub、Claude Marketplaces、Hermes 的爆款结构与 AISA 改造机会
-- 以独立 Markdown 报告输出 Claude、Hermes、AgentSkill、AgentSkills.so 的专项爆款分析与 AISA 选品建议
-- 以 Markdown / Word 双格式输出中文系统报告和老板版中英文简报
+- 以独立 Markdown / Word 报告输出 Claude、Hermes、AgentSkill、AgentSkills.so 的专项爆款分析与 AISA 选品建议
+- 以 Markdown / Word 双格式输出系统报告、跨生态报告和老板版中英文简报
 
 ### 子系统 C：可疑包优化与再发布
 
@@ -263,8 +269,18 @@ vite build
 npm run pipeline:aisa-analysis
 ```
 
-GitHub Pages 的 Action 也已经切到这条流水线，因此会自动刷新下载归档并重新分析数据，而不只是复用仓库里已有的旧分析结果。
-同时 workflow 会把 `catalog.json`、`aisa-api-analysis.json`、下载索引和 `dist/` 上传为 artifact，便于定位失败原因。
+如果要在本地模拟定时全量刷新，使用：
+
+```bash
+npm run pipeline:scheduled-analysis
+```
+
+GitHub Pages 的 Action 目前分成两档：
+
+- `push master` 时跑 `pipeline:aisa-analysis`，优先保证主站 AISA 看板更快刷新。
+- `schedule` 和 `workflow_dispatch` 时跑 `pipeline:scheduled-analysis`，会额外刷新 growth / downloads-insights / plugins / 10k / Claude / Hermes / AgentSkill / AgentSkills.so 等专项分析。
+
+同时 workflow 会把 `public/data/*.json`、`public/reports`、下载索引和 `dist/` 上传为 artifact，便于定位失败原因。
 另外还开启了并发保护和最多 3 次自动重试，用来降低源站或网络抖动带来的偶发失败。
 
 ### 5.2 优化包流水线

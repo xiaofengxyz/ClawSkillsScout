@@ -1,65 +1,128 @@
 # ClawHub Plugin 爆款报告
 
-- 生成时间：2026-04-20T12:07:12.386Z
+- 生成时间：2026-04-23T05:26:05.630Z
 - 分析对象：ClawHub 插件目录（公开排序页 + 详情页 SSR 数据）
-- 数据日期：2026-04-20
+- 数据日期：2026-04-23
 
 ## 一句话结论
 
-ClawHub 的 plugin 生态在 2026-04-20 仍然非常早期，公开 'downloads / installs / stars' 指标几乎全部为 '0'，所以真正能解释“谁更有爆款相”的，不是下载量，而是四件事：是否抓住强运营/强治理/强连接的刚需入口，是否是可验证的 source-linked 包，是否能把副作用和安装路径讲清楚，以及作者是否在连续推出同一主线下的多个相邻插件。
+ClawHub 的 plugin 生态仍然非常早期，但公开目录已经明确把 plugin 放进 "downloads / installs / stars" 三个排序面来分发。也就是说，爆款判断不能只看 "Code / Bundle" 类型，而要同时看三榜排位、验证状态、安全扫描、能力边界、运行时一致性和作者是否在持续扩张同一主线。
 
 ## 关键发现
 
-1. 三个排序页目前公开顺序高度一致，说明 plugin 的数值指标还没有像 skill 那样形成成熟竞争面。
-2. 真正占据榜首的，大多是 'Code Plugin'，而不是纯文案 bundle。
+1. ClawHub 现在公开展示的 plugin 发现层，至少包含四个维度：三套排序榜单、"Code / Bundle" 类型过滤、"Verified only" 过滤、"Executes code" 风险过滤。
+2. 真正占据榜首的，依然以 "Code Plugin" 为主；"Bundle Plugin" 更像在承接说明型或跨宿主分发，而不是当前的主流爆款形态。
 3. 爆款 plugin 的名字几乎都在直接说“连接哪一个系统”或“解决哪一个运维动作”，而不是抽象概念名。
-4. 'source-linked + clean/benign' 的验证组合，已经成为 plugin 赛道里比“写得很花”更重要的信任资产。
+4. 插件详情页里的 "Security Scan"、"VirusTotal"、"OpenClaw verdict"、"Runtime ID"、"Compatibility"、"Capabilities"、"source-linked" 等信号，已经是 plugin 用户判断是否安装的核心表面。
 5. 高产作者不是乱发插件，而是围绕一个平台或一个运维主线，连续堆出多个邻接插件。
 6. 适合改造成 AISA API 的，不是最底层的记忆/路由内核，而是安全治理、业务增长、支付链路、存储物流、外部 SaaS 连接器。
 
 ## 为什么现在的 Plugin 爆款判断不能照搬 Skill
 
 - Skill 爆款依赖下载、收藏、安装转化这些显性指标。
-- Plugin 赛道当前公开数值面几乎空白，所以我们要把 '上榜顺序 + 插件家族类型 + 验证状态 + 版本成熟度 + 作者产能' 组合起来看。
+- Plugin 赛道当前虽然有三套公开排序，但详情页对大多数 plugin 没有直接暴露可读的公开数值，因此我们要把 '三榜顺序 + 插件家族类型 + 验证状态 + 版本成熟度 + 作者产能' 组合起来看。
 - 这也是为什么本次沉淀到 packager skill 的，不只是“怎么打包”，而是“怎么把插件做得更像一个可信、可扩张、可持续上榜的商品”。
+
+## Downloads 排行 Top 10
+
+| 排名 | Plugin | 作者 | 类型 | 主题 | 验证 |
+| --- | --- | --- | --- | --- | --- |
+| 1 | Openclaw Channel | sanctrl | Code | Channels & Messaging | source-linked |
+| 2 | Claw Recipes | rjdjohnston | Code | Workflow & Integration | source-linked |
+| 3 | Openclaw Venice Ai | acwilan | Code | Infrastructure & Utilities | source-linked |
+| 4 | Hivemind | kaghni | Code | Memory & Knowledge | source-linked |
+| 5 | Twitter Command Center Search Post | bibaofeng | Code | Workflow & Integration | source-linked |
+| 6 | Twitter Command Center Search Post Interact | aisadocs | Code | Workflow & Integration | source-linked |
+| 7 | Twitter Autopilot | baofeng-tech | Code | Workflow & Integration | source-linked |
+| 8 | Tavily Extract | bibaofeng | Code | Infrastructure & Utilities | source-linked |
+| 9 | Stock Rumors | aisadocs | Code | Infrastructure & Utilities | source-linked |
+| 10 | Stock Watchlist | baofeng-tech | Code | Infrastructure & Utilities | source-linked |
+
+## Installs 排行 Top 10
+
+| 排名 | Plugin | 作者 | 类型 | 主题 | 验证 |
+| --- | --- | --- | --- | --- | --- |
+| 1 | Openclaw Channel | sanctrl | Code | Channels & Messaging | source-linked |
+| 2 | Claw Recipes | rjdjohnston | Code | Workflow & Integration | source-linked |
+| 3 | Openclaw Venice Ai | acwilan | Code | Infrastructure & Utilities | source-linked |
+| 4 | Hivemind | kaghni | Code | Memory & Knowledge | source-linked |
+| 5 | Twitter Command Center Search Post | bibaofeng | Code | Workflow & Integration | source-linked |
+| 6 | Twitter Command Center Search Post Interact | aisadocs | Code | Workflow & Integration | source-linked |
+| 7 | Twitter Autopilot | baofeng-tech | Code | Workflow & Integration | source-linked |
+| 8 | Tavily Extract | bibaofeng | Code | Infrastructure & Utilities | source-linked |
+| 9 | Stock Rumors | aisadocs | Code | Infrastructure & Utilities | source-linked |
+| 10 | Stock Watchlist | baofeng-tech | Code | Infrastructure & Utilities | source-linked |
+
+## Stars 排行 Top 10
+
+| 排名 | Plugin | 作者 | 类型 | 主题 | 验证 |
+| --- | --- | --- | --- | --- | --- |
+| 1 | Openclaw Channel | sanctrl | Code | Channels & Messaging | source-linked |
+| 2 | Claw Recipes | rjdjohnston | Code | Workflow & Integration | source-linked |
+| 3 | Openclaw Venice Ai | acwilan | Code | Infrastructure & Utilities | source-linked |
+| 4 | Hivemind | kaghni | Code | Memory & Knowledge | source-linked |
+| 5 | Twitter Command Center Search Post | bibaofeng | Code | Workflow & Integration | source-linked |
+| 6 | Twitter Command Center Search Post Interact | aisadocs | Code | Workflow & Integration | source-linked |
+| 7 | Twitter Autopilot | baofeng-tech | Code | Workflow & Integration | source-linked |
+| 8 | Tavily Extract | bibaofeng | Code | Infrastructure & Utilities | source-linked |
+| 9 | Stock Rumors | aisadocs | Code | Infrastructure & Utilities | source-linked |
+| 10 | Stock Watchlist | baofeng-tech | Code | Infrastructure & Utilities | source-linked |
+
 
 ## Top 10 Plugin
 
 | 排名 | Plugin | 作者 | 类型 | 主题 | 扫描 | 验证 |
 | --- | --- | --- | --- | --- | --- | --- |
 | 1 | AxonFlow Governance | saurabhjain1592 | Code | Governance & Security | clean | source-linked |
-| 2 | ClawVitals | bk-cm | Code | Governance & Security | clean | source-linked |
-| 3 | Nowledge Mem for OpenClaw | wey-gu | Code | Memory & Knowledge | clean | source-linked |
-| 4 | Intent Transfer Completion via LI.FI | merdikim | Code | Commerce, Storage & Chain | clean | source-linked |
-| 5 | agentschatapp | unclek | Code | Channels & Messaging | clean | source-linked |
-| 6 | Algorand Plugin | emg110 | Code | Commerce, Storage & Chain | clean | source-linked |
-| 7 | Openclaw Interven Guard | boltyx0 | Code | Governance & Security | clean | source-linked |
-| 8 | claw.cleaning | cnnrobrn | Code | Infrastructure & Utilities | clean | source-linked |
-| 9 | Openclaw Session Bloat Warning | teodorarg | Code | Memory & Knowledge | clean | source-linked |
-| 10 | Aigroup Financial Services Openclaw Release | jackdark425 | Bundle | Infrastructure & Utilities | pending | source-linked |
+| 2 | Hivemind | kaghni | Code | Memory & Knowledge | clean | source-linked |
+| 3 | klodi | blackbak | Code | Workspace & App Layer | clean | source-linked |
+| 4 | UMG Envoy Agent | neomagnetar | Code | Infrastructure & Utilities | clean | source-linked |
+| 5 | Claw Recipes | rjdjohnston | Code | Workflow & Integration | pending | source-linked |
+| 6 | episodic-claw (Based on Human Episodic Memory) | yoshiakefasu | Code | Memory & Knowledge | pending | source-linked |
+| 7 | Lethe | mentholmike | Code | Memory & Knowledge | pending | source-linked |
+| 8 | Mem0 Plugin | kartik-mem0 | Code | Memory & Knowledge | pending | source-linked |
+| 9 | Subconscious Personality Guardian | origin-lz | Code | Governance & Security | pending | source-linked |
+| 10 | AIsa Perplexity Sonar Search | bibaofeng | Code | Infrastructure & Utilities | clean | source-linked |
+
+## 三榜差异最大的 Plugin
+
 
 ## 爆款 Plugin 共性
 
 - 标题直接点系统、场景、结果，例如 channel、CRM、governance、security、parcel、payment，而不是抽象喊“agent upgrade”。
 - 描述会把安装后真正发生的事情说清楚，例如写配置、重启 gateway、接入哪个后端、是否拉远程资源。
-- 结构上优先是 'code-plugin'，因为 plugin 用户更愿意为“真实能力接入”而不是“提示词包装”买单。
-- 能过 'source-linked' 验证的插件，冷启动信任成本明显更低。
+- 结构上优先是 "code-plugin"，因为 plugin 用户更愿意为“真实能力接入”而不是“提示词包装”买单。
+- 能过 "source-linked" 验证的插件，冷启动信任成本明显更低。
 - 安全/治理/通信/业务连接器最容易形成强需求入口。
+
+## 平台排名机制
+
+- 排名面：ClawHub 已公开提供 "downloads"、"installs"、"stars" 三套 plugin 排序入口，发布时必须默认自己会同时被这三种发现逻辑审视。
+- 过滤面："Code / Bundle"、"Verified only"、"Executes code" 不只是展示选项，而是用户做预筛的高频入口。
+- 信任面：详情页里的 "Security Scan"、"VirusTotal"、"OpenClaw verdict"、"source-linked"、"Runtime ID"、"Compatibility"、"Capabilities" 一起决定冷启动安装意愿。
+- 转化面：标题是否任务化、README 是否说清副作用、manifest 是否与能力声明一致，都会直接影响安装前判断。
+
+## 爆款机制与发布动作
+
+- 先抢一个高价值系统边界，再围绕同一主线发布 3 到 5 个相邻插件，比随机发散更容易形成作者分发资产。
+- "Code Plugin" 适合承接真实运行时能力，"Bundle Plugin" 更适合承接说明型内容、跨宿主技能包和轻运行时分发；不要混淆。
+- 发布时要把副作用、鉴权、写配置、重启、远程资源下载这些动作写明，否则用户和扫描器都会提高警惕。
+- 页面和包内容必须同构：标题、描述、manifest、README、能力标签、runtimeId、实际代码行为不能互相打架。
 
 ## 爆款作者画像
 
 | 排名 | 作者 | 插件数 | Code | Bundle | 主主题 |
 | --- | --- | --- | --- | --- | --- |
-| 1 | jackdark425 | 3 | 0 | 3 | Infrastructure & Utilities / Business Ops & Growth |
-| 2 | omarshahine | 3 | 3 | 0 | Workspace & App Layer / Infrastructure & Utilities / Workflow & Integration |
-| 3 | bk-cm | 1 | 1 | 0 | Governance & Security |
-| 4 | saurabhjain1592 | 1 | 1 | 0 | Governance & Security |
-| 5 | wey-gu | 1 | 1 | 0 | Memory & Knowledge |
-| 6 | merdikim | 1 | 1 | 0 | Commerce, Storage & Chain |
-| 7 | boltyx0 | 1 | 1 | 0 | Governance & Security |
-| 8 | emg110 | 1 | 1 | 0 | Commerce, Storage & Chain |
-| 9 | unclek | 1 | 1 | 0 | Channels & Messaging |
-| 10 | cnnrobrn | 1 | 1 | 0 | Infrastructure & Utilities |
+| 1 | bibaofeng | 11 | 11 | 0 | Infrastructure & Utilities / Workflow & Integration / Channels & Messaging |
+| 2 | aisadocs | 10 | 10 | 0 | Infrastructure & Utilities / Workflow & Integration |
+| 3 | baofeng-tech | 10 | 10 | 0 | Infrastructure & Utilities / Workflow & Integration / Channels & Messaging |
+| 4 | pierrelouisevensmaxai-blip | 4 | 0 | 4 | Infrastructure & Utilities / Workspace & App Layer |
+| 5 | kaghni | 1 | 1 | 0 | Memory & Knowledge |
+| 6 | saurabhjain1592 | 1 | 1 | 0 | Governance & Security |
+| 7 | blackbak | 1 | 1 | 0 | Workspace & App Layer |
+| 8 | neomagnetar | 1 | 1 | 0 | Infrastructure & Utilities |
+| 9 | kartik-mem0 | 1 | 1 | 0 | Memory & Knowledge |
+| 10 | mentholmike | 1 | 1 | 0 | Memory & Knowledge |
 
 ## 高产作者的方法论能不能复制
 
@@ -73,16 +136,16 @@ ClawHub 的 plugin 生态在 2026-04-20 仍然非常早期，公开 'downloads /
 
 | 排名 | Plugin | 作者 | 主题 | 机会分 | 说明 |
 | --- | --- | --- | --- | --- | --- |
-| 1 | Clarify.ai CRM | adawodu | Business Ops & Growth | 90.4 | 天然对应高价值垂直 API：CRM、销售线索、营销活动、外呼管道都可以被拆成付费接口。 |
-| 2 | Product Marketing BytePlus | sqsge | Business Ops & Growth | 90.4 | 天然对应高价值垂直 API：CRM、销售线索、营销活动、外呼管道都可以被拆成付费接口。 |
-| 3 | Starplast Operations | mzfshark | Business Ops & Growth | 90.4 | 天然对应高价值垂直 API：CRM、销售线索、营销活动、外呼管道都可以被拆成付费接口。 |
-| 4 | Icpswap Plugin | onevroad-icp | Commerce, Storage & Chain | 89.5 | 链上、支付、存储、物流等能力更像稳定 API，而不是必须驻留本地的插件。 |
-| 5 | Algorand Plugin | emg110 | Commerce, Storage & Chain | 88.15 | 链上、支付、存储、物流等能力更像稳定 API，而不是必须驻留本地的插件。 |
-| 6 | AxonFlow Governance | saurabhjain1592 | Governance & Security | 85.75 | 安全审计、策略校验、批准门禁非常适合做高客单价 AISA 安全能力层。 |
-| 7 | Magneto AI | rijuvashisht | Governance & Security | 85.75 | 安全审计、策略校验、批准门禁非常适合做高客单价 AISA 安全能力层。 |
-| 8 | Openclaw Interven Guard | boltyx0 | Governance & Security | 85.75 | 安全审计、策略校验、批准门禁非常适合做高客单价 AISA 安全能力层。 |
-| 9 | ClawVitals | bk-cm | Governance & Security | 83.05 | 安全审计、策略校验、批准门禁非常适合做高客单价 AISA 安全能力层。 |
-| 10 | Delx Witness Protocol for OpenClaw | davidmosiah | Governance & Security | 83.05 | 安全审计、策略校验、批准门禁非常适合做高客单价 AISA 安全能力层。 |
+| 1 | AxonFlow Governance | saurabhjain1592 | Governance & Security | 85.75 | 安全审计、策略校验、批准门禁非常适合做高客单价 AISA 安全能力层。 |
+| 2 | AIsa Twitter | baofeng-tech | Workflow & Integration | 85.15 | 外部系统连接器和运营动作容易被抽象成 AISA command center。 |
+| 3 | Openclaw Media Gen | bibaofeng | Workflow & Integration | 85.15 | 外部系统连接器和运营动作容易被抽象成 AISA command center。 |
+| 4 | Openclaw Twitter | bibaofeng | Workflow & Integration | 85.15 | 外部系统连接器和运营动作容易被抽象成 AISA command center。 |
+| 5 | Twitter Autopilot | baofeng-tech | Workflow & Integration | 85.15 | 外部系统连接器和运营动作容易被抽象成 AISA command center。 |
+| 6 | Twitter Command Center Search Post Interact | aisadocs | Workflow & Integration | 85.15 | 外部系统连接器和运营动作容易被抽象成 AISA command center。 |
+| 7 | Openclaw AIsa Youtube AIsa | baofeng-tech | Channels & Messaging | 79.6 | 当前更像插件而不是 API，但其中有部分动作可以拆成可收费的远程能力。 |
+| 8 | Openclaw Youtube | bibaofeng | Channels & Messaging | 79.6 | 当前更像插件而不是 API，但其中有部分动作可以拆成可收费的远程能力。 |
+| 9 | Openclaw Channel | sanctrl | Channels & Messaging | 78.7 | 当前更像插件而不是 API，但其中有部分动作可以拆成可收费的远程能力。 |
+| 10 | klodi | blackbak | Workspace & App Layer | 76.9 | 当前更像插件而不是 API，但其中有部分动作可以拆成可收费的远程能力。 |
 
 ## AISA API 怎么在 Plugin 赛道做爆款
 
@@ -103,6 +166,6 @@ ClawHub 的 plugin 生态在 2026-04-20 仍然非常早期，公开 'downloads /
 
 - 打包不再只是“结构正确”，而是要让插件在发布前就具备强标题、强验证、强边界感、强可信度。
 - 平台通用层：名称必须是任务/系统词，描述必须直说安装后做什么，README 必须解释副作用和信任来源。
-- ClawHub 特化层：强调 source-linked、scan coherence、capability/runtimeId 一致性，以及 bundle/code 两种模式的清晰边界。
+- ClawHub 特化层：强调三榜分发、source-linked、scan coherence、capability/runtimeId 一致性，以及 bundle/code 两种模式的清晰边界。
 - Claude / Hermes / AgentSkill 特化层：分别照顾 repo 信任、目录可读性、quality/security/rating 这些平台偏好的排序信号。
 

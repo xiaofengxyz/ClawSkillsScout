@@ -1,7 +1,7 @@
 # Hermes AISA Report
 
-- Generated at: 2026-04-21T12:44:52.271Z
-- Dataset date: April 21, 2026
+- Generated at: 2026-04-23T05:33:11.611Z
+- Dataset date: April 23, 2026
 
 ## Executive Summary
 
@@ -13,6 +13,20 @@ Hermes behaves more like a workflow atlas than a public install marketplace. Bre
 2. Describe an operational workflow, not an abstract capability.
 3. Prefer portable external-system surfaces over deeply local-only runtime surfaces.
 4. Treat Apple and macOS-heavy skills as premium niche SKUs, not the universal flagship.
+
+## Ranking Mechanics
+
+- Hermes is discovered section-first, not downloads-first.
+- Category buttons, section copy, skill names, and path placement all influence whether a skill gets selected.
+- Users first decide whether the skill belongs in their current workflow, then whether the skill itself is worth loading.
+- Without a public popularity board, boundary clarity and correct catalog placement matter more than marketing language.
+
+## Publish Moves
+
+- Lead with workflow boundaries, platform boundaries, and prerequisites.
+- Keep section, path, title, and description aligned around the same operational unit.
+- Community bundles should foreground runtime-only scope, host requirements, and safe usage boundaries.
+- Optimize for immediate recognizability rather than vague “more powerful agent” positioning.
 
 ## Best Bundled Opportunities
 

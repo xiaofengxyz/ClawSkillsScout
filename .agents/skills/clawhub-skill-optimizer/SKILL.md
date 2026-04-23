@@ -108,8 +108,11 @@ The copy should help the skill fit into this ladder instead of looking like a ra
 
 ### ClawHub
 
+- plugin discovery now has separate downloads, installs, and stars boards, so names/descriptions should survive all three contexts
 - exact keyword matches in `name`, `slug`, and `description` matter
 - clear `Use when:` phrasing improves invocation fit
+- type filters (`Code / Bundle`), trust filters (`Verified only`), and risk filters (`Executes code`) act like real pre-click ranking surfaces
+- detail-page trust signals such as `Security Scan`, `VirusTotal`, `OpenClaw verdict`, `runtimeId`, and `source-linked` must agree with the package copy
 - upload-safe wording and coherent metadata reduce trust friction
 - bilingual EN/ZH variants should keep the same runtime surface
 
@@ -117,12 +120,14 @@ The copy should help the skill fit into this ladder instead of looking like a ra
 
 - strong task titles and direct descriptions outperform abstract internal names
 - repo trust, stars, installs, and example readability affect adoption
+- marketplace/plugin packaging is evaluated partly by how clearly one repo represents one lane
 - the publish copy should match the shipped runtime exactly
 - flagship + sibling packaging performs better than one overloaded mega skill
 
 ### Hermes
 
 - category and tag clarity matter more than broad marketing copy
+- section fit and workflow boundary clarity matter more than “heat” because Hermes is atlas-first, not download-first
 - runtime-only, community-safe wording is important
 - bundle should read as a useful operational unit, not a dev dump
 
@@ -131,6 +136,7 @@ The copy should help the skill fit into this ladder instead of looking like a ra
 - quality score is shaped by discovery, implementation, structure, and expertise
 - security score, audit freshness, and issue severity influence trust immediately
 - GitHub stars, platform coverage, and rating reinforce cold-start confidence
+- owner pages and plugin families compound trust, so the skill should read clearly as part of a wider ladder
 - naming and summary must survive directory browsing without extra context
 
 ### GitHub

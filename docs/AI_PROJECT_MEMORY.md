@@ -40,6 +40,24 @@ This file is the fast handoff layer for future chats. Read it when you need to k
 
 ## Recently Completed
 
+### 2026-04-23
+
+- Reorganized `README.md` into a clearer operator entry point with project overview, feature map, page map, grouped npm-script summaries, parameter notes, and workflow guidance
+- Added `scripts/README.md` as the repo-wide script catalog covering npm aliases, direct script responsibilities, inputs/outputs, CLI parameters, and environment-variable requirements
+- Added `example/accounts` as the shareable local-credentials template and documented the pattern of keeping real private values in gitignored `docs/accounts`
+- Updated `docs/PROJECT_MANUAL.md`, `docs/PROJECT_OVERVIEW_AI.md`, and `docs/project-map.json` so the new script-reference doc, example directory, plugin page entry, and current cross-market page description are reflected in the handoff docs
+- Updated `.github/workflows/deploy.yml` so push builds stay on `pipeline:aisa-analysis`, while scheduled/manual GitHub Actions now run `pipeline:scheduled-analysis` to refresh the broader report suite automatically
+- Added `analyze:full-report-suite` and `pipeline:scheduled-analysis` in `package.json` so CI has a single full-refresh entry point for report datasets plus the final site build
+- Updated `README.md`, `docs/DEPLOYMENT.md`, `docs/PROJECT_MANUAL.md`, `docs/PROJECT_OVERVIEW_AI.md`, and `docs/project-map.json` so the documented CI flow now matches the actual push-vs-schedule behavior
+- Added `scripts/sync-report-docx.py` plus `npm run sync:report-docx` so repo-local and public Markdown reports can be backfilled or refreshed into matching `.docx` files
+- Updated `scripts/build-market-ecosystem-report.mjs`, `scripts/build-agentskill-report.mjs`, `scripts/build-agentskills-so-report.mjs`, and `scripts/build-clawhub-plugin-report.mjs` so their generated Markdown reports now also refresh `.docx` companions automatically
+- Backfilled missing `.docx` outputs for the ClawHub plugin, Claude, Hermes, AgentSkill, AgentSkills.so, AISA execution-plan, and AISA test-evidence report families under both `reports/` and `public/reports/`
+- Updated `reports/README.md`, `public/reports/index.html`, `docs/PROJECT_MANUAL.md`, `docs/PROJECT_OVERVIEW_AI.md`, `docs/project-map.json`, and `README.md` so the report library and project-function map now reflect the Markdown + Word report workflow more clearly
+- Added a standalone `clawhub-plugins.html` page plus `src/clawhub-plugins/*` so the site now shows the ClawHub plugin downloads / installs / stars boards, composite ranking, author factories, trust mechanics, and AISA opportunities directly in the browser
+- Strengthened `scripts/build-clawhub-plugin-report.mjs` so plugin reporting now separates the three public boards instead of collapsing analysis into code-vs-bundle alone, and made detail-page failures fall back to partial records instead of aborting the whole report
+- Strengthened `scripts/build-market-ecosystem-report.mjs`, `scripts/build-agentskill-report.mjs`, and `scripts/build-agentskills-so-report.mjs` so the generated reports spell out ranking mechanics, breakout mechanics, publish moves, and common failure modes more explicitly
+- Updated the local `.agents/skills/clawhub-*` guides and the global `/home/xiaofeng/.codex/skills/clawhub-*-all/SKILL.md` guides with newer ClawHub plugin, Claude, Hermes, AgentSkill, and AgentSkills.so publishing/ranking lessons for breakout-oriented skill and plugin releases
+
 ### 2026-04-22
 
 - Updated the main dashboard plus the ClawHub growth, download-insights, 10k-system, and market-intelligence pages with a shared EN/ZH language toggle stored in browser state
@@ -94,9 +112,9 @@ This file is the fast handoff layer for future chats. Read it when you need to k
 
 ## Next Recommended Steps
 
-1. Verify whether the improved AgentSkills.so security and distribution extraction should be mirrored with deeper payload extraction on AgentSkill
-2. Decide whether AgentSkill and AgentSkills.so need their own standalone frontend pages beyond the now-expanded `market-intelligence.html`
-3. Expand cross-platform opportunity scoring so the unified queue can feed release planning and automated skill-family generation more directly
+1. Decide whether AgentSkill and AgentSkills.so need their own standalone frontend pages beyond the now-expanded `market-intelligence.html`
+2. Expand cross-platform opportunity scoring so the unified queue can feed release planning and automated skill-family generation more directly
+3. Add more cached fallbacks for long-running live collectors where third-party sites intermittently stall or partially render
 
 ## Archive Protocol
 

@@ -1,7 +1,7 @@
 # Claude AISA Report
 
-- Generated at: 2026-04-21T12:44:52.271Z
-- Dataset date: April 21, 2026
+- Generated at: 2026-04-23T05:33:11.611Z
+- Dataset date: April 23, 2026
 
 ## Executive Summary
 
@@ -14,6 +14,20 @@ Claude rewards the same breakout fundamentals that work on ClawHub, but with a s
 3. Use GitHub and real examples as cold-start trust anchors.
 4. Keep the category lane narrow enough that adjacent variants still reinforce each other.
 5. Build an author factory, not isolated one-off skills.
+
+## Ranking Mechanics
+
+- Installs are the clearest public demand signal, but they are tightly coupled with GitHub repo trust.
+- Stars, installs, task naming, repository brand, and example readability all shape cold-start conversion together.
+- On the marketplace side, plugin count and lane coherence matter alongside stars because the repo behaves like distribution infrastructure.
+- Titles and descriptions need to answer the task first, then justify why the repo deserves trust.
+
+## Publish Moves
+
+- Align the README, repo layout, skill title, description, and install instructions around the same workflow.
+- Use real repository proof and concrete outputs to back the listing promise.
+- Keep a marketplace repo organized around one lane instead of cramming unrelated skills into the same entry point.
+- Optimize for immediate install clarity before adding story or background context.
 
 ## Top Author Factories
 

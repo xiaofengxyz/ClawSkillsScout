@@ -2,6 +2,7 @@ import { mkdir, writeFile } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
 import fetch from 'node-fetch';
 import pLimit from 'p-limit';
+import { syncMarkdownDocx } from './lib/report-docx.mjs';
 
 const ROOT = process.cwd();
 const OUTPUT_PATH = resolve(ROOT, 'public/data/agentskill-report.json');
@@ -556,6 +557,33 @@ AgentSkill 的榜单不是只看一个数字，而是“安装 / GitHub 信任 /
 ## 重要排名因素
 
 ${markdownTable(factorRows)}
+## 排名机制
+
+- AgentSkill 公开把安装量、GitHub Stars、Quality Score、Security Score、Rating 都放到了用户可见决策面。
+- "Discovery / Implementation / Structure / Expertise" 这组质量分拆项，会直接影响“看起来像不像一个成熟 skill”。
+- 高安装 skill 往往不是只靠标题，而是标题、repo 信任、评分审查、示例输出一起协同。
+- Plugin 页则更像主题分发层，会放大“同主题多 skill 打包”的优势。
+
+## 爆款机制
+
+- 先用高意图任务词拿点击，再用 GitHub repo 和质量/安全信号拿安装。
+- 作者页和 plugin 家族会放大同一作者的复利，所以旗舰 skill + 窄变体 + 同主题 plugin 比单点爆款更稳。
+- 最容易重复获客的是 Developer、Research、Workspace、Documents、Security 这些高频工作面。
+- 细分类目的 skill，如果能把输入、输出、真实结果写得更具体，往往更容易提升质量感知。
+
+## 发布动作
+
+- 标题、简介、README、SKILL.md 首段必须同时说清任务、触发条件、输入和输出。
+- GitHub 仓库要能支撑 listing 上的承诺，避免“页面很强、包里很空”的落差。
+- 旗舰包负责占大词，窄 skill 负责承接细分需求，plugin 负责承接合集和主题打包。
+- 质量分和安全分是产品表面，发布时要像经营商品详情页一样经营它们。
+
+## 常见失分项
+
+- 标题太抽象，搜索词和任务词不够明确。
+- README / SKILL / 示例输出不能证明它真的解决了页面承诺的问题。
+- 质量评分拆项里 "Implementation" 或 "Structure" 太弱，导致看起来像“提示词片段”而不是成品。
+- plugin 打包主题过大但边界不清，反而会压低信任和安装转化。
 ## 爆款 Skill 样本
 
 ${markdownTable(skillRows)}
@@ -645,6 +673,33 @@ ${markdownTable(
       Impact: item.whyItMatters,
     })),
   )}
+## Ranking Mechanics
+
+- AgentSkill puts installs, GitHub stars, quality review, security review, and ratings directly on visible decision surfaces.
+- The quality breakdown itself is a ranking surface: discovery, implementation, structure, and expertise shape how complete the skill feels before install.
+- The strongest cards compound task naming, repo trust, review proof, and concrete outcomes instead of relying on one vanity metric.
+- Plugin pages amplify themed packaging, so family-level structure matters alongside the single skill card.
+
+## Breakout Mechanics
+
+- Task-first titles win the click, then repo trust plus quality/security signals win the install.
+- Owner pages and plugin families create compounding discovery, so a flagship skill plus narrower siblings is more durable than a one-off hit.
+- Developer, research, workspace, documents, and security surfaces remain the most repeatable breakout lanes.
+- Narrow skills with very explicit inputs and outputs tend to read as higher-quality products.
+
+## Publish Moves
+
+- Align the title, listing description, README, and the first "SKILL.md" paragraph around the same task, trigger, input, and output.
+- Make sure the GitHub repo can prove the promise implied by the listing.
+- Let the flagship package target the broad keyword, then let narrower skills capture high-intent variants.
+- Treat quality and security review as part of the product surface, not as secondary metadata.
+
+## Common Failure Modes
+
+- Abstract titles that do not carry real search intent.
+- README / SKILL / examples that fail to prove the problem promised by the page.
+- Weak implementation or structure signals that make the package feel like a prompt fragment instead of a finished skill.
+- Over-broad plugins whose theme is too fuzzy to convert cleanly.
 ## Best Skill Opportunities
 
 ${markdownTable(skillRows)}
@@ -779,6 +834,7 @@ async function buildReport() {
   await writeFile(REPORT_ZH_PUBLIC_PATH, `${zhReport}\n`, 'utf8');
   await writeFile(REPORT_EN_PATH, `${enReport}\n`, 'utf8');
   await writeFile(REPORT_EN_PUBLIC_PATH, `${enReport}\n`, 'utf8');
+  syncMarkdownDocx(ROOT, [REPORT_ZH_PATH, REPORT_ZH_PUBLIC_PATH, REPORT_EN_PATH, REPORT_EN_PUBLIC_PATH]);
 }
 
 buildReport().catch((error) => {

@@ -104,26 +104,31 @@ Strong public packages usually include:
 
 ### ClawHub
 
+- package for all three public plugin boards: downloads, installs, and stars
 - keep bundle vs code-plugin boundaries crisp
 - make `runtimeId`, capabilities, and README match exactly
 - prefer source-linked, coherent, scanner-friendly bundles
+- make detail-page trust surfaces easy to verify: `Security Scan`, `VirusTotal`, `OpenClaw verdict`, compatibility, and capabilities should all tell the same story
 - if packaging a plugin, describe concrete side effects such as config writes, gateway restarts, or remote fetches
 
 ### Claude
 
 - prefer clean repo-backed layouts and example-driven READMEs
+- repo identity should make the lane obvious even before the user reads the whole bundle
 - marketplace bundles should read clearly without relying on out-of-bundle files
 - discovery improves when the package feels like one sharp workflow, not a dev dump
 
 ### Hermes
 
 - optimize for category/tag clarity and runtime-only contents
+- package one workflow unit per bundle so the section/path choice stays obvious
 - avoid noisy install or dev sections in the publish bundle
 
 ### AgentSkill
 
 - quality score, security score, rating, GitHub stars, and platform coverage become part of the packaging surface
 - package so reviewers can see discovery, implementation, structure, and expertise clearly
+- think about the owner page and sibling plugin family too, not just one isolated listing
 - if GitHub is the proof anchor, preserve the source linkage and README coherence
 
 ### GitHub
@@ -192,9 +197,10 @@ Required packager behavior:
 
 ## Plugin breakout lessons from live ClawHub plugin analysis
 
-As of 2026-04-20, ClawHub plugin pages expose weak public install/download metrics, so public trust comes mostly from structure and coherence. Packaging should therefore emphasize:
+As of 2026-04-23, ClawHub plugin pages expose separate downloads / installs / stars boards, but public numeric detail is still weaker than the ranking surface itself. Packaging should therefore emphasize:
 
 - task-first or system-first titles
+- relevance across all three public boards
 - explicit side effects and setup expectations
 - strong verification surfaces such as source-linked provenance
 - code-plugin clarity when real runtime behavior exists

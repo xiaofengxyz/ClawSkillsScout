@@ -201,19 +201,21 @@ Why this matters:
 
 ### ClawHub
 
-- watch for `Suspicious`, source mismatch, capability/install incoherence, and unsafe local side effects
+- watch for `Suspicious`, source mismatch, capability/install incoherence, unsafe local side effects, and board-facing copy that would fail the downloads / installs / stars discovery surfaces
+- verify that `Security Scan`, `VirusTotal`, `OpenClaw verdict`, `runtimeId`, compatibility, and README claims all agree
 
 ### Claude
 
-- watch for runtime vs README drift, non-runtime helpers, and overly broad install claims
+- watch for runtime vs README drift, non-runtime helpers, overly broad install claims, and repo/listing mismatch that would weaken install trust
 
 ### Hermes
 
-- watch for unsafe community wording, non-runtime references, and category/tag mismatch
+- watch for unsafe community wording, non-runtime references, and section/path/category mismatch that breaks atlas discovery
 
 ### AgentSkill
 
 - watch for obvious security findings, weak implementation evidence, and copy that would depress discovery/structure/expertise scores
+- watch for owner-page ladder drift where sibling bundles tell inconsistent trust stories
 - quality and security pages effectively become part of the public product surface
 
 ### GitHub

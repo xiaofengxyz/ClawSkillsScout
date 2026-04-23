@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-21T12:57:42.598Z",
+  "generatedAt": "2026-04-23T05:48:01.743Z",
   "sources": {
     "listings": [
       "https://agentskills.so/",
@@ -33,41 +33,41 @@
       "https://agentskills.so/skills/search",
       "https://agentskills.so/skills/search?page=2",
       "https://agentskills.so/skills/search?page=3",
+      "https://agentskills.so/skills/search?page=4",
       "https://agentskills.so/skills/search?page=5",
       "https://agentskills.so/skills/search?page=6",
-      "https://agentskills.so/skills/search?page=7",
-      "https://agentskills.so/skills/search?page=8"
+      "https://agentskills.so/skills/search?page=7"
     ],
     "listingCount": 44,
-    "detailCount": 43
+    "detailCount": 44
   },
   "summary": {
-    "sampledSkills": 43,
+    "sampledSkills": 44,
     "sampledAuthors": 6,
-    "totalWeeklyDownloads": 1174246,
-    "totalGithubStars": 6041995,
+    "totalWeeklyDownloads": 1288146,
+    "totalGithubStars": 6063095,
     "avgPlatformCoverage": 0,
-    "resolvedSecuritySamples": 42,
-    "avgSecurityScore": 67.8,
+    "resolvedSecuritySamples": 43,
+    "avgSecurityScore": 68.5,
     "topCategory": "Developer"
   },
   "rankingFactors": [
     {
       "factor": "Weekly downloads",
       "importance": "Very high",
-      "evidence": "Sampled total 1,174,246 weekly downloads",
+      "evidence": "Sampled total 1,288,146 weekly downloads",
       "whyItMatters": "The site surfaces weekly demand directly in cards and detail pages."
     },
     {
       "factor": "GitHub stars",
       "importance": "High",
-      "evidence": "Sampled total 6,041,995 repo stars",
+      "evidence": "Sampled total 6,063,095 repo stars",
       "whyItMatters": "Repo trust is the strongest cross-platform cold-start asset."
     },
     {
       "factor": "Security posture",
       "importance": "High",
-      "evidence": "Resolved security breakdown for 42/43 items, average 67.8/100",
+      "evidence": "Resolved security breakdown for 43/44 items, average 68.5/100",
       "whyItMatters": "Trust & Identity, Behavioral Monitoring, and Vulnerability Exposure are explicit review surfaces."
     },
     {
@@ -85,7 +85,7 @@
     {
       "factor": "Author factory effect",
       "importance": "Medium",
-      "evidence": "vercel-labs 4; microsoft 5; anthropics 13",
+      "evidence": "vercel-labs 5; microsoft 5; anthropics 13",
       "whyItMatters": "Multi-skill repo owners compound trust and discovery over time."
     }
   ],
@@ -498,6 +498,30 @@
         "securityScore": 66.7,
         "platformCoverageScore": 10,
         "aisaOpportunityScore": 88.67
+      },
+      {
+        "href": "/skills/vercel-labs-agent-skills-web-design-guidelines",
+        "slug": "vercel-labs-agent-skills-web-design-guidelines",
+        "name": "web-design-guidelines",
+        "weeklyDownloads": 113900,
+        "repo": "vercel-labs/agent-skills",
+        "description": "Review UI code for Web Interface Guidelines compliance. Use when asked to \"review my UI\", \"check accessibility\", \"audit design\", \"review UX\", or \"check ...",
+        "owner": "vercel-labs",
+        "createdAt": "16-Jan-26",
+        "githubStars": 21100,
+        "trustIdentityScore": 5,
+        "behavioralMonitoringScore": 5,
+        "vulnerabilityExposureScore": 0,
+        "installedOnDistribution": {},
+        "platformCoverageCount": 0,
+        "totalDistributionInstalls": 0,
+        "securitySignalsResolved": true,
+        "category": "Security & Audit",
+        "apiFamily": "Security Audit API",
+        "targetTitle": "Security Audit Command Center",
+        "securityScore": 100,
+        "platformCoverageScore": 10,
+        "aisaOpportunityScore": 88.65
       },
       {
         "href": "/skills/microsoft-github-copilot-for-azure-entra-app-registration",
@@ -1534,6 +1558,30 @@
         "aisaOpportunityScore": 88.67
       },
       {
+        "href": "/skills/vercel-labs-agent-skills-web-design-guidelines",
+        "slug": "vercel-labs-agent-skills-web-design-guidelines",
+        "name": "web-design-guidelines",
+        "weeklyDownloads": 113900,
+        "repo": "vercel-labs/agent-skills",
+        "description": "Review UI code for Web Interface Guidelines compliance. Use when asked to \"review my UI\", \"check accessibility\", \"audit design\", \"review UX\", or \"check ...",
+        "owner": "vercel-labs",
+        "createdAt": "16-Jan-26",
+        "githubStars": 21100,
+        "trustIdentityScore": 5,
+        "behavioralMonitoringScore": 5,
+        "vulnerabilityExposureScore": 0,
+        "installedOnDistribution": {},
+        "platformCoverageCount": 0,
+        "totalDistributionInstalls": 0,
+        "securitySignalsResolved": true,
+        "category": "Security & Audit",
+        "apiFamily": "Security Audit API",
+        "targetTitle": "Security Audit Command Center",
+        "securityScore": 100,
+        "platformCoverageScore": 10,
+        "aisaOpportunityScore": 88.65
+      },
+      {
         "href": "/skills/microsoft-github-copilot-for-azure-entra-app-registration",
         "slug": "microsoft-github-copilot-for-azure-entra-app-registration",
         "name": "entra-app-registration",
@@ -1580,30 +1628,6 @@
         "securityScore": 66.7,
         "platformCoverageScore": 10,
         "aisaOpportunityScore": 87.12
-      },
-      {
-        "href": "/skills/steipete-clawdis-xurl",
-        "slug": "steipete-clawdis-xurl",
-        "name": "xurl",
-        "weeklyDownloads": 125,
-        "repo": "steipete/clawdis",
-        "description": "A CLI tool for making authenticated requests to the X (Twitter) API. Use this skill when you need to post tweets, reply, quote, search, read posts, mana...",
-        "owner": "steipete",
-        "createdAt": "Feb 22, 2026",
-        "githubStars": 303800,
-        "trustIdentityScore": 1,
-        "behavioralMonitoringScore": 1,
-        "vulnerabilityExposureScore": 1,
-        "installedOnDistribution": {},
-        "platformCoverageCount": 0,
-        "totalDistributionInstalls": 0,
-        "securitySignalsResolved": true,
-        "category": "Search & Research",
-        "apiFamily": "Search API",
-        "targetTitle": "Twitter API Command Center",
-        "securityScore": 40,
-        "platformCoverageScore": 10,
-        "aisaOpportunityScore": 86.3
       }
     ],
     "topByWeeklyDownloads": [
@@ -1654,6 +1678,30 @@
         "securityScore": 66.7,
         "platformCoverageScore": 10,
         "aisaOpportunityScore": 88.67
+      },
+      {
+        "href": "/skills/vercel-labs-agent-skills-web-design-guidelines",
+        "slug": "vercel-labs-agent-skills-web-design-guidelines",
+        "name": "web-design-guidelines",
+        "weeklyDownloads": 113900,
+        "repo": "vercel-labs/agent-skills",
+        "description": "Review UI code for Web Interface Guidelines compliance. Use when asked to \"review my UI\", \"check accessibility\", \"audit design\", \"review UX\", or \"check ...",
+        "owner": "vercel-labs",
+        "createdAt": "16-Jan-26",
+        "githubStars": 21100,
+        "trustIdentityScore": 5,
+        "behavioralMonitoringScore": 5,
+        "vulnerabilityExposureScore": 0,
+        "installedOnDistribution": {},
+        "platformCoverageCount": 0,
+        "totalDistributionInstalls": 0,
+        "securitySignalsResolved": true,
+        "category": "Security & Audit",
+        "apiFamily": "Security Audit API",
+        "targetTitle": "Security Audit Command Center",
+        "securityScore": 100,
+        "platformCoverageScore": 10,
+        "aisaOpportunityScore": 88.65
       },
       {
         "href": "/skills/remotion-dev-skills-remotion-best-practices",
@@ -2062,30 +2110,6 @@
         "securityScore": 66.7,
         "platformCoverageScore": 10,
         "aisaOpportunityScore": 88.67
-      },
-      {
-        "href": "/skills/anthropics-skills-brand-guidelines",
-        "slug": "anthropics-skills-brand-guidelines",
-        "name": "brand-guidelines",
-        "weeklyDownloads": 8100,
-        "repo": "anthropics/skills",
-        "description": "Applies Anthropic&#x27;s official brand colors and typography to any sort of artifact that may benefit from having Anthropic&#x27;s look-and-feel. Use it when bra...",
-        "owner": "anthropics",
-        "createdAt": "16-Jan-26",
-        "githubStars": 74800,
-        "trustIdentityScore": 5,
-        "behavioralMonitoringScore": 5,
-        "vulnerabilityExposureScore": 5,
-        "installedOnDistribution": {},
-        "platformCoverageCount": 0,
-        "totalDistributionInstalls": 0,
-        "securitySignalsResolved": true,
-        "category": "General Utility",
-        "apiFamily": "General Utility API",
-        "targetTitle": "Utility Command Center",
-        "securityScore": 66.7,
-        "platformCoverageScore": 10,
-        "aisaOpportunityScore": 66.52
       }
     ],
     "topByGithubStars": [
@@ -2716,6 +2740,30 @@
         "aisaOpportunityScore": 90.15
       },
       {
+        "href": "/skills/vercel-labs-agent-skills-web-design-guidelines",
+        "slug": "vercel-labs-agent-skills-web-design-guidelines",
+        "name": "web-design-guidelines",
+        "weeklyDownloads": 113900,
+        "repo": "vercel-labs/agent-skills",
+        "description": "Review UI code for Web Interface Guidelines compliance. Use when asked to \"review my UI\", \"check accessibility\", \"audit design\", \"review UX\", or \"check ...",
+        "owner": "vercel-labs",
+        "createdAt": "16-Jan-26",
+        "githubStars": 21100,
+        "trustIdentityScore": 5,
+        "behavioralMonitoringScore": 5,
+        "vulnerabilityExposureScore": 0,
+        "installedOnDistribution": {},
+        "platformCoverageCount": 0,
+        "totalDistributionInstalls": 0,
+        "securitySignalsResolved": true,
+        "category": "Security & Audit",
+        "apiFamily": "Security Audit API",
+        "targetTitle": "Security Audit Command Center",
+        "securityScore": 100,
+        "platformCoverageScore": 10,
+        "aisaOpportunityScore": 88.65
+      },
+      {
         "href": "/skills/microsoft-github-copilot-for-azure-azure-deploy",
         "slug": "microsoft-github-copilot-for-azure-azure-deploy",
         "name": "azure-deploy",
@@ -3010,30 +3058,6 @@
         "weeklyDownloads": 512,
         "repo": "facebook/react",
         "description": "Use when adding new error messages to React, or seeing \"unknown error code\" warnings.",
-        "owner": "facebook",
-        "createdAt": "24-Jan-26",
-        "githubStars": 243300,
-        "trustIdentityScore": 5,
-        "behavioralMonitoringScore": 5,
-        "vulnerabilityExposureScore": 5,
-        "installedOnDistribution": {},
-        "platformCoverageCount": 0,
-        "totalDistributionInstalls": 0,
-        "securitySignalsResolved": true,
-        "category": "Developer",
-        "apiFamily": "Developer Platform API",
-        "targetTitle": "Developer Command Center",
-        "securityScore": 66.7,
-        "platformCoverageScore": 10,
-        "aisaOpportunityScore": 88.67
-      },
-      {
-        "href": "/skills/facebook-react-fix",
-        "slug": "facebook-react-fix",
-        "name": "fix",
-        "weeklyDownloads": 695,
-        "repo": "facebook/react",
-        "description": "Use when you have lint errors, formatting issues, or before committing code to ensure it passes CI.",
         "owner": "facebook",
         "createdAt": "24-Jan-26",
         "githubStars": 243300,
@@ -3462,6 +3486,30 @@
         "aisaOpportunityScore": 88.67
       },
       {
+        "href": "/skills/vercel-labs-agent-skills-web-design-guidelines",
+        "slug": "vercel-labs-agent-skills-web-design-guidelines",
+        "name": "web-design-guidelines",
+        "weeklyDownloads": 113900,
+        "repo": "vercel-labs/agent-skills",
+        "description": "Review UI code for Web Interface Guidelines compliance. Use when asked to \"review my UI\", \"check accessibility\", \"audit design\", \"review UX\", or \"check ...",
+        "owner": "vercel-labs",
+        "createdAt": "16-Jan-26",
+        "githubStars": 21100,
+        "trustIdentityScore": 5,
+        "behavioralMonitoringScore": 5,
+        "vulnerabilityExposureScore": 0,
+        "installedOnDistribution": {},
+        "platformCoverageCount": 0,
+        "totalDistributionInstalls": 0,
+        "securitySignalsResolved": true,
+        "category": "Security & Audit",
+        "apiFamily": "Security Audit API",
+        "targetTitle": "Security Audit Command Center",
+        "securityScore": 100,
+        "platformCoverageScore": 10,
+        "aisaOpportunityScore": 88.65
+      },
+      {
         "href": "/skills/microsoft-github-copilot-for-azure-entra-app-registration",
         "slug": "microsoft-github-copilot-for-azure-entra-app-registration",
         "name": "entra-app-registration",
@@ -3508,30 +3556,6 @@
         "securityScore": 66.7,
         "platformCoverageScore": 10,
         "aisaOpportunityScore": 87.12
-      },
-      {
-        "href": "/skills/steipete-clawdis-xurl",
-        "slug": "steipete-clawdis-xurl",
-        "name": "xurl",
-        "weeklyDownloads": 125,
-        "repo": "steipete/clawdis",
-        "description": "A CLI tool for making authenticated requests to the X (Twitter) API. Use this skill when you need to post tweets, reply, quote, search, read posts, mana...",
-        "owner": "steipete",
-        "createdAt": "Feb 22, 2026",
-        "githubStars": 303800,
-        "trustIdentityScore": 1,
-        "behavioralMonitoringScore": 1,
-        "vulnerabilityExposureScore": 1,
-        "installedOnDistribution": {},
-        "platformCoverageCount": 0,
-        "totalDistributionInstalls": 0,
-        "securitySignalsResolved": true,
-        "category": "Search & Research",
-        "apiFamily": "Search API",
-        "targetTitle": "Twitter API Command Center",
-        "securityScore": 40,
-        "platformCoverageScore": 10,
-        "aisaOpportunityScore": 86.3
       }
     ],
     "topCategories": [
@@ -3560,11 +3584,11 @@
         "count": 2
       },
       {
-        "name": "Social & Growth",
-        "count": 1
+        "name": "Security & Audit",
+        "count": 2
       },
       {
-        "name": "Security & Audit",
+        "name": "Social & Growth",
         "count": 1
       },
       {
@@ -3582,13 +3606,14 @@
     "topAuthors": [
       {
         "owner": "vercel-labs",
-        "skillCount": 4,
-        "totalWeeklyDownloads": 584800,
-        "totalGithubStars": 64300,
-        "avgSecurityScore": 81.7,
+        "skillCount": 5,
+        "totalWeeklyDownloads": 698700,
+        "totalGithubStars": 85400,
+        "avgSecurityScore": 85.3,
         "primaryCategories": [
           "Browser & Automation",
-          "Developer"
+          "Developer",
+          "Security & Audit"
         ]
       },
       {

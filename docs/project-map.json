@@ -24,8 +24,10 @@
     "humanFirstRead": [
       "README.md",
       "docs/PROJECT_OVERVIEW_AI.md",
+      "docs/project-map.json",
       "docs/AI_PROJECT_MEMORY.md",
-      "package.json"
+      "package.json",
+      "scripts/README.md"
     ],
     "runtimeEntryPoints": [
       "scripts/scrape-clawhub.ts",
@@ -43,6 +45,7 @@
       "scripts/build-clawhub-multi-ranking-report.py",
       "scripts/build-clawhub-viral-boss-report.py",
       "scripts/build-aisa-expansion-plans.py",
+      "scripts/sync-report-docx.py",
       "scripts/build-market-ecosystem-report.mjs",
       "scripts/build-agentskill-report.mjs",
       "scripts/build-agentskills-so-report.mjs",
@@ -107,6 +110,7 @@
         "src/App.tsx",
         "src/clawhub-growth/App.tsx",
         "src/clawhub-download-insights/App.tsx",
+        "src/clawhub-plugins/App.tsx",
         "src/clawhub-10k-system/App.tsx",
         "src/market-intelligence/App.tsx",
         "src/types.ts",
@@ -115,6 +119,7 @@
         "index.html",
         "clawhub-growth.html",
         "clawhub-download-insights.html",
+        "clawhub-plugins.html",
         "clawhub-10k-system.html",
         "market-intelligence.html"
       ],
@@ -139,17 +144,29 @@
         "public/reports/ClawHub_Multi_Ranking_Report_ZH.docx",
         "public/reports/ClawHub_Viral_Boss_Report_ZH.docx",
         "public/reports/ClawHub_Plugin_Viral_Report_ZH.md",
+        "public/reports/ClawHub_Plugin_Viral_Report_ZH.docx",
         "public/reports/ClawHub_Plugin_Viral_Report_EN.md",
+        "public/reports/ClawHub_Plugin_Viral_Report_EN.docx",
         "public/reports/Claude_AISA_Report_ZH.md",
+        "public/reports/Claude_AISA_Report_ZH.docx",
         "public/reports/Claude_AISA_Report_EN.md",
+        "public/reports/Claude_AISA_Report_EN.docx",
         "public/reports/Hermes_AISA_Report_ZH.md",
+        "public/reports/Hermes_AISA_Report_ZH.docx",
         "public/reports/Hermes_AISA_Report_EN.md",
+        "public/reports/Hermes_AISA_Report_EN.docx",
         "public/reports/AgentSkill_Report_ZH.md",
+        "public/reports/AgentSkill_Report_ZH.docx",
         "public/reports/AgentSkill_Report_EN.md",
+        "public/reports/AgentSkill_Report_EN.docx",
         "public/reports/AgentSkills_SO_Report_ZH.md",
+        "public/reports/AgentSkills_SO_Report_ZH.docx",
         "public/reports/AgentSkills_SO_Report_EN.md",
+        "public/reports/AgentSkills_SO_Report_EN.docx",
         "public/reports/AISA_All_Skills_Breakout_Plan_ZH.docx",
-        "public/reports/ClawHub_Top200_AISA_Conversion_Report_ZH.docx"
+        "public/reports/ClawHub_Top200_AISA_Conversion_Report_ZH.docx",
+        "public/reports/AISA_Breakout_Execution_Plan_ZH.docx",
+        "public/reports/AISA_Breakout_Test_Evidence_ZH.docx"
       ],
       "outputs": [
         "dist/"
@@ -164,11 +181,11 @@
         "optimized bundle download links",
         "standalone ClawHub growth strategy page",
         "standalone ClawHub downloads-insights page",
-        "standalone ClawHub plugin viral report dataset and Markdown reports",
+        "standalone ClawHub plugin ranking/trust page plus Markdown + Word reports",
         "standalone ClawHub 10k+ repeatable-systems page",
-        "standalone cross-market intelligence page for ClawHub, Claude Marketplaces, and Hermes",
-        "standalone Claude, Hermes, AgentSkill, and AgentSkills.so Markdown report generation",
-        "public Word report download for system analysis",
+        "standalone cross-market intelligence page combining ClawHub, Claude Marketplaces, Hermes, AgentSkill, and AgentSkills.so datasets",
+        "standalone Claude, Hermes, AgentSkill, and AgentSkills.so Markdown + Word report generation",
+        "public Word report download for system analysis and report-library exports",
         "public Chinese report and boss brief download"
       ]
     },
@@ -354,10 +371,13 @@
     "analyze:clawhub-multi-ranking": "Fetch the latest ClawHub downloads/stars/installs top lists and regenerate the boss-facing multi-ranking report assets.",
     "analyze:clawhub-viral-boss": "Generate the long-form boss report that turns multi-ranking market analysis into a ClawHub viral-skill playbook and Word deliverable.",
     "analyze:aisa-expansion-plans": "Generate full breakout plans for current AISA skills plus a ranked Top 200 non-AISA conversion plan and Word deliverables.",
-    "analyze:market-ecosystem": "Refresh cross-market intelligence data and publish separate Claude and Hermes EN/ZH AISA reports.",
-    "analyze:agentskill": "Capture current AgentSkill skill/plugin leaderboard samples plus detail-page trust signals and publish JSON plus EN/ZH reports.",
-    "analyze:agentskills-so": "Capture current AgentSkills.so skill samples plus detail-page security/download/repo signals and publish JSON plus EN/ZH reports.",
+    "analyze:market-ecosystem": "Refresh cross-market intelligence data and publish separate Claude and Hermes EN/ZH Markdown + Word AISA reports.",
+    "analyze:agentskill": "Capture current AgentSkill skill/plugin leaderboard samples plus detail-page trust signals and publish JSON plus EN/ZH Markdown + Word reports.",
+    "analyze:agentskills-so": "Capture current AgentSkills.so skill samples plus detail-page security/download/repo signals and publish JSON plus EN/ZH Markdown + Word reports.",
+    "analyze:full-report-suite": "Run the full report-generation chain for ClawHub growth, downloads insights, plugins, 10k system, follow-up briefs, multi-ranking, viral-boss, AISA expansion plans, market ecosystem, AgentSkill, and AgentSkills.so.",
+    "sync:report-docx": "Backfill or refresh .docx companions for Markdown report files in reports/ and public/reports/.",
     "pipeline:aisa-analysis": "Refresh ClawHub and GitHub skill archives, rebuild AISA analysis data, then build the static site.",
+    "pipeline:scheduled-analysis": "Refresh downloads, AISA analysis, all major report datasets, then build the static site for scheduled or manual CI refreshes.",
     "build:source-optimized": "Build English optimized package directories from original-unpacked sources.",
     "build:source-optimized-zh": "Build Chinese optimized package directories from source-optimized packages.",
     "package:source-optimized": "Zip English optimized packages into release artifacts.",
@@ -407,7 +427,7 @@
     },
     {
       "path": "public/data/market-ecosystem-report.json",
-      "role": "Cross-market intelligence dataset combining ClawHub, Claude Marketplaces, and Hermes skill-atlas analysis into one AISA opportunity view."
+      "role": "Base cross-market intelligence dataset for ClawHub, Claude Marketplaces, and Hermes, loaded alongside AgentSkill and AgentSkills.so datasets in the unified AISA opportunity page."
     },
     {
       "path": "public/data/agentskill-report.json",
@@ -432,6 +452,10 @@
       "role": "Chat-independent handbook covering project functions, pages, datasets, report families, and recommended starting paths."
     },
     {
+      "path": "scripts/README.md",
+      "role": "Script catalog covering npm aliases, direct file responsibilities, inputs/outputs, and CLI parameter or environment-variable notes."
+    },
+    {
       "path": "reports/README.md",
       "role": "Repo-local report index that explains the purpose of each generated report family."
     }
@@ -439,7 +463,7 @@
   "automation": [
     {
       "path": ".github/workflows/deploy.yml",
-      "role": "GitHub Pages deployment workflow; runs pipeline:aisa-analysis, refreshes downloads and AISA analysis during CI, retries transient failures, prevents overlapping runs, and uploads analysis artifacts for troubleshooting."
+      "role": "GitHub Pages deployment workflow; runs pipeline:aisa-analysis on push, pipeline:scheduled-analysis on schedule/manual dispatch, retries transient failures, prevents overlapping runs, and uploads analysis/report artifacts for troubleshooting."
     }
   ],
   "keyDirectories": [
@@ -472,6 +496,10 @@
       "role": "Published downloadable zip artifacts."
     },
     {
+      "path": "example/",
+      "role": "Shareable local-template files such as example/accounts; real private credentials stay in ignored local files."
+    },
+    {
       "path": "artifacts/",
       "role": "Intermediate and release build artifacts."
     },
@@ -502,6 +530,7 @@
     "docs/PROJECT_OVERVIEW_AI.md",
     "README.md",
     "package.json",
+    "scripts/README.md",
     "scripts/scrape-clawhub.ts",
     "src/App.tsx",
     "scripts/build-source-optimized-packages.mjs",

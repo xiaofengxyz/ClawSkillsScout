@@ -7,7 +7,8 @@
    - open `Settings -> Pages`
    - set source to `GitHub Actions`
 3. The workflow in `.github/workflows/deploy.yml` will:
-   - scrape ClawHub
+   - run `npm run pipeline:aisa-analysis` on `push` to `master` for the main dashboard refresh
+   - run `npm run pipeline:scheduled-analysis` on `schedule` and `workflow_dispatch` for the full report-refresh chain
    - build the static site
    - publish the `dist/` artifact to GitHub Pages
 4. Scheduled refresh runs daily at `02:17 UTC`, which is `10:17` Beijing time.

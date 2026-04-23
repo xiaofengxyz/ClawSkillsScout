@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-21T12:44:52.271Z",
+  "generatedAt": "2026-04-23T05:33:11.611Z",
   "sources": {
     "clawhub": [
       "https://clawhub.ai/skills?sort=downloads&dir=desc",
@@ -2400,7 +2400,7 @@
           "installCommand": "npx skills add https://github.com/anthropics/skills --skill frontend-design",
           "discoveredAt": "$undefined",
           "lastUpdated": "$undefined",
-          "voteCount": 2,
+          "voteCount": 3,
           "commentCount": 0,
           "createdAt": "2026-03-22T20:04:52.693489+00:00",
           "owner": "anthropics",
@@ -3575,7 +3575,7 @@
           "installCommand": "npx skills add https://github.com/anthropics/skills --skill frontend-design",
           "discoveredAt": "$undefined",
           "lastUpdated": "$undefined",
-          "voteCount": 2,
+          "voteCount": 3,
           "commentCount": 0,
           "createdAt": "2026-03-22T20:04:52.693489+00:00",
           "owner": "anthropics",
@@ -3590,7 +3590,7 @@
             "压缩范围，优先做一轮就见效的窄入口。",
             "用例子验证搜索词，再反推定位。"
           ],
-          "compositeScore": 4.916
+          "compositeScore": 4.919
         },
         {
           "id": "vercel-labs/agent-skills/vercel-react-best-practices",
@@ -4226,7 +4226,7 @@
           "installCommand": "npx skills add https://github.com/anthropics/skills --skill frontend-design",
           "discoveredAt": "$undefined",
           "lastUpdated": "$undefined",
-          "voteCount": 2,
+          "voteCount": 3,
           "commentCount": 0,
           "createdAt": "2026-03-22T20:04:52.693489+00:00",
           "owner": "anthropics",
@@ -54184,7 +54184,7 @@
       "分类非常强调运行环境和工作流边界，例如 Apple / GitHub / MLOps / Research。",
       "高 AISA 适配项主要集中在 GitHub、Research、Productivity、Documents、Automation 这些高频外部工具边界。",
       "Apple / macOS 类 skill 价值高但平台限制强，更适合做专属 SKU 而不是旗舰总包。",
-      "截至 2026-04-21，live guide 标注 97 个 bundled skills，但官方 raw catalog 当前能结构化提取 70 个 bundled rows，说明文档口径存在漂移。"
+      "截至 2026-04-23，live guide 标注 97 个 bundled skills，但官方 raw catalog 当前能结构化提取 70 个 bundled rows，说明文档口径存在漂移。"
     ]
   },
   "combined": {

@@ -1,7 +1,7 @@
 # AgentSkill Breakout Report
 
-- Generated at: 2026-04-21T12:46:28.028Z
-- Dataset date: April 21, 2026
+- Generated at: 2026-04-23T05:38:36.602Z
+- Dataset date: April 23, 2026
 - Scope: homepage skills, multi-page plugin listings, expanded owner pages, and corresponding detail-page metrics
 
 ## Executive Summary
@@ -12,33 +12,60 @@ AgentSkill ranking is not driven by a single vanity number. The visible surfaces
 
 | Factor | Importance | Evidence | Impact |
 | --- | --- | --- | --- |
-| Installs / weekly usage | Very high | Sampled skills total 5,018,913 installs | Adoption is the clearest public trust signal on detail pages. |
+| Installs / weekly usage | Very high | Sampled skills total 5,021,111 installs | Adoption is the clearest public trust signal on detail pages. |
 | GitHub stars / repo trust | Very high | Sampled skills total 5,919,505 GitHub stars | Repo reputation reduces cold-start doubt and helps installs convert. |
 | Quality score | High | Average sampled quality 87.8/100 | Quality review is surfaced directly on listing cards before click-through. |
-| Security score | High | Average sampled security 89.8/100 | Security audit badges visibly change install confidence, especially for tool wrappers. |
-| Rating and reviews | Medium | Average sampled rating 0.46 | Ratings appear on detail pages and reinforce trust after discovery. |
+| Security score | High | Average sampled security 89.7/100 | Security audit badges visibly change install confidence, especially for tool wrappers. |
+| Rating and reviews | Medium | Average sampled rating 0.52 | Ratings appear on detail pages and reinforce trust after discovery. |
 | Plugin breadth | Medium | Visible plugin sample averages 343.5 bundled skills | Large bundles dominate plugin visibility when they package many skills under one theme. |
 | Naming and category clarity | Very high | Developer 106; General Utility 30; Security & Audit 24; Social & Growth 9; Productivity & Workspace 4 | Task-first titles and narrow categories make both cards and plugins easier to rank and install. |
 
+## Ranking Mechanics
+
+- AgentSkill puts installs, GitHub stars, quality review, security review, and ratings directly on visible decision surfaces.
+- The quality breakdown itself is a ranking surface: discovery, implementation, structure, and expertise shape how complete the skill feels before install.
+- The strongest cards compound task naming, repo trust, review proof, and concrete outcomes instead of relying on one vanity metric.
+- Plugin pages amplify themed packaging, so family-level structure matters alongside the single skill card.
+
+## Breakout Mechanics
+
+- Task-first titles win the click, then repo trust plus quality/security signals win the install.
+- Owner pages and plugin families create compounding discovery, so a flagship skill plus narrower siblings is more durable than a one-off hit.
+- Developer, research, workspace, documents, and security surfaces remain the most repeatable breakout lanes.
+- Narrow skills with very explicit inputs and outputs tend to read as higher-quality products.
+
+## Publish Moves
+
+- Align the title, listing description, README, and the first "SKILL.md" paragraph around the same task, trigger, input, and output.
+- Make sure the GitHub repo can prove the promise implied by the listing.
+- Let the flagship package target the broad keyword, then let narrower skills capture high-intent variants.
+- Treat quality and security review as part of the product surface, not as secondary metadata.
+
+## Common Failure Modes
+
+- Abstract titles that do not carry real search intent.
+- README / SKILL / examples that fail to prove the problem promised by the page.
+- Weak implementation or structure signals that make the package feel like a prompt fragment instead of a finished skill.
+- Over-broad plugins whose theme is too fuzzy to convert cleanly.
 ## Best Skill Opportunities
 
 | Rank | Skill | Owner | Category | Installs | Quality | Security | Opportunity |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | longevity | openclaw | Developer | 2200 | 100 | 100 | 95 |
-| 2 | research-paper-writer | openclaw | Developer | 2200 | 100 | 100 | 95 |
-| 3 | video-editing | affaan-m | Developer | 78900 | 100 | 93 | 94.47 |
-| 4 | casely | openclaw | Developer | 2200 | 92 | 100 | 94.04 |
-| 5 | investor-materials | affaan-m | Developer | 78900 | 100 | 100 | 93.8 |
-| 6 | receiving-code-review | obra | Developer | 1 | 100 | 100 | 93.5 |
-| 7 | verification-before-completion | obra | Developer | 87300 | 100 | 100 | 93.5 |
-| 8 | finishing-a-development-branch | obra | Developer | 87300 | 100 | 100 | 93.5 |
-| 9 | frontend-slides | affaan-m | Developer | 78900 | 100 | 100 | 93.5 |
-| 10 | claude-api | affaan-m | Developer | 78900 | 100 | 99 | 93.42 |
-| 11 | crosspost | affaan-m | Developer | 78900 | 100 | 99 | 93.42 |
-| 12 | deep-research | affaan-m | Developer | 78900 | 100 | 95 | 93.13 |
-| 13 | using-git-worktrees | obra | Developer | 87300 | 100 | 92 | 92.9 |
-| 14 | writing-plans | obra | Developer | 1 | 83 | 100 | 92.81 |
-| 15 | memory-manager | openclaw | Search & Research | 2200 | 92 | 83 | 92.76 |
+| 1 | receiving-code-review | obra | Developer | 1 | 100 | 100 | 95 |
+| 2 | longevity | openclaw | Developer | 2200 | 100 | 100 | 95 |
+| 3 | research-paper-writer | openclaw | Developer | 2200 | 100 | 100 | 95 |
+| 4 | manim-composer | openclaw | Developer | 2200 | 100 | 100 | 94.7 |
+| 5 | video-editing | affaan-m | Developer | 78900 | 100 | 93 | 94.47 |
+| 6 | casely | openclaw | Developer | 2200 | 92 | 100 | 94.04 |
+| 7 | investor-materials | affaan-m | Developer | 78900 | 100 | 100 | 93.8 |
+| 8 | verification-before-completion | obra | Developer | 87300 | 100 | 100 | 93.5 |
+| 9 | finishing-a-development-branch | obra | Developer | 87300 | 100 | 100 | 93.5 |
+| 10 | frontend-slides | affaan-m | Developer | 78900 | 100 | 100 | 93.5 |
+| 11 | claude-api | affaan-m | Developer | 78900 | 100 | 99 | 93.42 |
+| 12 | crosspost | affaan-m | Developer | 78900 | 100 | 99 | 93.42 |
+| 13 | deep-research | affaan-m | Developer | 78900 | 100 | 95 | 93.13 |
+| 14 | using-git-worktrees | obra | Developer | 87300 | 100 | 92 | 92.9 |
+| 15 | writing-plans | obra | Developer | 1 | 83 | 100 | 92.81 |
 
 ## Best Plugin Opportunities
 

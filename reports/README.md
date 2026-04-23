@@ -8,8 +8,8 @@ This folder is the repo-local source area for generated market and AISA strategy
 
 ## ClawHub Reports
 
-- `ClawHub_Plugin_Viral_Report_ZH.md` / `ClawHub_Plugin_Viral_Report_EN.md`
-  What it is: ClawHub plugin breakout analysis, plugin-author patterns, and AISA retrofit opportunities.
+- `ClawHub_Plugin_Viral_Report_ZH.md/.docx` / `ClawHub_Plugin_Viral_Report_EN.md/.docx`
+  What it is: ClawHub plugin downloads / installs / stars board analysis, plugin-author patterns, trust surfaces, and AISA retrofit opportunities.
 - `ClawHub_10K_System_Report.md` / `ClawHub_10K_System_Report_ZH.md` / `.docx`
   What it is: The repeatable production-system report for ClawHub `10k+` skills and prolific authors.
 - `ClawHub_10K_Boss_Brief_EN.md` / `ClawHub_10K_Boss_Brief_ZH.md` / `.docx`
@@ -23,26 +23,28 @@ This folder is the repo-local source area for generated market and AISA strategy
 
 ## Cross-Market Reports
 
-- `Claude_AISA_Report_ZH.md` / `Claude_AISA_Report_EN.md`
+- `Claude_AISA_Report_ZH.md/.docx` / `Claude_AISA_Report_EN.md/.docx`
   What it is: Claude skill + marketplace breakout structure, repeatable publishing playbook, and AISA selection plan.
-- `Hermes_AISA_Report_ZH.md` / `Hermes_AISA_Report_EN.md`
+- `Hermes_AISA_Report_ZH.md/.docx` / `Hermes_AISA_Report_EN.md/.docx`
   What it is: Hermes workflow-atlas analysis, bundled/optional opportunity mapping, and AISA packaging guidance.
-- `AgentSkill_Report_ZH.md` / `AgentSkill_Report_EN.md`
+- `AgentSkill_Report_ZH.md/.docx` / `AgentSkill_Report_EN.md/.docx`
   What it is: AgentSkill skill/plugin/creator analysis covering installs, GitHub trust, quality, security, and AISA fit.
-- `AgentSkills_SO_Report_ZH.md` / `AgentSkills_SO_Report_EN.md`
+- `AgentSkills_SO_Report_ZH.md/.docx` / `AgentSkills_SO_Report_EN.md/.docx`
   What it is: AgentSkills.so skill/author analysis covering weekly downloads, repo trust, security posture, distribution coverage, and AISA fit.
 
 ## AISA Planning Reports
 
 - `AISA_All_Skills_Breakout_Plan_ZH.md` / `.docx`
   What it is: Full tracked AISA skill portfolio expansion plan and packaging roadmap.
-- `AISA_Breakout_Execution_Plan_ZH.md`
+- `AISA_Breakout_Execution_Plan_ZH.md/.docx`
   What it is: Execution sequence for rolling out the breakout plan.
-- `AISA_Breakout_Test_Evidence_ZH.md`
+- `AISA_Breakout_Test_Evidence_ZH.md/.docx`
   What it is: Validation and test evidence collected for the breakout plan.
 
 ## How To Use This Folder
 
 - If you are working inside the repo, start here to find the source report file.
 - If you are checking the deployed site, open `public/reports/index.html` instead.
+- If you want the browser page for ClawHub plugins specifically, open `clawhub-plugins.html` from the deployed site root.
 - If you need the project-wide function/doc overview, read `docs/PROJECT_MANUAL.md`.
+- If you edit report Markdown by hand, run `npm run sync:report-docx` to refresh the matching `.docx` files.

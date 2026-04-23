@@ -1,7 +1,7 @@
 # AgentSkills.so Breakout Report
 
-- Generated at: 2026-04-21T12:57:42.598Z
-- Dataset date: April 21, 2026
+- Generated at: 2026-04-23T05:48:01.743Z
+- Dataset date: April 23, 2026
 - Scope: paginated homepage listings, paginated search listings, and corresponding detail pages
 
 ## Executive Summary
@@ -12,13 +12,40 @@ AgentSkills.so behaves like a reusable skill catalog where weekly downloads, rep
 
 | Factor | Importance | Evidence | Impact |
 | --- | --- | --- | --- |
-| Weekly downloads | Very high | Sampled total 1,174,246 weekly downloads | The site surfaces weekly demand directly in cards and detail pages. |
-| GitHub stars | High | Sampled total 6,041,995 repo stars | Repo trust is the strongest cross-platform cold-start asset. |
-| Security posture | High | Resolved security breakdown for 42/43 items, average 67.8/100 | Trust & Identity, Behavioral Monitoring, and Vulnerability Exposure are explicit review surfaces. |
+| Weekly downloads | Very high | Sampled total 1,288,146 weekly downloads | The site surfaces weekly demand directly in cards and detail pages. |
+| GitHub stars | High | Sampled total 6,063,095 repo stars | Repo trust is the strongest cross-platform cold-start asset. |
+| Security posture | High | Resolved security breakdown for 43/44 items, average 68.5/100 | Trust & Identity, Behavioral Monitoring, and Vulnerability Exposure are explicit review surfaces. |
 | Category / use-case fit | Very high | Developer 16; General Utility 13; Productivity & Workspace 3; Browser & Automation 3; Office Documents 3 | The strongest skills describe a single job-to-be-done in plain language. |
 | Distribution / platform coverage | Medium | Average sampled platform coverage 0.0 distributions | Visible installation across multiple agent distributions reinforces portability and trust. |
-| Author factory effect | Medium | vercel-labs 4; microsoft 5; anthropics 13 | Multi-skill repo owners compound trust and discovery over time. |
+| Author factory effect | Medium | vercel-labs 5; microsoft 5; anthropics 13 | Multi-skill repo owners compound trust and discovery over time. |
 
+## Ranking Mechanics
+
+- AgentSkills.so makes weekly downloads a very visible demand signal, so perceived demand strongly shapes first-click behavior.
+- "Trust & Identity", "Behavioral Monitoring", and "Vulnerability Exposure" are public trust surfaces, not hidden security metadata.
+- GitHub repo trust and stars remain the strongest cold-start proof for why a skill deserves installation.
+- Distribution coverage reinforces portability, which makes a skill feel more reusable across agent runtimes.
+
+## Breakout Mechanics
+
+- High-download skills usually describe one narrow job-to-be-done instead of vague productivity promises.
+- Repo trust, security posture, and distribution coverage together sustain conversion better than branding alone.
+- Authors who keep publishing inside one lane accumulate trust faster than broad generalists.
+- The best AISA candidates remain reusable external-system workflows that can travel across agents.
+
+## Publish Moves
+
+- Lead with an action, target object, and result in the title.
+- Use the body and README to explain external dependencies, permission boundaries, persistence, and typical outputs.
+- If the skill is portable across distributions, make that portability explicit.
+- Be concrete about security posture: reads, writes, network calls, and local persistence should all be stated clearly.
+
+## Common Failure Modes
+
+- Titles that feel like internal helpers instead of reusable products.
+- Repo proof that does not match the page promise.
+- Ambiguous security or persistence language that increases install doubt.
+- Packaging a single-host workflow as if it were a universal multi-agent component.
 ## Best Opportunities
 
 | Rank | Skill | Repo | Category | WeeklyDownloads | Stars | Security | Platforms | Opportunity |

@@ -1,0 +1,12 @@
+X.com/twitter username: your_x_username
+X.com/twitter password: your_x_password
+AISA_API_KEY=sk-your-aisa-api-key
+
+python3.12 path: /usr/bin/python3.12
+
+GITHUB_TOKEN=ghp_your_github_token
+
+Notes:
+- Put real local credentials in docs/accounts, not in this template.
+- docs/accounts is gitignored; example/accounts is the shareable reference.
+- Prefer environment variables when the script supports them.

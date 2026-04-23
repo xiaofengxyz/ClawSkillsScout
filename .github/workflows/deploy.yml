@@ -22,7 +22,7 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -30,13 +30,22 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm install
-      - name: Run AISA pipeline with retry
+      - name: Run analysis pipeline with retry
         shell: bash
         run: |
           set -euo pipefail
+          if [ "${{ github.event_name }}" = "schedule" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            refresh_command="npm run pipeline:scheduled-analysis"
+            refresh_mode="full scheduled analysis"
+          else
+            refresh_command="npm run pipeline:aisa-analysis"
+            refresh_mode="AISA analysis"
+          fi
+
+          echo "Using ${refresh_mode}: ${refresh_command}"
           for attempt in 1 2 3; do
             echo "Pipeline attempt ${attempt}/3"
-            if npm run pipeline:aisa-analysis; then
+            if eval "${refresh_command}"; then
               exit 0
             fi
             if [ "$attempt" -lt 3 ]; then
@@ -55,9 +64,8 @@ jobs:
           name: aisa-analysis-artifacts
           if-no-files-found: warn
           path: |
-            public/data/catalog.json
-            public/data/aisa-api-analysis.json
-            public/data/optimized-packages.json
+            public/data/*.json
+            public/reports
             public/downloads/clawHub/index.json
             public/downloads/github/index.json
             dist
