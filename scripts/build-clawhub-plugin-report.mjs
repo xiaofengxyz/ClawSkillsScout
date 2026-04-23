@@ -78,6 +78,17 @@ function listUrl(sort) {
   return `${BASE_URL}/plugins?sort=${sort}&dir=desc`;
 }
 
+function isJsonArtifact(value) {
+  return compactSpaces(value).toLowerCase().endsWith('.json');
+}
+
+function isPluginDetailHref(href) {
+  if (typeof href !== 'string') return false;
+  if (!/^\/plugins\/[^?#]+$/.test(href)) return false;
+  const slug = href.split('/').pop() ?? '';
+  return !isJsonArtifact(slug);
+}
+
 function extractListHrefs(html) {
   const hrefs = [...html.matchAll(/href="(\/plugins\/[^"]+)"/g)].map((match) => match[1]);
   const unique = [];
@@ -100,6 +111,30 @@ function extractListItems(html) {
     packageName: decodeJsString(match[4]),
     owner: match[5],
     summary: decodeJsString(match[6]),
+  }));
+}
+
+function isValidListItem(item) {
+  return !isJsonArtifact(item.displayName) && !isJsonArtifact(item.packageName);
+}
+
+function sanitizeListEntries(sort, hrefs, items) {
+  const filteredHrefs = hrefs.filter(isPluginDetailHref);
+  const filteredItems = items.filter(isValidListItem);
+
+  if (filteredHrefs.length !== hrefs.length || filteredItems.length !== items.length) {
+    console.warn(
+      `Filtered plugin list artifacts for ${sort}: hrefs ${hrefs.length} -> ${filteredHrefs.length}, items ${items.length} -> ${filteredItems.length}`,
+    );
+  }
+
+  if (filteredHrefs.length !== filteredItems.length) {
+    throw new Error(`Plugin list parse mismatch for ${sort} after filtering: hrefs=${filteredHrefs.length}, items=${filteredItems.length}`);
+  }
+
+  return filteredItems.map((item, index) => ({
+    ...item,
+    href: filteredHrefs[index],
   }));
 }
 
@@ -773,12 +808,9 @@ async function main() {
     const hrefs = extractListHrefs(html);
     const items = extractListItems(html);
     if (hrefs.length !== items.length) {
-      throw new Error(`Plugin list parse mismatch for ${sort}: hrefs=${hrefs.length}, items=${items.length}`);
+      console.warn(`Raw plugin list parse mismatch for ${sort}: hrefs=${hrefs.length}, items=${items.length}`);
     }
-    rankingsBySort[sort] = items.map((item, index) => ({
-      ...item,
-      href: hrefs[index],
-    }));
+    rankingsBySort[sort] = sanitizeListEntries(sort, hrefs, items);
   }
 
   const rankedPlugins = normalizeRankings(rankingsBySort);
@@ -811,7 +843,12 @@ async function main() {
     authorCounts.set(plugin.owner, (authorCounts.get(plugin.owner) ?? 0) + 1);
   }
 
-  const plugins = detailedPlugins
+  const cleanDetailedPlugins = detailedPlugins.filter((plugin) => isPluginDetailHref(plugin.href) && isValidListItem(plugin));
+  if (cleanDetailedPlugins.length !== detailedPlugins.length) {
+    console.warn(`Dropped ${detailedPlugins.length - cleanDetailedPlugins.length} invalid plugin records after detail parsing.`);
+  }
+
+  const plugins = cleanDetailedPlugins
     .map((plugin) => ({
       ...plugin,
       theme: inferTheme(plugin.displayName, plugin.summary),

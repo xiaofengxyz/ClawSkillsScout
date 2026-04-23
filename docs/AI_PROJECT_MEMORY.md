@@ -40,6 +40,12 @@ This file is the fast handoff layer for future chats. Read it when you need to k
 
 ## Recently Completed
 
+### 2026-04-24
+
+- Fixed the ClawHub plugin report pipeline so `.json` artifacts such as `/plugins/page.json` are filtered out before ranking rows and detail fetches are built
+- Added a frontend fallback in `src/clawhub-plugins/App.tsx` so invalid plugin-detail URLs are rendered as plain text instead of broken clickable links
+- Regenerated `public/data/clawhub-plugin-report.json`, refreshed the paired ClawHub plugin Markdown + DOCX reports, and verified the site with `npm run typecheck` plus `npx vite build`
+
 ### 2026-04-23
 
 - Reworked `reports/README.md` into a report chooser with question-to-report mapping, report-family summaries, format guidance, and report-library usage notes

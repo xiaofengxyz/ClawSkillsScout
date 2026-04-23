@@ -1,8 +1,8 @@
 # ClawHub Plugin 爆款报告
 
-- 生成时间：2026-04-23T05:26:05.630Z
+- 生成时间：2026-04-23T18:26:46.532Z
 - 分析对象：ClawHub 插件目录（公开排序页 + 详情页 SSR 数据）
-- 数据日期：2026-04-23
+- 数据日期：2026-04-24
 
 ## 一句话结论
 
@@ -27,62 +27,62 @@ ClawHub 的 plugin 生态仍然非常早期，但公开目录已经明确把 plu
 
 | 排名 | Plugin | 作者 | 类型 | 主题 | 验证 |
 | --- | --- | --- | --- | --- | --- |
-| 1 | Openclaw Channel | sanctrl | Code | Channels & Messaging | source-linked |
-| 2 | Claw Recipes | rjdjohnston | Code | Workflow & Integration | source-linked |
-| 3 | Openclaw Venice Ai | acwilan | Code | Infrastructure & Utilities | source-linked |
-| 4 | Hivemind | kaghni | Code | Memory & Knowledge | source-linked |
-| 5 | Twitter Command Center Search Post | bibaofeng | Code | Workflow & Integration | source-linked |
-| 6 | Twitter Command Center Search Post Interact | aisadocs | Code | Workflow & Integration | source-linked |
-| 7 | Twitter Autopilot | baofeng-tech | Code | Workflow & Integration | source-linked |
-| 8 | Tavily Extract | bibaofeng | Code | Infrastructure & Utilities | source-linked |
-| 9 | Stock Rumors | aisadocs | Code | Infrastructure & Utilities | source-linked |
-| 10 | Stock Watchlist | baofeng-tech | Code | Infrastructure & Utilities | source-linked |
+| 1 | Steamedclaw Publish V2 | ckhaisty | Code | Infrastructure & Utilities | source-linked |
+| 2 | Package | solomonneas | Code | Infrastructure & Utilities | source-linked |
+| 3 | Opik | vincentkoc | Code | Infrastructure & Utilities | source-linked |
+| 4 | AgentChat | sanctrl | Code | Channels & Messaging | source-linked |
+| 5 | Openclaw Openmontage | itsuzef | Code | Workspace & App Layer | source-linked |
+| 6 | Openclaw Plugin Repo | max-winderbaum | Code | Channels & Messaging | source-linked |
+| 7 | TweetClaw | kriptoburak | Code | Infrastructure & Utilities | source-linked |
+| 8 | Claw Recipes | rjdjohnston | Code | Workflow & Integration | source-linked |
+| 9 | Session Archive | 18940111404 | Code | Memory & Knowledge | source-linked |
+| 10 | Openclaw Venice Ai | acwilan | Code | Infrastructure & Utilities | source-linked |
 
 ## Installs 排行 Top 10
 
 | 排名 | Plugin | 作者 | 类型 | 主题 | 验证 |
 | --- | --- | --- | --- | --- | --- |
-| 1 | Openclaw Channel | sanctrl | Code | Channels & Messaging | source-linked |
-| 2 | Claw Recipes | rjdjohnston | Code | Workflow & Integration | source-linked |
-| 3 | Openclaw Venice Ai | acwilan | Code | Infrastructure & Utilities | source-linked |
-| 4 | Hivemind | kaghni | Code | Memory & Knowledge | source-linked |
-| 5 | Twitter Command Center Search Post | bibaofeng | Code | Workflow & Integration | source-linked |
-| 6 | Twitter Command Center Search Post Interact | aisadocs | Code | Workflow & Integration | source-linked |
-| 7 | Twitter Autopilot | baofeng-tech | Code | Workflow & Integration | source-linked |
-| 8 | Tavily Extract | bibaofeng | Code | Infrastructure & Utilities | source-linked |
-| 9 | Stock Rumors | aisadocs | Code | Infrastructure & Utilities | source-linked |
-| 10 | Stock Watchlist | baofeng-tech | Code | Infrastructure & Utilities | source-linked |
+| 1 | Steamedclaw Publish V2 | ckhaisty | Code | Infrastructure & Utilities | source-linked |
+| 2 | Package | solomonneas | Code | Infrastructure & Utilities | source-linked |
+| 3 | Opik | vincentkoc | Code | Infrastructure & Utilities | source-linked |
+| 4 | AgentChat | sanctrl | Code | Channels & Messaging | source-linked |
+| 5 | Openclaw Openmontage | itsuzef | Code | Workspace & App Layer | source-linked |
+| 6 | Openclaw Plugin Repo | max-winderbaum | Code | Channels & Messaging | source-linked |
+| 7 | TweetClaw | kriptoburak | Code | Infrastructure & Utilities | source-linked |
+| 8 | Claw Recipes | rjdjohnston | Code | Workflow & Integration | source-linked |
+| 9 | Session Archive | 18940111404 | Code | Memory & Knowledge | source-linked |
+| 10 | Openclaw Venice Ai | acwilan | Code | Infrastructure & Utilities | source-linked |
 
 ## Stars 排行 Top 10
 
 | 排名 | Plugin | 作者 | 类型 | 主题 | 验证 |
 | --- | --- | --- | --- | --- | --- |
-| 1 | Openclaw Channel | sanctrl | Code | Channels & Messaging | source-linked |
-| 2 | Claw Recipes | rjdjohnston | Code | Workflow & Integration | source-linked |
-| 3 | Openclaw Venice Ai | acwilan | Code | Infrastructure & Utilities | source-linked |
-| 4 | Hivemind | kaghni | Code | Memory & Knowledge | source-linked |
-| 5 | Twitter Command Center Search Post | bibaofeng | Code | Workflow & Integration | source-linked |
-| 6 | Twitter Command Center Search Post Interact | aisadocs | Code | Workflow & Integration | source-linked |
-| 7 | Twitter Autopilot | baofeng-tech | Code | Workflow & Integration | source-linked |
-| 8 | Tavily Extract | bibaofeng | Code | Infrastructure & Utilities | source-linked |
-| 9 | Stock Rumors | aisadocs | Code | Infrastructure & Utilities | source-linked |
-| 10 | Stock Watchlist | baofeng-tech | Code | Infrastructure & Utilities | source-linked |
+| 1 | Steamedclaw Publish V2 | ckhaisty | Code | Infrastructure & Utilities | source-linked |
+| 2 | Package | solomonneas | Code | Infrastructure & Utilities | source-linked |
+| 3 | Opik | vincentkoc | Code | Infrastructure & Utilities | source-linked |
+| 4 | AgentChat | sanctrl | Code | Channels & Messaging | source-linked |
+| 5 | Openclaw Openmontage | itsuzef | Code | Workspace & App Layer | source-linked |
+| 6 | Openclaw Plugin Repo | max-winderbaum | Code | Channels & Messaging | source-linked |
+| 7 | TweetClaw | kriptoburak | Code | Infrastructure & Utilities | source-linked |
+| 8 | Claw Recipes | rjdjohnston | Code | Workflow & Integration | source-linked |
+| 9 | Session Archive | 18940111404 | Code | Memory & Knowledge | source-linked |
+| 10 | Openclaw Venice Ai | acwilan | Code | Infrastructure & Utilities | source-linked |
 
 
 ## Top 10 Plugin
 
 | 排名 | Plugin | 作者 | 类型 | 主题 | 扫描 | 验证 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | AxonFlow Governance | saurabhjain1592 | Code | Governance & Security | clean | source-linked |
+| 1 | Gralkor Memory (OpenClaw) | elimydlarz | Code | Memory & Knowledge | clean | source-linked |
 | 2 | Hivemind | kaghni | Code | Memory & Knowledge | clean | source-linked |
-| 3 | klodi | blackbak | Code | Workspace & App Layer | clean | source-linked |
-| 4 | UMG Envoy Agent | neomagnetar | Code | Infrastructure & Utilities | clean | source-linked |
-| 5 | Claw Recipes | rjdjohnston | Code | Workflow & Integration | pending | source-linked |
-| 6 | episodic-claw (Based on Human Episodic Memory) | yoshiakefasu | Code | Memory & Knowledge | pending | source-linked |
-| 7 | Lethe | mentholmike | Code | Memory & Knowledge | pending | source-linked |
-| 8 | Mem0 Plugin | kartik-mem0 | Code | Memory & Knowledge | pending | source-linked |
-| 9 | Subconscious Personality Guardian | origin-lz | Code | Governance & Security | pending | source-linked |
-| 10 | AIsa Perplexity Sonar Search | bibaofeng | Code | Infrastructure & Utilities | clean | source-linked |
+| 3 | agentschatapp | unclek | Code | Channels & Messaging | clean | source-linked |
+| 4 | Aaron SEO GEO | aaron-he-zhu | Bundle | Infrastructure & Utilities | clean | source-linked |
+| 5 | Plugin | dearken10 | Code | Channels & Messaging | clean | source-linked |
+| 6 | ZeroAPI Router | dorukardahan | Code | Workflow & Integration | clean | source-linked |
+| 7 | Opik | vincentkoc | Code | Infrastructure & Utilities | clean | source-linked |
+| 8 | Claw Recipes | rjdjohnston | Code | Workflow & Integration | pending | source-linked |
+| 9 | Mem0 Plugin | kartik-mem0 | Code | Memory & Knowledge | pending | source-linked |
+| 10 | Openclaw Openmontage | itsuzef | Code | Workspace & App Layer | clean | source-linked |
 
 ## 三榜差异最大的 Plugin
 
@@ -113,16 +113,16 @@ ClawHub 的 plugin 生态仍然非常早期，但公开目录已经明确把 plu
 
 | 排名 | 作者 | 插件数 | Code | Bundle | 主主题 |
 | --- | --- | --- | --- | --- | --- |
-| 1 | bibaofeng | 11 | 11 | 0 | Infrastructure & Utilities / Workflow & Integration / Channels & Messaging |
-| 2 | aisadocs | 10 | 10 | 0 | Infrastructure & Utilities / Workflow & Integration |
-| 3 | baofeng-tech | 10 | 10 | 0 | Infrastructure & Utilities / Workflow & Integration / Channels & Messaging |
-| 4 | pierrelouisevensmaxai-blip | 4 | 0 | 4 | Infrastructure & Utilities / Workspace & App Layer |
-| 5 | kaghni | 1 | 1 | 0 | Memory & Knowledge |
-| 6 | saurabhjain1592 | 1 | 1 | 0 | Governance & Security |
-| 7 | blackbak | 1 | 1 | 0 | Workspace & App Layer |
-| 8 | neomagnetar | 1 | 1 | 0 | Infrastructure & Utilities |
-| 9 | kartik-mem0 | 1 | 1 | 0 | Memory & Knowledge |
-| 10 | mentholmike | 1 | 1 | 0 | Memory & Knowledge |
+| 1 | baofeng-tech | 8 | 8 | 0 | Infrastructure & Utilities / Workflow & Integration / Channels & Messaging |
+| 2 | bibaofeng | 8 | 8 | 0 | Infrastructure & Utilities / Workflow & Integration / Channels & Messaging |
+| 3 | aisadocs | 7 | 7 | 0 | Infrastructure & Utilities / Workflow & Integration |
+| 4 | acwilan | 2 | 2 | 0 | Infrastructure & Utilities |
+| 5 | elimydlarz | 1 | 1 | 0 | Memory & Knowledge |
+| 6 | kaghni | 1 | 1 | 0 | Memory & Knowledge |
+| 7 | unclek | 1 | 1 | 0 | Channels & Messaging |
+| 8 | aaron-he-zhu | 1 | 0 | 1 | Infrastructure & Utilities |
+| 9 | dearken10 | 1 | 1 | 0 | Channels & Messaging |
+| 10 | dorukardahan | 1 | 1 | 0 | Workflow & Integration |
 
 ## 高产作者的方法论能不能复制
 
@@ -136,16 +136,16 @@ ClawHub 的 plugin 生态仍然非常早期，但公开目录已经明确把 plu
 
 | 排名 | Plugin | 作者 | 主题 | 机会分 | 说明 |
 | --- | --- | --- | --- | --- | --- |
-| 1 | AxonFlow Governance | saurabhjain1592 | Governance & Security | 85.75 | 安全审计、策略校验、批准门禁非常适合做高客单价 AISA 安全能力层。 |
-| 2 | AIsa Twitter | baofeng-tech | Workflow & Integration | 85.15 | 外部系统连接器和运营动作容易被抽象成 AISA command center。 |
-| 3 | Openclaw Media Gen | bibaofeng | Workflow & Integration | 85.15 | 外部系统连接器和运营动作容易被抽象成 AISA command center。 |
-| 4 | Openclaw Twitter | bibaofeng | Workflow & Integration | 85.15 | 外部系统连接器和运营动作容易被抽象成 AISA command center。 |
-| 5 | Twitter Autopilot | baofeng-tech | Workflow & Integration | 85.15 | 外部系统连接器和运营动作容易被抽象成 AISA command center。 |
-| 6 | Twitter Command Center Search Post Interact | aisadocs | Workflow & Integration | 85.15 | 外部系统连接器和运营动作容易被抽象成 AISA command center。 |
-| 7 | Openclaw AIsa Youtube AIsa | baofeng-tech | Channels & Messaging | 79.6 | 当前更像插件而不是 API，但其中有部分动作可以拆成可收费的远程能力。 |
-| 8 | Openclaw Youtube | bibaofeng | Channels & Messaging | 79.6 | 当前更像插件而不是 API，但其中有部分动作可以拆成可收费的远程能力。 |
-| 9 | Openclaw Channel | sanctrl | Channels & Messaging | 78.7 | 当前更像插件而不是 API，但其中有部分动作可以拆成可收费的远程能力。 |
-| 10 | klodi | blackbak | Workspace & App Layer | 76.9 | 当前更像插件而不是 API，但其中有部分动作可以拆成可收费的远程能力。 |
+| 1 | AIsa Twitter | baofeng-tech | Workflow & Integration | 85.15 | 外部系统连接器和运营动作容易被抽象成 AISA command center。 |
+| 2 | Twitter | bibaofeng | Workflow & Integration | 85.15 | 外部系统连接器和运营动作容易被抽象成 AISA command center。 |
+| 3 | Twitter Autopilot | baofeng-tech | Workflow & Integration | 85.15 | 外部系统连接器和运营动作容易被抽象成 AISA command center。 |
+| 4 | Twitter Command Center Search Post Interact | aisadocs | Workflow & Integration | 85.15 | 外部系统连接器和运营动作容易被抽象成 AISA command center。 |
+| 5 | Claw Recipes | rjdjohnston | Workflow & Integration | 84.25 | 外部系统连接器和运营动作容易被抽象成 AISA command center。 |
+| 6 | ZeroAPI Router | dorukardahan | Workflow & Integration | 82.9 | 外部系统连接器和运营动作容易被抽象成 AISA command center。 |
+| 7 | Plugin | dearken10 | Channels & Messaging | 80.05 | 当前更像插件而不是 API，但其中有部分动作可以拆成可收费的远程能力。 |
+| 8 | Youtube Serp | bibaofeng | Channels & Messaging | 79.6 | 当前更像插件而不是 API，但其中有部分动作可以拆成可收费的远程能力。 |
+| 9 | agentschatapp | unclek | Channels & Messaging | 78.7 | 当前更像插件而不是 API，但其中有部分动作可以拆成可收费的远程能力。 |
+| 10 | WTT Plugin | cecwxf | Channels & Messaging | 78.7 | 当前更像插件而不是 API，但其中有部分动作可以拆成可收费的远程能力。 |
 
 ## AISA API 怎么在 Plugin 赛道做爆款
 

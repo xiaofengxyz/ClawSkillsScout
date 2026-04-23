@@ -128,6 +128,39 @@ function familyLabel(value: string, copy: PluginCopy) {
   return value === 'bundle-plugin' ? copy.bundle : copy.code;
 }
 
+function hasPluginDetailPage(url: string) {
+  return /^https:\/\/clawhub\.ai\/plugins\/[^?#]+$/.test(url) && !url.toLowerCase().endsWith('.json');
+}
+
+function PluginTitle({
+  name,
+  owner,
+  theme,
+  url,
+}: {
+  name: string;
+  owner: string;
+  theme: string;
+  url: string;
+}) {
+  const title = <strong>{name}</strong>;
+
+  return (
+    <>
+      {hasPluginDetailPage(url) ? (
+        <a href={url} target="_blank" rel="noreferrer">
+          {title}
+        </a>
+      ) : (
+        title
+      )}
+      <span className="plugin-subtext">
+        @{owner} · {theme}
+      </span>
+    </>
+  );
+}
+
 function TableCard<T>({
   title,
   description,
@@ -233,16 +266,7 @@ export default function App() {
     {
       key: 'plugin',
       title: copy.plugin,
-      render: (item) => (
-        <>
-          <a href={item.url} target="_blank" rel="noreferrer">
-            <strong>{item.name}</strong>
-          </a>
-          <span className="plugin-subtext">
-            @{item.owner} · {item.theme}
-          </span>
-        </>
-      ),
+      render: (item) => <PluginTitle name={item.name} owner={item.owner} theme={item.theme} url={item.url} />,
     },
     {
       key: 'family',
@@ -261,16 +285,7 @@ export default function App() {
     {
       key: 'plugin',
       title: copy.plugin,
-      render: (item) => (
-        <>
-          <a href={item.url} target="_blank" rel="noreferrer">
-            <strong>{item.displayName}</strong>
-          </a>
-          <span className="plugin-subtext">
-            @{item.owner} · {item.theme}
-          </span>
-        </>
-      ),
+      render: (item) => <PluginTitle name={item.displayName} owner={item.owner} theme={item.theme} url={item.url} />,
     },
     {
       key: 'score',
@@ -288,16 +303,7 @@ export default function App() {
     {
       key: 'plugin',
       title: copy.plugin,
-      render: (item) => (
-        <>
-          <a href={item.url} target="_blank" rel="noreferrer">
-            <strong>{item.displayName}</strong>
-          </a>
-          <span className="plugin-subtext">
-            @{item.owner} · {item.theme}
-          </span>
-        </>
-      ),
+      render: (item) => <PluginTitle name={item.displayName} owner={item.owner} theme={item.theme} url={item.url} />,
     },
     { key: 'spread', title: copy.spread, render: (item) => item.rankSpread },
     { key: 'bestBoard', title: copy.bestBoard, render: (item) => item.bestSorts.join(' / ') },
@@ -324,16 +330,7 @@ export default function App() {
     {
       key: 'plugin',
       title: copy.plugin,
-      render: (item) => (
-        <>
-          <a href={item.url} target="_blank" rel="noreferrer">
-            <strong>{item.name}</strong>
-          </a>
-          <span className="plugin-subtext">
-            @{item.owner} · {item.theme}
-          </span>
-        </>
-      ),
+      render: (item) => <PluginTitle name={item.name} owner={item.owner} theme={item.theme} url={item.url} />,
     },
     { key: 'opportunity', title: copy.opportunity, render: (item) => item.opportunityScore },
     { key: 'why', title: copy.whyItFits, render: (item) => item.whyItFits },
