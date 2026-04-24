@@ -236,6 +236,79 @@ async function writeSummary({ owners, manifest, failures }) {
   await fs.writeFile(indexPath, `${JSON.stringify(summary, null, 2)}\n`);
 }
 
+async function pathExists(filePath) {
+  try {
+    await fs.access(filePath);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+function buildManifestKey(item) {
+  return [
+    normalizeOwner(item.owner),
+    String(item.repo ?? '').trim().toLowerCase(),
+    String(item.skillDir ?? '').trim(),
+  ].join('::');
+}
+
+function upsertManifestItem(manifest, item) {
+  const key = buildManifestKey(item);
+  const index = manifest.findIndex((entry) => buildManifestKey(entry) === key);
+  if (index >= 0) {
+    manifest[index] = item;
+    return;
+  }
+  manifest.push(item);
+}
+
+async function loadExistingManifest() {
+  const manifest = [];
+
+  try {
+    const summary = JSON.parse(await fs.readFile(indexPath, 'utf8'));
+    const items = Array.isArray(summary.items) ? summary.items : [];
+
+    for (const item of items) {
+      if (!item || typeof item.file !== 'string') continue;
+      const filePath = path.join(root, item.file);
+      if (!(await pathExists(filePath))) continue;
+      upsertManifestItem(manifest, item);
+    }
+  } catch {
+    // Fall through to filesystem scan below.
+  }
+
+  const ownerDirs = await fs.readdir(outputRoot, { withFileTypes: true }).catch(() => []);
+  for (const ownerDir of ownerDirs) {
+    if (!ownerDir.isDirectory()) continue;
+    const owner = ownerDir.name;
+    const ownerPath = path.join(outputRoot, owner);
+    const entries = await fs.readdir(ownerPath, { withFileTypes: true }).catch(() => []);
+    for (const entry of entries) {
+      if (!entry.isFile() || !entry.name.endsWith('.tar.gz')) continue;
+      const filePath = path.join(ownerPath, entry.name);
+      const relativeFile = path.relative(root, filePath).replaceAll(path.sep, '/');
+      const stat = await fs.stat(filePath).catch(() => null);
+      if (!stat?.isFile()) continue;
+      upsertManifestItem(manifest, {
+        owner,
+        repo: path.basename(entry.name, '.tar.gz'),
+        branch: null,
+        skillDir: '.',
+        skillPath: 'SKILL.md',
+        archiveType: 'tar.gz',
+        githubUrl: `${githubWebBaseUrl}/${owner}`,
+        file: relativeFile,
+        bytes: stat.size,
+      });
+    }
+  }
+
+  return manifest;
+}
+
 async function main() {
   const { force, owners: cliOwners } = parseArgs(process.argv.slice(2));
   const catalog = JSON.parse(await fs.readFile(catalogPath, 'utf8'));
@@ -246,7 +319,7 @@ async function main() {
 
   await fs.mkdir(outputRoot, { recursive: true });
 
-  const manifest = [];
+  const manifest = await loadExistingManifest();
   const failures = [];
 
   for (const owner of owners) {
@@ -290,7 +363,7 @@ async function main() {
               console.log(`Skipping existing GitHub skill ${owner}/${repoName}:${skill.skillDir}`);
             }
 
-            manifest.push({
+            upsertManifestItem(manifest, {
               owner,
               repo: repoName,
               branch: defaultBranch,
@@ -329,7 +402,11 @@ async function main() {
   console.log(`Saved ${manifest.length} GitHub skill archives to ${path.relative(root, outputRoot)}.`);
   if (failures.length > 0) {
     console.log(`Recorded ${failures.length} GitHub scan/download failures in ${path.relative(root, indexPath)}.`);
-    process.exitCode = 1;
+    if (manifest.length === 0) {
+      process.exitCode = 1;
+    } else {
+      console.warn('Continuing with cached and successfully refreshed GitHub skill archives.');
+    }
   }
 }
 

@@ -47,6 +47,8 @@
 | `npm run analyze:market-ecosystem` | `scripts/build-market-ecosystem-report.mjs` | 生成跨生态报告 |
 | `npm run analyze:agentskill` | `scripts/build-agentskill-report.mjs` | 生成 AgentSkill 报告 |
 | `npm run analyze:agentskills-so` | `scripts/build-agentskills-so-report.mjs` | 生成 AgentSkills.so 报告 |
+| `npm run analyze:full-report-suite` | `scripts/run-full-report-suite.mjs` | 串行刷新全部核心报告，并在单个 live 报告失败但已有缓存产物时继续 |
+| `npm run pipeline:pages` | `npm run pipeline:scheduled-analysis` | GitHub Pages 部署使用的统一全量刷新链路，本地要复现线上结果时优先使用 |
 | `npm run sync:report-docx` | `scripts/sync-report-docx.py` | 同步 `.md` 到 `.docx` |
 | `npm run build:source-optimized` | `scripts/build-source-optimized-packages.mjs` | 构建英文优化包目录 |
 | `npm run build:source-optimized-zh` | `scripts/build-source-optimized-zh.mjs` | 构建中文优化包目录 |
@@ -136,6 +138,26 @@ npm run pipeline:scheduled-analysis
 链路：
 
 `ensure-public-data` -> 下载链路 -> `analyze:aisa` -> `analyze:full-report-suite` -> `vite build`
+
+### 2.1 GitHub Pages 同款刷新
+
+```bash
+npm run pipeline:pages
+```
+
+链路：
+
+当前与 `pipeline:scheduled-analysis` 相同，但它是 GitHub Pages 部署使用的统一命令入口。
+
+### 2.2 全报告 wrapper 容错
+
+`npm run analyze:full-report-suite` 现在由 `scripts/run-full-report-suite.mjs` 统一调度。
+
+规则：
+
+- 单个 live 报告步骤成功时，正常覆盖更新产物
+- 单个 live 报告步骤失败时，如果仓库里已经有该步骤的关键缓存产物，则记录 warning 并继续
+- 只有当步骤失败且关键产物不存在时，才会让整条全报告链路失败
 
 ### 3. 优化包发布
 

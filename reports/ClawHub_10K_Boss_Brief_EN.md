@@ -2,8 +2,8 @@
 
 ## Executive Summary
 
-- We analyzed 307 skills with 10K+ downloads and 182 authors.
-- We identified 24 prolific authors and downloaded 274 top-sample archives.
+- We analyzed 319 skills with 10K+ downloads and 190 authors.
+- We identified 24 prolific authors and downloaded 316 top-sample archives.
 - The strongest conclusion is that viral skills are produced by repeatable systems, not isolated flashes of creativity.
 
 ## What Actually Works
@@ -32,8 +32,8 @@
 - Search, media generation, productivity, finance, and social connectors are the best first API families to standardize.
 
 ## Key Authors To Watch
-- @steipete: totalSkills=53, 10kPlus=38, apiReuse=Medium, templateUsage=Medium
+- @steipete: totalSkills=53, 10kPlus=40, apiReuse=Medium, templateUsage=Medium
+- @byungkyu: totalSkills=131, 10kPlus=37, apiReuse=Medium, templateUsage=High
+- @ivangdavila: totalSkills=120, 10kPlus=20, apiReuse=High, templateUsage=High
 - @wscats: totalSkills=39, 10kPlus=13, apiReuse=High, templateUsage=High
-- @byungkyu: totalSkills=100, 10kPlus=6, apiReuse=Medium, templateUsage=High
 - @financial-ai-analyst: totalSkills=14, 10kPlus=4, apiReuse=Medium, templateUsage=Medium
-- @gitgoodordietrying: totalSkills=24, 10kPlus=3, apiReuse=High, templateUsage=High

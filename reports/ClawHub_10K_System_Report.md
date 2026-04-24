@@ -1,16 +1,16 @@
 # ClawHub 10K+ Skills System Report
 
-- GeneratedAt: 2026-04-19T04:59:30.742108+00:00
-- Sampled10kSkills: 307
-- SampledAuthors: 182
+- GeneratedAt: 2026-04-24T11:01:08.417448+00:00
+- Sampled10kSkills: 319
+- SampledAuthors: 190
 - ProlificAuthors: 24
 
 ## Document 1 - Top Skills Systems Analysis
 
 - Automation dominates the 10K+ cohort, signaling that immediate utility consistently outperforms novelty.
 - 85.0% of top skills keep inputs low/medium complexity, compressing time-to-value.
-- 15.0% of top skills promise operational leverage instead of passive information.
-- Recurring title tokens: agent, self-improving, search, github, weather, pdf, browser, ai.
+- 10.0% of top skills promise operational leverage instead of passive information.
+- Recurring title tokens: agent, search, self-improving, github, weather, browser, pdf, ai.
 - Top monetizable API families: Unknown, Search API, Media Generation API, Productivity API, Financial API.
 
 ### Repeatable Systems
@@ -23,21 +23,20 @@
 ## Document 2 - Top Authors Production Systems
 
 ### Top Authors
-- @steipete: totalSkills=53, 10kPlus=38, strategy=Medium/Medium
+- @steipete: totalSkills=53, 10kPlus=40, strategy=Medium/Medium
 - @byungkyu: totalSkills=131, 10kPlus=37, strategy=Medium/High
-- @ivangdavila: totalSkills=119, 10kPlus=19, strategy=High/High
+- @ivangdavila: totalSkills=120, 10kPlus=20, strategy=High/High
 - @wscats: totalSkills=39, 10kPlus=13, strategy=High/High
 - @financial-ai-analyst: totalSkills=14, 10kPlus=4, strategy=Medium/Medium
+- @arnarsson: totalSkills=3, 10kPlus=3, strategy=High/Medium
 - @gitgoodordietrying: totalSkills=24, 10kPlus=3, strategy=High/High
 - @xejrax: totalSkills=3, 10kPlus=3, strategy=Low/Low
 - @joelchance: totalSkills=5, 10kPlus=2, strategy=High/Medium
-- @ide-rea: totalSkills=8, 10kPlus=2, strategy=Medium/Medium
 - @biostartechnology: totalSkills=2, 10kPlus=2, strategy=Medium/Low
 
 ### Self-Improving Focus
-- @steipete: topSkills=Github, Gog, Weather, totalSkills=53, 10kPlus=38
-- @ivangdavila: topSkills=Self-Improving + Proactive Agent, Word / DOCX, Excel / XLSX, totalSkills=119, 10kPlus=19
-- @pskoett: topSkills=self-improving-agent, simplify-and-harden, intent-framed-agents, totalSkills=5, 10kPlus=1
+- @steipete: topSkills=Github, Gog, Weather, totalSkills=53, 10kPlus=40
+- @ivangdavila: topSkills=Self-Improving + Proactive Agent, Word / DOCX, Excel / XLSX, totalSkills=120, 10kPlus=20
 - @yueyanc: topSkills=Self-Improving Proactive Agent, totalSkills=1, 10kPlus=1
 
 - High-output authors are running portfolio systems, not one-off releases: shared scaffolds, naming templates, and API reuse.
@@ -70,26 +69,26 @@
 ## Document 4 - AIsa Monetization Systems
 
 ### Replaceable API Families
-- Unknown: 125 skills. Keep as experimental template pool; prioritize clearer dependency mapping.
-- Search API: 98 skills. Use AIsa as unified paid backend and ship many low-friction wrappers.
-- Media Generation API: 42 skills. Use AIsa as unified paid backend and ship many low-friction wrappers.
+- Unknown: 131 skills. Keep as experimental template pool; prioritize clearer dependency mapping.
+- Search API: 101 skills. Use AIsa as unified paid backend and ship many low-friction wrappers.
+- Media Generation API: 43 skills. Use AIsa as unified paid backend and ship many low-friction wrappers.
 - Productivity API: 41 skills. Use AIsa as unified paid backend and ship many low-friction wrappers.
-- Financial API: 28 skills. Use AIsa as unified paid backend and ship many low-friction wrappers.
-- Social API: 23 skills. Use AIsa as unified paid backend and ship many low-friction wrappers.
+- Financial API: 29 skills. Use AIsa as unified paid backend and ship many low-friction wrappers.
+- Social API: 24 skills. Use AIsa as unified paid backend and ship many low-friction wrappers.
 - Browser Automation Runtime: 20 skills. Use AIsa as unified paid backend and ship many low-friction wrappers.
 - Weather API: 2 skills. Use AIsa as unified paid backend and ship many low-friction wrappers.
 
 ### Top 10 Rebuild Candidates
-- Skill Vetter (@spclaudehome): 212,538 downloads, APIs=Social API. Validated demand with 212,538 downloads and clean API wrapper potential.
-- Github (@steipete): 159,844 downloads, APIs=Social API. Validated demand with 159,844 downloads and clean API wrapper potential.
-- Gog (@steipete): 157,849 downloads, APIs=Search API, Productivity API. Validated demand with 157,849 downloads and clean API wrapper potential.
-- Weather (@steipete): 136,145 downloads, APIs=Weather API. Validated demand with 136,145 downloads and clean API wrapper potential.
-- Multi Search Engine (@gpyangyoujun): 122,042 downloads, APIs=Search API. Validated demand with 122,042 downloads and clean API wrapper potential.
-- Polymarket (@joelchance): 121,282 downloads, APIs=Financial API, Search API. Validated demand with 121,282 downloads and clean API wrapper potential.
-- Nano Pdf (@steipete): 92,356 downloads, APIs=Unknown. Validated demand with 92,356 downloads and clean API wrapper potential.
-- Humanizer (@biostartechnology): 92,334 downloads, APIs=Media Generation API. Validated demand with 92,334 downloads and clean API wrapper potential.
-- Agent Browser (@matrixy): 91,255 downloads, APIs=Browser Automation Runtime. Validated demand with 91,255 downloads and clean API wrapper potential.
-- Nano Banana Pro (@steipete): 87,745 downloads, APIs=Media Generation API. Validated demand with 87,745 downloads and clean API wrapper potential.
+- Skill Vetter (@spclaudehome): 219,735 downloads, APIs=Social API. Validated demand with 219,735 downloads and clean API wrapper potential.
+- Github (@steipete): 163,764 downloads, APIs=Social API. Validated demand with 163,764 downloads and clean API wrapper potential.
+- Gog (@steipete): 161,529 downloads, APIs=Search API, Productivity API. Validated demand with 161,529 downloads and clean API wrapper potential.
+- Weather (@steipete): 139,283 downloads, APIs=Weather API. Validated demand with 139,283 downloads and clean API wrapper potential.
+- Polymarket (@joelchance): 134,026 downloads, APIs=Financial API, Search API. Validated demand with 134,026 downloads and clean API wrapper potential.
+- Multi Search Engine (@gpyangyoujun): 127,456 downloads, APIs=Search API. Validated demand with 127,456 downloads and clean API wrapper potential.
+- AdMapix (@fly0pants): 106,542 downloads, APIs=Financial API, Search API. Validated demand with 106,542 downloads and clean API wrapper potential.
+- Agent Browser (@matrixy): 96,677 downloads, APIs=Browser Automation Runtime. Validated demand with 96,677 downloads and clean API wrapper potential.
+- Humanizer (@biostartechnology): 95,552 downloads, APIs=Media Generation API. Validated demand with 95,552 downloads and clean API wrapper potential.
+- Nano Pdf (@steipete): 94,785 downloads, APIs=Unknown. Validated demand with 94,785 downloads and clean API wrapper potential.
 
 ### Monetization Funnel
 - Acquire: free utility skill with clear task completion.

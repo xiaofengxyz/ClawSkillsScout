@@ -11,6 +11,10 @@
 3. [docs/project-map.json](/mnt/d/workplace/skillget/docs/project-map.json)
 4. [docs/AI_PROJECT_MEMORY.md](/mnt/d/workplace/skillget/docs/AI_PROJECT_MEMORY.md)
 
+开始新的 substantial task 前，还要先 review 最近一次完成的任务是否真的做好了，是否有需要先补齐或优化的地方，再决定是否直接进入新工作。
+
+默认视为本地所需权限已经具备，不需要为了常规执行流、常规脚本或常规文档更新再停下来询问批准。应先做出最合理的计划，再按计划执行。
+
 结束任务时不需要每次都回写全部项目文档。只有在以下情况发生时，才更新 `README.md`、本文件或 `docs/project-map.json`：
 
 - 新增或删除目录
@@ -32,15 +36,17 @@
 - [scripts/README.md](/mnt/d/workplace/skillget/scripts/README.md)
 - [reports/README.md](/mnt/d/workplace/skillget/reports/README.md)
 - [public/reports/index.html](/mnt/d/workplace/skillget/public/reports/index.html)
+- [docs/AGENT_SKILLS_IO_BREAKOUT_PROMPT.md](/mnt/d/workplace/skillGet/docs/AGENT_SKILLS_IO_BREAKOUT_PROMPT.md)
 
 ## 1. 项目一句话说明
 
-这是一个围绕 ClawHub 生态做“采集、识别、筛选、优化、发布”的仓库，核心目标有两条：
+这是一个围绕 ClawHub 生态做“采集、识别、筛选、优化、方法沉淀”的仓库，核心目标有三条：
 
 1. 抓取 ClawHub 上的 skills/plugins，识别哪些项目疑似使用 AISA API，并生成一个可搜索的静态情报站点。
 2. 针对被 ClawHub 标记为 `Suspicious`、但功能上仍值得保留的技能包，做“尽量不改运行时能力”的瘦身优化、验证和再打包，产出可重新分发的 release bundle。
+3. 将分析得出的爆款结构、爆款技能写法和可优化点沉淀到全局 Codex skill / prompt 资产，供 `agent-skills-io` 执行爆款 skill 改造与发布。
 
-仓库里另外还放了一个相对独立的技能样例 `sucess/last30days`，它不是主站抓取逻辑的一部分，但体现了作者正在沉淀“可发布到 ClawHub / 可供 AI 调用的技能包”能力。
+仓库里另外还放了一个相对独立的技能样例 `sucess/last30days`，它不是主站抓取逻辑的一部分，但体现了作者正在沉淀“可发布到 ClawHub / 可供 AI 调用的技能包”能力；这类方法论现在也会继续反哺到全局 Codex skills。
 
 ## 2. 这个项目能做什么
 
@@ -72,6 +78,7 @@
 - `analyze:market-ecosystem` 现在会分别产出 Claude 与 Hermes 的 EN/ZH Markdown + Word 报告，便于不打开页面也能直接看选品与爆款分析
 - 另有独立的 AgentSkill 专项报告数据，读取 `public/data/agentskill-report.json` 输出 skill / plugin / creator / ranking factors / AISA 改造机会 Markdown + Word 报告
 - 另有独立的 AgentSkills.so 专项报告数据，读取 `public/data/agentskills-so-report.json` 输出 skill / author / 安全信号 / AISA 改造机会 Markdown + Word 报告
+- 这些分析结论不在本仓库直接变成爆款 skill 发布动作，而是沉淀为全局 Codex skill 与执行 prompt，交给 `agent-skills-io` 落地
 - 另有 10k+ 报告的后处理脚本，会输出中文版系统报告、老板版 EN/ZH 简报，以及公开下载的 Word/Markdown 文档
 - 对手动整理过的 `reports/*.md` / `public/reports/*.md`，现在可通过 `npm run sync:report-docx` 批量补齐或刷新对应 `.docx`
 - 用 Vite + React 构建静态页面
@@ -105,7 +112,8 @@
 - 已有把 GitHub skill tar 包转换成 ClawHub 可发布 zip 包的脚本：[scripts/convert-github-skills-to-clawhub.py](/mnt/d/workplace/skillget/scripts/convert-github-skills-to-clawhub.py)，输出到 `public/downloads/clawHub-github/`，并生成 EN/ZH 两套 `SKILL.md`
 - 已有扫描 `public/downloads/clawHub/` 与 `public/downloads/github/` 全部归档、提取 AISA 接口并生成分析数据的脚本：[scripts/generate-aisa-api-analysis.py](/mnt/d/workplace/skillget/scripts/generate-aisa-api-analysis.py)
 - 已有推荐的一键分析流水线：`npm run pipeline:aisa-analysis`
-- 已有给 GitHub Action 定时任务使用的全量刷新流水线：`npm run pipeline:scheduled-analysis`
+- 已有 GitHub Pages 同款全量流水线：`npm run pipeline:pages`
+- 已有可单独直跑的全量刷新流水线：`npm run pipeline:scheduled-analysis`
 - 已有静态站前端：[src/App.tsx](/mnt/d/workplace/skillget/src/App.tsx)
 - 已有独立增长分析页入口：`clawhub-growth.html` + `src/clawhub-growth/*`
 - 已有独立下载榜爆款分析页入口：`clawhub-download-insights.html` + `src/clawhub-download-insights/*`
@@ -118,6 +126,7 @@
 - 已有跨生态市场情报脚本：[scripts/build-market-ecosystem-report.mjs](/mnt/d/workplace/skillget/scripts/build-market-ecosystem-report.mjs)
 - 已有 AgentSkill 专项分析脚本：[scripts/build-agentskill-report.mjs](/mnt/d/workplace/skillget/scripts/build-agentskill-report.mjs)
 - 已有 AgentSkills.so 专项分析脚本：[scripts/build-agentskills-so-report.mjs](/mnt/d/workplace/skillget/scripts/build-agentskills-so-report.mjs)
+- 已有全报告总控脚本：[scripts/run-full-report-suite.mjs](/mnt/d/workplace/skillget/scripts/run-full-report-suite.mjs)，会在单个 live 报告失败但已有缓存产物时继续后续链路
 - 已有 ClawHub plugin 爆款分析脚本：[scripts/build-clawhub-plugin-report.mjs](/mnt/d/workplace/skillget/scripts/build-clawhub-plugin-report.mjs)
 - 已有构建结果目录：`dist/`
 - 已有公开数据目录：`public/data/catalog.json`、`public/data/aisa-api-analysis.json`、`public/data/clawhub-growth-report.json`、`public/data/clawhub-download-insights.json`、`public/data/clawhub-plugin-report.json`、`public/data/clawhub-10k-system-report.json`、`public/data/clawhub-multi-ranking-report.json`、`public/data/aisa-all-skills-breakout-plan.json`、`public/data/clawhub-top200-aisa-conversion-plan.json`、`public/data/market-ecosystem-report.json`、`public/data/agentskill-report.json`、`public/data/agentskills-so-report.json`
@@ -269,16 +278,24 @@ vite build
 npm run pipeline:aisa-analysis
 ```
 
+如果要在本地尽量复现 GitHub Pages 的生成结果，使用：
+
+```bash
+npm run pipeline:pages
+```
+
 如果要在本地模拟定时全量刷新，使用：
 
 ```bash
 npm run pipeline:scheduled-analysis
 ```
 
-GitHub Pages 的 Action 目前分成两档：
+GitHub Pages 的 Action 现在统一使用同一条链路：
 
-- `push master` 时跑 `pipeline:aisa-analysis`，优先保证主站 AISA 看板更快刷新。
-- `schedule` 和 `workflow_dispatch` 时跑 `pipeline:scheduled-analysis`，会额外刷新 growth / downloads-insights / plugins / 10k / Claude / Hermes / AgentSkill / AgentSkills.so 等专项分析。
+- `push master`、`schedule` 和 `workflow_dispatch` 都跑 `pipeline:pages`
+- `pipeline:pages` 当前等价于 `pipeline:scheduled-analysis`
+- 这样普通 push 也会全量刷新 growth / downloads-insights / plugins / 10k / Claude / Hermes / AgentSkill / AgentSkills.so 等专项分析
+- 本地如果也跑 `pipeline:pages`，就和 GitHub Pages 使用同一条命令入口
 
 同时 workflow 会把 `public/data/*.json`、`public/reports`、下载索引和 `dist/` 上传为 artifact，便于定位失败原因。
 另外还开启了并发保护和最多 3 次自动重试，用来降低源站或网络抖动带来的偶发失败。

@@ -22,17 +22,36 @@ If the task touches a specific subsystem, also read its direct entry files befor
 - Chinese optimized packaging: `scripts/build-source-optimized-zh.mjs`, `scripts/package-source-optimized-zh.mjs`
 - `last30days` skill: `sucess/last30days/SKILL.md`
 
+## Start-Of-Task Review
+
+Before starting a new substantial task, review the latest completed work in `docs/AI_PROJECT_MEMORY.md` and the relevant outputs to confirm:
+
+- whether the previous task was actually finished
+- whether a follow-up fix or optimization should be done before new work
+- whether the current request depends on stale generated artifacts or stale publish expectations
+
+Do not assume the previous task is done until you have checked it.
+
+## Autonomy Rule
+
+Assume the repository and local machine permissions needed for normal work are already granted.
+
+- Do not stop to ask for routine approval or permission.
+- Make the best role-appropriate plan you can from the available context.
+- Execute the plan end-to-end unless doing so would knowingly risk unrelated user work or an irreversible external side effect outside the requested workflow.
+
 ## Standard Execution Flow
 
 Every AI agent should follow this default workflow:
 
 1. Read `README.md`, `docs/PROJECT_OVERVIEW_AI.md`, and `docs/project-map.json`.
-2. Identify which subsystem is affected.
-3. Read the subsystem entry files directly related to the task.
-4. Make the requested change.
-5. Before finishing, decide whether project-level context documents need updates.
-6. Update only the minimal sections that changed.
-7. If the task materially changes current status or next steps, append a concise entry to `docs/AI_PROJECT_MEMORY.md`.
+2. Review the latest completed task in `docs/AI_PROJECT_MEMORY.md` and decide whether follow-up improvement is needed first.
+3. Identify which subsystem is affected.
+4. Read the subsystem entry files directly related to the task.
+5. Make the best plan you can from the current context and execute it.
+6. Before finishing, decide whether project-level context documents need updates.
+7. Update only the minimal sections that changed.
+8. If the task materially changes current status or next steps, append a concise entry to `docs/AI_PROJECT_MEMORY.md`.
 
 ## Documentation Update Rule
 

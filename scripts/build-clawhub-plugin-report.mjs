@@ -237,6 +237,14 @@ function normalizeRankings(rankingsBySort) {
 }
 
 function parseDetail(html, fallback) {
+  const rankingMeta = {
+    ranks: fallback.ranks ?? {},
+    appearances: fallback.appearances ?? 0,
+    bestRank: fallback.bestRank ?? null,
+    worstRank: fallback.worstRank ?? null,
+    rankSpread: fallback.rankSpread ?? 0,
+    bestSorts: Array.isArray(fallback.bestSorts) ? fallback.bestSorts : [],
+  };
   const ownerMatch = html.match(/owner:\$R\[\d+\]={handle:"([^"]+)",displayName:"([^"]*)"/);
   const staticMatch = html.match(/source:"([^"]+)",status:"([^"]+)",verdict:"([^"]+)"},llmAnalysis:/s);
   const llmMatch = html.match(/llmAnalysis:\$R\[\d+\]={checkedAt:\d+,confidence:"([^"]+)"[\s\S]*?model:"([^"]+)",status:"([^"]+)",summary:"([^"]+)"/s);
@@ -324,6 +332,7 @@ function parseDetail(html, fallback) {
     releaseTag: releaseTag || latestVersion,
     runtimeId,
     detailStatus: 'full',
+    ...rankingMeta,
     bundledSkills: parseStringArray(bundleSkillsRaw),
     capabilityTags: parseStringArray(capabilityTagsRaw),
     channels: parseStringArray(channelsRaw),

@@ -18,6 +18,9 @@ permissions:
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+  TZ: Asia/Shanghai
+  LANG: C.UTF-8
+  LC_ALL: C.UTF-8
 
 jobs:
   build:
@@ -29,18 +32,13 @@ jobs:
         with:
           node-version: 22
           cache: npm
-      - run: npm install
+      - run: npm ci
       - name: Run analysis pipeline with retry
         shell: bash
         run: |
           set -euo pipefail
-          if [ "${{ github.event_name }}" = "schedule" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            refresh_command="npm run pipeline:scheduled-analysis"
-            refresh_mode="full scheduled analysis"
-          else
-            refresh_command="npm run pipeline:aisa-analysis"
-            refresh_mode="AISA analysis"
-          fi
+          refresh_command="npm run pipeline:pages"
+          refresh_mode="GitHub Pages full analysis"
 
           echo "Using ${refresh_mode}: ${refresh_command}"
           for attempt in 1 2 3; do

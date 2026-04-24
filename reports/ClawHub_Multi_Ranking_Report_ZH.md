@@ -1,6 +1,6 @@
 # ClawHub 多榜单爆款系统报告（AISA 机会版）
 
-- 生成时间：2026-04-19T19:31:21.059044+00:00
+- 生成时间：2026-04-24T11:01:21.740684+00:00
 - 数据样本：downloads / stars / installs 各取 Top 100
 - 数据来源：https://clawhub.ai/skills?sort=downloads&dir=desc、https://clawhub.ai/skills?sort=stars&dir=desc、https://clawhub.ai/skills?sort=installs&dir=desc
 
@@ -15,58 +15,58 @@
 ## 二、三张榜分别说明了什么
 
 ### 1. 下载榜：谁最容易被点进来
-- 前三名分别是 `self-improving-agent`、`Skill Vetter`、`ontology`。
-- 下载榜 Top 20 的主题集中在：Self-Improving / Agentic 7个, Utility / Other 6个, Search / Research 6个, Developer / GitHub 1个。
+- 前三名分别是 `Skill Vetter`、`Self-Improving + Proactive Agent`、`ontology`。
+- 下载榜 Top 20 的主题集中在：Utility / Other 7个, Self-Improving / Agentic 6个, Search / Research 6个, Developer / GitHub 1个。
 - 结论：下载靠的是清晰标题、通用入口、低试错成本，不一定最深，但一定最容易第一次装。
 
 | 下载榜 Top 10 | 作者 | 下载 | 星标 | 安装 |
 | --- | --- | --- | --- | --- |
-| 1. self-improving-agent | pskoett | 399757 | 3253 | 5983 |
-| 2. Skill Vetter | spclaudehome | 213683 | 922 | 4001 |
-| 3. ontology | oswalpalash | 167603 | 546 | 1162 |
-| 4. Self-Improving + Proactive Agent | ivangdavila | 167391 | 977 | 1807 |
-| 5. Github | steipete | 160415 | 521 | 4028 |
-| 6. Gog | steipete | 158405 | 840 | 3322 |
-| 7. Proactive Agent | halthelobster | 145389 | 715 | 2682 |
-| 8. Weather | steipete | 136608 | 361 | 3502 |
-| 9. Polymarket | joelchance | 123058 | 79 | 27 |
-| 10. Multi Search Engine | gpyangyoujun | 122949 | 572 | 1800 |
+| 1. Skill Vetter | spclaudehome | 219735 | 960 | 4073 |
+| 2. Self-Improving + Proactive Agent | ivangdavila | 171978 | 1004 | 1831 |
+| 3. ontology | oswalpalash | 170492 | 560 | 1184 |
+| 4. Github | steipete | 163764 | 535 | 4077 |
+| 5. Gog | steipete | 161529 | 849 | 3352 |
+| 6. Proactive Agent | halthelobster | 147962 | 726 | 2721 |
+| 7. Weather | steipete | 139283 | 366 | 3538 |
+| 8. Polymarket | joelchance | 134026 | 93 | 28 |
+| 9. Multi Search Engine | gpyangyoujun | 127456 | 602 | 1840 |
+| 10. AdMapix | fly0pants | 106542 | 274 | 257 |
 
 ### 2. 星标榜：谁最容易让人觉得“这东西有方法论”
-- 前三名分别是 `self-improving-agent`、`Self-Improving + Proactive Agent`、`Skill Vetter`。
-- 星标榜 Top 20 的主题集中在：Utility / Other 9个, Self-Improving / Agentic 6个, Search / Research 3个, Developer / GitHub 2个。
+- 前三名分别是 `Self-Improving + Proactive Agent`、`Skill Vetter`、`Gog`。
+- 星标榜 Top 20 的主题集中在：Utility / Other 9个, Self-Improving / Agentic 5个, Search / Research 4个, Developer / GitHub 2个。
 - 结论：星标榜奖励的是“愿景 + 方法 + 可信度”，因此带有 agent、自进化、工具哲学感的 skill 更容易被收藏。
 
 | 星标榜 Top 10 | 作者 | 下载 | 星标 | 安装 |
 | --- | --- | --- | --- | --- |
-| 1. self-improving-agent | pskoett | 399757 | 3253 | 5983 |
-| 2. Self-Improving + Proactive Agent | ivangdavila | 167391 | 977 | 1807 |
-| 3. Skill Vetter | spclaudehome | 213683 | 922 | 4001 |
-| 4. Gog | steipete | 158405 | 840 | 3322 |
-| 5. Proactive Agent | halthelobster | 145389 | 715 | 2682 |
-| 6. Multi Search Engine | gpyangyoujun | 122949 | 572 | 1800 |
-| 7. ontology | oswalpalash | 167603 | 546 | 1162 |
-| 8. Humanizer | biostartechnology | 92829 | 544 | 1259 |
-| 9. Github | steipete | 160415 | 521 | 4028 |
-| 10. Free Ride - Unlimited free AI | shaivpidadi | 57775 | 413 | 422 |
+| 1. Self-Improving + Proactive Agent | ivangdavila | 171978 | 1004 | 1831 |
+| 2. Skill Vetter | spclaudehome | 219735 | 960 | 4073 |
+| 3. Gog | steipete | 161529 | 849 | 3352 |
+| 4. Proactive Agent | halthelobster | 147962 | 726 | 2721 |
+| 5. Multi Search Engine | gpyangyoujun | 127456 | 602 | 1840 |
+| 6. Humanizer | biostartechnology | 95552 | 563 | 1279 |
+| 7. ontology | oswalpalash | 170492 | 560 | 1184 |
+| 8. Github | steipete | 163764 | 535 | 4077 |
+| 9. Free Ride - Unlimited free AI | shaivpidadi | 58498 | 420 | 429 |
+| 10. Auto-Updater Skill | maximeprades | 76762 | 377 | 1292 |
 
 ### 3. 安装榜：谁最容易留下来
-- 前三名分别是 `self-improving-agent`、`Github`、`Skill Vetter`。
-- 安装榜 Top 20 的主题集中在：Utility / Other 11个, Self-Improving / Agentic 4个, Search / Research 3个, Developer / GitHub 2个。
+- 前三名分别是 `Github`、`Skill Vetter`、`Weather`。
+- 安装榜 Top 20 的主题集中在：Utility / Other 12个, Self-Improving / Agentic 3个, Search / Research 3个, Developer / GitHub 2个。
 - 结论：安装榜最接近“长期驻留价值”。用户愿意长期保留的 skill，往往是低配置、高复用、每天都可能碰到的工具。
 
 | 安装榜 Top 10 | 作者 | 下载 | 星标 | 安装 |
 | --- | --- | --- | --- | --- |
-| 1. self-improving-agent | pskoett | 399757 | 3253 | 5983 |
-| 2. Github | steipete | 160415 | 521 | 4028 |
-| 3. Skill Vetter | spclaudehome | 213683 | 922 | 4001 |
-| 4. Weather | steipete | 136608 | 361 | 3502 |
-| 5. Gog | steipete | 158405 | 840 | 3322 |
-| 6. Proactive Agent | halthelobster | 145389 | 715 | 2682 |
-| 7. Sonoscli | steipete | 78647 | 48 | 2569 |
-| 8. Nano Pdf | steipete | 92754 | 222 | 2352 |
-| 9. Obsidian | steipete | 83438 | 335 | 2323 |
-| 10. Notion | steipete | 77960 | 230 | 2200 |
+| 1. Github | steipete | 163764 | 535 | 4077 |
+| 2. Skill Vetter | spclaudehome | 219735 | 960 | 4073 |
+| 3. Weather | steipete | 139283 | 366 | 3538 |
+| 4. Gog | steipete | 161529 | 849 | 3352 |
+| 5. Proactive Agent | halthelobster | 147962 | 726 | 2721 |
+| 6. Sonoscli | steipete | 79251 | 50 | 2588 |
+| 7. Nano Pdf | steipete | 94785 | 227 | 2385 |
+| 8. Obsidian | steipete | 85459 | 349 | 2353 |
+| 9. Skill Creator | chindden | 74142 | 255 | 2223 |
+| 10. Notion | steipete | 79306 | 235 | 2224 |
 
 ## 三、综合起来，真正的爆款长什么样
 - 真爆款往往同时上三榜，至少也会稳定出现在其中两榜。
@@ -75,16 +75,16 @@
 
 | 综合强势技能 | 作者 | 上榜次数 | 综合分 | 排名分布 |
 | --- | --- | --- | --- | --- |
-| self-improving-agent | pskoett | 3 | 300 | downloads:1, stars:1, installs:1 |
-| Skill Vetter | spclaudehome | 3 | 295 | downloads:2, stars:3, installs:3 |
-| Gog | steipete | 3 | 288 | downloads:6, stars:4, installs:5 |
-| Github | steipete | 3 | 287 | downloads:5, stars:9, installs:2 |
-| Proactive Agent | halthelobster | 3 | 285 | downloads:7, stars:5, installs:6 |
-| Self-Improving + Proactive Agent | ivangdavila | 3 | 284 | downloads:4, stars:2, installs:13 |
-| Weather | steipete | 3 | 279 | downloads:8, stars:12, installs:4 |
-| Multi Search Engine | gpyangyoujun | 3 | 272 | downloads:10, stars:6, installs:15 |
-| Obsidian | steipete | 3 | 262 | downloads:17, stars:15, installs:9 |
-| Nano Banana Pro | steipete | 3 | 258 | downloads:15, stars:14, installs:16 |
+| Skill Vetter | spclaudehome | 3 | 298 | downloads:1, stars:2, installs:2 |
+| Gog | steipete | 3 | 291 | downloads:5, stars:3, installs:4 |
+| Github | steipete | 3 | 290 | downloads:4, stars:8, installs:1 |
+| Proactive Agent | halthelobster | 3 | 288 | downloads:6, stars:4, installs:5 |
+| Self-Improving + Proactive Agent | ivangdavila | 3 | 288 | downloads:2, stars:1, installs:12 |
+| Weather | steipete | 3 | 282 | downloads:7, stars:11, installs:3 |
+| Multi Search Engine | gpyangyoujun | 3 | 275 | downloads:9, stars:5, installs:14 |
+| Obsidian | steipete | 3 | 262 | downloads:18, stars:15, installs:8 |
+| ontology | oswalpalash | 3 | 261 | downloads:3, stars:7, installs:32 |
+| Humanizer | biostartechnology | 3 | 259 | downloads:13, stars:6, installs:25 |
 
 ## 四、作者角度：谁在运营作品集，而不是只做一个 skill
 - 头部作者的共同点不是“写得多”，而是“围绕某个能力核有稳定产出”。
@@ -92,16 +92,16 @@
 
 | 作者 | 上榜次数 | 综合分 | 最佳名次 | 作品集样本 |
 | --- | --- | --- | --- | --- |
-| steipete | 91 | 5525 | downloads:5, stars:4, installs:2 | Github, Gog, Weather |
-| ivangdavila | 19 | 917 | downloads:4, stars:2, installs:13 | Self-Improving + Proactive Agent, Word / DOCX, Excel / XLSX |
-| byungkyu | 7 | 301 | downloads:28, stars:13, installs:65 | API Gateway, Gmail, YouTube |
-| ide-rea | 4 | 213 | downloads:19, stars:31, installs:54 | Baidu web search, Baidu Wenku AIPPT, baidu baike search |
-| pskoett | 3 | 300 | downloads:1, stars:1, installs:1 | self-improving-agent, simplify-and-harden, intent-framed-agents |
-| spclaudehome | 3 | 295 | downloads:2, stars:3, installs:3 | Skill Vetter, CrabNet |
-| halthelobster | 3 | 285 | downloads:7, stars:5, installs:6 | Proactive Agent, PARA Second Brain |
-| gpyangyoujun | 3 | 272 | downloads:10, stars:6, installs:15 | Multi Search Engine, uniqlo(优衣库)-product-query |
-| oswalpalash | 3 | 258 | downloads:3, stars:7, installs:35 |  |
-| biostartechnology | 3 | 257 | downloads:12, stars:8, installs:26 |  |
+| steipete | 91 | 5591 | downloads:4, stars:3, installs:1 | Github, Gog, Weather |
+| ivangdavila | 19 | 950 | downloads:2, stars:1, installs:12 | Self-Improving + Proactive Agent, Word / DOCX, Excel / XLSX |
+| byungkyu | 7 | 305 | downloads:27, stars:12, installs:63 | API Gateway, Gmail, YouTube |
+| ide-rea | 4 | 214 | downloads:19, stars:32, installs:53 | Baidu web search, Baidu Wenku AIPPT, baidu baike search |
+| spclaudehome | 3 | 298 | downloads:1, stars:2, installs:2 | Skill Vetter, CrabNet |
+| halthelobster | 3 | 288 | downloads:6, stars:4, installs:5 | Proactive Agent, PARA Second Brain |
+| gpyangyoujun | 3 | 275 | downloads:9, stars:5, installs:14 | Multi Search Engine, uniqlo(优衣库)-product-query |
+| oswalpalash | 3 | 261 | downloads:3, stars:7, installs:32 | ontology, Causal Inference |
+| biostartechnology | 3 | 259 | downloads:13, stars:6, installs:25 |  |
+| maximeprades | 3 | 249 | downloads:23, stars:10, installs:21 |  |
 
 ## 五、AISA 现有 runtime 包现状
 - 本地 7 个 AISA runtime 包全部完成了新一轮 SKILL 改造：统一成 `metadata.aisa`、加了 compatibility、补了高意图工作流和示例请求，并同步到模板层。
@@ -109,13 +109,13 @@
 
 | 本地 AISA skill | 作者 | 下载 | 星标 | 安装 | 优先级说明 |
 | --- | --- | --- | --- | --- | --- |
-| AIsa Twitter API (Search + Post) | aisapay | 3187 | 4 | 16 | 本地 AISA 包里安装转化最高，下载基础已被验证，AISA 品牌一致性最好，适合做旗舰包 |
-| X/Twitter Automation: 30+ APIs, OAuth Post, One Key | 0xjordansg-yolo | 3518 | 4 | 12 | 下载基础已被验证 |
-| YouTube SERP Scout for agents. Search top-ranking videos, channels, and trends for content research and competitor tracking | 0xjordansg-yolo | 1503 | 3 | 3 | 适合作为批量改造候选 |
-| Search YouTube videos, channels, and playlists | 0xjordansg-yolo | 542 | 0 | 2 | 适合作为批量改造候选 |
-| Twitter/X All-in-One — Search, Monitor & Publish Text & Media Posts | aisadocs | 205 | 1 | 0 | 适合作为批量改造候选 |
-| Twitter Intelligence & Automation — Read, Search, Write & Post (Text & Media) | karensheng | 83 | 0 | 0 | 适合作为批量改造候选 |
-| X Twitter Command Center (Search + Post + Interact) | chaimengphp | 70 | 0 | 0 | 适合作为批量改造候选 |
+| AIsa Twitter API (Search + Post) | aisapay | 3240 | 4 | 16 | 本地 AISA 包里安装转化最高，下载基础已被验证，AISA 品牌一致性最好，适合做旗舰包 |
+| X/Twitter Automation: 30+ APIs, OAuth Post, One Key | 0xjordansg-yolo | 3562 | 4 | 12 | 下载基础已被验证 |
+| YouTube SERP Scout for agents. Search top-ranking videos, channels, and trends for content research and competitor tracking | 0xjordansg-yolo | 1518 | 3 | 4 | 适合作为批量改造候选 |
+| Search YouTube videos, channels, and playlists | 0xjordansg-yolo | 554 | 0 | 2 | 适合作为批量改造候选 |
+| Twitter/X All-in-One — Search, Monitor & Publish Text & Media Posts | aisadocs | 223 | 1 | 0 | 适合作为批量改造候选 |
+| Twitter Intelligence & Automation — Read, Search, Write & Post (Text & Media) | karensheng | 101 | 0 | 0 | 适合作为批量改造候选 |
+| X Twitter Command Center (Search + Post + Interact) | chaimengphp | 82 | 0 | 0 | 适合作为批量改造候选 |
 
 ## 六、为什么先打 `aisa-twitter-api`
 - 它是本地 AISA 包里安装转化最强的一个，说明用户不只点进去看过，还愿意留下来。

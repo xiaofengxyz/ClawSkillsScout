@@ -128,6 +128,15 @@ function familyLabel(value: string, copy: PluginCopy) {
   return value === 'bundle-plugin' ? copy.bundle : copy.code;
 }
 
+function toStringArray(value: unknown) {
+  return Array.isArray(value) ? value.filter((item): item is string => typeof item === 'string' && item.trim().length > 0) : [];
+}
+
+function joinLabels(value: unknown, separator: string, fallback = 'n/a') {
+  const labels = toStringArray(value);
+  return labels.length ? labels.join(separator) : fallback;
+}
+
 function hasPluginDetailPage(url: string) {
   return /^https:\/\/clawhub\.ai\/plugins\/[^?#]+$/.test(url) && !url.toLowerCase().endsWith('.json');
 }
@@ -295,7 +304,7 @@ export default function App() {
     {
       key: 'bestBoard',
       title: copy.bestBoard,
-      render: (item) => item.bestSorts.join(' / '),
+      render: (item) => joinLabels(item.bestSorts, ' / '),
     },
   ];
 
@@ -306,7 +315,7 @@ export default function App() {
       render: (item) => <PluginTitle name={item.displayName} owner={item.owner} theme={item.theme} url={item.url} />,
     },
     { key: 'spread', title: copy.spread, render: (item) => item.rankSpread },
-    { key: 'bestBoard', title: copy.bestBoard, render: (item) => item.bestSorts.join(' / ') },
+    { key: 'bestBoard', title: copy.bestBoard, render: (item) => joinLabels(item.bestSorts, ' / ') },
   ];
 
   const authorColumns: Array<TableColumn<PluginAuthorProfile>> = [
@@ -316,7 +325,7 @@ export default function App() {
       render: (item) => (
         <>
           <strong>@{item.author}</strong>
-          <span className="plugin-subtext">{item.primaryThemes.join(' · ')}</span>
+          <span className="plugin-subtext">{joinLabels(item.primaryThemes, ' · ')}</span>
         </>
       ),
     },

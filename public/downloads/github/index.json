@@ -1,5 +1,5 @@
 {
-  "downloadedAt": "2026-04-16T08:41:43.389Z",
+  "downloadedAt": "2026-04-24T10:56:27.597Z",
   "generatedFromCatalog": "public/data/catalog.json",
   "scannedOwners": [
     "0xjordansg-yolo",
@@ -8,7 +8,7 @@
     "bibaofeng",
     "chaimengphp"
   ],
-  "total": 15,
+  "total": 28,
   "failed": 0,
   "items": [
     {
@@ -24,6 +24,83 @@
     },
     {
       "owner": "0xjordansg-yolo",
+      "repo": "aisa-multi-search-engine-claude-skills-multi-search",
+      "branch": null,
+      "skillDir": ".",
+      "skillPath": "SKILL.md",
+      "archiveType": "tar.gz",
+      "githubUrl": "https://github.com/0xjordansg-yolo",
+      "file": "public/downloads/github/0xjordansg-yolo/aisa-multi-search-engine-claude-skills-multi-search.tar.gz",
+      "bytes": 4776
+    },
+    {
+      "owner": "0xjordansg-yolo",
+      "repo": "aisa-multi-search-engine-claude-skills-perplexity-research",
+      "branch": null,
+      "skillDir": ".",
+      "skillPath": "SKILL.md",
+      "archiveType": "tar.gz",
+      "githubUrl": "https://github.com/0xjordansg-yolo",
+      "file": "public/downloads/github/0xjordansg-yolo/aisa-multi-search-engine-claude-skills-perplexity-research.tar.gz",
+      "bytes": 4744
+    },
+    {
+      "owner": "0xjordansg-yolo",
+      "repo": "aisa-multi-search-engine-claude-skills-scholar-search",
+      "branch": null,
+      "skillDir": ".",
+      "skillPath": "SKILL.md",
+      "archiveType": "tar.gz",
+      "githubUrl": "https://github.com/0xjordansg-yolo",
+      "file": "public/downloads/github/0xjordansg-yolo/aisa-multi-search-engine-claude-skills-scholar-search.tar.gz",
+      "bytes": 4534
+    },
+    {
+      "owner": "0xjordansg-yolo",
+      "repo": "aisa-multi-search-engine-claude-skills-smart-search",
+      "branch": null,
+      "skillDir": ".",
+      "skillPath": "SKILL.md",
+      "archiveType": "tar.gz",
+      "githubUrl": "https://github.com/0xjordansg-yolo",
+      "file": "public/downloads/github/0xjordansg-yolo/aisa-multi-search-engine-claude-skills-smart-search.tar.gz",
+      "bytes": 4438
+    },
+    {
+      "owner": "0xjordansg-yolo",
+      "repo": "aisa-multi-search-engine-claude-skills-tavily-extract",
+      "branch": null,
+      "skillDir": ".",
+      "skillPath": "SKILL.md",
+      "archiveType": "tar.gz",
+      "githubUrl": "https://github.com/0xjordansg-yolo",
+      "file": "public/downloads/github/0xjordansg-yolo/aisa-multi-search-engine-claude-skills-tavily-extract.tar.gz",
+      "bytes": 4418
+    },
+    {
+      "owner": "0xjordansg-yolo",
+      "repo": "aisa-multi-search-engine-claude-skills-tavily-search",
+      "branch": null,
+      "skillDir": ".",
+      "skillPath": "SKILL.md",
+      "archiveType": "tar.gz",
+      "githubUrl": "https://github.com/0xjordansg-yolo",
+      "file": "public/downloads/github/0xjordansg-yolo/aisa-multi-search-engine-claude-skills-tavily-search.tar.gz",
+      "bytes": 4659
+    },
+    {
+      "owner": "0xjordansg-yolo",
+      "repo": "aisa-multi-search-engine-claude-skills-web-search",
+      "branch": null,
+      "skillDir": ".",
+      "skillPath": "SKILL.md",
+      "archiveType": "tar.gz",
+      "githubUrl": "https://github.com/0xjordansg-yolo",
+      "file": "public/downloads/github/0xjordansg-yolo/aisa-multi-search-engine-claude-skills-web-search.tar.gz",
+      "bytes": 13255
+    },
+    {
+      "owner": "0xjordansg-yolo",
       "repo": "aisa-multi-search-engine",
       "branch": "main",
       "skillDir": ".",
@@ -32,6 +109,72 @@
       "githubUrl": "https://github.com/0xjordansg-yolo/aisa-multi-search-engine",
       "file": "public/downloads/github/0xjordansg-yolo/aisa-multi-search-engine.tar.gz",
       "bytes": 12265
+    },
+    {
+      "owner": "0xjordansg-yolo",
+      "repo": "stock-analysis-aisa-claude-skills-stock-analysis",
+      "branch": null,
+      "skillDir": ".",
+      "skillPath": "SKILL.md",
+      "archiveType": "tar.gz",
+      "githubUrl": "https://github.com/0xjordansg-yolo",
+      "file": "public/downloads/github/0xjordansg-yolo/stock-analysis-aisa-claude-skills-stock-analysis.tar.gz",
+      "bytes": 4171
+    },
+    {
+      "owner": "0xjordansg-yolo",
+      "repo": "stock-analysis-aisa-claude-skills-stock-dividend",
+      "branch": null,
+      "skillDir": ".",
+      "skillPath": "SKILL.md",
+      "archiveType": "tar.gz",
+      "githubUrl": "https://github.com/0xjordansg-yolo",
+      "file": "public/downloads/github/0xjordansg-yolo/stock-analysis-aisa-claude-skills-stock-dividend.tar.gz",
+      "bytes": 3335
+    },
+    {
+      "owner": "0xjordansg-yolo",
+      "repo": "stock-analysis-aisa-claude-skills-stock-hot",
+      "branch": null,
+      "skillDir": ".",
+      "skillPath": "SKILL.md",
+      "archiveType": "tar.gz",
+      "githubUrl": "https://github.com/0xjordansg-yolo",
+      "file": "public/downloads/github/0xjordansg-yolo/stock-analysis-aisa-claude-skills-stock-hot.tar.gz",
+      "bytes": 3248
+    },
+    {
+      "owner": "0xjordansg-yolo",
+      "repo": "stock-analysis-aisa-claude-skills-stock-portfolio",
+      "branch": null,
+      "skillDir": ".",
+      "skillPath": "SKILL.md",
+      "archiveType": "tar.gz",
+      "githubUrl": "https://github.com/0xjordansg-yolo",
+      "file": "public/downloads/github/0xjordansg-yolo/stock-analysis-aisa-claude-skills-stock-portfolio.tar.gz",
+      "bytes": 4108
+    },
+    {
+      "owner": "0xjordansg-yolo",
+      "repo": "stock-analysis-aisa-claude-skills-stock-rumors",
+      "branch": null,
+      "skillDir": ".",
+      "skillPath": "SKILL.md",
+      "archiveType": "tar.gz",
+      "githubUrl": "https://github.com/0xjordansg-yolo",
+      "file": "public/downloads/github/0xjordansg-yolo/stock-analysis-aisa-claude-skills-stock-rumors.tar.gz",
+      "bytes": 3847
+    },
+    {
+      "owner": "0xjordansg-yolo",
+      "repo": "stock-analysis-aisa-claude-skills-stock-watchlist",
+      "branch": null,
+      "skillDir": ".",
+      "skillPath": "SKILL.md",
+      "archiveType": "tar.gz",
+      "githubUrl": "https://github.com/0xjordansg-yolo",
+      "file": "public/downloads/github/0xjordansg-yolo/stock-analysis-aisa-claude-skills-stock-watchlist.tar.gz",
+      "bytes": 3729
     },
     {
       "owner": "0xjordansg-yolo",

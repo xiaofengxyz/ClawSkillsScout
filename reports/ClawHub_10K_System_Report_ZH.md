@@ -1,10 +1,10 @@
 # ClawHub 10K+ 爆款系统报告（中文版）
 
-- 生成时间：2026-04-19T04:59:30.742108+00:00
-- 10K+ 技能样本：307
-- 作者样本：182
+- 生成时间：2026-04-24T11:01:08.417448+00:00
+- 10K+ 技能样本：319
+- 作者样本：190
 - 高产作者：24
-- 10K+ 下载成功数：303
+- 10K+ 下载成功数：316
 
 ## 一、头部技能系统分析
 
@@ -24,9 +24,8 @@
 ## 二、作者高产与高爆款系统
 
 ### Self-Improving 相关作者
-- @steipete：总技能 53，10K+ 技能 38，代表作 Github, Gog, Weather
-- @ivangdavila：总技能 119，10K+ 技能 19，代表作 Self-Improving + Proactive Agent, Word / DOCX, Excel / XLSX
-- @pskoett：总技能 5，10K+ 技能 1，代表作 self-improving-agent, simplify-and-harden, intent-framed-agents
+- @steipete：总技能 53，10K+ 技能 40，代表作 Github, Gog, Weather
+- @ivangdavila：总技能 120，10K+ 技能 20，代表作 Self-Improving + Proactive Agent, Word / DOCX, Excel / XLSX
 - @yueyanc：总技能 1，10K+ 技能 1，代表作 Self-Improving Proactive Agent
 
 ### 方法论结论
@@ -86,12 +85,12 @@
 - 最好的盈利方式不是一开始就卖单个 skill，而是通过免费 skill 获取安装与使用，再引导到付费 API 能力。
 
 ### 可替换 API 家族
-- Unknown（当前仅表示脚本暂时无法从标题/简介里判断依赖，不代表真的没有 API）：125 个技能，系统打法：Keep as experimental template pool; prioritize clearer dependency mapping.
-- Search API：98 个技能，系统打法：Use AIsa as unified paid backend and ship many low-friction wrappers.
-- Media Generation API：42 个技能，系统打法：Use AIsa as unified paid backend and ship many low-friction wrappers.
+- Unknown（当前仅表示脚本暂时无法从标题/简介里判断依赖，不代表真的没有 API）：131 个技能，系统打法：Keep as experimental template pool; prioritize clearer dependency mapping.
+- Search API：101 个技能，系统打法：Use AIsa as unified paid backend and ship many low-friction wrappers.
+- Media Generation API：43 个技能，系统打法：Use AIsa as unified paid backend and ship many low-friction wrappers.
 - Productivity API：41 个技能，系统打法：Use AIsa as unified paid backend and ship many low-friction wrappers.
-- Financial API：28 个技能，系统打法：Use AIsa as unified paid backend and ship many low-friction wrappers.
-- Social API：23 个技能，系统打法：Use AIsa as unified paid backend and ship many low-friction wrappers.
+- Financial API：29 个技能，系统打法：Use AIsa as unified paid backend and ship many low-friction wrappers.
+- Social API：24 个技能，系统打法：Use AIsa as unified paid backend and ship many low-friction wrappers.
 - Browser Automation Runtime：20 个技能，系统打法：Use AIsa as unified paid backend and ship many low-friction wrappers.
 - Weather API：2 个技能，系统打法：Use AIsa as unified paid backend and ship many low-friction wrappers.
 

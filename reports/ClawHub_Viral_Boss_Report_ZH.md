@@ -1,6 +1,6 @@
 # ClawHub 爆款技能与爆款作者系统总报告（老板版）
 
-- 生成时间：2026-04-19T19:31:21.059044+00:00
+- 生成时间：2026-04-24T11:01:21.740684+00:00
 - 数据范围：ClawHub 当前 downloads / stars / installs 三榜 Top 100
 - 数据来源：https://clawhub.ai/skills?sort=downloads&dir=desc、https://clawhub.ai/skills?sort=stars&dir=desc、https://clawhub.ai/skills?sort=installs&dir=desc
 
@@ -19,16 +19,16 @@
 ## 三、重点爆款 skill 总结
 | Skill | 作者 | 上榜次数 | 综合分 | 下载/星标/安装 |
 | --- | --- | --- | --- | --- |
-| self-improving-agent | pskoett | 3 | 300 | 399757 / 3253 / 5983 |
-| Skill Vetter | spclaudehome | 3 | 295 | 213683 / 922 / 4001 |
-| Gog | steipete | 3 | 288 | 158405 / 840 / 3322 |
-| Github | steipete | 3 | 287 | 160415 / 521 / 4028 |
-| Proactive Agent | halthelobster | 3 | 285 | 145389 / 715 / 2682 |
-| Self-Improving + Proactive Agent | ivangdavila | 3 | 284 | 167391 / 977 / 1807 |
-| Weather | steipete | 3 | 279 | 136608 / 361 / 3502 |
-| Multi Search Engine | gpyangyoujun | 3 | 272 | 122949 / 572 / 1800 |
-| Obsidian | steipete | 3 | 262 | 83438 / 335 / 2323 |
-| Nano Banana Pro | steipete | 3 | 258 | 88114 / 348 / 1720 |
+| Skill Vetter | spclaudehome | 3 | 298 | 219735 / 960 / 4073 |
+| Gog | steipete | 3 | 291 | 161529 / 849 / 3352 |
+| Github | steipete | 3 | 290 | 163764 / 535 / 4077 |
+| Proactive Agent | halthelobster | 3 | 288 | 147962 / 726 / 2721 |
+| Self-Improving + Proactive Agent | ivangdavila | 3 | 288 | 171978 / 1004 / 1831 |
+| Weather | steipete | 3 | 282 | 139283 / 366 / 3538 |
+| Multi Search Engine | gpyangyoujun | 3 | 275 | 127456 / 602 / 1840 |
+| Obsidian | steipete | 3 | 262 | 85459 / 349 / 2353 |
+| ontology | oswalpalash | 3 | 261 | 170492 / 560 / 1184 |
+| Humanizer | biostartechnology | 3 | 259 | 95552 / 563 / 1279 |
 
 ### 为什么这些 skill 会成为爆款
 - 名字就等于用户任务，几乎不需要解释。
@@ -50,21 +50,8 @@
 
 ## 四、逐条拆解重点爆款 skill
 
-### self-improving-agent | @pskoett
-- 三榜表现：downloads 399757，stars 3253，installs 5983。
-- 核心任务：把失败、纠错、反馈变成持续学习能力。
-- 爆款原因：
-  - 名字直接命中 agent 圈最强叙事。
-  - 下载、星标、安装三榜全第一，说明传播、认可、留存同时成立。
-  - 用户安装它不是为了单次任务，而是为了让整个 agent 系统变强。
-- 可复制打法：
-  - 先做一个超级清晰的方法论入口。
-  - 让 skill 成为‘系统升级器’，而不是工具箱。
-  - 围绕失败纠错、记忆、改进沉淀周边变体。
-- 是否适合转成 AISA API：中。更适合做 AISA 的编排层、记忆层、评分层，而不是单一 API 包装器。
-
 ### Skill Vetter | @spclaudehome
-- 三榜表现：downloads 213683，stars 922，installs 4001。
+- 三榜表现：downloads 219735，stars 960，installs 4073。
 - 核心任务：在安装任何 skill 前先做安全审查。
 - 爆款原因：
   - 任务极窄，用户一眼知道什么时候用。
@@ -77,7 +64,7 @@
 - 是否适合转成 AISA API：高。可转成统一安全扫描 API、风险解释 API、skill 审计 API。
 
 ### Gog | @steipete
-- 三榜表现：downloads 158405，stars 840，installs 3322。
+- 三榜表现：downloads 161529，stars 849，installs 3352。
 - 核心任务：统一调用 Gmail、Calendar、Drive、Docs 等 Google Workspace 工具。
 - 爆款原因：
   - 一个入口覆盖多个高频办公动作。
@@ -90,7 +77,7 @@
 - 是否适合转成 AISA API：极高。适合做 Google Workspace unified API 和办公自动化套餐。
 
 ### Github | @steipete
-- 三榜表现：downloads 160415，stars 521，installs 4028。
+- 三榜表现：downloads 163764，stars 535，installs 4077。
 - 核心任务：用最短路径完成 GitHub 仓库与开发工作流操作。
 - 爆款原因：
   - 标题就是平台名，搜索心智极强。
@@ -103,7 +90,7 @@
 - 是否适合转成 AISA API：极高。可直接转成 GitHub research、PR review、issue triage、release watch API。
 
 ### Proactive Agent | @halthelobster
-- 三榜表现：downloads 145389，stars 715，installs 2682。
+- 三榜表现：downloads 147962，stars 726，installs 2721。
 - 核心任务：让 agent 不等命令，主动推进工作。
 - 爆款原因：
   - 主动性是高价值用户最想要的特征。
@@ -116,7 +103,7 @@
 - 是否适合转成 AISA API：中。更适合和通知、计划、记忆、执行 API 组合成上层产品。
 
 ### Self-Improving + Proactive Agent | @ivangdavila
-- 三榜表现：downloads 167391，stars 977，installs 1807。
+- 三榜表现：downloads 171978，stars 1004，installs 1831。
 - 核心任务：既能持续学习，又能主动帮用户推进任务。
 - 爆款原因：
   - 把两个最能激发想象力的 agent 叙事叠在一起。
@@ -129,7 +116,7 @@
 - 是否适合转成 AISA API：中。更适合做上层 agent 编排产品，而非单点底层 API。
 
 ### Weather | @steipete
-- 三榜表现：downloads 136608，stars 361，installs 3502。
+- 三榜表现：downloads 139283，stars 366，installs 3538。
 - 核心任务：快速查询天气并直接服务决策。
 - 爆款原因：
   - 超级高频、超级低门槛。
@@ -142,7 +129,7 @@
 - 是否适合转成 AISA API：极高。可做天气 API、出行建议 API、通知 API 套餐。
 
 ### Multi Search Engine | @gpyangyoujun
-- 三榜表现：downloads 122949，stars 572，installs 1800。
+- 三榜表现：downloads 127456，stars 602，installs 1840。
 - 核心任务：一次性搜索多个来源并拿到更好的检索结果。
 - 爆款原因：
   - 搜索本身就是高频需求。
@@ -155,7 +142,7 @@
 - 是否适合转成 AISA API：极高。可扩 Tavily、Serp、学术、新闻、本地搜索等整个家族。
 
 ### Obsidian | @steipete
-- 三榜表现：downloads 83438，stars 335，installs 2323。
+- 三榜表现：downloads 85459，stars 349，installs 2353。
 - 核心任务：把 AI 能力嵌进知识管理工作流。
 - 爆款原因：
   - 绑定强工作流平台。
@@ -167,30 +154,30 @@
   - 围绕知识管理可延展大量周边能力。
 - 是否适合转成 AISA API：高。可转知识管理、笔记搜索、笔记生成、知识库同步 API。
 
-### Nano Banana Pro | @steipete
-- 三榜表现：downloads 88114，stars 348，installs 1720。
-- 核心任务：快速生成高质量图像/媒体内容。
+### ontology | @oswalpalash
+- 三榜表现：downloads 170492，stars 560，installs 1184。
+- 核心任务：为 agent 和复杂工作流提供结构化知识图谱与约束。
 - 爆款原因：
-  - 媒体生成仍然具备天然传播性。
-  - 结果可见，容易做展示。
-  - 高频创作人群愿意持续使用。
+  - 服务的是高价值用户群。
+  - 概念高级，带来收藏和传播。
+  - 一旦接入流程，切换成本较高。
 - 可复制打法：
-  - 可见结果最容易传播。
-  - 同一模型能力可拆出多个内容场景包。
-  - 需要用样例和展示强化转化。
-- 是否适合转成 AISA API：高。媒体生成一直是 AISA 强变现方向。
+  - 把复杂能力变成高级但具体的系统概念。
+  - 重点服务高价值少数人群，而不是所有人。
+  - 通过约束、结构、共享记忆形成粘性。
+- 是否适合转成 AISA API：中高。适合做知识图谱、实体关系、记忆结构化 API。
 
 ## 五、爆款多产作者总结
 | 作者 | 上榜次数 | 综合分 | 代表作品 | 为什么强 |
 | --- | --- | --- | --- | --- |
-| steipete | 91 | 5525 | Github, Gog, Weather | 以高频日常工具组成作品集矩阵，靠多入口、多场景长期收割安装量。 |
-| ivangdavila | 19 | 917 | Self-Improving + Proactive Agent, Word / DOCX, Excel / XLSX | 一边做 agent 叙事，一边做文档/办公等高需求工具，把吸引力和实用性放在同一作品集里。 |
-| byungkyu | 7 | 301 | API Gateway, Gmail, YouTube | 围绕 API/办公/获客等强业务场景批量铺开，是典型的 B2B 工具作者打法。 |
-| ide-rea | 4 | 213 | Baidu web search, Baidu Wenku AIPPT, baidu baike search | 用本地化搜索和中文生态入口拿差异化市场，是区域型分发打法。 |
-| pskoett | 3 | 300 | self-improving-agent, simplify-and-harden, intent-framed-agents | 用单一强叙事把抽象 agent 能力包装成强身份认同产品。 |
-| spclaudehome | 3 | 295 | Skill Vetter, CrabNet | 抓住安全焦虑和安装前决策点，用极强的任务清晰度吃下高转化。 |
-| halthelobster | 3 | 285 | Proactive Agent, PARA Second Brain | 作品少但定位极准，用更强的主动性叙事做高粘性技能。 |
-| gpyangyoujun | 3 | 272 | Multi Search Engine, uniqlo(优衣库)-product-query | 抓住搜索和消费决策这类高需求入口，用简单名字换来直接下载。 |
+| steipete | 91 | 5591 | Github, Gog, Weather | 以高频日常工具组成作品集矩阵，靠多入口、多场景长期收割安装量。 |
+| ivangdavila | 19 | 950 | Self-Improving + Proactive Agent, Word / DOCX, Excel / XLSX | 一边做 agent 叙事，一边做文档/办公等高需求工具，把吸引力和实用性放在同一作品集里。 |
+| byungkyu | 7 | 305 | API Gateway, Gmail, YouTube | 围绕 API/办公/获客等强业务场景批量铺开，是典型的 B2B 工具作者打法。 |
+| ide-rea | 4 | 214 | Baidu web search, Baidu Wenku AIPPT, baidu baike search | 用本地化搜索和中文生态入口拿差异化市场，是区域型分发打法。 |
+| spclaudehome | 3 | 298 | Skill Vetter, CrabNet | 抓住安全焦虑和安装前决策点，用极强的任务清晰度吃下高转化。 |
+| halthelobster | 3 | 288 | Proactive Agent, PARA Second Brain | 作品少但定位极准，用更强的主动性叙事做高粘性技能。 |
+| gpyangyoujun | 3 | 275 | Multi Search Engine, uniqlo(优衣库)-product-query | 抓住搜索和消费决策这类高需求入口，用简单名字换来直接下载。 |
+| oswalpalash | 3 | 261 | ontology, Causal Inference | 围绕稳定能力核做作品集 |
 
 ### 为什么这些作者能多产，还能做出爆款
 - 他们不是不停换方向，而是围绕一个能力核、一种用户群、一组工作流持续生产。
@@ -211,7 +198,7 @@
 ## 六、逐条拆解爆款多产作者
 
 ### @steipete
-- 综合表现：上榜 91 次，综合分 5525。
+- 综合表现：上榜 91 次，综合分 5591。
 - 代表作：Github, Gog, Weather, Nano Pdf, Nano Banana Pro
 - 生产方法判断：以高频日常工具组成作品集矩阵，靠多入口、多场景长期收割安装量。
 - 为什么能多产：
@@ -224,7 +211,7 @@
   - 把日常工作流做成驻留型技能，安装后不容易删。
 
 ### @ivangdavila
-- 综合表现：上榜 19 次，综合分 917。
+- 综合表现：上榜 19 次，综合分 950。
 - 代表作：Self-Improving + Proactive Agent, Word / DOCX, Excel / XLSX, Powerpoint / PPTX, Playwright (Automation + MCP + Scraper)
 - 生产方法判断：一边做 agent 叙事，一边做文档/办公等高需求工具，把吸引力和实用性放在同一作品集里。
 - 为什么能多产：
@@ -237,8 +224,8 @@
   - 围绕‘效率提升 + 自动执行’建立统一作者心智。
 
 ### @byungkyu
-- 综合表现：上榜 7 次，综合分 301。
-- 代表作：API Gateway, Gmail, YouTube, PDF.co, Lemlist
+- 综合表现：上榜 7 次，综合分 305。
+- 代表作：API Gateway, Gmail, YouTube, PDF.co, Netlify
 - 生产方法判断：围绕 API/办公/获客等强业务场景批量铺开，是典型的 B2B 工具作者打法。
 - 为什么能多产：
   - 不是每次重新设计一切，而是在重复使用成熟的主题、结构和分发逻辑。
@@ -250,8 +237,8 @@
   - 更像产品组合管理，而不是单点创意。
 
 ### @ide-rea
-- 综合表现：上榜 4 次，综合分 213。
-- 代表作：Baidu web search, Baidu Wenku AIPPT, baidu baike search, Baidu Wenku AIPictureBook, deepresearch conversation
+- 综合表现：上榜 4 次，综合分 214。
+- 代表作：Baidu web search, Baidu Wenku AIPPT, baidu baike search, Baidu Wenku AIPictureBook, deepresearch
 - 生产方法判断：用本地化搜索和中文生态入口拿差异化市场，是区域型分发打法。
 - 为什么能多产：
   - 不是每次重新设计一切，而是在重复使用成熟的主题、结构和分发逻辑。
@@ -262,21 +249,8 @@
   - 围绕百度等本地入口建立护城河。
   - 用本地生态替代英文通用入口，降低竞争强度。
 
-### @pskoett
-- 综合表现：上榜 3 次，综合分 300。
-- 代表作：self-improving-agent, simplify-and-harden, intent-framed-agents, context-surfing, learning-aggregator
-- 生产方法判断：用单一强叙事把抽象 agent 能力包装成强身份认同产品。
-- 为什么能多产：
-  - 不是每次重新设计一切，而是在重复使用成熟的主题、结构和分发逻辑。
-  - 作者名本身逐渐形成心智，带动后续 skill 更容易被尝试。
-  - 一旦某个主题验证有效，就继续围绕它做更多相邻变体。
-- 可复制实操：
-  - 把 skill 做成一个方法论符号，而不是一个普通工具名。
-  - 持续围绕同一能力核迭代，而不是频繁换赛道。
-  - 把“失败后更强、纠错后更强”这种用户感知极强的价值讲透。
-
 ### @spclaudehome
-- 综合表现：上榜 3 次，综合分 295。
+- 综合表现：上榜 3 次，综合分 298。
 - 代表作：Skill Vetter, CrabNet
 - 生产方法判断：抓住安全焦虑和安装前决策点，用极强的任务清晰度吃下高转化。
 - 为什么能多产：
@@ -289,7 +263,7 @@
   - 让输出直接变成决策，而不是仅提供信息。
 
 ### @halthelobster
-- 综合表现：上榜 3 次，综合分 285。
+- 综合表现：上榜 3 次，综合分 288。
 - 代表作：Proactive Agent, PARA Second Brain
 - 生产方法判断：作品少但定位极准，用更强的主动性叙事做高粘性技能。
 - 为什么能多产：
@@ -302,7 +276,7 @@
   - 高星标背后是强世界观，而不只是单次功能。
 
 ### @gpyangyoujun
-- 综合表现：上榜 3 次，综合分 272。
+- 综合表现：上榜 3 次，综合分 275。
 - 代表作：Multi Search Engine, uniqlo(优衣库)-product-query
 - 生产方法判断：抓住搜索和消费决策这类高需求入口，用简单名字换来直接下载。
 - 为什么能多产：
@@ -313,6 +287,17 @@
   - 搜索类入口天然高频，尤其适合 API 化。
   - 保持名字可检索，而不是追求酷炫表达。
   - 先用广需求技能吸量，再往垂直 SKU 扩展。
+
+### @oswalpalash
+- 综合表现：上榜 3 次，综合分 261。
+- 代表作：ontology, Causal Inference
+- 生产方法判断：围绕稳定能力核做作品集
+- 为什么能多产：
+  - 不是每次重新设计一切，而是在重复使用成熟的主题、结构和分发逻辑。
+  - 作者名本身逐渐形成心智，带动后续 skill 更容易被尝试。
+  - 一旦某个主题验证有效，就继续围绕它做更多相邻变体。
+- 可复制实操：
+  - 围绕一个能力核持续做矩阵。
 
 ## 七、AISA 应该怎么做，怎么落地
 - AISA 不该继续平均发力，而要先做旗舰 skill，再做家族矩阵。
@@ -361,55 +346,55 @@
 ### A. downloads Top 10
 | 排名 | Skill | 作者 | 下载 | 星标 | 安装 |
 | --- | --- | --- | --- | --- | --- |
-| 1 | self-improving-agent | pskoett | 399757 | 3253 | 5983 |
-| 2 | Skill Vetter | spclaudehome | 213683 | 922 | 4001 |
-| 3 | ontology | oswalpalash | 167603 | 546 | 1162 |
-| 4 | Self-Improving + Proactive Agent | ivangdavila | 167391 | 977 | 1807 |
-| 5 | Github | steipete | 160415 | 521 | 4028 |
-| 6 | Gog | steipete | 158405 | 840 | 3322 |
-| 7 | Proactive Agent | halthelobster | 145389 | 715 | 2682 |
-| 8 | Weather | steipete | 136608 | 361 | 3502 |
-| 9 | Polymarket | joelchance | 123058 | 79 | 27 |
-| 10 | Multi Search Engine | gpyangyoujun | 122949 | 572 | 1800 |
+| 1 | Skill Vetter | spclaudehome | 219735 | 960 | 4073 |
+| 2 | Self-Improving + Proactive Agent | ivangdavila | 171978 | 1004 | 1831 |
+| 3 | ontology | oswalpalash | 170492 | 560 | 1184 |
+| 4 | Github | steipete | 163764 | 535 | 4077 |
+| 5 | Gog | steipete | 161529 | 849 | 3352 |
+| 6 | Proactive Agent | halthelobster | 147962 | 726 | 2721 |
+| 7 | Weather | steipete | 139283 | 366 | 3538 |
+| 8 | Polymarket | joelchance | 134026 | 93 | 28 |
+| 9 | Multi Search Engine | gpyangyoujun | 127456 | 602 | 1840 |
+| 10 | AdMapix | fly0pants | 106542 | 274 | 257 |
 
 ### B. stars Top 10
 | 排名 | Skill | 作者 | 下载 | 星标 | 安装 |
 | --- | --- | --- | --- | --- | --- |
-| 1 | self-improving-agent | pskoett | 399757 | 3253 | 5983 |
-| 2 | Self-Improving + Proactive Agent | ivangdavila | 167391 | 977 | 1807 |
-| 3 | Skill Vetter | spclaudehome | 213683 | 922 | 4001 |
-| 4 | Gog | steipete | 158405 | 840 | 3322 |
-| 5 | Proactive Agent | halthelobster | 145389 | 715 | 2682 |
-| 6 | Multi Search Engine | gpyangyoujun | 122949 | 572 | 1800 |
-| 7 | ontology | oswalpalash | 167603 | 546 | 1162 |
-| 8 | Humanizer | biostartechnology | 92829 | 544 | 1259 |
-| 9 | Github | steipete | 160415 | 521 | 4028 |
-| 10 | Free Ride - Unlimited free AI | shaivpidadi | 57775 | 413 | 422 |
+| 1 | Self-Improving + Proactive Agent | ivangdavila | 171978 | 1004 | 1831 |
+| 2 | Skill Vetter | spclaudehome | 219735 | 960 | 4073 |
+| 3 | Gog | steipete | 161529 | 849 | 3352 |
+| 4 | Proactive Agent | halthelobster | 147962 | 726 | 2721 |
+| 5 | Multi Search Engine | gpyangyoujun | 127456 | 602 | 1840 |
+| 6 | Humanizer | biostartechnology | 95552 | 563 | 1279 |
+| 7 | ontology | oswalpalash | 170492 | 560 | 1184 |
+| 8 | Github | steipete | 163764 | 535 | 4077 |
+| 9 | Free Ride - Unlimited free AI | shaivpidadi | 58498 | 420 | 429 |
+| 10 | Auto-Updater Skill | maximeprades | 76762 | 377 | 1292 |
 
 ### C. installs Top 10
 | 排名 | Skill | 作者 | 下载 | 星标 | 安装 |
 | --- | --- | --- | --- | --- | --- |
-| 1 | self-improving-agent | pskoett | 399757 | 3253 | 5983 |
-| 2 | Github | steipete | 160415 | 521 | 4028 |
-| 3 | Skill Vetter | spclaudehome | 213683 | 922 | 4001 |
-| 4 | Weather | steipete | 136608 | 361 | 3502 |
-| 5 | Gog | steipete | 158405 | 840 | 3322 |
-| 6 | Proactive Agent | halthelobster | 145389 | 715 | 2682 |
-| 7 | Sonoscli | steipete | 78647 | 48 | 2569 |
-| 8 | Nano Pdf | steipete | 92754 | 222 | 2352 |
-| 9 | Obsidian | steipete | 83438 | 335 | 2323 |
-| 10 | Notion | steipete | 77960 | 230 | 2200 |
+| 1 | Github | steipete | 163764 | 535 | 4077 |
+| 2 | Skill Vetter | spclaudehome | 219735 | 960 | 4073 |
+| 3 | Weather | steipete | 139283 | 366 | 3538 |
+| 4 | Gog | steipete | 161529 | 849 | 3352 |
+| 5 | Proactive Agent | halthelobster | 147962 | 726 | 2721 |
+| 6 | Sonoscli | steipete | 79251 | 50 | 2588 |
+| 7 | Nano Pdf | steipete | 94785 | 227 | 2385 |
+| 8 | Obsidian | steipete | 85459 | 349 | 2353 |
+| 9 | Skill Creator | chindden | 74142 | 255 | 2223 |
+| 10 | Notion | steipete | 79306 | 235 | 2224 |
 
 ### D. 本地 AISA skill 优先级
 | Skill | 作者 | 下载 | 星标 | 安装 | 优先级说明 |
 | --- | --- | --- | --- | --- | --- |
-| AIsa Twitter API (Search + Post) | aisapay | 3187 | 4 | 16 | 本地 AISA 包里安装转化最高，下载基础已被验证，AISA 品牌一致性最好，适合做旗舰包 |
-| X/Twitter Automation: 30+ APIs, OAuth Post, One Key | 0xjordansg-yolo | 3518 | 4 | 12 | 下载基础已被验证 |
-| YouTube SERP Scout for agents. Search top-ranking videos, channels, and trends for content research and competitor tracking | 0xjordansg-yolo | 1503 | 3 | 3 | 适合作为批量改造候选 |
-| Search YouTube videos, channels, and playlists | 0xjordansg-yolo | 542 | 0 | 2 | 适合作为批量改造候选 |
-| Twitter/X All-in-One — Search, Monitor & Publish Text & Media Posts | aisadocs | 205 | 1 | 0 | 适合作为批量改造候选 |
-| Twitter Intelligence & Automation — Read, Search, Write & Post (Text & Media) | karensheng | 83 | 0 | 0 | 适合作为批量改造候选 |
-| X Twitter Command Center (Search + Post + Interact) | chaimengphp | 70 | 0 | 0 | 适合作为批量改造候选 |
+| AIsa Twitter API (Search + Post) | aisapay | 3240 | 4 | 16 | 本地 AISA 包里安装转化最高，下载基础已被验证，AISA 品牌一致性最好，适合做旗舰包 |
+| X/Twitter Automation: 30+ APIs, OAuth Post, One Key | 0xjordansg-yolo | 3562 | 4 | 12 | 下载基础已被验证 |
+| YouTube SERP Scout for agents. Search top-ranking videos, channels, and trends for content research and competitor tracking | 0xjordansg-yolo | 1518 | 3 | 4 | 适合作为批量改造候选 |
+| Search YouTube videos, channels, and playlists | 0xjordansg-yolo | 554 | 0 | 2 | 适合作为批量改造候选 |
+| Twitter/X All-in-One — Search, Monitor & Publish Text & Media Posts | aisadocs | 223 | 1 | 0 | 适合作为批量改造候选 |
+| Twitter Intelligence & Automation — Read, Search, Write & Post (Text & Media) | karensheng | 101 | 0 | 0 | 适合作为批量改造候选 |
+| X Twitter Command Center (Search + Post + Interact) | chaimengphp | 82 | 0 | 0 | 适合作为批量改造候选 |
 
 ### E. 当前测试证据摘要
 # AISA API Skills 改造测试证据

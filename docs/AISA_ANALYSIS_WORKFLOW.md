@@ -49,7 +49,7 @@ npm run pipeline:aisa-analysis
 3. `npm run analyze:aisa`
 4. `vite build`
 
-`push master` 的 GitHub Actions 主站刷新也使用这条流水线，而不是只跑 `build`。
+`pipeline:aisa-analysis` 仍然适合作为本地的主站最小刷新入口，但 GitHub Pages 现在使用更完整的统一部署链路。
 
 ### 定时全量流水线
 
@@ -66,9 +66,22 @@ npm run pipeline:scheduled-analysis
 
 适用于：
 
-- GitHub Actions 的 `schedule`
-- GitHub Actions 的 `workflow_dispatch`
 - 本地模拟一次“定时全量更新”
+- 作为 `pipeline:pages` 的底层全量分析链路
+
+### GitHub Pages 同款流水线
+
+如果要在本地尽量复现 GitHub Pages 的生成结果：
+
+```bash
+npm run pipeline:pages
+```
+
+当前它等价于：
+
+```bash
+npm run pipeline:scheduled-analysis
+```
 
 ### 站点构建
 
@@ -86,17 +99,17 @@ npm run build
 
 ## 2.1 GitHub Actions 行为
 
-当前 `.github/workflows/deploy.yml` 按触发方式分成两档：
+当前 `.github/workflows/deploy.yml` 使用统一链路：
 
-- `push master`：执行 `npm run pipeline:aisa-analysis`
-- `schedule` 和 `workflow_dispatch`：执行 `npm run pipeline:scheduled-analysis`
+- `push master`：执行 `npm run pipeline:pages`
+- `schedule` 和 `workflow_dispatch`：执行 `npm run pipeline:pages`
 
 这意味着 GitHub Actions 在不同触发场景下会：
 
 1. 刷新 ClawHub skill 下载归档
 2. 刷新 GitHub skill 归档
 3. 重新生成 `public/data/aisa-api-analysis.json`
-4. 在定时/手动触发时继续刷新完整报告链路
+4. 刷新完整报告链路
 5. 构建 GitHub Pages 页面
 6. 上传分析产物与报告产物 artifact，便于失败排查和离线核对
 
@@ -104,7 +117,7 @@ npm run build
 
 - 会自己分析数据
 - 会自己刷新分析所依赖的归档
-- 定时/手动触发会额外刷新报告库，而不只是主站 AISA 数据
+- 普通 push 现在也会刷新报告库，而不只是主站 AISA 数据
 - 如果某一步因为外部网络失败，整个 workflow 可能失败
 - 即使部署失败，只要 workflow 跑到上传步骤，仍可从 artifact 下载分析结果和索引
 
@@ -112,7 +125,10 @@ npm run build
 
 - `build` job 设置了超时保护
 - workflow 开启了 concurrency，避免同一分支的重复部署互相覆盖
-- `pipeline:aisa-analysis` 在 CI 中会自动重试 3 次，缓解外部网络抖动
+- 统一的 `pipeline:pages` 在 CI 中会自动重试 3 次，缓解外部网络抖动
+- workflow 现在固定 `TZ=Asia/Shanghai`，减少本地与 GitHub runner 的日期口径差异
+- 下载归档脚本在已有缓存归档存在时，会尽量继续沿用旧归档而不是因为单次 live 拉取失败直接中断
+- `analyze:full-report-suite` 现在会在单个 live 报告步骤失败但关键缓存产物仍存在时继续后续步骤
 - 上传 `public/data/*.json`、`public/reports/`、下载索引和 `dist/` 作为 artifact
 
 ## 3. 输入与输出
@@ -239,6 +255,7 @@ npx vite build
 
 - 保留已有归档，不要清空 `public/downloads/`
 - 优先记录是网络失败、源站失败还是单个 owner 失败
+- 如果脚本检测到已有缓存归档，会继续沿用它们并记录 warning
 - 允许基于已有归档继续执行 `npm run analyze:aisa`
 - CI 中会先做最多 3 次自动重试；重试后仍失败，才应视为真实失败
 

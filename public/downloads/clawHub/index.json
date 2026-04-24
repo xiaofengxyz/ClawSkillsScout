@@ -1,5 +1,5 @@
 {
-  "downloadedAt": "2026-04-16T04:59:20.701Z",
+  "downloadedAt": "2026-04-24T10:56:08.554Z",
   "generatedFromCatalog": "public/data/catalog.json",
   "trackedOwners": [
     "0xjordansg-yolo",
@@ -11,7 +11,7 @@
     "karensheng",
     "ningclaw"
   ],
-  "total": 38,
+  "total": 49,
   "failed": 0,
   "items": [
     {
@@ -172,30 +172,6 @@
     },
     {
       "owner": "bibaofeng",
-      "slug": "prediction-market-data-zh",
-      "name": "预测市场数据",
-      "version": "1.0.1",
-      "clawhubUrl": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/prediction-market-data-zh",
-      "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=prediction-market-data-zh",
-      "downloadedFrom": "existing-file",
-      "resolvedDownloadUrl": null,
-      "file": "public/downloads/clawHub/bibaofeng/prediction-market-data-zh.zip",
-      "bytes": 7590
-    },
-    {
-      "owner": "bibaofeng",
-      "slug": "prediction-market-arbitrage-zh",
-      "name": "预测市场套利",
-      "version": "1.0.0",
-      "clawhubUrl": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/prediction-market-arbitrage-zh",
-      "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=prediction-market-arbitrage-zh",
-      "downloadedFrom": "existing-file",
-      "resolvedDownloadUrl": null,
-      "file": "public/downloads/clawHub/bibaofeng/prediction-market-arbitrage-zh.zip",
-      "bytes": 13313
-    },
-    {
-      "owner": "bibaofeng",
       "slug": "aisa-twitter",
       "name": "aisa-twitter",
       "version": "1.0.0",
@@ -237,8 +213,8 @@
       "version": "1.0.0",
       "clawhubUrl": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/openclaw-aisa-youtube-aisa",
       "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=openclaw-aisa-youtube-aisa",
-      "downloadedFrom": "cn-mirror",
-      "resolvedDownloadUrl": "https://skills.volces.com/api/v1/download?slug=openclaw-aisa-youtube-aisa",
+      "downloadedFrom": "existing-file",
+      "resolvedDownloadUrl": null,
       "file": "public/downloads/clawHub/bibaofeng/openclaw-aisa-youtube-aisa.zip",
       "bytes": 5006
     },
@@ -273,8 +249,8 @@
       "version": "1.0.2",
       "clawhubUrl": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/twitter-aisa",
       "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=twitter-aisa",
-      "downloadedFrom": "clawhub",
-      "resolvedDownloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=twitter-aisa",
+      "downloadedFrom": "existing-file",
+      "resolvedDownloadUrl": null,
       "file": "public/downloads/clawHub/bibaofeng/twitter-aisa.zip",
       "bytes": 13045
     },
@@ -285,8 +261,8 @@
       "version": "1.0.1",
       "clawhubUrl": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/twitter-aisa-api",
       "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=twitter-aisa-api",
-      "downloadedFrom": "clawhub",
-      "resolvedDownloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=twitter-aisa-api",
+      "downloadedFrom": "existing-file",
+      "resolvedDownloadUrl": null,
       "file": "public/downloads/clawHub/bibaofeng/twitter-aisa-api.zip",
       "bytes": 13043
     },
@@ -297,8 +273,8 @@
       "version": "1.0.1",
       "clawhubUrl": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/twitter-post-aisa",
       "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=twitter-post-aisa",
-      "downloadedFrom": "cn-mirror",
-      "resolvedDownloadUrl": "https://skills.volces.com/api/v1/download?slug=twitter-post-aisa",
+      "downloadedFrom": "existing-file",
+      "resolvedDownloadUrl": null,
       "file": "public/downloads/clawHub/bibaofeng/twitter-post-aisa.zip",
       "bytes": 18681
     },
@@ -309,8 +285,8 @@
       "version": "1.0.0",
       "clawhubUrl": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/x-intelligence-automation-aisa",
       "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=x-intelligence-automation-aisa",
-      "downloadedFrom": "clawhub",
-      "resolvedDownloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=x-intelligence-automation-aisa",
+      "downloadedFrom": "existing-file",
+      "resolvedDownloadUrl": null,
       "file": "public/downloads/clawHub/bibaofeng/x-intelligence-automation-aisa.zip",
       "bytes": 18756
     },
@@ -321,8 +297,8 @@
       "version": "1.0.3",
       "clawhubUrl": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/youtube-aisa",
       "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=youtube-aisa",
-      "downloadedFrom": "clawhub",
-      "resolvedDownloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=youtube-aisa",
+      "downloadedFrom": "existing-file",
+      "resolvedDownloadUrl": null,
       "file": "public/downloads/clawHub/bibaofeng/youtube-aisa.zip",
       "bytes": 2486
     },
@@ -333,10 +309,34 @@
       "version": "1.1.1",
       "clawhubUrl": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/youtube-search-aisa",
       "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=youtube-search-aisa",
-      "downloadedFrom": "clawhub",
-      "resolvedDownloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=youtube-search-aisa",
+      "downloadedFrom": "existing-file",
+      "resolvedDownloadUrl": null,
       "file": "public/downloads/clawHub/bibaofeng/youtube-search-aisa.zip",
       "bytes": 4754
+    },
+    {
+      "owner": "bibaofeng",
+      "slug": "prediction-market-arbitrage-zh",
+      "name": "预测市场套利",
+      "version": "1.0.0",
+      "clawhubUrl": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/prediction-market-arbitrage-zh",
+      "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=prediction-market-arbitrage-zh",
+      "downloadedFrom": "existing-file",
+      "resolvedDownloadUrl": null,
+      "file": "public/downloads/clawHub/bibaofeng/prediction-market-arbitrage-zh.zip",
+      "bytes": 13313
+    },
+    {
+      "owner": "bibaofeng",
+      "slug": "prediction-market-data-zh",
+      "name": "预测市场数据",
+      "version": "1.0.1",
+      "clawhubUrl": "https://clawhub.ai/kn77pgys59maz0wrb0584j5y8s8437yn/prediction-market-data-zh",
+      "downloadUrl": "https://wry-manatee-359.convex.site/api/v1/download?slug=prediction-market-data-zh",
+      "downloadedFrom": "existing-file",
+      "resolvedDownloadUrl": null,
+      "file": "public/downloads/clawHub/bibaofeng/prediction-market-data-zh.zip",
+      "bytes": 7590
     },
     {
       "owner": "chaimengphp",
@@ -469,6 +469,138 @@
       "resolvedDownloadUrl": null,
       "file": "public/downloads/clawHub/chaimengphp/openclaw-aisa-youtube-search.zip",
       "bytes": 6544
+    },
+    {
+      "owner": "bowen-dotcom",
+      "slug": "aisa-llm-router-skill",
+      "name": "aisa-llm-router-skill",
+      "version": null,
+      "clawhubUrl": "https://clawhub.ai/skills/aisa-llm-router-skill",
+      "downloadUrl": null,
+      "downloadedFrom": "existing-file",
+      "resolvedDownloadUrl": null,
+      "file": "public/downloads/clawHub/bowen-dotcom/aisa-llm-router-skill.zip",
+      "bytes": 9631
+    },
+    {
+      "owner": "bowen-dotcom",
+      "slug": "aisa-market-skill",
+      "name": "aisa-market-skill",
+      "version": null,
+      "clawhubUrl": "https://clawhub.ai/skills/aisa-market-skill",
+      "downloadUrl": null,
+      "downloadedFrom": "existing-file",
+      "resolvedDownloadUrl": null,
+      "file": "public/downloads/clawHub/bowen-dotcom/aisa-market-skill.zip",
+      "bytes": 8130
+    },
+    {
+      "owner": "bowen-dotcom",
+      "slug": "aisa-media-gen-en-skill",
+      "name": "aisa-media-gen-en-skill",
+      "version": null,
+      "clawhubUrl": "https://clawhub.ai/skills/aisa-media-gen-en-skill",
+      "downloadUrl": null,
+      "downloadedFrom": "existing-file",
+      "resolvedDownloadUrl": null,
+      "file": "public/downloads/clawHub/bowen-dotcom/aisa-media-gen-en-skill.zip",
+      "bytes": 7363
+    },
+    {
+      "owner": "bowen-dotcom",
+      "slug": "aisa-media-gen-skill",
+      "name": "aisa-media-gen-skill",
+      "version": null,
+      "clawhubUrl": "https://clawhub.ai/skills/aisa-media-gen-skill",
+      "downloadUrl": null,
+      "downloadedFrom": "existing-file",
+      "resolvedDownloadUrl": null,
+      "file": "public/downloads/clawHub/bowen-dotcom/aisa-media-gen-skill.zip",
+      "bytes": 6877
+    },
+    {
+      "owner": "bowen-dotcom",
+      "slug": "aisa-perplexity-search-skill",
+      "name": "aisa-perplexity-search-skill",
+      "version": null,
+      "clawhubUrl": "https://clawhub.ai/skills/aisa-perplexity-search-skill",
+      "downloadUrl": null,
+      "downloadedFrom": "existing-file",
+      "resolvedDownloadUrl": null,
+      "file": "public/downloads/clawHub/bowen-dotcom/aisa-perplexity-search-skill.zip",
+      "bytes": 3924
+    },
+    {
+      "owner": "bowen-dotcom",
+      "slug": "aisa-search-skill",
+      "name": "aisa-search-skill",
+      "version": null,
+      "clawhubUrl": "https://clawhub.ai/skills/aisa-search-skill",
+      "downloadUrl": null,
+      "downloadedFrom": "existing-file",
+      "resolvedDownloadUrl": null,
+      "file": "public/downloads/clawHub/bowen-dotcom/aisa-search-skill.zip",
+      "bytes": 8421
+    },
+    {
+      "owner": "bowen-dotcom",
+      "slug": "aisa-twitter-skill",
+      "name": "aisa-twitter-skill",
+      "version": null,
+      "clawhubUrl": "https://clawhub.ai/skills/aisa-twitter-skill",
+      "downloadUrl": null,
+      "downloadedFrom": "existing-file",
+      "resolvedDownloadUrl": null,
+      "file": "public/downloads/clawHub/bowen-dotcom/aisa-twitter-skill.zip",
+      "bytes": 15940
+    },
+    {
+      "owner": "bowen-dotcom",
+      "slug": "aisa-youtube-skill",
+      "name": "aisa-youtube-skill",
+      "version": null,
+      "clawhubUrl": "https://clawhub.ai/skills/aisa-youtube-skill",
+      "downloadUrl": null,
+      "downloadedFrom": "existing-file",
+      "resolvedDownloadUrl": null,
+      "file": "public/downloads/clawHub/bowen-dotcom/aisa-youtube-skill.zip",
+      "bytes": 6578
+    },
+    {
+      "owner": "karensheng",
+      "slug": "prediction-agg",
+      "name": "prediction-agg",
+      "version": null,
+      "clawhubUrl": "https://clawhub.ai/skills/prediction-agg",
+      "downloadUrl": null,
+      "downloadedFrom": "existing-file",
+      "resolvedDownloadUrl": null,
+      "file": "public/downloads/clawHub/karensheng/prediction-agg.zip",
+      "bytes": 9811
+    },
+    {
+      "owner": "karensheng",
+      "slug": "prediction-market-arb",
+      "name": "prediction-market-arb",
+      "version": null,
+      "clawhubUrl": "https://clawhub.ai/skills/prediction-market-arb",
+      "downloadUrl": null,
+      "downloadedFrom": "existing-file",
+      "resolvedDownloadUrl": null,
+      "file": "public/downloads/clawHub/karensheng/prediction-market-arb.zip",
+      "bytes": 15484
+    },
+    {
+      "owner": "karensheng",
+      "slug": "x-intelligence-automation",
+      "name": "x-intelligence-automation",
+      "version": null,
+      "clawhubUrl": "https://clawhub.ai/skills/x-intelligence-automation",
+      "downloadUrl": null,
+      "downloadedFrom": "existing-file",
+      "resolvedDownloadUrl": null,
+      "file": "public/downloads/clawHub/karensheng/x-intelligence-automation.zip",
+      "bytes": 22510
     }
   ],
   "failures": []

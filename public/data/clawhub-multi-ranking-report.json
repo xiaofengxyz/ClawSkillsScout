@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-19T19:31:21.059044+00:00",
+  "generatedAt": "2026-04-24T11:01:21.740684+00:00",
   "sources": {
     "rankingPages": {
       "downloads": "https://clawhub.ai/skills?sort=downloads&dir=desc",
@@ -14,26 +14,26 @@
       "top10": [
         {
           "rank": 1,
-          "slug": "self-improving-agent",
-          "name": "self-improving-agent",
-          "author": "pskoett",
-          "description": "Captures learnings, errors, and corrections to enable continuous improvement. Use when: (1) A command or operation fails unexpectedly, (2) User corrects Clau...",
-          "downloads": 399757,
-          "stars": 3253,
-          "installsCurrent": 5983,
-          "url": "https://clawhub.ai/pskoett/self-improving-agent",
-          "theme": "Self-Improving / Agentic"
-        },
-        {
-          "rank": 2,
           "slug": "skill-vetter",
           "name": "Skill Vetter",
           "author": "spclaudehome",
           "description": "Security-first skill vetting for AI agents. Use before installing any skill from ClawdHub, GitHub, or other sources. Checks for red flags, permission scope, and suspicious patterns.",
-          "downloads": 213683,
-          "stars": 922,
-          "installsCurrent": 4001,
+          "downloads": 219735,
+          "stars": 960,
+          "installsCurrent": 4073,
           "url": "https://clawhub.ai/spclaudehome/skill-vetter",
+          "theme": "Self-Improving / Agentic"
+        },
+        {
+          "rank": 2,
+          "slug": "self-improving",
+          "name": "Self-Improving + Proactive Agent",
+          "author": "ivangdavila",
+          "description": "Self-reflection + Self-criticism + Self-learning + Self-organizing memory. Agent evaluates its own work, catches mistakes, and improves permanently. Use when...",
+          "downloads": 171978,
+          "stars": 1004,
+          "installsCurrent": 1831,
+          "url": "https://clawhub.ai/ivangdavila/self-improving",
           "theme": "Self-Improving / Agentic"
         },
         {
@@ -42,104 +42,104 @@
           "name": "ontology",
           "author": "oswalpalash",
           "description": "Typed knowledge graph for structured agent memory and composable skills. Use when creating/querying entities (Person, Project, Task, Event, Document), linkin...",
-          "downloads": 167603,
-          "stars": 546,
-          "installsCurrent": 1162,
+          "downloads": 170492,
+          "stars": 560,
+          "installsCurrent": 1184,
           "url": "https://clawhub.ai/oswalpalash/ontology",
           "theme": "Self-Improving / Agentic"
         },
         {
           "rank": 4,
-          "slug": "self-improving",
-          "name": "Self-Improving + Proactive Agent",
-          "author": "ivangdavila",
-          "description": "Self-reflection + Self-criticism + Self-learning + Self-organizing memory. Agent evaluates its own work, catches mistakes, and improves permanently. Use when...",
-          "downloads": 167391,
-          "stars": 977,
-          "installsCurrent": 1807,
-          "url": "https://clawhub.ai/ivangdavila/self-improving",
-          "theme": "Self-Improving / Agentic"
-        },
-        {
-          "rank": 5,
           "slug": "github",
           "name": "Github",
           "author": "steipete",
           "description": "Interact with GitHub using the `gh` CLI. Use `gh issue`, `gh pr`, `gh run`, and `gh api` for issues, PRs, CI runs, and advanced queries.",
-          "downloads": 160415,
-          "stars": 521,
-          "installsCurrent": 4028,
+          "downloads": 163764,
+          "stars": 535,
+          "installsCurrent": 4077,
           "url": "https://clawhub.ai/steipete/github",
           "theme": "Developer / GitHub"
         },
         {
-          "rank": 6,
+          "rank": 5,
           "slug": "gog",
           "name": "Gog",
           "author": "steipete",
           "description": "Google Workspace CLI for Gmail, Calendar, Drive, Contacts, Sheets, and Docs.",
-          "downloads": 158405,
-          "stars": 840,
-          "installsCurrent": 3322,
+          "downloads": 161529,
+          "stars": 849,
+          "installsCurrent": 3352,
           "url": "https://clawhub.ai/steipete/gog",
           "theme": "Utility / Other"
         },
         {
-          "rank": 7,
+          "rank": 6,
           "slug": "proactive-agent",
           "name": "Proactive Agent",
           "author": "halthelobster",
           "description": "Transform AI agents from task-followers into proactive partners that anticipate needs and continuously improve. Now with WAL Protocol, Working Buffer, Autonomous Crons, and battle-tested patterns. Part of the Hal Stack 🦞",
-          "downloads": 145389,
-          "stars": 715,
-          "installsCurrent": 2682,
+          "downloads": 147962,
+          "stars": 726,
+          "installsCurrent": 2721,
           "url": "https://clawhub.ai/halthelobster/proactive-agent",
           "theme": "Self-Improving / Agentic"
         },
         {
-          "rank": 8,
+          "rank": 7,
           "slug": "weather",
           "name": "Weather",
           "author": "steipete",
           "description": "Get current weather and forecasts (no API key required).",
-          "downloads": 136608,
-          "stars": 361,
-          "installsCurrent": 3502,
+          "downloads": 139283,
+          "stars": 366,
+          "installsCurrent": 3538,
           "url": "https://clawhub.ai/steipete/weather",
           "theme": "Search / Research"
         },
         {
-          "rank": 9,
+          "rank": 8,
           "slug": "polymarket-trade",
           "name": "Polymarket",
           "author": "joelchance",
           "description": "Query Polymarket prediction markets. Check odds, find trending markets, search events, track price movements.",
-          "downloads": 123058,
-          "stars": 79,
-          "installsCurrent": 27,
+          "downloads": 134026,
+          "stars": 93,
+          "installsCurrent": 28,
           "url": "https://clawhub.ai/joelchance/polymarket-trade",
           "theme": "Search / Research"
         },
         {
-          "rank": 10,
+          "rank": 9,
           "slug": "multi-search-engine",
           "name": "Multi Search Engine",
           "author": "gpyangyoujun",
           "description": "Multi search engine integration with 16 engines (7 CN + 9 Global). Supports advanced search operators, time filters, site search, privacy engines, and Wolfra...",
-          "downloads": 122949,
-          "stars": 572,
-          "installsCurrent": 1800,
+          "downloads": 127456,
+          "stars": 602,
+          "installsCurrent": 1840,
           "url": "https://clawhub.ai/gpyangyoujun/multi-search-engine",
+          "theme": "Search / Research"
+        },
+        {
+          "rank": 10,
+          "slug": "admapix",
+          "name": "AdMapix",
+          "author": "fly0pants",
+          "description": "Ad intelligence & app analytics assistant. Search ad creatives, analyze apps, view rankings, track downloads/revenue, and get market insights. Get your API k...",
+          "downloads": 106542,
+          "stars": 274,
+          "installsCurrent": 257,
+          "url": "https://clawhub.ai/fly0pants/admapix",
           "theme": "Search / Research"
         }
       ],
       "top20ThemeSummary": [
         {
-          "theme": "Self-Improving / Agentic",
+          "theme": "Utility / Other",
           "count": 7
         },
         {
-          "theme": "Utility / Other",
+          "theme": "Self-Improving / Agentic",
           "count": 6
         },
         {
@@ -156,75 +156,75 @@
       "top10": [
         {
           "rank": 1,
-          "slug": "self-improving-agent",
-          "name": "self-improving-agent",
-          "author": "pskoett",
-          "description": "Captures learnings, errors, and corrections to enable continuous improvement. Use when: (1) A command or operation fails unexpectedly, (2) User corrects Clau...",
-          "downloads": 399757,
-          "stars": 3253,
-          "installsCurrent": 5983,
-          "url": "https://clawhub.ai/pskoett/self-improving-agent",
-          "theme": "Self-Improving / Agentic"
-        },
-        {
-          "rank": 2,
           "slug": "self-improving",
           "name": "Self-Improving + Proactive Agent",
           "author": "ivangdavila",
           "description": "Self-reflection + Self-criticism + Self-learning + Self-organizing memory. Agent evaluates its own work, catches mistakes, and improves permanently. Use when...",
-          "downloads": 167391,
-          "stars": 977,
-          "installsCurrent": 1807,
+          "downloads": 171978,
+          "stars": 1004,
+          "installsCurrent": 1831,
           "url": "https://clawhub.ai/ivangdavila/self-improving",
           "theme": "Self-Improving / Agentic"
         },
         {
-          "rank": 3,
+          "rank": 2,
           "slug": "skill-vetter",
           "name": "Skill Vetter",
           "author": "spclaudehome",
           "description": "Security-first skill vetting for AI agents. Use before installing any skill from ClawdHub, GitHub, or other sources. Checks for red flags, permission scope, and suspicious patterns.",
-          "downloads": 213683,
-          "stars": 922,
-          "installsCurrent": 4001,
+          "downloads": 219735,
+          "stars": 960,
+          "installsCurrent": 4073,
           "url": "https://clawhub.ai/spclaudehome/skill-vetter",
           "theme": "Self-Improving / Agentic"
         },
         {
-          "rank": 4,
+          "rank": 3,
           "slug": "gog",
           "name": "Gog",
           "author": "steipete",
           "description": "Google Workspace CLI for Gmail, Calendar, Drive, Contacts, Sheets, and Docs.",
-          "downloads": 158405,
-          "stars": 840,
-          "installsCurrent": 3322,
+          "downloads": 161529,
+          "stars": 849,
+          "installsCurrent": 3352,
           "url": "https://clawhub.ai/steipete/gog",
           "theme": "Utility / Other"
         },
         {
-          "rank": 5,
+          "rank": 4,
           "slug": "proactive-agent",
           "name": "Proactive Agent",
           "author": "halthelobster",
           "description": "Transform AI agents from task-followers into proactive partners that anticipate needs and continuously improve. Now with WAL Protocol, Working Buffer, Autonomous Crons, and battle-tested patterns. Part of the Hal Stack 🦞",
-          "downloads": 145389,
-          "stars": 715,
-          "installsCurrent": 2682,
+          "downloads": 147962,
+          "stars": 726,
+          "installsCurrent": 2721,
           "url": "https://clawhub.ai/halthelobster/proactive-agent",
           "theme": "Self-Improving / Agentic"
         },
         {
-          "rank": 6,
+          "rank": 5,
           "slug": "multi-search-engine",
           "name": "Multi Search Engine",
           "author": "gpyangyoujun",
           "description": "Multi search engine integration with 16 engines (7 CN + 9 Global). Supports advanced search operators, time filters, site search, privacy engines, and Wolfra...",
-          "downloads": 122949,
-          "stars": 572,
-          "installsCurrent": 1800,
+          "downloads": 127456,
+          "stars": 602,
+          "installsCurrent": 1840,
           "url": "https://clawhub.ai/gpyangyoujun/multi-search-engine",
           "theme": "Search / Research"
+        },
+        {
+          "rank": 6,
+          "slug": "humanizer",
+          "name": "Humanizer",
+          "author": "biostartechnology",
+          "description": "Remove signs of AI-generated writing from text. Use when editing or reviewing text to make it sound more natural and human-written. Based on Wikipedia's comprehensive \"Signs of AI writing\" guide. Detects and fixes patterns including: inflated symbolism, promotional language, superficial -ing analyses, vague attributions, em dash overuse, rule of three, AI vocabulary words, negative parallelisms, and excessive conjunctive phrases.",
+          "downloads": 95552,
+          "stars": 563,
+          "installsCurrent": 1279,
+          "url": "https://clawhub.ai/biostartechnology/humanizer",
+          "theme": "Utility / Other"
         },
         {
           "rank": 7,
@@ -232,46 +232,46 @@
           "name": "ontology",
           "author": "oswalpalash",
           "description": "Typed knowledge graph for structured agent memory and composable skills. Use when creating/querying entities (Person, Project, Task, Event, Document), linkin...",
-          "downloads": 167603,
-          "stars": 546,
-          "installsCurrent": 1162,
+          "downloads": 170492,
+          "stars": 560,
+          "installsCurrent": 1184,
           "url": "https://clawhub.ai/oswalpalash/ontology",
           "theme": "Self-Improving / Agentic"
         },
         {
           "rank": 8,
-          "slug": "humanizer",
-          "name": "Humanizer",
-          "author": "biostartechnology",
-          "description": "Remove signs of AI-generated writing from text. Use when editing or reviewing text to make it sound more natural and human-written. Based on Wikipedia's comprehensive \"Signs of AI writing\" guide. Detects and fixes patterns including: inflated symbolism, promotional language, superficial -ing analyses, vague attributions, em dash overuse, rule of three, AI vocabulary words, negative parallelisms, and excessive conjunctive phrases.",
-          "downloads": 92829,
-          "stars": 544,
-          "installsCurrent": 1259,
-          "url": "https://clawhub.ai/biostartechnology/humanizer",
-          "theme": "Utility / Other"
-        },
-        {
-          "rank": 9,
           "slug": "github",
           "name": "Github",
           "author": "steipete",
           "description": "Interact with GitHub using the `gh` CLI. Use `gh issue`, `gh pr`, `gh run`, and `gh api` for issues, PRs, CI runs, and advanced queries.",
-          "downloads": 160415,
-          "stars": 521,
-          "installsCurrent": 4028,
+          "downloads": 163764,
+          "stars": 535,
+          "installsCurrent": 4077,
           "url": "https://clawhub.ai/steipete/github",
           "theme": "Developer / GitHub"
         },
         {
-          "rank": 10,
+          "rank": 9,
           "slug": "free-ride",
           "name": "Free Ride - Unlimited free AI",
           "author": "shaivpidadi",
           "description": "Manages free AI models from OpenRouter for OpenClaw. Automatically ranks models by quality, configures fallbacks for rate-limit handling, and updates opencla...",
-          "downloads": 57775,
-          "stars": 413,
-          "installsCurrent": 422,
+          "downloads": 58498,
+          "stars": 420,
+          "installsCurrent": 429,
           "url": "https://clawhub.ai/shaivpidadi/free-ride",
+          "theme": "Utility / Other"
+        },
+        {
+          "rank": 10,
+          "slug": "auto-updater",
+          "name": "Auto-Updater Skill",
+          "author": "maximeprades",
+          "description": "Automatically update Clawdbot and all installed skills once daily. Runs via cron, checks for updates, applies them, and messages the user with a summary of what changed.",
+          "downloads": 76762,
+          "stars": 377,
+          "installsCurrent": 1292,
+          "url": "https://clawhub.ai/maximeprades/auto-updater",
           "theme": "Utility / Other"
         }
       ],
@@ -282,11 +282,11 @@
         },
         {
           "theme": "Self-Improving / Agentic",
-          "count": 6
+          "count": 5
         },
         {
           "theme": "Search / Research",
-          "count": 3
+          "count": 4
         },
         {
           "theme": "Developer / GitHub",
@@ -298,110 +298,110 @@
       "top10": [
         {
           "rank": 1,
-          "slug": "self-improving-agent",
-          "name": "self-improving-agent",
-          "author": "pskoett",
-          "description": "Captures learnings, errors, and corrections to enable continuous improvement. Use when: (1) A command or operation fails unexpectedly, (2) User corrects Clau...",
-          "downloads": 399757,
-          "stars": 3253,
-          "installsCurrent": 5983,
-          "url": "https://clawhub.ai/pskoett/self-improving-agent",
-          "theme": "Self-Improving / Agentic"
-        },
-        {
-          "rank": 2,
           "slug": "github",
           "name": "Github",
           "author": "steipete",
           "description": "Interact with GitHub using the `gh` CLI. Use `gh issue`, `gh pr`, `gh run`, and `gh api` for issues, PRs, CI runs, and advanced queries.",
-          "downloads": 160415,
-          "stars": 521,
-          "installsCurrent": 4028,
+          "downloads": 163764,
+          "stars": 535,
+          "installsCurrent": 4077,
           "url": "https://clawhub.ai/steipete/github",
           "theme": "Developer / GitHub"
         },
         {
-          "rank": 3,
+          "rank": 2,
           "slug": "skill-vetter",
           "name": "Skill Vetter",
           "author": "spclaudehome",
           "description": "Security-first skill vetting for AI agents. Use before installing any skill from ClawdHub, GitHub, or other sources. Checks for red flags, permission scope, and suspicious patterns.",
-          "downloads": 213683,
-          "stars": 922,
-          "installsCurrent": 4001,
+          "downloads": 219735,
+          "stars": 960,
+          "installsCurrent": 4073,
           "url": "https://clawhub.ai/spclaudehome/skill-vetter",
           "theme": "Self-Improving / Agentic"
         },
         {
-          "rank": 4,
+          "rank": 3,
           "slug": "weather",
           "name": "Weather",
           "author": "steipete",
           "description": "Get current weather and forecasts (no API key required).",
-          "downloads": 136608,
-          "stars": 361,
-          "installsCurrent": 3502,
+          "downloads": 139283,
+          "stars": 366,
+          "installsCurrent": 3538,
           "url": "https://clawhub.ai/steipete/weather",
           "theme": "Search / Research"
         },
         {
-          "rank": 5,
+          "rank": 4,
           "slug": "gog",
           "name": "Gog",
           "author": "steipete",
           "description": "Google Workspace CLI for Gmail, Calendar, Drive, Contacts, Sheets, and Docs.",
-          "downloads": 158405,
-          "stars": 840,
-          "installsCurrent": 3322,
+          "downloads": 161529,
+          "stars": 849,
+          "installsCurrent": 3352,
           "url": "https://clawhub.ai/steipete/gog",
           "theme": "Utility / Other"
         },
         {
-          "rank": 6,
+          "rank": 5,
           "slug": "proactive-agent",
           "name": "Proactive Agent",
           "author": "halthelobster",
           "description": "Transform AI agents from task-followers into proactive partners that anticipate needs and continuously improve. Now with WAL Protocol, Working Buffer, Autonomous Crons, and battle-tested patterns. Part of the Hal Stack 🦞",
-          "downloads": 145389,
-          "stars": 715,
-          "installsCurrent": 2682,
+          "downloads": 147962,
+          "stars": 726,
+          "installsCurrent": 2721,
           "url": "https://clawhub.ai/halthelobster/proactive-agent",
           "theme": "Self-Improving / Agentic"
         },
         {
-          "rank": 7,
+          "rank": 6,
           "slug": "sonoscli",
           "name": "Sonoscli",
           "author": "steipete",
           "description": "Control Sonos speakers (discover/status/play/volume/group).",
-          "downloads": 78647,
-          "stars": 48,
-          "installsCurrent": 2569,
+          "downloads": 79251,
+          "stars": 50,
+          "installsCurrent": 2588,
           "url": "https://clawhub.ai/steipete/sonoscli",
           "theme": "Utility / Other"
         },
         {
-          "rank": 8,
+          "rank": 7,
           "slug": "nano-pdf",
           "name": "Nano Pdf",
           "author": "steipete",
           "description": "Edit PDFs with natural-language instructions using the nano-pdf CLI.",
-          "downloads": 92754,
-          "stars": 222,
-          "installsCurrent": 2352,
+          "downloads": 94785,
+          "stars": 227,
+          "installsCurrent": 2385,
           "url": "https://clawhub.ai/steipete/nano-pdf",
           "theme": "Utility / Other"
         },
         {
-          "rank": 9,
+          "rank": 8,
           "slug": "obsidian",
           "name": "Obsidian",
           "author": "steipete",
           "description": "Work with Obsidian vaults (plain Markdown notes) and automate via obsidian-cli.",
-          "downloads": 83438,
-          "stars": 335,
-          "installsCurrent": 2323,
+          "downloads": 85459,
+          "stars": 349,
+          "installsCurrent": 2353,
           "url": "https://clawhub.ai/steipete/obsidian",
+          "theme": "Utility / Other"
+        },
+        {
+          "rank": 9,
+          "slug": "skill-creator",
+          "name": "Skill Creator",
+          "author": "chindden",
+          "description": "Guide for creating effective skills. This skill should be used when users want to create a new skill (or update an existing skill) that extends Claude's capabilities with specialized knowledge, workflows, or tool integrations.",
+          "downloads": 74142,
+          "stars": 255,
+          "installsCurrent": 2223,
+          "url": "https://clawhub.ai/chindden/skill-creator",
           "theme": "Utility / Other"
         },
         {
@@ -410,9 +410,9 @@
           "name": "Notion",
           "author": "steipete",
           "description": "Notion API for creating and managing pages, databases, and blocks.",
-          "downloads": 77960,
-          "stars": 230,
-          "installsCurrent": 2200,
+          "downloads": 79306,
+          "stars": 235,
+          "installsCurrent": 2224,
           "url": "https://clawhub.ai/steipete/notion",
           "theme": "Utility / Other"
         }
@@ -420,11 +420,11 @@
       "top20ThemeSummary": [
         {
           "theme": "Utility / Other",
-          "count": 11
+          "count": 12
         },
         {
           "theme": "Self-Improving / Agentic",
-          "count": 4
+          "count": 3
         },
         {
           "theme": "Search / Research",
@@ -440,40 +440,22 @@
   "crossRanking": {
     "topSkills": [
       {
-        "slug": "self-improving-agent",
-        "name": "self-improving-agent",
-        "author": "pskoett",
-        "url": "https://clawhub.ai/pskoett/self-improving-agent",
-        "description": "Captures learnings, errors, and corrections to enable continuous improvement. Use when: (1) A command or operation fails unexpectedly, (2) User corrects Clau...",
-        "downloads": 399757,
-        "stars": 3253,
-        "installsCurrent": 5983,
-        "theme": "Self-Improving / Agentic",
-        "ranks": {
-          "downloads": 1,
-          "stars": 1,
-          "installs": 1
-        },
-        "appearances": 3,
-        "compositeScore": 300
-      },
-      {
         "slug": "skill-vetter",
         "name": "Skill Vetter",
         "author": "spclaudehome",
         "url": "https://clawhub.ai/spclaudehome/skill-vetter",
         "description": "Security-first skill vetting for AI agents. Use before installing any skill from ClawdHub, GitHub, or other sources. Checks for red flags, permission scope, and suspicious patterns.",
-        "downloads": 213683,
-        "stars": 922,
-        "installsCurrent": 4001,
+        "downloads": 219735,
+        "stars": 960,
+        "installsCurrent": 4073,
         "theme": "Self-Improving / Agentic",
         "ranks": {
-          "downloads": 2,
-          "stars": 3,
-          "installs": 3
+          "downloads": 1,
+          "stars": 2,
+          "installs": 2
         },
         "appearances": 3,
-        "compositeScore": 295
+        "compositeScore": 298
       },
       {
         "slug": "gog",
@@ -481,10 +463,46 @@
         "author": "steipete",
         "url": "https://clawhub.ai/steipete/gog",
         "description": "Google Workspace CLI for Gmail, Calendar, Drive, Contacts, Sheets, and Docs.",
-        "downloads": 158405,
-        "stars": 840,
-        "installsCurrent": 3322,
+        "downloads": 161529,
+        "stars": 849,
+        "installsCurrent": 3352,
         "theme": "Utility / Other",
+        "ranks": {
+          "downloads": 5,
+          "stars": 3,
+          "installs": 4
+        },
+        "appearances": 3,
+        "compositeScore": 291
+      },
+      {
+        "slug": "github",
+        "name": "Github",
+        "author": "steipete",
+        "url": "https://clawhub.ai/steipete/github",
+        "description": "Interact with GitHub using the `gh` CLI. Use `gh issue`, `gh pr`, `gh run`, and `gh api` for issues, PRs, CI runs, and advanced queries.",
+        "downloads": 163764,
+        "stars": 535,
+        "installsCurrent": 4077,
+        "theme": "Developer / GitHub",
+        "ranks": {
+          "downloads": 4,
+          "stars": 8,
+          "installs": 1
+        },
+        "appearances": 3,
+        "compositeScore": 290
+      },
+      {
+        "slug": "proactive-agent",
+        "name": "Proactive Agent",
+        "author": "halthelobster",
+        "url": "https://clawhub.ai/halthelobster/proactive-agent",
+        "description": "Transform AI agents from task-followers into proactive partners that anticipate needs and continuously improve. Now with WAL Protocol, Working Buffer, Autonomous Crons, and battle-tested patterns. Part of the Hal Stack 🦞",
+        "downloads": 147962,
+        "stars": 726,
+        "installsCurrent": 2721,
+        "theme": "Self-Improving / Agentic",
         "ranks": {
           "downloads": 6,
           "stars": 4,
@@ -494,58 +512,22 @@
         "compositeScore": 288
       },
       {
-        "slug": "github",
-        "name": "Github",
-        "author": "steipete",
-        "url": "https://clawhub.ai/steipete/github",
-        "description": "Interact with GitHub using the `gh` CLI. Use `gh issue`, `gh pr`, `gh run`, and `gh api` for issues, PRs, CI runs, and advanced queries.",
-        "downloads": 160415,
-        "stars": 521,
-        "installsCurrent": 4028,
-        "theme": "Developer / GitHub",
-        "ranks": {
-          "downloads": 5,
-          "stars": 9,
-          "installs": 2
-        },
-        "appearances": 3,
-        "compositeScore": 287
-      },
-      {
-        "slug": "proactive-agent",
-        "name": "Proactive Agent",
-        "author": "halthelobster",
-        "url": "https://clawhub.ai/halthelobster/proactive-agent",
-        "description": "Transform AI agents from task-followers into proactive partners that anticipate needs and continuously improve. Now with WAL Protocol, Working Buffer, Autonomous Crons, and battle-tested patterns. Part of the Hal Stack 🦞",
-        "downloads": 145389,
-        "stars": 715,
-        "installsCurrent": 2682,
-        "theme": "Self-Improving / Agentic",
-        "ranks": {
-          "downloads": 7,
-          "stars": 5,
-          "installs": 6
-        },
-        "appearances": 3,
-        "compositeScore": 285
-      },
-      {
         "slug": "self-improving",
         "name": "Self-Improving + Proactive Agent",
         "author": "ivangdavila",
         "url": "https://clawhub.ai/ivangdavila/self-improving",
         "description": "Self-reflection + Self-criticism + Self-learning + Self-organizing memory. Agent evaluates its own work, catches mistakes, and improves permanently. Use when...",
-        "downloads": 167391,
-        "stars": 977,
-        "installsCurrent": 1807,
+        "downloads": 171978,
+        "stars": 1004,
+        "installsCurrent": 1831,
         "theme": "Self-Improving / Agentic",
         "ranks": {
-          "downloads": 4,
-          "stars": 2,
-          "installs": 13
+          "downloads": 2,
+          "stars": 1,
+          "installs": 12
         },
         "appearances": 3,
-        "compositeScore": 284
+        "compositeScore": 288
       },
       {
         "slug": "weather",
@@ -553,17 +535,17 @@
         "author": "steipete",
         "url": "https://clawhub.ai/steipete/weather",
         "description": "Get current weather and forecasts (no API key required).",
-        "downloads": 136608,
-        "stars": 361,
-        "installsCurrent": 3502,
+        "downloads": 139283,
+        "stars": 366,
+        "installsCurrent": 3538,
         "theme": "Search / Research",
         "ranks": {
-          "downloads": 8,
-          "stars": 12,
-          "installs": 4
+          "downloads": 7,
+          "stars": 11,
+          "installs": 3
         },
         "appearances": 3,
-        "compositeScore": 279
+        "compositeScore": 282
       },
       {
         "slug": "multi-search-engine",
@@ -571,17 +553,17 @@
         "author": "gpyangyoujun",
         "url": "https://clawhub.ai/gpyangyoujun/multi-search-engine",
         "description": "Multi search engine integration with 16 engines (7 CN + 9 Global). Supports advanced search operators, time filters, site search, privacy engines, and Wolfra...",
-        "downloads": 122949,
-        "stars": 572,
-        "installsCurrent": 1800,
+        "downloads": 127456,
+        "stars": 602,
+        "installsCurrent": 1840,
         "theme": "Search / Research",
         "ranks": {
-          "downloads": 10,
-          "stars": 6,
-          "installs": 15
+          "downloads": 9,
+          "stars": 5,
+          "installs": 14
         },
         "appearances": 3,
-        "compositeScore": 272
+        "compositeScore": 275
       },
       {
         "slug": "obsidian",
@@ -589,35 +571,17 @@
         "author": "steipete",
         "url": "https://clawhub.ai/steipete/obsidian",
         "description": "Work with Obsidian vaults (plain Markdown notes) and automate via obsidian-cli.",
-        "downloads": 83438,
-        "stars": 335,
-        "installsCurrent": 2323,
+        "downloads": 85459,
+        "stars": 349,
+        "installsCurrent": 2353,
         "theme": "Utility / Other",
         "ranks": {
-          "downloads": 17,
+          "downloads": 18,
           "stars": 15,
-          "installs": 9
+          "installs": 8
         },
         "appearances": 3,
         "compositeScore": 262
-      },
-      {
-        "slug": "nano-banana-pro",
-        "name": "Nano Banana Pro",
-        "author": "steipete",
-        "url": "https://clawhub.ai/steipete/nano-banana-pro",
-        "description": "Generate/edit images with Nano Banana Pro (Gemini 3 Pro Image). Use for image create/modify requests incl. edits. Supports text-to-image + image-to-image; 1K/2K/4K; use --input-image.",
-        "downloads": 88114,
-        "stars": 348,
-        "installsCurrent": 1720,
-        "theme": "Utility / Other",
-        "ranks": {
-          "downloads": 15,
-          "stars": 14,
-          "installs": 16
-        },
-        "appearances": 3,
-        "compositeScore": 258
       },
       {
         "slug": "ontology",
@@ -625,17 +589,17 @@
         "author": "oswalpalash",
         "url": "https://clawhub.ai/oswalpalash/ontology",
         "description": "Typed knowledge graph for structured agent memory and composable skills. Use when creating/querying entities (Person, Project, Task, Event, Document), linkin...",
-        "downloads": 167603,
-        "stars": 546,
-        "installsCurrent": 1162,
+        "downloads": 170492,
+        "stars": 560,
+        "installsCurrent": 1184,
         "theme": "Self-Improving / Agentic",
         "ranks": {
           "downloads": 3,
           "stars": 7,
-          "installs": 35
+          "installs": 32
         },
         "appearances": 3,
-        "compositeScore": 258
+        "compositeScore": 261
       },
       {
         "slug": "humanizer",
@@ -643,17 +607,35 @@
         "author": "biostartechnology",
         "url": "https://clawhub.ai/biostartechnology/humanizer",
         "description": "Remove signs of AI-generated writing from text. Use when editing or reviewing text to make it sound more natural and human-written. Based on Wikipedia's comprehensive \"Signs of AI writing\" guide. Detects and fixes patterns including: inflated symbolism, promotional language, superficial -ing analyses, vague attributions, em dash overuse, rule of three, AI vocabulary words, negative parallelisms, and excessive conjunctive phrases.",
-        "downloads": 92829,
-        "stars": 544,
-        "installsCurrent": 1259,
+        "downloads": 95552,
+        "stars": 563,
+        "installsCurrent": 1279,
         "theme": "Utility / Other",
         "ranks": {
-          "downloads": 12,
-          "stars": 8,
-          "installs": 26
+          "downloads": 13,
+          "stars": 6,
+          "installs": 25
         },
         "appearances": 3,
-        "compositeScore": 257
+        "compositeScore": 259
+      },
+      {
+        "slug": "nano-banana-pro",
+        "name": "Nano Banana Pro",
+        "author": "steipete",
+        "url": "https://clawhub.ai/steipete/nano-banana-pro",
+        "description": "Generate/edit images with Nano Banana Pro (Gemini 3 Pro Image). Use for image create/modify requests incl. edits. Supports text-to-image + image-to-image; 1K/2K/4K; use --input-image.",
+        "downloads": 90000,
+        "stars": 353,
+        "installsCurrent": 1732,
+        "theme": "Utility / Other",
+        "ranks": {
+          "downloads": 16,
+          "stars": 13,
+          "installs": 15
+        },
+        "appearances": 3,
+        "compositeScore": 259
       },
       {
         "slug": "nano-pdf",
@@ -661,35 +643,17 @@
         "author": "steipete",
         "url": "https://clawhub.ai/steipete/nano-pdf",
         "description": "Edit PDFs with natural-language instructions using the nano-pdf CLI.",
-        "downloads": 92754,
-        "stars": 222,
-        "installsCurrent": 2352,
+        "downloads": 94785,
+        "stars": 227,
+        "installsCurrent": 2385,
         "theme": "Utility / Other",
         "ranks": {
-          "downloads": 13,
-          "stars": 27,
-          "installs": 8
+          "downloads": 14,
+          "stars": 29,
+          "installs": 7
         },
         "appearances": 3,
-        "compositeScore": 255
-      },
-      {
-        "slug": "notion",
-        "name": "Notion",
-        "author": "steipete",
-        "url": "https://clawhub.ai/steipete/notion",
-        "description": "Notion API for creating and managing pages, databases, and blocks.",
-        "downloads": 77960,
-        "stars": 230,
-        "installsCurrent": 2200,
-        "theme": "Utility / Other",
-        "ranks": {
-          "downloads": 21,
-          "stars": 25,
-          "installs": 10
-        },
-        "appearances": 3,
-        "compositeScore": 247
+        "compositeScore": 253
       },
       {
         "slug": "auto-updater",
@@ -697,17 +661,53 @@
         "author": "maximeprades",
         "url": "https://clawhub.ai/maximeprades/auto-updater",
         "description": "Automatically update Clawdbot and all installed skills once daily. Runs via cron, checks for updates, applies them, and messages the user with a summary of what changed.",
-        "downloads": 74659,
-        "stars": 369,
-        "installsCurrent": 1274,
+        "downloads": 76762,
+        "stars": 377,
+        "installsCurrent": 1292,
         "theme": "Utility / Other",
         "ranks": {
-          "downloads": 24,
-          "stars": 11,
-          "installs": 22
+          "downloads": 23,
+          "stars": 10,
+          "installs": 21
         },
         "appearances": 3,
-        "compositeScore": 246
+        "compositeScore": 249
+      },
+      {
+        "slug": "notion",
+        "name": "Notion",
+        "author": "steipete",
+        "url": "https://clawhub.ai/steipete/notion",
+        "description": "Notion API for creating and managing pages, databases, and blocks.",
+        "downloads": 79306,
+        "stars": 235,
+        "installsCurrent": 2224,
+        "theme": "Utility / Other",
+        "ranks": {
+          "downloads": 20,
+          "stars": 24,
+          "installs": 10
+        },
+        "appearances": 3,
+        "compositeScore": 249
+      },
+      {
+        "slug": "openai-whisper",
+        "name": "Openai Whisper",
+        "author": "steipete",
+        "url": "https://clawhub.ai/steipete/openai-whisper",
+        "description": "Local speech-to-text with the Whisper CLI (no API key).",
+        "downloads": 72292,
+        "stars": 284,
+        "installsCurrent": 1928,
+        "theme": "Utility / Other",
+        "ranks": {
+          "downloads": 25,
+          "stars": 19,
+          "installs": 11
+        },
+        "appearances": 3,
+        "compositeScore": 248
       }
     ],
     "topAuthors": [
@@ -715,132 +715,131 @@
         "author": "steipete",
         "distinctSkills": 45,
         "appearances": 91,
-        "score": 5525,
+        "score": 5591,
         "bestRanks": {
-          "downloads": 5,
-          "stars": 4,
-          "installs": 2
+          "downloads": 4,
+          "stars": 3,
+          "installs": 1
         }
       },
       {
         "author": "ivangdavila",
         "distinctSkills": 7,
         "appearances": 19,
-        "score": 917,
+        "score": 950,
         "bestRanks": {
-          "downloads": 4,
-          "stars": 2,
-          "installs": 13
+          "downloads": 2,
+          "stars": 1,
+          "installs": 12
         }
       },
       {
         "author": "byungkyu",
         "distinctSkills": 3,
         "appearances": 7,
-        "score": 301,
+        "score": 305,
         "bestRanks": {
-          "downloads": 28,
-          "stars": 13,
-          "installs": 65
+          "downloads": 27,
+          "stars": 12,
+          "installs": 63
         }
       },
       {
         "author": "ide-rea",
         "distinctSkills": 2,
         "appearances": 4,
-        "score": 213,
+        "score": 214,
         "bestRanks": {
           "downloads": 19,
-          "stars": 31,
-          "installs": 54
-        }
-      },
-      {
-        "author": "pskoett",
-        "distinctSkills": 1,
-        "appearances": 3,
-        "score": 300,
-        "bestRanks": {
-          "downloads": 1,
-          "stars": 1,
-          "installs": 1
+          "stars": 32,
+          "installs": 53
         }
       },
       {
         "author": "spclaudehome",
         "distinctSkills": 1,
         "appearances": 3,
-        "score": 295,
+        "score": 298,
         "bestRanks": {
-          "downloads": 2,
-          "stars": 3,
-          "installs": 3
+          "downloads": 1,
+          "stars": 2,
+          "installs": 2
         }
       },
       {
         "author": "halthelobster",
         "distinctSkills": 1,
         "appearances": 3,
-        "score": 285,
+        "score": 288,
         "bestRanks": {
-          "downloads": 7,
-          "stars": 5,
-          "installs": 6
+          "downloads": 6,
+          "stars": 4,
+          "installs": 5
         }
       },
       {
         "author": "gpyangyoujun",
         "distinctSkills": 1,
         "appearances": 3,
-        "score": 272,
+        "score": 275,
         "bestRanks": {
-          "downloads": 10,
-          "stars": 6,
-          "installs": 15
+          "downloads": 9,
+          "stars": 5,
+          "installs": 14
         }
       },
       {
         "author": "oswalpalash",
         "distinctSkills": 1,
         "appearances": 3,
-        "score": 258,
+        "score": 261,
         "bestRanks": {
           "downloads": 3,
           "stars": 7,
-          "installs": 35
+          "installs": 32
         }
       },
       {
         "author": "biostartechnology",
         "distinctSkills": 1,
         "appearances": 3,
-        "score": 257,
+        "score": 259,
         "bestRanks": {
-          "downloads": 12,
-          "stars": 8,
-          "installs": 26
+          "downloads": 13,
+          "stars": 6,
+          "installs": 25
         }
       },
       {
         "author": "maximeprades",
         "distinctSkills": 1,
         "appearances": 3,
-        "score": 246,
+        "score": 249,
         "bestRanks": {
-          "downloads": 24,
-          "stars": 11,
-          "installs": 22
+          "downloads": 23,
+          "stars": 10,
+          "installs": 21
         }
       },
       {
         "author": "chindden",
         "distinctSkills": 1,
         "appearances": 3,
-        "score": 244,
+        "score": 247,
         "bestRanks": {
-          "downloads": 25,
+          "downloads": 24,
           "stars": 23,
-          "installs": 11
+          "installs": 9
+        }
+      },
+      {
+        "author": "fly0pants",
+        "distinctSkills": 2,
+        "appearances": 3,
+        "score": 235,
+        "bestRanks": {
+          "downloads": 10,
+          "stars": 20
         }
       }
     ],
@@ -851,41 +850,41 @@
           {
             "slug": "github",
             "name": "Github",
-            "downloads": 160415,
-            "stars": 521,
-            "installsCurrent": 4028,
+            "downloads": 163764,
+            "stars": 535,
+            "installsCurrent": 4077,
             "theme": "Developer / GitHub"
           },
           {
             "slug": "gog",
             "name": "Gog",
-            "downloads": 158405,
-            "stars": 840,
-            "installsCurrent": 3322,
+            "downloads": 161529,
+            "stars": 849,
+            "installsCurrent": 3352,
             "theme": "Utility / Other"
           },
           {
             "slug": "weather",
             "name": "Weather",
-            "downloads": 136608,
-            "stars": 361,
-            "installsCurrent": 3502,
+            "downloads": 139283,
+            "stars": 366,
+            "installsCurrent": 3538,
             "theme": "Search / Research"
           },
           {
             "slug": "nano-pdf",
             "name": "Nano Pdf",
-            "downloads": 92754,
-            "stars": 222,
-            "installsCurrent": 2352,
+            "downloads": 94785,
+            "stars": 227,
+            "installsCurrent": 2385,
             "theme": "Utility / Other"
           },
           {
             "slug": "nano-banana-pro",
             "name": "Nano Banana Pro",
-            "downloads": 88114,
-            "stars": 348,
-            "installsCurrent": 1720,
+            "downloads": 90000,
+            "stars": 353,
+            "installsCurrent": 1732,
             "theme": "Utility / Other"
           }
         ]
@@ -896,41 +895,41 @@
           {
             "slug": "self-improving",
             "name": "Self-Improving + Proactive Agent",
-            "downloads": 167391,
-            "stars": 977,
-            "installsCurrent": 1807,
+            "downloads": 171978,
+            "stars": 1004,
+            "installsCurrent": 1831,
             "theme": "Self-Improving / Agentic"
           },
           {
             "slug": "word-docx",
             "name": "Word / DOCX",
-            "downloads": 62453,
-            "stars": 273,
-            "installsCurrent": 642,
+            "downloads": 65162,
+            "stars": 287,
+            "installsCurrent": 657,
             "theme": "Utility / Other"
           },
           {
             "slug": "excel-xlsx",
             "name": "Excel / XLSX",
-            "downloads": 56330,
-            "stars": 216,
-            "installsCurrent": 627,
+            "downloads": 58826,
+            "stars": 229,
+            "installsCurrent": 643,
             "theme": "Utility / Other"
           },
           {
             "slug": "powerpoint-pptx",
             "name": "Powerpoint / PPTX",
-            "downloads": 35309,
-            "stars": 104,
-            "installsCurrent": 349,
+            "downloads": 36892,
+            "stars": 109,
+            "installsCurrent": 361,
             "theme": "Utility / Other"
           },
           {
             "slug": "playwright",
             "name": "Playwright (Automation + MCP + Scraper)",
-            "downloads": 28095,
-            "stars": 97,
-            "installsCurrent": 351,
+            "downloads": 28909,
+            "stars": 100,
+            "installsCurrent": 358,
             "theme": "Search / Research"
           }
         ]
@@ -941,41 +940,41 @@
           {
             "slug": "api-gateway",
             "name": "API Gateway",
-            "downloads": 69851,
-            "stars": 350,
-            "installsCurrent": 502,
+            "downloads": 71151,
+            "stars": 358,
+            "installsCurrent": 515,
             "theme": "Developer / GitHub"
           },
           {
             "slug": "gmail",
             "name": "Gmail",
-            "downloads": 30748,
-            "stars": 64,
-            "installsCurrent": 296,
+            "downloads": 31304,
+            "stars": 65,
+            "installsCurrent": 297,
             "theme": "Utility / Other"
           },
           {
             "slug": "youtube-api-skill",
             "name": "YouTube",
-            "downloads": 24419,
+            "downloads": 24540,
             "stars": 132,
-            "installsCurrent": 96,
+            "installsCurrent": 97,
             "theme": "Search / Research"
           },
           {
             "slug": "pdf-co",
             "name": "PDF.co",
-            "downloads": 1494,
+            "downloads": 1511,
             "stars": 2,
             "installsCurrent": 1,
             "theme": "Utility / Other"
           },
           {
-            "slug": "lemlist",
-            "name": "Lemlist",
-            "downloads": 1252,
+            "slug": "netlify-api",
+            "name": "Netlify",
+            "downloads": 1274,
             "stars": 2,
-            "installsCurrent": 0,
+            "installsCurrent": 1,
             "theme": "Utility / Other"
           }
         ]
@@ -986,15 +985,15 @@
           {
             "slug": "baidu-search",
             "name": "Baidu web search",
-            "downloads": 79881,
+            "downloads": 80997,
             "stars": 204,
-            "installsCurrent": 829,
+            "installsCurrent": 843,
             "theme": "Search / Research"
           },
           {
             "slug": "ai-ppt-generator",
             "name": "Baidu Wenku AIPPT",
-            "downloads": 25432,
+            "downloads": 25888,
             "stars": 54,
             "installsCurrent": 216,
             "theme": "Utility / Other"
@@ -1002,71 +1001,26 @@
           {
             "slug": "baidu-baike-data",
             "name": "baidu baike search",
-            "downloads": 9218,
-            "stars": 4,
+            "downloads": 9329,
+            "stars": 5,
             "installsCurrent": 61,
             "theme": "Search / Research"
           },
           {
             "slug": "ai-picture-book",
             "name": "Baidu Wenku AIPictureBook",
-            "downloads": 7844,
+            "downloads": 7937,
             "stars": 11,
-            "installsCurrent": 31,
+            "installsCurrent": 33,
             "theme": "Utility / Other"
           },
           {
             "slug": "deepresearch-conversation",
-            "name": "deepresearch conversation",
-            "downloads": 6592,
+            "name": "deepresearch",
+            "downloads": 6695,
             "stars": 2,
             "installsCurrent": 28,
             "theme": "Self-Improving / Agentic"
-          }
-        ]
-      },
-      "pskoett": {
-        "totalSkills": 5,
-        "topSkills": [
-          {
-            "slug": "self-improving-agent",
-            "name": "self-improving-agent",
-            "downloads": 399757,
-            "stars": 3253,
-            "installsCurrent": 5983,
-            "theme": "Self-Improving / Agentic"
-          },
-          {
-            "slug": "simplify-and-harden",
-            "name": "simplify-and-harden",
-            "downloads": 1338,
-            "stars": 10,
-            "installsCurrent": 8,
-            "theme": "Self-Improving / Agentic"
-          },
-          {
-            "slug": "intent-framed-agents",
-            "name": "intent-framed-agents",
-            "downloads": 43,
-            "stars": 0,
-            "installsCurrent": 0,
-            "theme": "Self-Improving / Agentic"
-          },
-          {
-            "slug": "context-surfing",
-            "name": "context-surfing",
-            "downloads": 39,
-            "stars": 0,
-            "installsCurrent": 0,
-            "theme": "Utility / Other"
-          },
-          {
-            "slug": "learning-aggregator",
-            "name": "learning-aggregator",
-            "downloads": 38,
-            "stars": 0,
-            "installsCurrent": 0,
-            "theme": "Utility / Other"
           }
         ]
       },
@@ -1076,15 +1030,15 @@
           {
             "slug": "skill-vetter",
             "name": "Skill Vetter",
-            "downloads": 213683,
-            "stars": 922,
-            "installsCurrent": 4001,
+            "downloads": 219735,
+            "stars": 960,
+            "installsCurrent": 4073,
             "theme": "Self-Improving / Agentic"
           },
           {
             "slug": "crabnet",
             "name": "CrabNet",
-            "downloads": 1817,
+            "downloads": 1846,
             "stars": 0,
             "installsCurrent": 1,
             "theme": "Self-Improving / Agentic"
@@ -1097,17 +1051,17 @@
           {
             "slug": "proactive-agent",
             "name": "Proactive Agent",
-            "downloads": 145389,
-            "stars": 715,
-            "installsCurrent": 2682,
+            "downloads": 147962,
+            "stars": 726,
+            "installsCurrent": 2721,
             "theme": "Self-Improving / Agentic"
           },
           {
             "slug": "para-second-brain",
             "name": "PARA Second Brain",
-            "downloads": 6475,
+            "downloads": 6539,
             "stars": 50,
-            "installsCurrent": 45,
+            "installsCurrent": 46,
             "theme": "Self-Improving / Agentic"
           }
         ]
@@ -1118,18 +1072,39 @@
           {
             "slug": "multi-search-engine",
             "name": "Multi Search Engine",
-            "downloads": 122949,
-            "stars": 572,
-            "installsCurrent": 1800,
+            "downloads": 127456,
+            "stars": 602,
+            "installsCurrent": 1840,
             "theme": "Search / Research"
           },
           {
             "slug": "uniqlo-product-query",
             "name": "uniqlo(优衣库)-product-query",
-            "downloads": 119,
+            "downloads": 140,
             "stars": 1,
             "installsCurrent": 0,
             "theme": "Utility / Other"
+          }
+        ]
+      },
+      "oswalpalash": {
+        "totalSkills": 2,
+        "topSkills": [
+          {
+            "slug": "ontology",
+            "name": "ontology",
+            "downloads": 170492,
+            "stars": 560,
+            "installsCurrent": 1184,
+            "theme": "Self-Improving / Agentic"
+          },
+          {
+            "slug": "causal-inference",
+            "name": "Causal Inference",
+            "downloads": 2839,
+            "stars": 6,
+            "installsCurrent": 7,
+            "theme": "Self-Improving / Agentic"
           }
         ]
       }
@@ -1143,7 +1118,7 @@
           {
             "slug": "openclaw-twitter",
             "name": "X/Twitter Automation: 30+ APIs, OAuth Post, One Key",
-            "downloads": 3518,
+            "downloads": 3562,
             "stars": 4,
             "installsCurrent": 12,
             "theme": "Search / Research"
@@ -1151,7 +1126,7 @@
           {
             "slug": "openclaw-aisa-image-video-models-wan2-6-gemini-3-pro-image-nano-banana",
             "name": "Generate images & videos with: Gemini 3 Pro Image (image) + Qwen Wan 2.6 (video) via one API key",
-            "downloads": 2206,
+            "downloads": 2223,
             "stars": 11,
             "installsCurrent": 11,
             "theme": "Utility / Other"
@@ -1159,7 +1134,7 @@
           {
             "slug": "openclaw-aisa-finance-stock-equity-crypto-market-price-data-yahoo-finance-coinhacko",
             "name": "Query real-time and historical financial data across equities and crypto prices",
-            "downloads": 1547,
+            "downloads": 1559,
             "stars": 5,
             "installsCurrent": 6,
             "theme": "Developer / GitHub"
@@ -1167,15 +1142,15 @@
           {
             "slug": "openclaw-aisa-youtube-search-serp-video-channels-trends-content-tracking",
             "name": "YouTube SERP Scout for agents. Search top-ranking videos, channels, and trends for content research and competitor tracking",
-            "downloads": 1503,
+            "downloads": 1518,
             "stars": 3,
-            "installsCurrent": 3,
+            "installsCurrent": 4,
             "theme": "Self-Improving / Agentic"
           },
           {
             "slug": "openclaw-aisa-llm-gateway",
             "name": "One API key for 70+ AI models. Route to GPT, Claude, Gemini, Qwen, Deepseek, Grok and more",
-            "downloads": 1476,
+            "downloads": 1495,
             "stars": 5,
             "installsCurrent": 4,
             "theme": "Utility / Other"
@@ -1183,12 +1158,12 @@
         ]
       },
       "aisadocs": {
-        "totalSkills": 29,
+        "totalSkills": 31,
         "topSkills": [
           {
             "slug": "openclaw-aisa-web-search-tavily",
             "name": "Web Search by Tavily",
-            "downloads": 4173,
+            "downloads": 4294,
             "stars": 9,
             "installsCurrent": 19,
             "theme": "Search / Research"
@@ -1196,7 +1171,7 @@
           {
             "slug": "openclaw-aisa-llm-image-video",
             "name": "Images & videos generation with Gemini 3 Pro Image + Qwen Wan 2.6 (video) via one API key",
-            "downloads": 1709,
+            "downloads": 1725,
             "stars": 3,
             "installsCurrent": 10,
             "theme": "Utility / Other"
@@ -1204,7 +1179,7 @@
           {
             "slug": "openclaw-aisa-llm-router",
             "name": "Unified LLM Gateway - One API for 70+ AI models. Route to GPT, Claude, Gemini, Qwen, Deepseek, Grok and more",
-            "downloads": 1287,
+            "downloads": 1301,
             "stars": 2,
             "installsCurrent": 2,
             "theme": "Utility / Other"
@@ -1212,7 +1187,7 @@
           {
             "slug": "openclaw-aisa-youtube-search-tracking",
             "name": "Youtube Search and Tracking API",
-            "downloads": 1277,
+            "downloads": 1296,
             "stars": 0,
             "installsCurrent": 0,
             "theme": "Self-Improving / Agentic"
@@ -1220,7 +1195,7 @@
           {
             "slug": "openclaw-aisa-finance-equity-crypto-price-market-data-news",
             "name": "Query real-time and historical financial data across equities and crypto prices, market moves, metrics, and trends for analysis, alerts, and reporting",
-            "downloads": 1100,
+            "downloads": 1113,
             "stars": 0,
             "installsCurrent": 1,
             "theme": "Developer / GitHub"
@@ -1233,7 +1208,7 @@
           {
             "slug": "aisa-twitter-api",
             "name": "AIsa Twitter API (Search + Post)",
-            "downloads": 3187,
+            "downloads": 3240,
             "stars": 4,
             "installsCurrent": 16,
             "theme": "Search / Research"
@@ -1241,7 +1216,7 @@
           {
             "slug": "aisa-youtube-search",
             "name": "AIsa Youtube Search",
-            "downloads": 1779,
+            "downloads": 1805,
             "stars": 1,
             "installsCurrent": 1,
             "theme": "Self-Improving / Agentic"
@@ -1249,7 +1224,7 @@
           {
             "slug": "aisa-multi-source-search",
             "name": "AIsa Multi Source Search",
-            "downloads": 1584,
+            "downloads": 1609,
             "stars": 1,
             "installsCurrent": 1,
             "theme": "Self-Improving / Agentic"
@@ -1257,7 +1232,7 @@
           {
             "slug": "aisa-media-gen",
             "name": "AIsa Media Gen",
-            "downloads": 1582,
+            "downloads": 1606,
             "stars": 1,
             "installsCurrent": 2,
             "theme": "Utility / Other"
@@ -1265,7 +1240,7 @@
           {
             "slug": "financial-data",
             "name": "Financial Data",
-            "downloads": 1424,
+            "downloads": 1454,
             "stars": 0,
             "installsCurrent": 6,
             "theme": "Developer / GitHub"
@@ -1278,7 +1253,7 @@
           {
             "slug": "openclaw-aisa-twitter-search",
             "name": "X Twitter Command Center (Search + Post)",
-            "downloads": 1230,
+            "downloads": 1253,
             "stars": 0,
             "installsCurrent": 3,
             "theme": "Search / Research"
@@ -1286,7 +1261,7 @@
           {
             "slug": "openclaw-aisa-media-gen",
             "name": "Unified API for powerful image and video generation",
-            "downloads": 1154,
+            "downloads": 1183,
             "stars": 1,
             "installsCurrent": 6,
             "theme": "Utility / Other"
@@ -1294,15 +1269,15 @@
           {
             "slug": "openclaw-aisa-youtube-search",
             "name": "YouTube SERP Scout (Rank + Discover)",
-            "downloads": 1043,
+            "downloads": 1068,
             "stars": 3,
-            "installsCurrent": 0,
+            "installsCurrent": 1,
             "theme": "Self-Improving / Agentic"
           },
           {
             "slug": "openclaw-aisa-cn-llm",
             "name": "One API key for Chinese AI models. Route to Qwen, Deepseek",
-            "downloads": 1000,
+            "downloads": 1025,
             "stars": 0,
             "installsCurrent": 2,
             "theme": "Utility / Other"
@@ -1310,7 +1285,7 @@
           {
             "slug": "openclaw-aisa-market-pulse",
             "name": "MarketPulse (Stocks + Crypto Data)",
-            "downloads": 983,
+            "downloads": 1007,
             "stars": 0,
             "installsCurrent": 3,
             "theme": "Developer / GitHub"
@@ -1323,7 +1298,7 @@
           {
             "slug": "x-intelligence-automation",
             "name": "Twitter Intelligence & Automation — Read, Search, Write & Post (Text & Media)",
-            "downloads": 83,
+            "downloads": 101,
             "stars": 0,
             "installsCurrent": 0,
             "theme": "Search / Research"
@@ -1331,7 +1306,7 @@
           {
             "slug": "prediction-agg",
             "name": "Prediction Market Data Aggregator",
-            "downloads": 75,
+            "downloads": 87,
             "stars": 0,
             "installsCurrent": 0,
             "theme": "Utility / Other"
@@ -1339,7 +1314,7 @@
           {
             "slug": "prediction-market-arb",
             "name": "Prediction Markets Arbitrage",
-            "downloads": 65,
+            "downloads": 76,
             "stars": 0,
             "installsCurrent": 0,
             "theme": "Utility / Other"
@@ -1352,7 +1327,7 @@
         "owner": "0xjordansg-yolo",
         "slug": "openclaw-twitter",
         "name": "X/Twitter Automation: 30+ APIs, OAuth Post, One Key",
-        "downloads": 3518,
+        "downloads": 3562,
         "stars": 4,
         "installsCurrent": 12,
         "theme": "Search / Research",
@@ -1362,7 +1337,7 @@
         "owner": "aisapay",
         "slug": "aisa-twitter-api",
         "name": "AIsa Twitter API (Search + Post)",
-        "downloads": 3187,
+        "downloads": 3240,
         "stars": 4,
         "installsCurrent": 16,
         "theme": "Search / Research",
@@ -1372,9 +1347,9 @@
         "owner": "0xjordansg-yolo",
         "slug": "openclaw-aisa-youtube-search-serp-video-channels-trends-content-tracking",
         "name": "YouTube SERP Scout for agents. Search top-ranking videos, channels, and trends for content research and competitor tracking",
-        "downloads": 1503,
+        "downloads": 1518,
         "stars": 3,
-        "installsCurrent": 3,
+        "installsCurrent": 4,
         "theme": "Self-Improving / Agentic",
         "path": "packages/source-optimized/0xjordansg-yolo/openclaw-aisa-youtube-search-serp-video-channels-trends-content-tracking/SKILL.md"
       },
@@ -1382,7 +1357,7 @@
         "owner": "0xjordansg-yolo",
         "slug": "openclaw-aisa-youtube",
         "name": "Search YouTube videos, channels, and playlists",
-        "downloads": 542,
+        "downloads": 554,
         "stars": 0,
         "installsCurrent": 2,
         "theme": "Search / Research",
@@ -1392,7 +1367,7 @@
         "owner": "aisadocs",
         "slug": "openclaw-twitter-post-engage",
         "name": "Twitter/X All-in-One — Search, Monitor & Publish Text & Media Posts",
-        "downloads": 205,
+        "downloads": 223,
         "stars": 1,
         "installsCurrent": 0,
         "theme": "Search / Research",
@@ -1402,7 +1377,7 @@
         "owner": "karensheng",
         "slug": "x-intelligence-automation",
         "name": "Twitter Intelligence & Automation — Read, Search, Write & Post (Text & Media)",
-        "downloads": 83,
+        "downloads": 101,
         "stars": 0,
         "installsCurrent": 0,
         "theme": "Search / Research",
@@ -1412,7 +1387,7 @@
         "owner": "chaimengphp",
         "slug": "openclaw-aisa-twitter",
         "name": "X Twitter Command Center (Search + Post + Interact)",
-        "downloads": 70,
+        "downloads": 82,
         "stars": 0,
         "installsCurrent": 0,
         "theme": "Search / Research",
@@ -1424,19 +1399,19 @@
         "owner": "aisapay",
         "slug": "aisa-twitter-api",
         "name": "AIsa Twitter API (Search + Post)",
-        "downloads": 3187,
+        "downloads": 3240,
         "stars": 4,
         "installsCurrent": 16,
         "theme": "Search / Research",
         "path": "packages/source-optimized/aisapay/aisa-twitter-api/SKILL.md",
-        "priorityScore": 0.9671,
+        "priorityScore": 0.9684,
         "reason": "本地 AISA 包里安装转化最高，下载基础已被验证，AISA 品牌一致性最好，适合做旗舰包"
       },
       {
         "owner": "0xjordansg-yolo",
         "slug": "openclaw-twitter",
         "name": "X/Twitter Automation: 30+ APIs, OAuth Post, One Key",
-        "downloads": 3518,
+        "downloads": 3562,
         "stars": 4,
         "installsCurrent": 12,
         "theme": "Search / Research",
@@ -1448,60 +1423,60 @@
         "owner": "0xjordansg-yolo",
         "slug": "openclaw-aisa-youtube-search-serp-video-channels-trends-content-tracking",
         "name": "YouTube SERP Scout for agents. Search top-ranking videos, channels, and trends for content research and competitor tracking",
-        "downloads": 1503,
+        "downloads": 1518,
         "stars": 3,
-        "installsCurrent": 3,
+        "installsCurrent": 4,
         "theme": "Self-Improving / Agentic",
         "path": "packages/source-optimized/0xjordansg-yolo/openclaw-aisa-youtube-search-serp-video-channels-trends-content-tracking/SKILL.md",
-        "priorityScore": 0.412,
+        "priorityScore": 0.4367,
         "reason": "适合作为批量改造候选"
       },
       {
         "owner": "0xjordansg-yolo",
         "slug": "openclaw-aisa-youtube",
         "name": "Search YouTube videos, channels, and playlists",
-        "downloads": 542,
+        "downloads": 554,
         "stars": 0,
         "installsCurrent": 2,
         "theme": "Search / Research",
         "path": "packages/source-optimized/0xjordansg-yolo/openclaw-aisa-youtube/SKILL.md",
-        "priorityScore": 0.1039,
+        "priorityScore": 0.1044,
         "reason": "适合作为批量改造候选"
       },
       {
         "owner": "aisadocs",
         "slug": "openclaw-twitter-post-engage",
         "name": "Twitter/X All-in-One — Search, Monitor & Publish Text & Media Posts",
-        "downloads": 205,
+        "downloads": 223,
         "stars": 1,
         "installsCurrent": 0,
         "theme": "Search / Research",
         "path": "packages/source-optimized/aisadocs/openclaw-twitter-post-engage/SKILL.md",
-        "priorityScore": 0.0829,
+        "priorityScore": 0.0844,
         "reason": "适合作为批量改造候选"
       },
       {
         "owner": "karensheng",
         "slug": "x-intelligence-automation",
         "name": "Twitter Intelligence & Automation — Read, Search, Write & Post (Text & Media)",
-        "downloads": 83,
+        "downloads": 101,
         "stars": 0,
         "installsCurrent": 0,
         "theme": "Search / Research",
         "path": "packages/source-optimized/karensheng/x-intelligence-automation/SKILL.md",
-        "priorityScore": 0.0083,
+        "priorityScore": 0.0099,
         "reason": "适合作为批量改造候选"
       },
       {
         "owner": "chaimengphp",
         "slug": "openclaw-aisa-twitter",
         "name": "X Twitter Command Center (Search + Post + Interact)",
-        "downloads": 70,
+        "downloads": 82,
         "stars": 0,
         "installsCurrent": 0,
         "theme": "Search / Research",
         "path": "packages/source-optimized/chaimengphp/openclaw-aisa-twitter/SKILL.md",
-        "priorityScore": 0.007,
+        "priorityScore": 0.0081,
         "reason": "适合作为批量改造候选"
       }
     ],

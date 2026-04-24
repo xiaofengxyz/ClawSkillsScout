@@ -153,6 +153,75 @@ async function writeSummary({ trackedOwners, manifest, failures }) {
   await fs.writeFile(indexPath, `${JSON.stringify(summary, null, 2)}\n`);
 }
 
+async function pathExists(filePath) {
+  try {
+    await fs.access(filePath);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+function buildManifestKey(item) {
+  return [String(item.owner ?? '').trim(), String(item.slug ?? '').trim()].join('::');
+}
+
+function upsertManifestItem(manifest, item) {
+  const key = buildManifestKey(item);
+  const index = manifest.findIndex((entry) => buildManifestKey(entry) === key);
+  if (index >= 0) {
+    manifest[index] = item;
+    return;
+  }
+  manifest.push(item);
+}
+
+async function loadExistingManifest() {
+  const manifest = [];
+
+  try {
+    const summary = JSON.parse(await fs.readFile(indexPath, 'utf8'));
+    const items = Array.isArray(summary.items) ? summary.items : [];
+    for (const item of items) {
+      if (!item || typeof item.file !== 'string') continue;
+      const filePath = path.join(root, item.file);
+      if (!(await pathExists(filePath))) continue;
+      upsertManifestItem(manifest, item);
+    }
+  } catch {
+    // Fall through to filesystem scan below.
+  }
+
+  const ownerDirs = await fs.readdir(outputRoot, { withFileTypes: true }).catch(() => []);
+  for (const ownerDir of ownerDirs) {
+    if (!ownerDir.isDirectory()) continue;
+    const owner = ownerDir.name;
+    const ownerPath = path.join(outputRoot, owner);
+    const entries = await fs.readdir(ownerPath, { withFileTypes: true }).catch(() => []);
+    for (const entry of entries) {
+      if (!entry.isFile() || !entry.name.endsWith('.zip')) continue;
+      const filePath = path.join(ownerPath, entry.name);
+      const stat = await fs.stat(filePath).catch(() => null);
+      if (!stat?.isFile()) continue;
+      const slug = path.basename(entry.name, '.zip');
+      upsertManifestItem(manifest, {
+        owner,
+        slug,
+        name: slug,
+        version: null,
+        clawhubUrl: `https://clawhub.ai/skills/${slug}`,
+        downloadUrl: null,
+        downloadedFrom: 'existing-file',
+        resolvedDownloadUrl: null,
+        file: path.relative(root, filePath).replaceAll(path.sep, '/'),
+        bytes: stat.size,
+      });
+    }
+  }
+
+  return manifest;
+}
+
 async function downloadWithFallback(item, slug, filePath) {
   const attempts = [];
 
@@ -188,7 +257,12 @@ async function main() {
   }
 
   if (scrape) {
-    await runCommand('node', ['--import', 'tsx', 'scripts/scrape-clawhub.ts']);
+    try {
+      await runCommand('node', ['--import', 'tsx', 'scripts/scrape-clawhub.ts']);
+    } catch (error) {
+      const message = error instanceof Error ? error.message : String(error);
+      console.warn(`Catalog scrape failed, continuing with existing ${path.relative(root, catalogPath)}: ${message}`);
+    }
   }
 
   const [catalog, accounts] = await Promise.all([
@@ -207,7 +281,7 @@ async function main() {
     });
 
   await fs.mkdir(outputRoot, { recursive: true });
-  const manifest = [];
+  const manifest = await loadExistingManifest();
   const failures = [];
 
   for (const item of targets) {
@@ -230,7 +304,7 @@ async function main() {
         const result = await downloadWithFallback(item, slug, filePath);
         bytes = result.bytes;
         console.log(`${force ? 'Refreshed' : 'Downloaded'} ${item.owner}/${slug} via ${result.downloadedFrom}`);
-        manifest.push({
+        upsertManifestItem(manifest, {
           owner: item.owner,
           slug,
           name: item.name,
@@ -246,7 +320,7 @@ async function main() {
         continue;
       }
 
-      manifest.push({
+      upsertManifestItem(manifest, {
         owner: item.owner,
         slug,
         name: item.name,
@@ -276,7 +350,11 @@ async function main() {
   console.log(`Saved ${manifest.length} account skill zips to ${path.relative(root, outputRoot)}.`);
   if (failures.length > 0) {
     console.log(`Recorded ${failures.length} download failures in ${path.relative(root, indexPath)}.`);
-    process.exitCode = 1;
+    if (manifest.length === 0) {
+      process.exitCode = 1;
+    } else {
+      console.warn('Continuing with cached and successfully refreshed ClawHub skill archives.');
+    }
   }
 }
 

@@ -1,13 +1,13 @@
 # Claw Skills Scout
 
-一个围绕 ClawHub / Claude / Hermes / AgentSkill / AgentSkills.so 生态做“采集、分析、包装、发布”的仓库。
+一个围绕 ClawHub / Claude / Hermes / AgentSkill / AgentSkills.so 生态做“采集、分析、优化包发布、方法沉淀”的仓库。
 
 它当前承担 4 类核心工作：
 
 - 采集 ClawHub skills / plugins 与重点作者组合，生成可搜索的静态情报站点。
 - 分析多平台 skill / plugin 的排名机制、爆款机制、作者工厂结构与 AISA 改造机会。
 - 对可疑 `Suspicious` 包做 runtime-preserving 的 source-optimized 重组、验证与发布。
-- 沉淀可复用的 skill / plugin 发布知识、模板和全局技能资产。
+- 沉淀可复用的 skill / plugin 发布知识、模板、Codex 全局技能资产，并供 `agent-skills-io` 复用。
 
 ## Start Here
 
@@ -38,6 +38,7 @@
 - 输出 ClawHub 增长、下载榜、plugin 三榜、10k+ 系统、多榜综合、老板版报告。
 - 输出 Claude、Hermes、AgentSkill、AgentSkills.so 的专项报告。
 - 输出跨平台爆款结构、AISA 选品与改造机会队列。
+- 不在本仓库直接做爆款 skill 改造发布，而是把分析结论沉淀为全局 Codex skill 与执行 prompt，供 `agent-skills-io` 执行。
 - 自动同步 Markdown 报告对应的 `.docx` 文件。
 
 ### 3. 包装与发布
@@ -101,6 +102,9 @@ npm run dev
 # 主站推荐刷新链路
 npm run pipeline:aisa-analysis
 
+# GitHub Pages / 全量报告刷新链路
+npm run pipeline:pages
+
 # 定时任务/全量报告刷新链路
 npm run pipeline:scheduled-analysis
 ```
@@ -111,10 +115,12 @@ npm run pipeline:scheduled-analysis
 | --- | --- | --- |
 | 只刷新 ClawHub catalog | `npm run scrape` | 更新 `public/data/catalog.json` |
 | 刷新主站 AISA 数据 | `npm run pipeline:aisa-analysis` | 下载归档、重建 `aisa-api-analysis.json`、重新构建站点 |
+| 按 GitHub Pages 同款方式本地预演 | `npm run pipeline:pages` | 使用与 GitHub Pages 相同的全量分析 + 构建链路 |
 | 刷新全部情报与报告 | `npm run pipeline:scheduled-analysis` | 主站 + 全报告链路 + 页面构建 |
 | 单独重跑某类报告 | `npm run analyze:<name>` | 只刷新对应 JSON / Markdown / Word 报告 |
 | 手工改过报告 Markdown 后补 Word | `npm run sync:report-docx` | 只回填对应 `.docx` |
 | 做 source-optimized 发布 | `npm run build:source-optimized` 到 `npm run publish:optimized-downloads` | 生成并发布优化包 |
+| 做爆款 skill 改造与发布 | 转到 `/mnt/d/workplace/agent-skills-io`，按 `mother skill -> release layers -> audit -> publish` 执行 | 当前仓库只负责分析和方法沉淀 |
 
 详细操作规范见：[docs/AISA_ANALYSIS_WORKFLOW.md](/mnt/d/workplace/skillget/docs/AISA_ANALYSIS_WORKFLOW.md)
 
@@ -156,7 +162,7 @@ npm run pipeline:scheduled-analysis
 | `npm run analyze:market-ecosystem` | `scripts/build-market-ecosystem-report.mjs` | 生成跨平台生态分析与 Claude / Hermes 报告 |
 | `npm run analyze:agentskill` | `scripts/build-agentskill-report.mjs` | 生成 AgentSkill 专项分析 |
 | `npm run analyze:agentskills-so` | `scripts/build-agentskills-so-report.mjs` | 生成 AgentSkills.so 专项分析 |
-| `npm run analyze:full-report-suite` | 多脚本流水线 | 串行刷新全部核心报告 |
+| `npm run analyze:full-report-suite` | `scripts/run-full-report-suite.mjs` | 串行刷新全部核心报告，并在单个 live 报告失败但已有缓存产物时继续 |
 | `npm run sync:report-docx` | `scripts/sync-report-docx.py` | 补齐或刷新 Markdown 报告对应的 `.docx` |
 
 ### 包装、验证、发布
@@ -176,7 +182,8 @@ npm run pipeline:scheduled-analysis
 | 命令 | 作用 |
 | --- | --- |
 | `npm run pipeline:aisa-analysis` | 主站推荐的一键刷新链路 |
-| `npm run pipeline:scheduled-analysis` | GitHub Action 用的全量刷新链路 |
+| `npm run pipeline:pages` | GitHub Pages 部署使用的统一全量链路，本地要复现线上结果时优先使用 |
+| `npm run pipeline:scheduled-analysis` | 保留的全量刷新链路，也是 `pipeline:pages` 当前调用的底层命令 |
 | `npm run deploy:server` | 调用 `deploy/deploy-server.sh` 构建站点并把 `dist/` 同步到服务器静态目录 |
 
 ## 关键参数与环境变量
@@ -222,6 +229,8 @@ npm run pipeline:scheduled-analysis
   仓库内报告索引。
 - [public/reports/index.html](/mnt/d/workplace/skillget/public/reports/index.html)
   浏览器内报告总目录。
+- [docs/AGENT_SKILLS_IO_BREAKOUT_PROMPT.md](/mnt/d/workplace/skillGet/docs/AGENT_SKILLS_IO_BREAKOUT_PROMPT.md)
+  在 `agent-skills-io` 中执行爆款 skill 改造与发布的可复制 prompt。
 - [docs/PROJECT_OVERVIEW_AI.md](/mnt/d/workplace/skillget/docs/PROJECT_OVERVIEW_AI.md)
   AI handoff 总览。
 - [docs/AI_PROJECT_MEMORY.md](/mnt/d/workplace/skillget/docs/AI_PROJECT_MEMORY.md)
@@ -230,8 +239,9 @@ npm run pipeline:scheduled-analysis
 ## 自动化与部署
 
 - GitHub Action 位于 `.github/workflows/deploy.yml`
-- `push master` 会跑 `npm run pipeline:aisa-analysis`
-- `schedule` 与 `workflow_dispatch` 会跑 `npm run pipeline:scheduled-analysis`
+- `push master`、`schedule` 与 `workflow_dispatch` 都会跑 `npm run pipeline:pages`
+- `npm run pipeline:pages` 当前等价于 `npm run pipeline:scheduled-analysis`
+- 如果要在本地尽量复现 GitHub Pages 的生成结果，优先跑 `npm run pipeline:pages`
 - 服务器端脚本在 `deploy/deploy-server.sh`
 - 服务器部署时建议显式传 `DEPLOY_WEB_ROOT=/var/www/flyingeye.cn/ClawSkillsScout`
 - 部署说明见 [docs/DEPLOYMENT.md](/mnt/d/workplace/skillget/docs/DEPLOYMENT.md)

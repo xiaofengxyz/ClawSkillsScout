@@ -24,6 +24,7 @@ This file is the fast handoff layer for future chats. Read it when you need to k
 - Analyze AgentSkill and AgentSkills.so live public skill ecosystems
 - Build cross-market opportunity maps for AISA conversion
 - Compare categories, owners, and repeatable packaging patterns across ecosystems
+- Convert market findings into reusable global Codex skill heuristics and downstream `agent-skills-io` execution prompts
 
 ### Plugin and skill packaging
 
@@ -41,6 +42,18 @@ This file is the fast handoff layer for future chats. Read it when you need to k
 ## Recently Completed
 
 ### 2026-04-24
+
+- Folded the breakout-selection and retrofit heuristics back into the existing global `/home/xiaofeng/.codex/skills/clawhub-skill-optimizer-all/SKILL.md` so this capability now lives in the main publish optimizer instead of a redundant extra global skill
+- Added `docs/AGENT_SKILLS_IO_BREAKOUT_PROMPT.md` as the copy-ready execution prompt for running breakout-skill selection, mother-skill rewrites, release regeneration, audit, and publish work inside `/mnt/d/workplace/agent-skills-io`
+- Updated `AGENTS.md`, `README.md`, `docs/PROJECT_OVERVIEW_AI.md`, and `docs/project-map.json` so the repo now explicitly documents the new boundary: `skillGet` handles analysis plus methodology internalization, while `agent-skills-io` handles breakout-skill retrofit and release execution
+- Updated the AI working rules so future tasks start by reviewing the previous task for completion/optimization gaps and proceed autonomously without asking for routine permission
+- Updated `.github/workflows/deploy.yml`, `package.json`, `docs/AISA_ANALYSIS_WORKFLOW.md`, `docs/DEPLOYMENT.md`, `README.md`, `docs/PROJECT_OVERVIEW_AI.md`, `docs/project-map.json`, and `scripts/README.md` so GitHub Pages now uses one unified `pipeline:pages` command on push, schedule, and manual dispatch, with CI timezone aligned to `Asia/Shanghai`
+- Hardened `scripts/download-clawhub-account-skills.mjs`, `scripts/download-github-account-skills.mjs`, and the new `scripts/run-full-report-suite.mjs` so the Pages pipeline now keeps cached archives/report outputs when live source fetches or single report steps fail transiently instead of aborting immediately
+- Re-ran the real site chain far enough to verify the unified Pages pipeline now reaches the full report suite and final static build much more reliably, then re-verified the built frontend with `npm run typecheck` and `npx vite build`
+
+- Fixed a ClawHub plugin-page regression where detail parsing dropped ranking metadata like `bestSorts`, causing `public/data/clawhub-plugin-report.json` composite rows to miss fields the frontend expected
+- Added frontend array guards in `src/clawhub-plugins/App.tsx` so stale or partial plugin-report JSON no longer crashes the page on `.join(...)`
+- Regenerated `public/data/clawhub-plugin-report.json`, refreshed the paired ClawHub plugin Markdown + DOCX reports again, and re-verified with `npm run typecheck` plus `npx vite build`
 
 - Fixed the server-side deployment helper so `deploy/deploy-server.sh` now publishes the built `dist/` output into a real web root instead of stopping after `npm run build`
 - Updated `docs/DEPLOYMENT.md`, `README.md`, and `docs/project-map.json` so server deployment now documents `DEPLOY_WEB_ROOT` and the build-then-sync flow explicitly
@@ -125,7 +138,7 @@ This file is the fast handoff layer for future chats. Read it when you need to k
 
 ## Next Recommended Steps
 
-1. Decide whether AgentSkill and AgentSkills.so need their own standalone frontend pages beyond the now-expanded `market-intelligence.html`
+1. Run the next breakout-retrofit wave inside `agent-skills-io` using `docs/AGENT_SKILLS_IO_BREAKOUT_PROMPT.md`, with at least one AISA-native upgrade and one top-ranked live-skill conversion
 2. Expand cross-platform opportunity scoring so the unified queue can feed release planning and automated skill-family generation more directly
 3. Add more cached fallbacks for long-running live collectors where third-party sites intermittently stall or partially render
 

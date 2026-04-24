@@ -2,11 +2,11 @@
   "project": {
     "name": "skillget",
     "displayName": "Claw Skills Scout",
-    "summary": "A mixed product/tooling repository for ClawHub intelligence gathering, AISA-focused catalog publishing, suspicious package optimization, and AI skill packaging experiments.",
+    "summary": "A mixed product/tooling repository for ClawHub intelligence gathering, AISA-focused market analysis, suspicious package optimization, and breakout-playbook internalization into reusable Codex skills and prompts for downstream agent-skills-io execution.",
     "primaryGoals": [
       "Scrape ClawHub skills and plugins, detect probable AISA API usage, and publish a searchable static dashboard.",
       "Repackage selected suspicious ClawHub skills into runtime-preserving optimized bundles with verification and downloadable release artifacts.",
-      "Maintain reusable AI skill assets and templates, including a standalone last30days research skill."
+      "Turn market-analysis conclusions into reusable global Codex skills and execution prompts that downstream agent-skills-io can apply for breakout skill retrofits and releases."
     ],
     "projectType": [
       "static-site",
@@ -45,6 +45,7 @@
       "scripts/build-clawhub-multi-ranking-report.py",
       "scripts/build-clawhub-viral-boss-report.py",
       "scripts/build-aisa-expansion-plans.py",
+      "scripts/run-full-report-suite.mjs",
       "scripts/sync-report-docx.py",
       "scripts/build-market-ecosystem-report.mjs",
       "scripts/build-agentskill-report.mjs",
@@ -374,10 +375,11 @@
     "analyze:market-ecosystem": "Refresh cross-market intelligence data and publish separate Claude and Hermes EN/ZH Markdown + Word AISA reports.",
     "analyze:agentskill": "Capture current AgentSkill skill/plugin leaderboard samples plus detail-page trust signals and publish JSON plus EN/ZH Markdown + Word reports.",
     "analyze:agentskills-so": "Capture current AgentSkills.so skill samples plus detail-page security/download/repo signals and publish JSON plus EN/ZH Markdown + Word reports.",
-    "analyze:full-report-suite": "Run the full report-generation chain for ClawHub growth, downloads insights, plugins, 10k system, follow-up briefs, multi-ranking, viral-boss, AISA expansion plans, market ecosystem, AgentSkill, and AgentSkills.so.",
+    "analyze:full-report-suite": "Run the full report-generation chain through a wrapper that continues with cached outputs when a single live report step fails transiently.",
     "sync:report-docx": "Backfill or refresh .docx companions for Markdown report files in reports/ and public/reports/.",
     "pipeline:aisa-analysis": "Refresh ClawHub and GitHub skill archives, rebuild AISA analysis data, then build the static site.",
-    "pipeline:scheduled-analysis": "Refresh downloads, AISA analysis, all major report datasets, then build the static site for scheduled or manual CI refreshes.",
+    "pipeline:scheduled-analysis": "Refresh downloads, AISA analysis, all major report datasets, then build the static site as the underlying full-refresh command behind pipeline:pages or direct manual runs.",
+    "pipeline:pages": "Run the same full analysis-and-build command path used by GitHub Pages deployments.",
     "build:source-optimized": "Build English optimized package directories from original-unpacked sources.",
     "build:source-optimized-zh": "Build Chinese optimized package directories from source-optimized packages.",
     "package:source-optimized": "Zip English optimized packages into release artifacts.",
@@ -448,6 +450,10 @@
       "role": "Operational spec for archive refresh, AISA endpoint analysis, validation, and acceptance."
     },
     {
+      "path": "docs/AGENT_SKILLS_IO_BREAKOUT_PROMPT.md",
+      "role": "Copy-ready prompt for running breakout-skill retrofit and publish work inside the downstream agent-skills-io repository."
+    },
+    {
       "path": "docs/PROJECT_MANUAL.md",
       "role": "Chat-independent handbook covering project functions, pages, datasets, report families, and recommended starting paths."
     },
@@ -463,7 +469,7 @@
   "automation": [
     {
       "path": ".github/workflows/deploy.yml",
-      "role": "GitHub Pages deployment workflow; runs pipeline:aisa-analysis on push, pipeline:scheduled-analysis on schedule/manual dispatch, retries transient failures, prevents overlapping runs, and uploads analysis/report artifacts for troubleshooting."
+      "role": "GitHub Pages deployment workflow; runs pipeline:pages on push, schedule, and manual dispatch, keeps CI timezone aligned to Asia/Shanghai, retries transient failures, prevents overlapping runs, and uploads analysis/report artifacts for troubleshooting."
     }
   ],
   "keyDirectories": [
@@ -529,6 +535,7 @@
   "recommendedReadOrderForAI": [
     "docs/PROJECT_OVERVIEW_AI.md",
     "README.md",
+    "docs/AGENT_SKILLS_IO_BREAKOUT_PROMPT.md",
     "package.json",
     "scripts/README.md",
     "scripts/scrape-clawhub.ts",

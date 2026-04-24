@@ -2,8 +2,8 @@
 
 ## 一页结论
 
-- 本次分析覆盖 307 个 10K+ 技能、182 位作者。
-- 识别出 24 位高产作者，并完成 274 个头部样本包下载。
+- 本次分析覆盖 319 个 10K+ 技能、190 位作者。
+- 识别出 24 位高产作者，并完成 316 个头部样本包下载。
 - 真正值得学习的不是某个单点爆款，而是背后可复制的生产系统。
 
 ## 爆款为什么会出现
@@ -32,8 +32,8 @@
 - 优先标准化搜索、媒体生成、生产力、金融、社交这五类 API 能力。
 
 ## 重点作者
-- @steipete：总技能=53，10K+=38，API复用=Medium，模板化=Medium
+- @steipete：总技能=53，10K+=40，API复用=Medium，模板化=Medium
+- @byungkyu：总技能=131，10K+=37，API复用=Medium，模板化=High
+- @ivangdavila：总技能=120，10K+=20，API复用=High，模板化=High
 - @wscats：总技能=39，10K+=13，API复用=High，模板化=High
-- @byungkyu：总技能=100，10K+=6，API复用=Medium，模板化=High
 - @financial-ai-analyst：总技能=14，10K+=4，API复用=Medium，模板化=Medium
-- @gitgoodordietrying：总技能=24，10K+=3，API复用=High，模板化=High

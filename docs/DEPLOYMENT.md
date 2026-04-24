@@ -7,8 +7,10 @@
    - open `Settings -> Pages`
    - set source to `GitHub Actions`
 3. The workflow in `.github/workflows/deploy.yml` will:
-   - run `npm run pipeline:aisa-analysis` on `push` to `master` for the main dashboard refresh
-   - run `npm run pipeline:scheduled-analysis` on `schedule` and `workflow_dispatch` for the full report-refresh chain
+   - run `npm run pipeline:pages` on `push` to `master`
+   - run `npm run pipeline:pages` on `schedule` and `workflow_dispatch`
+   - keep `TZ=Asia/Shanghai` in CI to reduce local-vs-Pages date drift
+   - reuse cached archives or cached report outputs when a single live step fails transiently but previous artifacts still exist
    - build the static site
    - publish the `dist/` artifact to GitHub Pages
 4. Scheduled refresh runs daily at `02:17 UTC`, which is `10:17` Beijing time.
@@ -48,6 +50,7 @@ cat deploy/clawskillsscout.cron
 ## Recommended Production Flow
 
 - Use the server task to rebuild and log scrape history locally.
+- If you want a local dry run that matches the GitHub Pages command path as closely as possible, run `npm run pipeline:pages` before pushing.
 - Push successful updates to GitHub so Pages stays in sync.
 - Point Nginx or another static-file server at the directory passed through `DEPLOY_WEB_ROOT`, so the public mirror serves the built `dist/` contents instead of the repo root.
 
