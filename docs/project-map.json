@@ -390,7 +390,7 @@
     "download:clawhub-account-skills": "Refresh rendered owner seeds when available, scrape ClawHub, then download all skills for tracked accounts into public/downloads/clawHub/, trying the CN mirror first and falling back to the ClawHub-origin URL.",
     "download:github-account-skills": "Treat catalog owners as GitHub usernames, scan public repos for SKILL.md, and package discovered skill directories into public/downloads/github/.",
     "typecheck": "Run TypeScript type checking.",
-    "deploy:server": "Run the server deployment helper."
+    "deploy:server": "Run the server deployment helper to build the site and sync dist/ into the configured web root."
   },
   "importantData": [
     {

@@ -177,7 +177,7 @@ npm run pipeline:scheduled-analysis
 | --- | --- |
 | `npm run pipeline:aisa-analysis` | 主站推荐的一键刷新链路 |
 | `npm run pipeline:scheduled-analysis` | GitHub Action 用的全量刷新链路 |
-| `npm run deploy:server` | 调用 `deploy/deploy-server.sh` 做服务器端部署 |
+| `npm run deploy:server` | 调用 `deploy/deploy-server.sh` 构建站点并把 `dist/` 同步到服务器静态目录 |
 
 ## 关键参数与环境变量
 
@@ -233,6 +233,7 @@ npm run pipeline:scheduled-analysis
 - `push master` 会跑 `npm run pipeline:aisa-analysis`
 - `schedule` 与 `workflow_dispatch` 会跑 `npm run pipeline:scheduled-analysis`
 - 服务器端脚本在 `deploy/deploy-server.sh`
+- 服务器部署时建议显式传 `DEPLOY_WEB_ROOT=/var/www/flyingeye.cn/ClawSkillsScout`
 - 部署说明见 [docs/DEPLOYMENT.md](/mnt/d/workplace/skillget/docs/DEPLOYMENT.md)
 
 ## 备注

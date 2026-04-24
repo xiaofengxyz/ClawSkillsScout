@@ -42,6 +42,10 @@ This file is the fast handoff layer for future chats. Read it when you need to k
 
 ### 2026-04-24
 
+- Fixed the server-side deployment helper so `deploy/deploy-server.sh` now publishes the built `dist/` output into a real web root instead of stopping after `npm run build`
+- Updated `docs/DEPLOYMENT.md`, `README.md`, and `docs/project-map.json` so server deployment now documents `DEPLOY_WEB_ROOT` and the build-then-sync flow explicitly
+- Added `reports/AISA_Breakout_Test_Plan_ZH.md` with a dual-track breakout test plan: three primary AISA-native test skills, three primary online-to-AISA conversion skills, and two reserve slots based on current Hermes and ClawHub opportunity data
+
 - Fixed the ClawHub plugin report pipeline so `.json` artifacts such as `/plugins/page.json` are filtered out before ranking rows and detail fetches are built
 - Added a frontend fallback in `src/clawhub-plugins/App.tsx` so invalid plugin-detail URLs are rendered as plain text instead of broken clickable links
 - Regenerated `public/data/clawhub-plugin-report.json`, refreshed the paired ClawHub plugin Markdown + DOCX reports, and verified the site with `npm run typecheck` plus `npx vite build`
