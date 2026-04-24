@@ -43,6 +43,9 @@ This file is the fast handoff layer for future chats. Read it when you need to k
 
 ### 2026-04-24
 
+- Corrected the ClawHub plugin analysis stack after verifying the public plugin page on April 24, 2026: `scripts/build-clawhub-plugin-report.mjs`, `src/clawhub-plugins/*`, `clawhub-plugins.html`, and the paired plugin Markdown/DOCX reports now focus on the real visible plugin surfaces (catalog order, Code / Bundle, Verified only, Executes code, trust signals) instead of the previously misframed downloads / installs / stars plugin boards
+- Added a standalone `clawhub-multi-ranking.html` page plus `src/clawhub-multi-ranking/*`, wired it into `src/App.tsx` and `vite.config.ts`, so the site now exposes the real ClawHub skill downloads / stars / installs multi-ranking analysis directly in the browser instead of only in Markdown / JSON artifacts
+- Updated `README.md`, `docs/PROJECT_OVERVIEW_AI.md`, `docs/project-map.json`, `reports/README.md`, and `public/reports/index.html` so the docs now distinguish the ClawHub skill three-board page from the corrected plugin catalog/filter intelligence page
 - Folded the breakout-selection and retrofit heuristics back into the existing global `/home/xiaofeng/.codex/skills/clawhub-skill-optimizer-all/SKILL.md` so this capability now lives in the main publish optimizer instead of a redundant extra global skill
 - Added `docs/AGENT_SKILLS_IO_BREAKOUT_PROMPT.md` as the copy-ready execution prompt for running breakout-skill selection, mother-skill rewrites, release regeneration, audit, and publish work inside `/mnt/d/workplace/agent-skills-io`
 - Updated `AGENTS.md`, `README.md`, `docs/PROJECT_OVERVIEW_AI.md`, and `docs/project-map.json` so the repo now explicitly documents the new boundary: `skillGet` handles analysis plus methodology internalization, while `agent-skills-io` handles breakout-skill retrofit and release execution

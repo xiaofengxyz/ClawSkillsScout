@@ -11,6 +11,7 @@ export default defineConfig({
         main: resolve(__dirname, 'index.html'),
         clawhubGrowth: resolve(__dirname, 'clawhub-growth.html'),
         clawhubDownloadInsights: resolve(__dirname, 'clawhub-download-insights.html'),
+        clawhubMultiRanking: resolve(__dirname, 'clawhub-multi-ranking.html'),
         clawhubPlugins: resolve(__dirname, 'clawhub-plugins.html'),
         clawhub10kSystem: resolve(__dirname, 'clawhub-10k-system.html'),
         marketIntelligence: resolve(__dirname, 'market-intelligence.html'),

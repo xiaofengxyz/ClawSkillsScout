@@ -35,7 +35,7 @@
 ### 2. 市场分析
 
 - 输出主站 AISA 分析数据：`public/data/aisa-api-analysis.json`
-- 输出 ClawHub 增长、下载榜、plugin 三榜、10k+ 系统、多榜综合、老板版报告。
+- 输出 ClawHub 增长、下载榜、skill 三榜综合、plugin 情报、10k+ 系统、多榜综合、老板版报告。
 - 输出 Claude、Hermes、AgentSkill、AgentSkills.so 的专项报告。
 - 输出跨平台爆款结构、AISA 选品与改造机会队列。
 - 不在本仓库直接做爆款 skill 改造发布，而是把分析结论沉淀为全局 Codex skill 与执行 prompt，供 `agent-skills-io` 执行。
@@ -60,7 +60,7 @@
 | 模块 | 主要能力 | 核心输出 |
 | --- | --- | --- |
 | 主站采集与 AISA 分析 | ClawHub 抓取、账号下载、GitHub 技能归档、接口识别 | `public/data/catalog.json`、`public/data/aisa-api-analysis.json` |
-| ClawHub 专项分析 | 增长、下载榜、plugin 三榜、10k+、多榜综合、老板版 | `public/data/clawhub-*.json`、`reports/ClawHub_*.md/.docx` |
+| ClawHub 专项分析 | 增长、下载榜、skill 三榜综合、plugin 情报、10k+、多榜综合、老板版 | `public/data/clawhub-*.json`、`reports/ClawHub_*.md/.docx` |
 | 跨生态分析 | Claude、Hermes、AgentSkill、AgentSkills.so、统一机会池 | `public/data/market-ecosystem-report.json`、`public/data/agentskill-report.json`、`public/data/agentskills-so-report.json` |
 | Source-optimized 流水线 | 原包下载、瘦身、校验、打包、发布 | `packages/source-optimized/`、`public/downloads/optimized/` |
 | 中文优化包流水线 | 中文 `SKILL.md` 替换与 zip 输出 | `packages/source-optimized-zh/`、`public/downloads/optimized-zh/` |
@@ -74,8 +74,10 @@
   ClawHub 商业增长分析页。
 - `clawhub-download-insights.html`
   下载榜、爆款 skill、作者工厂分析页。
+- `clawhub-multi-ranking.html`
+  skill 的 downloads / stars / installs 三榜综合、跨榜强势 skill、作者工厂与 AISA 优先级页。
 - `clawhub-plugins.html`
-  plugin 的 downloads / installs / stars 三榜、综合榜、信任机制、AISA 机会页。
+  plugin 的当前目录顺序、Code / Bundle、Verified only、Executes code、信任机制与 AISA 机会页。
 - `clawhub-10k-system.html`
   `10k+` 技能与作者的可复制生产系统页。
 - `market-intelligence.html`
@@ -153,7 +155,7 @@ npm run pipeline:scheduled-analysis
 | `npm run analyze:aisa` | `scripts/generate-aisa-api-analysis.py` | 扫描下载归档中的 AISA 接口使用 |
 | `npm run analyze:clawhub-growth` | `scripts/generate-clawhub-growth-report.py` | 构建 ClawHub 增长分析 |
 | `npm run analyze:clawhub-download-insights` | `scripts/generate-clawhub-download-insights.py` | 构建下载榜与爆款作者分析 |
-| `npm run analyze:clawhub-plugins` | `scripts/build-clawhub-plugin-report.mjs` | 构建 plugin 三榜、综合榜、信任与 AISA 机会分析 |
+| `npm run analyze:clawhub-plugins` | `scripts/build-clawhub-plugin-report.mjs` | 构建 plugin 当前目录/过滤面、信任与 AISA 机会分析 |
 | `npm run analyze:clawhub-10k-system` | `scripts/build-clawhub-10k-system-report.py` | 构建 `10k+` 系统分析 |
 | `npm run analyze:clawhub-10k-followups` | `scripts/generate-clawhub-10k-followup-assets.py` | 生成中文版 / 老板版 follow-up 资产 |
 | `npm run analyze:clawhub-multi-ranking` | `scripts/build-clawhub-multi-ranking-report.py` | 合并 downloads / stars / installs 多榜综合 |

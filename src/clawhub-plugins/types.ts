@@ -1,5 +1,6 @@
-export interface PluginRankingRow {
+export interface PluginSurfaceRow {
   rank: number;
+  catalogRank: number;
   href: string;
   url: string;
   name: string;
@@ -8,10 +9,9 @@ export interface PluginRankingRow {
   theme: string;
   scanStatus: string | null;
   verificationTier: string | null;
-  bestRank: number | null;
-  worstRank: number | null;
-  rankSpread: number;
-  bestSorts: string[];
+  executesCode: boolean;
+  publicStatsZero: boolean;
+  versions: number;
 }
 
 export interface PluginVerification {
@@ -27,12 +27,13 @@ export interface PluginCompositeRow {
   theme: string;
   summary: string;
   compositeScore: number;
-  bestRank: number | null;
-  worstRank: number | null;
-  rankSpread: number;
-  bestSorts: string[];
+  catalogRank: number;
+  verificationTier: string | null;
   verification?: PluginVerification | null;
   scanStatus?: string | null;
+  executesCode: boolean;
+  publicStatsZero: boolean;
+  versions: number;
 }
 
 export interface PluginAuthorProfile {
@@ -53,6 +54,7 @@ export interface PluginAuthorProfile {
     compositeScore: number;
     scanStatus: string | null;
     url: string;
+    catalogRank: number;
   }>;
 }
 
@@ -79,7 +81,9 @@ export interface ClawhubPluginReport {
   methodology: {
     note: string;
     dataDate: string;
-    identicalRankingOrders: boolean;
+    explicitSortBoardsVisible: boolean;
+    visiblePublicSurfaces: string[];
+    usedExistingSnapshot: boolean;
   };
   summary: {
     totalPlugins: number;
@@ -90,23 +94,22 @@ export interface ClawhubPluginReport {
     suspiciousPlugins: number;
     executesCodePlugins: number;
     publicStatsZeroPlugins: number;
-    topDownloadsPlugin: string | null;
-    topInstallsPlugin: string | null;
-    topStarsPlugin: string | null;
+    topCatalogPlugin: string | null;
     topTheme: string | null;
     topAuthor: string | null;
   };
-  rankings: {
-    downloads: PluginRankingRow[];
-    installs: PluginRankingRow[];
-    stars: PluginRankingRow[];
-    divergenceHighlights: PluginCompositeRow[];
+  surfaces: {
+    catalogTop: PluginSurfaceRow[];
+    codePlugins: PluginSurfaceRow[];
+    bundlePlugins: PluginSurfaceRow[];
+    verifiedOnly: PluginSurfaceRow[];
+    executesCode: PluginSurfaceRow[];
     compositeTop: PluginCompositeRow[];
   };
   authors: PluginAuthorProfile[];
   aisaCandidates: PluginAisaCandidate[];
   mechanics: {
-    rankingMechanics: string[];
+    listingMechanics: string[];
     breakoutMechanics: string[];
     trustMechanics: string[];
     publishMoves: string[];

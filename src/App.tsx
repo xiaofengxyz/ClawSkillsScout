@@ -51,10 +51,12 @@ const copyByLanguage = {
     openMarketPage: '打开跨生态情报页',
     openGrowthPage: '打开 ClawHub 商业分析页',
     openDownloadsPage: '打开下载榜爆款分析页',
-    openPluginPage: '打开 Plugin 三榜分析页',
+    openSkillBoardsPage: '打开 Skill 三榜综合页',
+    openPluginPage: '打开 Plugin 情报页',
     open10kPage: '打开 10K+ 系统报告页',
     viewGrowthData: '查看分析数据',
     viewDownloadsJson: '查看下载榜 JSON',
+    viewSkillBoardsJson: '查看 Skill 三榜 JSON',
     viewPluginJson: '查看 Plugin JSON',
     view10kJson: '查看 10K+ 系统 JSON',
     updatedAt: '更新于',
@@ -141,10 +143,12 @@ const copyByLanguage = {
     openMarketPage: 'Open market intelligence',
     openGrowthPage: 'Open ClawHub growth report',
     openDownloadsPage: 'Open downloads insights',
-    openPluginPage: 'Open plugin board analysis',
+    openSkillBoardsPage: 'Open skill multi-ranking',
+    openPluginPage: 'Open plugin intelligence',
     open10kPage: 'Open 10K+ systems report',
     viewGrowthData: 'View growth data',
     viewDownloadsJson: 'View downloads JSON',
+    viewSkillBoardsJson: 'View skill multi-ranking JSON',
     viewPluginJson: 'View plugin JSON',
     view10kJson: 'View 10K+ JSON',
     updatedAt: 'Updated',
@@ -914,6 +918,9 @@ export default function App() {
             <a className="hero-link-button" href={`${import.meta.env.BASE_URL}clawhub-download-insights.html`}>
               {copy.openDownloadsPage}
             </a>
+            <a className="hero-link-button" href={`${import.meta.env.BASE_URL}clawhub-multi-ranking.html`}>
+              {copy.openSkillBoardsPage}
+            </a>
             <a className="hero-link-button" href={`${import.meta.env.BASE_URL}clawhub-plugins.html`}>
               {copy.openPluginPage}
             </a>
@@ -925,6 +932,9 @@ export default function App() {
             </a>
             <a className="hero-link-button" href={`${import.meta.env.BASE_URL}data/clawhub-download-insights.json`} target="_blank" rel="noreferrer">
               {copy.viewDownloadsJson}
+            </a>
+            <a className="hero-link-button" href={`${import.meta.env.BASE_URL}data/clawhub-multi-ranking-report.json`} target="_blank" rel="noreferrer">
+              {copy.viewSkillBoardsJson}
             </a>
             <a className="hero-link-button" href={`${import.meta.env.BASE_URL}data/clawhub-plugin-report.json`} target="_blank" rel="noreferrer">
               {copy.viewPluginJson}

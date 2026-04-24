@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState, type ReactNode } from 'react';
 import { format } from 'date-fns';
-import type { ClawhubPluginReport, PluginAisaCandidate, PluginAuthorProfile, PluginCompositeRow, PluginRankingRow } from './types';
+import type { ClawhubPluginReport, PluginAisaCandidate, PluginAuthorProfile, PluginCompositeRow, PluginSurfaceRow } from './types';
 import { LanguageToggle, formatMetricValue, loadJsonCached, peekJsonCache, useAppLanguage, useDocumentTitle, warmJsonCache } from '../site';
 
 const copyByLanguage = {
@@ -8,107 +8,119 @@ const copyByLanguage = {
     pageTitle: 'ClawHub Plugin 情报页',
     loading: '正在加载 ClawHub Plugin 情报...',
     heroEyebrow: 'ClawHub Plugin Intelligence',
-    heroTitle: '把 ClawHub plugin 的三榜、信任机制和爆款套路拆开看',
+    heroTitle: '把 ClawHub plugin 的公开目录、过滤面和信任机制拆开看',
     heroDescription:
-      '这页专门分析 ClawHub plugin 目录的 `downloads / installs / stars` 三套排序、综合榜、作者工厂、AISA 机会以及发布时真正影响转化的验证与安全表面。',
+      '这页按当前真实公开可见的 plugin 目录顺序、Code / Bundle 过滤、Verified only / Executes code 过滤，以及验证、安全、runtime 信号来分析，不再把 plugin 错写成 `downloads / installs / stars` 三榜。',
     openMarketPage: '打开跨生态情报页',
     reportsIndex: '报告索引',
-    sourcePage: 'ClawHub 来源页',
+    sourcePage: '打开 ClawHub 来源页',
     dataJson: '查看 Plugin JSON',
     updatedAt: '更新于',
-    methodologyTitle: '这份页面怎么读',
-    methodologyLead:
-      'ClawHub plugin 现在既有三套公开排序面，也有类型/验证/执行代码等过滤面。判断爆款时，要把榜单位置、验证状态、安全扫描、运行时边界和作者工厂一起看。',
-    identicalRankingYes: '当前三榜顺序高度一致',
-    identicalRankingNo: '当前三榜顺序已出现明显差异',
+    currentSurface: '当前公开面',
+    cachedSnapshot: '当前使用仓库快照回退',
+    liveSnapshot: '当前基于 live 页面',
     totalPlugins: '插件总数',
     codeVsBundle: 'Code / Bundle',
     sourceLinked: 'Source-linked / Clean',
     suspicious: 'Suspicious / Executes code',
     publicStats: '公开零计数详情页',
-    mechanicsTitle: '平台机制',
-    rankingMechanics: '排名机制',
+    methodologyTitle: '这份页面怎么读',
+    methodologyLead:
+      '截至当前数据日期，ClawHub plugin 页公开可见的是目录顺序和过滤面，而不是像 skill 页那样的下载/星标/安装三榜。所以这里重点看可见曝光、类型边界、验证状态、安全扫描和作者工厂。',
+    listingMechanics: '目录与过滤面',
     trustMechanics: '信任机制',
     breakoutMechanics: '爆款机制',
     publishMoves: '发布动作',
-    downloadsBoard: 'Downloads 排行',
-    installsBoard: 'Installs 排行',
-    starsBoard: 'Stars 排行',
-    compositeBoard: '综合榜',
-    divergenceBoard: '三榜差异最大',
+    catalogBoard: '当前目录前 10',
+    codeBoard: 'Code plugins',
+    bundleBoard: 'Bundle plugins',
+    verifiedBoard: 'Verified only',
+    executesBoard: 'Executes code',
+    compositeBoard: '综合优先级',
     authorsBoard: '作者工厂',
     aisaBoard: 'AISA 改造机会',
-    rank: '排名',
+    rank: '排序',
+    catalogRank: '目录位次',
     plugin: 'Plugin',
     owner: '作者',
     family: '类型',
-    theme: '主题',
-    verification: '验证',
+    signals: '信号',
     score: '分数',
-    spread: '跨度',
-    bestBoard: '最强榜单',
     totalPluginsLabel: '插件数',
     codePluginsLabel: 'Code',
     bundlePluginsLabel: 'Bundle',
     cleanPluginsLabel: 'Clean',
-    topThemesLabel: '主主题',
     whyItFits: '为什么适合 AISA',
     opportunity: '机会分',
     code: 'Code',
     bundle: 'Bundle',
+    surfaceSummaryPrefix: '当前公开可见的 surface：',
+    topSummaryPrefix: '当前目录头部 plugin',
+    themeSummaryPrefix: '头部主题',
+    authorSummaryPrefix: '头部作者',
+    signalsCatalogPrefix: '目录',
+    signalExecutes: '执行代码',
+    signalStatsHidden: '详情页公开计数缺失',
+    signalUnknown: '未标明',
   },
   en: {
     pageTitle: 'ClawHub Plugin Intelligence',
     loading: 'Loading ClawHub plugin intelligence...',
     heroEyebrow: 'ClawHub Plugin Intelligence',
-    heroTitle: 'See the three plugin boards, trust surfaces, and breakout playbook separately',
+    heroTitle: 'See the real public plugin surfaces, filters, and trust mechanics separately',
     heroDescription:
-      'This page focuses on the ClawHub plugin directory across the `downloads`, `installs`, and `stars` boards, the composite board, author factories, AISA opportunities, and the verification/security surfaces that actually affect conversion.',
+      'This page analyzes the currently visible plugin catalog order, the Code / Bundle filters, the Verified only / Executes code filters, and the verification/security/runtime signals that actually shape conversion. It no longer frames plugins as `downloads / installs / stars` boards.',
     openMarketPage: 'Open market intelligence',
     reportsIndex: 'Report index',
     sourcePage: 'Open ClawHub source',
     dataJson: 'View plugin JSON',
     updatedAt: 'Updated',
-    methodologyTitle: 'How to read this page',
-    methodologyLead:
-      'ClawHub plugins now have three public ranking surfaces plus filters for type, verification, and code execution. Breakout judgment should combine board position, verification status, scanner posture, runtime boundaries, and author factories.',
-    identicalRankingYes: 'The 3 boards currently look highly aligned',
-    identicalRankingNo: 'The 3 boards now show meaningful differences',
+    currentSurface: 'Current public surface',
+    cachedSnapshot: 'Using repository snapshot fallback',
+    liveSnapshot: 'Based on live pages',
     totalPlugins: 'Total plugins',
     codeVsBundle: 'Code / Bundle',
     sourceLinked: 'Source-linked / Clean',
     suspicious: 'Suspicious / Executes code',
     publicStats: 'Public zero-count detail pages',
-    mechanicsTitle: 'Platform Mechanics',
-    rankingMechanics: 'Ranking mechanics',
-    trustMechanics: 'Trust mechanics',
-    breakoutMechanics: 'Breakout mechanics',
-    publishMoves: 'Publish moves',
-    downloadsBoard: 'Downloads board',
-    installsBoard: 'Installs board',
-    starsBoard: 'Stars board',
-    compositeBoard: 'Composite board',
-    divergenceBoard: 'Largest cross-board spread',
+    methodologyTitle: 'How to read this page',
+    methodologyLead:
+      'On the current ClawHub plugin page, the visible public surfaces are the listing order and the filters, not separate metric boards like the skill page. So this page emphasizes visible exposure, type boundaries, verification posture, scan outcomes, and author factories.',
+    listingMechanics: 'Listing & Filters',
+    trustMechanics: 'Trust Mechanics',
+    breakoutMechanics: 'Breakout Mechanics',
+    publishMoves: 'Publish Moves',
+    catalogBoard: 'Current catalog top 10',
+    codeBoard: 'Code plugins',
+    bundleBoard: 'Bundle plugins',
+    verifiedBoard: 'Verified only',
+    executesBoard: 'Executes code',
+    compositeBoard: 'Composite priority',
     authorsBoard: 'Author factories',
     aisaBoard: 'AISA conversion opportunities',
     rank: 'Rank',
+    catalogRank: 'Catalog',
     plugin: 'Plugin',
     owner: 'Owner',
     family: 'Family',
-    theme: 'Theme',
-    verification: 'Verification',
+    signals: 'Signals',
     score: 'Score',
-    spread: 'Spread',
-    bestBoard: 'Best board',
     totalPluginsLabel: 'Plugins',
     codePluginsLabel: 'Code',
     bundlePluginsLabel: 'Bundle',
     cleanPluginsLabel: 'Clean',
-    topThemesLabel: 'Top themes',
     whyItFits: 'Why it fits AISA',
     opportunity: 'Opportunity',
     code: 'Code',
     bundle: 'Bundle',
+    surfaceSummaryPrefix: 'Visible public surfaces:',
+    topSummaryPrefix: 'Current top catalog plugin',
+    themeSummaryPrefix: 'Leading theme',
+    authorSummaryPrefix: 'Top author',
+    signalsCatalogPrefix: 'catalog',
+    signalExecutes: 'executes code',
+    signalStatsHidden: 'public stats hidden',
+    signalUnknown: 'undisclosed',
   },
 } as const;
 
@@ -139,6 +151,43 @@ function joinLabels(value: unknown, separator: string, fallback = 'n/a') {
 
 function hasPluginDetailPage(url: string) {
   return /^https:\/\/clawhub\.ai\/plugins\/[^?#]+$/.test(url) && !url.toLowerCase().endsWith('.json');
+}
+
+function surfaceName(surface: string, language: 'zh' | 'en') {
+  const map =
+    language === 'zh'
+      ? {
+          'all-types': 'All types',
+          'code-plugins': 'Code plugins',
+          'bundle-plugins': 'Bundle plugins',
+          'verified-only': 'Verified only',
+          'executes-code': 'Executes code',
+        }
+      : {
+          'all-types': 'All types',
+          'code-plugins': 'Code plugins',
+          'bundle-plugins': 'Bundle plugins',
+          'verified-only': 'Verified only',
+          'executes-code': 'Executes code',
+        };
+  return map[surface as keyof typeof map] ?? surface;
+}
+
+function signalSummary(item: PluginSurfaceRow | PluginCompositeRow, copy: PluginCopy) {
+  const labels = [`${copy.signalsCatalogPrefix} #${item.catalogRank}`];
+  const verificationTier =
+    item.verificationTier ?? ('verification' in item ? item.verification?.tier ?? null : null);
+  labels.push(verificationTier ?? copy.signalUnknown);
+  if (item.scanStatus) {
+    labels.push(item.scanStatus);
+  }
+  if (item.executesCode) {
+    labels.push(copy.signalExecutes);
+  }
+  if (item.publicStatsZero) {
+    labels.push(copy.signalStatsHidden);
+  }
+  return labels.join(' / ');
 }
 
 function PluginTitle({
@@ -238,31 +287,57 @@ export default function App() {
       .catch((error) => console.error('Failed to load ClawHub plugin report', error));
   }, []);
 
-  const rankingCards = useMemo(
+  const primaryCards = useMemo(
     () =>
       report
         ? [
             {
-              title: copy.downloadsBoard,
-              description: language === 'zh' ? '公开 downloads 排行前 10。' : 'Top 10 from the public downloads board.',
-              items: report.rankings.downloads.slice(0, 10),
+              title: copy.catalogBoard,
+              description: language === 'zh' ? '当前公开目录顺序前 10。' : 'Top 10 in the current public catalog order.',
+              items: report.surfaces.catalogTop.slice(0, 10),
             },
             {
-              title: copy.installsBoard,
-              description: language === 'zh' ? '公开 installs 排行前 10。' : 'Top 10 from the public installs board.',
-              items: report.rankings.installs.slice(0, 10),
+              title: copy.codeBoard,
+              description: language === 'zh' ? '按当前目录顺序过滤出的 Code plugin 前 10。' : 'Top code plugins in the current catalog order.',
+              items: report.surfaces.codePlugins.slice(0, 10),
             },
             {
-              title: copy.starsBoard,
-              description: language === 'zh' ? '公开 stars 排行前 10。' : 'Top 10 from the public stars board.',
-              items: report.rankings.stars.slice(0, 10),
+              title: copy.bundleBoard,
+              description: language === 'zh' ? '按当前目录顺序过滤出的 Bundle plugin 前 10。' : 'Top bundle plugins in the current catalog order.',
+              items: report.surfaces.bundlePlugins.slice(0, 10),
             },
           ]
         : [],
-    [copy.downloadsBoard, copy.installsBoard, copy.starsBoard, language, report],
+    [copy.bundleBoard, copy.catalogBoard, copy.codeBoard, language, report],
   );
+
+  const filterCards = useMemo(
+    () =>
+      report
+        ? [
+            {
+              title: copy.verifiedBoard,
+              description:
+                language === 'zh'
+                  ? '公开 `Verified only` 过滤面里最先可见的前 10。'
+                  : 'Top 10 most visible plugins under the public `Verified only` filter.',
+              items: report.surfaces.verifiedOnly.slice(0, 10),
+            },
+            {
+              title: copy.executesBoard,
+              description:
+                language === 'zh'
+                  ? '公开 `Executes code` 过滤面里最先可见的前 10。'
+                  : 'Top 10 most visible plugins under the public `Executes code` filter.',
+              items: report.surfaces.executesCode.slice(0, 10),
+            },
+          ]
+        : [],
+    [copy.executesBoard, copy.verifiedBoard, language, report],
+  );
+
   const compositeItems = useMemo(
-    () => (report ? report.rankings.compositeTop.slice(0, 10).map((item, index) => ({ rank: index + 1, ...item })) : []),
+    () => (report ? report.surfaces.compositeTop.slice(0, 10).map((item, index) => ({ rank: index + 1, ...item })) : []),
     [report],
   );
 
@@ -270,7 +345,7 @@ export default function App() {
     return <main className="plugin-shell plugin-loading">{copy.loading}</main>;
   }
 
-  const rankingColumns: Array<TableColumn<PluginRankingRow>> = [
+  const surfaceColumns: Array<TableColumn<PluginSurfaceRow>> = [
     { key: 'rank', title: copy.rank, render: (item) => item.rank },
     {
       key: 'plugin',
@@ -282,11 +357,8 @@ export default function App() {
       title: copy.family,
       render: (item) => <span className="plugin-pill">{familyLabel(item.family, copy)}</span>,
     },
-    {
-      key: 'verification',
-      title: copy.verification,
-      render: (item) => item.verificationTier ?? 'n/a',
-    },
+    { key: 'catalogRank', title: copy.catalogRank, render: (item) => item.catalogRank },
+    { key: 'signals', title: copy.signals, render: (item) => signalSummary(item, copy) },
   ];
 
   const compositeColumns: Array<TableColumn<PluginCompositeRow & { rank: number }>> = [
@@ -296,26 +368,9 @@ export default function App() {
       title: copy.plugin,
       render: (item) => <PluginTitle name={item.displayName} owner={item.owner} theme={item.theme} url={item.url} />,
     },
-    {
-      key: 'score',
-      title: copy.score,
-      render: (item) => item.compositeScore,
-    },
-    {
-      key: 'bestBoard',
-      title: copy.bestBoard,
-      render: (item) => joinLabels(item.bestSorts, ' / '),
-    },
-  ];
-
-  const divergenceColumns: Array<TableColumn<PluginCompositeRow>> = [
-    {
-      key: 'plugin',
-      title: copy.plugin,
-      render: (item) => <PluginTitle name={item.displayName} owner={item.owner} theme={item.theme} url={item.url} />,
-    },
-    { key: 'spread', title: copy.spread, render: (item) => item.rankSpread },
-    { key: 'bestBoard', title: copy.bestBoard, render: (item) => joinLabels(item.bestSorts, ' / ') },
+    { key: 'score', title: copy.score, render: (item) => item.compositeScore },
+    { key: 'catalogRank', title: copy.catalogRank, render: (item) => item.catalogRank },
+    { key: 'signals', title: copy.signals, render: (item) => signalSummary(item, copy) },
   ];
 
   const authorColumns: Array<TableColumn<PluginAuthorProfile>> = [
@@ -375,7 +430,8 @@ export default function App() {
               {copy.updatedAt} {format(new Date(report.generatedAt), 'yyyy-MM-dd HH:mm')}
             </span>
             <span>{report.methodology.dataDate}</span>
-            <span>{report.methodology.identicalRankingOrders ? copy.identicalRankingYes : copy.identicalRankingNo}</span>
+            <span>{copy.currentSurface}: {report.methodology.explicitSortBoardsVisible ? 'boards' : 'catalog + filters'}</span>
+            <span>{report.methodology.usedExistingSnapshot ? copy.cachedSnapshot : copy.liveSnapshot}</span>
           </div>
         </div>
 
@@ -419,35 +475,31 @@ export default function App() {
         <ul>
           <li>{report.methodology.note}</li>
           <li>
-            {language === 'zh'
-              ? `当前头部榜首分别是：downloads ${report.summary.topDownloadsPlugin ?? 'n/a'} / installs ${report.summary.topInstallsPlugin ?? 'n/a'} / stars ${report.summary.topStarsPlugin ?? 'n/a'}`
-              : `Current board leaders: downloads ${report.summary.topDownloadsPlugin ?? 'n/a'} / installs ${report.summary.topInstallsPlugin ?? 'n/a'} / stars ${report.summary.topStarsPlugin ?? 'n/a'}`}
+            {copy.surfaceSummaryPrefix} {report.methodology.visiblePublicSurfaces.map((surface) => surfaceName(surface, language)).join(' / ')}
           </li>
           <li>
-            {language === 'zh'
-              ? `当前头部主题 ${report.summary.topTheme ?? 'n/a'}，头部作者 @${report.summary.topAuthor ?? 'n/a'}。`
-              : `Current leading theme ${report.summary.topTheme ?? 'n/a'}, top author @${report.summary.topAuthor ?? 'n/a'}.`}
+            {copy.topSummaryPrefix} {report.summary.topCatalogPlugin ?? 'n/a'}。{copy.themeSummaryPrefix} {report.summary.topTheme ?? 'n/a'}；{copy.authorSummaryPrefix} @{report.summary.topAuthor ?? 'n/a'}。
           </li>
         </ul>
       </section>
 
       <section className="plugin-grid plugin-grid-4">
-        <MechanicPanel title={copy.rankingMechanics} bullets={report.mechanics.rankingMechanics} />
+        <MechanicPanel title={copy.listingMechanics} bullets={report.mechanics.listingMechanics} />
         <MechanicPanel title={copy.trustMechanics} bullets={report.mechanics.trustMechanics} />
         <MechanicPanel title={copy.breakoutMechanics} bullets={report.mechanics.breakoutMechanics} />
         <MechanicPanel title={copy.publishMoves} bullets={report.mechanics.publishMoves} />
       </section>
 
       <section className="plugin-table-grid">
-        {rankingCards.map((card) => (
-          <TableCard key={card.title} title={card.title} description={card.description} items={card.items} columns={rankingColumns} />
+        {primaryCards.map((card) => (
+          <TableCard key={card.title} title={card.title} description={card.description} items={card.items} columns={surfaceColumns} />
         ))}
         <TableCard
           title={copy.compositeBoard}
           description={
             language === 'zh'
-              ? '综合三榜排位、验证、扫描与版本成熟度后的前 10。'
-              : 'Top 10 after combining cross-board position, verification, scan status, and version maturity.'
+              ? '结合目录曝光、验证、扫描和版本成熟度后的综合优先级前 10。'
+              : 'Top 10 after combining catalog exposure, verification, scan posture, and version maturity.'
           }
           items={compositeItems}
           columns={compositeColumns}
@@ -455,16 +507,9 @@ export default function App() {
       </section>
 
       <section className="plugin-table-grid">
-        <TableCard
-          title={copy.divergenceBoard}
-          description={
-            language === 'zh'
-              ? '这些 plugin 在不同榜单里的名次差异更大，适合观察“哪种信号更偏向它”。'
-              : 'These plugins show larger rank differences across boards, which helps reveal what kind of signal favors them.'
-          }
-          items={report.rankings.divergenceHighlights.slice(0, 10)}
-          columns={divergenceColumns}
-        />
+        {filterCards.map((card) => (
+          <TableCard key={card.title} title={card.title} description={card.description} items={card.items} columns={surfaceColumns} />
+        ))}
         <TableCard
           title={copy.authorsBoard}
           description={

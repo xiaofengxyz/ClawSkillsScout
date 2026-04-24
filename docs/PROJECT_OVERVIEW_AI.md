@@ -72,7 +72,8 @@
 - 前端也读取 `aisa-api-analysis.json`，展示“接口列表 / 技能列表 / ClawHub 目录”三视图
 - 另有独立的 ClawHub 增长分析页，读取 `public/data/clawhub-growth-report.json` 输出 4 份商业分析文档
 - 另有独立的 ClawHub 下载榜爆款分析页，读取 `public/data/clawhub-download-insights.json` 输出技能/作者/skill factory/AIsa 变现分析
-- 另有独立的 ClawHub plugin 三榜分析页，读取 `public/data/clawhub-plugin-report.json` 输出插件的 downloads / installs / stars 排序、信任机制、作者工厂与 AISA 改造策略
+- 另有独立的 ClawHub skill 三榜综合页，读取 `public/data/clawhub-multi-ranking-report.json` 输出 skills 的 downloads / stars / installs 三榜、跨榜强势 skill、作者工厂与 AISA 优先级
+- 另有独立的 ClawHub plugin 情报页，读取 `public/data/clawhub-plugin-report.json` 输出插件的当前目录顺序、Code / Bundle、Verified only / Executes code、信任机制与 AISA 改造策略
 - 另有独立的 ClawHub 10k+ 系统分析页，读取 `public/data/clawhub-10k-system-report.json` 输出“可复制生产系统 + AIsa API 盈利系统”报告，并同步生成 Word 文档
 - 另有独立的跨生态情报页，读取 `public/data/market-ecosystem-report.json`，统一展示 ClawHub、Claude、Hermes、AgentSkill、AgentSkills.so 的爆款结构与 AISA 改造机会
 - `analyze:market-ecosystem` 现在会分别产出 Claude 与 Hermes 的 EN/ZH Markdown + Word 报告，便于不打开页面也能直接看选品与爆款分析
@@ -117,7 +118,8 @@
 - 已有静态站前端：[src/App.tsx](/mnt/d/workplace/skillget/src/App.tsx)
 - 已有独立增长分析页入口：`clawhub-growth.html` + `src/clawhub-growth/*`
 - 已有独立下载榜爆款分析页入口：`clawhub-download-insights.html` + `src/clawhub-download-insights/*`
-- 已有独立 plugin 三榜分析页入口：`clawhub-plugins.html` + `src/clawhub-plugins/*`
+- 已有独立 skill 三榜综合页入口：`clawhub-multi-ranking.html` + `src/clawhub-multi-ranking/*`
+- 已有独立 plugin 情报页入口：`clawhub-plugins.html` + `src/clawhub-plugins/*`
 - 已有独立 10k+ 系统分析页入口：`clawhub-10k-system.html` + `src/clawhub-10k-system/*`
 - 已有独立跨生态情报页入口：`market-intelligence.html` + `src/market-intelligence/*`
 - 已有 downloads / stars / installs 三榜综合分析脚本：[scripts/build-clawhub-multi-ranking-report.py](/mnt/d/workplace/skillget/scripts/build-clawhub-multi-ranking-report.py)
@@ -190,6 +192,7 @@
 - [src/App.tsx](/mnt/d/workplace/skillget/src/App.tsx)
 - `src/clawhub-growth/App.tsx`
 - `src/clawhub-download-insights/App.tsx`
+- `src/clawhub-multi-ranking/App.tsx`
 - `src/clawhub-plugins/App.tsx`
 - `src/clawhub-10k-system/App.tsx`
 - `src/market-intelligence/App.tsx`
@@ -208,8 +211,9 @@
 - 以技能为主汇总来源、接口与同接口分组
 - 在页面中同时展示 ClawHub 与 GitHub 归档技能
 - 以独立页面输出 ClawHub 热门技能/作者/变现机会分析
+- 以独立页面输出 ClawHub skills 的 downloads / stars / installs 三榜综合、跨榜强势 skill 和作者工厂
 - 以独立页面输出 ClawHub 下载榜爆款技能/作者/skill factory/AIsa 变现分析
-- 以独立 Markdown / Word 报告输出 ClawHub plugin 的爆款结构、作者结构与 AISA 改造机会
+- 以独立页面和 Markdown / Word 报告输出 ClawHub plugin 的当前目录顺序、过滤面、信任结构、作者结构与 AISA 改造机会
 - 以独立页面输出 ClawHub 10k+ 技能/作者的可复制生产系统与 AIsa API 盈利系统
 - 以独立页面横向比较 ClawHub、Claude Marketplaces、Hermes 的爆款结构与 AISA 改造机会
 - 以独立 Markdown / Word 报告输出 Claude、Hermes、AgentSkill、AgentSkills.so 的专项爆款分析与 AISA 选品建议
