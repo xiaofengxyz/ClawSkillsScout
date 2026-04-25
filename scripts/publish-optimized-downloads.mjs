@@ -1,5 +1,6 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { extractPackageMetadata } from './lib/skill-frontmatter.mjs';
 
 const root = process.cwd();
 const packagesRoot = path.join(root, 'packages', 'source-optimized');
@@ -8,33 +9,6 @@ const publicDownloadsRoot = path.join(root, 'public', 'downloads', 'optimized');
 const publicDataPath = path.join(root, 'public', 'data', 'optimized-packages.json');
 const verificationPath = path.join(root, 'artifacts', 'source-optimized-verification.json');
 const catalogPath = path.join(root, 'public', 'data', 'catalog.json');
-
-function parseSimpleYamlValue(raw) {
-  const trimmed = raw.trim();
-  if ((trimmed.startsWith('"') && trimmed.endsWith('"')) || (trimmed.startsWith("'") && trimmed.endsWith("'"))) {
-    return trimmed.slice(1, -1);
-  }
-  return trimmed;
-}
-
-function extractPackageMetadata(skillText) {
-  const match = skillText.match(/^---\n([\s\S]*?)\n---/);
-  if (!match) {
-    return { requiredBins: [], requiredEnv: [], primaryEnv: '' };
-  }
-
-  const frontmatter = match[1];
-  const primaryEnvMatch = frontmatter.match(/^primaryEnv:\s*(.+)$/m);
-  const requiresBlockMatch = frontmatter.match(/^requires:\n((?: {2}.+\n?)*)/m);
-  const requiresBlock = requiresBlockMatch?.[1] ?? '';
-  const requiredBins = [...requiresBlock.matchAll(/^  bins:\n((?:    - .+\n?)*)/gm)]
-    .flatMap(([, block]) => [...block.matchAll(/^    - (.+)$/gm)].map(([, value]) => parseSimpleYamlValue(value)));
-  const requiredEnv = [...requiresBlock.matchAll(/^  env:\n((?:    - .+\n?)*)/gm)]
-    .flatMap(([, block]) => [...block.matchAll(/^    - (.+)$/gm)].map(([, value]) => parseSimpleYamlValue(value)));
-  const primaryEnv = primaryEnvMatch ? parseSimpleYamlValue(primaryEnvMatch[1]) : '';
-
-  return { requiredBins, requiredEnv, primaryEnv };
-}
 
 async function main() {
   const verification = JSON.parse(await fs.readFile(verificationPath, 'utf8'));
@@ -63,6 +37,7 @@ async function main() {
       requiredBins: packageMetadata.requiredBins,
       requiredEnv: packageMetadata.requiredEnv,
       primaryEnv: packageMetadata.primaryEnv,
+      compatibility: packageMetadata.compatibility,
       packageDir: `packages/source-optimized/${owner}/${slug}`,
       downloadPath: `downloads/optimized/${zipName}`,
       verificationStatus: report.status,

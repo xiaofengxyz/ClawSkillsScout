@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-24T11:04:43.089Z",
+  "generatedAt": "2026-04-25T04:44:29.267Z",
   "sources": {
     "clawhub": [
       "https://clawhub.ai/skills?sort=downloads&dir=desc",
@@ -2315,7 +2315,7 @@
           "installCommand": "npx skills add https://github.com/vercel-labs/skills --skill find-skills",
           "discoveredAt": "$undefined",
           "lastUpdated": "$undefined",
-          "voteCount": 6,
+          "voteCount": 7,
           "commentCount": 0,
           "createdAt": "2026-03-22T20:04:52.693489+00:00",
           "owner": "vercel-labs",
@@ -2375,7 +2375,7 @@
           "installCommand": "npx skills add https://github.com/anthropics/skills --skill frontend-design",
           "discoveredAt": "$undefined",
           "lastUpdated": "$undefined",
-          "voteCount": 3,
+          "voteCount": 4,
           "commentCount": 0,
           "createdAt": "2026-03-22T20:04:52.693489+00:00",
           "owner": "anthropics",
@@ -2845,7 +2845,7 @@
           "id": "microsoft/azure-skills/azure-resource-visualizer",
           "name": "azure-resource-visualizer",
           "description": "",
-          "summary": "展示力强、传播力强，按量收费路径自然。",
+          "summary": "需要继续压缩成更窄的 JTBD 才容易变成爆款。",
           "repo": "microsoft/azure-skills",
           "repoSlug": "microsoft-azure-skills",
           "path": ".claude/skills/azure-resource-visualizer",
@@ -2859,16 +2859,16 @@
           "commentCount": 0,
           "createdAt": "2026-04-16T11:46:00.191615+00:00",
           "owner": "microsoft",
-          "category": "Media Generation",
-          "apiFamily": "Media Generation API",
-          "aisaFitScore": 89,
-          "monetizationScore": 91,
-          "factoryScore": 89,
-          "targetTitle": "Media Generation Command Center",
+          "category": "General Utility",
+          "apiFamily": "General Utility API",
+          "aisaFitScore": 60,
+          "monetizationScore": 68,
+          "factoryScore": 65,
+          "targetTitle": "Utility Command Center",
           "moves": [
-            "把模型能力改写成用户目标。",
-            "拆出图片、视频、风格、商品图等入口。",
-            "通过结果展示强化传播和收藏。"
+            "先重写标题，让它更像任务。",
+            "压缩范围，优先做一轮就见效的窄入口。",
+            "用例子验证搜索词，再反推定位。"
           ]
         },
         {
@@ -3519,7 +3519,7 @@
           "installCommand": "npx skills add https://github.com/vercel-labs/skills --skill find-skills",
           "discoveredAt": "$undefined",
           "lastUpdated": "$undefined",
-          "voteCount": 6,
+          "voteCount": 7,
           "commentCount": 0,
           "createdAt": "2026-03-22T20:04:52.693489+00:00",
           "owner": "vercel-labs",
@@ -3534,7 +3534,7 @@
             "压缩范围，优先做一轮就见效的窄入口。",
             "用例子验证搜索词，再反推定位。"
           ],
-          "compositeScore": 4.991
+          "compositeScore": 4.994
         },
         {
           "id": "anthropics/skills/frontend-design",
@@ -3550,7 +3550,7 @@
           "installCommand": "npx skills add https://github.com/anthropics/skills --skill frontend-design",
           "discoveredAt": "$undefined",
           "lastUpdated": "$undefined",
-          "voteCount": 3,
+          "voteCount": 4,
           "commentCount": 0,
           "createdAt": "2026-03-22T20:04:52.693489+00:00",
           "owner": "anthropics",
@@ -3565,7 +3565,7 @@
             "压缩范围，优先做一轮就见效的窄入口。",
             "用例子验证搜索词，再反推定位。"
           ],
-          "compositeScore": 4.919
+          "compositeScore": 4.922
         },
         {
           "id": "vercel-labs/agent-skills/vercel-react-best-practices",
@@ -3674,7 +3674,7 @@
           "installCommand": "npx skills add https://github.com/obra/superpowers --skill brainstorming",
           "discoveredAt": "$undefined",
           "lastUpdated": "$undefined",
-          "voteCount": 0,
+          "voteCount": 1,
           "commentCount": 0,
           "createdAt": "2026-03-22T20:04:52.693489+00:00",
           "owner": "obra",
@@ -3689,7 +3689,7 @@
             "同时配一组更实用的支撑技能承接流量。",
             "把“更聪明”改成“哪里更强”。"
           ],
-          "compositeScore": 4.673
+          "compositeScore": 4.677
         },
         {
           "id": "vercel-labs/agent-browser/agent-browser",
@@ -4141,7 +4141,7 @@
           "installCommand": "npx skills add https://github.com/vercel-labs/skills --skill find-skills",
           "discoveredAt": "$undefined",
           "lastUpdated": "$undefined",
-          "voteCount": 6,
+          "voteCount": 7,
           "commentCount": 0,
           "createdAt": "2026-03-22T20:04:52.693489+00:00",
           "owner": "vercel-labs",
@@ -4201,7 +4201,7 @@
           "installCommand": "npx skills add https://github.com/anthropics/skills --skill frontend-design",
           "discoveredAt": "$undefined",
           "lastUpdated": "$undefined",
-          "voteCount": 3,
+          "voteCount": 4,
           "commentCount": 0,
           "createdAt": "2026-03-22T20:04:52.693489+00:00",
           "owner": "anthropics",
@@ -4381,7 +4381,7 @@
           "installCommand": "npx skills add https://github.com/obra/superpowers --skill brainstorming",
           "discoveredAt": "$undefined",
           "lastUpdated": "$undefined",
-          "voteCount": 0,
+          "voteCount": 1,
           "commentCount": 0,
           "createdAt": "2026-03-22T20:04:52.693489+00:00",
           "owner": "obra",
@@ -4431,7 +4431,7 @@
           "id": "inferen-sh/skills/ai-image-generation",
           "name": "ai-image-generation",
           "description": "",
-          "summary": "展示力强、传播力强，按量收费路径自然。",
+          "summary": "需要继续压缩成更窄的 JTBD 才容易变成爆款。",
           "repo": "inferen-sh/skills",
           "repoSlug": "inferen-sh-skills",
           "path": "ai-image-generation",
@@ -4445,16 +4445,16 @@
           "commentCount": 0,
           "createdAt": "2026-03-22T20:04:52.693489+00:00",
           "owner": "inferen-sh",
-          "category": "Media Generation",
-          "apiFamily": "Media Generation API",
-          "aisaFitScore": 89,
-          "monetizationScore": 91,
-          "factoryScore": 89,
+          "category": "General Utility",
+          "apiFamily": "General Utility API",
+          "aisaFitScore": 60,
+          "monetizationScore": 68,
+          "factoryScore": 65,
           "targetTitle": "Image & Video Command Center",
           "moves": [
-            "把模型能力改写成用户目标。",
-            "拆出图片、视频、风格、商品图等入口。",
-            "通过结果展示强化传播和收藏。"
+            "先重写标题，让它更像任务。",
+            "压缩范围，优先做一轮就见效的窄入口。",
+            "用例子验证搜索词，再反推定位。"
           ]
         },
         {
@@ -4681,7 +4681,7 @@
           "installCommand": "npx skills add https://github.com/vercel-labs/next-skills --skill next-best-practices",
           "discoveredAt": "$undefined",
           "lastUpdated": "$undefined",
-          "voteCount": 0,
+          "voteCount": 1,
           "commentCount": 0,
           "createdAt": "2026-03-22T20:04:52.693489+00:00",
           "owner": "vercel-labs",
@@ -4801,7 +4801,7 @@
           "installCommand": "claude skill add juliusbrussee/caveman:caveman",
           "discoveredAt": "2026-04-16T11:44:38.875+00:00",
           "lastUpdated": "$undefined",
-          "voteCount": 2,
+          "voteCount": 1,
           "commentCount": 0,
           "createdAt": "2026-04-16T11:46:00.191615+00:00",
           "owner": "juliusbrussee",
@@ -5519,7 +5519,7 @@
           "id": "sickn33/antigravity-awesome-skills/docker-expert",
           "name": "docker-expert",
           "description": "",
-          "summary": "需要继续压缩成更窄的 JTBD 才容易变成爆款。",
+          "summary": "开发者工作流密度高、安装后留存强，适合做 command center 和垂直开发矩阵。",
           "repo": "sickn33/antigravity-awesome-skills",
           "repoSlug": "sickn33-antigravity-awesome-skills",
           "path": "docker-expert",
@@ -5533,16 +5533,16 @@
           "commentCount": 0,
           "createdAt": "2026-03-22T20:04:52.693489+00:00",
           "owner": "sickn33",
-          "category": "General Utility",
-          "apiFamily": "General Utility API",
-          "aisaFitScore": 60,
-          "monetizationScore": 68,
-          "factoryScore": 65,
-          "targetTitle": "Utility Command Center",
+          "category": "Developer",
+          "apiFamily": "Developer Platform API",
+          "aisaFitScore": 95,
+          "monetizationScore": 95,
+          "factoryScore": 95,
+          "targetTitle": "Developer Command Center",
           "moves": [
-            "先重写标题，让它更像任务。",
-            "压缩范围，优先做一轮就见效的窄入口。",
-            "用例子验证搜索词，再反推定位。"
+            "标题优先用平台词或开发者任务词。",
+            "旗舰包做 command center，再拆 repo research / PR review / issue triage 变体。",
+            "首屏直接放真实仓库与真实输出样板。"
           ],
           "compositeScore": 3.915
         },
@@ -5589,7 +5589,7 @@
             "General Utility",
             "Developer",
             "Browser & Automation",
-            "Media Generation"
+            "Agentic Systems"
           ],
           "topSkills": [
             {
@@ -5754,7 +5754,7 @@
             "General Utility",
             "Video & Creator Research",
             "Developer",
-            "Media Generation"
+            "Social & Growth"
           ],
           "topSkills": [
             {
@@ -5762,7 +5762,7 @@
               "repo": "inferen-sh/skills",
               "stars": 173,
               "installs": 99700,
-              "category": "Media Generation",
+              "category": "General Utility",
               "targetTitle": "Image & Video Command Center"
             },
             {
@@ -5794,8 +5794,8 @@
               "repo": "inferen-sh/skills",
               "stars": 173,
               "installs": 96600,
-              "category": "General Utility",
-              "targetTitle": "Utility Command Center"
+              "category": "Media Generation",
+              "targetTitle": "Media Generation Command Center"
             }
           ]
         },
@@ -6300,9 +6300,9 @@
           "totalInstalls": 285051,
           "primaryCategories": [
             "General Utility",
-            "Media Generation",
             "Search & Research",
-            "Developer"
+            "Developer",
+            "Media Generation"
           ],
           "topSkills": [
             {
@@ -6318,7 +6318,7 @@
               "repo": "jimliu/baoyu-skills",
               "stars": 14600,
               "installs": 17700,
-              "category": "Media Generation",
+              "category": "General Utility",
               "targetTitle": "Image & Video Command Center"
             },
             {
@@ -6334,7 +6334,7 @@
               "repo": "jimliu/baoyu-skills",
               "stars": 14600,
               "installs": 17100,
-              "category": "Media Generation",
+              "category": "General Utility",
               "targetTitle": "Image & Video Command Center"
             },
             {
@@ -6342,7 +6342,7 @@
               "repo": "jimliu/baoyu-skills",
               "stars": 14600,
               "installs": 16900,
-              "category": "Media Generation",
+              "category": "General Utility",
               "targetTitle": "Image & Video Command Center"
             }
           ]
@@ -6839,6 +6839,37 @@
           "aisaOpportunityScore": 96.1
         },
         {
+          "id": "firecrawl/cli/firecrawl-browser",
+          "name": "firecrawl-browser",
+          "description": "",
+          "summary": "高频信息入口最适合 API 化，也最容易拆出新闻、学术、情报等多变体。",
+          "repo": "firecrawl/cli",
+          "repoSlug": "firecrawl-cli",
+          "path": "firecrawl-browser",
+          "license": "$undefined",
+          "stars": 299,
+          "installs": 11200,
+          "installCommand": "npx skills add https://github.com/firecrawl/cli --skill firecrawl-browser",
+          "discoveredAt": "$undefined",
+          "lastUpdated": "$undefined",
+          "voteCount": 0,
+          "commentCount": 0,
+          "createdAt": "2026-03-22T20:04:52.836528+00:00",
+          "owner": "firecrawl",
+          "category": "Search & Research",
+          "apiFamily": "Search API",
+          "aisaFitScore": 96,
+          "monetizationScore": 94,
+          "factoryScore": 96,
+          "targetTitle": "Browser Automation Command Center",
+          "moves": [
+            "先切一个最窄检索任务入口。",
+            "同步准备通用搜索、新闻搜索、学术搜索多变体。",
+            "结果直接给结论和来源，而不是原始链接堆叠。"
+          ],
+          "aisaOpportunityScore": 96.1
+        },
+        {
           "id": "supercent-io/skills-template/codebase-search",
           "name": "codebase-search",
           "description": "",
@@ -6887,6 +6918,37 @@
           "commentCount": 0,
           "createdAt": "2026-03-22T20:04:52.836528+00:00",
           "owner": "googleworkspace",
+          "category": "Search & Research",
+          "apiFamily": "Search API",
+          "aisaFitScore": 96,
+          "monetizationScore": 94,
+          "factoryScore": 96,
+          "targetTitle": "Multi-Source Search Command Center",
+          "moves": [
+            "先切一个最窄检索任务入口。",
+            "同步准备通用搜索、新闻搜索、学术搜索多变体。",
+            "结果直接给结论和来源，而不是原始链接堆叠。"
+          ],
+          "aisaOpportunityScore": 96.1
+        },
+        {
+          "id": "tavily-ai/skills/tavily-best-practices",
+          "name": "tavily-best-practices",
+          "description": "",
+          "summary": "高频信息入口最适合 API 化，也最容易拆出新闻、学术、情报等多变体。",
+          "repo": "tavily-ai/skills",
+          "repoSlug": "tavily-ai-skills",
+          "path": "tavily-best-practices",
+          "license": "$undefined",
+          "stars": 213,
+          "installs": 7200,
+          "installCommand": "npx skills add https://github.com/tavily-ai/skills --skill tavily-best-practices",
+          "discoveredAt": "$undefined",
+          "lastUpdated": "$undefined",
+          "voteCount": 0,
+          "commentCount": 0,
+          "createdAt": "2026-03-22T20:04:52.836528+00:00",
+          "owner": "tavily-ai",
           "category": "Search & Research",
           "apiFamily": "Search API",
           "aisaFitScore": 96,
@@ -7087,91 +7149,29 @@
           "aisaOpportunityScore": 96.1
         },
         {
-          "id": "cclank/news-aggregator-skill/news-aggregator-skill",
-          "name": "news-aggregator-skill",
+          "id": "jimliu/baoyu-skills/baoyu-youtube-transcript",
+          "name": "baoyu-youtube-transcript",
           "description": "",
           "summary": "高频信息入口最适合 API 化，也最容易拆出新闻、学术、情报等多变体。",
-          "repo": "cclank/news-aggregator-skill",
-          "repoSlug": "cclank-news-aggregator-skill",
-          "path": "news-aggregator-skill",
+          "repo": "jimliu/baoyu-skills",
+          "repoSlug": "jimliu-baoyu-skills",
+          "path": ".claude/skills/baoyu-youtube-transcript",
           "license": "$undefined",
-          "stars": 945,
-          "installs": 4600,
-          "installCommand": "npx skills add https://github.com/cclank/news-aggregator-skill --skill news-aggregator-skill",
-          "discoveredAt": "$undefined",
+          "stars": 14600,
+          "installs": 5000,
+          "installCommand": "claude skill add jimliu/baoyu-skills:baoyu-youtube-transcript",
+          "discoveredAt": "2026-04-16T11:44:38.875+00:00",
           "lastUpdated": "$undefined",
           "voteCount": 0,
           "commentCount": 0,
-          "createdAt": "2026-03-22T20:04:52.836528+00:00",
-          "owner": "cclank",
+          "createdAt": "2026-04-16T11:46:00.191615+00:00",
+          "owner": "jimliu",
           "category": "Search & Research",
           "apiFamily": "Search API",
           "aisaFitScore": 96,
           "monetizationScore": 94,
           "factoryScore": 96,
-          "targetTitle": "Multi-Source Search Command Center",
-          "moves": [
-            "先切一个最窄检索任务入口。",
-            "同步准备通用搜索、新闻搜索、学术搜索多变体。",
-            "结果直接给结论和来源，而不是原始链接堆叠。"
-          ],
-          "aisaOpportunityScore": 96.1
-        },
-        {
-          "id": "wshobson/agents/similarity-search-patterns",
-          "name": "similarity-search-patterns",
-          "description": "",
-          "summary": "高频信息入口最适合 API 化，也最容易拆出新闻、学术、情报等多变体。",
-          "repo": "wshobson/agents",
-          "repoSlug": "wshobson-agents",
-          "path": "similarity-search-patterns",
-          "license": "$undefined",
-          "stars": 33700,
-          "installs": 4500,
-          "installCommand": "npx skills add https://github.com/wshobson/agents --skill similarity-search-patterns",
-          "discoveredAt": "$undefined",
-          "lastUpdated": "$undefined",
-          "voteCount": 0,
-          "commentCount": 0,
-          "createdAt": "2026-03-22T20:04:52.836528+00:00",
-          "owner": "wshobson",
-          "category": "Search & Research",
-          "apiFamily": "Search API",
-          "aisaFitScore": 96,
-          "monetizationScore": 94,
-          "factoryScore": 96,
-          "targetTitle": "Multi-Source Search Command Center",
-          "moves": [
-            "先切一个最窄检索任务入口。",
-            "同步准备通用搜索、新闻搜索、学术搜索多变体。",
-            "结果直接给结论和来源，而不是原始链接堆叠。"
-          ],
-          "aisaOpportunityScore": 96.1
-        },
-        {
-          "id": "wshobson/agents/hybrid-search-implementation",
-          "name": "hybrid-search-implementation",
-          "description": "",
-          "summary": "高频信息入口最适合 API 化，也最容易拆出新闻、学术、情报等多变体。",
-          "repo": "wshobson/agents",
-          "repoSlug": "wshobson-agents",
-          "path": "hybrid-search-implementation",
-          "license": "$undefined",
-          "stars": 33700,
-          "installs": 4500,
-          "installCommand": "npx skills add https://github.com/wshobson/agents --skill hybrid-search-implementation",
-          "discoveredAt": "$undefined",
-          "lastUpdated": "$undefined",
-          "voteCount": 0,
-          "commentCount": 0,
-          "createdAt": "2026-03-22T20:04:52.836528+00:00",
-          "owner": "wshobson",
-          "category": "Search & Research",
-          "apiFamily": "Search API",
-          "aisaFitScore": 96,
-          "monetizationScore": 94,
-          "factoryScore": 96,
-          "targetTitle": "Multi-Source Search Command Center",
+          "targetTitle": "YouTube SERP Scout",
           "moves": [
             "先切一个最窄检索任务入口。",
             "同步准备通用搜索、新闻搜索、学术搜索多变体。",
@@ -7230,7 +7230,7 @@
           "source": "auto",
           "stars": 157647,
           "starsFetchedAt": "2026-04-06T14:06:50.927+00:00",
-          "voteCount": 0,
+          "voteCount": 1,
           "commentCount": 0,
           "createdAt": "2026-04-06T14:11:44.933807+00:00",
           "owner": "f",
@@ -7395,17 +7395,17 @@
           "commentCount": 0,
           "createdAt": "2026-03-22T20:04:51.733364+00:00",
           "owner": "anthropics",
-          "category": "Agentic Systems",
-          "apiFamily": "Agent Orchestration Layer",
-          "aisaFitScore": 72,
-          "monetizationScore": 78,
-          "factoryScore": 82,
-          "targetTitle": "Agent Upgrade Command Center",
-          "summary": "更适合作为旗舰叙事和系统层入口，而不是单点 API 包。",
+          "category": "Developer",
+          "apiFamily": "Developer Platform API",
+          "aisaFitScore": 95,
+          "monetizationScore": 95,
+          "factoryScore": 95,
+          "targetTitle": "Developer Command Center",
+          "summary": "开发者工作流密度高、安装后留存强，适合做 command center 和垂直开发矩阵。",
           "moves": [
-            "先把抽象愿景改成具体收益。",
-            "同时配一组更实用的支撑技能承接流量。",
-            "把“更聪明”改成“哪里更强”。"
+            "标题优先用平台词或开发者任务词。",
+            "旗舰包做 command center，再拆 repo research / PR review / issue triage 变体。",
+            "首屏直接放真实仓库与真实输出样板。"
           ],
           "compositeScore": 2.861
         },
@@ -7552,17 +7552,17 @@
           "commentCount": 0,
           "createdAt": "2026-03-22T20:04:51.733364+00:00",
           "owner": "anthropics",
-          "category": "Agentic Systems",
-          "apiFamily": "Agent Orchestration Layer",
-          "aisaFitScore": 72,
-          "monetizationScore": 78,
-          "factoryScore": 82,
-          "targetTitle": "Agent Upgrade Command Center",
-          "summary": "更适合作为旗舰叙事和系统层入口，而不是单点 API 包。",
+          "category": "Developer",
+          "apiFamily": "Developer Platform API",
+          "aisaFitScore": 95,
+          "monetizationScore": 95,
+          "factoryScore": 95,
+          "targetTitle": "Developer Command Center",
+          "summary": "开发者工作流密度高、安装后留存强，适合做 command center 和垂直开发矩阵。",
           "moves": [
-            "先把抽象愿景改成具体收益。",
-            "同时配一组更实用的支撑技能承接流量。",
-            "把“更聪明”改成“哪里更强”。"
+            "标题优先用平台词或开发者任务词。",
+            "旗舰包做 command center，再拆 repo research / PR review / issue triage 变体。",
+            "首屏直接放真实仓库与真实输出样板。"
           ],
           "compositeScore": 2.945
         },
@@ -8944,7 +8944,7 @@
           "stars": 33050,
           "starsFetchedAt": "2026-04-06T14:06:50.922+00:00",
           "voteCount": 0,
-          "commentCount": 0,
+          "commentCount": 1,
           "createdAt": "2026-03-22T20:04:51.733364+00:00",
           "owner": "wshobson",
           "category": "Agentic Systems",
@@ -20530,7 +20530,7 @@
           "stars": 33050,
           "starsFetchedAt": "2026-04-06T14:06:50.922+00:00",
           "voteCount": 0,
-          "commentCount": 0,
+          "commentCount": 1,
           "createdAt": "2026-03-22T20:04:51.733364+00:00",
           "owner": "wshobson",
           "category": "Agentic Systems",
@@ -25124,17 +25124,17 @@
           "commentCount": 0,
           "createdAt": "2026-03-22T20:04:51.733364+00:00",
           "owner": "anthropics",
-          "category": "Agentic Systems",
-          "apiFamily": "Agent Orchestration Layer",
-          "aisaFitScore": 72,
-          "monetizationScore": 78,
-          "factoryScore": 82,
-          "targetTitle": "Agent Upgrade Command Center",
-          "summary": "更适合作为旗舰叙事和系统层入口，而不是单点 API 包。",
+          "category": "Developer",
+          "apiFamily": "Developer Platform API",
+          "aisaFitScore": 95,
+          "monetizationScore": 95,
+          "factoryScore": 95,
+          "targetTitle": "Developer Command Center",
+          "summary": "开发者工作流密度高、安装后留存强，适合做 command center 和垂直开发矩阵。",
           "moves": [
-            "先把抽象愿景改成具体收益。",
-            "同时配一组更实用的支撑技能承接流量。",
-            "把“更聪明”改成“哪里更强”。"
+            "标题优先用平台词或开发者任务词。",
+            "旗舰包做 command center，再拆 repo research / PR review / issue triage 变体。",
+            "首屏直接放真实仓库与真实输出样板。"
           ],
           "compositeScore": 2.945
         },
@@ -25558,7 +25558,7 @@
           "stars": 33050,
           "starsFetchedAt": "2026-04-06T14:06:50.922+00:00",
           "voteCount": 0,
-          "commentCount": 0,
+          "commentCount": 1,
           "createdAt": "2026-03-22T20:04:51.733364+00:00",
           "owner": "wshobson",
           "category": "Agentic Systems",
@@ -25605,7 +25605,7 @@
           "source": "auto",
           "stars": 157647,
           "starsFetchedAt": "2026-04-06T14:06:50.927+00:00",
-          "voteCount": 0,
+          "voteCount": 1,
           "commentCount": 0,
           "createdAt": "2026-04-06T14:11:44.933807+00:00",
           "owner": "f",
@@ -25770,17 +25770,17 @@
           "commentCount": 0,
           "createdAt": "2026-03-22T20:04:51.733364+00:00",
           "owner": "anthropics",
-          "category": "Agentic Systems",
-          "apiFamily": "Agent Orchestration Layer",
-          "aisaFitScore": 72,
-          "monetizationScore": 78,
-          "factoryScore": 82,
-          "targetTitle": "Agent Upgrade Command Center",
-          "summary": "更适合作为旗舰叙事和系统层入口，而不是单点 API 包。",
+          "category": "Developer",
+          "apiFamily": "Developer Platform API",
+          "aisaFitScore": 95,
+          "monetizationScore": 95,
+          "factoryScore": 95,
+          "targetTitle": "Developer Command Center",
+          "summary": "开发者工作流密度高、安装后留存强，适合做 command center 和垂直开发矩阵。",
           "moves": [
-            "先把抽象愿景改成具体收益。",
-            "同时配一组更实用的支撑技能承接流量。",
-            "把“更聪明”改成“哪里更强”。"
+            "标题优先用平台词或开发者任务词。",
+            "旗舰包做 command center，再拆 repo research / PR review / issue triage 变体。",
+            "首屏直接放真实仓库与真实输出样板。"
           ],
           "compositeScore": 2.861
         },
@@ -27369,7 +27369,7 @@
           "source": "auto",
           "stars": 157647,
           "starsFetchedAt": "2026-04-06T14:06:50.927+00:00",
-          "voteCount": 0,
+          "voteCount": 1,
           "commentCount": 0,
           "createdAt": "2026-04-06T14:11:44.933807+00:00",
           "owner": "f",
@@ -27534,17 +27534,17 @@
           "commentCount": 0,
           "createdAt": "2026-03-22T20:04:51.733364+00:00",
           "owner": "anthropics",
-          "category": "Agentic Systems",
-          "apiFamily": "Agent Orchestration Layer",
-          "aisaFitScore": 72,
-          "monetizationScore": 78,
-          "factoryScore": 82,
-          "targetTitle": "Agent Upgrade Command Center",
-          "summary": "更适合作为旗舰叙事和系统层入口，而不是单点 API 包。",
+          "category": "Developer",
+          "apiFamily": "Developer Platform API",
+          "aisaFitScore": 95,
+          "monetizationScore": 95,
+          "factoryScore": 95,
+          "targetTitle": "Developer Command Center",
+          "summary": "开发者工作流密度高、安装后留存强，适合做 command center 和垂直开发矩阵。",
           "moves": [
-            "先把抽象愿景改成具体收益。",
-            "同时配一组更实用的支撑技能承接流量。",
-            "把“更聪明”改成“哪里更强”。"
+            "标题优先用平台词或开发者任务词。",
+            "旗舰包做 command center，再拆 repo research / PR review / issue triage 变体。",
+            "首屏直接放真实仓库与真实输出样板。"
           ],
           "compositeScore": 2.861
         },
@@ -27691,17 +27691,17 @@
           "commentCount": 0,
           "createdAt": "2026-03-22T20:04:51.733364+00:00",
           "owner": "anthropics",
-          "category": "Agentic Systems",
-          "apiFamily": "Agent Orchestration Layer",
-          "aisaFitScore": 72,
-          "monetizationScore": 78,
-          "factoryScore": 82,
-          "targetTitle": "Agent Upgrade Command Center",
-          "summary": "更适合作为旗舰叙事和系统层入口，而不是单点 API 包。",
+          "category": "Developer",
+          "apiFamily": "Developer Platform API",
+          "aisaFitScore": 95,
+          "monetizationScore": 95,
+          "factoryScore": 95,
+          "targetTitle": "Developer Command Center",
+          "summary": "开发者工作流密度高、安装后留存强，适合做 command center 和垂直开发矩阵。",
           "moves": [
-            "先把抽象愿景改成具体收益。",
-            "同时配一组更实用的支撑技能承接流量。",
-            "把“更聪明”改成“哪里更强”。"
+            "标题优先用平台词或开发者任务词。",
+            "旗舰包做 command center，再拆 repo research / PR review / issue triage 变体。",
+            "首屏直接放真实仓库与真实输出样板。"
           ],
           "compositeScore": 2.945
         },
@@ -29083,7 +29083,7 @@
           "stars": 33050,
           "starsFetchedAt": "2026-04-06T14:06:50.922+00:00",
           "voteCount": 0,
-          "commentCount": 0,
+          "commentCount": 1,
           "createdAt": "2026-03-22T20:04:51.733364+00:00",
           "owner": "wshobson",
           "category": "Agentic Systems",
@@ -29665,17 +29665,17 @@
           "commentCount": 0,
           "createdAt": "2026-03-22T20:04:51.733364+00:00",
           "owner": "K-Dense-AI",
-          "category": "Agentic Systems",
-          "apiFamily": "Agent Orchestration Layer",
-          "aisaFitScore": 72,
-          "monetizationScore": 78,
-          "factoryScore": 82,
-          "targetTitle": "Agent Upgrade Command Center",
-          "summary": "更适合作为旗舰叙事和系统层入口，而不是单点 API 包。",
+          "category": "Search & Research",
+          "apiFamily": "Search API",
+          "aisaFitScore": 96,
+          "monetizationScore": 94,
+          "factoryScore": 96,
+          "targetTitle": "Research Command Center",
+          "summary": "高频信息入口最适合 API 化，也最容易拆出新闻、学术、情报等多变体。",
           "moves": [
-            "先把抽象愿景改成具体收益。",
-            "同时配一组更实用的支撑技能承接流量。",
-            "把“更聪明”改成“哪里更强”。"
+            "先切一个最窄检索任务入口。",
+            "同步准备通用搜索、新闻搜索、学术搜索多变体。",
+            "结果直接给结论和来源，而不是原始链接堆叠。"
           ],
           "compositeScore": 2.473
         },
@@ -31476,17 +31476,17 @@
           "commentCount": 0,
           "createdAt": "2026-04-06T14:11:44.933807+00:00",
           "owner": "ykdojo",
-          "category": "General Utility",
-          "apiFamily": "General Utility API",
-          "aisaFitScore": 60,
-          "monetizationScore": 68,
-          "factoryScore": 65,
-          "targetTitle": "Utility Command Center",
-          "summary": "需要继续压缩成更窄的 JTBD 才容易变成爆款。",
+          "category": "Developer",
+          "apiFamily": "Developer Platform API",
+          "aisaFitScore": 95,
+          "monetizationScore": 95,
+          "factoryScore": 95,
+          "targetTitle": "Developer Command Center",
+          "summary": "开发者工作流密度高、安装后留存强，适合做 command center 和垂直开发矩阵。",
           "moves": [
-            "先重写标题，让它更像任务。",
-            "压缩范围，优先做一轮就见效的窄入口。",
-            "用例子验证搜索词，再反推定位。"
+            "标题优先用平台词或开发者任务词。",
+            "旗舰包做 command center，再拆 repo research / PR review / issue triage 变体。",
+            "首屏直接放真实仓库与真实输出样板。"
           ],
           "compositeScore": 2.3
         },
@@ -32334,17 +32334,17 @@
           "commentCount": 0,
           "createdAt": "2026-04-06T14:11:44.933807+00:00",
           "owner": "max-sixty",
-          "category": "Agentic Systems",
-          "apiFamily": "Agent Orchestration Layer",
-          "aisaFitScore": 72,
-          "monetizationScore": 78,
-          "factoryScore": 82,
-          "targetTitle": "Agent Upgrade Command Center",
-          "summary": "更适合作为旗舰叙事和系统层入口，而不是单点 API 包。",
+          "category": "Developer",
+          "apiFamily": "Developer Platform API",
+          "aisaFitScore": 95,
+          "monetizationScore": 95,
+          "factoryScore": 95,
+          "targetTitle": "Developer Command Center",
+          "summary": "开发者工作流密度高、安装后留存强，适合做 command center 和垂直开发矩阵。",
           "moves": [
-            "先把抽象愿景改成具体收益。",
-            "同时配一组更实用的支撑技能承接流量。",
-            "把“更聪明”改成“哪里更强”。"
+            "标题优先用平台词或开发者任务词。",
+            "旗舰包做 command center，再拆 repo research / PR review / issue triage 变体。",
+            "首屏直接放真实仓库与真实输出样板。"
           ],
           "compositeScore": 2.196
         },
@@ -32391,17 +32391,17 @@
           "commentCount": 0,
           "createdAt": "2026-03-22T20:04:51.733364+00:00",
           "owner": "exa-labs",
-          "category": "Browser & Automation",
-          "apiFamily": "Browser Automation API",
-          "aisaFitScore": 91,
-          "monetizationScore": 95,
-          "factoryScore": 92,
+          "category": "Search & Research",
+          "apiFamily": "Search API",
+          "aisaFitScore": 96,
+          "monetizationScore": 94,
+          "factoryScore": 96,
           "targetTitle": "Browser Automation Command Center",
-          "summary": "自动化结果价值高，适合更高客单价与企业套餐。",
+          "summary": "高频信息入口最适合 API 化，也最容易拆出新闻、学术、情报等多变体。",
           "moves": [
-            "先定义最清晰的自动化任务，不要笼统叫 automation。",
-            "用 command center + 单任务包组合发布。",
-            "准备企业场景承接更高客单价。"
+            "先切一个最窄检索任务入口。",
+            "同步准备通用搜索、新闻搜索、学术搜索多变体。",
+            "结果直接给结论和来源，而不是原始链接堆叠。"
           ],
           "compositeScore": 2.194
         },
@@ -32535,17 +32535,17 @@
           "commentCount": 0,
           "createdAt": "2026-04-06T14:11:44.933807+00:00",
           "owner": "mixedbread-ai",
-          "category": "Media Generation",
-          "apiFamily": "Media Generation API",
-          "aisaFitScore": 89,
-          "monetizationScore": 91,
-          "factoryScore": 89,
-          "targetTitle": "Media Generation Command Center",
-          "summary": "展示力强、传播力强，按量收费路径自然。",
+          "category": "Office Documents",
+          "apiFamily": "Document Office API",
+          "aisaFitScore": 92,
+          "monetizationScore": 92,
+          "factoryScore": 90,
+          "targetTitle": "Document Office Command Center",
+          "summary": "文档类需求明确，最适合按 Word / Excel / PDF / PPT 做多 SKU。",
           "moves": [
-            "把模型能力改写成用户目标。",
-            "拆出图片、视频、风格、商品图等入口。",
-            "通过结果展示强化传播和收藏。"
+            "先做 Word / Excel / PPT / PDF 的独立入口。",
+            "再做 Office 全家桶。",
+            "强调结构化输出和批量处理。"
           ],
           "compositeScore": 2.185
         },
@@ -32654,17 +32654,17 @@
           "commentCount": 0,
           "createdAt": "2026-04-06T14:11:44.933807+00:00",
           "owner": "mckinsey",
-          "category": "Media Generation",
-          "apiFamily": "Media Generation API",
-          "aisaFitScore": 89,
-          "monetizationScore": 91,
-          "factoryScore": 89,
-          "targetTitle": "Media Generation Command Center",
-          "summary": "展示力强、传播力强，按量收费路径自然。",
+          "category": "General Utility",
+          "apiFamily": "General Utility API",
+          "aisaFitScore": 60,
+          "monetizationScore": 68,
+          "factoryScore": 65,
+          "targetTitle": "Utility Command Center",
+          "summary": "需要继续压缩成更窄的 JTBD 才容易变成爆款。",
           "moves": [
-            "把模型能力改写成用户目标。",
-            "拆出图片、视频、风格、商品图等入口。",
-            "通过结果展示强化传播和收藏。"
+            "先重写标题，让它更像任务。",
+            "压缩范围，优先做一轮就见效的窄入口。",
+            "用例子验证搜索词，再反推定位。"
           ],
           "compositeScore": 2.168
         },
@@ -33925,17 +33925,17 @@
           "commentCount": 0,
           "createdAt": "2026-04-06T14:11:44.933807+00:00",
           "owner": "supabase",
-          "category": "Agentic Systems",
-          "apiFamily": "Agent Orchestration Layer",
-          "aisaFitScore": 72,
-          "monetizationScore": 78,
-          "factoryScore": 82,
-          "targetTitle": "Agent Upgrade Command Center",
-          "summary": "更适合作为旗舰叙事和系统层入口，而不是单点 API 包。",
+          "category": "Developer",
+          "apiFamily": "Developer Platform API",
+          "aisaFitScore": 95,
+          "monetizationScore": 95,
+          "factoryScore": 95,
+          "targetTitle": "Developer Command Center",
+          "summary": "开发者工作流密度高、安装后留存强，适合做 command center 和垂直开发矩阵。",
           "moves": [
-            "先把抽象愿景改成具体收益。",
-            "同时配一组更实用的支撑技能承接流量。",
-            "把“更聪明”改成“哪里更强”。"
+            "标题优先用平台词或开发者任务词。",
+            "旗舰包做 command center，再拆 repo research / PR review / issue triage 变体。",
+            "首屏直接放真实仓库与真实输出样板。"
           ],
           "compositeScore": 2.034
         },
@@ -34314,17 +34314,17 @@
           "commentCount": 0,
           "createdAt": "2026-04-06T14:11:44.933807+00:00",
           "owner": "appleboy",
-          "category": "Social & Growth",
-          "apiFamily": "Social API",
-          "aisaFitScore": 90,
-          "monetizationScore": 88,
-          "factoryScore": 92,
-          "targetTitle": "Social Growth Command Center",
-          "summary": "适合按研究、发布、互动、监控拆出不同深度的增长矩阵。",
+          "category": "Developer",
+          "apiFamily": "Developer Platform API",
+          "aisaFitScore": 95,
+          "monetizationScore": 95,
+          "factoryScore": 95,
+          "targetTitle": "Developer Command Center",
+          "summary": "开发者工作流密度高、安装后留存强，适合做 command center 和垂直开发矩阵。",
           "moves": [
-            "把读、写、互动、监控拆成不同层级 skill。",
-            "旗舰包负责研究+发布，变体包负责 engage 或监控。",
-            "示例 prompt 覆盖选题、竞品、发帖链路。"
+            "标题优先用平台词或开发者任务词。",
+            "旗舰包做 command center，再拆 repo research / PR review / issue triage 变体。",
+            "首屏直接放真实仓库与真实输出样板。"
           ],
           "compositeScore": 1.995
         },
@@ -35789,17 +35789,17 @@
           "commentCount": 0,
           "createdAt": "2026-04-06T14:11:44.933807+00:00",
           "owner": "Ryandonofrio3",
-          "category": "Agentic Systems",
-          "apiFamily": "Agent Orchestration Layer",
-          "aisaFitScore": 72,
-          "monetizationScore": 78,
-          "factoryScore": 82,
-          "targetTitle": "Agent Upgrade Command Center",
-          "summary": "更适合作为旗舰叙事和系统层入口，而不是单点 API 包。",
+          "category": "Search & Research",
+          "apiFamily": "Search API",
+          "aisaFitScore": 96,
+          "monetizationScore": 94,
+          "factoryScore": 96,
+          "targetTitle": "Research Command Center",
+          "summary": "高频信息入口最适合 API 化，也最容易拆出新闻、学术、情报等多变体。",
           "moves": [
-            "先把抽象愿景改成具体收益。",
-            "同时配一组更实用的支撑技能承接流量。",
-            "把“更聪明”改成“哪里更强”。"
+            "先切一个最窄检索任务入口。",
+            "同步准备通用搜索、新闻搜索、学术搜索多变体。",
+            "结果直接给结论和来源，而不是原始链接堆叠。"
           ],
           "compositeScore": 1.938
         },
@@ -35963,17 +35963,17 @@
           "commentCount": 0,
           "createdAt": "2026-04-06T14:11:44.933807+00:00",
           "owner": "actionbook",
-          "category": "Productivity & Workspace",
-          "apiFamily": "Workspace API",
-          "aisaFitScore": 93,
-          "monetizationScore": 93,
-          "factoryScore": 92,
-          "targetTitle": "Workspace Command Center",
-          "summary": "办公协作类更适合做团队席位、高客单价和长期复购。",
+          "category": "Developer",
+          "apiFamily": "Developer Platform API",
+          "aisaFitScore": 95,
+          "monetizationScore": 95,
+          "factoryScore": 95,
+          "targetTitle": "Developer Command Center",
+          "summary": "开发者工作流密度高、安装后留存强，适合做 command center 和垂直开发矩阵。",
           "moves": [
-            "把办公动作聚合成 command center。",
-            "先做个人流程，再扩团队协作和自动化套餐。",
-            "卖点围绕每天都会用到的具体动作展开。"
+            "标题优先用平台词或开发者任务词。",
+            "旗舰包做 command center，再拆 repo research / PR review / issue triage 变体。",
+            "首屏直接放真实仓库与真实输出样板。"
           ],
           "compositeScore": 1.912
         },
@@ -42277,17 +42277,17 @@
           "commentCount": 0,
           "createdAt": "2026-04-06T14:11:44.933807+00:00",
           "owner": "joelhooks",
-          "category": "Agentic Systems",
-          "apiFamily": "Agent Orchestration Layer",
-          "aisaFitScore": 72,
-          "monetizationScore": 78,
-          "factoryScore": 82,
-          "targetTitle": "Agent Upgrade Command Center",
-          "summary": "更适合作为旗舰叙事和系统层入口，而不是单点 API 包。",
+          "category": "Developer",
+          "apiFamily": "Developer Platform API",
+          "aisaFitScore": 95,
+          "monetizationScore": 95,
+          "factoryScore": 95,
+          "targetTitle": "Developer Command Center",
+          "summary": "开发者工作流密度高、安装后留存强，适合做 command center 和垂直开发矩阵。",
           "moves": [
-            "先把抽象愿景改成具体收益。",
-            "同时配一组更实用的支撑技能承接流量。",
-            "把“更聪明”改成“哪里更强”。"
+            "标题优先用平台词或开发者任务词。",
+            "旗舰包做 command center，再拆 repo research / PR review / issue triage 变体。",
+            "首屏直接放真实仓库与真实输出样板。"
           ],
           "compositeScore": 1.822
         },
@@ -42337,17 +42337,17 @@
           "commentCount": 0,
           "createdAt": "2026-04-06T14:11:44.933807+00:00",
           "owner": "ast-grep",
-          "category": "Agentic Systems",
-          "apiFamily": "Agent Orchestration Layer",
-          "aisaFitScore": 72,
-          "monetizationScore": 78,
-          "factoryScore": 82,
-          "targetTitle": "Agent Upgrade Command Center",
-          "summary": "更适合作为旗舰叙事和系统层入口，而不是单点 API 包。",
+          "category": "Search & Research",
+          "apiFamily": "Search API",
+          "aisaFitScore": 96,
+          "monetizationScore": 94,
+          "factoryScore": 96,
+          "targetTitle": "Research Command Center",
+          "summary": "高频信息入口最适合 API 化，也最容易拆出新闻、学术、情报等多变体。",
           "moves": [
-            "先把抽象愿景改成具体收益。",
-            "同时配一组更实用的支撑技能承接流量。",
-            "把“更聪明”改成“哪里更强”。"
+            "先切一个最窄检索任务入口。",
+            "同步准备通用搜索、新闻搜索、学术搜索多变体。",
+            "结果直接给结论和来源，而不是原始链接堆叠。"
           ],
           "compositeScore": 1.821
         },
@@ -42467,17 +42467,17 @@
           "commentCount": 0,
           "createdAt": "2026-04-06T14:11:44.933807+00:00",
           "owner": "23blocks-OS",
-          "category": "Agentic Systems",
-          "apiFamily": "Agent Orchestration Layer",
-          "aisaFitScore": 72,
-          "monetizationScore": 78,
-          "factoryScore": 82,
-          "targetTitle": "Agent Upgrade Command Center",
-          "summary": "更适合作为旗舰叙事和系统层入口，而不是单点 API 包。",
+          "category": "Search & Research",
+          "apiFamily": "Search API",
+          "aisaFitScore": 96,
+          "monetizationScore": 94,
+          "factoryScore": 96,
+          "targetTitle": "Research Command Center",
+          "summary": "高频信息入口最适合 API 化，也最容易拆出新闻、学术、情报等多变体。",
           "moves": [
-            "先把抽象愿景改成具体收益。",
-            "同时配一组更实用的支撑技能承接流量。",
-            "把“更聪明”改成“哪里更强”。"
+            "先切一个最窄检索任务入口。",
+            "同步准备通用搜索、新闻搜索、学术搜索多变体。",
+            "结果直接给结论和来源，而不是原始链接堆叠。"
           ],
           "compositeScore": 1.815
         },
@@ -43036,17 +43036,17 @@
           "commentCount": 0,
           "createdAt": "2026-04-06T14:11:44.933807+00:00",
           "owner": "kingbootoshi",
-          "category": "Agentic Systems",
-          "apiFamily": "Agent Orchestration Layer",
-          "aisaFitScore": 72,
-          "monetizationScore": 78,
-          "factoryScore": 82,
-          "targetTitle": "Agent Upgrade Command Center",
-          "summary": "更适合作为旗舰叙事和系统层入口，而不是单点 API 包。",
+          "category": "Developer",
+          "apiFamily": "Developer Platform API",
+          "aisaFitScore": 95,
+          "monetizationScore": 95,
+          "factoryScore": 95,
+          "targetTitle": "Developer Command Center",
+          "summary": "开发者工作流密度高、安装后留存强，适合做 command center 和垂直开发矩阵。",
           "moves": [
-            "先把抽象愿景改成具体收益。",
-            "同时配一组更实用的支撑技能承接流量。",
-            "把“更聪明”改成“哪里更强”。"
+            "标题优先用平台词或开发者任务词。",
+            "旗舰包做 command center，再拆 repo research / PR review / issue triage 变体。",
+            "首屏直接放真实仓库与真实输出样板。"
           ],
           "compositeScore": 1.796
         },
@@ -44248,17 +44248,17 @@
           "commentCount": 0,
           "createdAt": "2026-04-06T14:11:44.933807+00:00",
           "owner": "cloudshipai",
-          "category": "Agentic Systems",
-          "apiFamily": "Agent Orchestration Layer",
-          "aisaFitScore": 72,
-          "monetizationScore": 78,
-          "factoryScore": 82,
-          "targetTitle": "Agent Upgrade Command Center",
-          "summary": "更适合作为旗舰叙事和系统层入口，而不是单点 API 包。",
+          "category": "Developer",
+          "apiFamily": "Developer Platform API",
+          "aisaFitScore": 95,
+          "monetizationScore": 95,
+          "factoryScore": 95,
+          "targetTitle": "Developer Command Center",
+          "summary": "开发者工作流密度高、安装后留存强，适合做 command center 和垂直开发矩阵。",
           "moves": [
-            "先把抽象愿景改成具体收益。",
-            "同时配一组更实用的支撑技能承接流量。",
-            "把“更聪明”改成“哪里更强”。"
+            "标题优先用平台词或开发者任务词。",
+            "旗舰包做 command center，再拆 repo research / PR review / issue triage 变体。",
+            "首屏直接放真实仓库与真实输出样板。"
           ],
           "compositeScore": 1.749
         },
@@ -44831,17 +44831,17 @@
           "commentCount": 0,
           "createdAt": "2026-04-06T14:11:44.933807+00:00",
           "owner": "memvid",
-          "category": "Agentic Systems",
-          "apiFamily": "Agent Orchestration Layer",
-          "aisaFitScore": 72,
-          "monetizationScore": 78,
-          "factoryScore": 82,
-          "targetTitle": "Agent Upgrade Command Center",
-          "summary": "更适合作为旗舰叙事和系统层入口，而不是单点 API 包。",
+          "category": "Developer",
+          "apiFamily": "Developer Platform API",
+          "aisaFitScore": 95,
+          "monetizationScore": 95,
+          "factoryScore": 95,
+          "targetTitle": "Developer Command Center",
+          "summary": "开发者工作流密度高、安装后留存强，适合做 command center 和垂直开发矩阵。",
           "moves": [
-            "先把抽象愿景改成具体收益。",
-            "同时配一组更实用的支撑技能承接流量。",
-            "把“更聪明”改成“哪里更强”。"
+            "标题优先用平台词或开发者任务词。",
+            "旗舰包做 command center，再拆 repo research / PR review / issue triage 变体。",
+            "首屏直接放真实仓库与真实输出样板。"
           ],
           "compositeScore": 1.713
         },
@@ -45689,17 +45689,17 @@
           "commentCount": 0,
           "createdAt": "2026-04-06T14:11:44.933807+00:00",
           "owner": "zippoxer",
-          "category": "Agentic Systems",
-          "apiFamily": "Agent Orchestration Layer",
-          "aisaFitScore": 72,
-          "monetizationScore": 78,
-          "factoryScore": 82,
-          "targetTitle": "Agent Upgrade Command Center",
-          "summary": "更适合作为旗舰叙事和系统层入口，而不是单点 API 包。",
+          "category": "Developer",
+          "apiFamily": "Developer Platform API",
+          "aisaFitScore": 95,
+          "monetizationScore": 95,
+          "factoryScore": 95,
+          "targetTitle": "Developer Command Center",
+          "summary": "开发者工作流密度高、安装后留存强，适合做 command center 和垂直开发矩阵。",
           "moves": [
-            "先把抽象愿景改成具体收益。",
-            "同时配一组更实用的支撑技能承接流量。",
-            "把“更聪明”改成“哪里更强”。"
+            "标题优先用平台词或开发者任务词。",
+            "旗舰包做 command center，再拆 repo research / PR review / issue triage 变体。",
+            "首屏直接放真实仓库与真实输出样板。"
           ],
           "compositeScore": 1.698
         },
@@ -46145,17 +46145,17 @@
           "commentCount": 0,
           "createdAt": "2026-04-06T14:11:44.933807+00:00",
           "owner": "anthropics",
-          "category": "Finance & Market Data",
-          "apiFamily": "Market Data API",
-          "aisaFitScore": 90,
-          "monetizationScore": 94,
-          "factoryScore": 91,
-          "targetTitle": "Market Data Command Center",
-          "summary": "决策价值高，付费意愿普遍强于泛工具类。",
+          "category": "Developer",
+          "apiFamily": "Developer Platform API",
+          "aisaFitScore": 95,
+          "monetizationScore": 95,
+          "factoryScore": 95,
+          "targetTitle": "Developer Command Center",
+          "summary": "开发者工作流密度高、安装后留存强，适合做 command center 和垂直开发矩阵。",
           "moves": [
-            "从最窄行情或研究入口切入。",
-            "再扩成股票、加密、新闻、组合矩阵。",
-            "突出实时性、可信度和专业价值。"
+            "标题优先用平台词或开发者任务词。",
+            "旗舰包做 command center，再拆 repo research / PR review / issue triage 变体。",
+            "首屏直接放真实仓库与真实输出样板。"
           ],
           "compositeScore": 1.816
         },
@@ -46609,17 +46609,17 @@
           "commentCount": 0,
           "createdAt": "2026-04-06T14:11:44.933807+00:00",
           "owner": "tzachbon",
-          "category": "Browser & Automation",
-          "apiFamily": "Browser Automation API",
-          "aisaFitScore": 91,
-          "monetizationScore": 95,
+          "category": "Productivity & Workspace",
+          "apiFamily": "Workspace API",
+          "aisaFitScore": 93,
+          "monetizationScore": 93,
           "factoryScore": 92,
-          "targetTitle": "Browser Automation Command Center",
-          "summary": "自动化结果价值高，适合更高客单价与企业套餐。",
+          "targetTitle": "Workspace Command Center",
+          "summary": "办公协作类更适合做团队席位、高客单价和长期复购。",
           "moves": [
-            "先定义最清晰的自动化任务，不要笼统叫 automation。",
-            "用 command center + 单任务包组合发布。",
-            "准备企业场景承接更高客单价。"
+            "把办公动作聚合成 command center。",
+            "先做个人流程，再扩团队协作和自动化套餐。",
+            "卖点围绕每天都会用到的具体动作展开。"
           ],
           "compositeScore": 1.682
         },
@@ -46851,17 +46851,17 @@
           "commentCount": 0,
           "createdAt": "2026-04-06T14:11:44.933807+00:00",
           "owner": "sudocode-ai",
-          "category": "Agentic Systems",
-          "apiFamily": "Agent Orchestration Layer",
-          "aisaFitScore": 72,
-          "monetizationScore": 78,
-          "factoryScore": 82,
-          "targetTitle": "Agent Upgrade Command Center",
-          "summary": "更适合作为旗舰叙事和系统层入口，而不是单点 API 包。",
+          "category": "Developer",
+          "apiFamily": "Developer Platform API",
+          "aisaFitScore": 95,
+          "monetizationScore": 95,
+          "factoryScore": 95,
+          "targetTitle": "Developer Command Center",
+          "summary": "开发者工作流密度高、安装后留存强，适合做 command center 和垂直开发矩阵。",
           "moves": [
-            "先把抽象愿景改成具体收益。",
-            "同时配一组更实用的支撑技能承接流量。",
-            "把“更聪明”改成“哪里更强”。"
+            "标题优先用平台词或开发者任务词。",
+            "旗舰包做 command center，再拆 repo research / PR review / issue triage 变体。",
+            "首屏直接放真实仓库与真实输出样板。"
           ],
           "compositeScore": 1.662
         },
@@ -47058,17 +47058,17 @@
           "commentCount": 0,
           "createdAt": "2026-04-06T14:11:44.933807+00:00",
           "owner": "boshu2",
-          "category": "Agentic Systems",
-          "apiFamily": "Agent Orchestration Layer",
-          "aisaFitScore": 72,
-          "monetizationScore": 78,
-          "factoryScore": 82,
-          "targetTitle": "Agent Upgrade Command Center",
-          "summary": "更适合作为旗舰叙事和系统层入口，而不是单点 API 包。",
+          "category": "Developer",
+          "apiFamily": "Developer Platform API",
+          "aisaFitScore": 95,
+          "monetizationScore": 95,
+          "factoryScore": 95,
+          "targetTitle": "Developer Command Center",
+          "summary": "开发者工作流密度高、安装后留存强，适合做 command center 和垂直开发矩阵。",
           "moves": [
-            "先把抽象愿景改成具体收益。",
-            "同时配一组更实用的支撑技能承接流量。",
-            "把“更聪明”改成“哪里更强”。"
+            "标题优先用平台词或开发者任务词。",
+            "旗舰包做 command center，再拆 repo research / PR review / issue triage 变体。",
+            "首屏直接放真实仓库与真实输出样板。"
           ],
           "compositeScore": 1.656
         },
@@ -49358,9 +49358,7 @@
           "totalStars": 232316,
           "totalPlugins": 73,
           "primaryCategories": [
-            "Agentic Systems",
-            "Developer",
-            "Finance & Market Data"
+            "Developer"
           ],
           "topRepos": [
             {
@@ -49391,6 +49389,43 @@
         }
       ],
       "aisaCandidates": [
+        {
+          "repo": "K-Dense-AI/claude-scientific-skills",
+          "slug": "k-dense-ai-claude-scientific-skills",
+          "description": "A set of ready to use Agent Skills for research, science, engineering, analysis, finance and writing.",
+          "pluginCount": 1,
+          "categories": [
+            "community"
+          ],
+          "pluginKeywords": [
+            "collection",
+            "scientific",
+            "skills"
+          ],
+          "discoveredAt": "2026-02-05T00:00:46.873+00:00",
+          "lastUpdated": "2026-04-07T07:22:25.929+00:00",
+          "source": "auto",
+          "stars": 17454,
+          "starsFetchedAt": "2026-04-06T14:06:50.929+00:00",
+          "voteCount": 0,
+          "commentCount": 0,
+          "createdAt": "2026-03-22T20:04:51.733364+00:00",
+          "owner": "K-Dense-AI",
+          "category": "Search & Research",
+          "apiFamily": "Search API",
+          "aisaFitScore": 96,
+          "monetizationScore": 94,
+          "factoryScore": 96,
+          "targetTitle": "Research Command Center",
+          "summary": "高频信息入口最适合 API 化，也最容易拆出新闻、学术、情报等多变体。",
+          "moves": [
+            "先切一个最窄检索任务入口。",
+            "同步准备通用搜索、新闻搜索、学术搜索多变体。",
+            "结果直接给结论和来源，而不是原始链接堆叠。"
+          ],
+          "compositeScore": 2.473,
+          "aisaOpportunityScore": 96.8
+        },
         {
           "repo": "Orchestra-Research/AI-Research-SKILLs",
           "slug": "orchestra-research-ai-research-skills",
@@ -49669,6 +49704,217 @@
           "aisaOpportunityScore": 96.8
         },
         {
+          "repo": "exa-labs/exa-mcp-server",
+          "slug": "exa-labs-exa-mcp-server",
+          "description": "Exa MCP for web search and web crawling!",
+          "pluginCount": 1,
+          "categories": [
+            "productivity"
+          ],
+          "pluginKeywords": [
+            "allowing",
+            "capabilities",
+            "code-search",
+            "company-research",
+            "configurable",
+            "context",
+            "crawling",
+            "disable",
+            "enable",
+            "exa",
+            "linkedin",
+            "mcp",
+            "model",
+            "protocol",
+            "provides",
+            "realtime",
+            "research",
+            "search",
+            "searches",
+            "selection",
+            "server",
+            "specific",
+            "users",
+            "web-search"
+          ],
+          "discoveredAt": "2025-12-21T00:00:44.82+00:00",
+          "lastUpdated": "2026-04-07T07:22:31.843+00:00",
+          "source": "auto",
+          "stars": 4168,
+          "starsFetchedAt": "2026-04-06T14:06:50.925+00:00",
+          "voteCount": 0,
+          "commentCount": 0,
+          "createdAt": "2026-03-22T20:04:51.733364+00:00",
+          "owner": "exa-labs",
+          "category": "Search & Research",
+          "apiFamily": "Search API",
+          "aisaFitScore": 96,
+          "monetizationScore": 94,
+          "factoryScore": 96,
+          "targetTitle": "Browser Automation Command Center",
+          "summary": "高频信息入口最适合 API 化，也最容易拆出新闻、学术、情报等多变体。",
+          "moves": [
+            "先切一个最窄检索任务入口。",
+            "同步准备通用搜索、新闻搜索、学术搜索多变体。",
+            "结果直接给结论和来源，而不是原始链接堆叠。"
+          ],
+          "compositeScore": 2.194,
+          "aisaOpportunityScore": 96.8
+        },
+        {
+          "repo": "Ryandonofrio3/osgrep",
+          "slug": "ryandonofrio3-osgrep",
+          "description": "Open Source Semantic Search for your AI Agent",
+          "pluginCount": 1,
+          "categories": [
+            "community"
+          ],
+          "pluginKeywords": [
+            "automatically",
+            "capabilities",
+            "claude",
+            "indexes",
+            "intelligent",
+            "osgrep",
+            "project",
+            "provides",
+            "search",
+            "semantic"
+          ],
+          "discoveredAt": "2025-11-29T00:00:54.054+00:00",
+          "lastUpdated": "2026-04-07T07:22:41.857+00:00",
+          "source": "auto",
+          "stars": 1118,
+          "starsFetchedAt": "2026-04-06T14:06:50.923+00:00",
+          "voteCount": 0,
+          "commentCount": 0,
+          "createdAt": "2026-04-06T14:11:44.933807+00:00",
+          "owner": "Ryandonofrio3",
+          "category": "Search & Research",
+          "apiFamily": "Search API",
+          "aisaFitScore": 96,
+          "monetizationScore": 94,
+          "factoryScore": 96,
+          "targetTitle": "Research Command Center",
+          "summary": "高频信息入口最适合 API 化，也最容易拆出新闻、学术、情报等多变体。",
+          "moves": [
+            "先切一个最窄检索任务入口。",
+            "同步准备通用搜索、新闻搜索、学术搜索多变体。",
+            "结果直接给结论和来源，而不是原始链接堆叠。"
+          ],
+          "compositeScore": 1.938,
+          "aisaOpportunityScore": 96.8
+        },
+        {
+          "repo": "ast-grep/agent-skill",
+          "slug": "ast-grep-agent-skill",
+          "description": "A marketplace for Claude Code skills including ast-grep structural code search",
+          "pluginCount": 1,
+          "categories": [
+            "community"
+          ],
+          "pluginKeywords": [
+            "abstract",
+            "analysis",
+            "ast",
+            "ast-grep",
+            "astgrep",
+            "beyond",
+            "code-search",
+            "codebases",
+            "complex",
+            "grep",
+            "guide",
+            "pattern-matching",
+            "patterns",
+            "perform",
+            "queries",
+            "refactoring",
+            "rules",
+            "search",
+            "simple",
+            "specific",
+            "structural",
+            "structural-search",
+            "structures",
+            "syntax",
+            "users",
+            "using",
+            "writing"
+          ],
+          "discoveredAt": "2025-11-26T00:00:51.464+00:00",
+          "lastUpdated": "2026-04-07T07:22:51.543+00:00",
+          "source": "auto",
+          "stars": 611,
+          "starsFetchedAt": "2026-04-06T14:06:50.923+00:00",
+          "voteCount": 0,
+          "commentCount": 0,
+          "createdAt": "2026-04-06T14:11:44.933807+00:00",
+          "owner": "ast-grep",
+          "category": "Search & Research",
+          "apiFamily": "Search API",
+          "aisaFitScore": 96,
+          "monetizationScore": 94,
+          "factoryScore": 96,
+          "targetTitle": "Research Command Center",
+          "summary": "高频信息入口最适合 API 化，也最容易拆出新闻、学术、情报等多变体。",
+          "moves": [
+            "先切一个最窄检索任务入口。",
+            "同步准备通用搜索、新闻搜索、学术搜索多变体。",
+            "结果直接给结论和来源，而不是原始链接堆叠。"
+          ],
+          "compositeScore": 1.821,
+          "aisaOpportunityScore": 96.8
+        },
+        {
+          "repo": "23blocks-OS/ai-maestro",
+          "slug": "23blocks-os-ai-maestro",
+          "description": "AI Agent Orchestrator with Skills System - Give AI Agents superpowers: memory search, code graph queries, agent-to-agent messaging. Manage Claude, Codex or any AI Agent from one dashboard. Move Agents between computers and locations",
+          "pluginCount": 1,
+          "categories": [
+            "productivity"
+          ],
+          "pluginKeywords": [
+            "agent",
+            "agents",
+            "ai",
+            "documentation",
+            "graph",
+            "interagent",
+            "maestro",
+            "memory",
+            "messaging",
+            "orchestration",
+            "planning",
+            "queries",
+            "search",
+            "skills"
+          ],
+          "discoveredAt": "2026-01-27T00:00:55.703+00:00",
+          "lastUpdated": "2026-02-06T00:02:24.677+00:00",
+          "source": "auto",
+          "stars": 590,
+          "starsFetchedAt": "2026-04-06T14:06:50.927+00:00",
+          "voteCount": 0,
+          "commentCount": 0,
+          "createdAt": "2026-04-06T14:11:44.933807+00:00",
+          "owner": "23blocks-OS",
+          "category": "Search & Research",
+          "apiFamily": "Search API",
+          "aisaFitScore": 96,
+          "monetizationScore": 94,
+          "factoryScore": 96,
+          "targetTitle": "Research Command Center",
+          "summary": "高频信息入口最适合 API 化，也最容易拆出新闻、学术、情报等多变体。",
+          "moves": [
+            "先切一个最窄检索任务入口。",
+            "同步准备通用搜索、新闻搜索、学术搜索多变体。",
+            "结果直接给结论和来源，而不是原始链接堆叠。"
+          ],
+          "compositeScore": 1.815,
+          "aisaOpportunityScore": 96.8
+        },
+        {
           "repo": "f/prompts.chat",
           "slug": "f-prompts.chat",
           "description": "f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete privacy.",
@@ -49698,7 +49944,7 @@
           "source": "auto",
           "stars": 157647,
           "starsFetchedAt": "2026-04-06T14:06:50.927+00:00",
-          "voteCount": 0,
+          "voteCount": 1,
           "commentCount": 0,
           "createdAt": "2026-04-06T14:11:44.933807+00:00",
           "owner": "f",
@@ -49715,6 +49961,228 @@
             "首屏直接放真实仓库与真实输出样板。"
           ],
           "compositeScore": 2.903,
+          "aisaOpportunityScore": 96.5
+        },
+        {
+          "repo": "anthropics/skills",
+          "slug": "anthropics-skills",
+          "description": "Public repository for Agent Skills",
+          "pluginCount": 3,
+          "categories": [
+            "community"
+          ],
+          "pluginKeywords": [
+            "algorithmic",
+            "api",
+            "applications",
+            "artifact",
+            "building",
+            "capabilities",
+            "claude",
+            "collection",
+            "communications",
+            "creation",
+            "demonstrating",
+            "design",
+            "document",
+            "documentation",
+            "example",
+            "excel",
+            "including",
+            "internal",
+            "llmpowered",
+            "powerpoint",
+            "processing",
+            "skill",
+            "skills",
+            "slack",
+            "styling",
+            "suite",
+            "testing",
+            "theme",
+            "various",
+            "visual"
+          ],
+          "discoveredAt": "2025-11-04T08:17:01.728+00:00",
+          "lastUpdated": "2026-04-07T07:14:51.886+00:00",
+          "source": "auto",
+          "stars": 111395,
+          "starsFetchedAt": "2026-04-06T14:06:50.93+00:00",
+          "voteCount": 2,
+          "commentCount": 0,
+          "createdAt": "2026-03-22T20:04:51.733364+00:00",
+          "owner": "anthropics",
+          "category": "Developer",
+          "apiFamily": "Developer Platform API",
+          "aisaFitScore": 95,
+          "monetizationScore": 95,
+          "factoryScore": 95,
+          "targetTitle": "Developer Command Center",
+          "summary": "开发者工作流密度高、安装后留存强，适合做 command center 和垂直开发矩阵。",
+          "moves": [
+            "标题优先用平台词或开发者任务词。",
+            "旗舰包做 command center，再拆 repo research / PR review / issue triage 变体。",
+            "首屏直接放真实仓库与真实输出样板。"
+          ],
+          "compositeScore": 2.861,
+          "aisaOpportunityScore": 96.5
+        },
+        {
+          "repo": "anthropics/claude-code",
+          "slug": "anthropics-claude-code",
+          "description": "Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands.",
+          "pluginCount": 13,
+          "categories": [
+            "development",
+            "productivity",
+            "learning",
+            "security"
+          ],
+          "pluginKeywords": [
+            "about",
+            "aesthetics",
+            "agent",
+            "agents",
+            "aiassisted",
+            "analyzing",
+            "architecture",
+            "automated",
+            "avoids",
+            "behaviors",
+            "choices",
+            "claude",
+            "code",
+            "codebase",
+            "command",
+            "commands",
+            "comments",
+            "commit",
+            "completion",
+            "comprehensive",
+            "confidencebased",
+            "contributions",
+            "conversation",
+            "covering",
+            "create",
+            "creation",
+            "creative",
+            "custom",
+            "decision",
+            "define",
+            "deprecated",
+            "design",
+            "dev",
+            "developing",
+            "development",
+            "distinctive",
+            "easily",
+            "editing",
+            "educational",
+            "error",
+            "expert",
+            "explanatory",
+            "explicit",
+            "exploration",
+            "false",
+            "feature",
+            "files",
+            "filter",
+            "frontend",
+            "generates",
+            "generic",
+            "guidance",
+            "handling",
+            "hookify",
+            "hooks",
+            "implementation",
+            "includes",
+            "including",
+            "injection",
+            "insights",
+            "instructions",
+            "integration",
+            "interactive",
+            "interfaces",
+            "issues",
+            "iterative",
+            "learning",
+            "loops",
+            "markdown",
+            "meaningful",
+            "migrate",
+            "migration",
+            "mimics",
+            "multiple",
+            "opus",
+            "output",
+            "patterns",
+            "plugin",
+            "plugins",
+            "points",
+            "polished",
+            "positives",
+            "potential",
+            "practices",
+            "prevent",
+            "previous",
+            "productiongrade",
+            "prompts",
+            "quality",
+            "ralph",
+            "reminder",
+            "repeatedly",
+            "requests",
+            "review",
+            "rules",
+            "scoring",
+            "sdk",
+            "security",
+            "seeing",
+            "selfreferential",
+            "simple",
+            "simplification",
+            "skills",
+            "sonnet",
+            "specialized",
+            "specializing",
+            "style",
+            "tests",
+            "toolkit",
+            "unsafe",
+            "unshipped",
+            "until",
+            "unwanted",
+            "using",
+            "validation",
+            "warns",
+            "wiggum",
+            "workflow",
+            "workflows",
+            "working",
+            "works"
+          ],
+          "discoveredAt": "2025-11-04T08:17:01.729+00:00",
+          "lastUpdated": "2026-04-07T07:14:51.895+00:00",
+          "source": "auto",
+          "stars": 109692,
+          "starsFetchedAt": "2026-04-06T14:06:50.922+00:00",
+          "voteCount": 3,
+          "commentCount": 0,
+          "createdAt": "2026-03-22T20:04:51.733364+00:00",
+          "owner": "anthropics",
+          "category": "Developer",
+          "apiFamily": "Developer Platform API",
+          "aisaFitScore": 95,
+          "monetizationScore": 95,
+          "factoryScore": 95,
+          "targetTitle": "Developer Command Center",
+          "summary": "开发者工作流密度高、安装后留存强，适合做 command center 和垂直开发矩阵。",
+          "moves": [
+            "标题优先用平台词或开发者任务词。",
+            "旗舰包做 command center，再拆 repo research / PR review / issue triage 变体。",
+            "首屏直接放真实仓库与真实输出样板。"
+          ],
+          "compositeScore": 2.945,
           "aisaOpportunityScore": 96.5
         },
         {
@@ -50339,6 +50807,111 @@
           "aisaOpportunityScore": 96.5
         },
         {
+          "repo": "ykdojo/claude-code-tips",
+          "slug": "ykdojo-claude-code-tips",
+          "description": "45 tips for getting the most out of Claude Code, from basics to advanced - includes a custom status line script, cutting the system prompt in half, using Gemini CLI as Claude Code's minion, and Claude Code running itself in a container. Also includes the dx plugin.",
+          "pluginCount": 1,
+          "categories": [
+            "community"
+          ],
+          "pluginKeywords": [
+            "actions",
+            "cloninghalfcloning",
+            "context",
+            "conversation",
+            "debugging",
+            "developer",
+            "essentials",
+            "experience",
+            "gemini",
+            "github",
+            "handoffs",
+            "reddit",
+            "research"
+          ],
+          "discoveredAt": "2026-02-24T00:00:20.347+00:00",
+          "lastUpdated": "2026-02-24T00:00:20.347+00:00",
+          "source": "auto",
+          "stars": 7178,
+          "starsFetchedAt": "2026-04-06T14:06:50.93+00:00",
+          "voteCount": 0,
+          "commentCount": 0,
+          "createdAt": "2026-04-06T14:11:44.933807+00:00",
+          "owner": "ykdojo",
+          "category": "Developer",
+          "apiFamily": "Developer Platform API",
+          "aisaFitScore": 95,
+          "monetizationScore": 95,
+          "factoryScore": 95,
+          "targetTitle": "Developer Command Center",
+          "summary": "开发者工作流密度高、安装后留存强，适合做 command center 和垂直开发矩阵。",
+          "moves": [
+            "标题优先用平台词或开发者任务词。",
+            "旗舰包做 command center，再拆 repo research / PR review / issue triage 变体。",
+            "首屏直接放真实仓库与真实输出样板。"
+          ],
+          "compositeScore": 2.3,
+          "aisaOpportunityScore": 96.5
+        },
+        {
+          "repo": "max-sixty/worktrunk",
+          "slug": "max-sixty-worktrunk",
+          "description": "Worktrunk is a CLI for Git worktree management, designed for parallel AI agent workflows",
+          "pluginCount": 1,
+          "categories": [
+            "community"
+          ],
+          "pluginKeywords": [
+            "active",
+            "activity",
+            "agent",
+            "automatic",
+            "claude",
+            "commit",
+            "configuration",
+            "designed",
+            "guidance",
+            "hooks",
+            "indicators",
+            "management",
+            "messages",
+            "parallel",
+            "paths",
+            "plugin",
+            "project",
+            "provides",
+            "sessions",
+            "showing",
+            "tracking",
+            "workflows",
+            "worktree",
+            "worktrunk"
+          ],
+          "discoveredAt": "2026-02-01T00:00:43.38+00:00",
+          "lastUpdated": "2026-04-07T07:22:31.873+00:00",
+          "source": "auto",
+          "stars": 4209,
+          "starsFetchedAt": "2026-04-06T14:06:50.928+00:00",
+          "voteCount": 0,
+          "commentCount": 0,
+          "createdAt": "2026-04-06T14:11:44.933807+00:00",
+          "owner": "max-sixty",
+          "category": "Developer",
+          "apiFamily": "Developer Platform API",
+          "aisaFitScore": 95,
+          "monetizationScore": 95,
+          "factoryScore": 95,
+          "targetTitle": "Developer Command Center",
+          "summary": "开发者工作流密度高、安装后留存强，适合做 command center 和垂直开发矩阵。",
+          "moves": [
+            "标题优先用平台词或开发者任务词。",
+            "旗舰包做 command center，再拆 repo research / PR review / issue triage 变体。",
+            "首屏直接放真实仓库与真实输出样板。"
+          ],
+          "compositeScore": 2.196,
+          "aisaOpportunityScore": 96.5
+        },
+        {
           "repo": "backnotprop/plannotator",
           "slug": "backnotprop-plannotator",
           "description": "Annotate and review coding agent plans and code diffs visually, share with your team, send feedback to agents with one click.",
@@ -50552,6 +51125,53 @@
           "aisaOpportunityScore": 96.5
         },
         {
+          "repo": "supabase/agent-skills",
+          "slug": "supabase-agent-skills",
+          "description": "Agent Skills to help developers using AI agents with Supabase",
+          "pluginCount": 1,
+          "categories": [
+            "community"
+          ],
+          "pluginKeywords": [
+            "best",
+            "configurations",
+            "database",
+            "designs",
+            "optimization",
+            "optimizing",
+            "performance",
+            "postgres",
+            "practices",
+            "queries",
+            "reviewing",
+            "schema",
+            "writing"
+          ],
+          "discoveredAt": "2026-01-24T00:00:54.759+00:00",
+          "lastUpdated": "2026-04-07T07:22:35.749+00:00",
+          "source": "auto",
+          "stars": 1832,
+          "starsFetchedAt": "2026-04-06T14:06:50.927+00:00",
+          "voteCount": 0,
+          "commentCount": 0,
+          "createdAt": "2026-04-06T14:11:44.933807+00:00",
+          "owner": "supabase",
+          "category": "Developer",
+          "apiFamily": "Developer Platform API",
+          "aisaFitScore": 95,
+          "monetizationScore": 95,
+          "factoryScore": 95,
+          "targetTitle": "Developer Command Center",
+          "summary": "开发者工作流密度高、安装后留存强，适合做 command center 和垂直开发矩阵。",
+          "moves": [
+            "标题优先用平台词或开发者任务词。",
+            "旗舰包做 command center，再拆 repo research / PR review / issue triage 变体。",
+            "首屏直接放真实仓库与真实输出样板。"
+          ],
+          "compositeScore": 2.034,
+          "aisaOpportunityScore": 96.5
+        },
+        {
           "repo": "rohitg00/pro-workflow",
           "slug": "rohitg00-pro-workflow",
           "description": "Claude Code learns from your corrections — self-correcting memory that compounds over 50+ sessions. Context engineering, parallel worktrees, agent teams, and 17 battle-tested skills.",
@@ -50599,6 +51219,52 @@
             "首屏直接放真实仓库与真实输出样板。"
           ],
           "compositeScore": 2.002,
+          "aisaOpportunityScore": 96.5
+        },
+        {
+          "repo": "appleboy/CodeGPT",
+          "slug": "appleboy-codegpt",
+          "description": "A CLI written in Go language that writes git commit messages or do a code review brief for you using ChatGPT AI (gpt-4.1, gpt-4o model) and automatically installs a git prepare-commit-msg hook.",
+          "pluginCount": 1,
+          "categories": [
+            "community"
+          ],
+          "pluginKeywords": [
+            "analyzing",
+            "automatically",
+            "changes",
+            "commit",
+            "describing",
+            "generates",
+            "message",
+            "messages",
+            "skill",
+            "staged",
+            "using",
+            "writing"
+          ],
+          "discoveredAt": "2026-02-24T00:00:19.906+00:00",
+          "lastUpdated": "2026-02-24T00:00:19.906+00:00",
+          "source": "auto",
+          "stars": 1497,
+          "starsFetchedAt": "2026-04-06T14:06:50.929+00:00",
+          "voteCount": 0,
+          "commentCount": 0,
+          "createdAt": "2026-04-06T14:11:44.933807+00:00",
+          "owner": "appleboy",
+          "category": "Developer",
+          "apiFamily": "Developer Platform API",
+          "aisaFitScore": 95,
+          "monetizationScore": 95,
+          "factoryScore": 95,
+          "targetTitle": "Developer Command Center",
+          "summary": "开发者工作流密度高、安装后留存强，适合做 command center 和垂直开发矩阵。",
+          "moves": [
+            "标题优先用平台词或开发者任务词。",
+            "旗舰包做 command center，再拆 repo research / PR review / issue triage 变体。",
+            "首屏直接放真实仓库与真实输出样板。"
+          ],
+          "compositeScore": 1.995,
           "aisaOpportunityScore": 96.5
         },
         {
@@ -50687,841 +51353,6 @@
           ],
           "compositeScore": 1.924,
           "aisaOpportunityScore": 96.5
-        },
-        {
-          "repo": "hmans/beans",
-          "slug": "hmans-beans",
-          "description": "A CLI-based, flat-file issue tracker for humans and robots. 🤖",
-          "pluginCount": 1,
-          "categories": [
-            "community"
-          ],
-          "pluginKeywords": [
-            "beans",
-            "claude",
-            "configure",
-            "prime",
-            "track",
-            "using"
-          ],
-          "discoveredAt": "2025-12-21T00:00:45.352+00:00",
-          "lastUpdated": "2026-04-07T07:22:50.575+00:00",
-          "source": "auto",
-          "stars": 663,
-          "starsFetchedAt": "2026-04-06T14:06:50.925+00:00",
-          "voteCount": 0,
-          "commentCount": 0,
-          "createdAt": "2026-04-06T14:11:44.933807+00:00",
-          "owner": "hmans",
-          "category": "Developer",
-          "apiFamily": "Developer Platform API",
-          "aisaFitScore": 95,
-          "monetizationScore": 95,
-          "factoryScore": 95,
-          "targetTitle": "Developer Command Center",
-          "summary": "开发者工作流密度高、安装后留存强，适合做 command center 和垂直开发矩阵。",
-          "moves": [
-            "标题优先用平台词或开发者任务词。",
-            "旗舰包做 command center，再拆 repo research / PR review / issue triage 变体。",
-            "首屏直接放真实仓库与真实输出样板。"
-          ],
-          "compositeScore": 1.837,
-          "aisaOpportunityScore": 96.5
-        },
-        {
-          "repo": "Jaganpro/sf-skills",
-          "slug": "jaganpro-sf-skills",
-          "description": "Salesforce Skills for Agentic Coding Tools — AI-powered Apex, Flow, LWC, SOQL, Agentforce, and more for Claude Code. 14 skills, 420+ validation points, LSP integration.",
-          "pluginCount": 18,
-          "categories": [
-            "development",
-            "metadata",
-            "data",
-            "devops",
-            "utilities",
-            "ai",
-            "integration"
-          ],
-          "pluginKeywords": [
-            "100point",
-            "110point",
-            "120point",
-            "130point",
-            "140point",
-            "150point",
-            "80point",
-            "action",
-            "agent",
-            "agent-testing",
-            "agentforce",
-            "agentic",
-            "agents",
-            "agentscript",
-            "aipowered",
-            "analysis",
-            "apex",
-            "apex-test",
-            "apps",
-            "architecture",
-            "assertions",
-            "atlas",
-            "authoring",
-            "authorization",
-            "autolaunched",
-            "automation",
-            "banana",
-            "batch",
-            "builder",
-            "callout",
-            "callouts",
-            "ci-cd",
-            "claude",
-            "client",
-            "complete",
-            "component",
-            "components",
-            "configuration",
-            "connected",
-            "connected-app",
-            "content",
-            "coverage",
-            "creating",
-            "creation",
-            "credential",
-            "credentials",
-            "custom-field",
-            "data",
-            "debug",
-            "debugging",
-            "deploy",
-            "deployment",
-            "deprecated",
-            "deterministic",
-            "development",
-            "devops",
-            "diagram",
-            "diagrams",
-            "erd",
-            "events",
-            "execution",
-            "expertise",
-            "external",
-            "factories",
-            "factory",
-            "flow",
-            "flowchart",
-            "flows",
-            "fsm",
-            "gemini",
-            "generation",
-            "generator",
-            "governor",
-            "governor-limits",
-            "image",
-            "includes",
-            "install",
-            "instead",
-            "instruction",
-            "instruction-resolution",
-            "integration",
-            "integrations",
-            "interactive",
-            "jwt",
-            "legacy",
-            "lightning",
-            "limits",
-            "logs",
-            "loops",
-            "lwc",
-            "mermaid",
-            "metadata",
-            "named",
-            "named-credential",
-            "nano-banana",
-            "nanobananapro",
-            "oauth",
-            "object",
-            "operations",
-            "optimization",
-            "patterns",
-            "permission",
-            "platform",
-            "platform-event",
-            "query",
-            "querying",
-            "queueable",
-            "records",
-            "resolution",
-            "rest",
-            "restsoap",
-            "review",
-            "salesforce",
-            "scoring",
-            "screen-flow",
-            "script",
-            "scripts",
-            "selectivity",
-            "services",
-            "sfaiagentscript",
-            "sfdx",
-            "skill",
-            "skills",
-            "slds",
-            "soql",
-            "subflow",
-            "suggestions",
-            "suite",
-            "syntax",
-            "template",
-            "test-class",
-            "test-data",
-            "test-spec",
-            "testfix",
-            "testing",
-            "topic",
-            "trace",
-            "trigger",
-            "using",
-            "validation",
-            "visual",
-            "wizard"
-          ],
-          "discoveredAt": "2026-01-13T00:00:27.14+00:00",
-          "lastUpdated": "2026-01-30T00:00:50.053+00:00",
-          "source": "auto",
-          "stars": 288,
-          "starsFetchedAt": "2026-04-06T14:06:50.927+00:00",
-          "voteCount": 0,
-          "commentCount": 0,
-          "createdAt": "2026-04-06T14:11:44.933807+00:00",
-          "owner": "Jaganpro",
-          "category": "Developer",
-          "apiFamily": "Developer Platform API",
-          "aisaFitScore": 95,
-          "monetizationScore": 95,
-          "factoryScore": 95,
-          "targetTitle": "Developer Command Center",
-          "summary": "开发者工作流密度高、安装后留存强，适合做 command center 和垂直开发矩阵。",
-          "moves": [
-            "标题优先用平台词或开发者任务词。",
-            "旗舰包做 command center，再拆 repo research / PR review / issue triage 变体。",
-            "首屏直接放真实仓库与真实输出样板。"
-          ],
-          "compositeScore": 1.82,
-          "aisaOpportunityScore": 96.5
-        },
-        {
-          "repo": "quant-sentiment-ai/claude-equity-research",
-          "slug": "quant-sentiment-ai-claude-equity-research",
-          "description": "🔌 Claude Code Plugin for institutional-grade equity research.   Install with /plugin marketplace add. Generates professional   buy/sell recommendations with comprehensive fundamental   analysis, technical indicators, and risk assessment. Educational    use only - not financial advice.",
-          "pluginCount": 1,
-          "categories": [
-            "community"
-          ],
-          "pluginKeywords": [
-            "activity",
-            "analyzes",
-            "buysellhold",
-            "command",
-            "company",
-            "equity",
-            "financials",
-            "ideas",
-            "indicators",
-            "insider",
-            "institutionalgrade",
-            "market",
-            "positioning",
-            "price",
-            "provides",
-            "recommendations",
-            "reports",
-            "research",
-            "targets",
-            "technical",
-            "trading",
-            "tradingideas"
-          ],
-          "discoveredAt": "2025-12-30T00:00:44.493+00:00",
-          "lastUpdated": "2026-04-07T07:22:57.541+00:00",
-          "source": "auto",
-          "stars": 416,
-          "starsFetchedAt": "2026-04-06T14:06:50.925+00:00",
-          "voteCount": 0,
-          "commentCount": 0,
-          "createdAt": "2026-03-22T20:04:51.733364+00:00",
-          "owner": "quant-sentiment-ai",
-          "category": "Search & Research",
-          "apiFamily": "Search API",
-          "aisaFitScore": 96,
-          "monetizationScore": 94,
-          "factoryScore": 96,
-          "targetTitle": "Multi-Source Search Command Center",
-          "summary": "高频信息入口最适合 API 化，也最容易拆出新闻、学术、情报等多变体。",
-          "moves": [
-            "先切一个最窄检索任务入口。",
-            "同步准备通用搜索、新闻搜索、学术搜索多变体。",
-            "结果直接给结论和来源，而不是原始链接堆叠。"
-          ],
-          "compositeScore": 1.748,
-          "aisaOpportunityScore": 95.89
-        },
-        {
-          "repo": "shinpr/claude-code-workflows",
-          "slug": "shinpr-claude-code-workflows",
-          "description": "Production-ready development workflows for Claude Code, powered by specialized AI agents.",
-          "pluginCount": 6,
-          "categories": [
-            "community",
-            "behavior-control",
-            "product-quality",
-            "workflow-orchestration"
-          ],
-          "pluginKeywords": [
-            "agentic",
-            "agents",
-            "assessment",
-            "backend",
-            "before",
-            "behavior",
-            "claude",
-            "clean",
-            "coding",
-            "decomposing",
-            "design",
-            "detects",
-            "dev",
-            "development",
-            "discover",
-            "discovery",
-            "downstream",
-            "evidencebacked",
-            "existing",
-            "feature",
-            "follow",
-            "frontend",
-            "guidance",
-            "guidelines",
-            "guides",
-            "ideas",
-            "lightweight",
-            "linear",
-            "metronome",
-            "orchestrated",
-            "practices",
-            "principles",
-            "prism",
-            "procedures",
-            "reacttypescript",
-            "recipe",
-            "requirements",
-            "risks",
-            "shortcuttaking",
-            "skills",
-            "specialized",
-            "starts",
-            "structured",
-            "subagents",
-            "tasks",
-            "testing",
-            "through",
-            "turns",
-            "users",
-            "validates",
-            "validation",
-            "without",
-            "workflows"
-          ],
-          "discoveredAt": "2025-11-04T08:17:02.011+00:00",
-          "lastUpdated": "2026-04-07T07:55:34.372+00:00",
-          "source": "auto",
-          "stars": 280,
-          "starsFetchedAt": "2026-04-06T14:06:50.93+00:00",
-          "voteCount": 0,
-          "commentCount": 0,
-          "createdAt": "2026-03-22T20:04:51.733364+00:00",
-          "owner": "shinpr",
-          "category": "Developer",
-          "apiFamily": "Developer Platform API",
-          "aisaFitScore": 95,
-          "monetizationScore": 95,
-          "factoryScore": 95,
-          "targetTitle": "Browser Automation Command Center",
-          "summary": "开发者工作流密度高、安装后留存强，适合做 command center 和垂直开发矩阵。",
-          "moves": [
-            "标题优先用平台词或开发者任务词。",
-            "旗舰包做 command center，再拆 repo research / PR review / issue triage 变体。",
-            "首屏直接放真实仓库与真实输出样板。"
-          ],
-          "compositeScore": 1.73,
-          "aisaOpportunityScore": 95.81
-        },
-        {
-          "repo": "giuseppe-trisciuoglio/developer-kit",
-          "slug": "giuseppe-trisciuoglio-developer-kit",
-          "description": " Modular plugin marketplace for Claude Code and agentic CLIs, with validated, spec-driven skills, agents, commands, and workflows for Java, TypeScript, Python, PHP, AWS, and AI.",
-          "pluginCount": 11,
-          "categories": [
-            "community"
-          ],
-          "pluginKeywords": [
-            "agents",
-            "aws",
-            "capabilities",
-            "chunking",
-            "cloudformation",
-            "commands",
-            "comprehensive",
-            "containerization",
-            "developer",
-            "development",
-            "devops",
-            "engineering",
-            "expertise",
-            "external",
-            "fullstack",
-            "github",
-            "including",
-            "infrastructure",
-            "integration",
-            "java",
-            "kit",
-            "management",
-            "native",
-            "nestjs",
-            "php",
-            "plugins",
-            "project",
-            "prompt",
-            "python",
-            "react",
-            "required",
-            "services",
-            "skills",
-            "spec",
-            "specification",
-            "spring",
-            "strategies",
-            "testing",
-            "thirdparty",
-            "toolkit",
-            "tools",
-            "typescript",
-            "typescriptjavascript",
-            "utilities",
-            "verification",
-            "wordpress",
-            "workflow"
-          ],
-          "discoveredAt": "2026-01-24T00:00:54.76+00:00",
-          "lastUpdated": "2026-04-07T07:23:16.258+00:00",
-          "source": "auto",
-          "stars": 193,
-          "starsFetchedAt": "2026-04-06T14:06:50.927+00:00",
-          "voteCount": 0,
-          "commentCount": 0,
-          "createdAt": "2026-03-22T20:04:51.733364+00:00",
-          "owner": "giuseppe-trisciuoglio",
-          "category": "Developer",
-          "apiFamily": "Developer Platform API",
-          "aisaFitScore": 95,
-          "monetizationScore": 95,
-          "factoryScore": 95,
-          "targetTitle": "Developer Command Center",
-          "summary": "开发者工作流密度高、安装后留存强，适合做 command center 和垂直开发矩阵。",
-          "moves": [
-            "标题优先用平台词或开发者任务词。",
-            "旗舰包做 command center，再拆 repo research / PR review / issue triage 变体。",
-            "首屏直接放真实仓库与真实输出样板。"
-          ],
-          "compositeScore": 1.701,
-          "aisaOpportunityScore": 95.71
-        },
-        {
-          "repo": "openshift-eng/ai-helpers",
-          "slug": "openshift-eng-ai-helpers",
-          "description": "Developer productivity tools for Claude Code & other AI assistants",
-          "pluginCount": 34,
-          "categories": [
-            "community"
-          ],
-          "pluginKeywords": [
-            "agendas",
-            "aihelpers",
-            "analysis",
-            "analyze",
-            "anonymous",
-            "applications",
-            "archives",
-            "automate",
-            "automated",
-            "bigquery",
-            "catchall",
-            "claude",
-            "cluster",
-            "clusters",
-            "code",
-            "codebase",
-            "commands",
-            "compliance",
-            "component",
-            "comprehensive",
-            "container",
-            "coverage",
-            "create",
-            "creation",
-            "crossplatform",
-            "debugging",
-            "descriptions",
-            "desktop",
-            "details",
-            "development",
-            "diagnostics",
-            "doc",
-            "documentation",
-            "engineering",
-            "etcd",
-            "extension",
-            "gateway",
-            "gather",
-            "generate",
-            "generic",
-            "git",
-            "golang",
-            "gwapi",
-            "hcp",
-            "health",
-            "hello",
-            "helper",
-            "helpers",
-            "hypershift",
-            "identify",
-            "image",
-            "implementation",
-            "inspection",
-            "installation",
-            "isolated",
-            "issues",
-            "jira",
-            "knowledge",
-            "kubernetes",
-            "kubernetesopenshift",
-            "language",
-            "languageaware",
-            "lifecycle",
-            "logical",
-            "lvms",
-            "manage",
-            "management",
-            "manager",
-            "meeting",
-            "metrics",
-            "migration",
-            "monitoring",
-            "multirepo",
-            "must",
-            "mustgather",
-            "native",
-            "natural",
-            "node",
-            "notes",
-            "notifications",
-            "olm",
-            "onboarding",
-            "openshift",
-            "openshiftorigin",
-            "operator",
-            "operators",
-            "origin",
-            "ote",
-            "performance",
-            "persistence",
-            "plugin",
-            "podman",
-            "precommit",
-            "profile",
-            "profiles",
-            "projects",
-            "quality",
-            "related",
-            "report",
-            "repositories",
-            "requirements",
-            "results",
-            "review",
-            "scenarios",
-            "security",
-            "serving",
-            "session",
-            "skopeo",
-            "sosreport",
-            "storage",
-            "structure",
-            "system",
-            "tasks",
-            "team",
-            "teams",
-            "test",
-            "testing",
-            "tests",
-            "tls",
-            "tools",
-            "troubleshooting",
-            "tuning",
-            "usage",
-            "using",
-            "utilities",
-            "utils",
-            "various",
-            "verification",
-            "volume",
-            "vulnerability",
-            "workspaces",
-            "worktree",
-            "world",
-            "yaml"
-          ],
-          "discoveredAt": "2025-11-04T08:17:02.179+00:00",
-          "lastUpdated": "2026-04-07T07:23:46.389+00:00",
-          "source": "auto",
-          "stars": 71,
-          "starsFetchedAt": "2026-04-06T14:06:50.93+00:00",
-          "voteCount": 0,
-          "commentCount": 0,
-          "createdAt": "2026-03-22T20:04:51.733364+00:00",
-          "owner": "openshift-eng",
-          "category": "Developer",
-          "apiFamily": "Developer Platform API",
-          "aisaFitScore": 95,
-          "monetizationScore": 95,
-          "factoryScore": 95,
-          "targetTitle": "Developer Command Center",
-          "summary": "开发者工作流密度高、安装后留存强，适合做 command center 和垂直开发矩阵。",
-          "moves": [
-            "标题优先用平台词或开发者任务词。",
-            "旗舰包做 command center，再拆 repo research / PR review / issue triage 变体。",
-            "首屏直接放真实仓库与真实输出样板。"
-          ],
-          "compositeScore": 1.634,
-          "aisaOpportunityScore": 95.6
-        },
-        {
-          "repo": "gsd-build/get-shit-done",
-          "slug": "gsd-build-get-shit-done",
-          "description": "A light-weight and powerful meta-prompting, context engineering and spec-driven development system for Claude Code by TÂCHES.",
-          "pluginCount": 1,
-          "categories": [
-            "community"
-          ],
-          "pluginKeywords": [
-            "claude",
-            "context",
-            "development",
-            "done",
-            "engineering",
-            "get",
-            "metaprompting",
-            "shit",
-            "specdriven",
-            "system",
-            "tches"
-          ],
-          "discoveredAt": "2026-01-09T00:00:44.494+00:00",
-          "lastUpdated": "2026-01-10T00:00:47.446+00:00",
-          "source": "auto",
-          "stars": 48255,
-          "starsFetchedAt": "2026-04-06T14:06:50.925+00:00",
-          "voteCount": 0,
-          "commentCount": 0,
-          "createdAt": "2026-04-06T14:11:44.933807+00:00",
-          "owner": "gsd-build",
-          "category": "Productivity & Workspace",
-          "apiFamily": "Workspace API",
-          "aisaFitScore": 93,
-          "monetizationScore": 93,
-          "factoryScore": 92,
-          "targetTitle": "Workspace Command Center",
-          "summary": "办公协作类更适合做团队席位、高客单价和长期复购。",
-          "moves": [
-            "把办公动作聚合成 command center。",
-            "先做个人流程，再扩团队协作和自动化套餐。",
-            "卖点围绕每天都会用到的具体动作展开。"
-          ],
-          "compositeScore": 2.672,
-          "aisaOpportunityScore": 94.95
-        },
-        {
-          "repo": "actionbook/rust-skills",
-          "slug": "actionbook-rust-skills",
-          "description": "Rust Developer AI Assistance System — Meta-Problem-Driven Knowledge Indexing",
-          "pluginCount": 1,
-          "categories": [
-            "development"
-          ],
-          "pluginKeywords": [
-            "concurrency",
-            "covering",
-            "development",
-            "domainspecific",
-            "error",
-            "handling",
-            "intelligence",
-            "ownership",
-            "patterns",
-            "rust",
-            "skills",
-            "unsafe"
-          ],
-          "discoveredAt": "2026-01-22T00:00:56.214+00:00",
-          "lastUpdated": "2026-04-07T07:22:42.78+00:00",
-          "source": "auto",
-          "stars": 977,
-          "starsFetchedAt": "2026-04-06T14:06:50.927+00:00",
-          "voteCount": 0,
-          "commentCount": 0,
-          "createdAt": "2026-04-06T14:11:44.933807+00:00",
-          "owner": "actionbook",
-          "category": "Productivity & Workspace",
-          "apiFamily": "Workspace API",
-          "aisaFitScore": 93,
-          "monetizationScore": 93,
-          "factoryScore": 92,
-          "targetTitle": "Workspace Command Center",
-          "summary": "办公协作类更适合做团队席位、高客单价和长期复购。",
-          "moves": [
-            "把办公动作聚合成 command center。",
-            "先做个人流程，再扩团队协作和自动化套餐。",
-            "卖点围绕每天都会用到的具体动作展开。"
-          ],
-          "compositeScore": 1.912,
-          "aisaOpportunityScore": 94.95
-        },
-        {
-          "repo": "umputun/ralphex",
-          "slug": "umputun-ralphex",
-          "description": "Extended Ralph loop for autonomous AI-driven plan execution",
-          "pluginCount": 1,
-          "categories": [
-            "community"
-          ],
-          "pluginKeywords": [
-            "autonomous",
-            "claude",
-            "creation",
-            "execution",
-            "monitoring",
-            "ralphex"
-          ],
-          "discoveredAt": "2026-02-08T00:00:49.452+00:00",
-          "lastUpdated": "2026-04-07T07:22:44.058+00:00",
-          "source": "auto",
-          "stars": 925,
-          "starsFetchedAt": "2026-04-06T14:06:50.929+00:00",
-          "voteCount": 0,
-          "commentCount": 0,
-          "createdAt": "2026-04-06T14:11:44.933807+00:00",
-          "owner": "umputun",
-          "category": "Productivity & Workspace",
-          "apiFamily": "Workspace API",
-          "aisaFitScore": 93,
-          "monetizationScore": 93,
-          "factoryScore": 92,
-          "targetTitle": "Workspace Command Center",
-          "summary": "办公协作类更适合做团队席位、高客单价和长期复购。",
-          "moves": [
-            "把办公动作聚合成 command center。",
-            "先做个人流程，再扩团队协作和自动化套餐。",
-            "卖点围绕每天都会用到的具体动作展开。"
-          ],
-          "compositeScore": 1.901,
-          "aisaOpportunityScore": 94.95
-        },
-        {
-          "repo": "schpet/linear-cli",
-          "slug": "schpet-linear-cli",
-          "description": "linear without leaving the command line: list, start, and create PRs for linear issues. agent friendly. ",
-          "pluginCount": 1,
-          "categories": [
-            "community"
-          ],
-          "pluginKeywords": [
-            "cli",
-            "issues",
-            "linear",
-            "linearcli",
-            "manage",
-            "skill",
-            "using"
-          ],
-          "discoveredAt": "2026-01-26T00:00:52.56+00:00",
-          "lastUpdated": "2026-04-07T07:22:52.667+00:00",
-          "source": "auto",
-          "stars": 563,
-          "starsFetchedAt": "2026-04-06T14:06:50.927+00:00",
-          "voteCount": 0,
-          "commentCount": 0,
-          "createdAt": "2026-04-06T14:11:44.933807+00:00",
-          "owner": "schpet",
-          "category": "Productivity & Workspace",
-          "apiFamily": "Workspace API",
-          "aisaFitScore": 93,
-          "monetizationScore": 93,
-          "factoryScore": 92,
-          "targetTitle": "Workspace Command Center",
-          "summary": "办公协作类更适合做团队席位、高客单价和长期复购。",
-          "moves": [
-            "把办公动作聚合成 command center。",
-            "先做个人流程，再扩团队协作和自动化套餐。",
-            "卖点围绕每天都会用到的具体动作展开。"
-          ],
-          "compositeScore": 1.806,
-          "aisaOpportunityScore": 94.95
-        },
-        {
-          "repo": "defendend/Claude-ast-index-search",
-          "slug": "defendend-claude-ast-index-search",
-          "description": "Cli allows you to index files and greatly speed up Claude/Cursor searches (suitable for any AI agent that can use Bash)",
-          "pluginCount": 1,
-          "categories": [
-            "development"
-          ],
-          "pluginKeywords": [
-            "androidkotlinjava",
-            "ast",
-            "buffers",
-            "dartflutter",
-            "index",
-            "iosswiftobjc",
-            "projects",
-            "protocol",
-            "python",
-            "search",
-            "typescriptjavascript",
-            "wsdlxsd"
-          ],
-          "discoveredAt": "2026-02-02T00:00:47.308+00:00",
-          "lastUpdated": "2026-04-07T07:23:04.587+00:00",
-          "source": "auto",
-          "stars": 302,
-          "starsFetchedAt": "2026-04-06T14:06:50.929+00:00",
-          "voteCount": 0,
-          "commentCount": 0,
-          "createdAt": "2026-04-06T14:11:44.933807+00:00",
-          "owner": "defendend",
-          "category": "Search & Research",
-          "apiFamily": "Search API",
-          "aisaFitScore": 96,
-          "monetizationScore": 94,
-          "factoryScore": 96,
-          "targetTitle": "Multi-Source Search Command Center",
-          "summary": "高频信息入口最适合 API 化，也最容易拆出新闻、学术、情报等多变体。",
-          "moves": [
-            "先切一个最窄检索任务入口。",
-            "同步准备通用搜索、新闻搜索、学术搜索多变体。",
-            "结果直接给结论和来源，而不是原始链接堆叠。"
-          ],
-          "compositeScore": 1.687,
-          "aisaOpportunityScore": 94.88
         }
       ],
       "commonPatterns": [
@@ -51540,7 +51371,7 @@
       "bundledSkills": 70,
       "optionalSkills": 17,
       "sections": 28,
-      "topSection": "creative",
+      "topSection": "github",
       "advertisedBundledSkills": 97,
       "advertisedSkillCategories": 28
     },
@@ -51604,43 +51435,27 @@
     ],
     "sections": [
       {
-        "name": "creative",
-        "count": 12
-      },
-      {
-        "name": "productivity",
-        "count": 8
-      },
-      {
-        "name": "research",
-        "count": 7
-      },
-      {
         "name": "github",
         "count": 6
       },
       {
-        "name": "software-development",
-        "count": 6
-      },
-      {
-        "name": "autonomous-ai-agents",
+        "name": "research",
         "count": 5
       },
       {
+        "name": "productivity",
+        "count": 4
+      },
+      {
+        "name": "software-development",
+        "count": 4
+      },
+      {
         "name": "apple",
-        "count": 4
+        "count": 3
       },
       {
-        "name": "media",
-        "count": 4
-      },
-      {
-        "name": "mlops/inference",
-        "count": 4
-      },
-      {
-        "name": "mlops/training",
+        "name": "creative",
         "count": 3
       },
       {
@@ -51648,19 +51463,11 @@
         "count": 3
       },
       {
-        "name": "devops",
-        "count": 2
-      },
-      {
-        "name": "dogfood",
-        "count": 2
-      },
-      {
         "name": "email",
         "count": 2
       },
       {
-        "name": "gaming",
+        "name": "devops",
         "count": 2
       },
       {
@@ -51668,27 +51475,15 @@
         "count": 2
       },
       {
-        "name": "mlops/evaluation",
-        "count": 2
-      },
-      {
-        "name": "mlops/models",
-        "count": 2
-      },
-      {
         "name": "blockchain",
         "count": 2
       },
       {
-        "name": "data-science",
+        "name": "red-teaming",
         "count": 1
       },
       {
-        "name": "mlops",
-        "count": 1
-      },
-      {
-        "name": "mlops/research",
+        "name": "mlops/evaluation",
         "count": 1
       },
       {
@@ -51696,15 +51491,7 @@
         "count": 1
       },
       {
-        "name": "red-teaming",
-        "count": 1
-      },
-      {
-        "name": "smart-home",
-        "count": 1
-      },
-      {
-        "name": "social-media",
+        "name": "migration",
         "count": 1
       },
       {
@@ -51712,73 +51499,49 @@
         "count": 1
       },
       {
-        "name": "migration",
+        "name": "autonomous-ai-agents",
         "count": 1
       }
     ],
     "tags": [
       {
-        "name": "mlops",
-        "count": 26
-      },
-      {
         "name": "github",
-        "count": 13
-      },
-      {
-        "name": "creative",
-        "count": 12
-      },
-      {
-        "name": "automation",
-        "count": 10
-      },
-      {
-        "name": "research",
         "count": 9
       },
       {
-        "name": "productivity",
+        "name": "mlops",
         "count": 8
       },
       {
-        "name": "apple",
+        "name": "automation",
         "count": 7
+      },
+      {
+        "name": "research",
+        "count": 5
+      },
+      {
+        "name": "apple",
+        "count": 5
       },
       {
         "name": "macos",
-        "count": 7
-      },
-      {
-        "name": "software",
-        "count": 6
-      },
-      {
-        "name": "development",
-        "count": 6
-      },
-      {
-        "name": "autonomous",
         "count": 5
       },
       {
-        "name": "ai",
-        "count": 5
-      },
-      {
-        "name": "agents",
-        "count": 5
-      },
-      {
-        "name": "media",
-        "count": 5
-      },
-      {
-        "name": "inference",
+        "name": "productivity",
         "count": 4
       },
       {
-        "name": "training",
+        "name": "software",
+        "count": 4
+      },
+      {
+        "name": "development",
+        "count": 4
+      },
+      {
+        "name": "creative",
         "count": 3
       },
       {
@@ -51786,15 +51549,11 @@
         "count": 3
       },
       {
-        "name": "devops",
-        "count": 2
-      },
-      {
         "name": "email",
         "count": 2
       },
       {
-        "name": "gaming",
+        "name": "devops",
         "count": 2
       },
       {
@@ -51802,16 +51561,44 @@
         "count": 2
       },
       {
-        "name": "evaluation",
-        "count": 2
-      },
-      {
-        "name": "models",
-        "count": 2
-      },
-      {
         "name": "blockchain",
         "count": 2
+      },
+      {
+        "name": "red",
+        "count": 1
+      },
+      {
+        "name": "teaming",
+        "count": 1
+      },
+      {
+        "name": "evaluation",
+        "count": 1
+      },
+      {
+        "name": "note",
+        "count": 1
+      },
+      {
+        "name": "taking",
+        "count": 1
+      },
+      {
+        "name": "migration",
+        "count": 1
+      },
+      {
+        "name": "health",
+        "count": 1
+      },
+      {
+        "name": "autonomous",
+        "count": 1
+      },
+      {
+        "name": "ai",
+        "count": 1
       }
     ],
     "bundled": [
@@ -51925,6 +51712,63 @@
           "mlops"
         ],
         "platformScope": "cross-platform or mixed",
+        "aisaOpportunityScore": 95.4
+      },
+      {
+        "type": "bundled",
+        "sectionTitle": "mlops/evaluation",
+        "sectionSlug": "mlops/evaluation",
+        "sectionDescription": "Model evaluation benchmarks, experiment tracking, and interpretability tools.",
+        "name": "evaluating-llms-harness",
+        "slug": "evaluating-llms-harness",
+        "path": "mlops/evaluation/lm-evaluation-harness",
+        "description": "Evaluates LLMs across 60+ academic benchmarks (MMLU, HumanEval, GSM8K, TruthfulQA, HellaSwag). Use when benchmarking model quality, comparing models, reporting academic results, or tracking training progress. Industry standard used by EleutherAI, HuggingFace, and major labs. S…",
+        "category": "Search & Research",
+        "apiFamily": "Search API",
+        "aisaFitScore": 96,
+        "monetizationScore": 94,
+        "factoryScore": 96,
+        "targetTitle": "Research Command Center",
+        "summary": "高频信息入口最适合 API 化，也最容易拆出新闻、学术、情报等多变体。",
+        "moves": [
+          "先切一个最窄检索任务入口。",
+          "同步准备通用搜索、新闻搜索、学术搜索多变体。",
+          "结果直接给结论和来源，而不是原始链接堆叠。"
+        ],
+        "tags": [
+          "mlops",
+          "evaluation",
+          "github"
+        ],
+        "platformScope": "cross-platform or mixed",
+        "aisaOpportunityScore": 95.4
+      },
+      {
+        "type": "bundled",
+        "sectionTitle": "apple",
+        "sectionSlug": "apple",
+        "sectionDescription": "Apple/macOS-specific skills — iMessage, Reminders, Notes, FindMy, and macOS automation. These skills only load on macOS systems.",
+        "name": "apple-notes",
+        "slug": "apple-notes",
+        "path": "apple/apple-notes",
+        "description": "Manage Apple Notes via the memo CLI on macOS (create, view, search, edit).",
+        "category": "Search & Research",
+        "apiFamily": "Search API",
+        "aisaFitScore": 96,
+        "monetizationScore": 94,
+        "factoryScore": 96,
+        "targetTitle": "Research Command Center",
+        "summary": "高频信息入口最适合 API 化，也最容易拆出新闻、学术、情报等多变体。",
+        "moves": [
+          "先切一个最窄检索任务入口。",
+          "同步准备通用搜索、新闻搜索、学术搜索多变体。",
+          "结果直接给结论和来源，而不是原始链接堆叠。"
+        ],
+        "tags": [
+          "apple",
+          "macos"
+        ],
+        "platformScope": "macOS-only / Apple-adjacent",
         "aisaOpportunityScore": 95.4
       },
       {
@@ -52066,13 +51910,13 @@
       },
       {
         "type": "bundled",
-        "sectionTitle": "mlops/evaluation",
-        "sectionSlug": "mlops/evaluation",
-        "sectionDescription": "Model evaluation benchmarks, experiment tracking, and interpretability tools.",
-        "name": "evaluating-llms-harness",
-        "slug": "evaluating-llms-harness",
-        "path": "mlops/evaluation/lm-evaluation-harness",
-        "description": "Evaluates LLMs across 60+ academic benchmarks (MMLU, HumanEval, GSM8K, TruthfulQA, HellaSwag). Use when benchmarking model quality, comparing models, reporting academic results, or tracking training progress. Industry standard used by EleutherAI, HuggingFace, and major labs. S…",
+        "sectionTitle": "github",
+        "sectionSlug": "github",
+        "sectionDescription": "GitHub workflow skills for managing repositories, pull requests, code reviews, issues, and CI/CD pipelines.",
+        "name": "codebase-inspection",
+        "slug": "codebase-inspection",
+        "path": "github/codebase-inspection",
+        "description": "Inspect and analyze codebases using pygount for LOC counting, language breakdown, and code-vs-comment ratios. Use when asked to check lines of code, repo size, language composition, or codebase stats.",
         "category": "Developer",
         "apiFamily": "Developer Platform API",
         "aisaFitScore": 95,
@@ -52086,8 +51930,6 @@
           "首屏直接放真实仓库与真实输出样板。"
         ],
         "tags": [
-          "mlops",
-          "evaluation",
           "github"
         ],
         "platformScope": "cross-platform or mixed",
@@ -52117,36 +51959,6 @@
         "tags": [
           "email",
           "mlops"
-        ],
-        "platformScope": "cross-platform or mixed",
-        "aisaOpportunityScore": 92.75
-      },
-      {
-        "type": "bundled",
-        "sectionTitle": "note-taking",
-        "sectionSlug": "note-taking",
-        "sectionDescription": "Note taking skills, to save information, assist with research, and collaborate on multi-session planning.",
-        "name": "obsidian",
-        "slug": "obsidian",
-        "path": "note-taking/obsidian",
-        "description": "Read, search, and create notes in the Obsidian vault.",
-        "category": "Productivity & Workspace",
-        "apiFamily": "Workspace API",
-        "aisaFitScore": 93,
-        "monetizationScore": 93,
-        "factoryScore": 92,
-        "targetTitle": "Workspace Command Center",
-        "summary": "办公协作类更适合做团队席位、高客单价和长期复购。",
-        "moves": [
-          "把办公动作聚合成 command center。",
-          "先做个人流程，再扩团队协作和自动化套餐。",
-          "卖点围绕每天都会用到的具体动作展开。"
-        ],
-        "tags": [
-          "note",
-          "taking",
-          "apple",
-          "macos"
         ],
         "platformScope": "cross-platform or mixed",
         "aisaOpportunityScore": 92.75
@@ -52349,56 +52161,28 @@
         "sectionTitle": "apple",
         "sectionSlug": "apple",
         "sectionDescription": "Apple/macOS-specific skills — iMessage, Reminders, Notes, FindMy, and macOS automation. These skills only load on macOS systems.",
-        "name": "apple-notes",
-        "slug": "apple-notes",
-        "path": "apple/apple-notes",
-        "description": "Manage Apple Notes via the memo CLI on macOS (create, view, search, edit).",
-        "category": "Browser & Automation",
-        "apiFamily": "Browser Automation API",
-        "aisaFitScore": 91,
-        "monetizationScore": 95,
-        "factoryScore": 92,
-        "targetTitle": "Browser Automation Command Center",
-        "summary": "自动化结果价值高，适合更高客单价与企业套餐。",
-        "moves": [
-          "先定义最清晰的自动化任务，不要笼统叫 automation。",
-          "用 command center + 单任务包组合发布。",
-          "准备企业场景承接更高客单价。"
-        ],
-        "tags": [
-          "apple",
-          "macos"
-        ],
-        "platformScope": "macOS-only / Apple-adjacent",
-        "aisaOpportunityScore": 92.45
-      },
-      {
-        "type": "bundled",
-        "sectionTitle": "apple",
-        "sectionSlug": "apple",
-        "sectionDescription": "Apple/macOS-specific skills — iMessage, Reminders, Notes, FindMy, and macOS automation. These skills only load on macOS systems.",
         "name": "apple-reminders",
         "slug": "apple-reminders",
         "path": "apple/apple-reminders",
         "description": "Manage Apple Reminders via remindctl CLI (list, add, complete, delete).",
-        "category": "Browser & Automation",
-        "apiFamily": "Browser Automation API",
-        "aisaFitScore": 91,
-        "monetizationScore": 95,
+        "category": "Productivity & Workspace",
+        "apiFamily": "Workspace API",
+        "aisaFitScore": 93,
+        "monetizationScore": 93,
         "factoryScore": 92,
-        "targetTitle": "Browser Automation Command Center",
-        "summary": "自动化结果价值高，适合更高客单价与企业套餐。",
+        "targetTitle": "Workspace Command Center",
+        "summary": "办公协作类更适合做团队席位、高客单价和长期复购。",
         "moves": [
-          "先定义最清晰的自动化任务，不要笼统叫 automation。",
-          "用 command center + 单任务包组合发布。",
-          "准备企业场景承接更高客单价。"
+          "把办公动作聚合成 command center。",
+          "先做个人流程，再扩团队协作和自动化套餐。",
+          "卖点围绕每天都会用到的具体动作展开。"
         ],
         "tags": [
           "apple",
           "macos"
         ],
         "platformScope": "macOS-only / Apple-adjacent",
-        "aisaOpportunityScore": 92.45
+        "aisaOpportunityScore": 92.75
       },
       {
         "type": "bundled",
@@ -52409,24 +52193,24 @@
         "slug": "findmy",
         "path": "apple/findmy",
         "description": "Track Apple devices and AirTags via FindMy.app on macOS using AppleScript and screen capture.",
-        "category": "Browser & Automation",
-        "apiFamily": "Browser Automation API",
-        "aisaFitScore": 91,
-        "monetizationScore": 95,
+        "category": "Productivity & Workspace",
+        "apiFamily": "Workspace API",
+        "aisaFitScore": 93,
+        "monetizationScore": 93,
         "factoryScore": 92,
-        "targetTitle": "Browser Automation Command Center",
-        "summary": "自动化结果价值高，适合更高客单价与企业套餐。",
+        "targetTitle": "Workspace Command Center",
+        "summary": "办公协作类更适合做团队席位、高客单价和长期复购。",
         "moves": [
-          "先定义最清晰的自动化任务，不要笼统叫 automation。",
-          "用 command center + 单任务包组合发布。",
-          "准备企业场景承接更高客单价。"
+          "把办公动作聚合成 command center。",
+          "先做个人流程，再扩团队协作和自动化套餐。",
+          "卖点围绕每天都会用到的具体动作展开。"
         ],
         "tags": [
           "apple",
           "macos"
         ],
         "platformScope": "macOS-only / Apple-adjacent",
-        "aisaOpportunityScore": 92.45
+        "aisaOpportunityScore": 92.75
       },
       {
         "type": "bundled",
@@ -52451,33 +52235,6 @@
         ],
         "tags": [
           "devops"
-        ],
-        "platformScope": "cross-platform or mixed",
-        "aisaOpportunityScore": 92.45
-      },
-      {
-        "type": "bundled",
-        "sectionTitle": "github",
-        "sectionSlug": "github",
-        "sectionDescription": "GitHub workflow skills for managing repositories, pull requests, code reviews, issues, and CI/CD pipelines.",
-        "name": "codebase-inspection",
-        "slug": "codebase-inspection",
-        "path": "github/codebase-inspection",
-        "description": "Inspect and analyze codebases using pygount for LOC counting, language breakdown, and code-vs-comment ratios. Use when asked to check lines of code, repo size, language composition, or codebase stats.",
-        "category": "Browser & Automation",
-        "apiFamily": "Browser Automation API",
-        "aisaFitScore": 91,
-        "monetizationScore": 95,
-        "factoryScore": 92,
-        "targetTitle": "Browser Automation Command Center",
-        "summary": "自动化结果价值高，适合更高客单价与企业套餐。",
-        "moves": [
-          "先定义最清晰的自动化任务，不要笼统叫 automation。",
-          "用 command center + 单任务包组合发布。",
-          "准备企业场景承接更高客单价。"
-        ],
-        "tags": [
-          "github"
         ],
         "platformScope": "cross-platform or mixed",
         "aisaOpportunityScore": 92.45
@@ -52510,6 +52267,36 @@
         ],
         "platformScope": "cross-platform or mixed",
         "aisaOpportunityScore": 92.45
+      },
+      {
+        "type": "bundled",
+        "sectionTitle": "note-taking",
+        "sectionSlug": "note-taking",
+        "sectionDescription": "Note taking skills, to save information, assist with research, and collaborate on multi-session planning.",
+        "name": "obsidian",
+        "slug": "obsidian",
+        "path": "note-taking/obsidian",
+        "description": "Read, search, and create notes in the Obsidian vault.",
+        "category": "Security & Audit",
+        "apiFamily": "Security Audit API",
+        "aisaFitScore": 87,
+        "monetizationScore": 94,
+        "factoryScore": 88,
+        "targetTitle": "Security Audit Command Center",
+        "summary": "安装前决策和企业治理都适合高价产品化。",
+        "moves": [
+          "输出直接形成通过 / 警告 / 阻断决策。",
+          "优先占安装前和高风险决策入口。",
+          "把风险解释与证据做成结构化模板。"
+        ],
+        "tags": [
+          "note",
+          "taking",
+          "apple",
+          "macos"
+        ],
+        "platformScope": "cross-platform or mixed",
+        "aisaOpportunityScore": 89.35
       }
     ],
     "optional": [
@@ -52539,6 +52326,92 @@
         ],
         "platformScope": "cross-platform or mixed",
         "aisaOpportunityScore": 95.4
+      },
+      {
+        "type": "optional",
+        "sectionTitle": "research",
+        "sectionSlug": "research",
+        "sectionDescription": "",
+        "name": "qmd",
+        "slug": "qmd",
+        "path": "research/qmd",
+        "description": "Search personal knowledge bases, notes, docs, and meeting transcripts locally using qmd — a hybrid retrieval engine with BM25, vector search, and LLM reranking. Supports CLI and MCP integration.",
+        "category": "Search & Research",
+        "apiFamily": "Search API",
+        "aisaFitScore": 96,
+        "monetizationScore": 94,
+        "factoryScore": 96,
+        "targetTitle": "Research Command Center",
+        "summary": "高频信息入口最适合 API 化，也最容易拆出新闻、学术、情报等多变体。",
+        "moves": [
+          "先切一个最窄检索任务入口。",
+          "同步准备通用搜索、新闻搜索、学术搜索多变体。",
+          "结果直接给结论和来源，而不是原始链接堆叠。"
+        ],
+        "tags": [
+          "research",
+          "apple",
+          "macos",
+          "mlops",
+          "automation"
+        ],
+        "platformScope": "cross-platform or mixed",
+        "aisaOpportunityScore": 95.4
+      },
+      {
+        "type": "optional",
+        "sectionTitle": "devops",
+        "sectionSlug": "devops",
+        "sectionDescription": "",
+        "name": "docker-management",
+        "slug": "docker-management",
+        "path": "devops/docker-management",
+        "description": "Manage Docker containers, images, volumes, networks, and Compose stacks — lifecycle ops, debugging, cleanup, and Dockerfile optimization.",
+        "category": "Developer",
+        "apiFamily": "Developer Platform API",
+        "aisaFitScore": 95,
+        "monetizationScore": 95,
+        "factoryScore": 95,
+        "targetTitle": "Developer Command Center",
+        "summary": "开发者工作流密度高、安装后留存强，适合做 command center 和垂直开发矩阵。",
+        "moves": [
+          "标题优先用平台词或开发者任务词。",
+          "旗舰包做 command center，再拆 repo research / PR review / issue triage 变体。",
+          "首屏直接放真实仓库与真实输出样板。"
+        ],
+        "tags": [
+          "devops"
+        ],
+        "platformScope": "cross-platform or mixed",
+        "aisaOpportunityScore": 95
+      },
+      {
+        "type": "optional",
+        "sectionTitle": "migration",
+        "sectionSlug": "migration",
+        "sectionDescription": "",
+        "name": "openclaw-migration",
+        "slug": "openclaw-migration",
+        "path": "migration/openclaw-migration",
+        "description": "Migrate a user's OpenClaw customization footprint into Hermes Agent. Imports Hermes-compatible memories, SOUL.md, command allowlists, user skills, and selected workspace assets from ~/.openclaw, then reports what could not be migrated and why.",
+        "category": "Developer",
+        "apiFamily": "Developer Platform API",
+        "aisaFitScore": 95,
+        "monetizationScore": 95,
+        "factoryScore": 95,
+        "targetTitle": "Developer Command Center",
+        "summary": "开发者工作流密度高、安装后留存强，适合做 command center 和垂直开发矩阵。",
+        "moves": [
+          "标题优先用平台词或开发者任务词。",
+          "旗舰包做 command center，再拆 repo research / PR review / issue triage 变体。",
+          "首屏直接放真实仓库与真实输出样板。"
+        ],
+        "tags": [
+          "migration",
+          "github"
+        ],
+        "platformScope": "cross-platform or mixed",
+        "aisaOpportunityScore": 95
       },
       {
         "type": "optional",
@@ -52680,37 +52553,6 @@
       },
       {
         "type": "optional",
-        "sectionTitle": "research",
-        "sectionSlug": "research",
-        "sectionDescription": "",
-        "name": "qmd",
-        "slug": "qmd",
-        "path": "research/qmd",
-        "description": "Search personal knowledge bases, notes, docs, and meeting transcripts locally using qmd — a hybrid retrieval engine with BM25, vector search, and LLM reranking. Supports CLI and MCP integration.",
-        "category": "Browser & Automation",
-        "apiFamily": "Browser Automation API",
-        "aisaFitScore": 91,
-        "monetizationScore": 95,
-        "factoryScore": 92,
-        "targetTitle": "Browser Automation Command Center",
-        "summary": "自动化结果价值高，适合更高客单价与企业套餐。",
-        "moves": [
-          "先定义最清晰的自动化任务，不要笼统叫 automation。",
-          "用 command center + 单任务包组合发布。",
-          "准备企业场景承接更高客单价。"
-        ],
-        "tags": [
-          "research",
-          "apple",
-          "macos",
-          "mlops",
-          "automation"
-        ],
-        "platformScope": "cross-platform or mixed",
-        "aisaOpportunityScore": 92.45
-      },
-      {
-        "type": "optional",
         "sectionTitle": "security",
         "sectionSlug": "security",
         "sectionDescription": "",
@@ -52718,77 +52560,23 @@
         "slug": "1password",
         "path": "security/1password",
         "description": "Set up and use 1Password CLI (op). Use when installing the CLI, enabling desktop app integration, signing in, and reading/injecting secrets for commands.",
-        "category": "Office Documents",
-        "apiFamily": "Document Office API",
-        "aisaFitScore": 92,
-        "monetizationScore": 92,
-        "factoryScore": 90,
+        "category": "Security & Audit",
+        "apiFamily": "Security Audit API",
+        "aisaFitScore": 87,
+        "monetizationScore": 94,
+        "factoryScore": 88,
         "targetTitle": "Document Office Command Center",
-        "summary": "文档类需求明确，最适合按 Word / Excel / PDF / PPT 做多 SKU。",
+        "summary": "安装前决策和企业治理都适合高价产品化。",
         "moves": [
-          "先做 Word / Excel / PPT / PDF 的独立入口。",
-          "再做 Office 全家桶。",
-          "强调结构化输出和批量处理。"
+          "输出直接形成通过 / 警告 / 阻断决策。",
+          "优先占安装前和高风险决策入口。",
+          "把风险解释与证据做成结构化模板。"
         ],
         "tags": [
           "security"
         ],
         "platformScope": "cross-platform or mixed",
-        "aisaOpportunityScore": 91.5
-      },
-      {
-        "type": "optional",
-        "sectionTitle": "creative",
-        "sectionSlug": "creative",
-        "sectionDescription": "",
-        "name": "meme-generation",
-        "slug": "meme-generation",
-        "path": "creative/meme-generation",
-        "description": "Generate real meme images by picking a template and overlaying text with Pillow. Produces actual .png meme files.",
-        "category": "Media Generation",
-        "apiFamily": "Media Generation API",
-        "aisaFitScore": 89,
-        "monetizationScore": 91,
-        "factoryScore": 89,
-        "targetTitle": "Media Generation Command Center",
-        "summary": "展示力强、传播力强，按量收费路径自然。",
-        "moves": [
-          "把模型能力改写成用户目标。",
-          "拆出图片、视频、风格、商品图等入口。",
-          "通过结果展示强化传播和收藏。"
-        ],
-        "tags": [
-          "creative"
-        ],
-        "platformScope": "cross-platform or mixed",
-        "aisaOpportunityScore": 89.6
-      },
-      {
-        "type": "optional",
-        "sectionTitle": "devops",
-        "sectionSlug": "devops",
-        "sectionDescription": "",
-        "name": "docker-management",
-        "slug": "docker-management",
-        "path": "devops/docker-management",
-        "description": "Manage Docker containers, images, volumes, networks, and Compose stacks — lifecycle ops, debugging, cleanup, and Dockerfile optimization.",
-        "category": "Media Generation",
-        "apiFamily": "Media Generation API",
-        "aisaFitScore": 89,
-        "monetizationScore": 91,
-        "factoryScore": 89,
-        "targetTitle": "Media Generation Command Center",
-        "summary": "展示力强、传播力强，按量收费路径自然。",
-        "moves": [
-          "把模型能力改写成用户目标。",
-          "拆出图片、视频、风格、商品图等入口。",
-          "通过结果展示强化传播和收藏。"
-        ],
-        "tags": [
-          "devops"
-        ],
-        "platformScope": "cross-platform or mixed",
-        "aisaOpportunityScore": 89.6
+        "aisaOpportunityScore": 89.35
       },
       {
         "type": "optional",
@@ -52904,31 +52692,30 @@
       },
       {
         "type": "optional",
-        "sectionTitle": "migration",
-        "sectionSlug": "migration",
+        "sectionTitle": "creative",
+        "sectionSlug": "creative",
         "sectionDescription": "",
-        "name": "openclaw-migration",
-        "slug": "openclaw-migration",
-        "path": "migration/openclaw-migration",
-        "description": "Migrate a user's OpenClaw customization footprint into Hermes Agent. Imports Hermes-compatible memories, SOUL.md, command allowlists, user skills, and selected workspace assets from ~/.openclaw, then reports what could not be migrated and why.",
-        "category": "Agentic Systems",
-        "apiFamily": "Agent Orchestration Layer",
-        "aisaFitScore": 72,
-        "monetizationScore": 78,
-        "factoryScore": 82,
-        "targetTitle": "Agent Upgrade Command Center",
-        "summary": "更适合作为旗舰叙事和系统层入口，而不是单点 API 包。",
+        "name": "meme-generation",
+        "slug": "meme-generation",
+        "path": "creative/meme-generation",
+        "description": "Generate real meme images by picking a template and overlaying text with Pillow. Produces actual .png meme files.",
+        "category": "General Utility",
+        "apiFamily": "General Utility API",
+        "aisaFitScore": 60,
+        "monetizationScore": 68,
+        "factoryScore": 65,
+        "targetTitle": "Utility Command Center",
+        "summary": "需要继续压缩成更窄的 JTBD 才容易变成爆款。",
         "moves": [
-          "先把抽象愿景改成具体收益。",
-          "同时配一组更实用的支撑技能承接流量。",
-          "把“更聪明”改成“哪里更强”。"
+          "先重写标题，让它更像任务。",
+          "压缩范围，优先做一轮就见效的窄入口。",
+          "用例子验证搜索词，再反推定位。"
         ],
         "tags": [
-          "migration",
-          "github"
+          "creative"
         ],
         "platformScope": "cross-platform or mixed",
-        "aisaOpportunityScore": 76.3
+        "aisaOpportunityScore": 63.65
       },
       {
         "type": "optional",
@@ -53100,6 +52887,63 @@
       },
       {
         "type": "bundled",
+        "sectionTitle": "mlops/evaluation",
+        "sectionSlug": "mlops/evaluation",
+        "sectionDescription": "Model evaluation benchmarks, experiment tracking, and interpretability tools.",
+        "name": "evaluating-llms-harness",
+        "slug": "evaluating-llms-harness",
+        "path": "mlops/evaluation/lm-evaluation-harness",
+        "description": "Evaluates LLMs across 60+ academic benchmarks (MMLU, HumanEval, GSM8K, TruthfulQA, HellaSwag). Use when benchmarking model quality, comparing models, reporting academic results, or tracking training progress. Industry standard used by EleutherAI, HuggingFace, and major labs. S…",
+        "category": "Search & Research",
+        "apiFamily": "Search API",
+        "aisaFitScore": 96,
+        "monetizationScore": 94,
+        "factoryScore": 96,
+        "targetTitle": "Research Command Center",
+        "summary": "高频信息入口最适合 API 化，也最容易拆出新闻、学术、情报等多变体。",
+        "moves": [
+          "先切一个最窄检索任务入口。",
+          "同步准备通用搜索、新闻搜索、学术搜索多变体。",
+          "结果直接给结论和来源，而不是原始链接堆叠。"
+        ],
+        "tags": [
+          "mlops",
+          "evaluation",
+          "github"
+        ],
+        "platformScope": "cross-platform or mixed",
+        "aisaOpportunityScore": 95.4
+      },
+      {
+        "type": "bundled",
+        "sectionTitle": "apple",
+        "sectionSlug": "apple",
+        "sectionDescription": "Apple/macOS-specific skills — iMessage, Reminders, Notes, FindMy, and macOS automation. These skills only load on macOS systems.",
+        "name": "apple-notes",
+        "slug": "apple-notes",
+        "path": "apple/apple-notes",
+        "description": "Manage Apple Notes via the memo CLI on macOS (create, view, search, edit).",
+        "category": "Search & Research",
+        "apiFamily": "Search API",
+        "aisaFitScore": 96,
+        "monetizationScore": 94,
+        "factoryScore": 96,
+        "targetTitle": "Research Command Center",
+        "summary": "高频信息入口最适合 API 化，也最容易拆出新闻、学术、情报等多变体。",
+        "moves": [
+          "先切一个最窄检索任务入口。",
+          "同步准备通用搜索、新闻搜索、学术搜索多变体。",
+          "结果直接给结论和来源，而不是原始链接堆叠。"
+        ],
+        "tags": [
+          "apple",
+          "macos"
+        ],
+        "platformScope": "macOS-only / Apple-adjacent",
+        "aisaOpportunityScore": 95.4
+      },
+      {
+        "type": "bundled",
         "sectionTitle": "github",
         "sectionSlug": "github",
         "sectionDescription": "GitHub workflow skills for managing repositories, pull requests, code reviews, issues, and CI/CD pipelines.",
@@ -53237,13 +53081,13 @@
       },
       {
         "type": "bundled",
-        "sectionTitle": "mlops/evaluation",
-        "sectionSlug": "mlops/evaluation",
-        "sectionDescription": "Model evaluation benchmarks, experiment tracking, and interpretability tools.",
-        "name": "evaluating-llms-harness",
-        "slug": "evaluating-llms-harness",
-        "path": "mlops/evaluation/lm-evaluation-harness",
-        "description": "Evaluates LLMs across 60+ academic benchmarks (MMLU, HumanEval, GSM8K, TruthfulQA, HellaSwag). Use when benchmarking model quality, comparing models, reporting academic results, or tracking training progress. Industry standard used by EleutherAI, HuggingFace, and major labs. S…",
+        "sectionTitle": "github",
+        "sectionSlug": "github",
+        "sectionDescription": "GitHub workflow skills for managing repositories, pull requests, code reviews, issues, and CI/CD pipelines.",
+        "name": "codebase-inspection",
+        "slug": "codebase-inspection",
+        "path": "github/codebase-inspection",
+        "description": "Inspect and analyze codebases using pygount for LOC counting, language breakdown, and code-vs-comment ratios. Use when asked to check lines of code, repo size, language composition, or codebase stats.",
         "category": "Developer",
         "apiFamily": "Developer Platform API",
         "aisaFitScore": 95,
@@ -53257,8 +53101,6 @@
           "首屏直接放真实仓库与真实输出样板。"
         ],
         "tags": [
-          "mlops",
-          "evaluation",
           "github"
         ],
         "platformScope": "cross-platform or mixed",
@@ -53288,36 +53130,6 @@
         "tags": [
           "email",
           "mlops"
-        ],
-        "platformScope": "cross-platform or mixed",
-        "aisaOpportunityScore": 92.75
-      },
-      {
-        "type": "bundled",
-        "sectionTitle": "note-taking",
-        "sectionSlug": "note-taking",
-        "sectionDescription": "Note taking skills, to save information, assist with research, and collaborate on multi-session planning.",
-        "name": "obsidian",
-        "slug": "obsidian",
-        "path": "note-taking/obsidian",
-        "description": "Read, search, and create notes in the Obsidian vault.",
-        "category": "Productivity & Workspace",
-        "apiFamily": "Workspace API",
-        "aisaFitScore": 93,
-        "monetizationScore": 93,
-        "factoryScore": 92,
-        "targetTitle": "Workspace Command Center",
-        "summary": "办公协作类更适合做团队席位、高客单价和长期复购。",
-        "moves": [
-          "把办公动作聚合成 command center。",
-          "先做个人流程，再扩团队协作和自动化套餐。",
-          "卖点围绕每天都会用到的具体动作展开。"
-        ],
-        "tags": [
-          "note",
-          "taking",
-          "apple",
-          "macos"
         ],
         "platformScope": "cross-platform or mixed",
         "aisaOpportunityScore": 92.75
@@ -53520,56 +53332,28 @@
         "sectionTitle": "apple",
         "sectionSlug": "apple",
         "sectionDescription": "Apple/macOS-specific skills — iMessage, Reminders, Notes, FindMy, and macOS automation. These skills only load on macOS systems.",
-        "name": "apple-notes",
-        "slug": "apple-notes",
-        "path": "apple/apple-notes",
-        "description": "Manage Apple Notes via the memo CLI on macOS (create, view, search, edit).",
-        "category": "Browser & Automation",
-        "apiFamily": "Browser Automation API",
-        "aisaFitScore": 91,
-        "monetizationScore": 95,
-        "factoryScore": 92,
-        "targetTitle": "Browser Automation Command Center",
-        "summary": "自动化结果价值高，适合更高客单价与企业套餐。",
-        "moves": [
-          "先定义最清晰的自动化任务，不要笼统叫 automation。",
-          "用 command center + 单任务包组合发布。",
-          "准备企业场景承接更高客单价。"
-        ],
-        "tags": [
-          "apple",
-          "macos"
-        ],
-        "platformScope": "macOS-only / Apple-adjacent",
-        "aisaOpportunityScore": 92.45
-      },
-      {
-        "type": "bundled",
-        "sectionTitle": "apple",
-        "sectionSlug": "apple",
-        "sectionDescription": "Apple/macOS-specific skills — iMessage, Reminders, Notes, FindMy, and macOS automation. These skills only load on macOS systems.",
         "name": "apple-reminders",
         "slug": "apple-reminders",
         "path": "apple/apple-reminders",
         "description": "Manage Apple Reminders via remindctl CLI (list, add, complete, delete).",
-        "category": "Browser & Automation",
-        "apiFamily": "Browser Automation API",
-        "aisaFitScore": 91,
-        "monetizationScore": 95,
+        "category": "Productivity & Workspace",
+        "apiFamily": "Workspace API",
+        "aisaFitScore": 93,
+        "monetizationScore": 93,
         "factoryScore": 92,
-        "targetTitle": "Browser Automation Command Center",
-        "summary": "自动化结果价值高，适合更高客单价与企业套餐。",
+        "targetTitle": "Workspace Command Center",
+        "summary": "办公协作类更适合做团队席位、高客单价和长期复购。",
         "moves": [
-          "先定义最清晰的自动化任务，不要笼统叫 automation。",
-          "用 command center + 单任务包组合发布。",
-          "准备企业场景承接更高客单价。"
+          "把办公动作聚合成 command center。",
+          "先做个人流程，再扩团队协作和自动化套餐。",
+          "卖点围绕每天都会用到的具体动作展开。"
         ],
         "tags": [
           "apple",
           "macos"
         ],
         "platformScope": "macOS-only / Apple-adjacent",
-        "aisaOpportunityScore": 92.45
+        "aisaOpportunityScore": 92.75
       },
       {
         "type": "bundled",
@@ -53580,24 +53364,24 @@
         "slug": "findmy",
         "path": "apple/findmy",
         "description": "Track Apple devices and AirTags via FindMy.app on macOS using AppleScript and screen capture.",
-        "category": "Browser & Automation",
-        "apiFamily": "Browser Automation API",
-        "aisaFitScore": 91,
-        "monetizationScore": 95,
+        "category": "Productivity & Workspace",
+        "apiFamily": "Workspace API",
+        "aisaFitScore": 93,
+        "monetizationScore": 93,
         "factoryScore": 92,
-        "targetTitle": "Browser Automation Command Center",
-        "summary": "自动化结果价值高，适合更高客单价与企业套餐。",
+        "targetTitle": "Workspace Command Center",
+        "summary": "办公协作类更适合做团队席位、高客单价和长期复购。",
         "moves": [
-          "先定义最清晰的自动化任务，不要笼统叫 automation。",
-          "用 command center + 单任务包组合发布。",
-          "准备企业场景承接更高客单价。"
+          "把办公动作聚合成 command center。",
+          "先做个人流程，再扩团队协作和自动化套餐。",
+          "卖点围绕每天都会用到的具体动作展开。"
         ],
         "tags": [
           "apple",
           "macos"
         ],
         "platformScope": "macOS-only / Apple-adjacent",
-        "aisaOpportunityScore": 92.45
+        "aisaOpportunityScore": 92.75
       },
       {
         "type": "bundled",
@@ -53622,33 +53406,6 @@
         ],
         "tags": [
           "devops"
-        ],
-        "platformScope": "cross-platform or mixed",
-        "aisaOpportunityScore": 92.45
-      },
-      {
-        "type": "bundled",
-        "sectionTitle": "github",
-        "sectionSlug": "github",
-        "sectionDescription": "GitHub workflow skills for managing repositories, pull requests, code reviews, issues, and CI/CD pipelines.",
-        "name": "codebase-inspection",
-        "slug": "codebase-inspection",
-        "path": "github/codebase-inspection",
-        "description": "Inspect and analyze codebases using pygount for LOC counting, language breakdown, and code-vs-comment ratios. Use when asked to check lines of code, repo size, language composition, or codebase stats.",
-        "category": "Browser & Automation",
-        "apiFamily": "Browser Automation API",
-        "aisaFitScore": 91,
-        "monetizationScore": 95,
-        "factoryScore": 92,
-        "targetTitle": "Browser Automation Command Center",
-        "summary": "自动化结果价值高，适合更高客单价与企业套餐。",
-        "moves": [
-          "先定义最清晰的自动化任务，不要笼统叫 automation。",
-          "用 command center + 单任务包组合发布。",
-          "准备企业场景承接更高客单价。"
-        ],
-        "tags": [
-          "github"
         ],
         "platformScope": "cross-platform or mixed",
         "aisaOpportunityScore": 92.45
@@ -53683,6 +53440,36 @@
         "aisaOpportunityScore": 92.45
       },
       {
+        "type": "bundled",
+        "sectionTitle": "note-taking",
+        "sectionSlug": "note-taking",
+        "sectionDescription": "Note taking skills, to save information, assist with research, and collaborate on multi-session planning.",
+        "name": "obsidian",
+        "slug": "obsidian",
+        "path": "note-taking/obsidian",
+        "description": "Read, search, and create notes in the Obsidian vault.",
+        "category": "Security & Audit",
+        "apiFamily": "Security Audit API",
+        "aisaFitScore": 87,
+        "monetizationScore": 94,
+        "factoryScore": 88,
+        "targetTitle": "Security Audit Command Center",
+        "summary": "安装前决策和企业治理都适合高价产品化。",
+        "moves": [
+          "输出直接形成通过 / 警告 / 阻断决策。",
+          "优先占安装前和高风险决策入口。",
+          "把风险解释与证据做成结构化模板。"
+        ],
+        "tags": [
+          "note",
+          "taking",
+          "apple",
+          "macos"
+        ],
+        "platformScope": "cross-platform or mixed",
+        "aisaOpportunityScore": 89.35
+      },
+      {
         "type": "optional",
         "sectionTitle": "research",
         "sectionSlug": "research",
@@ -53708,6 +53495,92 @@
         ],
         "platformScope": "cross-platform or mixed",
         "aisaOpportunityScore": 95.4
+      },
+      {
+        "type": "optional",
+        "sectionTitle": "research",
+        "sectionSlug": "research",
+        "sectionDescription": "",
+        "name": "qmd",
+        "slug": "qmd",
+        "path": "research/qmd",
+        "description": "Search personal knowledge bases, notes, docs, and meeting transcripts locally using qmd — a hybrid retrieval engine with BM25, vector search, and LLM reranking. Supports CLI and MCP integration.",
+        "category": "Search & Research",
+        "apiFamily": "Search API",
+        "aisaFitScore": 96,
+        "monetizationScore": 94,
+        "factoryScore": 96,
+        "targetTitle": "Research Command Center",
+        "summary": "高频信息入口最适合 API 化，也最容易拆出新闻、学术、情报等多变体。",
+        "moves": [
+          "先切一个最窄检索任务入口。",
+          "同步准备通用搜索、新闻搜索、学术搜索多变体。",
+          "结果直接给结论和来源，而不是原始链接堆叠。"
+        ],
+        "tags": [
+          "research",
+          "apple",
+          "macos",
+          "mlops",
+          "automation"
+        ],
+        "platformScope": "cross-platform or mixed",
+        "aisaOpportunityScore": 95.4
+      },
+      {
+        "type": "optional",
+        "sectionTitle": "devops",
+        "sectionSlug": "devops",
+        "sectionDescription": "",
+        "name": "docker-management",
+        "slug": "docker-management",
+        "path": "devops/docker-management",
+        "description": "Manage Docker containers, images, volumes, networks, and Compose stacks — lifecycle ops, debugging, cleanup, and Dockerfile optimization.",
+        "category": "Developer",
+        "apiFamily": "Developer Platform API",
+        "aisaFitScore": 95,
+        "monetizationScore": 95,
+        "factoryScore": 95,
+        "targetTitle": "Developer Command Center",
+        "summary": "开发者工作流密度高、安装后留存强，适合做 command center 和垂直开发矩阵。",
+        "moves": [
+          "标题优先用平台词或开发者任务词。",
+          "旗舰包做 command center，再拆 repo research / PR review / issue triage 变体。",
+          "首屏直接放真实仓库与真实输出样板。"
+        ],
+        "tags": [
+          "devops"
+        ],
+        "platformScope": "cross-platform or mixed",
+        "aisaOpportunityScore": 95
+      },
+      {
+        "type": "optional",
+        "sectionTitle": "migration",
+        "sectionSlug": "migration",
+        "sectionDescription": "",
+        "name": "openclaw-migration",
+        "slug": "openclaw-migration",
+        "path": "migration/openclaw-migration",
+        "description": "Migrate a user's OpenClaw customization footprint into Hermes Agent. Imports Hermes-compatible memories, SOUL.md, command allowlists, user skills, and selected workspace assets from ~/.openclaw, then reports what could not be migrated and why.",
+        "category": "Developer",
+        "apiFamily": "Developer Platform API",
+        "aisaFitScore": 95,
+        "monetizationScore": 95,
+        "factoryScore": 95,
+        "targetTitle": "Developer Command Center",
+        "summary": "开发者工作流密度高、安装后留存强，适合做 command center 和垂直开发矩阵。",
+        "moves": [
+          "标题优先用平台词或开发者任务词。",
+          "旗舰包做 command center，再拆 repo research / PR review / issue triage 变体。",
+          "首屏直接放真实仓库与真实输出样板。"
+        ],
+        "tags": [
+          "migration",
+          "github"
+        ],
+        "platformScope": "cross-platform or mixed",
+        "aisaOpportunityScore": 95
       },
       {
         "type": "optional",
@@ -53849,37 +53722,6 @@
       },
       {
         "type": "optional",
-        "sectionTitle": "research",
-        "sectionSlug": "research",
-        "sectionDescription": "",
-        "name": "qmd",
-        "slug": "qmd",
-        "path": "research/qmd",
-        "description": "Search personal knowledge bases, notes, docs, and meeting transcripts locally using qmd — a hybrid retrieval engine with BM25, vector search, and LLM reranking. Supports CLI and MCP integration.",
-        "category": "Browser & Automation",
-        "apiFamily": "Browser Automation API",
-        "aisaFitScore": 91,
-        "monetizationScore": 95,
-        "factoryScore": 92,
-        "targetTitle": "Browser Automation Command Center",
-        "summary": "自动化结果价值高，适合更高客单价与企业套餐。",
-        "moves": [
-          "先定义最清晰的自动化任务，不要笼统叫 automation。",
-          "用 command center + 单任务包组合发布。",
-          "准备企业场景承接更高客单价。"
-        ],
-        "tags": [
-          "research",
-          "apple",
-          "macos",
-          "mlops",
-          "automation"
-        ],
-        "platformScope": "cross-platform or mixed",
-        "aisaOpportunityScore": 92.45
-      },
-      {
-        "type": "optional",
         "sectionTitle": "security",
         "sectionSlug": "security",
         "sectionDescription": "",
@@ -53887,77 +53729,23 @@
         "slug": "1password",
         "path": "security/1password",
         "description": "Set up and use 1Password CLI (op). Use when installing the CLI, enabling desktop app integration, signing in, and reading/injecting secrets for commands.",
-        "category": "Office Documents",
-        "apiFamily": "Document Office API",
-        "aisaFitScore": 92,
-        "monetizationScore": 92,
-        "factoryScore": 90,
+        "category": "Security & Audit",
+        "apiFamily": "Security Audit API",
+        "aisaFitScore": 87,
+        "monetizationScore": 94,
+        "factoryScore": 88,
         "targetTitle": "Document Office Command Center",
-        "summary": "文档类需求明确，最适合按 Word / Excel / PDF / PPT 做多 SKU。",
+        "summary": "安装前决策和企业治理都适合高价产品化。",
         "moves": [
-          "先做 Word / Excel / PPT / PDF 的独立入口。",
-          "再做 Office 全家桶。",
-          "强调结构化输出和批量处理。"
+          "输出直接形成通过 / 警告 / 阻断决策。",
+          "优先占安装前和高风险决策入口。",
+          "把风险解释与证据做成结构化模板。"
         ],
         "tags": [
           "security"
         ],
         "platformScope": "cross-platform or mixed",
-        "aisaOpportunityScore": 91.5
-      },
-      {
-        "type": "optional",
-        "sectionTitle": "creative",
-        "sectionSlug": "creative",
-        "sectionDescription": "",
-        "name": "meme-generation",
-        "slug": "meme-generation",
-        "path": "creative/meme-generation",
-        "description": "Generate real meme images by picking a template and overlaying text with Pillow. Produces actual .png meme files.",
-        "category": "Media Generation",
-        "apiFamily": "Media Generation API",
-        "aisaFitScore": 89,
-        "monetizationScore": 91,
-        "factoryScore": 89,
-        "targetTitle": "Media Generation Command Center",
-        "summary": "展示力强、传播力强，按量收费路径自然。",
-        "moves": [
-          "把模型能力改写成用户目标。",
-          "拆出图片、视频、风格、商品图等入口。",
-          "通过结果展示强化传播和收藏。"
-        ],
-        "tags": [
-          "creative"
-        ],
-        "platformScope": "cross-platform or mixed",
-        "aisaOpportunityScore": 89.6
-      },
-      {
-        "type": "optional",
-        "sectionTitle": "devops",
-        "sectionSlug": "devops",
-        "sectionDescription": "",
-        "name": "docker-management",
-        "slug": "docker-management",
-        "path": "devops/docker-management",
-        "description": "Manage Docker containers, images, volumes, networks, and Compose stacks — lifecycle ops, debugging, cleanup, and Dockerfile optimization.",
-        "category": "Media Generation",
-        "apiFamily": "Media Generation API",
-        "aisaFitScore": 89,
-        "monetizationScore": 91,
-        "factoryScore": 89,
-        "targetTitle": "Media Generation Command Center",
-        "summary": "展示力强、传播力强，按量收费路径自然。",
-        "moves": [
-          "把模型能力改写成用户目标。",
-          "拆出图片、视频、风格、商品图等入口。",
-          "通过结果展示强化传播和收藏。"
-        ],
-        "tags": [
-          "devops"
-        ],
-        "platformScope": "cross-platform or mixed",
-        "aisaOpportunityScore": 89.6
+        "aisaOpportunityScore": 89.35
       },
       {
         "type": "optional",
@@ -54073,31 +53861,30 @@
       },
       {
         "type": "optional",
-        "sectionTitle": "migration",
-        "sectionSlug": "migration",
+        "sectionTitle": "creative",
+        "sectionSlug": "creative",
         "sectionDescription": "",
-        "name": "openclaw-migration",
-        "slug": "openclaw-migration",
-        "path": "migration/openclaw-migration",
-        "description": "Migrate a user's OpenClaw customization footprint into Hermes Agent. Imports Hermes-compatible memories, SOUL.md, command allowlists, user skills, and selected workspace assets from ~/.openclaw, then reports what could not be migrated and why.",
-        "category": "Agentic Systems",
-        "apiFamily": "Agent Orchestration Layer",
-        "aisaFitScore": 72,
-        "monetizationScore": 78,
-        "factoryScore": 82,
-        "targetTitle": "Agent Upgrade Command Center",
-        "summary": "更适合作为旗舰叙事和系统层入口，而不是单点 API 包。",
+        "name": "meme-generation",
+        "slug": "meme-generation",
+        "path": "creative/meme-generation",
+        "description": "Generate real meme images by picking a template and overlaying text with Pillow. Produces actual .png meme files.",
+        "category": "General Utility",
+        "apiFamily": "General Utility API",
+        "aisaFitScore": 60,
+        "monetizationScore": 68,
+        "factoryScore": 65,
+        "targetTitle": "Utility Command Center",
+        "summary": "需要继续压缩成更窄的 JTBD 才容易变成爆款。",
         "moves": [
-          "先把抽象愿景改成具体收益。",
-          "同时配一组更实用的支撑技能承接流量。",
-          "把“更聪明”改成“哪里更强”。"
+          "先重写标题，让它更像任务。",
+          "压缩范围，优先做一轮就见效的窄入口。",
+          "用例子验证搜索词，再反推定位。"
         ],
         "tags": [
-          "migration",
-          "github"
+          "creative"
         ],
         "platformScope": "cross-platform or mixed",
-        "aisaOpportunityScore": 76.3
+        "aisaOpportunityScore": 63.65
       },
       {
         "type": "optional",
@@ -54159,11 +53946,22 @@
       "分类非常强调运行环境和工作流边界，例如 Apple / GitHub / MLOps / Research。",
       "高 AISA 适配项主要集中在 GitHub、Research、Productivity、Documents、Automation 这些高频外部工具边界。",
       "Apple / macOS 类 skill 价值高但平台限制强，更适合做专属 SKU 而不是旗舰总包。",
-      "截至 2026-04-23，live guide 标注 97 个 bundled skills，但官方 raw catalog 当前能结构化提取 70 个 bundled rows，说明文档口径存在漂移。"
+      "截至 2026-04-25，Hermes live/raw 直连刷新失败（Hermes raw catalog parsed zero rows），本次结果已基于本地缓存重算分类与机会分。"
     ]
   },
   "combined": {
     "combinedOpportunities": [
+      {
+        "ecosystem": "Claude Marketplaces",
+        "name": "k-dense-ai-claude-scientific-skills",
+        "owner": "K-Dense-AI",
+        "category": "Search & Research",
+        "apiFamily": "Search API",
+        "targetTitle": "Research Command Center",
+        "summary": "高频信息入口最适合 API 化，也最容易拆出新闻、学术、情报等多变体。",
+        "opportunityScore": 96.8,
+        "sourceUrl": "https://github.com/K-Dense-AI/claude-scientific-skills"
+      },
       {
         "ecosystem": "Claude Marketplaces",
         "name": "orchestra-research-ai-research-skills",
@@ -54174,6 +53972,50 @@
         "summary": "高频信息入口最适合 API 化，也最容易拆出新闻、学术、情报等多变体。",
         "opportunityScore": 96.8,
         "sourceUrl": "https://github.com/Orchestra-Research/AI-Research-SKILLs"
+      },
+      {
+        "ecosystem": "Claude Marketplaces",
+        "name": "exa-labs-exa-mcp-server",
+        "owner": "exa-labs",
+        "category": "Search & Research",
+        "apiFamily": "Search API",
+        "targetTitle": "Browser Automation Command Center",
+        "summary": "高频信息入口最适合 API 化，也最容易拆出新闻、学术、情报等多变体。",
+        "opportunityScore": 96.8,
+        "sourceUrl": "https://github.com/exa-labs/exa-mcp-server"
+      },
+      {
+        "ecosystem": "Claude Marketplaces",
+        "name": "ryandonofrio3-osgrep",
+        "owner": "Ryandonofrio3",
+        "category": "Search & Research",
+        "apiFamily": "Search API",
+        "targetTitle": "Research Command Center",
+        "summary": "高频信息入口最适合 API 化，也最容易拆出新闻、学术、情报等多变体。",
+        "opportunityScore": 96.8,
+        "sourceUrl": "https://github.com/Ryandonofrio3/osgrep"
+      },
+      {
+        "ecosystem": "Claude Marketplaces",
+        "name": "ast-grep-agent-skill",
+        "owner": "ast-grep",
+        "category": "Search & Research",
+        "apiFamily": "Search API",
+        "targetTitle": "Research Command Center",
+        "summary": "高频信息入口最适合 API 化，也最容易拆出新闻、学术、情报等多变体。",
+        "opportunityScore": 96.8,
+        "sourceUrl": "https://github.com/ast-grep/agent-skill"
+      },
+      {
+        "ecosystem": "Claude Marketplaces",
+        "name": "23blocks-os-ai-maestro",
+        "owner": "23blocks-OS",
+        "category": "Search & Research",
+        "apiFamily": "Search API",
+        "targetTitle": "Research Command Center",
+        "summary": "高频信息入口最适合 API 化，也最容易拆出新闻、学术、情报等多变体。",
+        "opportunityScore": 96.8,
+        "sourceUrl": "https://github.com/23blocks-OS/ai-maestro"
       },
       {
         "ecosystem": "Claude Marketplaces",
@@ -54188,69 +54030,14 @@
       },
       {
         "ecosystem": "Claude Marketplaces",
-        "name": "nextlevelbuilder-ui-ux-pro-max-skill",
-        "owner": "nextlevelbuilder",
-        "category": "Developer",
-        "apiFamily": "Developer Platform API",
-        "targetTitle": "Developer Command Center",
-        "summary": "开发者工作流密度高、安装后留存强，适合做 command center 和垂直开发矩阵。",
-        "opportunityScore": 96.5,
-        "sourceUrl": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill"
-      },
-      {
-        "ecosystem": "Claude Marketplaces",
-        "name": "yamadashy-repomix",
-        "owner": "yamadashy",
-        "category": "Developer",
-        "apiFamily": "Developer Platform API",
-        "targetTitle": "Developer Command Center",
-        "summary": "开发者工作流密度高、安装后留存强，适合做 command center 和垂直开发矩阵。",
-        "opportunityScore": 96.5,
-        "sourceUrl": "https://github.com/yamadashy/repomix"
-      },
-      {
-        "ecosystem": "Claude Marketplaces",
-        "name": "dailydotdev-daily",
-        "owner": "dailydotdev",
-        "category": "Developer",
-        "apiFamily": "Developer Platform API",
-        "targetTitle": "Developer Command Center",
-        "summary": "开发者工作流密度高、安装后留存强，适合做 command center 和垂直开发矩阵。",
-        "opportunityScore": 96.5,
-        "sourceUrl": "https://github.com/dailydotdev/daily"
-      },
-      {
-        "ecosystem": "Claude Marketplaces",
-        "name": "anthropics-knowledge-work-plugins",
+        "name": "anthropics-skills",
         "owner": "anthropics",
         "category": "Developer",
         "apiFamily": "Developer Platform API",
         "targetTitle": "Developer Command Center",
         "summary": "开发者工作流密度高、安装后留存强，适合做 command center 和垂直开发矩阵。",
         "opportunityScore": 96.5,
-        "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins"
-      },
-      {
-        "ecosystem": "Claude Marketplaces",
-        "name": "backnotprop-plannotator",
-        "owner": "backnotprop",
-        "category": "Developer",
-        "apiFamily": "Developer Platform API",
-        "targetTitle": "Developer Command Center",
-        "summary": "开发者工作流密度高、安装后留存强，适合做 command center 和垂直开发矩阵。",
-        "opportunityScore": 96.5,
-        "sourceUrl": "https://github.com/backnotprop/plannotator"
-      },
-      {
-        "ecosystem": "Claude Marketplaces",
-        "name": "jasonxudeveloper-jengine",
-        "owner": "JasonXuDeveloper",
-        "category": "Developer",
-        "apiFamily": "Developer Platform API",
-        "targetTitle": "Developer Command Center",
-        "summary": "开发者工作流密度高、安装后留存强，适合做 command center 和垂直开发矩阵。",
-        "opportunityScore": 96.5,
-        "sourceUrl": "https://github.com/JasonXuDeveloper/JEngine"
+        "sourceUrl": "https://github.com/anthropics/skills"
       },
       {
         "ecosystem": "Claude Skills",
@@ -54452,6 +54239,28 @@
       },
       {
         "ecosystem": "Hermes Bundled",
+        "name": "evaluating-llms-harness",
+        "owner": "official",
+        "category": "Search & Research",
+        "apiFamily": "Search API",
+        "targetTitle": "Research Command Center",
+        "summary": "高频信息入口最适合 API 化，也最容易拆出新闻、学术、情报等多变体。",
+        "opportunityScore": 95.4,
+        "sourceUrl": null
+      },
+      {
+        "ecosystem": "Hermes Bundled",
+        "name": "apple-notes",
+        "owner": "official",
+        "category": "Search & Research",
+        "apiFamily": "Search API",
+        "targetTitle": "Research Command Center",
+        "summary": "高频信息入口最适合 API 化，也最容易拆出新闻、学术、情报等多变体。",
+        "opportunityScore": 95.4,
+        "sourceUrl": null
+      },
+      {
+        "ecosystem": "Hermes Bundled",
         "name": "github-auth",
         "owner": "official",
         "category": "Developer",
@@ -54464,28 +54273,6 @@
       {
         "ecosystem": "Hermes Bundled",
         "name": "github-code-review",
-        "owner": "official",
-        "category": "Developer",
-        "apiFamily": "Developer Platform API",
-        "targetTitle": "GitHub Command Center",
-        "summary": "开发者工作流密度高、安装后留存强，适合做 command center 和垂直开发矩阵。",
-        "opportunityScore": 95,
-        "sourceUrl": null
-      },
-      {
-        "ecosystem": "Hermes Bundled",
-        "name": "github-issues",
-        "owner": "official",
-        "category": "Developer",
-        "apiFamily": "Developer Platform API",
-        "targetTitle": "GitHub Command Center",
-        "summary": "开发者工作流密度高、安装后留存强，适合做 command center 和垂直开发矩阵。",
-        "opportunityScore": 95,
-        "sourceUrl": null
-      },
-      {
-        "ecosystem": "Hermes Bundled",
-        "name": "github-pr-workflow",
         "owner": "official",
         "category": "Developer",
         "apiFamily": "Developer Platform API",

@@ -1,7 +1,7 @@
 # Claude AISA Report
 
-- 生成时间：2026-04-24T11:04:43.089Z
-- 数据日期：2026-04-24
+- 生成时间：2026-04-25T04:44:29.267Z
+- 数据日期：2026-04-25
 - 来源：Claude Skills、Claude Marketplaces
 
 ## 一句话结论
@@ -51,7 +51,7 @@ Claude 的爆款更接近“高星仓库 + 高意图任务词 + 技能矩阵”�
 | 8 | ui-ux-pro-max | nextlevelbuilder | Developer | 118000 | 65700 | - |
 | 9 | brainstorming | obra | Agentic Systems | 106400 | 154200 | - |
 | 10 | azure-ai | microsoft | General Utility | 103700 | 160 | - |
-| 11 | ai-image-generation | inferen-sh | Media Generation | 99700 | 173 | - |
+| 11 | ai-image-generation | inferen-sh | General Utility | 99700 | 173 | - |
 | 12 | supabase-postgres-best-practices | supabase | Developer | 99300 | 2000 | - |
 | 13 | shadcn | shadcn | General Utility | 88300 | 112400 | - |
 | 14 | ai-elements | vercel | General Utility | 83500 | 1900 | - |
@@ -64,8 +64,8 @@ Claude 的爆款更接近“高星仓库 + 高意图任务词 + 技能矩阵”�
 | 1 | f/prompts.chat | f | Developer | 1 | 157647 |
 | 2 | affaan-m/everything-claude-code | affaan-m | Security & Audit | 1 | 141890 |
 | 3 | obra/superpowers | obra | Agentic Systems | 1 | 136990 |
-| 4 | anthropics/skills | anthropics | Agentic Systems | 3 | 111395 |
-| 5 | anthropics/claude-code | anthropics | Agentic Systems | 13 | 109692 |
+| 4 | anthropics/skills | anthropics | Developer | 3 | 111395 |
+| 5 | anthropics/claude-code | anthropics | Developer | 13 | 109692 |
 | 6 | nextlevelbuilder/ui-ux-pro-max-skill | nextlevelbuilder | Developer | 1 | 59592 |
 | 7 | upstash/context7 | upstash | General Utility | 1 | 51767 |
 | 8 | ComposioHQ/awesome-claude-skills | ComposioHQ | Browser & Automation | 107 | 51515 |
@@ -127,14 +127,14 @@ Claude 的爆款更接近“高星仓库 + 高意图任务词 + 技能矩阵”�
 
 | 排名 | 板块 | 名称 | 类目 | 机会分 |
 | --- | --- | --- | --- | --- |
-| 1 | Claude Marketplaces | orchestra-research-ai-research-skills | Search & Research | 96.8 |
-| 2 | Claude Marketplaces | f-prompts.chat | Developer | 96.5 |
-| 3 | Claude Marketplaces | nextlevelbuilder-ui-ux-pro-max-skill | Developer | 96.5 |
-| 4 | Claude Marketplaces | yamadashy-repomix | Developer | 96.5 |
-| 5 | Claude Marketplaces | dailydotdev-daily | Developer | 96.5 |
-| 6 | Claude Marketplaces | anthropics-knowledge-work-plugins | Developer | 96.5 |
-| 7 | Claude Marketplaces | backnotprop-plannotator | Developer | 96.5 |
-| 8 | Claude Marketplaces | jasonxudeveloper-jengine | Developer | 96.5 |
+| 1 | Claude Marketplaces | k-dense-ai-claude-scientific-skills | Search & Research | 96.8 |
+| 2 | Claude Marketplaces | orchestra-research-ai-research-skills | Search & Research | 96.8 |
+| 3 | Claude Marketplaces | exa-labs-exa-mcp-server | Search & Research | 96.8 |
+| 4 | Claude Marketplaces | ryandonofrio3-osgrep | Search & Research | 96.8 |
+| 5 | Claude Marketplaces | ast-grep-agent-skill | Search & Research | 96.8 |
+| 6 | Claude Marketplaces | 23blocks-os-ai-maestro | Search & Research | 96.8 |
+| 7 | Claude Marketplaces | f-prompts.chat | Developer | 96.5 |
+| 8 | Claude Marketplaces | anthropics-skills | Developer | 96.5 |
 | 9 | Claude Skills | lark-wiki | Search & Research | 96.1 |
 | 10 | Claude Skills | firecrawl | Search & Research | 96.1 |
 | 11 | Claude Skills | paper-context-resolver | Search & Research | 96.1 |

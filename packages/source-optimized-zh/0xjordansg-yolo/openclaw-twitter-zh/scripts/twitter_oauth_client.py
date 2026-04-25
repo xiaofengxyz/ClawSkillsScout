@@ -1,6 +1,4 @@
 #!/usr/bin/env python3
-from __future__ import annotations
-
 """
 Twitter relay client for local OAuth authorization and tweet publishing.
 
@@ -46,17 +44,19 @@ def get_env(name: str, default: Optional[str] = None) -> Optional[str]:
 def normalize_base_url(base_url: str) -> str:
     value = base_url.strip().rstrip("/")
     if not value:
-        raise RelayConfigError("Relay base URL is required.")
+        raise RelayConfigError("TWITTER_RELAY_BASE_URL is required.")
     parsed = urllib.parse.urlparse(value)
     if parsed.scheme not in {"http", "https"} or not parsed.netloc:
-        raise RelayConfigError("Relay base URL must be a valid http(s) URL.")
+        raise RelayConfigError("TWITTER_RELAY_BASE_URL must be a valid http(s) URL.")
     return value
 
 
 def load_config(args: argparse.Namespace) -> Dict[str, Any]:
-    base_url = normalize_base_url(DEFAULT_BASE_URL)
-    aisa_api_key = get_env("AISA_API_KEY")
-    timeout = DEFAULT_TIMEOUT
+    base_url = normalize_base_url(
+        get_env("TWITTER_RELAY_BASE_URL", DEFAULT_BASE_URL)
+    )
+    aisa_api_key = getattr(args, "aisa_api_key", None) or get_env("AISA_API_KEY")
+    timeout = getattr(args, "timeout", None) or int(get_env("TWITTER_RELAY_TIMEOUT", str(DEFAULT_TIMEOUT)))
 
     if not aisa_api_key:
         raise RelayConfigError("AISA_API_KEY is required.")
@@ -539,7 +539,7 @@ def command_status(args: argparse.Namespace) -> None:
     response = {
         "ok": True,
         "relay_base_url": config["base_url"],
-        "aisa_api_key_present": bool(config["aisa_api_key"]),
+        "aisa_api_key": config["aisa_api_key"],
         "timeout": config["timeout"],
         "supported_commands": ["authorize", "post", "status"],
         "supported_endpoints": ["/twitter/auth_twitter", "/twitter/post_twitter"],
@@ -556,6 +556,8 @@ def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         description="Twitter relay client for local OAuth and posting",
     )
+    parser.add_argument("--aisa-api-key", help="Override AISA_API_KEY")
+    parser.add_argument("--timeout", type=int, help="Override TWITTER_RELAY_TIMEOUT")
 
     subparsers = parser.add_subparsers(dest="command", required=True)
 

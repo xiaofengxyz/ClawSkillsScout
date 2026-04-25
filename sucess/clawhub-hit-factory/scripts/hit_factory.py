@@ -201,7 +201,7 @@ metadata:
 ## Packaging Guardrails
 
 - Use `metadata.aisa` frontmatter only; do not add extra publication metadata fields unless the target harness explicitly requires them.
-- Use `{{baseDir}}` when SKILL examples reference bundled scripts.
+- Use `{baseDir}` when SKILL examples reference bundled scripts.
 - Ship runtime files only; do not bundle test, eval, sync, or build tooling with the published skill.
 - Prefer stdlib-only Python dependencies for portable skill bundles.
 

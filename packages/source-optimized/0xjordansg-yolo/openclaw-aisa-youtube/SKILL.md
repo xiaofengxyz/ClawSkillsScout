@@ -82,7 +82,7 @@ These points summarize the common reasons similar skills are marked `Suspicious`
 
 - The package is relay-based: all search requests go to `api.aisa.one`.
 - The package is API-key-first: it requires `AISA_API_KEY` and does not ask for passwords, cookies, browser data, or other legacy secrets.
-- The frontmatter duplicates required bins/env at the top level and under `metadata.openclaw` so registry parsers can detect them consistently.
+- The frontmatter declares required bins/env, primary env, and compatibility under canonical `metadata.aisa`.
 - The release bundle is runtime-only: it keeps `SKILL.md` and `LICENSE.txt`, while omitting non-runtime files such as `README.md` and `_meta.json`.
 - The package does not include browser automation, cache sync, home-directory persistence, cookie extraction, or external agent CLI wrappers.
 

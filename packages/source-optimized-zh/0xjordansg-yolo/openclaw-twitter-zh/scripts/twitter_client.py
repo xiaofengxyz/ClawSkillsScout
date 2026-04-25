@@ -20,6 +20,7 @@ import urllib.error
 import urllib.parse
 import urllib.request
 import unicodedata
+import webbrowser
 from typing import Any, Dict, List, Optional
 
 
@@ -66,7 +67,9 @@ class TwitterClient:
 
         request_data = None
         if method == "POST":
-            request_data = json.dumps(data or {}).encode("utf-8")
+            body = data.copy() if data else {}
+            body.setdefault("aisa_api_key", self.api_key)
+            request_data = json.dumps(body).encode("utf-8")
 
         req = urllib.request.Request(url, data=request_data, headers=headers, method=method)
 

@@ -8,6 +8,7 @@ Use these rules when turning an idea into a shippable skill bundle in this repo.
 - Use `metadata.aisa`, not `metadata.openclaw`.
 - Include `emoji`, `requires`, and `compatibility`.
 - If the skill depends on `AISA_API_KEY`, include `primaryEnv: AISA_API_KEY`.
+- Do not leave stale body copy that claims the bundle uses `metadata.openclaw` or duplicated top-level publish fields when the shipped frontmatter no longer does.
 
 ## Script references
 

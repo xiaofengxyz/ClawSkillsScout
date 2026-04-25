@@ -1,7 +1,7 @@
 # Claude AISA Report
 
-- Generated at: 2026-04-24T11:04:43.089Z
-- Dataset date: April 24, 2026
+- Generated at: 2026-04-25T04:44:29.267Z
+- Dataset date: April 25, 2026
 
 ## Executive Summary
 
@@ -50,14 +50,14 @@ Claude rewards the same breakout fundamentals that work on ClawHub, but with a s
 
 | Rank | Surface | Name | Category | Opportunity |
 | --- | --- | --- | --- | --- |
-| 1 | Claude Marketplaces | orchestra-research-ai-research-skills | Search & Research | 96.8 |
-| 2 | Claude Marketplaces | f-prompts.chat | Developer | 96.5 |
-| 3 | Claude Marketplaces | nextlevelbuilder-ui-ux-pro-max-skill | Developer | 96.5 |
-| 4 | Claude Marketplaces | yamadashy-repomix | Developer | 96.5 |
-| 5 | Claude Marketplaces | dailydotdev-daily | Developer | 96.5 |
-| 6 | Claude Marketplaces | anthropics-knowledge-work-plugins | Developer | 96.5 |
-| 7 | Claude Marketplaces | backnotprop-plannotator | Developer | 96.5 |
-| 8 | Claude Marketplaces | jasonxudeveloper-jengine | Developer | 96.5 |
+| 1 | Claude Marketplaces | k-dense-ai-claude-scientific-skills | Search & Research | 96.8 |
+| 2 | Claude Marketplaces | orchestra-research-ai-research-skills | Search & Research | 96.8 |
+| 3 | Claude Marketplaces | exa-labs-exa-mcp-server | Search & Research | 96.8 |
+| 4 | Claude Marketplaces | ryandonofrio3-osgrep | Search & Research | 96.8 |
+| 5 | Claude Marketplaces | ast-grep-agent-skill | Search & Research | 96.8 |
+| 6 | Claude Marketplaces | 23blocks-os-ai-maestro | Search & Research | 96.8 |
+| 7 | Claude Marketplaces | f-prompts.chat | Developer | 96.5 |
+| 8 | Claude Marketplaces | anthropics-skills | Developer | 96.5 |
 | 9 | Claude Skills | lark-wiki | Search & Research | 96.1 |
 | 10 | Claude Skills | firecrawl | Search & Research | 96.1 |
 | 11 | Claude Skills | paper-context-resolver | Search & Research | 96.1 |

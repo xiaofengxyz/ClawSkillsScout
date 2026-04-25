@@ -110,5 +110,5 @@ Turn one GitHub repository link into a structured research brief that helps the 
 ## Packaging Guardrails
 
 - Keep the published bundle lean: SKILL, runtime scripts, and concise references only.
-- Use `metadata.aisa` frontmatter and `{{baseDir}}` for any future bundled-script examples.
+- Use `metadata.aisa` frontmatter and `{baseDir}` for any future bundled-script examples.
 - Avoid adding build files, tests, or environment-specific bootstrap commands to the release bundle.

@@ -20,7 +20,7 @@ ClawHub search indexes `name`, `slug`, and `summary` (= `description`) using hyb
 
 **Token cost per skill**: ~97 chars fixed overhead + len(name) + len(description) + len(location). At ~4 chars/token, a 200-char description costs ~75 tokens.
 
-## Validation constraints (enforced by quick_validate.py)
+## Validation constraints
 
 These are hard constraints that MUST be met:
 
@@ -28,7 +28,7 @@ These are hard constraints that MUST be met:
 | :--- | :--- |
 | `name` | Required; hyphen-case only (`[a-z0-9-]`); max 64 chars; no leading/trailing/consecutive hyphens |
 | `description` | Required; string type; no angle brackets (`<` or `>`); max 1024 chars |
-| Allowed top-level keys | `name`, `description`, `license`, `allowed-tools`, `metadata` only |
+| Allowed top-level keys | Prefer `name`, `description`, and `metadata` only unless the target harness explicitly requires more |
 
 ## English frontmatter template
 
@@ -40,17 +40,18 @@ description: >-
   Use when: [specific trigger condition 1], [trigger condition 2].
   Supports [key feature 1], [key feature 2], and [key feature 3].
 metadata:
-  {
-    "openclaw":
-      {
-        "emoji": "[relevant-emoji]",
-        "primaryEnv": "[PRIMARY_API_KEY_NAME]",
-        "requires": {
-          "bins": ["[required_binary]"],
-          "env": ["[REQUIRED_ENV_VAR]"]
-        }
-      }
-  }
+  aisa:
+    emoji: "[relevant-emoji]"
+    primaryEnv: "[PRIMARY_API_KEY_NAME]"
+    requires:
+      bins:
+        - "[required_binary]"
+      env:
+        - "[REQUIRED_ENV_VAR]"
+    compatibility:
+      - openclaw
+      - claude-code
+      - hermes
 ---
 ```
 
@@ -64,17 +65,18 @@ description: >-
   触发条件：当用户需要[具体场景1]或[具体场景2]时使用。
   适用于[应用领域1]、[应用领域2]。
 metadata:
-  {
-    "openclaw":
-      {
-        "emoji": "[relevant-emoji]",
-        "primaryEnv": "[PRIMARY_API_KEY_NAME]",
-        "requires": {
-          "bins": ["[required_binary]"],
-          "env": ["[REQUIRED_ENV_VAR]"]
-        }
-      }
-  }
+  aisa:
+    emoji: "[relevant-emoji]"
+    primaryEnv: "[PRIMARY_API_KEY_NAME]"
+    requires:
+      bins:
+        - "[required_binary]"
+      env:
+        - "[REQUIRED_ENV_VAR]"
+    compatibility:
+      - openclaw
+      - claude-code
+      - hermes
 ---
 ```
 

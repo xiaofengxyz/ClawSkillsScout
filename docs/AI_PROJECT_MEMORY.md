@@ -41,6 +41,20 @@ This file is the fast handoff layer for future chats. Read it when you need to k
 
 ## Recently Completed
 
+### 2026-04-25
+
+- Centralized the source-optimized package manifest into shared helper modules so build, verification, Chinese package generation, and publish indexing now read the same package/file/template definitions instead of drifting across separate scripts
+- Added a shared `SKILL.md` frontmatter parser for `metadata.aisa`, then fixed `scripts/publish-optimized-downloads.mjs` so `public/data/optimized-packages.json` now publishes real `requiredBins`, `requiredEnv`, `primaryEnv`, and `compatibility` values from the shipped bundles
+- Hardened `scripts/verify-source-optimized.mjs` to validate canonical `metadata.aisa`, `AISA_API_KEY` primary env, `{baseDir}` usage, and stale `metadata.openclaw` wording in the shipped skill copy
+- Tightened Hermes market categorization so obvious misclassifications such as `1password`, `docker-management`, and `qmd` no longer land in the wrong AISA lanes, and refreshed the Hermes reports with the corrected cached reclassification path
+- Hardened Hermes report refresh behavior so `scripts/build-market-ecosystem-report.mjs` now falls back to cached Hermes data and re-scores it when live or raw upstream fetches fail or parse to zero rows, instead of silently shipping empty Hermes tables
+- Synced local skill-editing rules and generated skill guidance to the current publish standard: canonical `metadata.aisa`, required `compatibility`, and `{baseDir}` instead of stale `metadata.openclaw` / `{{baseDir}}` wording
+
+- Repositioned `aisa-twitter-api` as the AISA flagship `AISA Twitter API Command Center`, tightening the English source/package `SKILL.md` copy around AISA-first Twitter/X research plus approved posting instead of overlapping too closely with sibling Twitter packages
+- Added clearer `Inputs and Outputs`, higher-intent example requests, publish-safe posting guidance, and stronger search/discovery language to both `templates/source-optimized/aisapay/aisa-twitter-api/SKILL.md` and `packages/source-optimized/aisapay/aisa-twitter-api/SKILL.md`
+- Synced the Chinese publish variant at `templates/source-optimized-zh/aisapay/aisa-twitter-api-zh/SKILL.md` and `packages/source-optimized-zh/aisapay/aisa-twitter-api-zh/SKILL.md` so the EN/ZH runtime scope now matches while the Chinese copy reads like a real publish surface instead of a thin mirror
+- Re-verified the optimized package suite with `node scripts/verify-source-optimized.mjs` after the `aisa-twitter-api` copy rewrite
+
 ### 2026-04-24
 
 - Corrected the ClawHub plugin analysis stack after verifying the public plugin page on April 24, 2026: `scripts/build-clawhub-plugin-report.mjs`, `src/clawhub-plugins/*`, `clawhub-plugins.html`, and the paired plugin Markdown/DOCX reports now focus on the real visible plugin surfaces (catalog order, Code / Bundle, Verified only, Executes code, trust signals) instead of the previously misframed downloads / installs / stars plugin boards

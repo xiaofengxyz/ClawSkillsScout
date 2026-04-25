@@ -1,6 +1,6 @@
 ---
 name: aisa-twitter-api-zh
-description: "通过 AISA relay 管理 X/推特研究与发帖。触发条件：当用户需要推文搜索、趋势追踪、账号情报或用一个 API key 完成 OAuth 发帖时使用。支持资料查询、高级搜索、趋势发现、线程上下文和图文媒体发布。"
+description: "通过 AISA 官方 relay 执行 X/推特从研究到发帖的完整 API 工作流。触发条件：当用户需要用一个 AISA_API_KEY 完成资料查询、推文搜索、趋势追踪、线程上下文或 OAuth 发帖时使用。支持账号情报、市场监控、引用/回复准备和图文媒体发布。"
 metadata:
   aisa:
     emoji: "🐦"
@@ -16,29 +16,30 @@ metadata:
       - hermes
 ---
 
-# 推特指挥台中文包
+# AISA 推特 API 指挥台
 
-面向 cn.clawhub-mirror.com 的中文发布版，用于通过 AISA relay 执行 X/推特研究、监控与发帖。
+AISA 官方优先的 X/推特工作台，用一个 API key 完成账号情报、实时对话研究与经授权的发帖。
 
-## When to use
+## 何时使用
 
-- 当用户希望用一个 skill 同时完成推文搜索、账号研究、趋势追踪和发帖。
-- 当工作流需要 `AISA_API_KEY` 驱动的重复型 X/推特研究与发布，而不是密码或 cookie。
-- 当用户想先研究，再在确认后发帖。
+- 当你要用 AISA 官方旗舰 skill 处理 X/推特研究、监控和发帖。
+- 当工作流需要先做账号或话题研究，再无缝进入授权发布。
+- 当任务需要结构化 JSON 结果，用于搜索、趋势、资料查询、线程上下文或引用/回复准备。
 
-## When NOT to use
+## 不适用场景
 
 - 不适合需要 cookie 提取、浏览器凭证抓取、直接密码登录的场景。
 - 不适合必须避免把请求、OAuth 状态或媒体上传发送到 `api.aisa.one` 的场景。
-- 不适合点赞、关注等互动操作；这类动作请改用带 engage 的包。
+- 不适合点赞、关注、刷互动等动作；这类需求不在本包范围内。
 
-## Quick Reference
+## 快速参考
 
 - 必需环境变量：`AISA_API_KEY`
 - 读客户端：`./scripts/twitter_client.py`
+- OAuth 与发帖客户端：`./scripts/twitter_oauth_client.py`
 - 发帖说明：`./references/post_twitter.md`
 
-## Setup
+## 设置
 
 ```bash
 export AISA_API_KEY="your-key"
@@ -46,53 +47,63 @@ export AISA_API_KEY="your-key"
 
 默认所有网络调用都会发往 `https://api.aisa.one/apis/v1/...`。
 
-## Capabilities
+## 能力范围
 
-- 读取用户资料、时间线、提及、粉丝、关注、认证粉丝与关注关系。
-- 搜索推文和用户，查看回复、引用、转推者、线程上下文与 Spaces。
-- 在明确 OAuth 授权后发布文本、图片和视频推文。
-- 当内容过长时，自动按线程拆分发布。
+- 账号情报：资料查询、about 信息、推文、提及、粉丝、关注、认证粉丝与关注关系检查。
+- 对话情报：高级搜索、推文详情、回复、引用、转推者、文章内容与完整线程上下文。
+- 发现入口：趋势、用户搜索、列表、社区和 Spaces。
+- 授权发帖：授权链接、文本发帖、媒体发帖、引用发帖、回复线程和长文自动拆分。
+
+## 输入与输出
+
+- 输入：用户名、搜索词、tweet ID 或 URL、可选本地媒体文件、明确的发帖文本。
+- 读取输出：搜索、资料、趋势、线程和发现接口返回的 JSON 结果。
+- 发帖输出：授权链接、relay 响应、tweet ID 和发布状态。
 
 ## 高意图工作流
 
-- 先研究一个账号或话题，再决定是否发帖。
-- 先看趋势和讨论热点，再生成一条回应内容。
-- 用一个 skill 处理账号情报、搜索、趋势和发布。
+- 在触达前研究创作者、创始人或竞品账号。
+- 先扫描产品发布、品牌或主题讨论，再看线程上下文决定是否回应。
+- 先查趋势和证据，再准备一条获批后可直接发出的内容。
+- 用明确的 OAuth 批准和工作区媒体文件做引用或回复发帖。
 
-## Common Commands
+## 常用命令
 
 ```bash
 python3 {baseDir}/scripts/twitter_client.py user-info --username elonmusk
 python3 {baseDir}/scripts/twitter_client.py search --query "AI agents" --type Latest
-python3 {baseDir}/scripts/twitter_client.py trends --woeid 1
-python3 {baseDir}/scripts/twitter_oauth_client.py status
+python3 {baseDir}/scripts/twitter_client.py thread --tweet-id 1888888888888888888
 python3 {baseDir}/scripts/twitter_oauth_client.py authorize
-python3 {baseDir}/scripts/twitter_oauth_client.py post --text "Hello from OpenClaw"
+python3 {baseDir}/scripts/twitter_oauth_client.py post --text "My take on this" --type quote --quote-tweet-url "https://x.com/example/status/1888888888888888888"
+python3 {baseDir}/scripts/twitter_oauth_client.py post --text "Shipping day" --media-file ./workspace/launch.png
 ```
 
-## Posting Workflow
+## 发帖工作流
 
-当用户要求发送、发布、回复或引用 X/推特内容时，遵循 `./references/post_twitter.md`。
+当用户要求发送、发布、引用或回复 X/推特内容时，遵循 `./references/post_twitter.md`。
 
 - 如果尚未完成授权，先返回授权链接。
-- 仅在用户提供本地文件时使用 `--media-file`。
-- 不要臆造文案、远程图片 URL 或额外媒体附件。
+- 仅在用户提供本地工作区文件时使用 `--media-file`。
+- 引用发帖必须提供原 tweet URL；回复外部 tweet 必须提供目标 tweet ID。
+- 未拿到 relay 成功返回前，不要宣称已经发出。
 
 ## 示例请求
 
-- “帮我搜索 X 上 AI agent launch 的热门讨论，并总结重点。”
-- “先研究一个账号最近在发什么，再帮我准备发帖。”
-- “查趋势、看线程、然后在 OAuth 完成后发一条推文。”
+- “研究这个 X 账号，告诉我他主要聊什么、经常和谁互动、值不值得回复。”
+- “搜索过去 24 小时 AI agent launch 的讨论，给我高信号推文和线程上下文。”
+- “看下全球 X 趋势，告诉我哪些和我们的产品类别有关。”
+- “在 OAuth 完成后，用我的评论去引用这条 tweet。”
+- “使用工作区里的本地图片，帮我发一条简短的上线推文。”
 
-## ClawHub Suspicious Review Notes
+## ClawHub Suspicious 审核说明
 
 - 该包基于 relay：读请求、OAuth 请求和已批准的媒体上传都会发送到 `api.aisa.one`。
-- 该包坚持 API key 方式：只需要 `AISA_API_KEY`，不要求密码、cookie、`CT0` 或其他 legacy secret。
+- 该包坚持 `AISA_API_KEY` 方式：不要求密码、cookie、`CT0` 或其他旧式密钥。
 - 发布包保持最小运行时结构：保留 `SKILL.md`、`scripts/` 和发帖参考文档，不包含 `README.md`、`_meta.json` 等非运行时文件。
 - 包内不包含 cache sync、自安装、home 目录持久化、浏览器 cookie 提取或外部 agent CLI 包装器。
-- 打开浏览器授权是可选能力，不是默认流程；默认优先返回授权链接给上层工作流。
+- 打开浏览器授权是可选能力，不是默认流程；默认优先返回授权链接给 OpenClaw 等宿主。
 
-## Release Bundle Notes
+## 发布包说明
 
 - `scripts/twitter_client.py` 保留了原始包的读接口能力。
 - `scripts/twitter_oauth_client.py` 保留了原始包的 OAuth 和发帖能力。

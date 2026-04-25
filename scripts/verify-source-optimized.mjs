@@ -1,90 +1,13 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
+import { extractPackageMetadata } from './lib/skill-frontmatter.mjs';
+import { SOURCE_OPTIMIZED_PACKAGE_MANIFEST } from './lib/source-optimized-manifest.mjs';
 
 const root = process.cwd();
 const originalRoot = path.join(root, 'artifacts', 'original-unpacked');
 const optimizedRoot = path.join(root, 'packages', 'source-optimized');
 const reportPath = path.join(root, 'artifacts', 'source-optimized-verification.json');
-
-const PACKAGE_CASES = {
-  '0xjordansg-yolo/openclaw-twitter': {
-    retained: ['SKILL.md', 'scripts/twitter_client.py', 'scripts/twitter_oauth_client.py', 'references/post_twitter.md'],
-    removed: ['README.md', '_meta.json'],
-    commands: [
-      ['python3', 'scripts/twitter_client.py', '--help'],
-      ['python3', 'scripts/twitter_oauth_client.py', '--help'],
-    ],
-  },
-  'aisapay/aisa-twitter-api': {
-    retained: ['SKILL.md', 'scripts/twitter_client.py', 'scripts/twitter_oauth_client.py', 'references/post_twitter.md'],
-    removed: ['README.md', '_meta.json'],
-    commands: [
-      ['python3', 'scripts/twitter_client.py', '--help'],
-      ['python3', 'scripts/twitter_oauth_client.py', '--help'],
-    ],
-  },
-  'aisadocs/openclaw-twitter-post-engage': {
-    retained: [
-      'SKILL.md',
-      'scripts/twitter_client.py',
-      'scripts/twitter_oauth_client.py',
-      'scripts/twitter_engagement_client.py',
-      'references/post_twitter.md',
-      'references/engage_twitter.md',
-    ],
-    removed: ['README.md', '_meta.json'],
-    commands: [
-      ['python3', 'scripts/twitter_client.py', '--help'],
-      ['python3', 'scripts/twitter_oauth_client.py', '--help'],
-      ['python3', 'scripts/twitter_engagement_client.py', '--help'],
-    ],
-  },
-  'karensheng/x-intelligence-automation': {
-    retained: [
-      'SKILL.md',
-      'scripts/twitter_client.py',
-      'scripts/twitter_oauth_client.py',
-      'scripts/twitter_engagement_client.py',
-      'references/post_twitter.md',
-      'references/engage_twitter.md',
-    ],
-    removed: ['README.md', '_meta.json'],
-    commands: [
-      ['python3', 'scripts/twitter_client.py', '--help'],
-      ['python3', 'scripts/twitter_oauth_client.py', '--help'],
-      ['python3', 'scripts/twitter_engagement_client.py', '--help'],
-    ],
-  },
-  'chaimengphp/openclaw-aisa-twitter': {
-    retained: [
-      'SKILL.md',
-      'scripts/twitter_client.py',
-      'scripts/twitter_oauth_client.py',
-      'scripts/twitter_engagement_client.py',
-      'references/post_twitter.md',
-      'references/engage_twitter.md',
-    ],
-    removed: ['README.md', '_meta.json'],
-    commands: [
-      ['python3', 'scripts/twitter_client.py', '--help'],
-      ['python3', 'scripts/twitter_oauth_client.py', '--help'],
-      ['python3', 'scripts/twitter_engagement_client.py', '--help'],
-    ],
-  },
-  '0xjordansg-yolo/openclaw-aisa-youtube': {
-    retained: ['SKILL.md', 'LICENSE.txt'],
-    removed: ['_meta.json'],
-    commands: [],
-  },
-  '0xjordansg-yolo/openclaw-aisa-youtube-search-serp-video-channels-trends-content-tracking': {
-    retained: ['SKILL.md', 'scripts/youtube_client.py'],
-    removed: ['README.md', '_meta.json'],
-    commands: [
-      ['python3', 'scripts/youtube_client.py', '--help'],
-    ],
-  },
-};
 
 function runCommand(command, cwd) {
   const result = spawnSync(command[0], command.slice(1), {
@@ -140,6 +63,7 @@ async function verifyPackage(relativePackage, config) {
   const originalFiles = await listFiles(originalDir);
   const skillPath = path.join(optimizedDir, 'SKILL.md');
   const skillText = await fs.readFile(skillPath, 'utf8');
+  const packageMetadata = extractPackageMetadata(skillText);
 
   const retainedChecks = config.retained.map((file) => ({
     file,
@@ -160,7 +84,7 @@ async function verifyPackage(relativePackage, config) {
   const skillChecks = [
     {
       check: 'uses_metadata_aisa',
-      passed: /metadata:\s*\n\s+aisa:\s*\n/.test(skillText),
+      passed: packageMetadata.requiredBins.length > 0 || packageMetadata.requiredEnv.length > 0 || Boolean(packageMetadata.primaryEnv),
     },
     {
       check: 'omits_metadata_openclaw',
@@ -168,11 +92,19 @@ async function verifyPackage(relativePackage, config) {
     },
     {
       check: 'declares_compatibility',
-      passed: /compatibility:\s*\n\s+- openclaw\s*\n\s+- claude-code\s*\n\s+- hermes\s*\n/.test(skillText),
+      passed: ['openclaw', 'claude-code', 'hermes'].every((runtime) => packageMetadata.compatibility.includes(runtime)),
+    },
+    {
+      check: 'declares_required_env_and_primary_env',
+      passed: packageMetadata.requiredEnv.includes('AISA_API_KEY') && packageMetadata.primaryEnv === 'AISA_API_KEY',
     },
     {
       check: 'uses_baseDir_token',
-      passed: !skillText.includes('${SKILL_ROOT}') && !skillText.includes('${LAST30DAYS_PYTHON}'),
+      passed: !skillText.includes('${SKILL_ROOT}') && !skillText.includes('${LAST30DAYS_PYTHON}') && !skillText.includes('{{baseDir}}'),
+    },
+    {
+      check: 'omits_legacy_body_metadata_notes',
+      passed: !skillText.includes('metadata.openclaw'),
     },
   ];
 
@@ -203,7 +135,7 @@ async function verifyPackage(relativePackage, config) {
 
 async function main() {
   const reports = [];
-  for (const [relativePackage, config] of Object.entries(PACKAGE_CASES)) {
+  for (const [relativePackage, config] of Object.entries(SOURCE_OPTIMIZED_PACKAGE_MANIFEST)) {
     reports.push(await verifyPackage(relativePackage, config));
   }
   await fs.mkdir(path.dirname(reportPath), { recursive: true });

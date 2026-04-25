@@ -96,6 +96,11 @@
 
 ## 打包、校验与发布脚本
 
+共享辅助模块：
+
+- `scripts/lib/source-optimized-manifest.mjs` 统一维护 source-optimized 包清单、保留文件、命令 smoke test 和 EN/ZH 模板映射，避免构建/校验/中文复制三处漂移。
+- `scripts/lib/skill-frontmatter.mjs` 统一解析 `SKILL.md` frontmatter，供校验和发布索引脚本读取 `metadata.aisa.requires`、`primaryEnv`、`compatibility`。
+
 | 脚本 | 推荐入口 | 作用 | 主要输入 | 主要输出 | 参数 |
 | --- | --- | --- | --- | --- | --- |
 | `scripts/download-suspicious-zips.mjs` | `npm run download:suspicious-zips` | 根据 catalog 下载 `Suspicious` 原始 zip | `public/data/catalog.json` | `artifacts/original-zips/` | 无 |

@@ -204,6 +204,8 @@
         "scripts/live-test-source-optimized.mjs",
         "scripts/package-source-optimized.mjs",
         "scripts/publish-optimized-downloads.mjs",
+        "scripts/lib/source-optimized-manifest.mjs",
+        "scripts/lib/skill-frontmatter.mjs",
         "templates/source-optimized/",
         "packages/source-optimized/"
       ],

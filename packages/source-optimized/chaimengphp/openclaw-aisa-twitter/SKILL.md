@@ -89,7 +89,7 @@ These points summarize the common reasons similar skills are marked `Suspicious`
 
 - The package is relay-based: read calls, OAuth requests, engagement actions, and approved media uploads go to `api.aisa.one`.
 - The package is API-key-first: it requires `AISA_API_KEY` and does not ask for passwords, cookies, `CT0`, or other legacy secrets.
-- The frontmatter declares the shipped Python runtime and required env under `metadata.openclaw`, matching the files kept in this release bundle.
+- The frontmatter declares the shipped Python runtime, required env, and compatibility under canonical `metadata.aisa`, matching the files kept in this release bundle.
 - The release bundle is runtime-only: it keeps `SKILL.md`, `scripts/`, and the required references, while omitting non-runtime files such as `README.md` and `_meta.json`.
 - The package does not include cache sync, self-install logic, home-directory persistence, browser-cookie extraction, or external agent CLI wrappers.
 - Browser opening is optional and not the default workflow; returning the authorization link is the preferred path for OpenClaw.

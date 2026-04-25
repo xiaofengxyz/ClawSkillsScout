@@ -42,9 +42,16 @@ function detectCategory(name, description) {
   const lowerName = compactSpaces(name).toLowerCase();
   const text = `${name} ${description}`.toLowerCase();
 
-  if (/(skill vetter|security|auditor|moltguard|safety|protect|guard)/.test(lowerName)) return 'Security & Audit';
+  if (/(skill vetter|security|auditor|moltguard|safety|protect|guard|1password|password|secret|credential|vault)/.test(lowerName)) {
+    return 'Security & Audit';
+  }
+  if (/(search|news|research|tavily|exa|duckduckgo|baidu|firecrawl|arxiv|wiki|retrieval|bm25|rerank|knowledge base|knowledgebase|transcript)/.test(lowerName)) {
+    return 'Search & Research';
+  }
+  if (/(github|git essentials|api gateway|model usage|frontend design|developer|code review|pr|repo|docker|container|compose|devops|kubernetes|k8s)/.test(lowerName)) {
+    return 'Developer';
+  }
   if (/(self-improving|proactive agent|ontology|memory manager|second brain|jarvis)/.test(lowerName)) return 'Agentic Systems';
-  if (/(github|git essentials|api gateway|model usage|frontend design|developer|code review|pr|repo)/.test(lowerName)) return 'Developer';
   if (/(notion|slack|gmail|calendar|workspace|apple notes|bear notes|email|himalaya|linear)/.test(lowerName)) {
     return 'Productivity & Workspace';
   }
@@ -53,24 +60,33 @@ function detectCategory(name, description) {
   }
   if (/(twitter|tweet|xiaohongshu|social|discord|linkedin|xurl)/.test(lowerName)) return 'Social & Growth';
   if (/(youtube|video frames|creator|video |gif-search|youtube-content)/.test(lowerName)) return 'Video & Creator Research';
-  if (/(image gen|nano banana|media gen|humanizer|diagram|ascii-art|ascii-video|manim|p5js)/.test(lowerName)) return 'Media Generation';
+  if (/(image gen|image generation|nano banana|media gen|humanizer|diagram|ascii-art|ascii-video|manim|p5js|illustration|render)/.test(lowerName)) {
+    return 'Media Generation';
+  }
   if (/(stock|market|finance|polymarket|kalshi|trading)/.test(lowerName)) return 'Finance & Market Data';
   if (/(weather|forecast|maps)/.test(lowerName)) return 'Weather & Utility Data';
   if (/(browser|playwright|desktop control|automation|workflow|mcp|webhook|spawn|subagent)/.test(lowerName)) return 'Browser & Automation';
-  if (/(search|news|research|tavily|exa|duckduckgo|baidu|firecrawl|arxiv|wiki)/.test(lowerName)) return 'Search & Research';
 
-  if (/(security|audit|vetter|antivirus|guardrails|risk)/.test(text)) return 'Security & Audit';
+  if (/(security|audit|vetter|antivirus|guardrails|risk|1password|password|secret|credential|vault)/.test(text)) {
+    return 'Security & Audit';
+  }
+  if (/(search|research|news|tavily|serp|web |academic|paper|retrieval|bm25|rerank|knowledge base|knowledgebase|transcript)/.test(text)) {
+    return 'Search & Research';
+  }
+  if (/(github|repo|pull request|issue|git |developer|codebase|docker|container|compose|devops|kubernetes|k8s|infrastructure)/.test(text)) {
+    return 'Developer';
+  }
   if (/(self-improving|proactive|agent|ontology|brain|memory|jarvis|delegate|orchestrat)/.test(text)) return 'Agentic Systems';
   if (/(twitter|tweet|social|community|spaces|engage|followers|messages)/.test(text)) return 'Social & Growth';
   if (/(youtube|video|channel|creator|content)/.test(text)) return 'Video & Creator Research';
-  if (/(image|music generation|video generation|media|diagram|ascii|visual)/.test(text)) return 'Media Generation';
+  if (/(image generation|generate images|music generation|video generation|diagram|ascii|illustration|render|creative coding|visual art)/.test(text)) {
+    return 'Media Generation';
+  }
   if (/(stock|finance|market|crypto|equity|price|trading|polymarket|kalshi)/.test(text)) return 'Finance & Market Data';
   if (/(weather|forecast|timezone|location|directions)/.test(text)) return 'Weather & Utility Data';
-  if (/(browser|playwright|scraper|automation|mcp|desktop|workflow|spawn|delegate|webhook)/.test(text)) return 'Browser & Automation';
   if (/(gmail|calendar|drive|docs|sheets|workspace|email|slack|notion|notes|contacts)/.test(text)) return 'Productivity & Workspace';
   if (/(word|docx|excel|xlsx|powerpoint|ppt|pdf|documents|slides|ocr)/.test(text)) return 'Office Documents';
-  if (/(github|repo|pull request|issue|git |developer|codebase)/.test(text)) return 'Developer';
-  if (/(search|research|news|tavily|serp|web |academic|paper)/.test(text)) return 'Search & Research';
+  if (/(browser|playwright|scraper|automation|mcp|desktop|workflow|spawn|delegate|webhook)/.test(text)) return 'Browser & Automation';
   return 'General Utility';
 }
 
@@ -652,8 +668,99 @@ function normalizeHermesTag(skill) {
   return [...tags];
 }
 
+function decorateHermesSkill(item) {
+  const category = detectCategory(item.name, `${item.sectionTitle} ${item.sectionDescription} ${item.description}`);
+  return {
+    ...item,
+    category,
+    apiFamily: inferApiFamily(category),
+    aisaFitScore: fitScore(category),
+    monetizationScore: monetizationScore(category),
+    factoryScore: factoryScore(category),
+    targetTitle: targetTitle(category, item.name),
+    summary: categorySummary(category),
+    moves: conversionMoves(category),
+    tags: normalizeHermesTag(item),
+    platformScope: /apple|macos/i.test(`${item.sectionTitle} ${item.description} ${item.path}`) ? 'macOS-only / Apple-adjacent' : 'cross-platform or mixed',
+  };
+}
+
+function scoreHermesSkills(items) {
+  return sortByNumber(
+    items.map((item) => ({
+      ...item,
+      aisaOpportunityScore: Number((item.aisaFitScore * 0.45 + item.monetizationScore * 0.3 + item.factoryScore * 0.25).toFixed(2)),
+    })),
+    (item) => item.aisaOpportunityScore,
+  ).slice(0, 25);
+}
+
+function refreshCachedHermesDataset(cached, reason) {
+  const compactReason = compactSpaces(String(reason ?? '')).slice(0, 240);
+  const bundled = scoreHermesSkills((cached?.bundled ?? []).map(decorateHermesSkill));
+  const optional = scoreHermesSkills((cached?.optional ?? []).map(decorateHermesSkill));
+  const unionSource = [...bundled, ...optional];
+  const sections = countBy(unionSource, (item) => item.sectionTitle, 40);
+  const tags = countBy(unionSource.flatMap((item) => item.tags.map((tag) => ({ tag }))), (item) => item.tag, 24);
+
+  return {
+    ...cached,
+    summary: {
+      ...(cached?.summary ?? {}),
+      bundledSkills: cached?.summary?.bundledSkills ?? bundled.length,
+      optionalSkills: cached?.summary?.optionalSkills ?? optional.length,
+      topSection: sections[0]?.name ?? cached?.summary?.topSection ?? null,
+    },
+    sections,
+    tags,
+    bundled,
+    optional,
+    top200Union: topUnion([bundled, optional], (item) => item.path || item.name, 200),
+    commonPatterns: [
+      ...(cached?.commonPatterns ?? []).filter((line) => !line.includes('live guide') && !line.includes('Hermes live/raw')),
+      `截至 ${new Date().toISOString().slice(0, 10)}，Hermes live/raw 直连刷新失败（${compactReason || 'remote fetch failed'}），本次结果已基于本地缓存重算分类与机会分。`,
+    ],
+  };
+}
+
+function hasHermesRows(hermes) {
+  return (hermes?.bundled?.length ?? 0) > 0 || (hermes?.optional?.length ?? 0) > 0;
+}
+
+function readHeadMarketCache() {
+  const result = spawnSync('git', ['show', 'HEAD:public/data/market-ecosystem-report.json'], {
+    cwd: ROOT,
+    encoding: 'utf8',
+    maxBuffer: 1024 * 1024 * 16,
+  });
+  if (result.status !== 0 || !result.stdout.trim()) {
+    return null;
+  }
+  return JSON.parse(result.stdout);
+}
+
 async function fetchHermesData() {
   const helperPath = resolve(ROOT, 'scripts/parse-hermes-skill-atlas.py');
+  const loadCachedHermes = (reason) => {
+    const candidates = [];
+    try {
+      candidates.push(JSON.parse(readFileSync(OUTPUT_PATH, 'utf8')));
+    } catch {
+      // Ignore local cache read failures.
+    }
+    const headCache = readHeadMarketCache();
+    if (headCache) {
+      candidates.push(headCache);
+    }
+
+    for (const candidate of candidates) {
+      if (hasHermesRows(candidate?.hermes)) {
+        console.warn(`Hermes refresh fell back to cached dataset: ${reason}`);
+        return refreshCachedHermesDataset(candidate.hermes, reason);
+      }
+    }
+    return null;
+  };
   const result = spawnSync('python3', [helperPath], {
     cwd: ROOT,
     encoding: 'utf8',
@@ -661,51 +768,32 @@ async function fetchHermesData() {
   });
   if (result.status !== 0) {
     try {
-      const existing = JSON.parse(readFileSync(OUTPUT_PATH, 'utf8'));
-      if (existing?.hermes) {
-        console.warn('Hermes refresh failed, reusing cached hermes dataset from previous market-ecosystem-report.json');
-        return existing.hermes;
-      }
+      const cached = loadCachedHermes(result.stderr || result.stdout || 'parse-hermes-skill-atlas.py failed');
+      if (cached) return cached;
     } catch {
       // Ignore cache read failures and surface the original error below.
     }
     throw new Error(result.stderr || result.stdout || 'parse-hermes-skill-atlas.py failed');
   }
   const parsed = JSON.parse(result.stdout);
-  const skills = parsed.items.map((item) => {
-    const category = detectCategory(item.name, `${item.sectionTitle} ${item.sectionDescription} ${item.description}`);
-    return {
-      ...item,
-      category,
-      apiFamily: inferApiFamily(category),
-      aisaFitScore: fitScore(category),
-      monetizationScore: monetizationScore(category),
-      factoryScore: factoryScore(category),
-      targetTitle: targetTitle(category, item.name),
-      summary: categorySummary(category),
-      moves: conversionMoves(category),
-      tags: normalizeHermesTag(item),
-      platformScope: /apple|macos/i.test(`${item.sectionTitle} ${item.description} ${item.path}`) ? 'macOS-only / Apple-adjacent' : 'cross-platform or mixed',
-    };
-  });
+  if (!Array.isArray(parsed.items) || parsed.items.length === 0) {
+    try {
+      const cached = loadCachedHermes('Hermes raw catalog parsed zero rows');
+      if (cached) return cached;
+    } catch {
+      // Ignore cache read failures and fall through to the parsed empty dataset.
+    }
+  }
+  const skills = parsed.items.map(decorateHermesSkill);
   const bundled = skills.filter((item) => item.type === 'bundled');
   const optional = skills.filter((item) => item.type === 'optional');
+  const liveSummaryNote = parsed.liveFetchError
+    ? `截至 ${new Date().toISOString().slice(0, 10)}，本地直连 Hermes live guide 失败（${parsed.liveFetchError}），本次报告已继续使用 raw catalog 结构数据；在线总数和分类按钮建议在浏览器里复核。`
+    : `截至 ${new Date().toISOString().slice(0, 10)}，live guide 标注 ${parsed.advertisedBundledSkills ?? 0} 个 bundled skills，但官方 raw catalog 当前能结构化提取 ${bundled.length} 个 bundled rows，说明文档口径存在漂移。`;
   const sections = countBy(skills, (item) => item.sectionTitle, 40);
   const tags = countBy(skills.flatMap((item) => item.tags.map((tag) => ({ tag }))), (item) => item.tag, 24);
-  const topBundledByAisaFit = sortByNumber(
-    bundled.map((item) => ({
-      ...item,
-      aisaOpportunityScore: Number((item.aisaFitScore * 0.45 + item.monetizationScore * 0.3 + item.factoryScore * 0.25).toFixed(2)),
-    })),
-    (item) => item.aisaOpportunityScore,
-  ).slice(0, 25);
-  const topOptionalByAisaFit = sortByNumber(
-    optional.map((item) => ({
-      ...item,
-      aisaOpportunityScore: Number((item.aisaFitScore * 0.45 + item.monetizationScore * 0.3 + item.factoryScore * 0.25).toFixed(2)),
-    })),
-    (item) => item.aisaOpportunityScore,
-  ).slice(0, 25);
+  const topBundledByAisaFit = scoreHermesSkills(bundled);
+  const topOptionalByAisaFit = scoreHermesSkills(optional);
   const top200Union = topUnion([topBundledByAisaFit, topOptionalByAisaFit], (item) => item.path || item.name, 200);
 
   return {
@@ -731,7 +819,7 @@ async function fetchHermesData() {
       '分类非常强调运行环境和工作流边界，例如 Apple / GitHub / MLOps / Research。',
       '高 AISA 适配项主要集中在 GitHub、Research、Productivity、Documents、Automation 这些高频外部工具边界。',
       'Apple / macOS 类 skill 价值高但平台限制强，更适合做专属 SKU 而不是旗舰总包。',
-      `截至 ${new Date().toISOString().slice(0, 10)}，live guide 标注 ${parsed.advertisedBundledSkills ?? 0} 个 bundled skills，但官方 raw catalog 当前能结构化提取 ${bundled.length} 个 bundled rows，说明文档口径存在漂移。`,
+      liveSummaryNote,
     ],
   };
 }

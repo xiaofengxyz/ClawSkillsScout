@@ -1,7 +1,7 @@
 # Hermes AISA Report
 
-- 生成时间：2026-04-24T11:04:43.089Z
-- 数据日期：2026-04-24
+- 生成时间：2026-04-25T04:44:29.267Z
+- 数据日期：2026-04-25
 - 来源：Hermes Skills Guide、Hermes raw catalog
 
 ## 一句话结论
@@ -44,17 +44,17 @@ Hermes 更像“内置工作流能力目录”，而不是公开下载榜。它�
 | 2 | arxiv | research | Search & Research | 95.4 | cross-platform or mixed |
 | 3 | llm-wiki | research | Search & Research | 95.4 | cross-platform or mixed |
 | 4 | research-paper-writing | research | Search & Research | 95.4 | cross-platform or mixed |
-| 5 | github-auth | github | Developer | 95 | cross-platform or mixed |
-| 6 | github-code-review | github | Developer | 95 | cross-platform or mixed |
-| 7 | github-issues | github | Developer | 95 | cross-platform or mixed |
-| 8 | github-pr-workflow | github | Developer | 95 | cross-platform or mixed |
-| 9 | github-repo-management | github | Developer | 95 | cross-platform or mixed |
-| 10 | evaluating-llms-harness | mlops/evaluation | Developer | 95 | cross-platform or mixed |
-| 11 | himalaya | email | Productivity & Workspace | 92.75 | cross-platform or mixed |
-| 12 | obsidian | note-taking | Productivity & Workspace | 92.75 | cross-platform or mixed |
-| 13 | google-workspace | productivity | Productivity & Workspace | 92.75 | cross-platform or mixed |
-| 14 | linear | productivity | Productivity & Workspace | 92.75 | cross-platform or mixed |
-| 15 | notion | productivity | Productivity & Workspace | 92.75 | cross-platform or mixed |
+| 5 | evaluating-llms-harness | mlops/evaluation | Search & Research | 95.4 | cross-platform or mixed |
+| 6 | apple-notes | apple | Search & Research | 95.4 | macOS-only / Apple-adjacent |
+| 7 | github-auth | github | Developer | 95 | cross-platform or mixed |
+| 8 | github-code-review | github | Developer | 95 | cross-platform or mixed |
+| 9 | github-issues | github | Developer | 95 | cross-platform or mixed |
+| 10 | github-pr-workflow | github | Developer | 95 | cross-platform or mixed |
+| 11 | github-repo-management | github | Developer | 95 | cross-platform or mixed |
+| 12 | codebase-inspection | github | Developer | 95 | cross-platform or mixed |
+| 13 | himalaya | email | Productivity & Workspace | 92.75 | cross-platform or mixed |
+| 14 | google-workspace | productivity | Productivity & Workspace | 92.75 | cross-platform or mixed |
+| 15 | linear | productivity | Productivity & Workspace | 92.75 | cross-platform or mixed |
 
 ## Hermes Bundled 技能机会
 
@@ -64,29 +64,29 @@ Hermes 更像“内置工作流能力目录”，而不是公开下载榜。它�
 | 2 | arxiv | research | Search & Research | research | 95.4 |
 | 3 | llm-wiki | research | Search & Research | research, mlops | 95.4 |
 | 4 | research-paper-writing | research | Search & Research | research, mlops | 95.4 |
-| 5 | github-auth | github | Developer | github | 95 |
-| 6 | github-code-review | github | Developer | github | 95 |
-| 7 | github-issues | github | Developer | github | 95 |
-| 8 | github-pr-workflow | github | Developer | github, automation | 95 |
-| 9 | github-repo-management | github | Developer | github, automation | 95 |
-| 10 | evaluating-llms-harness | mlops/evaluation | Developer | mlops, evaluation, github | 95 |
-| 11 | himalaya | email | Productivity & Workspace | email, mlops | 92.75 |
-| 12 | obsidian | note-taking | Productivity & Workspace | note, taking, apple, macos | 92.75 |
+| 5 | evaluating-llms-harness | mlops/evaluation | Search & Research | mlops, evaluation, github | 95.4 |
+| 6 | apple-notes | apple | Search & Research | apple, macos | 95.4 |
+| 7 | github-auth | github | Developer | github | 95 |
+| 8 | github-code-review | github | Developer | github | 95 |
+| 9 | github-issues | github | Developer | github | 95 |
+| 10 | github-pr-workflow | github | Developer | github, automation | 95 |
+| 11 | github-repo-management | github | Developer | github, automation | 95 |
+| 12 | codebase-inspection | github | Developer | github | 95 |
 
 ## Hermes Optional 技能机会
 
 | 排名 | Skill | Section | 类目 | 标签 | AISA机会分 |
 | --- | --- | --- | --- | --- | --- |
 | 1 | bioinformatics | research | Search & Research | research | 95.4 |
-| 2 | telephony | productivity | Productivity & Workspace | productivity | 92.75 |
-| 3 | blender-mcp | creative | Browser & Automation | creative, automation | 92.45 |
-| 4 | touchdesigner-mcp | creative | Browser & Automation | creative, automation | 92.45 |
-| 5 | neuroskill-bci | health | Browser & Automation | health | 92.45 |
-| 6 | fastmcp | mcp | Browser & Automation | mcp, automation | 92.45 |
-| 7 | qmd | research | Browser & Automation | research, apple, macos, mlops, automation | 92.45 |
-| 8 | 1password | security | Office Documents | security | 91.5 |
-| 9 | meme-generation | creative | Media Generation | creative | 89.6 |
-| 10 | docker-management | devops | Media Generation | devops | 89.6 |
+| 2 | qmd | research | Search & Research | research, apple, macos, mlops, automation | 95.4 |
+| 3 | docker-management | devops | Developer | devops | 95 |
+| 4 | openclaw-migration | migration | Developer | migration, github | 95 |
+| 5 | telephony | productivity | Productivity & Workspace | productivity | 92.75 |
+| 6 | blender-mcp | creative | Browser & Automation | creative, automation | 92.45 |
+| 7 | touchdesigner-mcp | creative | Browser & Automation | creative, automation | 92.45 |
+| 8 | neuroskill-bci | health | Browser & Automation | health | 92.45 |
+| 9 | fastmcp | mcp | Browser & Automation | mcp, automation | 92.45 |
+| 10 | 1password | security | Security & Audit | security | 89.35 |
 | 11 | oss-forensics | security | Security & Audit | security, github | 89.35 |
 | 12 | sherlock | security | Security & Audit | security | 89.35 |
 
@@ -120,9 +120,9 @@ Hermes 更像“内置工作流能力目录”，而不是公开下载榜。它�
 | 2 | Hermes Bundled | arxiv | Search & Research | 95.4 |
 | 3 | Hermes Bundled | llm-wiki | Search & Research | 95.4 |
 | 4 | Hermes Bundled | research-paper-writing | Search & Research | 95.4 |
-| 5 | Hermes Bundled | github-auth | Developer | 95 |
-| 6 | Hermes Bundled | github-code-review | Developer | 95 |
-| 7 | Hermes Bundled | github-issues | Developer | 95 |
-| 8 | Hermes Bundled | github-pr-workflow | Developer | 95 |
+| 5 | Hermes Bundled | evaluating-llms-harness | Search & Research | 95.4 |
+| 6 | Hermes Bundled | apple-notes | Search & Research | 95.4 |
+| 7 | Hermes Bundled | github-auth | Developer | 95 |
+| 8 | Hermes Bundled | github-code-review | Developer | 95 |
 
 

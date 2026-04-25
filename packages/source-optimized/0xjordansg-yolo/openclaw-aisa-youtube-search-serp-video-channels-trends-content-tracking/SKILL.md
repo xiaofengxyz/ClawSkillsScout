@@ -81,7 +81,7 @@ These points summarize the common reasons similar skills are marked `Suspicious`
 
 - The package is relay-based: all search requests go to `api.aisa.one`.
 - The package is API-key-first: it requires `AISA_API_KEY` and does not ask for passwords, cookies, browser data, or other legacy secrets.
-- The frontmatter declares required bins/env under `metadata.openclaw`, matching the runtime files kept in this release bundle.
+- The frontmatter declares required bins/env, primary env, and compatibility under canonical `metadata.aisa`, matching the runtime files kept in this release bundle.
 - The release bundle is runtime-only: it keeps `SKILL.md` and `scripts/youtube_client.py`, while omitting non-runtime files such as `README.md` and `_meta.json`.
 - The package does not include browser automation, cache sync, home-directory persistence, cookie extraction, or external agent CLI wrappers.
 

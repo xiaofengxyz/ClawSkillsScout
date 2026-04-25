@@ -301,7 +301,7 @@ def print_json(response: Dict[str, Any], exit_code: int = 0) -> None:
 
 
 def command_list_tweets(args: argparse.Namespace) -> None:
-    client = TwitterClient()
+    client = TwitterClient(api_key=args.aisa_api_key)
     user_resolution = resolve_user(client, args.user)
     if not user_resolution["ok"]:
         fail(
@@ -402,7 +402,7 @@ def execute_user_action(
 
 
 def command_like_latest(args: argparse.Namespace) -> None:
-    client = TwitterClient()
+    client = TwitterClient(api_key=args.aisa_api_key)
     user_resolution = resolve_user(client, args.user)
     if not user_resolution["ok"]:
         fail(
@@ -447,7 +447,7 @@ def command_like_tweet(args: argparse.Namespace) -> None:
 
 
 def command_follow_user(args: argparse.Namespace) -> None:
-    client = TwitterClient()
+    client = TwitterClient(api_key=args.aisa_api_key)
     user_resolution = resolve_user(client, args.user)
     if not user_resolution["ok"]:
         fail(
@@ -483,7 +483,7 @@ def command_status(args: argparse.Namespace) -> None:
     response = {
         "ok": True,
         "relay_base_url": config["base_url"],
-        "aisa_api_key_present": bool(config["aisa_api_key"]),
+        "aisa_api_key": config["aisa_api_key"],
         "timeout": config["timeout"],
         "supported_commands": [
             "list-tweets",
@@ -511,6 +511,8 @@ def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         description="Twitter engagement client for local relay like/follow actions",
     )
+    parser.add_argument("--aisa-api-key", help="Override AISA_API_KEY")
+    parser.add_argument("--timeout", type=int, help="Override TWITTER_RELAY_TIMEOUT")
 
     subparsers = parser.add_subparsers(dest="command", required=True)
 

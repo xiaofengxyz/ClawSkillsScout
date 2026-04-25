@@ -1,5 +1,6 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { SOURCE_OPTIMIZED_PACKAGE_MANIFEST } from './lib/source-optimized-manifest.mjs';
 
 const root = process.cwd();
 const sourceRoot = path.join(root, 'packages', 'source-optimized');
@@ -8,17 +9,6 @@ const templatesRoot = path.join(root, 'templates', 'source-optimized-zh');
 const EXCLUDED_BASENAMES = new Set(['CHECKLIST.md', 'README.md', '_meta.json']);
 const EXCLUDED_EXTENSIONS = new Set(['.pyc', '.pyo', '.log']);
 const EXCLUDED_SEGMENTS = new Set(['__pycache__', '.pytest_cache']);
-
-const ZH_SKILLS = {
-  '0xjordansg-yolo/openclaw-twitter': '0xjordansg-yolo/openclaw-twitter-zh/SKILL.md',
-  'aisapay/aisa-twitter-api': 'aisapay/aisa-twitter-api-zh/SKILL.md',
-  'aisadocs/openclaw-twitter-post-engage': 'aisadocs/openclaw-twitter-post-engage-zh/SKILL.md',
-  'karensheng/x-intelligence-automation': 'karensheng/x-intelligence-automation-zh/SKILL.md',
-  'chaimengphp/openclaw-aisa-twitter': 'chaimengphp/openclaw-aisa-twitter-zh/SKILL.md',
-  '0xjordansg-yolo/openclaw-aisa-youtube': '0xjordansg-yolo/openclaw-aisa-youtube-zh/SKILL.md',
-  '0xjordansg-yolo/openclaw-aisa-youtube-search-serp-video-channels-trends-content-tracking':
-    '0xjordansg-yolo/openclaw-aisa-youtube-search-serp-video-channels-trends-content-tracking-zh/SKILL.md',
-};
 
 async function copyTree(sourceDir, targetDir) {
   const entries = await fs.readdir(sourceDir, { withFileTypes: true });
@@ -43,7 +33,9 @@ async function copyTree(sourceDir, targetDir) {
 async function main() {
   await fs.rm(outputRoot, { recursive: true, force: true });
 
-  for (const [relativePackage, templateRelative] of Object.entries(ZH_SKILLS)) {
+  for (const [relativePackage, config] of Object.entries(SOURCE_OPTIMIZED_PACKAGE_MANIFEST)) {
+    const templateRelative = config.zhTemplateSkill;
+    if (!templateRelative) continue;
     const sourceDir = path.join(sourceRoot, relativePackage);
     const targetRelative = templateRelative.replace(/\/SKILL\.md$/, '');
     const targetDir = path.join(outputRoot, targetRelative);
@@ -53,7 +45,8 @@ async function main() {
     await fs.copyFile(templatePath, path.join(targetDir, 'SKILL.md'));
   }
 
-  console.log(`Prepared ${Object.keys(ZH_SKILLS).length} optimized Chinese source packages.`);
+  const zhCount = Object.values(SOURCE_OPTIMIZED_PACKAGE_MANIFEST).filter((config) => config.zhTemplateSkill).length;
+  console.log(`Prepared ${zhCount} optimized Chinese source packages.`);
 }
 
 main().catch((error) => {

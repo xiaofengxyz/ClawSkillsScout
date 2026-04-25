@@ -1,68 +1,11 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { SOURCE_OPTIMIZED_PACKAGE_MANIFEST } from './lib/source-optimized-manifest.mjs';
 
 const root = process.cwd();
 const sourceRoot = path.join(root, 'artifacts', 'original-unpacked');
 const outputRoot = path.join(root, 'packages', 'source-optimized');
 const templatesRoot = path.join(root, 'templates', 'source-optimized');
-
-const PACKAGE_FILES = {
-  '0xjordansg-yolo/openclaw-twitter': [
-    'SKILL.md',
-    'scripts/twitter_client.py',
-    'scripts/twitter_oauth_client.py',
-    'references/post_twitter.md',
-  ],
-  'aisapay/aisa-twitter-api': [
-    'SKILL.md',
-    'scripts/twitter_client.py',
-    'scripts/twitter_oauth_client.py',
-    'references/post_twitter.md',
-  ],
-  'aisadocs/openclaw-twitter-post-engage': [
-    'SKILL.md',
-    'scripts/twitter_client.py',
-    'scripts/twitter_oauth_client.py',
-    'scripts/twitter_engagement_client.py',
-    'references/post_twitter.md',
-    'references/engage_twitter.md',
-  ],
-  'karensheng/x-intelligence-automation': [
-    'SKILL.md',
-    'scripts/twitter_client.py',
-    'scripts/twitter_oauth_client.py',
-    'scripts/twitter_engagement_client.py',
-    'references/post_twitter.md',
-    'references/engage_twitter.md',
-  ],
-  'chaimengphp/openclaw-aisa-twitter': [
-    'SKILL.md',
-    'scripts/twitter_client.py',
-    'scripts/twitter_oauth_client.py',
-    'scripts/twitter_engagement_client.py',
-    'references/post_twitter.md',
-    'references/engage_twitter.md',
-  ],
-  '0xjordansg-yolo/openclaw-aisa-youtube': [
-    'SKILL.md',
-    'LICENSE.txt',
-  ],
-  '0xjordansg-yolo/openclaw-aisa-youtube-search-serp-video-channels-trends-content-tracking': [
-    'SKILL.md',
-    'scripts/youtube_client.py',
-  ],
-};
-
-const SKILL_TEMPLATES = {
-  '0xjordansg-yolo/openclaw-twitter': '0xjordansg-yolo/openclaw-twitter/SKILL.md',
-  'aisapay/aisa-twitter-api': 'aisapay/aisa-twitter-api/SKILL.md',
-  'aisadocs/openclaw-twitter-post-engage': 'aisadocs/openclaw-twitter-post-engage/SKILL.md',
-  'karensheng/x-intelligence-automation': 'karensheng/x-intelligence-automation/SKILL.md',
-  'chaimengphp/openclaw-aisa-twitter': 'chaimengphp/openclaw-aisa-twitter/SKILL.md',
-  '0xjordansg-yolo/openclaw-aisa-youtube': '0xjordansg-yolo/openclaw-aisa-youtube/SKILL.md',
-  '0xjordansg-yolo/openclaw-aisa-youtube-search-serp-video-channels-trends-content-tracking':
-    '0xjordansg-yolo/openclaw-aisa-youtube-search-serp-video-channels-trends-content-tracking/SKILL.md',
-};
 
 async function copyFile(relativePackage, relativeFile) {
   const sourceFile = path.join(sourceRoot, relativePackage, relativeFile);
@@ -74,12 +17,12 @@ async function copyFile(relativePackage, relativeFile) {
 async function main() {
   await fs.rm(outputRoot, { recursive: true, force: true });
 
-  for (const [relativePackage, files] of Object.entries(PACKAGE_FILES)) {
-    for (const relativeFile of files) {
+  for (const [relativePackage, config] of Object.entries(SOURCE_OPTIMIZED_PACKAGE_MANIFEST)) {
+    for (const relativeFile of config.retained) {
       await copyFile(relativePackage, relativeFile);
     }
 
-    const templateRelative = SKILL_TEMPLATES[relativePackage];
+    const templateRelative = config.templateSkill;
     if (templateRelative) {
       const templatePath = path.join(templatesRoot, templateRelative);
       const targetSkill = path.join(outputRoot, relativePackage, 'SKILL.md');
@@ -87,7 +30,7 @@ async function main() {
     }
   }
 
-  console.log(`Prepared ${Object.keys(PACKAGE_FILES).length} optimized source packages.`);
+  console.log(`Prepared ${Object.keys(SOURCE_OPTIMIZED_PACKAGE_MANIFEST).length} optimized source packages.`);
 }
 
 main().catch((error) => {

@@ -8,7 +8,10 @@ from collections import Counter
 import requests
 from bs4 import BeautifulSoup
 
-LIVE_URL = "https://hermes-agent.app/en/skills"
+LIVE_URLS = [
+    "https://hermes-agent.app/skills",
+    "https://hermes-agent.app/en/skills",
+]
 RAW_URLS = [
     "https://raw.githubusercontent.com/NousResearch/hermes-agent/main/website/docs/reference/skills-catalog.md",
     "https://github.com/NousResearch/hermes-agent/raw/main/website/docs/reference/skills-catalog.md",
@@ -26,24 +29,48 @@ def text_of(node) -> str:
 
 
 def parse_live_page() -> dict:
-    response = requests.get(
-        LIVE_URL,
-        timeout=30,
-        headers={
-            "user-agent": "Mozilla/5.0 (compatible; ClawSkillsScout/1.0; +https://github.com/)",
-            "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-        },
-    )
-    response.raise_for_status()
+    response = None
+    source_url = LIVE_URLS[0]
+    last_error = None
+    for url in LIVE_URLS:
+        source_url = url
+        try:
+            response = requests.get(
+                url,
+                timeout=20,
+                headers={
+                    "user-agent": "Mozilla/5.0 (compatible; ClawSkillsScout/1.0; +https://github.com/)",
+                    "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+                },
+            )
+            response.raise_for_status()
+            break
+        except Exception as error:  # noqa: BLE001
+            last_error = error
+            response = None
+
+    if response is None:
+        return {
+            "sourceUrl": source_url,
+            "advertisedSkillCategories": 0,
+            "advertisedBundledSkills": 0,
+            "categoryButtons": [],
+            "liveFetchError": compact(str(last_error)),
+        }
+
     soup = BeautifulSoup(response.text, "html.parser")
 
     category_button_texts = [compact(button.get_text(" ", strip=True)) for button in soup.find_all("button")]
     category_buttons: list[str] = []
+    seen_buttons: set[str] = set()
     for text in category_button_texts:
         if not text or text in {"All categories", "Expand all", "Collapse to top 3"}:
             continue
         if text in {"Open Memory", "Open MCP"}:
             continue
+        if text in seen_buttons:
+            continue
+        seen_buttons.add(text)
         category_buttons.append(text)
 
     summary_numbers = {}
@@ -56,10 +83,11 @@ def parse_live_page() -> dict:
         summary_numbers[label] = int(compact(count_node.get_text()) or "0") if count_node else 0
 
     return {
-        "sourceUrl": LIVE_URL,
+        "sourceUrl": source_url,
         "advertisedSkillCategories": summary_numbers.get("Skill categories", 0),
         "advertisedBundledSkills": summary_numbers.get("Bundled skills", 0),
         "categoryButtons": category_buttons,
+        "liveFetchError": "",
     }
 
 
