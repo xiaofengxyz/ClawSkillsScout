@@ -99,7 +99,7 @@
 共享辅助模块：
 
 - `scripts/lib/source-optimized-manifest.mjs` 统一维护 source-optimized 包清单、保留文件、命令 smoke test 和 EN/ZH 模板映射，避免构建/校验/中文复制三处漂移。
-- `scripts/lib/skill-frontmatter.mjs` 统一解析 `SKILL.md` frontmatter，供校验和发布索引脚本读取 `metadata.aisa.requires`、`primaryEnv`、`compatibility`。
+- `scripts/lib/skill-frontmatter.mjs` 统一解析本仓库 source-optimized 包里的 `SKILL.md` frontmatter，供校验和发布索引脚本读取 `metadata.aisa.requires`、`primaryEnv`、`compatibility`；它会兼容历史 / 公共命名空间做读取，但不把这里的约束外推成 `agent-skills-io` 或全局 skill 的统一规范。
 
 | 脚本 | 推荐入口 | 作用 | 主要输入 | 主要输出 | 参数 |
 | --- | --- | --- | --- | --- | --- |

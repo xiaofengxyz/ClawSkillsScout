@@ -1,13 +1,13 @@
 # Hermes AISA Report
 
-- Generated at: 2026-04-25T04:44:29.267Z
+- Generated at: 2026-04-25T14:50:26.679Z
 - Dataset date: April 25, 2026
 
 ## Data scope
 
-- Live guide currently advertises 97 bundled skills across 28 categories.
-- Raw catalog currently parses 70 bundled rows and 17 optional rows across 28 sections.
-- Top raw sections: github 6 · research 5 · productivity 4 · software-development 4 · apple 3.
+- Live guide currently advertises 97 bundled skills across 28 categories via requests.
+- Raw catalog currently parses 74 bundled rows and 0 optional rows across 19 sections via windows-curl-host.
+- Top raw sections: creative 13 · mlops 13 · productivity 7 · github 6 · software-development 6.
 
 ## Executive Summary
 
@@ -38,39 +38,23 @@ Hermes behaves more like a workflow atlas than a public install marketplace. Bre
 
 | Rank | Skill | Section | Category | Opportunity | Scope |
 | --- | --- | --- | --- | --- | --- |
-| 1 | godmode | red-teaming | Search & Research | 95.4 | cross-platform or mixed |
-| 2 | arxiv | research | Search & Research | 95.4 | cross-platform or mixed |
-| 3 | llm-wiki | research | Search & Research | 95.4 | cross-platform or mixed |
-| 4 | research-paper-writing | research | Search & Research | 95.4 | cross-platform or mixed |
-| 5 | evaluating-llms-harness | mlops/evaluation | Search & Research | 95.4 | cross-platform or mixed |
-| 6 | apple-notes | apple | Search & Research | 95.4 | macOS-only / Apple-adjacent |
-| 7 | github-auth | github | Developer | 95 | cross-platform or mixed |
-| 8 | github-code-review | github | Developer | 95 | cross-platform or mixed |
-| 9 | github-issues | github | Developer | 95 | cross-platform or mixed |
-| 10 | github-pr-workflow | github | Developer | 95 | cross-platform or mixed |
-| 11 | github-repo-management | github | Developer | 95 | cross-platform or mixed |
+| 1 | apple-notes | apple | Search & Research | 95.4 | macOS-only / Apple-adjacent |
+| 2 | dogfood | dogfood | Search & Research | 95.4 | cross-platform or mixed |
+| 3 | gif-search | media | Search & Research | 95.4 | cross-platform or mixed |
+| 4 | spotify | media | Search & Research | 95.4 | cross-platform or mixed |
+| 5 | huggingface-hub | mlops | Search & Research | 95.4 | cross-platform or mixed |
+| 6 | evaluating-llms-harness | mlops | Search & Research | 95.4 | cross-platform or mixed |
+| 7 | arxiv | research | Search & Research | 95.4 | cross-platform or mixed |
+| 8 | blogwatcher | research | Search & Research | 95.4 | cross-platform or mixed |
+| 9 | llm-wiki | research | Search & Research | 95.4 | cross-platform or mixed |
+| 10 | research-paper-writing | research | Search & Research | 95.4 | cross-platform or mixed |
+| 11 | codex | autonomous-ai-agents | Developer | 95 | cross-platform or mixed |
 | 12 | codebase-inspection | github | Developer | 95 | cross-platform or mixed |
-| 13 | himalaya | email | Productivity & Workspace | 92.75 | cross-platform or mixed |
-| 14 | google-workspace | productivity | Productivity & Workspace | 92.75 | cross-platform or mixed |
-| 15 | linear | productivity | Productivity & Workspace | 92.75 | cross-platform or mixed |
+| 13 | github-auth | github | Developer | 95 | cross-platform or mixed |
+| 14 | github-code-review | github | Developer | 95 | cross-platform or mixed |
+| 15 | github-issues | github | Developer | 95 | cross-platform or mixed |
 
 ## Best Optional Opportunities
 
-| Rank | Skill | Section | Category | Opportunity | Scope |
-| --- | --- | --- | --- | --- | --- |
-| 1 | bioinformatics | research | Search & Research | 95.4 | cross-platform or mixed |
-| 2 | qmd | research | Search & Research | 95.4 | cross-platform or mixed |
-| 3 | docker-management | devops | Developer | 95 | cross-platform or mixed |
-| 4 | openclaw-migration | migration | Developer | 95 | cross-platform or mixed |
-| 5 | telephony | productivity | Productivity & Workspace | 92.75 | cross-platform or mixed |
-| 6 | blender-mcp | creative | Browser & Automation | 92.45 | cross-platform or mixed |
-| 7 | touchdesigner-mcp | creative | Browser & Automation | 92.45 | cross-platform or mixed |
-| 8 | neuroskill-bci | health | Browser & Automation | 92.45 | cross-platform or mixed |
-| 9 | fastmcp | mcp | Browser & Automation | 92.45 | cross-platform or mixed |
-| 10 | 1password | security | Security & Audit | 89.35 | cross-platform or mixed |
-| 11 | oss-forensics | security | Security & Audit | 89.35 | cross-platform or mixed |
-| 12 | sherlock | security | Security & Audit | 89.35 | cross-platform or mixed |
-| 13 | blackbox | autonomous-ai-agents | Agentic Systems | 76.3 | cross-platform or mixed |
-| 14 | agentmail | email | Agentic Systems | 76.3 | cross-platform or mixed |
-| 15 | meme-generation | creative | General Utility | 63.65 | cross-platform or mixed |
+
 

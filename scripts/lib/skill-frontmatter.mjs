@@ -1,3 +1,7 @@
+// This parser is repo-local plumbing for source-optimized package introspection.
+// It intentionally accepts several historical/public metadata namespaces so this
+// repo does not impose one guessed global skill schema onto agent-skills-io or
+// other publish surfaces.
 function parseScalar(value) {
   const trimmed = value.trim();
   if (!trimmed) return '';

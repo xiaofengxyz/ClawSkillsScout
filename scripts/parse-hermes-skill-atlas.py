@@ -2,7 +2,10 @@
 from __future__ import annotations
 
 import json
+import os
 import re
+import shutil
+import subprocess
 from collections import Counter
 
 import requests
@@ -16,6 +19,12 @@ RAW_URLS = [
     "https://raw.githubusercontent.com/NousResearch/hermes-agent/main/website/docs/reference/skills-catalog.md",
     "https://github.com/NousResearch/hermes-agent/raw/main/website/docs/reference/skills-catalog.md",
 ]
+HEADERS = {
+    "user-agent": "Mozilla/5.0 (compatible; ClawSkillsScout/1.0; +https://github.com/)",
+    "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,text/plain;q=0.8,*/*;q=0.7",
+}
+LOCAL_CURL = shutil.which("curl")
+WINDOWS_CURL_HOST = "/mnt/c/WINDOWS/System32/curl.exe" if os.path.exists("/mnt/c/WINDOWS/System32/curl.exe") else None
 
 
 def compact(value: str | None) -> str:
@@ -32,37 +41,102 @@ def text_of(node) -> str:
     return compact(node.get_text(" ", strip=True))
 
 
-def parse_live_page() -> dict:
-    response = None
-    source_url = LIVE_URLS[0]
-    last_error = None
-    for url in LIVE_URLS:
-        source_url = url
+def decode_command_output(raw: bytes) -> str:
+    return raw.decode("utf-8", errors="replace")
+
+
+def fetch_via_local_curl(url: str, timeout: int) -> str:
+    if not LOCAL_CURL:
+        raise RuntimeError("curl not available")
+
+    result = subprocess.run(
+        [
+            LOCAL_CURL,
+            "-fsSL",
+            "--connect-timeout",
+            "10",
+            "--max-time",
+            str(timeout),
+            "-H",
+            f"user-agent: {HEADERS['user-agent']}",
+            "-H",
+            f"accept: {HEADERS['accept']}",
+            url,
+        ],
+        capture_output=True,
+        timeout=timeout + 10,
+    )
+    if result.returncode != 0:
+        raise RuntimeError(compact(decode_command_output(result.stderr or result.stdout or b"curl failed")))
+    return decode_command_output(result.stdout)
+
+
+def fetch_via_windows_curl(url: str, timeout: int) -> str:
+    if not WINDOWS_CURL_HOST:
+        raise RuntimeError("Windows curl host not available")
+
+    result = subprocess.run(
+        [
+            WINDOWS_CURL_HOST,
+            "-fsSL",
+            "--connect-timeout",
+            "10",
+            "--max-time",
+            str(timeout),
+            url,
+        ],
+        capture_output=True,
+        timeout=timeout + 10,
+    )
+    if result.returncode != 0:
+        raise RuntimeError(compact(decode_command_output(result.stderr or result.stdout or b"Windows host curl fetch failed")))
+    return decode_command_output(result.stdout)
+
+
+def fetch_text(urls: list[str], timeout: int) -> tuple[str, str, str]:
+    attempts: list[str] = []
+
+    for url in urls:
+        if LOCAL_CURL:
+            try:
+                return fetch_via_local_curl(url, timeout), url, "curl"
+            except Exception as error:  # noqa: BLE001
+                attempts.append(f"curl:{url}:{compact(str(error))}")
+
         try:
             response = requests.get(
                 url,
-                timeout=20,
-                headers={
-                    "user-agent": "Mozilla/5.0 (compatible; ClawSkillsScout/1.0; +https://github.com/)",
-                    "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-                },
+                timeout=(10, timeout),
+                headers=HEADERS,
             )
             response.raise_for_status()
-            break
+            return response.text, url, "requests"
         except Exception as error:  # noqa: BLE001
-            last_error = error
-            response = None
+            attempts.append(f"requests:{url}:{compact(str(error))}")
 
-    if response is None:
+        if WINDOWS_CURL_HOST:
+            try:
+                return fetch_via_windows_curl(url, timeout), url, "windows-curl-host"
+            except Exception as error:  # noqa: BLE001
+                attempts.append(f"windows-curl-host:{url}:{compact(str(error))}")
+
+    raise RuntimeError(" | ".join(attempts))
+
+
+def parse_live_page() -> dict:
+    try:
+        html, source_url, transport = fetch_text(LIVE_URLS, 20)
+    except Exception as error:  # noqa: BLE001
         return {
-            "sourceUrl": source_url,
+            "sourceUrl": LIVE_URLS[0],
             "advertisedSkillCategories": 0,
             "advertisedBundledSkills": 0,
             "categoryButtons": [],
-            "liveFetchError": compact(str(last_error)),
+            "fetchTransport": None,
+            "liveFetchError": compact(str(error)),
         }
 
-    soup = BeautifulSoup(response.text, "html.parser")
+    soup = BeautifulSoup(html, "html.parser")
 
     category_button_texts = [compact(button.get_text(" ", strip=True)) for button in soup.find_all("button")]
     category_buttons: list[str] = []
@@ -96,6 +170,7 @@ def parse_live_page() -> dict:
         "advertisedSkillCategories": summary_numbers.get("Skill categories", 0),
         "advertisedBundledSkills": summary_numbers.get("Bundled skills", 0),
         "categoryButtons": category_buttons,
+        "fetchTransport": transport,
         "liveFetchError": "",
     }
 
@@ -180,24 +255,10 @@ def counts_to_rows(counter: Counter[str]) -> list[dict[str, int | str]]:
 
 
 def parse_raw_catalog() -> dict:
-    text = None
-    source_url = None
-    last_error = None
-    for url in RAW_URLS:
-        try:
-            response = requests.get(
-                url,
-                timeout=30,
-                headers={"user-agent": "Mozilla/5.0 (compatible; ClawSkillsScout/1.0; +https://github.com/)"},
-            )
-            response.raise_for_status()
-            text = response.text
-            source_url = url
-            break
-        except Exception as error:  # noqa: BLE001
-            last_error = error
-    if text is None:
-        raise RuntimeError(f"unable to fetch Hermes raw catalog: {last_error}")
+    try:
+        text, source_url, transport = fetch_text(RAW_URLS, 30)
+    except Exception as error:  # noqa: BLE001
+        raise RuntimeError(f"unable to fetch Hermes raw catalog: {compact(str(error))}") from error
 
     items: list[dict] = []
     section_type = "bundled"
@@ -288,6 +349,7 @@ def parse_raw_catalog() -> dict:
 
     return {
         "sourceDocUrl": source_url,
+        "fetchTransport": transport,
         "parsedSkillRows": len(items),
         "bundledRows": sum(1 for item in items if item["type"] == "bundled"),
         "optionalRows": sum(1 for item in items if item["type"] == "optional"),

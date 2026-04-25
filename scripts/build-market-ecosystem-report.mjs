@@ -1,9 +1,8 @@
 import { mkdir, writeFile } from 'node:fs/promises';
 import { readFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
-import { spawnSync } from 'node:child_process';
+import { spawn, spawnSync } from 'node:child_process';
 import vm from 'node:vm';
-import fetch from 'node-fetch';
 import { syncMarkdownDocx } from './lib/report-docx.mjs';
 
 const ROOT = process.cwd();
@@ -20,6 +19,11 @@ const HERMES_REPORT_EN_PUBLIC_PATH = resolve(ROOT, 'public/reports/Hermes_AISA_R
 const CLAUDE_SKILLS_URL = 'https://claudemarketplaces.com/skills';
 const CLAUDE_MARKETPLACES_URL = 'https://claudemarketplaces.com/marketplaces';
 const HERMES_CATALOG_URL = 'https://raw.githubusercontent.com/NousResearch/hermes-agent/main/website/docs/reference/skills-catalog.md';
+const LIVE_FETCH_USER_AGENT = 'Mozilla/5.0 (compatible; ClawSkillsScout/1.0; +https://github.com/)';
+const LIVE_FETCH_ACCEPT = 'text/html,application/json,text/plain;q=0.9,*/*;q=0.8';
+const WSL_HOST_FETCH_AVAILABLE = process.platform === 'linux' && Boolean(process.env.WSLENV);
+const WSL_HOST_CURL_PATH = '/mnt/c/WINDOWS/System32/curl.exe';
+const COMMAND_OUTPUT_LIMIT = 1024 * 1024 * 16;
 
 function compactSpaces(value) {
   return String(value ?? '')
@@ -361,37 +365,134 @@ function extractJsonArrayFromChunks(chunks, key) {
 }
 
 async function fetchText(url) {
-  let lastError = null;
-  for (let attempt = 0; attempt < 4; attempt += 1) {
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 45000);
-    try {
-      const response = await fetch(url, {
-        headers: {
-          'user-agent': 'Mozilla/5.0 (compatible; ClawSkillsScout/1.0; +https://github.com/)',
-          accept: 'text/html,application/json,text/plain;q=0.9,*/*;q=0.8',
-        },
-        signal: controller.signal,
-      });
-      clearTimeout(timeoutId);
-      if (!response.ok) {
-        throw new Error(`${url} -> ${response.status}`);
-      }
-      return response.text();
-    } catch (error) {
-      clearTimeout(timeoutId);
-      lastError = error;
-      if (attempt < 3) {
-        await new Promise((resolveDelay) => setTimeout(resolveDelay, 1200 * (attempt + 1)));
+  const attempts = [];
+  const strategies = [
+    {
+      label: process.platform === 'win32' ? 'curl.exe' : 'curl',
+      run: () =>
+        runTextCommand(
+          'curl',
+          [
+            '-fsSL',
+            '--connect-timeout',
+            '10',
+            '--max-time',
+            '45',
+            '-H',
+            `user-agent: ${LIVE_FETCH_USER_AGENT}`,
+            '-H',
+            `accept: ${LIVE_FETCH_ACCEPT}`,
+            url,
+          ],
+          50_000,
+        ),
+    },
+  ];
+
+  if (WSL_HOST_FETCH_AVAILABLE) {
+    strategies.push({
+      label: 'windows-curl-host',
+      run: () => fetchTextViaWindowsHost(url, 45),
+    });
+  }
+
+  for (let round = 0; round < 2; round += 1) {
+    for (const strategy of strategies) {
+      try {
+        const text = await strategy.run();
+        return {
+          text,
+          transport: strategy.label,
+        };
+      } catch (error) {
+        attempts.push(`${strategy.label}: ${compactSpaces(error instanceof Error ? error.message : String(error))}`);
       }
     }
+
+    if (round === 0) {
+      await new Promise((resolveDelay) => setTimeout(resolveDelay, 1200));
+    }
   }
-  throw lastError;
+
+  throw new Error(`Unable to fetch ${url}. Attempts: ${attempts.join(' | ')}`);
+}
+
+function runTextCommand(command, args, timeoutMs = 45_000) {
+  return new Promise((resolvePromise, rejectPromise) => {
+    const child = spawn(command, args, {
+      cwd: ROOT,
+      stdio: ['ignore', 'pipe', 'pipe'],
+      windowsHide: true,
+    });
+
+    let stdout = '';
+    let stderr = '';
+    let settled = false;
+    let timeoutHandle = null;
+
+    const settle = (callback) => {
+      if (settled) return;
+      settled = true;
+      if (timeoutHandle) {
+        clearTimeout(timeoutHandle);
+      }
+      callback();
+    };
+
+    const appendChunk = (target, chunk) => {
+      const next = target + chunk.toString('utf8');
+      return next.length > COMMAND_OUTPUT_LIMIT ? next.slice(-COMMAND_OUTPUT_LIMIT) : next;
+    };
+
+    timeoutHandle = setTimeout(() => {
+      child.kill('SIGTERM');
+      setTimeout(() => child.kill('SIGKILL'), 2000).unref();
+      settle(() => rejectPromise(new Error(`${command} timed out after ${timeoutMs}ms`)));
+    }, timeoutMs);
+
+    child.stdout.on('data', (chunk) => {
+      stdout = appendChunk(stdout, chunk);
+    });
+    child.stderr.on('data', (chunk) => {
+      stderr = appendChunk(stderr, chunk);
+    });
+    child.on('error', (error) => {
+      settle(() => rejectPromise(error));
+    });
+    child.on('close', (code, signal) => {
+      settle(() => {
+        if (code === 0) {
+          resolvePromise(stdout);
+          return;
+        }
+        rejectPromise(
+          new Error(
+            compactSpaces(`${command} exited with code ${code ?? 'unknown'}${signal ? ` (${signal})` : ''}: ${stderr || stdout}`),
+          ),
+        );
+      });
+    });
+  });
+}
+
+function fetchTextViaWindowsHost(url, timeoutSeconds) {
+  return runTextCommand(
+    WSL_HOST_CURL_PATH,
+    [
+      '-fsSL',
+      '--connect-timeout',
+      '10',
+      '--max-time',
+      String(timeoutSeconds),
+      url,
+    ],
+    (timeoutSeconds + 10) * 1000,
+  );
 }
 
 async function fetchClaudeSkillsData() {
   try {
-    const html = await fetchText(CLAUDE_SKILLS_URL);
+    const { text: html, transport } = await fetchText(CLAUDE_SKILLS_URL);
     const chunks = extractNextFlightChunks(html);
     const skills = extractJsonArrayFromChunks(chunks, 'skills').map((item) => {
       const category = detectCategory(item.name, item.description || item.summary || '');
@@ -490,6 +591,7 @@ async function fetchClaudeSkillsData() {
 
     return {
       sourceUrl: CLAUDE_SKILLS_URL,
+      fetchTransport: transport,
       summary: {
         totalSkills: skills.length,
         totalSkillInstalls: sumBy(skills, (item) => item.installs),
@@ -523,7 +625,7 @@ async function fetchClaudeSkillsData() {
 
 async function fetchClaudeMarketplacesData() {
   try {
-    const html = await fetchText(CLAUDE_MARKETPLACES_URL);
+    const { text: html, transport } = await fetchText(CLAUDE_MARKETPLACES_URL);
     const chunks = extractNextFlightChunks(html);
     const marketplaces = extractJsonArrayFromChunks(chunks, 'marketplaces').map((item) => {
       const description = item.description || '';
@@ -616,6 +718,7 @@ async function fetchClaudeMarketplacesData() {
 
     return {
       sourceUrl: CLAUDE_MARKETPLACES_URL,
+      fetchTransport: transport,
       summary: {
         totalMarketplaces: marketplaces.length,
         totalMarketplaceStars: sumBy(marketplaces, (item) => item.stars),
@@ -728,6 +831,7 @@ function buildHermesSectionGroups(items) {
 function buildHermesLiveGuideSnapshot(liveGuide, fallback) {
   return {
     sourceUrl: liveGuide?.sourceUrl ?? fallback?.sourceUrl ?? 'https://hermes-agent.app/en/skills',
+    fetchTransport: compactSpaces(liveGuide?.fetchTransport ?? fallback?.fetchTransport ?? ''),
     advertisedSkillCategories:
       toNumber(liveGuide?.advertisedSkillCategories) || toNumber(fallback?.summary?.advertisedSkillCategories),
     advertisedBundledSkills:
@@ -770,6 +874,7 @@ function buildHermesRawCatalogSnapshot(rawCatalog, fallback, items, sections) {
 
   return {
     sourceDocUrl: rawCatalog?.sourceDocUrl ?? fallback?.sourceDocUrl ?? HERMES_CATALOG_URL,
+    fetchTransport: compactSpaces(rawCatalog?.fetchTransport ?? fallback?.fetchTransport ?? ''),
     parsedSkillRows: toNumber(rawCatalog?.parsedSkillRows) || items.length,
     bundledRows: toNumber(rawCatalog?.bundledRows) || toNumber(fallback?.summary?.bundledSkills) || bundledItems.length,
     optionalRows: toNumber(rawCatalog?.optionalRows) || toNumber(fallback?.summary?.optionalSkills) || optionalItems.length,
@@ -798,6 +903,10 @@ function refreshCachedHermesDataset(cached, reason) {
     ...cached,
     sourceUrl: liveGuide.sourceUrl,
     sourceDocUrl: rawCatalog.sourceDocUrl,
+    fetchTransport: {
+      liveGuide: liveGuide.fetchTransport || cached?.fetchTransport?.liveGuide || null,
+      rawCatalog: rawCatalog.fetchTransport || cached?.fetchTransport?.rawCatalog || null,
+    },
     liveGuide,
     rawCatalog,
     summary: {
@@ -861,21 +970,19 @@ async function fetchHermesData() {
     }
     return null;
   };
-  const result = spawnSync('python3', [helperPath], {
-    cwd: ROOT,
-    encoding: 'utf8',
-    maxBuffer: 1024 * 1024 * 16,
-  });
-  if (result.status !== 0) {
+  let stdout = '';
+  try {
+    stdout = await runTextCommand('python3', [helperPath], 120_000);
+  } catch (error) {
     try {
-      const cached = loadCachedHermes(result.stderr || result.stdout || 'parse-hermes-skill-atlas.py failed');
+      const cached = loadCachedHermes(error instanceof Error ? error.message : 'parse-hermes-skill-atlas.py failed');
       if (cached) return cached;
     } catch {
       // Ignore cache read failures and surface the original error below.
     }
-    throw new Error(result.stderr || result.stdout || 'parse-hermes-skill-atlas.py failed');
+    throw error;
   }
-  const parsed = JSON.parse(result.stdout);
+  const parsed = JSON.parse(stdout);
   const parsedLiveGuide = parsed.liveGuide ?? {};
   const parsedRawCatalog = parsed.rawCatalog ?? {};
   const rawItems = Array.isArray(parsedRawCatalog.items) ? parsedRawCatalog.items : Array.isArray(parsed.items) ? parsed.items : [];
@@ -905,6 +1012,10 @@ async function fetchHermesData() {
   return {
     sourceUrl: liveGuide.sourceUrl,
     sourceDocUrl: rawCatalog.sourceDocUrl,
+    fetchTransport: {
+      liveGuide: liveGuide.fetchTransport || null,
+      rawCatalog: rawCatalog.fetchTransport || null,
+    },
     liveGuide,
     rawCatalog,
     summary: {
@@ -1238,8 +1349,8 @@ function buildHermesZhReport(report, datasetDate) {
 
 ## 数据口径
 
-- live guide 当前显示 ${report.hermes.liveGuide.advertisedBundledSkills} 个 bundled skills、${report.hermes.liveGuide.advertisedSkillCategories} 个 categories。
-- raw catalog 当前结构化提取 ${report.hermes.rawCatalog.bundledRows} 个 bundled rows、${report.hermes.rawCatalog.optionalRows} 个 optional rows，共 ${report.hermes.rawCatalog.totalSections} 个 sections。
+- live guide 当前显示 ${report.hermes.liveGuide.advertisedBundledSkills} 个 bundled skills、${report.hermes.liveGuide.advertisedSkillCategories} 个 categories，抓取通道为 ${report.hermes.liveGuide.fetchTransport || 'unknown'}。
+- raw catalog 当前结构化提取 ${report.hermes.rawCatalog.bundledRows} 个 bundled rows、${report.hermes.rawCatalog.optionalRows} 个 optional rows，共 ${report.hermes.rawCatalog.totalSections} 个 sections，抓取通道为 ${report.hermes.rawCatalog.fetchTransport || 'unknown'}。
 - raw catalog 头部 sections：${report.hermes.rawCatalog.sectionBreakdown.slice(0, 5).map((item) => `${item.name} ${item.count}`).join(' · ')}。
 
 ## 一句话结论
@@ -1336,8 +1447,8 @@ function buildHermesEnReport(report, datasetDate) {
 
 ## Data scope
 
-- Live guide currently advertises ${report.hermes.liveGuide.advertisedBundledSkills} bundled skills across ${report.hermes.liveGuide.advertisedSkillCategories} categories.
-- Raw catalog currently parses ${report.hermes.rawCatalog.bundledRows} bundled rows and ${report.hermes.rawCatalog.optionalRows} optional rows across ${report.hermes.rawCatalog.totalSections} sections.
+- Live guide currently advertises ${report.hermes.liveGuide.advertisedBundledSkills} bundled skills across ${report.hermes.liveGuide.advertisedSkillCategories} categories via ${report.hermes.liveGuide.fetchTransport || 'unknown'}.
+- Raw catalog currently parses ${report.hermes.rawCatalog.bundledRows} bundled rows and ${report.hermes.rawCatalog.optionalRows} optional rows across ${report.hermes.rawCatalog.totalSections} sections via ${report.hermes.rawCatalog.fetchTransport || 'unknown'}.
 - Top raw sections: ${report.hermes.rawCatalog.sectionBreakdown.slice(0, 5).map((item) => `${item.name} ${item.count}`).join(' · ')}.
 
 ## Executive Summary
