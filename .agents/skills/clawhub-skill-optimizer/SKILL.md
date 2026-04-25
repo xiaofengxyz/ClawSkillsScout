@@ -151,6 +151,7 @@ When optimizing a published repo skill, enforce these before polishing copy:
 
 - use minimal frontmatter with `name`, `description`, and canonical `metadata.aisa`
 - prefer `metadata.aisa.emoji`, `metadata.aisa.requires`, `metadata.aisa.primaryEnv`, and `metadata.aisa.compatibility`
+- for ClawHub/OpenClaw compatibility review, remember the public registry still accepts `metadata.openclaw` (plus `clawdbot` / `clawdis` aliases), but this repo's AISA source-optimized bundles standardize on `metadata.aisa`
 - every command example should use `{baseDir}` when a runtime placeholder is needed
 - keep `SKILL.md` aligned to the shipped runtime only
 - if compare/test/sync/dev scripts are not in the publish artifact, do not mention them

@@ -22,6 +22,10 @@ def compact(value: str | None) -> str:
     return re.sub(r"\s+", " ", value or "").strip()
 
 
+def slugify(value: str) -> str:
+    return re.sub(r"[^a-z0-9]+", "-", compact(value).lower()).strip("-")
+
+
 def text_of(node) -> str:
     if node is None:
         return ""
@@ -64,9 +68,14 @@ def parse_live_page() -> dict:
     category_buttons: list[str] = []
     seen_buttons: set[str] = set()
     for text in category_button_texts:
+        lower = text.lower()
         if not text or text in {"All categories", "Expand all", "Collapse to top 3"}:
             continue
         if text in {"Open Memory", "Open MCP"}:
+            continue
+        # The new page structure renders verbose expanded cards that repeat the simple
+        # category buttons. Keep the short filter labels for downstream UI use.
+        if "bundled skill" in lower or len(text) > 40:
             continue
         if text in seen_buttons:
             continue
@@ -91,6 +100,85 @@ def parse_live_page() -> dict:
     }
 
 
+def extract_cell_value(cell: str) -> str:
+    text = compact(cell)
+    if not text:
+        return ""
+
+    link_match = re.fullmatch(r"\[`([^`]+)`\]\([^)]*\)", text)
+    if link_match:
+        return compact(link_match.group(1))
+
+    markdown_link_match = re.fullmatch(r"\[([^\]]+)\]\([^)]*\)", text)
+    if markdown_link_match:
+        return compact(markdown_link_match.group(1).strip("`"))
+
+    code_match = re.fullmatch(r"`([^`]+)`", text)
+    if code_match:
+        return compact(code_match.group(1))
+
+    return compact(text.strip("`"))
+
+
+def split_markdown_table_row(line: str) -> list[str]:
+    stripped = line.strip()
+    if not stripped.startswith("|"):
+        return []
+
+    body = stripped[1:]
+    if body.endswith("|"):
+        body = body[:-1]
+
+    cells: list[str] = []
+    current: list[str] = []
+    in_backticks = False
+    escaping = False
+
+    for char in body:
+        if escaping:
+            current.append(char)
+            escaping = False
+            continue
+        if char == "\\":
+            escaping = True
+            current.append(char)
+            continue
+        if char == "`":
+            in_backticks = not in_backticks
+            current.append(char)
+            continue
+        if char == "|" and not in_backticks:
+            cells.append("".join(current).strip())
+            current = []
+            continue
+        current.append(char)
+
+    cells.append("".join(current).strip())
+    return cells
+
+
+def is_table_separator(cells: list[str]) -> bool:
+    return bool(cells) and all(re.fullmatch(r":?-{3,}:?", cell.replace(" ", "")) for cell in cells)
+
+
+def normalize_table_cells(cells: list[str]) -> tuple[str, str, str] | None:
+    if len(cells) < 3:
+        return None
+    name = extract_cell_value(cells[0])
+    path = extract_cell_value(cells[-1])
+    description = compact(" | ".join(cells[1:-1]))
+    if not name or not path:
+        return None
+    return name, description, path
+
+
+def counts_to_rows(counter: Counter[str]) -> list[dict[str, int | str]]:
+    return [
+        {"sectionTitle": name, "count": count}
+        for name, count in sorted(counter.items(), key=lambda entry: (-entry[1], entry[0]))
+    ]
+
+
 def parse_raw_catalog() -> dict:
     text = None
     source_url = None
@@ -110,54 +198,104 @@ def parse_raw_catalog() -> dict:
             last_error = error
     if text is None:
         raise RuntimeError(f"unable to fetch Hermes raw catalog: {last_error}")
-    items = []
+
+    items: list[dict] = []
     section_type = "bundled"
     current_section = None
     current_description: list[str] = []
+    in_frontmatter = False
+    frontmatter_closed = False
+    grouped_sections = {
+        "bundled": [],
+        "optional": [],
+    }
+
+    def flush_section() -> None:
+        nonlocal current_section, current_description
+        if not current_section:
+            return
+
+        section_items = [item for item in items if item["type"] == section_type and item["sectionTitle"] == current_section]
+        grouped_sections[section_type].append(
+            {
+                "type": section_type,
+                "sectionTitle": current_section,
+                "sectionSlug": slugify(current_section),
+                "sectionDescription": compact(" ".join(current_description)),
+                "skillCount": len(section_items),
+                "skills": section_items,
+            }
+        )
+        current_section = None
+        current_description = []
 
     for line in text.splitlines():
-        if line.startswith("# Optional Skills"):
-            section_type = "optional"
-            current_section = None
-            current_description = []
+        stripped = line.strip()
+
+        if not frontmatter_closed and stripped == "---":
+            in_frontmatter = not in_frontmatter
+            if not in_frontmatter:
+                frontmatter_closed = True
+            continue
+        if in_frontmatter:
+            continue
+        if stripped == "---":
             continue
 
-        if line.startswith("## "):
-            current_section = compact(line[3:])
+        if stripped.startswith("# Optional Skills"):
+            flush_section()
+            section_type = "optional"
+            continue
+
+        if stripped.startswith("## "):
+            flush_section()
+            current_section = compact(stripped[3:])
             current_description = []
             continue
 
         if not current_section:
             continue
 
-        row_match = re.match(r"^\|\s*`([^`]+)`\s*\|\s*(.*?)\s*\|\s*`([^`]+)`\s*\|$", line.strip())
-        if row_match:
-            items.append(
-                {
-                    "type": section_type,
-                    "sectionTitle": current_section,
-                    "sectionSlug": current_section.lower().replace(" ", "-"),
-                    "sectionDescription": compact(" ".join(current_description)),
-                    "name": compact(row_match.group(1)),
-                    "slug": compact(row_match.group(1)),
-                    "path": compact(row_match.group(3)),
-                    "description": compact(row_match.group(2)),
-                }
-            )
-            continue
+        cells = split_markdown_table_row(stripped)
+        if cells:
+            if cells == ["Skill", "Description", "Path"] or is_table_separator(cells):
+                continue
 
-        if line.startswith("| Skill | Description | Path |") or line.startswith("|-------"):
-            continue
+            normalized = normalize_table_cells(cells)
+            if normalized:
+                name, description, path = normalized
+                items.append(
+                    {
+                        "type": section_type,
+                        "sectionTitle": current_section,
+                        "sectionSlug": slugify(current_section),
+                        "sectionDescription": compact(" ".join(current_description)),
+                        "name": name,
+                        "slug": slugify(name),
+                        "path": path,
+                        "description": description,
+                    }
+                )
+                continue
 
         if compact(line):
             current_description.append(line.strip())
+
+    flush_section()
+
+    bundled_sections = grouped_sections["bundled"]
+    optional_sections = grouped_sections["optional"]
 
     return {
         "sourceDocUrl": source_url,
         "parsedSkillRows": len(items),
         "bundledRows": sum(1 for item in items if item["type"] == "bundled"),
         "optionalRows": sum(1 for item in items if item["type"] == "optional"),
-        "sectionBreakdown": Counter(item["sectionTitle"] for item in items),
+        "sectionBreakdown": counts_to_rows(Counter(item["sectionTitle"] for item in items)),
+        "bundledSectionBreakdown": counts_to_rows(Counter(item["sectionTitle"] for item in items if item["type"] == "bundled")),
+        "optionalSectionBreakdown": counts_to_rows(Counter(item["sectionTitle"] for item in items if item["type"] == "optional")),
+        "bundledSections": bundled_sections,
+        "optionalSections": optional_sections,
         "items": items,
     }
 
@@ -165,7 +303,15 @@ def parse_raw_catalog() -> dict:
 def main() -> None:
     live = parse_live_page()
     raw = parse_raw_catalog()
-    print(json.dumps({**live, **raw}, ensure_ascii=False))
+    print(
+        json.dumps(
+            {
+                "liveGuide": live,
+                "rawCatalog": raw,
+            },
+            ensure_ascii=False,
+        )
+    )
 
 
 if __name__ == "__main__":

@@ -84,11 +84,11 @@ async function verifyPackage(relativePackage, config) {
   const skillChecks = [
     {
       check: 'uses_metadata_aisa',
-      passed: packageMetadata.requiredBins.length > 0 || packageMetadata.requiredEnv.length > 0 || Boolean(packageMetadata.primaryEnv),
+      passed: packageMetadata.metadataNamespace === 'aisa',
     },
     {
       check: 'omits_metadata_openclaw',
-      passed: !/metadata:\s*\n\s+openclaw:\s*\n/.test(skillText),
+      passed: packageMetadata.metadataNamespace !== 'openclaw',
     },
     {
       check: 'declares_compatibility',

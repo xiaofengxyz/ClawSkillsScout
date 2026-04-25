@@ -131,13 +131,21 @@ function ensureArray(value) {
 
 export function extractPackageMetadata(skillText) {
   const frontmatter = parseSkillFrontmatter(skillText);
-  const aisa = frontmatter?.metadata?.aisa ?? {};
-  const requires = aisa.requires ?? {};
+  const metadata = frontmatter?.metadata ?? {};
+  const metadataNamespace = ['aisa', 'openclaw', 'clawdbot', 'clawdis'].find((key) => metadata?.[key]) ?? null;
+  const runtimeMetadata = metadataNamespace ? metadata[metadataNamespace] : {};
+  const requires = runtimeMetadata?.requires ?? frontmatter?.requires ?? {};
 
   return {
     requiredBins: ensureArray(requires.bins),
     requiredEnv: ensureArray(requires.env),
-    primaryEnv: typeof aisa.primaryEnv === 'string' ? aisa.primaryEnv.trim() : '',
-    compatibility: ensureArray(aisa.compatibility),
+    primaryEnv:
+      typeof runtimeMetadata?.primaryEnv === 'string'
+        ? runtimeMetadata.primaryEnv.trim()
+        : typeof frontmatter?.primaryEnv === 'string'
+          ? frontmatter.primaryEnv.trim()
+          : '',
+    compatibility: ensureArray(runtimeMetadata?.compatibility),
+    metadataNamespace,
   };
 }

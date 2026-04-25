@@ -105,6 +105,11 @@ export interface MarketCategorySummary {
   href?: string;
 }
 
+export interface HermesCountRow {
+  name: string;
+  count: number;
+}
+
 export interface MarketEcosystemReport {
   generatedAt: string;
   sources: {
@@ -178,6 +183,37 @@ export interface MarketEcosystemReport {
   hermes: {
     sourceUrl: string;
     sourceDocUrl: string;
+    liveGuide: {
+      sourceUrl: string;
+      advertisedSkillCategories: number;
+      advertisedBundledSkills: number;
+      categoryButtons: string[];
+      liveFetchError: string;
+    };
+    rawCatalog: {
+      sourceDocUrl: string;
+      parsedSkillRows: number;
+      bundledRows: number;
+      optionalRows: number;
+      totalSections: number;
+      sectionBreakdown: HermesCountRow[];
+      bundledSectionBreakdown: HermesCountRow[];
+      optionalSectionBreakdown: HermesCountRow[];
+      bundledSections: Array<{
+        type: 'bundled' | 'optional';
+        sectionTitle: string;
+        sectionSlug: string;
+        sectionDescription: string;
+        skillCount: number;
+      }>;
+      optionalSections: Array<{
+        type: 'bundled' | 'optional';
+        sectionTitle: string;
+        sectionSlug: string;
+        sectionDescription: string;
+        skillCount: number;
+      }>;
+    };
     summary: {
       totalSkills: number;
       bundledSkills: number;

@@ -54,6 +54,10 @@ This file is the fast handoff layer for future chats. Read it when you need to k
 - Added clearer `Inputs and Outputs`, higher-intent example requests, publish-safe posting guidance, and stronger search/discovery language to both `templates/source-optimized/aisapay/aisa-twitter-api/SKILL.md` and `packages/source-optimized/aisapay/aisa-twitter-api/SKILL.md`
 - Synced the Chinese publish variant at `templates/source-optimized-zh/aisapay/aisa-twitter-api-zh/SKILL.md` and `packages/source-optimized-zh/aisapay/aisa-twitter-api-zh/SKILL.md` so the EN/ZH runtime scope now matches while the Chinese copy reads like a real publish surface instead of a thin mirror
 - Re-verified the optimized package suite with `node scripts/verify-source-optimized.mjs` after the `aisa-twitter-api` copy rewrite
+- Clarified the repo’s frontmatter split: local `.agents` guidance and parser code now explicitly distinguish the internal AISA bundle standard (`metadata.aisa` + `{baseDir}`) from ClawHub/OpenClaw’s still-supported public `metadata.openclaw` alias surface
+- Hardened `scripts/lib/skill-frontmatter.mjs` so runtime metadata extraction now accepts `metadata.aisa`, `metadata.openclaw`, `metadata.clawdbot`, `metadata.clawdis`, and legacy top-level `requires` / `primaryEnv`, while `scripts/verify-source-optimized.mjs` still enforces `metadata.aisa` for the repo’s source-optimized AISA bundles
+- Reworked the Hermes ingestion path so `scripts/parse-hermes-skill-atlas.py` now models live guide data separately from raw catalog structure, and updated `scripts/build-market-ecosystem-report.mjs`, `src/market-intelligence/*`, and the Hermes EN/ZH reports to surface raw bundled/optional/section context without regressing the page
+- Updated `public/data/market-ecosystem-report.json`, `reports/Hermes_AISA_Report_*.md`, `public/reports/Hermes_AISA_Report_*.md`, and rebuilt `dist/` so the current site/output now carries the Hermes raw/live distinction even though live upstream re-fetch timed out in this local environment
 
 ### 2026-04-24
 

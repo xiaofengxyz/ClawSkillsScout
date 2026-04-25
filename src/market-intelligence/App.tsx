@@ -228,6 +228,7 @@ export default function App() {
   const [activeClaudeOwner, setActiveClaudeOwner] = useState<string | null>(null);
   const [activeMarketplace, setActiveMarketplace] = useState<string | null>(null);
   const [activeHermesSkill, setActiveHermesSkill] = useState<string | null>(null);
+  const [activeHermesOptionalSkill, setActiveHermesOptionalSkill] = useState<string | null>(null);
   const [activeAgentSkill, setActiveAgentSkill] = useState<string | null>(null);
   const [activeAgentCreator, setActiveAgentCreator] = useState<string | null>(null);
   const [activeAgentPlugin, setActiveAgentPlugin] = useState<string | null>(null);
@@ -312,6 +313,27 @@ export default function App() {
   }
 
   const notAvailable = isZh ? '暂无' : 'n/a';
+  const hermesLiveGuide = marketReport.hermes.liveGuide ?? {
+    sourceUrl: marketReport.hermes.sourceUrl,
+    advertisedSkillCategories: marketReport.hermes.summary.advertisedSkillCategories,
+    advertisedBundledSkills: marketReport.hermes.summary.advertisedBundledSkills,
+    categoryButtons: marketReport.hermes.categoryButtons ?? [],
+    liveFetchError: '',
+  };
+  const hermesRawCatalog = marketReport.hermes.rawCatalog ?? {
+    sourceDocUrl: marketReport.hermes.sourceDocUrl,
+    parsedSkillRows: marketReport.hermes.summary.totalSkills,
+    bundledRows: marketReport.hermes.summary.bundledSkills,
+    optionalRows: marketReport.hermes.summary.optionalSkills,
+    totalSections: marketReport.hermes.summary.sections,
+    sectionBreakdown: marketReport.hermes.sections ?? [],
+    bundledSectionBreakdown: marketReport.hermes.sections ?? [],
+    optionalSectionBreakdown: [],
+    bundledSections: [],
+    optionalSections: [],
+  };
+  const hermesTopSections = (hermesRawCatalog.sectionBreakdown ?? []).slice(0, 5).map((item) => `${item.name} ${item.count}`);
+  const hermesTopTags = marketReport.hermes.tags.slice(0, 6).map((item) => `${item.name} ${item.count}`);
   const extendedExecutionLanes = [
     ...marketReport.combined.executionLanes,
     isZh
@@ -383,9 +405,9 @@ export default function App() {
           </article>
           <article className="mi-stat-card tone-forest">
             <Rocket size={18} />
-            <span>{isZh ? 'Hermes 打包 / 在线口径' : 'Hermes Bundled / Live'}</span>
+            <span>{isZh ? 'Hermes raw / live' : 'Hermes raw / live'}</span>
             <strong>
-              {metric(marketReport.hermes.summary.bundledSkills, language)} / {metric(marketReport.hermes.summary.advertisedBundledSkills, language)}
+              {metric(hermesRawCatalog.bundledRows, language)} / {metric(hermesLiveGuide.advertisedBundledSkills, language)}
             </strong>
           </article>
           <article className="mi-stat-card tone-rust">
@@ -462,17 +484,17 @@ export default function App() {
               eyebrow="Hermes"
               lines={[
                 isZh
-                  ? `官方指南 ${metric(marketReport.hermes.summary.advertisedBundledSkills, language)} 个打包技能`
-                  : `Live guide ${metric(marketReport.hermes.summary.advertisedBundledSkills, language)} bundled skills`,
+                  ? `live guide ${metric(hermesLiveGuide.advertisedBundledSkills, language)} 个 bundled skills`
+                  : `Live guide ${metric(hermesLiveGuide.advertisedBundledSkills, language)} bundled skills`,
                 isZh
-                  ? `原始目录 ${metric(marketReport.hermes.summary.bundledSkills, language)} 条打包记录`
-                  : `Raw catalog ${metric(marketReport.hermes.summary.bundledSkills, language)} bundled rows`,
+                  ? `raw catalog ${metric(hermesRawCatalog.bundledRows, language)} 个 bundled + ${metric(hermesRawCatalog.optionalRows, language)} 个 optional`
+                  : `Raw catalog ${metric(hermesRawCatalog.bundledRows, language)} bundled + ${metric(hermesRawCatalog.optionalRows, language)} optional`,
                 isZh
-                  ? `最强标签带: ${marketReport.hermes.tags.slice(0, 3).map((item) => item.name).join(' · ')}`
-                  : `Top tag cluster: ${marketReport.hermes.tags.slice(0, 3).map((item) => item.name).join(' · ')}`,
+                  ? `头部 sections: ${hermesTopSections.slice(0, 3).join(' · ')}`
+                  : `Top raw sections: ${hermesTopSections.slice(0, 3).join(' · ')}`,
               ]}
               bullets={marketReport.hermes.commonPatterns.slice(0, 4)}
-              link={marketReport.sources.hermesSkills}
+              link={marketReport.sources.hermesCatalog}
               linkLabel={copy.openSource}
             />
             {agentSkillReport ? (
@@ -740,28 +762,40 @@ export default function App() {
         <>
           <section className="mi-grid mi-grid-3">
             <DetailCard
-              title={isZh ? 'Hermes 当前口径' : 'Hermes snapshot'}
-              eyebrow={isZh ? '官方指南' : 'Official guide'}
+              title={isZh ? 'Hermes live guide' : 'Hermes live guide'}
+              eyebrow={isZh ? '在线指南' : 'Live guide'}
               lines={[
                 isZh
-                  ? `官方指南：${metric(marketReport.hermes.summary.advertisedBundledSkills, language)} 个打包技能`
-                  : `Live guide: ${metric(marketReport.hermes.summary.advertisedBundledSkills, language)} bundled skills`,
+                  ? `bundled：${metric(hermesLiveGuide.advertisedBundledSkills, language)}`
+                  : `Bundled skills: ${metric(hermesLiveGuide.advertisedBundledSkills, language)}`,
                 isZh
-                  ? `原始目录：${metric(marketReport.hermes.summary.bundledSkills, language)} 条打包记录`
-                  : `Raw catalog: ${metric(marketReport.hermes.summary.bundledSkills, language)} bundled rows`,
+                  ? `categories：${metric(hermesLiveGuide.advertisedSkillCategories, language)}`
+                  : `Categories: ${metric(hermesLiveGuide.advertisedSkillCategories, language)}`,
                 isZh
-                  ? `类目数：${metric(marketReport.hermes.summary.advertisedSkillCategories, language)}`
-                  : `Categories: ${metric(marketReport.hermes.summary.advertisedSkillCategories, language)}`,
+                  ? `筛选按钮：${metric(hermesLiveGuide.categoryButtons.length, language)}`
+                  : `Filter buttons: ${metric(hermesLiveGuide.categoryButtons.length, language)}`,
               ]}
-              bullets={[marketReport.hermes.commonPatterns[4] ?? marketReport.hermes.commonPatterns[0]]}
+              bullets={hermesLiveGuide.categoryButtons.slice(0, 12).map((item) => (isZh ? `官方筛选：${item}` : `Official filter: ${item}`))}
               link={marketReport.sources.hermesSkills}
               linkLabel={copy.openSource}
             />
             <DetailCard
-              title={isZh ? '高频标签' : 'High-frequency tags'}
-              eyebrow="Tags"
-              lines={[marketReport.hermes.tags.slice(0, 6).map((item) => `${item.name} ${item.count}`).join(' · ')]}
-              bullets={marketReport.hermes.categoryButtons.slice(0, 12).map((item) => (isZh ? `官方筛选按钮：${item}` : `Official filter: ${item}`))}
+              title={isZh ? 'Hermes raw catalog' : 'Hermes raw catalog'}
+              eyebrow={isZh ? '原始目录' : 'Raw catalog'}
+              lines={[
+                isZh
+                  ? `bundled ${metric(hermesRawCatalog.bundledRows, language)} · optional ${metric(hermesRawCatalog.optionalRows, language)}`
+                  : `bundled ${metric(hermesRawCatalog.bundledRows, language)} · optional ${metric(hermesRawCatalog.optionalRows, language)}`,
+                isZh
+                  ? `sections ${metric(hermesRawCatalog.totalSections, language)}`
+                  : `sections ${metric(hermesRawCatalog.totalSections, language)}`,
+                hermesTopSections.slice(0, 4).join(' · '),
+              ]}
+              bullets={hermesRawCatalog.sectionBreakdown.slice(0, 8).map((item) =>
+                isZh ? `${item.name}：${metric(item.count, language)}` : `${item.name}: ${metric(item.count, language)}`,
+              )}
+              link={marketReport.sources.hermesCatalog}
+              linkLabel={copy.openSource}
             />
             <DetailCard
               title={isZh ? '我们该怎么用 Hermes' : 'How we should use Hermes'}
@@ -771,7 +805,7 @@ export default function App() {
                   ? ['拿它做“官方工作流 atlas”', '不是单纯看热度榜', '更适合反推哪些能力值得 API 化']
                   : ['Use it as an official workflow atlas', 'Not just as a popularity board', 'Best for inferring which capabilities deserve API packaging']
               }
-              bullets={marketReport.hermes.commonPatterns.slice(0, 4)}
+              bullets={[...hermesTopTags.slice(0, 3), ...marketReport.hermes.commonPatterns.slice(0, 3)]}
             />
           </section>
 
@@ -785,6 +819,36 @@ export default function App() {
               items={marketReport.hermes.bundled}
               activeKey={activeHermesSkill}
               onSelect={setActiveHermesSkill}
+              getKey={(item) => item.name}
+              renderTitle={(item) => item.name}
+              renderMeta={(item) => `${item.sectionTitle} · ${item.category} · ${metric(item.aisaOpportunityScore, language)}`}
+              renderDetails={(item) => (
+                <DetailCard
+                  title={item.name}
+                  eyebrow={item.sectionTitle ?? 'Hermes'}
+                  lines={[`${item.category} · ${item.apiFamily}`, item.targetTitle, item.platformScope ?? (isZh ? '跨平台' : 'cross-platform')]}
+                  bullets={mappedBullets([item.description], item.moves?.slice(0, 3))}
+                  link={marketReport.sources.hermesCatalog}
+                  linkLabel={copy.openSource}
+                />
+              )}
+            />
+          </section>
+
+          <section className="mi-board">
+            <div className="mi-section-top">
+              <h2>{isZh ? 'Hermes optional 技能机会' : 'Hermes optional skills worth watching'}</h2>
+              <p>
+                {isZh
+                  ? 'raw catalog 现在已经把 optional skills 单独成层，页面也单独展示，方便区分“内置默认能力”和“可额外安装能力”。'
+                  : 'The raw catalog now exposes optional skills as a distinct layer, so the page shows them separately from bundled defaults.'}
+              </p>
+            </div>
+            <AccordionBoard
+              title={isZh ? 'Top optional candidates' : 'Top optional candidates'}
+              items={marketReport.hermes.optional}
+              activeKey={activeHermesOptionalSkill}
+              onSelect={setActiveHermesOptionalSkill}
               getKey={(item) => item.name}
               renderTitle={(item) => item.name}
               renderMeta={(item) => `${item.sectionTitle} · ${item.category} · ${metric(item.aisaOpportunityScore, language)}`}

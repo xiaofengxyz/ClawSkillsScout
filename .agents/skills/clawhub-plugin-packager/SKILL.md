@@ -142,6 +142,7 @@ Before packaging, validate that the source skill follows these conventions:
 
 - published source skills should use `name`, `description`, and canonical `metadata.aisa`
 - `metadata.aisa` should normally contain `emoji`, `requires`, `primaryEnv`, and `compatibility`
+- if a bundle must mirror ClawHub/OpenClaw registry expectations exactly, `metadata.openclaw` is still a supported public alias, but this repo's AISA source bundles keep `metadata.aisa` as the internal standard
 - command examples should use `{baseDir}` rather than bootstrap-only variables
 - package only runtime-essential files by default: `SKILL.md`, runtime scripts, libraries, manifests, and minimal wrappers
 - exclude compare, evaluate, test, sync, migration, and dev utilities unless the user explicitly asks for a developer bundle

@@ -3,6 +3,12 @@
 - Generated at: 2026-04-25T04:44:29.267Z
 - Dataset date: April 25, 2026
 
+## Data scope
+
+- Live guide currently advertises 97 bundled skills across 28 categories.
+- Raw catalog currently parses 70 bundled rows and 17 optional rows across 28 sections.
+- Top raw sections: github 6 · research 5 · productivity 4 · software-development 4 · apple 3.
+
 ## Executive Summary
 
 Hermes behaves more like a workflow atlas than a public install marketplace. Breakout leverage comes from section fit, operational clarity, and tightly scoped capability boundaries. The best AISA conversion targets are still the same practical surfaces: GitHub, research, documents, workspace tooling, and automation.
@@ -67,5 +73,4 @@ Hermes behaves more like a workflow atlas than a public install marketplace. Bre
 | 13 | blackbox | autonomous-ai-agents | Agentic Systems | 76.3 | cross-platform or mixed |
 | 14 | agentmail | email | Agentic Systems | 76.3 | cross-platform or mixed |
 | 15 | meme-generation | creative | General Utility | 63.65 | cross-platform or mixed |
-
 

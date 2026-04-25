@@ -51403,35 +51403,7 @@
       "Red Teaming",
       "Smart Home",
       "Social Media",
-      "Software Development",
-      "Ap Apple apple Apple platform integrations for messaging, reminders, notes, and device location workflows. 4 bundled skills",
-      "Au Autonomous AI Agents autonomous-ai-agents Agent orchestration skills for code execution, delegation, and multi-agent operating patterns. 4 bundled skills",
-      "Da Data Science data-science Notebook and kernel-based workflows for exploratory analysis. 1 bundled skills",
-      "Cr Creative creative Visual and interactive media workflows for sketches, motion, and generative outputs. 4 bundled skills",
-      "De DevOps devops Operational plumbing for event-driven automation and service hooks. 1 bundled skills",
-      "Do Dogfood dogfood Internal-use skills for running and validating Hermes-centric workflows. 2 bundled skills",
-      "Em Email email Mailbox workflows for reading, triaging, and acting on email. 1 bundled skills",
-      "Ga Gaming gaming Game-oriented automations and play-support workflows. 2 bundled skills",
-      "Gi GitHub github Repository operations, PR handling, issue flows, and code review automation. 6 bundled skills",
-      "In Inference.sh inference-sh Hosted inference workflows using the inference.sh ecosystem. 1 bundled skills",
-      "Le Leisure leisure Casual local discovery and lifestyle helper workflows. 1 bundled skills",
-      "MC MCP mcp MCP packaging and native integration workflows. 2 bundled skills",
-      "Me Media media Search, curation, and content workflows across social and video media. 4 bundled skills",
-      "ML MLOps mlops Model delivery, infrastructure, and operational workflows for machine learning systems. 1 bundled skills",
-      "ML MLOps / Cloud mlops-cloud Cloud GPU workflows for hosted training and inference environments. 2 bundled skills",
-      "ML MLOps / Evaluation mlops-evaluation Evaluation, tokenization, curation, and observability workflows for model quality. 5 bundled skills",
-      "ML MLOps / Inference mlops-inference Serving, quantization, structured generation, and inference runtime workflows. 8 bundled skills",
-      "ML MLOps / Models mlops-models Model-specific workflows across audio, vision, multimodal, and speech systems. 6 bundled skills",
-      "ML MLOps / Research mlops-research Research-time optimization and prompting workflows for model development. 1 bundled skills",
-      "ML MLOps / Training mlops-training Training, fine-tuning, RL, and systems optimization workflows for model development. 13 bundled skills",
-      "ML MLOps / Vector Databases mlops-vector-databases Embedding storage and vector retrieval workflows. 4 bundled skills",
-      "No Note Taking note-taking Knowledge capture and personal knowledge base workflows. 1 bundled skills",
-      "Pr Productivity productivity General work execution workflows for documents, planning, OCR, and office tasks. 6 bundled skills",
-      "Re Research research Information gathering, literature review, market reading, and domain analysis workflows. 7 bundled skills",
-      "Re Red Teaming red-teaming Adversarial and stress-test workflows for system evaluation. 1 bundled skills",
-      "Sm Smart Home smart-home Home automation and device control workflows. 1 bundled skills",
-      "So Social Media social-media Social posting and platform-specific publishing workflows. 1 bundled skills",
-      "So Software Development software-development Planning, review, debugging, and disciplined engineering execution workflows. 7 bundled skills"
+      "Software Development"
     ],
     "sections": [
       {
@@ -53947,7 +53919,436 @@
       "高 AISA 适配项主要集中在 GitHub、Research、Productivity、Documents、Automation 这些高频外部工具边界。",
       "Apple / macOS 类 skill 价值高但平台限制强，更适合做专属 SKU 而不是旗舰总包。",
       "截至 2026-04-25，Hermes live/raw 直连刷新失败（Hermes raw catalog parsed zero rows），本次结果已基于本地缓存重算分类与机会分。"
-    ]
+    ],
+    "liveGuide": {
+      "sourceUrl": "https://hermes-agent.app/en/skills",
+      "advertisedSkillCategories": 28,
+      "advertisedBundledSkills": 97,
+      "categoryButtons": [
+        "Apple",
+        "Autonomous AI Agents",
+        "Data Science",
+        "Creative",
+        "DevOps",
+        "Dogfood",
+        "Email",
+        "Gaming",
+        "GitHub",
+        "Inference.sh",
+        "Leisure",
+        "MCP",
+        "Media",
+        "MLOps",
+        "MLOps / Cloud",
+        "MLOps / Evaluation",
+        "MLOps / Inference",
+        "MLOps / Models",
+        "MLOps / Research",
+        "MLOps / Training",
+        "MLOps / Vector Databases",
+        "Note Taking",
+        "Productivity",
+        "Research",
+        "Red Teaming",
+        "Smart Home",
+        "Social Media",
+        "Software Development"
+      ],
+      "liveFetchError": ""
+    },
+    "rawCatalog": {
+      "sourceDocUrl": "https://raw.githubusercontent.com/NousResearch/hermes-agent/main/website/docs/reference/skills-catalog.md",
+      "parsedSkillRows": 87,
+      "bundledRows": 70,
+      "optionalRows": 17,
+      "totalSections": 28,
+      "sectionBreakdown": [
+        {
+          "name": "github",
+          "count": 6
+        },
+        {
+          "name": "research",
+          "count": 5
+        },
+        {
+          "name": "productivity",
+          "count": 4
+        },
+        {
+          "name": "software-development",
+          "count": 4
+        },
+        {
+          "name": "apple",
+          "count": 3
+        },
+        {
+          "name": "creative",
+          "count": 3
+        },
+        {
+          "name": "security",
+          "count": 3
+        },
+        {
+          "name": "email",
+          "count": 2
+        },
+        {
+          "name": "devops",
+          "count": 2
+        },
+        {
+          "name": "mcp",
+          "count": 2
+        },
+        {
+          "name": "blockchain",
+          "count": 2
+        },
+        {
+          "name": "red-teaming",
+          "count": 1
+        },
+        {
+          "name": "mlops/evaluation",
+          "count": 1
+        },
+        {
+          "name": "note-taking",
+          "count": 1
+        },
+        {
+          "name": "migration",
+          "count": 1
+        },
+        {
+          "name": "health",
+          "count": 1
+        },
+        {
+          "name": "autonomous-ai-agents",
+          "count": 1
+        }
+      ],
+      "bundledSectionBreakdown": [
+        {
+          "name": "github",
+          "count": 6
+        },
+        {
+          "name": "research",
+          "count": 5
+        },
+        {
+          "name": "productivity",
+          "count": 4
+        },
+        {
+          "name": "software-development",
+          "count": 4
+        },
+        {
+          "name": "apple",
+          "count": 3
+        },
+        {
+          "name": "creative",
+          "count": 3
+        },
+        {
+          "name": "security",
+          "count": 3
+        },
+        {
+          "name": "email",
+          "count": 2
+        },
+        {
+          "name": "devops",
+          "count": 2
+        },
+        {
+          "name": "mcp",
+          "count": 2
+        },
+        {
+          "name": "blockchain",
+          "count": 2
+        },
+        {
+          "name": "red-teaming",
+          "count": 1
+        },
+        {
+          "name": "mlops/evaluation",
+          "count": 1
+        },
+        {
+          "name": "note-taking",
+          "count": 1
+        },
+        {
+          "name": "migration",
+          "count": 1
+        },
+        {
+          "name": "health",
+          "count": 1
+        },
+        {
+          "name": "autonomous-ai-agents",
+          "count": 1
+        }
+      ],
+      "optionalSectionBreakdown": [
+        {
+          "name": "creative",
+          "count": 3
+        },
+        {
+          "name": "security",
+          "count": 3
+        },
+        {
+          "name": "blockchain",
+          "count": 2
+        },
+        {
+          "name": "research",
+          "count": 2
+        },
+        {
+          "name": "autonomous-ai-agents",
+          "count": 1
+        },
+        {
+          "name": "devops",
+          "count": 1
+        },
+        {
+          "name": "email",
+          "count": 1
+        },
+        {
+          "name": "health",
+          "count": 1
+        },
+        {
+          "name": "mcp",
+          "count": 1
+        },
+        {
+          "name": "migration",
+          "count": 1
+        },
+        {
+          "name": "productivity",
+          "count": 1
+        }
+      ],
+      "bundledSections": [
+        {
+          "type": "bundled",
+          "sectionTitle": "github",
+          "sectionSlug": "github",
+          "sectionDescription": "",
+          "skillCount": 6
+        },
+        {
+          "type": "bundled",
+          "sectionTitle": "research",
+          "sectionSlug": "research",
+          "sectionDescription": "",
+          "skillCount": 5
+        },
+        {
+          "type": "bundled",
+          "sectionTitle": "productivity",
+          "sectionSlug": "productivity",
+          "sectionDescription": "",
+          "skillCount": 4
+        },
+        {
+          "type": "bundled",
+          "sectionTitle": "software-development",
+          "sectionSlug": "software-development",
+          "sectionDescription": "",
+          "skillCount": 4
+        },
+        {
+          "type": "bundled",
+          "sectionTitle": "apple",
+          "sectionSlug": "apple",
+          "sectionDescription": "",
+          "skillCount": 3
+        },
+        {
+          "type": "bundled",
+          "sectionTitle": "creative",
+          "sectionSlug": "creative",
+          "sectionDescription": "",
+          "skillCount": 3
+        },
+        {
+          "type": "bundled",
+          "sectionTitle": "security",
+          "sectionSlug": "security",
+          "sectionDescription": "",
+          "skillCount": 3
+        },
+        {
+          "type": "bundled",
+          "sectionTitle": "email",
+          "sectionSlug": "email",
+          "sectionDescription": "",
+          "skillCount": 2
+        },
+        {
+          "type": "bundled",
+          "sectionTitle": "devops",
+          "sectionSlug": "devops",
+          "sectionDescription": "",
+          "skillCount": 2
+        },
+        {
+          "type": "bundled",
+          "sectionTitle": "mcp",
+          "sectionSlug": "mcp",
+          "sectionDescription": "",
+          "skillCount": 2
+        },
+        {
+          "type": "bundled",
+          "sectionTitle": "blockchain",
+          "sectionSlug": "blockchain",
+          "sectionDescription": "",
+          "skillCount": 2
+        },
+        {
+          "type": "bundled",
+          "sectionTitle": "red-teaming",
+          "sectionSlug": "red-teaming",
+          "sectionDescription": "",
+          "skillCount": 1
+        },
+        {
+          "type": "bundled",
+          "sectionTitle": "mlops/evaluation",
+          "sectionSlug": "mlops-evaluation",
+          "sectionDescription": "",
+          "skillCount": 1
+        },
+        {
+          "type": "bundled",
+          "sectionTitle": "note-taking",
+          "sectionSlug": "note-taking",
+          "sectionDescription": "",
+          "skillCount": 1
+        },
+        {
+          "type": "bundled",
+          "sectionTitle": "migration",
+          "sectionSlug": "migration",
+          "sectionDescription": "",
+          "skillCount": 1
+        },
+        {
+          "type": "bundled",
+          "sectionTitle": "health",
+          "sectionSlug": "health",
+          "sectionDescription": "",
+          "skillCount": 1
+        },
+        {
+          "type": "bundled",
+          "sectionTitle": "autonomous-ai-agents",
+          "sectionSlug": "autonomous-ai-agents",
+          "sectionDescription": "",
+          "skillCount": 1
+        }
+      ],
+      "optionalSections": [
+        {
+          "type": "optional",
+          "sectionTitle": "creative",
+          "sectionSlug": "creative",
+          "sectionDescription": "",
+          "skillCount": 3
+        },
+        {
+          "type": "optional",
+          "sectionTitle": "security",
+          "sectionSlug": "security",
+          "sectionDescription": "",
+          "skillCount": 3
+        },
+        {
+          "type": "optional",
+          "sectionTitle": "blockchain",
+          "sectionSlug": "blockchain",
+          "sectionDescription": "",
+          "skillCount": 2
+        },
+        {
+          "type": "optional",
+          "sectionTitle": "research",
+          "sectionSlug": "research",
+          "sectionDescription": "",
+          "skillCount": 2
+        },
+        {
+          "type": "optional",
+          "sectionTitle": "autonomous-ai-agents",
+          "sectionSlug": "autonomous-ai-agents",
+          "sectionDescription": "",
+          "skillCount": 1
+        },
+        {
+          "type": "optional",
+          "sectionTitle": "devops",
+          "sectionSlug": "devops",
+          "sectionDescription": "",
+          "skillCount": 1
+        },
+        {
+          "type": "optional",
+          "sectionTitle": "email",
+          "sectionSlug": "email",
+          "sectionDescription": "",
+          "skillCount": 1
+        },
+        {
+          "type": "optional",
+          "sectionTitle": "health",
+          "sectionSlug": "health",
+          "sectionDescription": "",
+          "skillCount": 1
+        },
+        {
+          "type": "optional",
+          "sectionTitle": "mcp",
+          "sectionSlug": "mcp",
+          "sectionDescription": "",
+          "skillCount": 1
+        },
+        {
+          "type": "optional",
+          "sectionTitle": "migration",
+          "sectionSlug": "migration",
+          "sectionDescription": "",
+          "skillCount": 1
+        },
+        {
+          "type": "optional",
+          "sectionTitle": "productivity",
+          "sectionSlug": "productivity",
+          "sectionDescription": "",
+          "skillCount": 1
+        }
+      ]
+    }
   },
   "combined": {
     "combinedOpportunities": [

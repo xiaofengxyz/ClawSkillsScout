@@ -695,23 +695,123 @@ function scoreHermesSkills(items) {
   ).slice(0, 25);
 }
 
+function normalizeHermesCountRows(rows, nameKey = 'name') {
+  if (!Array.isArray(rows)) return [];
+  return rows
+    .map((row) => ({
+      name: compactSpaces(row?.[nameKey] ?? row?.name ?? row?.sectionTitle ?? row?.section ?? ''),
+      count: toNumber(row?.count),
+    }))
+    .filter((row) => row.name && row.count > 0)
+    .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
+}
+
+function buildHermesSectionGroups(items) {
+  const groups = new Map();
+  for (const item of items) {
+    const key = item.sectionTitle || 'misc';
+    const current = groups.get(key) ?? {
+      type: item.type,
+      sectionTitle: key,
+      sectionSlug: item.sectionSlug || key.toLowerCase().replace(/[^a-z0-9]+/g, '-'),
+      sectionDescription: item.sectionDescription || '',
+      skillCount: 0,
+      skills: [],
+    };
+    current.skillCount += 1;
+    current.skills.push(item);
+    groups.set(key, current);
+  }
+  return [...groups.values()].sort((a, b) => b.skillCount - a.skillCount || a.sectionTitle.localeCompare(b.sectionTitle));
+}
+
+function buildHermesLiveGuideSnapshot(liveGuide, fallback) {
+  return {
+    sourceUrl: liveGuide?.sourceUrl ?? fallback?.sourceUrl ?? 'https://hermes-agent.app/en/skills',
+    advertisedSkillCategories:
+      toNumber(liveGuide?.advertisedSkillCategories) || toNumber(fallback?.summary?.advertisedSkillCategories),
+    advertisedBundledSkills:
+      toNumber(liveGuide?.advertisedBundledSkills) || toNumber(fallback?.summary?.advertisedBundledSkills),
+    categoryButtons: Array.isArray(liveGuide?.categoryButtons)
+      ? liveGuide.categoryButtons
+      : Array.isArray(fallback?.categoryButtons)
+        ? fallback.categoryButtons
+        : [],
+    liveFetchError: compactSpaces(liveGuide?.liveFetchError ?? ''),
+  };
+}
+
+function buildHermesRawCatalogSnapshot(rawCatalog, fallback, items, sections) {
+  const bundledItems = items.filter((item) => item.type === 'bundled');
+  const optionalItems = items.filter((item) => item.type === 'optional');
+  const rawSectionBreakdown = normalizeHermesCountRows(rawCatalog?.sectionBreakdown, 'sectionTitle');
+  const cachedSectionBreakdown = normalizeHermesCountRows(fallback?.sections);
+  const sectionBreakdown = rawSectionBreakdown.length
+    ? rawSectionBreakdown
+    : cachedSectionBreakdown.length
+      ? cachedSectionBreakdown
+      : countBy(items, (item) => item.sectionTitle, 80);
+  const rawBundledSectionBreakdown = normalizeHermesCountRows(rawCatalog?.bundledSectionBreakdown, 'sectionTitle');
+  const bundledSectionBreakdown = rawBundledSectionBreakdown.length
+    ? rawBundledSectionBreakdown
+    : countBy(bundledItems, (item) => item.sectionTitle, 80);
+  const rawOptionalSectionBreakdown = normalizeHermesCountRows(rawCatalog?.optionalSectionBreakdown, 'sectionTitle');
+  const optionalSectionBreakdown = rawOptionalSectionBreakdown.length
+    ? rawOptionalSectionBreakdown
+    : countBy(optionalItems, (item) => item.sectionTitle, 80);
+  const bundledSections =
+    Array.isArray(rawCatalog?.bundledSections) && rawCatalog.bundledSections.length
+      ? rawCatalog.bundledSections
+      : buildHermesSectionGroups(bundledItems);
+  const optionalSections =
+    Array.isArray(rawCatalog?.optionalSections) && rawCatalog.optionalSections.length
+      ? rawCatalog.optionalSections
+      : buildHermesSectionGroups(optionalItems);
+
+  return {
+    sourceDocUrl: rawCatalog?.sourceDocUrl ?? fallback?.sourceDocUrl ?? HERMES_CATALOG_URL,
+    parsedSkillRows: toNumber(rawCatalog?.parsedSkillRows) || items.length,
+    bundledRows: toNumber(rawCatalog?.bundledRows) || toNumber(fallback?.summary?.bundledSkills) || bundledItems.length,
+    optionalRows: toNumber(rawCatalog?.optionalRows) || toNumber(fallback?.summary?.optionalSkills) || optionalItems.length,
+    totalSections:
+      sectionBreakdown.length || toNumber(fallback?.summary?.sections) || new Set(items.map((item) => item.sectionTitle)).size,
+    sectionBreakdown: sectionBreakdown.length ? sectionBreakdown : sections,
+    bundledSectionBreakdown,
+    optionalSectionBreakdown,
+    bundledSections,
+    optionalSections,
+  };
+}
+
 function refreshCachedHermesDataset(cached, reason) {
   const compactReason = compactSpaces(String(reason ?? '')).slice(0, 240);
   const bundled = scoreHermesSkills((cached?.bundled ?? []).map(decorateHermesSkill));
   const optional = scoreHermesSkills((cached?.optional ?? []).map(decorateHermesSkill));
   const unionSource = [...bundled, ...optional];
-  const sections = countBy(unionSource, (item) => item.sectionTitle, 40);
+  const cachedSections = normalizeHermesCountRows(cached?.sections);
+  const sections = cachedSections.length ? cachedSections : countBy(unionSource, (item) => item.sectionTitle, 40);
   const tags = countBy(unionSource.flatMap((item) => item.tags.map((tag) => ({ tag }))), (item) => item.tag, 24);
+  const liveGuide = buildHermesLiveGuideSnapshot(cached?.liveGuide, cached);
+  const rawCatalog = buildHermesRawCatalogSnapshot(cached?.rawCatalog, cached, unionSource, sections);
 
   return {
     ...cached,
+    sourceUrl: liveGuide.sourceUrl,
+    sourceDocUrl: rawCatalog.sourceDocUrl,
+    liveGuide,
+    rawCatalog,
     summary: {
       ...(cached?.summary ?? {}),
-      bundledSkills: cached?.summary?.bundledSkills ?? bundled.length,
-      optionalSkills: cached?.summary?.optionalSkills ?? optional.length,
-      topSection: sections[0]?.name ?? cached?.summary?.topSection ?? null,
+      totalSkills: cached?.summary?.totalSkills ?? rawCatalog.parsedSkillRows,
+      bundledSkills: rawCatalog.bundledRows,
+      optionalSkills: rawCatalog.optionalRows,
+      sections: rawCatalog.totalSections,
+      topSection: rawCatalog.sectionBreakdown[0]?.name ?? cached?.summary?.topSection ?? null,
+      advertisedBundledSkills: liveGuide.advertisedBundledSkills || rawCatalog.bundledRows,
+      advertisedSkillCategories: liveGuide.advertisedSkillCategories || rawCatalog.totalSections,
     },
-    sections,
+    categoryButtons: liveGuide.categoryButtons,
+    sections: rawCatalog.sectionBreakdown.length ? rawCatalog.sectionBreakdown : sections,
     tags,
     bundled,
     optional,
@@ -776,7 +876,10 @@ async function fetchHermesData() {
     throw new Error(result.stderr || result.stdout || 'parse-hermes-skill-atlas.py failed');
   }
   const parsed = JSON.parse(result.stdout);
-  if (!Array.isArray(parsed.items) || parsed.items.length === 0) {
+  const parsedLiveGuide = parsed.liveGuide ?? {};
+  const parsedRawCatalog = parsed.rawCatalog ?? {};
+  const rawItems = Array.isArray(parsedRawCatalog.items) ? parsedRawCatalog.items : Array.isArray(parsed.items) ? parsed.items : [];
+  if (rawItems.length === 0) {
     try {
       const cached = loadCachedHermes('Hermes raw catalog parsed zero rows');
       if (cached) return cached;
@@ -784,32 +887,37 @@ async function fetchHermesData() {
       // Ignore cache read failures and fall through to the parsed empty dataset.
     }
   }
-  const skills = parsed.items.map(decorateHermesSkill);
+  const skills = rawItems.map(decorateHermesSkill);
   const bundled = skills.filter((item) => item.type === 'bundled');
   const optional = skills.filter((item) => item.type === 'optional');
-  const liveSummaryNote = parsed.liveFetchError
-    ? `截至 ${new Date().toISOString().slice(0, 10)}，本地直连 Hermes live guide 失败（${parsed.liveFetchError}），本次报告已继续使用 raw catalog 结构数据；在线总数和分类按钮建议在浏览器里复核。`
-    : `截至 ${new Date().toISOString().slice(0, 10)}，live guide 标注 ${parsed.advertisedBundledSkills ?? 0} 个 bundled skills，但官方 raw catalog 当前能结构化提取 ${bundled.length} 个 bundled rows，说明文档口径存在漂移。`;
-  const sections = countBy(skills, (item) => item.sectionTitle, 40);
+  const rawSectionBreakdown = normalizeHermesCountRows(parsedRawCatalog.sectionBreakdown, 'sectionTitle');
+  const sections = rawSectionBreakdown.length ? rawSectionBreakdown : countBy(skills, (item) => item.sectionTitle, 40);
   const tags = countBy(skills.flatMap((item) => item.tags.map((tag) => ({ tag }))), (item) => item.tag, 24);
   const topBundledByAisaFit = scoreHermesSkills(bundled);
   const topOptionalByAisaFit = scoreHermesSkills(optional);
   const top200Union = topUnion([topBundledByAisaFit, topOptionalByAisaFit], (item) => item.path || item.name, 200);
+  const liveGuide = buildHermesLiveGuideSnapshot(parsedLiveGuide, null);
+  const rawCatalog = buildHermesRawCatalogSnapshot(parsedRawCatalog, null, skills, sections);
+  const liveSummaryNote = liveGuide.liveFetchError
+    ? `截至 ${new Date().toISOString().slice(0, 10)}，本地直连 Hermes live guide 失败（${liveGuide.liveFetchError}），本次报告已继续使用 raw catalog 结构数据；在线总数和分类按钮建议在浏览器里复核。`
+    : `截至 ${new Date().toISOString().slice(0, 10)}，live guide 标注 ${liveGuide.advertisedBundledSkills || 0} 个 bundled skills；raw catalog 当前能结构化提取 ${rawCatalog.bundledRows} 个 bundled rows、${rawCatalog.optionalRows} 个 optional rows。`;
 
   return {
-    sourceUrl: parsed.sourceUrl,
-    sourceDocUrl: parsed.sourceDocUrl || HERMES_CATALOG_URL,
+    sourceUrl: liveGuide.sourceUrl,
+    sourceDocUrl: rawCatalog.sourceDocUrl,
+    liveGuide,
+    rawCatalog,
     summary: {
       totalSkills: skills.length,
-      bundledSkills: bundled.length,
-      optionalSkills: optional.length,
-      sections: new Set(skills.map((item) => item.sectionTitle)).size,
-      topSection: sections[0]?.name ?? null,
-      advertisedBundledSkills: parsed.advertisedBundledSkills ?? bundled.length,
-      advertisedSkillCategories: parsed.advertisedSkillCategories ?? new Set(skills.map((item) => item.sectionTitle)).size,
+      bundledSkills: rawCatalog.bundledRows,
+      optionalSkills: rawCatalog.optionalRows,
+      sections: rawCatalog.totalSections,
+      topSection: rawCatalog.sectionBreakdown[0]?.name ?? null,
+      advertisedBundledSkills: liveGuide.advertisedBundledSkills || rawCatalog.bundledRows,
+      advertisedSkillCategories: liveGuide.advertisedSkillCategories || rawCatalog.totalSections,
     },
-    categoryButtons: parsed.categoryButtons ?? [],
-    sections,
+    categoryButtons: liveGuide.categoryButtons,
+    sections: rawCatalog.sectionBreakdown,
     tags,
     bundled: topBundledByAisaFit,
     optional: topOptionalByAisaFit,
@@ -1128,6 +1236,12 @@ function buildHermesZhReport(report, datasetDate) {
 - 数据日期：${formatZhDatasetDate(datasetDate)}
 - 来源：Hermes Skills Guide、Hermes raw catalog
 
+## 数据口径
+
+- live guide 当前显示 ${report.hermes.liveGuide.advertisedBundledSkills} 个 bundled skills、${report.hermes.liveGuide.advertisedSkillCategories} 个 categories。
+- raw catalog 当前结构化提取 ${report.hermes.rawCatalog.bundledRows} 个 bundled rows、${report.hermes.rawCatalog.optionalRows} 个 optional rows，共 ${report.hermes.rawCatalog.totalSections} 个 sections。
+- raw catalog 头部 sections：${report.hermes.rawCatalog.sectionBreakdown.slice(0, 5).map((item) => `${item.name} ${item.count}`).join(' · ')}。
+
 ## 一句话结论
 
 Hermes 更像“内置工作流能力目录”，而不是公开下载榜。它的爆款逻辑不是谁更会包装 GitHub，而是谁更清楚地把某个工作流边界讲明白，并且放进正确的 section 里。适合 AISA 的仍然是 GitHub、Research、Documents、Workspace、Automation 这些可抽象成 API 的高频边界。
@@ -1219,6 +1333,12 @@ function buildHermesEnReport(report, datasetDate) {
 
 - Generated at: ${report.generatedAt}
 - Dataset date: ${formatEnDatasetDate(datasetDate)}
+
+## Data scope
+
+- Live guide currently advertises ${report.hermes.liveGuide.advertisedBundledSkills} bundled skills across ${report.hermes.liveGuide.advertisedSkillCategories} categories.
+- Raw catalog currently parses ${report.hermes.rawCatalog.bundledRows} bundled rows and ${report.hermes.rawCatalog.optionalRows} optional rows across ${report.hermes.rawCatalog.totalSections} sections.
+- Top raw sections: ${report.hermes.rawCatalog.sectionBreakdown.slice(0, 5).map((item) => `${item.name} ${item.count}`).join(' · ')}.
 
 ## Executive Summary
 
