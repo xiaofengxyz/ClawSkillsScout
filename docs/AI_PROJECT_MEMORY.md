@@ -41,6 +41,11 @@ This file is the fast handoff layer for future chats. Read it when you need to k
 
 ## Recently Completed
 
+### 2026-04-26
+
+- Added an explicit `SKILLGET_DISABLE_HOST_FALLBACK=1` switch across `scripts/build-market-ecosystem-report.mjs` and `scripts/parse-hermes-skill-atlas.py`, so CI/debug runs can force pure WSL/local fetch behavior without silently falling back to Windows-host `curl`
+- Documented the new host-fallback control in `scripts/README.md` and made the market-ecosystem Node entrypoint safe to import for targeted no-write verification of the fallback policy
+
 ### 2026-04-25
 
 - Centralized the source-optimized package manifest into shared helper modules so build, verification, Chinese package generation, and publish indexing now read the same package/file/template definitions instead of drifting across separate scripts
@@ -62,6 +67,8 @@ This file is the fast handoff layer for future chats. Read it when you need to k
 - Hardened `scripts/parse-hermes-skill-atlas.py` with `curl -> requests -> Windows host curl` fallback order so WSL environments can still complete real upstream Hermes refreshes when direct raw GitHub access stalls but the Windows host network path remains healthy
 - Re-ran `node scripts/build-market-ecosystem-report.mjs` with live upstream refresh on April 25, 2026: Claude skills/marketplaces refreshed live via local `curl`, Hermes live guide refreshed live, Hermes raw catalog refreshed live via Windows-host `curl`, and the EN/ZH Markdown + DOCX reports were regenerated from that run
 - Added an explicit repo-local boundary note to `scripts/lib/skill-frontmatter.mjs` and `scripts/README.md` so the source-optimized frontmatter reader is not treated as the global skill spec for `agent-skills-io` or other publish surfaces
+- Verified the WSL proxy-backed live refresh path on April 26, 2026 and re-ran `scripts/build-market-ecosystem-report.mjs` so Claude skills, Claude marketplaces, Hermes live guide, and Hermes raw catalog all refreshed via local `curl` instead of the Windows-host fallback path
+- Review-hardened the live market-report pipeline so Windows-host `curl` fallback no longer inherits broken WSL proxy variables, and cached Claude fallback datasets now mark `fetchTransport=cache-fallback` plus a `refreshError` instead of misleadingly preserving the previous live transport label
 
 ### 2026-04-24
 

@@ -1,13 +1,13 @@
 # Hermes AISA Report
 
-- 生成时间：2026-04-25T14:50:26.679Z
-- 数据日期：2026-04-25
+- 生成时间：2026-04-26T04:22:48.821Z
+- 数据日期：2026-04-26
 - 来源：Hermes Skills Guide、Hermes raw catalog
 
 ## 数据口径
 
-- live guide 当前显示 97 个 bundled skills、28 个 categories，抓取通道为 requests。
-- raw catalog 当前结构化提取 74 个 bundled rows、0 个 optional rows，共 19 个 sections，抓取通道为 windows-curl-host。
+- live guide 当前显示 97 个 bundled skills、28 个 categories，抓取通道为 curl。
+- raw catalog 当前结构化提取 74 个 bundled rows、0 个 optional rows，共 19 个 sections，抓取通道为 curl。
 - raw catalog 头部 sections：creative 13 · mlops 13 · productivity 7 · github 6 · software-development 6。
 
 ## 一句话结论

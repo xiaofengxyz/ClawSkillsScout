@@ -1,7 +1,8 @@
 import { mkdir, writeFile } from 'node:fs/promises';
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { spawn, spawnSync } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
 import vm from 'node:vm';
 import { syncMarkdownDocx } from './lib/report-docx.mjs';
 
@@ -21,14 +22,23 @@ const CLAUDE_MARKETPLACES_URL = 'https://claudemarketplaces.com/marketplaces';
 const HERMES_CATALOG_URL = 'https://raw.githubusercontent.com/NousResearch/hermes-agent/main/website/docs/reference/skills-catalog.md';
 const LIVE_FETCH_USER_AGENT = 'Mozilla/5.0 (compatible; ClawSkillsScout/1.0; +https://github.com/)';
 const LIVE_FETCH_ACCEPT = 'text/html,application/json,text/plain;q=0.9,*/*;q=0.8';
-const WSL_HOST_FETCH_AVAILABLE = process.platform === 'linux' && Boolean(process.env.WSLENV);
 const WSL_HOST_CURL_PATH = '/mnt/c/WINDOWS/System32/curl.exe';
 const COMMAND_OUTPUT_LIMIT = 1024 * 1024 * 16;
+const PROXY_ENV_KEYS = ['http_proxy', 'https_proxy', 'HTTP_PROXY', 'HTTPS_PROXY', 'all_proxy', 'ALL_PROXY', 'no_proxy', 'NO_PROXY'];
+const TRUTHY_ENV_VALUES = new Set(['1', 'true', 'yes', 'on']);
+export const HOST_FALLBACK_DISABLE_ENV = 'SKILLGET_DISABLE_HOST_FALLBACK';
+export const HOST_FALLBACK_DISABLED = isTruthyEnvFlag(process.env[HOST_FALLBACK_DISABLE_ENV]);
+const WSL_HOST_FALLBACK_CAPABLE = process.platform === 'linux' && Boolean(process.env.WSLENV) && existsSync(WSL_HOST_CURL_PATH);
+export const WSL_HOST_FETCH_AVAILABLE = WSL_HOST_FALLBACK_CAPABLE && !HOST_FALLBACK_DISABLED;
 
 function compactSpaces(value) {
   return String(value ?? '')
     .replace(/\s+/g, ' ')
     .trim();
+}
+
+export function isTruthyEnvFlag(value) {
+  return TRUTHY_ENV_VALUES.has(compactSpaces(value).toLowerCase());
 }
 
 function toNumber(value) {
@@ -394,6 +404,8 @@ async function fetchText(url) {
       label: 'windows-curl-host',
       run: () => fetchTextViaWindowsHost(url, 45),
     });
+  } else if (HOST_FALLBACK_DISABLED && WSL_HOST_FALLBACK_CAPABLE) {
+    attempts.push(`windows-curl-host disabled by ${HOST_FALLBACK_DISABLE_ENV}=1`);
   }
 
   for (let round = 0; round < 2; round += 1) {
@@ -421,6 +433,7 @@ function runTextCommand(command, args, timeoutMs = 45_000) {
   return new Promise((resolvePromise, rejectPromise) => {
     const child = spawn(command, args, {
       cwd: ROOT,
+      env: process.env,
       stdio: ['ignore', 'pipe', 'pipe'],
       windowsHide: true,
     });
@@ -475,19 +488,97 @@ function runTextCommand(command, args, timeoutMs = 45_000) {
   });
 }
 
+function withoutProxyEnv() {
+  const env = { ...process.env };
+  for (const key of PROXY_ENV_KEYS) {
+    delete env[key];
+  }
+  return env;
+}
+
 function fetchTextViaWindowsHost(url, timeoutSeconds) {
-  return runTextCommand(
-    WSL_HOST_CURL_PATH,
-    [
-      '-fsSL',
-      '--connect-timeout',
-      '10',
-      '--max-time',
-      String(timeoutSeconds),
-      url,
+  return new Promise((resolvePromise, rejectPromise) => {
+    const child = spawn(
+      WSL_HOST_CURL_PATH,
+      [
+        '-fsSL',
+        '--connect-timeout',
+        '10',
+        '--max-time',
+        String(timeoutSeconds),
+        url,
+      ],
+      {
+        cwd: ROOT,
+        env: withoutProxyEnv(),
+        stdio: ['ignore', 'pipe', 'pipe'],
+        windowsHide: true,
+      },
+    );
+
+    let stdout = '';
+    let stderr = '';
+    let settled = false;
+    let timeoutHandle = null;
+
+    const settle = (callback) => {
+      if (settled) return;
+      settled = true;
+      if (timeoutHandle) {
+        clearTimeout(timeoutHandle);
+      }
+      callback();
+    };
+
+    const appendChunk = (target, chunk) => {
+      const next = target + chunk.toString('utf8');
+      return next.length > COMMAND_OUTPUT_LIMIT ? next.slice(-COMMAND_OUTPUT_LIMIT) : next;
+    };
+
+    timeoutHandle = setTimeout(() => {
+      child.kill('SIGTERM');
+      setTimeout(() => child.kill('SIGKILL'), 2000).unref();
+      settle(() => rejectPromise(new Error(`${WSL_HOST_CURL_PATH} timed out after ${(timeoutSeconds + 10) * 1000}ms`)));
+    }, (timeoutSeconds + 10) * 1000);
+
+    child.stdout.on('data', (chunk) => {
+      stdout = appendChunk(stdout, chunk);
+    });
+    child.stderr.on('data', (chunk) => {
+      stderr = appendChunk(stderr, chunk);
+    });
+    child.on('error', (error) => {
+      settle(() => rejectPromise(error));
+    });
+    child.on('close', (code, signal) => {
+      settle(() => {
+        if (code === 0) {
+          resolvePromise(stdout);
+          return;
+        }
+        rejectPromise(
+          new Error(
+            compactSpaces(
+              `${WSL_HOST_CURL_PATH} exited with code ${code ?? 'unknown'}${signal ? ` (${signal})` : ''}: ${stderr || stdout}`,
+            ),
+          ),
+        );
+      });
+    });
+  });
+}
+
+function refreshCachedClaudeDataset(cachedDataset, reason, surfaceLabel) {
+  const compactReason = compactSpaces(String(reason ?? '')).slice(0, 240);
+  return {
+    ...cachedDataset,
+    fetchTransport: 'cache-fallback',
+    refreshError: compactReason,
+    commonPatterns: [
+      ...((cachedDataset?.commonPatterns ?? []).filter((line) => !line.includes('缓存数据') && !line.includes('cache fallback'))),
+      `截至 ${new Date().toISOString().slice(0, 10)}，${surfaceLabel} live 刷新失败（${compactReason || 'remote fetch failed'}），本次结果继续沿用缓存数据。`,
     ],
-    (timeoutSeconds + 10) * 1000,
-  );
+  };
 }
 
 async function fetchClaudeSkillsData() {
@@ -617,7 +708,11 @@ async function fetchClaudeSkillsData() {
     const cached = readCachedOutput();
     if (cached?.claude?.skills) {
       console.warn('Claude skills refresh failed, reusing cached skills dataset from previous market-ecosystem-report.json');
-      return cached.claude.skills;
+      return refreshCachedClaudeDataset(
+        cached.claude.skills,
+        error instanceof Error ? error.message : 'Claude skills refresh failed',
+        'Claude Skills',
+      );
     }
     throw error;
   }
@@ -744,7 +839,11 @@ async function fetchClaudeMarketplacesData() {
     const cached = readCachedOutput();
     if (cached?.claude?.marketplaces) {
       console.warn('Claude marketplaces refresh failed, reusing cached marketplaces dataset from previous market-ecosystem-report.json');
-      return cached.claude.marketplaces;
+      return refreshCachedClaudeDataset(
+        cached.claude.marketplaces,
+        error instanceof Error ? error.message : 'Claude marketplaces refresh failed',
+        'Claude Marketplaces',
+      );
     }
     throw error;
   }
@@ -896,16 +995,23 @@ function refreshCachedHermesDataset(cached, reason) {
   const cachedSections = normalizeHermesCountRows(cached?.sections);
   const sections = cachedSections.length ? cachedSections : countBy(unionSource, (item) => item.sectionTitle, 40);
   const tags = countBy(unionSource.flatMap((item) => item.tags.map((tag) => ({ tag }))), (item) => item.tag, 24);
-  const liveGuide = buildHermesLiveGuideSnapshot(cached?.liveGuide, cached);
-  const rawCatalog = buildHermesRawCatalogSnapshot(cached?.rawCatalog, cached, unionSource, sections);
+  const liveGuide = {
+    ...buildHermesLiveGuideSnapshot(cached?.liveGuide, cached),
+    fetchTransport: 'cache-fallback',
+    liveFetchError: compactReason || compactSpaces(cached?.liveGuide?.liveFetchError ?? ''),
+  };
+  const rawCatalog = {
+    ...buildHermesRawCatalogSnapshot(cached?.rawCatalog, cached, unionSource, sections),
+    fetchTransport: 'cache-fallback',
+  };
 
   return {
     ...cached,
     sourceUrl: liveGuide.sourceUrl,
     sourceDocUrl: rawCatalog.sourceDocUrl,
     fetchTransport: {
-      liveGuide: liveGuide.fetchTransport || cached?.fetchTransport?.liveGuide || null,
-      rawCatalog: rawCatalog.fetchTransport || cached?.fetchTransport?.rawCatalog || null,
+      liveGuide: 'cache-fallback',
+      rawCatalog: 'cache-fallback',
     },
     liveGuide,
     rawCatalog,
@@ -1537,7 +1643,17 @@ async function buildReport() {
   );
 }
 
-buildReport().catch((error) => {
-  console.error(error);
-  process.exitCode = 1;
-});
+const IS_MAIN_MODULE = (() => {
+  try {
+    return process.argv[1] ? resolve(process.argv[1]) === fileURLToPath(import.meta.url) : false;
+  } catch {
+    return false;
+  }
+})();
+
+if (IS_MAIN_MODULE) {
+  buildReport().catch((error) => {
+    console.error(error);
+    process.exitCode = 1;
+  });
+}

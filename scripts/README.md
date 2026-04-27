@@ -26,6 +26,8 @@
 | `scripts/download-github-account-skills.mjs` | `npm run download:github-account-skills` | `--owner <name>` | 只扫描指定 GitHub owner，可重复传参 |
 | `scripts/download-github-account-skills.mjs` | `npm run download:github-account-skills` | `--force` | 即使 tar 包已存在也重新打包 |
 | `scripts/download-github-account-skills.mjs` | `npm run download:github-account-skills` | `GITHUB_TOKEN` / `GH_TOKEN` | 可选，提升 GitHub API 访问额度 |
+| `scripts/build-market-ecosystem-report.mjs` | `npm run analyze:market-ecosystem` | `SKILLGET_DISABLE_HOST_FALLBACK=1` | 可选，禁用 Windows host curl 回退，强制只走当前 WSL / 本机网络路径，适合 CI 或复现调试 |
+| `scripts/parse-hermes-skill-atlas.py` | 直接运行或被分析链路复用 | `SKILLGET_DISABLE_HOST_FALLBACK=1` | 可选，禁用 Hermes 抓取里的 Windows host curl 回退，强制只走本地 `curl` / `requests` |
 | `scripts/sync-report-docx.py` | `npm run sync:report-docx` | `[paths...]` | 指定要同步的 Markdown 报告；省略时默认扫描 `reports/` 和 `public/reports/` |
 | `scripts/sync-report-docx.py` | `npm run sync:report-docx` | `--force` | 即使 `.docx` 更新时间较新也强制重写 |
 | `scripts/live-test-source-optimized.mjs` | `npm run live-test:source-optimized` | `AISA_API_KEY` | 必需，用于 live smoke test |
@@ -88,10 +90,10 @@
 | `scripts/build-clawhub-multi-ranking-report.py` | `npm run analyze:clawhub-multi-ranking` | 合并 downloads / stars / installs 多榜，构造综合排名与优先级 | ClawHub 多榜数据 | `public/data/clawhub-multi-ranking-report.json`、多榜报告 | 无 |
 | `scripts/build-clawhub-viral-boss-report.py` | `npm run analyze:clawhub-viral-boss` | 将多榜与市场观察整理成老板版长文档 | 多榜 JSON、已有分析结果 | 老板版 Markdown / Word 报告 | 无 |
 | `scripts/build-aisa-expansion-plans.py` | `npm run analyze:aisa-expansion-plans` | 生成 AISA 当前技能扩张计划与 Top 200 转化计划 | 主站 AISA 数据、ClawHub 多榜数据 | `public/data/aisa-all-skills-breakout-plan.json`、`public/data/clawhub-top200-aisa-conversion-plan.json`、报告 | 无 |
-| `scripts/build-market-ecosystem-report.mjs` | `npm run analyze:market-ecosystem` | 横向比较 ClawHub、Claude、Hermes 的爆款结构，并产出 Claude / Hermes 专项报告 | live 公开市场页、repo 模板 | `public/data/market-ecosystem-report.json`、`reports/Claude_AISA_Report_*`、`reports/Hermes_AISA_Report_*`、`public/reports/` | 无 |
+| `scripts/build-market-ecosystem-report.mjs` | `npm run analyze:market-ecosystem` | 横向比较 ClawHub、Claude、Hermes 的爆款结构，并产出 Claude / Hermes 专项报告 | live 公开市场页、repo 模板 | `public/data/market-ecosystem-report.json`、`reports/Claude_AISA_Report_*`、`reports/Hermes_AISA_Report_*`、`public/reports/` | `SKILLGET_DISABLE_HOST_FALLBACK=1` 可强制禁用 Windows host curl 回退 |
 | `scripts/build-agentskill-report.mjs` | `npm run analyze:agentskill` | 采集 AgentSkill 的 skill / plugin / creator / 评分 / 信任信号并生成专项报告 | AgentSkill 列表与详情页 | `public/data/agentskill-report.json`、`reports/AgentSkill_Report_*`、`public/reports/` | 无 |
 | `scripts/build-agentskills-so-report.mjs` | `npm run analyze:agentskills-so` | 采集 AgentSkills.so 的下载、仓库、安全和分发信号并生成专项报告 | AgentSkills.so 列表与详情页 | `public/data/agentskills-so-report.json`、`reports/AgentSkills_SO_Report_*`、`public/reports/` | 无 |
-| `scripts/parse-hermes-skill-atlas.py` | 直接运行或被分析链路复用 | 解析 Hermes skill atlas / catalog 结构 | Hermes 文档源 | 中间分析数据或报告素材 | 无 |
+| `scripts/parse-hermes-skill-atlas.py` | 直接运行或被分析链路复用 | 解析 Hermes skill atlas / catalog 结构 | Hermes 文档源 | 中间分析数据或报告素材 | `SKILLGET_DISABLE_HOST_FALLBACK=1` 可强制禁用 Windows host curl 回退 |
 | `scripts/sync-report-docx.py` | `npm run sync:report-docx` | 为 Markdown 报告补齐或刷新 `.docx` 文件 | `reports/*.md`、`public/reports/*.md` 或显式路径 | 同名 `.docx` 文件 | `[paths...]`、`--force` |
 
 ## 打包、校验与发布脚本
@@ -153,6 +155,12 @@ npm run pipeline:pages
 链路：
 
 当前与 `pipeline:scheduled-analysis` 相同，但它是 GitHub Pages 部署使用的统一命令入口。
+
+如果要在 CI 或调试时强制只走当前 WSL / 本机网络路径，可以这样运行：
+
+```bash
+SKILLGET_DISABLE_HOST_FALLBACK=1 npm run analyze:market-ecosystem
+```
 
 ### 2.2 全报告 wrapper 容错
 

@@ -1,12 +1,12 @@
 # Hermes AISA Report
 
-- Generated at: 2026-04-25T14:50:26.679Z
-- Dataset date: April 25, 2026
+- Generated at: 2026-04-26T04:22:48.821Z
+- Dataset date: April 26, 2026
 
 ## Data scope
 
-- Live guide currently advertises 97 bundled skills across 28 categories via requests.
-- Raw catalog currently parses 74 bundled rows and 0 optional rows across 19 sections via windows-curl-host.
+- Live guide currently advertises 97 bundled skills across 28 categories via curl.
+- Raw catalog currently parses 74 bundled rows and 0 optional rows across 19 sections via curl.
 - Top raw sections: creative 13 · mlops 13 · productivity 7 · github 6 · software-development 6.
 
 ## Executive Summary

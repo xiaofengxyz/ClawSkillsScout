@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-25T14:50:26.679Z",
+  "generatedAt": "2026-04-26T04:22:48.821Z",
   "sources": {
     "clawhub": [
       "https://clawhub.ai/skills?sort=downloads&dir=desc",
@@ -51512,12 +51512,12 @@
     "sourceUrl": "https://hermes-agent.app/skills",
     "sourceDocUrl": "https://raw.githubusercontent.com/NousResearch/hermes-agent/main/website/docs/reference/skills-catalog.md",
     "fetchTransport": {
-      "liveGuide": "requests",
-      "rawCatalog": "windows-curl-host"
+      "liveGuide": "curl",
+      "rawCatalog": "curl"
     },
     "liveGuide": {
       "sourceUrl": "https://hermes-agent.app/skills",
-      "fetchTransport": "requests",
+      "fetchTransport": "curl",
       "advertisedSkillCategories": 28,
       "advertisedBundledSkills": 97,
       "categoryButtons": [
@@ -51554,7 +51554,7 @@
     },
     "rawCatalog": {
       "sourceDocUrl": "https://raw.githubusercontent.com/NousResearch/hermes-agent/main/website/docs/reference/skills-catalog.md",
-      "fetchTransport": "windows-curl-host",
+      "fetchTransport": "curl",
       "parsedSkillRows": 74,
       "bundledRows": 74,
       "optionalRows": 0,
@@ -54238,7 +54238,7 @@
       "分类非常强调运行环境和工作流边界，例如 Apple / GitHub / MLOps / Research。",
       "高 AISA 适配项主要集中在 GitHub、Research、Productivity、Documents、Automation 这些高频外部工具边界。",
       "Apple / macOS 类 skill 价值高但平台限制强，更适合做专属 SKU 而不是旗舰总包。",
-      "截至 2026-04-25，live guide 标注 97 个 bundled skills；raw catalog 当前能结构化提取 74 个 bundled rows、0 个 optional rows。"
+      "截至 2026-04-26，live guide 标注 97 个 bundled skills；raw catalog 当前能结构化提取 74 个 bundled rows、0 个 optional rows。"
     ]
   },
   "combined": {

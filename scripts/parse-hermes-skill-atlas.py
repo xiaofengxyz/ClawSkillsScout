@@ -23,8 +23,20 @@ HEADERS = {
     "user-agent": "Mozilla/5.0 (compatible; ClawSkillsScout/1.0; +https://github.com/)",
     "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,text/plain;q=0.8,*/*;q=0.7",
 }
+HOST_FALLBACK_DISABLE_ENV = "SKILLGET_DISABLE_HOST_FALLBACK"
+TRUTHY_ENV_VALUES = {"1", "true", "yes", "on"}
 LOCAL_CURL = shutil.which("curl")
-WINDOWS_CURL_HOST = "/mnt/c/WINDOWS/System32/curl.exe" if os.path.exists("/mnt/c/WINDOWS/System32/curl.exe") else None
+WINDOWS_CURL_HOST_PATH = "/mnt/c/WINDOWS/System32/curl.exe" if os.path.exists("/mnt/c/WINDOWS/System32/curl.exe") else None
+PROXY_ENV_KEYS = [
+    "http_proxy",
+    "https_proxy",
+    "HTTP_PROXY",
+    "HTTPS_PROXY",
+    "all_proxy",
+    "ALL_PROXY",
+    "no_proxy",
+    "NO_PROXY",
+]
 
 
 def compact(value: str | None) -> str:
@@ -43,6 +55,22 @@ def text_of(node) -> str:
 
 def decode_command_output(raw: bytes) -> str:
     return raw.decode("utf-8", errors="replace")
+
+
+def env_flag_enabled(name: str) -> bool:
+    return compact(os.environ.get(name, "")).lower() in TRUTHY_ENV_VALUES
+
+
+HOST_FALLBACK_DISABLED = env_flag_enabled(HOST_FALLBACK_DISABLE_ENV)
+WINDOWS_HOST_FALLBACK_CAPABLE = WINDOWS_CURL_HOST_PATH is not None
+WINDOWS_CURL_HOST = WINDOWS_CURL_HOST_PATH if WINDOWS_HOST_FALLBACK_CAPABLE and not HOST_FALLBACK_DISABLED else None
+
+
+def env_without_proxy() -> dict[str, str]:
+    env = os.environ.copy()
+    for key in PROXY_ENV_KEYS:
+        env.pop(key, None)
+    return env
 
 
 def fetch_via_local_curl(url: str, timeout: int) -> str:
@@ -87,6 +115,7 @@ def fetch_via_windows_curl(url: str, timeout: int) -> str:
         ],
         capture_output=True,
         timeout=timeout + 10,
+        env=env_without_proxy(),
     )
     if result.returncode != 0:
         raise RuntimeError(compact(decode_command_output(result.stderr or result.stdout or b"Windows host curl fetch failed")))
@@ -119,6 +148,8 @@ def fetch_text(urls: list[str], timeout: int) -> tuple[str, str, str]:
                 return fetch_via_windows_curl(url, timeout), url, "windows-curl-host"
             except Exception as error:  # noqa: BLE001
                 attempts.append(f"windows-curl-host:{url}:{compact(str(error))}")
+        elif HOST_FALLBACK_DISABLED and WINDOWS_HOST_FALLBACK_CAPABLE:
+            attempts.append(f"windows-curl-host:{url}:disabled-by-{HOST_FALLBACK_DISABLE_ENV}")
 
     raise RuntimeError(" | ".join(attempts))
 
